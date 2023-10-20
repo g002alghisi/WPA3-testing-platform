@@ -1,0 +1,10 @@
+# All the information are gathered by means of "lspci" command.
+
+# Wifi
+Network controller: Qualcomm Atheros QCA9377 802.11ac
+    Wireless Network Adapter (rev 31)
+
+# Ethernet
+Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411
+    PCI Express Gigabit Ethernet Controller (rev 12)
+
