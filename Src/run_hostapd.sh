@@ -27,10 +27,10 @@ setup() {
     current_eth_connection="$(nmcli -t c show --active | grep ethernet | cut -d ':' -f 1)"
 
     if [ -z "$current_eth_connection" ]; then
-        echo "Currently not connected to any Ethernet." 
+        echo "Currently not connected to any Ethernet. Please connect."
+        exit 1 
     else
-        echo "Disconnecting from $current_eth_connection [Eth]... "
-        nmcli c down "$current_eth_connection"   
+        echo "Currently connected to $current_eth_connection [Eth]."
     fi
     echo ""
 
@@ -44,6 +44,8 @@ setup() {
         nmcli c down "$current_wifi_connection"   
     fi
     echo ""
+
+    sudo systemctl stop NetworkManager  # Disable nmcli. It can interfere brctl.
 
 }
 
@@ -62,6 +64,8 @@ setdown() {
     echo ""
 
     stty echo   # Show ^C
+
+    sudo systemctl start NetworkManager # Restart nmcli.
     
     exit 0
 }

@@ -10,3 +10,7 @@ These should be both used: the hostapd is used to create an  AP, but by means of
 
 Currently, the run_hostapd.sh bash script allows to safely launch hostapd by automatically de-connecting from the WiFi.
 The hostapd.conf configuration file has been set to turn on an 802.11ac AP with Automatic Channel Selection (ACS), performed by the driver of the Wireless NIC.
+
+### Configuration file
+The configuratio file hostapd.conf has been created from the one that can be found at  /usr/share/doc/hostapd/examples/hostapd.conf.
+This file has been copied (for reasons of ease) to original_hostapd.conf.

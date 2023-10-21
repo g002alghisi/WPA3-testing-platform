@@ -1,2 +1,0 @@
-The configuration file for hostapd can be found in here:
-    /usr/share/doc/hostapd/examples/hostapd.conf
