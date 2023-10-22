@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set -x  # Debug mode.
+set -x  # Debug mode.
 
 ### Full Acces Point script ###
 # The function of this script is setting up an AP using hostapd and, by means
@@ -175,8 +175,9 @@ br_if="br-ap"
 
 br_setup() {
     echo -n "Setting up the bridge $br_if... "
-    se brctl show | grep "$br_if"
-    if [ $? -ne 0 ]; then
+    # Check if br_if already exists. If so, setdown the current and then setup
+    # a new bridge.
+    if ! [ -z "$(brctl show | grep $br_if)" ]; then
         se br_setdown
     fi
     se sudo brctl addbr "$br_if" &&
@@ -194,11 +195,11 @@ br_setup() {
 }
 
 br_setdown() {
-    se brctl show | grep "$br_if"
-    if [ $? -eq 0 ]; then
+    echo -n "Setting down the bridge $br_if... "
+    # If the bridge doesn't exist, then do not do anything.
+    if [ -z "$(brctl show | grep $br_if)" ]; then
         return
     fi
-    echo -n "Setting down the bridge $br_if... "
     se sudo ip link set "$br_if" down &&
         sudo brctl delbr br-ap
     if [ $? -eq 0 ]; then
