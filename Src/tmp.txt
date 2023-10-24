@@ -1,0 +1,8 @@
+[general]ssid=Hostapd-AP
+[general]passphrase=argoargoargo
+[general]protocol=wpa2
+[wpa2]mfp=1
+[wpa3]bp=1
+[wpa3]ocv=0
+[wpa3]pwe_alg=2
+[wpa2/3]td=0

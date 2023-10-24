@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x  # Debug mode.
+# set -x  # Debug mode.
 
 ### Full Acces Point script ###
 # The function of this script is setting up an AP using hostapd and, by means
@@ -40,16 +40,14 @@ recho() {
     fi
 }
 
-
 gecho() {
     if [ "$#" -eq 1 ]; then
         echo -e "${GREEN}$*${NC}"
     else
         echo "Error using gecho. Too many arguments."
-        return 1
+        return
     fi
 }
-
 
 cecho() {
     if [ "$#" -eq 1 ]; then
@@ -59,7 +57,6 @@ cecho() {
         return 1
     fi
 }
-
 
 
 # Silent execution function. Execute the code printing just stderr.
@@ -73,7 +70,7 @@ se() {
 
 ### *** hostapd Config *** ###
 
-config_file="../Conf/hostapd.conf"
+config_file="../Conf/personal_hostapd.conf"
 
 hostapd_conf_file_check() {
     echo -n "Looking for hostapd.conf... "
@@ -121,7 +118,6 @@ eth_check() {
     eth_check_if && eth_check_conn
     return $?
 }
-
 
 
 ### *** WiFi *** ###
@@ -195,11 +191,12 @@ br_setup() {
 }
 
 br_setdown() {
-    echo -n "Setting down the bridge $br_if... "
     # If the bridge doesn't exist, then do not do anything.
-    if [ -z "$(brctl show | grep $br_if)" ]; then
+    se brctl show | grep "$br_if"
+    if [ $? -eq 0 ]; then
         return
     fi
+    echo -n "Setting down the bridge $br_if... "
     se sudo ip link set "$br_if" down &&
         sudo brctl delbr br-ap
     if [ $? -eq 0 ]; then
@@ -216,9 +213,12 @@ br_setdown() {
 ### *** NetworkManager *** ###
 
 nm_start() {
-    sudo systemctl start NetworkManager # Restart nmcli.
-    echo -n "Restarting Network Manager... "
-    sudo systemctl start NetworkManager > /dev/null
+    se systemctl is-active NetworkManager
+    if [ $? -eq 0 ]; then
+        return
+    fi
+    echo -n "Starting Network Manager... "
+    se sudo systemctl start NetworkManager # Restart nmcli.
     if [ $? -eq 0 ]; then
         gecho "Done."
     else
@@ -229,7 +229,7 @@ nm_start() {
 
 nm_stop() {
     echo -n "Stopping Network Manager... "
-    se sudo systemctl stop NetworkManager > /dev/null
+    se sudo systemctl stop NetworkManager
     if [ $? -eq 0 ]; then
         gecho "Done."
     else
@@ -246,7 +246,8 @@ exit_status=0
 
 ap_setup() {
     echo ""
-    hostapd_conf_file_check &&
+    nm_start &&
+        hostapd_conf_file_check &&
         eth_check &&
         wifi_check &&
         nm_stop &&    # Disable nmcli. It can interfere with brctl.
