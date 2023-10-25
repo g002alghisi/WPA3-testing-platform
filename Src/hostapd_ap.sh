@@ -6,6 +6,9 @@
 # The function of this script is setting up an AP using hostapd and, by means
 # of a bridge, get acces to the ethernet network, getting DHCP services and
 # acces to the Internet.
+# The security protocol used (WPA, WPA2, WPA3, ...) and the specific operational
+# mode depends on the .conf file. The specific .conf file can be selected by
+# means of an optiona parameter.
 #
 # The program is oranized as follow:
 # - At the beginning, all the interfaces are manually specified. It has to be
@@ -15,6 +18,13 @@
 #   interfaces, stop NetworkManager, setup the bridge.
 # - The hostapd deamon is then executed.
 # - Finally, a setdown phase allows to dismiss the bridge, start NetworkManager.
+
+### Input
+# The program accepts a single (optional) argument, to specify the security
+# protocol to be used between WPA2-Personal and WPA3-Personal.
+#
+#       hostapd_ap.sh [wpa2|wpa3]
+
 
 
 # Update the cached credentials (this avoid the insertion of the sudo password
@@ -67,14 +77,44 @@ se() {
 
 
 
+### *** Input parameters *** ###
+
+input_parameter_number="$#"
+input_parameter="$@"
+
+hostapd_config_file_wpa2="../Conf/hostapd_wpa2.conf"
+hostapd_config_file_wpa3="../Conf/hostapd_wpa3.conf"
+
+handle_input_parameter() {
+    if [ "$input_parameter_number" -ne 1 ]; then
+        echo -e "Wrong number of parameters. It should be 1: (wpa2|wpa3)."
+        return 1
+    fi
+
+    security_protocol="$input_parameter"
+    case $security_protocol in
+        "wpa2")
+            echo "[WPA2]"
+            hostapd_config_file="$hostapd_config_file_wpa2"
+            ;;
+        "wpa3")
+            echo "[WPA3]"
+            hostapd_config_file="$hostapd_config_file_wpa3"
+            ;;
+        *)
+            echo -e "Invalid parameter (wpa2|wpa3)."
+            return 1
+            ;;
+    esac
+}
+
+
 
 ### *** hostapd Config *** ###
 
-config_file="../Conf/hostapd_wpa2.conf"
-
 hostapd_conf_file_check() {
-    echo -n "Looking for hostapd.conf... "
-    se test -e "$config_file"
+    echo -n "Looking for $hostapd_config_file... "
+    se test -e "$hostapd_config_file"
     if [ "$?" -eq 0 ]; then
         gecho "Done."
     else
@@ -99,6 +139,16 @@ eth_check_if() {
         echo "Ethernet $eth_if interface not found. Please check $eth_if"
         return 1
     fi
+
+    # Force the eth_if up
+    echo -n "Forcing Ethernet interface up... "
+    se sudo ip link set $eth_if up
+    if [ "$?" -eq 0 ]; then
+        gecho "Done."
+    else
+        recho "Failed."
+        return 1
+    fi
 }
 
 eth_check_conn() {
@@ -120,6 +170,7 @@ eth_check() {
 }
 
 
+
 ### *** WiFi *** ###
 
 wifi_if="wlp3s0"
@@ -135,6 +186,15 @@ wifi_check_if() {
         return 1
     fi
 
+    # Force the wifi_if up
+    echo -n "Forcing WiFi interface up... "
+    se sudo ip link set $wifi_if up
+    if [ "$?" -eq 0 ]; then
+        gecho "Done."
+    else
+        recho "Failed."
+        return 1
+    fi
 }
 
 wifi_check_conn() {
@@ -170,7 +230,7 @@ wifi_check() {
 br_if="br-ap"
 
 br_setup() {
-    echo -n "Setting up the bridge $br_if... "
+    echo -n "Creating the bridge... "
     # Check if br_if already exists. If so, setdown the current and then setup
     # a new bridge.
     if ! [ -z "$(brctl show | grep $br_if)" ]; then
@@ -179,9 +239,17 @@ br_setup() {
     se sudo brctl addbr "$br_if" &&
         se sudo brctl addif "$br_if" "$eth_if" &&
         # && se sudo brctl addif "$br_if" "$wifi_if" # Done by hostapd.
-        se sudo ip link set "$br_if" up
-        # Apparently, the bridge interface has been created, but not brought up.
-        # To force it, the ip command can be used.
+    if [ $? -eq 0 ]; then
+        gecho "Done."
+    else
+        recho "Failed."
+        return 1
+    fi
+
+    # Apparently, the bridge interface has been created, but not brought up.
+    # To force it, the ip command can be used.
+    echo -n "Forcing up the bridge... "
+    se sudo ip link set "$br_if" up
     if [ $? -eq 0 ]; then
         gecho "Done."
     else
@@ -192,15 +260,23 @@ br_setup() {
 
 br_setdown() {
     # If the bridge doesn't exist, then do not do anything.
-    se brctl show | grep "$br_if"
-    if [ $? -eq 0 ]; then
+    if [ -z "$(brctl show | grep $br_if)" ]; then
         return
     fi
-    echo -n "Setting down the bridge $br_if... "
-    se sudo ip link set "$br_if" down &&
-        sudo brctl delbr br-ap
+
+    echo -n "Forcig down the bridge $br_if... "
+    se sudo ip link set "$br_if" down
     if [ $? -eq 0 ]; then
         gecho "Done."
+    else
+        recho "Failed."
+        return 1
+    fi
+
+    echo -n "Deleting the bridge... "
+    se sudo brctl delbr br-ap
+    if [ $? -eq 0 ]; then
+        gecho "Done"
     else
         recho "Failed."
         return 1
@@ -240,13 +316,12 @@ nm_stop() {
 
 
 
-### *** Main section *** ###
-
-exit_status=0
+### ### ### Main section ### ### ###
 
 ap_setup() {
     echo ""
-    nm_start &&
+    handle_input_parameter &&
+        nm_start &&
         hostapd_conf_file_check &&
         eth_check &&
         wifi_check &&
@@ -259,7 +334,7 @@ ap_run() {
     local exit_status=0
     echo ""
     cecho "Running Hostapd. Press Ctrl-C to stop."
-    sudo hostapd "$config_file"
+    sudo hostapd "$hostapd_config_file"
     exit_status=$?
     cecho "Hostapd is stopped."
     echo ""
@@ -274,6 +349,13 @@ ap_setdown() {
     return $exit_status
 }
 
+
+# Trap to handle errors and start ap_setdown phase
+trap ap_setdown ERR
+
+stty -echo  # Disable echo of keyboard
 ap_setup &&
 ap_run
 ap_setdown
+stty echo  # Disable echo of keyboard
+
