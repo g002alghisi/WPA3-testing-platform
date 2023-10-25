@@ -21,14 +21,23 @@
 ### Input
 # The program accepts a single (optional) argument, to specify the security
 # protocol to be used between WPA2-Personal and WPA3-Personal.
-#
 #       hostapd_ap.sh [wpa2|wpa3]
 
+### Output
+# To do...
 
 
-# Update the cached credentials (this avoid the insertion of the sudo password
-# during the execution of the successive commands).
-sudo -v
+### *** Files, interfaces and constants *** ###
+
+ETH_IF="enp4s0f1"
+WIFI_IF="wlp3s0"
+BR_IF="br-ap"
+
+HOSTAPD_WPA2_CONF_PATH="../Conf/hostapd_wpa2.conf"
+HOSTAPD_WPA3_CONF_PATH="../Conf/hostapd_wpa3.conf"
+
+
+
 
 
 
@@ -39,32 +48,16 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'    # No color
 
-
 recho() {
-    if [ "$#" -eq 1 ]; then
-        echo -e "${RED}$*${NC}"
-    else
-        echo "Error using recho. Too many arguments."
-        return 1
-    fi
+    echo -e "${RED}$*${NC}"
 }
 
 gecho() {
-    if [ "$#" -eq 1 ]; then
-        echo -e "${GREEN}$*${NC}"
-    else
-        echo "Error using gecho. Too many arguments."
-        return
-    fi
+    echo -e "${GREEN}$*${NC}"
 }
 
 cecho() {
-    if [ "$#" -eq 1 ]; then
-        echo -e "${CYAN}$*${NC}"
-    else
-        echo "Error using recho. Too many arguments."
-        return 1
-    fi
+    echo -e "${CYAN}$*${NC}"
 }
 
 
@@ -78,33 +71,14 @@ se() {
 
 ### *** Input parameters *** ###
 
-input_parameter_number="$#"
-input_parameter="$@"
 
-hostapd_config_file_wpa2="../Conf/hostapd_wpa2.conf"
-hostapd_config_file_wpa3="../Conf/hostapd_wpa3.conf"
-
-handle_input_parameter() {
-    if [ "$input_parameter_number" -ne 1 ]; then
+handle_SCRIPT_PARAM() {
+    if [ "$SCRIPT_PARAM_NUM" -ne 1 ]; then
         echo -e "Wrong number of parameters. It should be 1: (wpa2|wpa3)."
         return 1
     fi
 
-    security_protocol="$input_parameter"
-    case $security_protocol in
-        "wpa2")
-            echo "[WPA2]"
-            hostapd_config_file="$hostapd_config_file_wpa2"
-            ;;
-        "wpa3")
-            echo "[WPA3]"
-            hostapd_config_file="$hostapd_config_file_wpa3"
-            ;;
-        *)
-            echo -e "Invalid parameter (wpa2|wpa3)."
-            return 1
-            ;;
-    esac
+
 }
 
 
@@ -126,22 +100,20 @@ hostapd_conf_file_check() {
 
 ### *** Ethernet *** ###
 
-eth_if="enp4s0f1"
-
 eth_check_if() {
     echo -n "Checking Ethernet interface... "
-    eth_if_status="$(nmcli -t device status | grep $eth_if | grep ':ethernet:')"
+    eth_if_status="$(nmcli -t device status | grep $ETH_IF | grep ':ethernet:')"
     if [ "$?" -eq 0 ]; then
         gecho "Done."
     else
         recho "Failed."
-        echo "Ethernet $eth_if interface not found. Please check $eth_if"
+        echo "Ethernet $ETH_IF interface not found. Please check $ETH_IF"
         return 1
     fi
 
-    # Force the eth_if up
+    # Force the ETH_IF up
     echo -n "Forcing Ethernet interface up... "
-    se sudo ip link set $eth_if up
+    se sudo ip link set $ETH_IF up
     if [ "$?" -eq 0 ]; then
         gecho "Done."
     else
@@ -155,10 +127,10 @@ eth_check_conn() {
     eth_current_conn="$(echo $eth_if_status | grep ":connected:" | cut -d ':' -f 4)"
     if ! [ -z "$eth_current_conn" ]; then
         gecho "Done."
-        echo "$eth_if currently connected to $eth_current_conn."
+        echo "$ETH_IF currently connected to $eth_current_conn."
     else
         recho "Failed."
-        echo "$eth_if currently not connected. Please connect."
+        echo "$ETH_IF currently not connected. Please connect."
         return 1
     fi
 }
@@ -172,22 +144,20 @@ eth_check() {
 
 ### *** WiFi *** ###
 
-wifi_if="wlp3s0"
-
 wifi_check_if() {
     echo -n "Checking WiFi interface... "
-    wifi_if_status="$(nmcli -t device status | grep $wifi_if | grep ':wifi:')"
+    wifi_if_status="$(nmcli -t device status | grep $WIFI_IF | grep ':wifi:')"
     if [ $? -eq 0 ]; then
         gecho "Done."
     else
         recho "Failed."
-        echo "WiFi $wifi_if interface not found. Please check $wifi_if."
+        echo "WiFi $WIFI_IF interface not found. Please check $WIFI_IF."
         return 1
     fi
 
-    # Force the wifi_if up
+    # Force the WIFI_IF up
     echo -n "Forcing WiFi interface up... "
-    se sudo ip link set $wifi_if up
+    se sudo ip link set $WIFI_IF up
     if [ "$?" -eq 0 ]; then
         gecho "Done."
     else
@@ -201,7 +171,7 @@ wifi_check_conn() {
     wifi_current_conn="$(echo $wifi_if_status | grep ":connected:"| cut -d ':' -f 4)"
     if ! [ -z "$wifi_current_conn" ]; then
         gecho "Done."
-        echo -n "$wifi_if currently connected to $wifi_current_conn. Disconnecting..."
+        echo -n "$WIFI_IF currently connected to $wifi_current_conn. Disconnecting..."
         # Setting down current connection. Can interfere with hostapd.
         se nmcli c down "$wifi_current_conn"
         if [ $? -eq 0 ]; then
@@ -212,7 +182,7 @@ wifi_check_conn() {
         fi
     else
         gecho "Done."
-        echo "$wifi_if currently not connected."
+        echo "$WIFI_IF currently not connected."
     fi
 }
 
@@ -226,18 +196,16 @@ wifi_check() {
 
 ### *** Bridge *** ###
 
-br_if="br-ap"
-
 br_setup() {
     echo -n "Creating the bridge... "
-    # Check if br_if already exists. If so, setdown the current and then setup
+    # Check if BR_IF already exists. If so, setdown the current and then setup
     # a new bridge.
-    if ! [ -z "$(brctl show | grep $br_if)" ]; then
+    if ! [ -z "$(brctl show | grep $BR_IF)" ]; then
         se br_setdown
     fi
-    se sudo brctl addbr "$br_if" &&
-        se sudo brctl addif "$br_if" "$eth_if" &&
-        # && se sudo brctl addif "$br_if" "$wifi_if" # Done by hostapd.
+    se sudo brctl addbr "$BR_IF" &&
+        se sudo brctl addif "$BR_IF" "$ETH_IF" &&
+        # && se sudo brctl addif "$BR_IF" "$WIFI_IF" # Done by hostapd.
     if [ $? -eq 0 ]; then
         gecho "Done."
     else
@@ -248,7 +216,7 @@ br_setup() {
     # Apparently, the bridge interface has been created, but not brought up.
     # To force it, the ip command can be used.
     echo -n "Forcing up the bridge... "
-    se sudo ip link set "$br_if" up
+    se sudo ip link set "$BR_IF" up
     if [ $? -eq 0 ]; then
         gecho "Done."
     else
@@ -259,12 +227,12 @@ br_setup() {
 
 br_setdown() {
     # If the bridge doesn't exist, then do not do anything.
-    if [ -z "$(brctl show | grep $br_if)" ]; then
+    if [ -z "$(brctl show | grep $BR_IF)" ]; then
         return
     fi
 
-    echo -n "Forcig down the bridge $br_if... "
-    se sudo ip link set "$br_if" down
+    echo -n "Forcig down the bridge $BR_IF... "
+    se sudo ip link set "$BR_IF" down
     if [ $? -eq 0 ]; then
         gecho "Done."
     else
@@ -281,7 +249,6 @@ br_setdown() {
         return 1
     fi
 }
-
 
 
 
@@ -319,42 +286,65 @@ nm_stop() {
 
 ap_setup() {
     echo ""
-    handle_input_parameter &&
-        nm_start &&
-        hostapd_conf_file_check &&
-        eth_check &&
-        wifi_check &&
-        nm_stop &&    # Disable nmcli. It can interfere with brctl.
-        br_setup
-    return $?
+    nm_start &&
+    hostapd_conf_file_check &&
+    eth_check &&
+    wifi_check &&
+    nm_stop &&    # Disable nmcli. It can interfere with brctl.
+    br_setup
 }
 
 ap_run() {
-    local exit_status=0
     echo ""
     cecho "Running Hostapd. Press Ctrl-C to stop."
     sudo hostapd "$hostapd_config_file"
-    exit_status=$?
     cecho "Hostapd is stopped."
     echo ""
-    return $?
 }
 
 ap_setdown() {
-    local exit_status=0
-    br_setdown || exit_status=$?
-    nm_start || exit_status=$?
+    br_setdown
+    nm_start
     echo ""
-    return $exit_status
 }
 
 
-# Trap to handle errors and start ap_setdown phase
-trap ap_setdown ERR
 
-stty -echo  # Disable echo of keyboard
-ap_setup &&
-ap_run
-ap_setdown
-stty echo  # Disable echo of keyboard
+main() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: $0 STRING"
+        exit 1
+    fi
 
+    security_protocol="$1"
+    case $security_protocol in
+        "wpa2")
+            hostapd_config_file="$HOSTAPD_WPA2_CONF_PATH"
+            ;;
+        "wpa3")
+            hostapd_config_file="$HOSTAPD_WPA3_CONF_PATH"
+            ;;
+        *)
+            echo -e "Invalid parameter (wpa2|wpa3)."
+            return 1
+            ;;
+    esac
+
+    # Update the cached credentials (this avoid the insertion of the sudo password
+    # during the execution of the successive commands).
+    sudo -v
+
+    # Trap to handle errors and start ap_setdown phase
+    trap ap_setdown ERR
+
+    stty -echo
+
+    ap_setup &&
+    ap_run
+    ap_setdown
+
+    stty echo
+}
+
+
+main $@
