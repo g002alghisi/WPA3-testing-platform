@@ -61,7 +61,7 @@ cecho() {
 
 # Silent execution function. Execute the code printing just stderr.
 se() {
-    $* > /dev/null 2>1
+    $* >/dev/null
     return $?
 }
 
@@ -70,7 +70,7 @@ se() {
 
 ### *** hostapd Config *** ###
 
-config_file="../Conf/personal_hostapd.conf"
+config_file="../Conf/hostapd_wpa2.conf"
 
 hostapd_conf_file_check() {
     echo -n "Looking for hostapd.conf... "
