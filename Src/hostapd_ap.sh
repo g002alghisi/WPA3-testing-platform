@@ -93,12 +93,12 @@ eth_check_if() {
         log_error
     fi
 
-    log_info "Forcing Ethernet interface up... "
-    if sudo ip link set "$ETH_IF" up; then
-        log_success
-    else
-        log_error
-    fi
+#    log_info "Forcing Ethernet interface up... "
+#    if sudo ip link set "$ETH_IF" up; then
+#        log_success
+#    else
+#        log_error
+#    fi
 }
 
 eth_check_conn() {
@@ -119,6 +119,7 @@ eth_check() {
     return $?
 }
 
+
 ### *** WiFi *** ###
 
 wifi_check_if() {
@@ -131,12 +132,12 @@ wifi_check_if() {
         log_error
     fi
 
-    log_info "Forcing WiFi interface up... "
-    if sudo ip link set "$WIFI_IF" up; then
-        log_success
-    else
-        log_error
-    fi
+#    log_info "Forcing WiFi interface up... "
+#    if sudo ip link set "$WIFI_IF" up; then
+#        log_success
+#    else
+#        log_error
+#    fi
 }
 
 wifi_check_conn() {
