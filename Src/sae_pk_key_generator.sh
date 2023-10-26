@@ -27,7 +27,14 @@
 # - SSL/TLS Client and Server Tests
 # - Handling of S/MIME signed or encrypted mail
 # - Timestamp requests, generation and verification
-#
+
+# First install some dependencies (Ubuntu):
+# sudo apt-get update
+# sudo apt-get install libnl-3-dev libnl-genl-3-dev libnl-route-3-dev libssl-dev \
+# 	libdbus-1-dev git pkg-config build-essential macchanger net-tools python3-venv \
+#	aircrack-ng rfkill
+
+
 # in particular, the following command allows the EC parameter manipulation
 # and generation (ecparam).
 # The option -name prime256v1 is used to use  the ec parameters with specified

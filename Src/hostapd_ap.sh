@@ -35,7 +35,7 @@ BR_IF="br-ap"
 
 HOSTAPD_WPA2_CONF_PATH="../Conf/hostapd_wpa2.conf"
 HOSTAPD_WPA3_CONF_PATH="../Conf/hostapd_wpa3.conf"
-HOSTAPD_WPA3_PK_CONF_PATH="../Conf/hostapd_wpa3.conf"
+HOSTAPD_WPA3_PK_CONF_PATH="../Conf/hostapd_wpa3_pk.conf"
 
 
 ### *** Support *** ###
