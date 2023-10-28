@@ -101,7 +101,7 @@ def sae_hash(data, hash_len):
 def binstr2pw(pw_base_bin, num_chargroups=3):
 	temp = pw_base_bin[:20 * num_chargroups - 5]
 	temp = temp + "0" * (8 - (len(temp) % 8))
-	temp = int(temp, 2).to_bytes((len(temp) + 7) // 8, 'big')
+	temp = int(temp, 2).to_bytes((len(temp) + 7) // 8)
 	pw = base64.b32encode(temp).decode('utf-8').lower().strip('=')
 	pw = pw[:-1] + ComputeCheckChar32(pw[:-1])
 	pw = "-".join(pw[i:i+4] for i in range(0, len(pw), 4))
@@ -115,23 +115,23 @@ def main(args):
 	print("Compressed Pub Key:", pubkey_rfc5480.hex())
 
 	for modifier in range(2**128):
-		data = args.ssid.encode("utf-8") + int.to_bytes(modifier, 16, 'big') + pubkey_rfc5480
+		data = args.ssid.encode("utf-8") + int.to_bytes(modifier, 16) + pubkey_rfc5480
 		hash_result = sae_hash(data, hash_len)
 		if hash_result[0] == 0 and hash_result[1] == 0:
-			print(f"Progress: {modifier / expected * 100:.4f}%", end='\r')
+			print(f"Progress: {modifier / expected * 100:.4f}%",end="\r")
 			if hash_result[:args.sec] == b"\x00" * args.sec:
 				print(f"Found a valid hash in {modifier + 1} iterations: {hash_result.hex()}")
 				break
 
 	# Skip 8*Sec bits and add Sec_1b as the every 20th bit starting with one
 	sec_1b = 1 if args.sec == 3 else 0
-	pw_base_bin = bin(int.from_bytes(hash_result[args.sec:],'big')).strip("0b")
+	pw_base_bin = bin(int.from_bytes(hash_result[args.sec:])).strip("0b")
 	pw_base_bin = "0" * ( len(hash_result[args.sec:]) * 8 - len(pw_base_bin) - 1 ) + pw_base_bin
 	pw_base_bin = str(sec_1b) + str(sec_1b).join(pw_base_bin[i:i+19] for i in range(0, len(pw_base_bin), 19))
 
 	pw = binstr2pw(pw_base_bin, 3)
 	b64key = base64.b64encode(priv_key_data).decode('utf-8')
-	print(f"sae_password={pw}|pk={modifier.to_bytes(16,'big').hex()}:{b64key}")
+	print(f"sae_password={pw}|pk={modifier.to_bytes(16).hex()}:{b64key}")
 
 	print("# Longer passwords can be used for improved security at the cost of usability:")
 	for i in range(4,10):
