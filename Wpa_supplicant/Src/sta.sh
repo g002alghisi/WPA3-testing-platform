@@ -24,7 +24,6 @@
 ### Output
 # To do...
 
-
 ### *** Files, interfaces and constants *** ###
 
 WIFI_IF="wlx5ca6e63fe2da"
@@ -32,6 +31,7 @@ WIFI_IF="wlx5ca6e63fe2da"
 WPA_SUPPLICANT_WPA2_CONF_PATH="../Conf/wpa_supplicant_wpa2.conf"
 WPA_SUPPLICANT_WPA3_CONF_PATH="../Conf/wpa_supplicant_wpa3.conf"
 WPA_SUPPLICANT_WPA3_PK_CONF_PATH="../Conf/wpa_supplicant_wpa3_pk.conf"
+WPA_SUPPLICANT_CLI_CONF_PATH="../Conf/wpa_supplicant_cli.conf"
 
 
 ### *** Support *** ###
@@ -77,7 +77,7 @@ wpa_supplicant_conf_file_check() {
 
 
 
-### *** WiFi *** ###
+### *** WiFi *** ###&
 
 wifi_check_if() {
     log_info "Checking WiFi interface... "
@@ -149,23 +149,37 @@ nm_stop() {
 
 sta_setup() {
     echo ""
-    nm_start &&
+    nm_start > /dev/null &&
     wpa_supplicant_conf_file_check &&
     wifi_check &&
-    nm_stop
+    nm_stop &&
+    rfkill unblock wlan &> /dev/null
+    sudo killall wpa_supplicant &> /dev/null
 }
 
 sta_run() {
     echo ""
     echo -e "${CYAN}wpa_supplicant is running. Press Ctrl-C to stop.${NC}"
-    sudo wpa_supplicant -i "$WIFI_IF" -c "$wpa_supplicant_config_file"
+    if [ $cli_mode -eq 0 ]; then
+        sudo wpa_supplicant -i "$WIFI_IF" -c "$wpa_supplicant_config_file" -d
+    else
+        sudo wpa_supplicant -B -i "$WIFI_IF" -c "$wpa_supplicant_config_file" -d
+
+        echo ""
+        echo -e "${CYAN}wpa_cli is running too...${NC}"
+        sudo wpa_cli
+    fi
+
     echo -e "${CYAN}wpa_supplicant is stopped.${NC}"
     echo ""
 }
 
 sta_setdown() {
     echo ""
-    nm_star
+    sudo killall wpa_supplicant &> /dev/null
+    sudo killall wpa_cli &> /dev/null
+    rfkill unblock wlan &> /dev/null
+    nm_start
 }
 
 
@@ -176,6 +190,7 @@ main() {
         exit 1
     fi
 
+    cli_mode=0
     security_protocol="$1"
     case $security_protocol in
         "wpa2")
@@ -187,6 +202,10 @@ main() {
         "wpa3-pk")
             wpa_supplicant_config_file="$WPA_SUPPLICANT_WPA3_PK_CONF_PATH"
             ;;
+        "cli")
+            wpa_supplicant_config_file="$WPA_SUPPLICANT_CLI_CONF_PATH"
+            cli_mode=1
+            ;;
         *)
             echo -e "Invalid parameter (wpa2|wpa3|wpa3-pk)."
             return 1
@@ -197,16 +216,10 @@ main() {
     # during the execution of the successive commands).
     sudo -v
 
-    # Trap to handle errors and start sta_setdown phase
-    trap sta_setdown ERR
-
-    stty -echo
-
     sta_setup &&
     sta_run
     sta_setdown
 
-    stty echo
 }
 
 
