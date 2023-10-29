@@ -33,9 +33,9 @@ ETH_IF="enp4s0f1"
 WIFI_IF="wlp3s0"
 BR_IF="br-ap"
 
-HOSTAPD_WPA2_CONF_PATH="../Conf/hostapd_wpa2.conf"
-HOSTAPD_WPA3_CONF_PATH="../Conf/hostapd_wpa3.conf"
-HOSTAPD_WPA3_PK_CONF_PATH="../Conf/hostapd_wpa3_pk.conf"
+HOSTAPD_WPA2_CONF_PATH="../Conf/Ko/hostapd_wpa2.conf"
+HOSTAPD_WPA3_CONF_PATH="../Conf/Ko/hostapd_wpa3.conf"
+HOSTAPD_WPA3_PK_CONF_PATH="../Conf/Ko/hostapd_wpa3_pk.conf"
 
 
 ### *** Support *** ###
@@ -55,13 +55,6 @@ log_success() {
 
 log_error() {
     echo -e "${RED}Error.${NC}"
-}
-
-
-# Silent execution function. Execute the code printing just stderr.
-se() {
-    $* >/dev/null
-    return $?
 }
 
 
@@ -91,14 +84,16 @@ eth_check_if() {
         log_success
     else
         log_error
+        return 1
     fi
 
-#    log_info "Forcing Ethernet interface up... "
-#    if sudo ip link set "$ETH_IF" up; then
-#        log_success
-#    else
-#        log_error
-#    fi
+   log_info "Forcing Ethernet interface up... "
+   if sudo ip link set "$ETH_IF" up; then
+       log_success
+   else
+       log_error
+       return 1
+   fi
 }
 
 eth_check_conn() {
@@ -110,14 +105,10 @@ eth_check_conn() {
         log_info "$ETH_IF currently connected to $eth_current_conn."
     else
         log_error
+        return 1
     fi
 }
 
-eth_check() {
-    eth_check_if
-    eth_check_conn
-    return $?
-}
 
 
 ### *** WiFi *** ###
@@ -130,14 +121,15 @@ wifi_check_if() {
         log_success
     else
         log_error
+        return 1
     fi
 
-#    log_info "Forcing WiFi interface up... "
-#    if sudo ip link set "$WIFI_IF" up; then
-#        log_success
-#    else
-#        log_error
-#    fi
+   log_info "Forcing WiFi interface up... "
+   if sudo ip link set "$WIFI_IF" up; then
+       log_success
+   else
+       log_error
+   fi
 }
 
 wifi_check_conn() {
@@ -159,11 +151,6 @@ wifi_check_conn() {
     fi
 }
 
-wifi_check() {
-    wifi_check_if &&
-    wifi_check_conn
-}
-
 
 
 ### *** Bridge *** ###
@@ -178,6 +165,7 @@ br_setup() {
         log_success
     else
         log_error
+        return 1
     fi
 
     log_info "Forcing up the bridge... "
@@ -185,6 +173,7 @@ br_setup() {
         log_success
     else
         log_error
+        return 1
     fi
 }
 
@@ -194,6 +183,7 @@ br_setdown() {
         log_success
     else
         log_error
+        return 1
     fi
 
     log_info "Deleting the bridge... "
@@ -201,6 +191,7 @@ br_setdown() {
         log_success
     else
         log_error
+        return 1
     fi
 }
 
@@ -233,14 +224,27 @@ nm_stop() {
 }
 
 
+
+### *** Print AP information *** ###
+ap_print_info() {
+    echo "AP settings:"
+    echo ""
+    cat "$hostapd_config_file" | grep -vE '^(#|$)'
+    echo ""
+}
+
+
+
 ### ### ### Main section ### ### ###
 
 ap_setup() {
     echo ""
     nm_start &&
     hostapd_conf_file_check &&
-    eth_check &&
-    wifi_check &&
+    eth_check_if &&
+    eth_check_conn &&
+    wifi_check_if &&
+    wifi_check_conn &&
     nm_stop &&    # Disable nmcli. It can interfere with brctl.
     br_setup
 }
@@ -248,6 +252,8 @@ ap_setup() {
 ap_run() {
     echo ""
     echo -e "${CYAN}Running Hostapd. Press Ctrl-C to stop.${NC}"
+    ap_print_info
+    echo ""
     sudo hostapd "$hostapd_config_file"
     echo -e "${CYAN}Hostapd is stopped.${NC}"
     echo ""
@@ -288,8 +294,6 @@ main() {
     # during the execution of the successive commands).
     sudo -v
 
-    # Trap to handle errors and start ap_setdown phase
-    trap ap_setdown ERR
 
     stty -echo
 
@@ -301,4 +305,4 @@ main() {
 }
 
 
-main $@
+main "$@"
