@@ -19,7 +19,3 @@ To setup wireless LANs with different security protocol, different `.conf` files
 The configuration files have been created based on the template that can be found at `/usr/share/doc/hostapd/examples/hostapd.conf` (`Ubuntu`).
 
 In order to work with WPA3 SAE-PK, a special psk has to be generated. To do it, the original script `sae_pk_gen` is used. This can be found in the `hostapd` repository and compiled from the code following the tutorial at [https://github.com/vanhoefm/hostap-wpa3](https://github.com/vanhoefm/hostap-wpa3).
-To get the source code of hostapd the same link can be used, or it can be downloaded with(on `Ubuntu`):
-```
-apt source hostapd
-```

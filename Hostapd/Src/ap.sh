@@ -29,13 +29,13 @@
 
 ### *** Files, interfaces and constants *** ###
 
-ETH_IF="enp4s0f1"
-WIFI_IF="wlp3s0"
-BR_IF="br-ap"
+eth_if="enp4s0f1"
+wifi_if="wlp3s0"
+br_if="br-ap"
 
-HOSTAPD_WPA2_CONF_PATH="../Conf/Ko/hostapd_wpa2.conf"
-HOSTAPD_WPA3_CONF_PATH="../Conf/Ko/hostapd_wpa3.conf"
-HOSTAPD_WPA3_PK_CONF_PATH="../Conf/Ko/hostapd_wpa3_pk.conf"
+HOSTAPD_WPA2_CONF_PATH="../Conf/Basic/hostapd_wpa2.conf"
+HOSTAPD_WPA3_CONF_PATH="../Conf/Basic/hostapd_wpa3.conf"
+HOSTAPD_WPA3_PK_CONF_PATH="../Conf/Basic/hostapd_wpa3_pk.conf"
 
 
 ### *** Support *** ###
@@ -79,7 +79,7 @@ hostapd_conf_file_check() {
 eth_check_if() {
     log_info "Checking Ethernet interface... "
 
-    eth_if_status=$(nmcli -t device status | grep "$ETH_IF" | grep ':ethernet:')
+    eth_if_status=$(nmcli -t device status | grep "$eth_if" | grep ':ethernet:')
     if [ $? -eq 0 ]; then
         log_success
     else
@@ -88,7 +88,7 @@ eth_check_if() {
     fi
 
    log_info "Forcing Ethernet interface up... "
-   if sudo ip link set "$ETH_IF" up; then
+   if sudo ip link set "$eth_if" up; then
        log_success
    else
        log_error
@@ -102,7 +102,7 @@ eth_check_conn() {
     eth_current_conn=$(echo "$eth_if_status" | grep ":connected:" | cut -d ':' -f 4)
     if [ -n "$eth_current_conn" ]; then
         log_success
-        log_info "$ETH_IF currently connected to $eth_current_conn."
+        log_info "$eth_if currently connected to $eth_current_conn."
     else
         log_error
         return 1
@@ -116,7 +116,7 @@ eth_check_conn() {
 wifi_check_if() {
     log_info "Checking WiFi interface... "
 
-    wifi_if_status=$(nmcli -t device status | grep "$WIFI_IF" | grep ':wifi:')
+    wifi_if_status=$(nmcli -t device status | grep "$wifi_if" | grep ':wifi:')
     if [ $? -eq 0 ]; then
         log_success
     else
@@ -125,7 +125,7 @@ wifi_check_if() {
     fi
 
    log_info "Forcing WiFi interface up... "
-   if sudo ip link set "$WIFI_IF" up; then
+   if sudo ip link set "$wifi_if" up; then
        log_success
    else
        log_error
@@ -138,7 +138,7 @@ wifi_check_conn() {
     wifi_current_conn=$(echo "$wifi_if_status" | grep ":connected:" | cut -d ':' -f 4)
     if [ -n "$wifi_current_conn" ]; then
         log_success
-        log_info "$WIFI_IF currently connected to $wifi_current_conn. Disconnecting..."
+        log_info "$wifi_if currently connected to $wifi_current_conn. Disconnecting..."
         # Setting down the current connection. Can interfere with hostapd.
         if nmcli c down "$wifi_current_conn" > /dev/null; then
             log_success
@@ -147,7 +147,7 @@ wifi_check_conn() {
         fi
     else
         log_success
-        log_info "$WIFI_IF currently not connected."
+        log_info "$wifi_if currently not connected."
     fi
 }
 
@@ -157,11 +157,11 @@ wifi_check_conn() {
 
 br_setup() {
     log_info "Creating the bridge... "
-    if brctl show | grep -q "$BR_IF"; then
+    if brctl show | grep -q "$br_if"; then
         br_setdown
     fi
-    if sudo brctl addbr "$BR_IF" &&
-        sudo brctl addif "$BR_IF" "$ETH_IF"; then
+    if sudo brctl addbr "$br_if" &&
+        sudo brctl addif "$br_if" "$eth_if"; then
         log_success
     else
         log_error
@@ -169,7 +169,7 @@ br_setup() {
     fi
 
     log_info "Forcing up the bridge... "
-    if sudo ip link set "$BR_IF" up; then
+    if sudo ip link set "$br_if" up; then
         log_success
     else
         log_error
@@ -178,8 +178,8 @@ br_setup() {
 }
 
 br_setdown() {
-    log_info "Forcing down the bridge $BR_IF... "
-    if sudo ip link set "$BR_IF" down; then
+    log_info "Forcing down the bridge $br_if... "
+    if sudo ip link set "$br_if" down; then
         log_success
     else
         log_error
@@ -187,7 +187,7 @@ br_setdown() {
     fi
 
     log_info "Deleting the bridge... "
-    if sudo brctl delbr "$BR_IF"; then
+    if sudo brctl delbr "$br_if"; then
         log_success
     else
         log_error
@@ -254,7 +254,7 @@ ap_run() {
     echo -e "${CYAN}Running Hostapd. Press Ctrl-C to stop.${NC}"
     ap_print_info
     echo ""
-    sudo hostapd "$hostapd_config_file"
+    sudo hostapd "$hostapd_config_file" -dd
     echo -e "${CYAN}Hostapd is stopped.${NC}"
     echo ""
 }
@@ -268,10 +268,32 @@ ap_setdown() {
 
 
 main() {
-    if [ "$#" -ne 1 ]; then
-        echo "Usage: $0 STRING"
+    while getopts "w:e:" opt; do
+        case $opt in
+            w)
+            wifi_if="$OPTARG"
+            ;;
+            e)
+            eth_if="$OPTARG"
+            ;;
+            \?)
+            echo "Invalid option: -$OPTARG" >&2
+            exit 1
+            ;;
+            :)
+            echo "Option -$OPTARG requires an argument." >&2
+            exit 1
+            ;;
+        esac
+    done
+
+    shift $((OPTIND-1))
+
+    if [ $# -ne 1 ]; then
+        echo "Usage: $0 [-w wifi_if|-e eth_if] wpa2|wpa3|wpa3-pk"
         exit 1
     fi
+
 
     security_protocol="$1"
     case $security_protocol in
