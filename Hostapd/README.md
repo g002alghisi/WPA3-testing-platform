@@ -1,4 +1,4 @@
-# Hostapd
+# Hostapd Acces Point
 Creating an Acces Point with bridge on `Ubuntu`.
 
 ### Basic idea
@@ -10,7 +10,7 @@ These should be both used: `hostapd` is used to create an AP, and by means of `b
 
 Currently, the `ap.sh` bash script allows to safely launch `hostapd` by automatically de-connecting from the WiFi; moreover, it creates the bridge towards the Ethernet LAN.
 
-~The hostapd.conf configuration file has been set to turn on an 802.11ac AP with Automatic Channel Selection (ACS), performed by the driver of the Wireless NIC.~
+~The hostapd.conf configuration file has been set to turn on an 802.11ac AP with Automatic Channel Selection (ACS), performed by the driver of the Wireless NIC.~ <br>
 The `*hostapd.conf` configuration file have been written to setup an 802.11g AP, operating on the channel 1. The reason behind this choice is that it allows to have the broadest compatibility with various types of devices.
 
 ### WPA2 and WPA3
