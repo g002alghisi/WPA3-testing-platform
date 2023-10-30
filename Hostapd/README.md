@@ -1,4 +1,4 @@
-# Hostap-test
+# Hostapd
 Creating an Acces Point with bridge on `Ubuntu`.
 
 ### Basic idea
