@@ -312,7 +312,7 @@ main() {
             ;;
     esac
 
-    sed 's/^interface=*/interface=$wifi_if/g' "$hostapd_config_file"
+    sed -i "s/^interface=.*/interface=$wifi_if/" "$hostapd_config_file"
 
     # Update the cached credentials (this avoid the insertion of the sudo password
     # during the execution of the successive commands).
