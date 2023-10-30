@@ -1,4 +1,4 @@
-# Hostapd Acces Point
+# Hostapd Access Point
 Creating an Acces Point with bridge on `Ubuntu`.
 
 ### Basic idea
