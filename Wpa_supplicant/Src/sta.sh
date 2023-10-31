@@ -26,12 +26,12 @@
 
 ### *** Files, interfaces and constants *** ###
 
-WIFI_IF="wlx5ca6e63fe2da"
+wifi_if="wlx5ca6e63fe2da"
 
-WPA_SUPPLICANT_WPA2_CONF_PATH="../Conf/wpa_supplicant_wpa2.conf"
-WPA_SUPPLICANT_WPA3_CONF_PATH="../Conf/wpa_supplicant_wpa3.conf"
-WPA_SUPPLICANT_WPA3_PK_CONF_PATH="../Conf/wpa_supplicant_wpa3_pk.conf"
-WPA_SUPPLICANT_CLI_CONF_PATH="../Conf/wpa_supplicant_cli.conf"
+WPA_SUPPLICANT_WPA2_CONF_PATH="../Conf/Ko/wpa_supplicant_wpa2.conf"
+WPA_SUPPLICANT_WPA3_CONF_PATH="../Conf/Ko/wpa_supplicant_wpa3.conf"
+WPA_SUPPLICANT_WPA3_PK_CONF_PATH="../Conf/Ko/wpa_supplicant_wpa3_pk.conf"
+WPA_SUPPLICANT_CLI_CONF_PATH="../Conf/Ko/wpa_supplicant_cli.conf"
 
 
 ### *** Support *** ###
@@ -82,11 +82,12 @@ wpa_supplicant_conf_file_check() {
 wifi_check_if() {
     log_info "Checking WiFi interface... "
 
-    wifi_if_status=$(nmcli -t device status | grep "$WIFI_IF" | grep ':wifi:')
+    wifi_if_status=$(nmcli -t device status | grep "$wifi_if" | grep ':wifi:')
     if [ $? -eq 0 ]; then
         log_success
     else
         log_error
+        return 1
     fi
 }
 
@@ -97,22 +98,18 @@ wifi_check_conn() {
     wifi_current_conn=$(echo "$wifi_if_status" | grep ":connected:" | cut -d ':' -f 4)
     if [ -n "$wifi_current_conn" ]; then
         log_success
-        log_info "$WIFI_IF currently connected to $wifi_current_conn. Disconnecting..."
+        log_info "$wifi_if currently connected to $wifi_current_conn. Disconnecting..."
         # Setting down the current connection. Can interfere with wpa_supplicant.
         if nmcli c down "$wifi_current_conn" > /dev/null; then
             log_success
         else
             log_error
+            return 1
         fi
     else
         log_success
-        log_info "$WIFI_IF currently not connected."
+        log_info "$wifi_if currently not connected."
     fi
-}
-
-wifi_check() {
-    wifi_check_if &&
-    wifi_check_conn
 }
 
 
@@ -151,7 +148,8 @@ sta_setup() {
     echo ""
     nm_start > /dev/null &&
     wpa_supplicant_conf_file_check &&
-    wifi_check &&
+    wifi_check_if &&
+    wifi_check_conn &&
     nm_stop &&
     rfkill unblock wlan &> /dev/null
     sudo killall wpa_supplicant &> /dev/null
@@ -161,9 +159,9 @@ sta_run() {
     echo ""
     echo -e "${CYAN}wpa_supplicant is running. Press Ctrl-C to stop.${NC}"
     if [ $cli_mode -eq 0 ]; then
-        sudo wpa_supplicant -i "$WIFI_IF" -c "$wpa_supplicant_config_file" -d
+        sudo wpa_supplicant -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
     else
-        sudo wpa_supplicant -B -i "$WIFI_IF" -c "$wpa_supplicant_config_file" -d
+        sudo wpa_supplicant -B -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
 
         echo ""
         echo -e "${CYAN}wpa_cli is running too...${NC}"
@@ -185,10 +183,29 @@ sta_setdown() {
 
 
 main() {
-    if [ "$#" -ne 1 ]; then
-        echo "Usage: $0 STRING"
+     while getopts "w:" opt; do
+        case $opt in
+            w)
+                wifi_if="$OPTARG"
+                ;;
+            \?)
+                echo "Invalid option: -$OPTARG" >&2
+                exit 1
+                ;;
+            :)
+                echo "Option -$OPTARG requires an argument." >&2
+                exit 1
+                ;;
+        esac
+    done
+
+    shift $((OPTIND-1))
+
+    if [ $# -ne 1 ]; then
+        echo "Usage: $0 [-w wifi_if] wpa2|wpa3|wpa3-pk|cli"
         exit 1
     fi
+
 
     cli_mode=0
     security_protocol="$1"
@@ -208,7 +225,7 @@ main() {
             ;;
         *)
             echo -e "Invalid parameter (wpa2|wpa3|wpa3-pk)."
-            return 1
+            exit 1
             ;;
     esac
 

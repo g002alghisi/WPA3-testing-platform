@@ -254,7 +254,7 @@ ap_run() {
     echo -e "${CYAN}Running Hostapd. Press Ctrl-C to stop.${NC}"
     ap_print_info
     echo ""
-    sudo hostapd "$hostapd_config_file" -dd
+    sudo hostapd "$hostapd_config_file" -d
     echo -e "${CYAN}Hostapd is stopped.${NC}"
     echo ""
 }
@@ -271,19 +271,19 @@ main() {
     while getopts "w:e:" opt; do
         case $opt in
             w)
-            wifi_if="$OPTARG"
-            ;;
+                wifi_if="$OPTARG"
+                ;;
             e)
-            eth_if="$OPTARG"
-            ;;
+                eth_if="$OPTARG"
+                ;;
             \?)
-            echo "Invalid option: -$OPTARG" >&2
-            exit 1
-            ;;
+                echo "Invalid option: -$OPTARG" >&2
+                exit 1
+                ;;
             :)
-            echo "Option -$OPTARG requires an argument." >&2
-            exit 1
-            ;;
+                echo "Option -$OPTARG requires an argument." >&2
+                exit 1
+                ;;
         esac
     done
 
@@ -308,7 +308,7 @@ main() {
             ;;
         *)
             echo -e "Invalid parameter (wpa2|wpa3)."
-            return 1
+            exit 1
             ;;
     esac
 
