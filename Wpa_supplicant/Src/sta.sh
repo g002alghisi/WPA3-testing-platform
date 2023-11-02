@@ -28,10 +28,10 @@
 
 wifi_if="wlx5ca6e63fe2da"
 
-WPA_SUPPLICANT_WPA2_CONF_PATH="../Conf/Ko/wpa_supplicant_wpa2.conf"
-WPA_SUPPLICANT_WPA3_CONF_PATH="../Conf/Ko/wpa_supplicant_wpa3.conf"
-WPA_SUPPLICANT_WPA3_PK_CONF_PATH="../Conf/Ko/wpa_supplicant_wpa3_pk.conf"
-WPA_SUPPLICANT_CLI_CONF_PATH="../Conf/Ko/wpa_supplicant_cli.conf"
+WPA_SUPPLICANT_WPA2_CONF_PATH="../Conf/Basic/wpa_supplicant_wpa2.conf"
+WPA_SUPPLICANT_WPA3_CONF_PATH="../Conf/Basic/wpa_supplicant_wpa3.conf"
+WPA_SUPPLICANT_WPA3_PK_CONF_PATH="../Conf/Basic/wpa_supplicant_wpa3_pk.conf"
+WPA_SUPPLICANT_CLI_CONF_PATH="../Conf/Basic/wpa_supplicant_cli.conf"
 
 
 ### *** Support *** ###
@@ -233,9 +233,9 @@ main() {
     # during the execution of the successive commands).
     sudo -v
 
-    sta_setup &&
+    # sta_setup &&
     sta_run
-    sta_setdown
+    # sta_setdown
 
 }
 

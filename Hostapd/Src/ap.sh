@@ -33,9 +33,9 @@ eth_if="enp4s0f1"
 wifi_if="wlp3s0"
 br_if="br-ap"
 
-HOSTAPD_WPA2_CONF_PATH="../Conf/Basic/hostapd_wpa2.conf"
-HOSTAPD_WPA3_CONF_PATH="../Conf/Basic/hostapd_wpa3.conf"
-HOSTAPD_WPA3_PK_CONF_PATH="../Conf/Basic/hostapd_wpa3_pk.conf"
+HOSTAPD_WPA2_CONF_PATH="../Conf/Ko/hostapd_wpa2.conf"
+HOSTAPD_WPA3_CONF_PATH="../Conf/Ko/hostapd_wpa3.conf"
+HOSTAPD_WPA3_PK_CONF_PATH="../Conf/Ko/hostapd_wpa3_pk.conf"
 
 
 ### *** Support *** ###
