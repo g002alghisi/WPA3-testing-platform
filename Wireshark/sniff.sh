@@ -87,6 +87,10 @@ wifi_if_set_monitor () {
     sudo airmon-ng start "$wifi_if" > /dev/null &&
     if [ $? -eq 0 ]; then
         log_success
+        ifconfig | grep "$wifi_if" | cut -d ":" -f 1
+        # The previous command is needed because sometimes
+        # the wifi_interface name is changed in this way:
+        #   wlan0 -> wlan0mon
     else
         log_error
         return 1
