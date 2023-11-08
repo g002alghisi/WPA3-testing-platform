@@ -254,8 +254,7 @@ ap_run() {
     echo -e "${CYAN}Running Hostapd. Press Ctrl-C to stop.${NC}"
     ap_print_info
     echo ""
-    sudo /home/alghisi-vm/Downloads/Vanhoef_hostapd/hostap-wpa3/hostapd/hostapd "$hostapd_config_file" -d
-    # sudo hostapd "$hostapd_config_file" -d
+    sudo /home/alghisi-vm/Downloads/Ubuntu_hostapd/wpa-2.10/hostapd/hostapd "$hostapd_config_file" -d
     echo -e "${CYAN}Hostapd is stopped.${NC}"
     echo ""
 }
