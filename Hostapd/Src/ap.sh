@@ -29,6 +29,8 @@
 
 ### *** Files, interfaces and constants *** ###
 
+hostapd="../Other/hostapd"
+
 eth_if="enp4s0f1"
 wifi_if="wlp3s0"
 br_if="br-ap"
@@ -129,6 +131,7 @@ wifi_check_if() {
        log_success
    else
        log_error
+       return 1
    fi
 }
 
@@ -144,6 +147,7 @@ wifi_check_conn() {
             log_success
         else
             log_error
+            return 1
         fi
     else
         log_success
@@ -226,6 +230,7 @@ nm_stop() {
 
 
 ### *** Print AP information *** ###
+
 ap_print_info() {
     echo "AP settings:"
     echo ""
@@ -254,8 +259,8 @@ ap_run() {
     echo -e "${CYAN}Running Hostapd. Press Ctrl-C to stop.${NC}"
     ap_print_info
     echo ""
-    sudo /home/alghisi-vm/Downloads/Hostapd/hostap-wpa3/hostapd/hostapd "$hostapd_config_file" -d
-    # sudo hostapd "$hostapd_config_file" -d
+    pkill hostapd 
+    sudo "$hostapd" "$hostapd_config_file" #-d
     echo -e "${CYAN}Hostapd is stopped.${NC}"
     echo ""
 }

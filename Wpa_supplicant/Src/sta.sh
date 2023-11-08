@@ -26,6 +26,8 @@
 
 ### *** Files, interfaces and constants *** ###
 
+wpa_supplicant="../Other/wpa_supplicant"
+
 wifi_if="wlx5ca6e63fe2da"
 
 WPA_SUPPLICANT_WPA2_CONF_PATH="../Conf/Ko/wpa_supplicant_wpa2.conf"
@@ -161,9 +163,7 @@ sta_setup() {
     wpa_supplicant_conf_file_check &&
     wifi_check_if &&
     wifi_check_conn &&
-    nm_stop &&
-    rfkill unblock wlan &> /dev/null
-    sudo killall wpa_supplicant &> /dev/null
+    nm_stop
 }
 
 sta_run() {
@@ -172,11 +172,11 @@ sta_run() {
     echo ""
     sta_print_info
     echo ""
+    sudo killall wpa_supplicant
     if [ $cli_mode -eq 0 ]; then
-        sudo wpa_supplicant -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
+        sudo "$wpa_supplicant" -i "$wifi_if" -c "$wpa_supplicant_config_file" #-d
     else
-        sudo wpa_supplicant -B -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
-
+        sudo "$wpa_supplicant" -B -i "$wifi_if" -c "$wpa_supplicant_config_file" #-d
         echo ""
         echo -e "${CYAN}wpa_cli is running too...${NC}"
         sudo wpa_cli
@@ -190,8 +190,8 @@ sta_setdown() {
     echo ""
     sudo killall wpa_supplicant &> /dev/null
     sudo killall wpa_cli &> /dev/null
-    rfkill unblock wlan &> /dev/null
     nm_start
+    echo ""
 }
 
 
@@ -247,9 +247,9 @@ main() {
     # during the execution of the successive commands).
     sudo -v
 
-    # sta_setup &&
+    sta_setup &&
     sta_run
-    # sta_setdown
+    sta_setdown
 
 }
 

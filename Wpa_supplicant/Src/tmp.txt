@@ -1,0 +1,3095 @@
+
+[0;36mRunning Wpa-supplicant. Press Ctrl-C to stop.[0m
+
+STA settings:
+
+network={
+  ssid="WPA3-PK-Network"
+  sae_password="zz6z-xmft-r4h4"
+  key_mgmt=SAE
+  ieee80211w=2
+}
+
+
+wpa_supplicant v2.10
+random: getrandom() support available
+Successfully initialized wpa_supplicant
+Initializing interface 'wlp3s0' conf '../Conf/Basic/wpa_supplicant_wpa3_pk.conf' driver 'default' ctrl_interface 'N/A' bridge 'N/A'
+Configuration file '../Conf/Basic/wpa_supplicant_wpa3_pk.conf' -> '/home/alghisi/GitHub/Hostapd-test/Wpa_supplicant/Src/../Conf/Basic/wpa_supplicant_wpa3_pk.conf'
+Reading configuration file '/home/alghisi/GitHub/Hostapd-test/Wpa_supplicant/Src/../Conf/Basic/wpa_supplicant_wpa3_pk.conf'
+Priority group 0
+   id=0 ssid='WPA3-PK-Network'
+nl80211: TDLS supported
+nl80211: TDLS external setup
+nl80211: Supported cipher 00-0f-ac:1
+nl80211: Supported cipher 00-0f-ac:5
+nl80211: Supported cipher 00-0f-ac:2
+nl80211: Supported cipher 00-0f-ac:4
+nl80211: Supported cipher 00-0f-ac:6
+nl80211: Supported cipher 00-0f-ac:13
+nl80211: Supported cipher 00-0f-ac:11
+nl80211: Supported cipher 00-0f-ac:12
+nl80211: Supports Probe Response offload in AP mode
+nl80211: Using driver-based off-channel TX
+nl80211: Driver-advertised extended capabilities (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+nl80211: Driver-advertised extended capabilities mask (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+nl80211: Use separate P2P group interface (driver advertised support)
+nl80211: Enable multi-channel concurrent (driver advertised support)
+nl80211: use P2P_DEVICE support
+nl80211: key_mgmt=0x1fd0f enc=0xf0f auth=0x7 flags=0x4000531fb7bfbe0 rrm_flags=0x30 probe_resp_offloads=0x7 max_stations=32 max_remain_on_chan=5000 max_scan_ssids=16
+nl80211: interface wlp3s0 in phy phy0
+nl80211: Set mode ifindex 3 iftype 2 (STATION)
+nl80211: Subscribe to mgmt frames with non-AP handle 0x555c8a352f80
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0104 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 01 04
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=040a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=040b multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0b
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=040c multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0c
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=040d multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0d
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=090a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=090b multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0b
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=090c multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0c
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=090d multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0d
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0409506f9a09 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=6): 04 09 50 6f 9a 09
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=7f506f9a09 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=5): 7f 50 6f 9a 09
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0409506f9a1a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=6): 04 09 50 6f 9a 1a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0800 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 08 00
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0801 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 08 01
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=040e multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0e
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=12 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=1): 12
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=06 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=1): 06
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0a07 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 07
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0a11 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 11
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0a0b multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 0b
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0a1a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 1a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=1101 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 11 01
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=1102 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 11 02
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0505 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 05 05
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=0500 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 05 00
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=1301 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 13 01
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=1305 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 13 05
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a352f80 match=7e506f9a1a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=5): 7e 50 6f 9a 1a
+nl80211: Failed to register Action frame processing - ignore for now
+rfkill: initial event: idx=3 type=1 op=0 soft=0 hard=0
+netlink: Operstate: ifindex=3 linkmode=1 (userspace-control), operstate=5 (IF_OPER_DORMANT)
+Add interface wlp3s0 to a new radio phy0
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180 5200[NO_IR] 5220 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR] 5560[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+wlp3s0: Own MAC address: 3c:a0:67:80:99:a3
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=(nil) key_idx=0 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=(nil) key_idx=1 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=(nil) key_idx=2 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=(nil) key_idx=3 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=(nil) key_idx=4 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=(nil) key_idx=5 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+wlp3s0: RSN: flushing PMKID list in the driver
+nl80211: Flush PMKIDs
+wlp3s0: Setting scan request: 0.100000 sec
+TDLS: TDLS operation supported by driver
+TDLS: Driver uses external link setup
+TDLS: Driver does not support TDLS channel switching
+wlp3s0: WPS: UUID based on MAC address: d05e09a0-7916-5aa9-92e7-6727735bf958
+ENGINE: Loading builtin engines
+ENGINE: Loading builtin engines
+EAPOL: SUPP_PAE entering state DISCONNECTED
+EAPOL: Supplicant port status: Unauthorized
+nl80211: Skip set_supp_port(unauthorized) while not associated
+EAPOL: KEY_RX entering state NO_KEY_RECEIVE
+EAPOL: SUPP_BE entering state INITIALIZE
+EAP: EAP entering state DISABLED
+MBO: Update non-preferred channels, non_pref_chan=N/A
+wlp3s0: Added interface wlp3s0
+wlp3s0: State: DISCONNECTED -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+nl80211: Create interface iftype 10 (P2P_DEVICE)
+nl80211: New P2P Device interface p2p-dev-wlp3s0 (0xf) created
+Initializing interface 'p2p-dev-wlp3s0' conf '/home/alghisi/GitHub/Hostapd-test/Wpa_supplicant/Src/../Conf/Basic/wpa_supplicant_wpa3_pk.conf' driver 'nl80211' ctrl_interface 'N/A' bridge 'N/A'
+Configuration file '/home/alghisi/GitHub/Hostapd-test/Wpa_supplicant/Src/../Conf/Basic/wpa_supplicant_wpa3_pk.conf' -> '/home/alghisi/GitHub/Hostapd-test/Wpa_supplicant/Src/../Conf/Basic/wpa_supplicant_wpa3_pk.conf'
+Reading configuration file '/home/alghisi/GitHub/Hostapd-test/Wpa_supplicant/Src/../Conf/Basic/wpa_supplicant_wpa3_pk.conf'
+Priority group 0
+   id=0 ssid='WPA3-PK-Network'
+nl80211: TDLS supported
+nl80211: TDLS external setup
+nl80211: Supported cipher 00-0f-ac:1
+nl80211: Supported cipher 00-0f-ac:5
+nl80211: Supported cipher 00-0f-ac:2
+nl80211: Supported cipher 00-0f-ac:4
+nl80211: Supported cipher 00-0f-ac:6
+nl80211: Supported cipher 00-0f-ac:13
+nl80211: Supported cipher 00-0f-ac:11
+nl80211: Supported cipher 00-0f-ac:12
+nl80211: Supports Probe Response offload in AP mode
+nl80211: Using driver-based off-channel TX
+nl80211: Driver-advertised extended capabilities (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+nl80211: Driver-advertised extended capabilities mask (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+nl80211: Use separate P2P group interface (driver advertised support)
+nl80211: Enable multi-channel concurrent (driver advertised support)
+nl80211: use P2P_DEVICE support
+nl80211: key_mgmt=0x1fd0f enc=0xf0f auth=0x7 flags=0x4000531fb7bfbe0 rrm_flags=0x30 probe_resp_offloads=0x7 max_stations=32 max_remain_on_chan=5000 max_scan_ssids=16
+nl80211: interface p2p-dev-wlp3s0 in phy phy0
+nl80211: Set mode ifindex 0 iftype 10 (P2P_DEVICE)
+nl80211: Failed to set interface 0 to mode 10: -22 (Invalid argument)
+nl80211: Subscribe to mgmt frames with non-AP handle 0x555c8a429590
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0104 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=040a multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=040b multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=040c multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=040d multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=090a multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=090b multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=090c multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=090d multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0409506f9a09 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=7f506f9a09 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0409506f9a1a multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0800 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0801 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=040e multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=12 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=06 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0a07 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0a11 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0a0b multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0a1a multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=1101 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=1102 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0505 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=0500 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=1301 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=1305 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555c8a429590 match=7e506f9a1a multicast=0
+nl80211: Use (wlp3s0) to initialize P2P Device rfkill
+rfkill: initial event: idx=3 type=1 op=0 soft=0 hard=0
+nl80211: Start P2P Device p2p-dev-wlp3s0 (0xf): Device or resource busy
+nl80211: Could not set interface 'p2p-dev-wlp3s0' UP
+nl80211: deinit ifname=p2p-dev-wlp3s0 disabled_11b_rates=0
+nl80211: Remove monitor interface: refcount=0
+netlink: Operstate: ifindex=0 linkmode=0 (kernel-control), operstate=6 (IF_OPER_UP)
+nl80211: Stop P2P Device p2p-dev-wlp3s0 (0xf): Network is down
+nl80211: Unsubscribe mgmt frames handle 0x8888ddd402ca1d19 (deinit)
+nl80211: Delete P2P Device p2p-dev-wlp3s0 (0xf): Success
+p2p-dev-wlp3s0: Failed to initialize driver interface
+Failed to add interface p2p-dev-wlp3s0
+p2p-dev-wlp3s0: Cancelling scan request
+p2p-dev-wlp3s0: Cancelling authentication timeout
+Off-channel: Clear pending Action frame TX (pending_action_tx=(nil)
+QM: Clear all active DSCP policies
+p2p-dev-wlp3s0: CTRL-EVENT-DSCP-POLICY clear_all
+P2P: Failed to add P2P Device interface
+P2P: Failed to enable P2P Device interface
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=5 linkmode=0 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=5 linkmode=1 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=6 linkmode=1 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=5 linkmode=1 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=6 linkmode=1 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+wlp3s0: State: DISCONNECTED -> SCANNING
+wlp3s0: Starting AP scan for wildcard SSID
+wlp3s0: Add radio work 'scan'@0x555c8a428fd0
+wlp3s0: First radio work item in the queue - schedule start immediately
+wlp3s0: Starting radio work 'scan'@0x555c8a428fd0 after 0.000025 second wait
+wlp3s0: nl80211: scan request
+Scan requested (ret=0) - scan timeout 10 seconds
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: Own scan request started a scan in 0.000080 seconds
+EAPOL: disable timer tick
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700 5720 5745 5765 5785 5805 5825 5845
+wlp3s0: Event SCAN_RESULTS (3) received
+wlp3s0: Scan completed in 6.612410 seconds
+nl80211: Received scan results (55 BSSes)
+nl80211: Scan results indicate BSS status with 1c:28:af:81:6e:32 as associated
+nl80211: Local state (not associated) does not match with BSS state
+nl80211: Clear possible state mismatch (1c:28:af:81:6e:32)
+wlp3s0: nl80211: MLME command failed: reason=2 ret=-1 (Operation not permitted)
+wlp3s0: BSS: Start scan result update 1
+wlp3s0: BSS: Add new id 0 BSSID 1c:28:af:81:6e:30 SSID 'Ateneo' freq 5180
+wlp3s0: BSS: Add new id 1 BSSID 1c:28:af:81:6e:32 SSID 'Studenti' freq 5180
+wlp3s0: BSS: Add new id 2 BSSID 1c:28:af:81:6e:33 SSID 'eduroam' freq 5180
+wlp3s0: BSS: Add new id 3 BSSID 50:64:2b:18:ce:be SSID 'MuLan_5' freq 5260
+wlp3s0: BSS: Add new id 4 BSSID 28:d1:27:d3:28:f3 SSID '' freq 5180
+wlp3s0: BSS: Add new id 5 BSSID 1c:28:af:81:55:52 SSID 'Studenti' freq 5220
+wlp3s0: BSS: Add new id 6 BSSID 1c:28:af:80:ee:f3 SSID 'eduroam' freq 5805
+wlp3s0: BSS: Add new id 7 BSSID 1c:28:af:81:55:53 SSID 'eduroam' freq 5220
+wlp3s0: BSS: Add new id 8 BSSID a8:5b:f7:11:7c:f3 SSID 'eduroam' freq 5640
+wlp3s0: BSS: Add new id 9 BSSID 1c:28:af:80:ee:f0 SSID 'Ateneo' freq 5805
+wlp3s0: BSS: Add new id 10 BSSID a8:5b:f7:11:7c:f2 SSID 'Studenti' freq 5640
+wlp3s0: BSS: Add new id 11 BSSID 1c:28:af:80:ee:f2 SSID 'Studenti' freq 5805
+wlp3s0: BSS: Add new id 12 BSSID 1c:28:af:81:6e:20 SSID 'Ateneo' freq 2462
+wlp3s0: BSS: Add new id 13 BSSID 1c:28:af:81:6e:22 SSID 'Studenti' freq 2462
+wlp3s0: BSS: Add new id 14 BSSID 1c:28:af:81:6e:23 SSID 'eduroam' freq 2462
+wlp3s0: BSS: Add new id 15 BSSID 1c:28:af:80:ee:e2 SSID 'Studenti' freq 2462
+wlp3s0: BSS: Add new id 16 BSSID 1c:28:af:81:66:83 SSID 'eduroam' freq 2412
+wlp3s0: BSS: Add new id 17 BSSID 1c:28:af:82:52:20 SSID 'Ateneo' freq 2412
+wlp3s0: BSS: Add new id 18 BSSID 1c:28:af:81:66:82 SSID 'Studenti' freq 2412
+wlp3s0: BSS: Add new id 19 BSSID 1c:28:af:82:52:23 SSID 'eduroam' freq 2412
+wlp3s0: BSS: Add new id 20 BSSID 1c:28:af:81:66:80 SSID 'Ateneo' freq 2412
+wlp3s0: BSS: Add new id 21 BSSID 1c:28:af:82:9e:63 SSID 'eduroam' freq 2437
+wlp3s0: BSS: Add new id 22 BSSID 1c:28:af:81:52:e2 SSID 'Studenti' freq 2437
+wlp3s0: BSS: Add new id 23 BSSID 1c:28:af:81:52:e3 SSID 'eduroam' freq 2437
+wlp3s0: BSS: Add new id 24 BSSID 1c:28:af:81:52:e0 SSID 'Ateneo' freq 2437
+wlp3s0: BSS: Add new id 25 BSSID a8:5b:f7:11:7c:f0 SSID 'Ateneo' freq 5640
+wlp3s0: BSS: Add new id 26 BSSID ce:21:19:a3:aa:32 SSID 'AndroidAP8070' freq 2412
+wlp3s0: BSS: Add new id 27 BSSID 5c:a6:e6:3f:e2:da SSID 'WPA3-PK-Network' freq 2412
+wlp3s0: BSS: Add new id 28 BSSID 1c:28:af:81:66:93 SSID 'eduroam' freq 5260
+wlp3s0: BSS: Add new id 29 BSSID 1c:28:af:81:66:92 SSID 'Studenti' freq 5260
+wlp3s0: BSS: Add new id 30 BSSID 1c:28:af:81:66:90 SSID 'Ateneo' freq 5260
+wlp3s0: BSS: Add new id 31 BSSID 02:71:47:a0:7a:f8 SSID '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' freq 5220
+wlp3s0: BSS: Add new id 32 BSSID 1c:28:af:82:52:33 SSID 'eduroam' freq 5500
+wlp3s0: BSS: Add new id 33 BSSID 1c:28:af:82:52:30 SSID 'Ateneo' freq 5500
+wlp3s0: BSS: Add new id 34 BSSID 1c:28:af:82:b3:d0 SSID 'Ateneo' freq 5500
+wlp3s0: BSS: Add new id 35 BSSID 1c:28:af:80:c6:90 SSID 'Ateneo' freq 5500
+wlp3s0: BSS: Add new id 36 BSSID 1c:28:af:82:52:32 SSID 'Studenti' freq 5500
+wlp3s0: BSS: Add new id 37 BSSID 1c:28:af:80:c6:93 SSID 'eduroam' freq 5500
+wlp3s0: BSS: Add new id 38 BSSID 1c:28:af:82:b3:d2 SSID 'Studenti' freq 5500
+wlp3s0: BSS: Add new id 39 BSSID 1c:28:af:81:cc:90 SSID 'Ateneo' freq 5580
+wlp3s0: BSS: Add new id 40 BSSID 1c:28:af:81:cc:92 SSID 'Studenti' freq 5580
+wlp3s0: BSS: Add new id 41 BSSID 1c:28:af:82:b3:d3 SSID 'eduroam' freq 5500
+wlp3s0: BSS: Add new id 42 BSSID 1c:28:af:81:cc:93 SSID 'eduroam' freq 5580
+wlp3s0: BSS: Add new id 43 BSSID 1c:28:af:81:6e:31 SSID 'Ospiti' freq 5180
+wlp3s0: BSS: Add new id 44 BSSID 1c:28:af:81:55:51 SSID 'Ospiti' freq 5220
+wlp3s0: BSS: Add new id 45 BSSID 1c:28:af:80:ee:f1 SSID 'Ospiti' freq 5805
+wlp3s0: BSS: Add new id 46 BSSID a8:5b:f7:11:7c:f1 SSID 'Ospiti' freq 5640
+wlp3s0: BSS: Add new id 47 BSSID 1c:28:af:81:6e:21 SSID 'Ospiti' freq 2462
+wlp3s0: BSS: Add new id 48 BSSID 1c:28:af:80:ee:e1 SSID 'Ospiti' freq 2462
+wlp3s0: BSS: Add new id 49 BSSID 1c:28:af:81:66:81 SSID 'Ospiti' freq 2412
+wlp3s0: BSS: Add new id 50 BSSID 1c:28:af:81:66:91 SSID 'Ospiti' freq 5260
+wlp3s0: BSS: Add new id 51 BSSID 1c:28:af:80:c6:91 SSID 'Ospiti' freq 5500
+wlp3s0: BSS: Add new id 52 BSSID 1c:28:af:81:cc:91 SSID 'Ospiti' freq 5580
+wlp3s0: BSS: Add new id 53 BSSID 1c:28:af:82:52:31 SSID 'Ospiti' freq 5500
+wlp3s0: BSS: Add new id 54 BSSID 1c:28:af:82:b3:d1 SSID 'Ospiti' freq 5500
+BSS: last_scan_res_used=55/64
+wlp3s0: New scan results available (own=1 ext=0)
+WPS: AP 02:71:47:a0:7a:f8 type 0 added
+WPS: AP[0] 02:71:47:a0:7a:f8 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+wlp3s0: Radio work 'scan'@0x555c8a428fd0 done in 6.614498 seconds
+wlp3s0: radio_work_free('scan'@0x555c8a428fd0): num_active_works --> 0
+wlp3s0: Selecting BSS from priority group 0
+wlp3s0: 0: 1c:28:af:81:6e:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 1: 1c:28:af:81:6e:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 2: 1c:28:af:81:6e:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 3: 50:64:2b:18:ce:be ssid='MuLan_5' wpa_ie_len=0 rsn_ie_len=24 caps=0x1011 level=-68 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 4: 28:d1:27:d3:28:f3 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x31 level=-74 freq=5180 
+wlp3s0:    skip - SSID not known
+wlp3s0: 5: 1c:28:af:81:55:52 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 6: 1c:28:af:80:ee:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 7: 1c:28:af:81:55:53 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 8: a8:5b:f7:11:7c:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 9: 1c:28:af:80:ee:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 10: a8:5b:f7:11:7c:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 11: 1c:28:af:80:ee:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-80 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 12: 1c:28:af:81:6e:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-61 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 13: 1c:28:af:81:6e:22 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-61 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 14: 1c:28:af:81:6e:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-63 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 15: 1c:28:af:80:ee:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-70 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 16: 1c:28:af:81:66:83 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 17: 1c:28:af:82:52:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 18: 1c:28:af:81:66:82 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 19: 1c:28:af:82:52:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 20: 1c:28:af:81:66:80 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-78 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 21: 1c:28:af:82:9e:63 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-82 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 22: 1c:28:af:81:52:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 23: 1c:28:af:81:52:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 24: 1c:28:af:81:52:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 25: a8:5b:f7:11:7c:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-80 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 26: ce:21:19:a3:aa:32 ssid='AndroidAP8070' wpa_ie_len=0 rsn_ie_len=20 caps=0x1511 level=-90 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 27: 5c:a6:e6:3f:e2:da ssid='WPA3-PK-Network' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-36 freq=2412 
+wlp3s0:    selected based on RSN IE
+wlp3s0:    selected BSS 5c:a6:e6:3f:e2:da ssid='WPA3-PK-Network'
+wlp3s0: Considering connect request: reassociate: 0  selected: 5c:a6:e6:3f:e2:da  bssid: 00:00:00:00:00:00  pending: 00:00:00:00:00:00  wpa_state: SCANNING  ssid=0x555c8a3535d0  current_ssid=(nil)
+wlp3s0: Request association with 5c:a6:e6:3f:e2:da
+wlp3s0: No ongoing scan/p2p-scan found to abort
+wlp3s0: Add radio work 'sme-connect'@0x555c8a428fd0
+wlp3s0: First radio work item in the queue - schedule start immediately
+wlp3s0: Starting radio work 'sme-connect'@0x555c8a428fd0 after 0.000014 second wait
+wlp3s0: WPA: clearing own WPA/RSN IE
+wlp3s0: RSN: clearing own RSNXE
+wlp3s0: Automatic auth_alg selection: 0x1
+wlp3s0: Using SAE auth_alg
+RSN: PMKSA cache search - network_ctx=(nil) try_opportunistic=0 akmp=0x0
+RSN: Search for BSSID 5c:a6:e6:3f:e2:da
+RSN: No PMKSA cache entry found
+wlp3s0: RSN: using IEEE 802.11i/D9.0
+wlp3s0: WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 1024 proto 2
+wlp3s0: WPA: Selected mgmt group cipher 32
+wlp3s0: WPA: clearing AP WPA IE
+WPA: set AP RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00
+wlp3s0: WPA: clearing AP RSNXE
+wlp3s0: WPA: AP group 0x10 network profile group 0x18; available group 0x10
+wlp3s0: WPA: using GTK CCMP
+wlp3s0: WPA: AP pairwise 0x10 network profile pairwise 0x18; available pairwise 0x10
+wlp3s0: WPA: using PTK CCMP
+wlp3s0: WPA: AP key_mgmt 0x400 network profile key_mgmt 0x400; available key_mgmt 0x400
+wlp3s0: RSN: using KEY_MGMT SAE
+wlp3s0: WPA: AP mgmt_group_cipher 0x20 network profile mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+wlp3s0: WPA: using MGMT group cipher AES-128-CMAC
+WPA: Set own WPA IE default - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 00 00 00 0f ac 06
+RSN: Set own RSNXE default - hexdump(len=0):
+wlp3s0: SME: Selected AP supports MFP: require MFP
+RRM: Determining whether RRM can be used - device support: 0x30
+RRM: No RRM in network
+Added supported operating classes IE - hexdump(len=22): 3b 14 51 51 53 54 73 74 75 76 77 78 79 7a 7b 7c 7d 7e 7f 80 81 82
+RSN: PMKSA cache search - network_ctx=0x555c8a3535d0 try_opportunistic=0 akmp=0x400
+RSN: Search for BSSID 5c:a6:e6:3f:e2:da
+RSN: No PMKSA cache entry found
+SAE: Selecting supported ECC group 19
+wlp3s0: SME: Selected SAE group 19
+SAE: password - hexdump_ascii(len=14): [REMOVED]
+SAE: PWE derivation - addr1=3c:a0:67:80:99:a3 addr2=5c:a6:e6:3f:e2:da
+SAE: counter = 001
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0x00
+SAE: counter = 002
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 003
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 004
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 005
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 006
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 007
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 008
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 009
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 010
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 011
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 012
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 013
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 014
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 015
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 016
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 017
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 018
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 019
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 020
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 021
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 022
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 023
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 024
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 025
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 026
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 027
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 028
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 029
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 030
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 031
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 032
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 033
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 034
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 035
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 036
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 037
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 038
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 039
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 040
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: PWE - hexdump(len=64): [REMOVED]
+SAE: own commit-scalar - hexdump(len=32): 77 b6 f4 1d 1a a4 9f 47 45 ea a4 84 d5 a2 39 1a 2b 5d 44 ac f7 9b 03 cb f6 7a c6 4c 6d 0d 71 18
+SAE: own commit-element(x) - hexdump(len=32): 6e b1 76 21 0c 9a a4 08 44 10 1c 3b c4 91 e3 c2 78 17 b6 9f 62 cb e3 53 cc 1a 28 8e b7 23 5d 23
+SAE: own commit-element(y) - hexdump(len=32): 3d 3d 86 80 83 ab b0 90 d4 2a 49 69 88 96 57 d7 b0 0d ad cf 57 50 63 a2 94 3a ea 5d be d6 d7 e9
+EAPOL: External notification - EAP success=0
+EAPOL: External notification - EAP fail=0
+EAPOL: External notification - portControl=Auto
+wlp3s0: Cancelling scan request
+wlp3s0: SME: Trying to authenticate with 5c:a6:e6:3f:e2:da (SSID='WPA3-PK-Network' freq=2412 MHz)
+EAPOL: External notification - portValid=0
+wlp3s0: State: SCANNING -> AUTHENTICATING
+Not configuring frame filtering - BSS 00:00:00:00:00:00 is not a Hotspot 2.0 network
+nl80211: Authenticate (ifindex=3)
+  * bssid=5c:a6:e6:3f:e2:da
+  * freq=2412
+  * SSID=WPA3-PK-Network
+  * IEs - hexdump(len=0): [NULL]
+  * auth_data - hexdump(len=102): 01 00 00 00 13 00 77 b6 f4 1d 1a a4 9f 47 45 ea a4 84 d5 a2 39 1a 2b 5d 44 ac f7 9b 03 cb f6 7a c6 4c 6d 0d 71 18 6e b1 76 21 0c 9a a4 08 44 10 1c 3b c4 91 e3 c2 78 17 b6 9f 62 cb e3 53 cc 1a 28 8e b7 23 5d 23 3d 3d 86 80 83 ab b0 90 d4 2a 49 69 88 96 57 d7 b0 0d ad cf 57 50 63 a2 94 3a ea 5d be d6 d7 e9
+  * Auth Type 4
+nl80211: Authentication request send successfully
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=1 ifi_family=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x1003 ([UP])
+nl80211: Drv Event 20 (NL80211_CMD_DEL_STATION) received for wlp3s0
+nl80211: Delete station 1c:28:af:81:6e:32
+nl80211: Drv Event 39 (NL80211_CMD_DEAUTHENTICATE) received for wlp3s0
+nl80211: Deauthenticate event
+wlp3s0: Event DEAUTH (11) received
+wlp3s0: Deauthentication notification
+wlp3s0:  * reason 1 (UNSPECIFIED) locally_generated=1
+wlp3s0:  * address 1c:28:af:81:6e:32
+Deauthentication frame IE(s) - hexdump(len=0): [NULL]
+wlp3s0: CTRL-EVENT-DISCONNECTED bssid=5c:a6:e6:3f:e2:da reason=1 locally_generated=1
+wlp3s0: Auto connect enabled: try to reconnect (wps=0/0 wpa_state=4)
+wlp3s0: Do not request new immediate scan
+wlp3s0: Radio work 'sme-connect'@0x555c8a428fd0 done in 0.089125 seconds
+wlp3s0: radio_work_free('sme-connect'@0x555c8a428fd0): num_active_works --> 0
+Added BSSID 5c:a6:e6:3f:e2:da into ignore list, ignoring for 10 seconds
+wlp3s0: Consecutive connection failures: 1 --> request scan in 100 ms
+wlp3s0: Setting scan request: 0.100000 sec
+TDLS: Remove peers on disassociation
+wlp3s0: WPA: Clear old PMK and PTK
+wlp3s0: Disconnect event - remove keys
+nl80211: Data frame filter flags=0x0
+wlp3s0: State: AUTHENTICATING -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+EAPOL: External notification - EAP success=0
+wlp3s0: SME: Allow pending authentication to proceed after disconnection event
+wlp3s0: State: DISCONNECTED -> AUTHENTICATING
+nl80211: Drv Event 48 (NL80211_CMD_DISCONNECT) received for wlp3s0
+nl80211: Ignore disconnect event when using userspace SME
+nl80211: Drv Event 19 (NL80211_CMD_NEW_STATION) received for wlp3s0
+nl80211: New station 5c:a6:e6:3f:e2:da
+nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlp3s0
+nl80211: Regulatory domain change
+ * initiator=0
+ * type=1
+wlp3s0: Event CHANNEL_LIST_CHANGED (27) received
+wlp3s0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+wlp3s0: Updating hw mode
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220[NO_IR] 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlp3s0
+nl80211: Regulatory domain change
+ * initiator=1
+ * type=0
+ * alpha2=IT
+wlp3s0: Event CHANNEL_LIST_CHANGED (27) received
+wlp3s0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+wlp3s0: Updating hw mode
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220[NO_IR] 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Drv Event 37 (NL80211_CMD_AUTHENTICATE) received for wlp3s0
+nl80211: Authenticate event
+wlp3s0: Event AUTH (10) received
+wlp3s0: SME: Authentication response: peer=5c:a6:e6:3f:e2:da auth_type=3 auth_transaction=1 status_code=0
+wlp3s0: SME: SAE authentication transaction 1 status code 0
+wlp3s0: SME SAE commit
+BSSID 5c:a6:e6:3f:e2:da ignore list count incremented to 2, ignoring for 10 seconds
+wlp3s0: Consecutive connection failures: 2 --> request scan in 500 ms
+wlp3s0: Ignore new scan request for 0.500000 sec since an earlier request is scheduled to trigger sooner
+wlp3s0: State: AUTHENTICATING -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: External program started a scan
+wlp3s0: State: DISCONNECTED -> SCANNING
+wlp3s0: Starting AP scan for wildcard SSID
+wlp3s0: Add radio work 'scan'@0x555c8a440f40
+wlp3s0: First radio work item in the queue - schedule start immediately
+Delay radio work start until externally triggered scan completes
+nl80211: Drv Event 37 (NL80211_CMD_AUTHENTICATE) received for wlp3s0
+nl80211: Authenticate event
+wlp3s0: Event AUTH (10) received
+wlp3s0: SME: Ignore authentication event when not in authenticating state
+nl80211: Drv Event 42 (NL80211_CMD_REG_BEACON_HINT) received for wlp3s0
+nl80211: Regulatory beacon hint
+nl80211: Channel (before): freq=5220 max_tx_power=2300 no-IR
+nl80211: Channel (after): freq=5220 max_tx_power=2300
+wlp3s0: Event CHANNEL_LIST_CHANGED (27) received
+wlp3s0: CTRL-EVENT-REGDOM-CHANGE init=BEACON_HINT type=UNKNOWN
+wlp3s0: Updating hw mode
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR] 5560[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Drv Event 42 (NL80211_CMD_REG_BEACON_HINT) received for wlp3s0
+nl80211: Regulatory beacon hint
+nl80211: Channel (before): freq=5805 max_tx_power=1300 no-IR
+nl80211: Channel (after): freq=5805 max_tx_power=1300
+wlp3s0: Event CHANNEL_LIST_CHANGED (27) received
+wlp3s0: CTRL-EVENT-REGDOM-CHANGE init=BEACON_HINT type=UNKNOWN
+wlp3s0: Updating hw mode
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR] 5560[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x1003 ([UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID 'Studenti'
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2412 5220 5640 5805 2462 2437 5260 5500 5580
+wlp3s0: Event SCAN_RESULTS (3) received
+nl80211: Received scan results (75 BSSes)
+wlp3s0: BSS: Start scan result update 2
+wlp3s0: BSS: Add new id 55 BSSID 1c:28:af:81:55:50 SSID 'Ateneo' freq 5220
+wlp3s0: BSS: Add new id 56 BSSID a8:5b:f7:11:7c:e0 SSID 'Ateneo' freq 2412
+wlp3s0: BSS: Add new id 57 BSSID a8:5b:f7:11:7c:e2 SSID 'Studenti' freq 2412
+wlp3s0: BSS: Add new id 58 BSSID a8:5b:f7:11:7c:e3 SSID 'eduroam' freq 2412
+wlp3s0: BSS: Add new id 59 BSSID 1c:28:af:82:52:22 SSID 'Studenti' freq 2412
+wlp3s0: BSS: Add new id 60 BSSID 1c:28:af:81:55:40 SSID 'Ateneo' freq 2412
+wlp3s0: BSS: Add new id 61 BSSID 1c:28:af:81:55:43 SSID 'eduroam' freq 2412
+wlp3s0: BSS: Add new id 62 BSSID 1c:28:af:81:55:42 SSID 'Studenti' freq 2412
+wlp3s0: BSS: Add new id 63 BSSID 1c:28:af:82:9e:62 SSID 'Studenti' freq 2437
+wlp3s0: BSS: Add new id 64 BSSID 1c:28:af:81:4c:e0 SSID 'Ateneo' freq 2412
+wlp3s0: BSS: Add new id 65 BSSID 1c:28:af:81:4c:e3 SSID 'eduroam' freq 2412
+wlp3s0: BSS: Add new id 66 BSSID 1c:28:af:81:4c:e2 SSID 'Studenti' freq 2412
+wlp3s0: BSS: Add new id 67 BSSID a8:5b:f7:11:c0:00 SSID 'Ateneo' freq 2437
+wlp3s0: BSS: Add new id 68 BSSID 1c:28:af:80:c6:92 SSID 'Studenti' freq 5500
+wlp3s0: BSS: Add new id 69 BSSID 1c:28:af:80:ee:e0 SSID 'Ateneo' freq 2462
+wlp3s0: BSS: Add new id 70 BSSID 1c:28:af:80:ee:e3 SSID 'eduroam' freq 2462
+wlp3s0: BSS: Add new id 71 BSSID a8:5b:f7:11:7c:e1 SSID 'Ospiti' freq 2412
+wlp3s0: BSS: Add new id 72 BSSID 1c:28:af:82:52:21 SSID 'Ospiti' freq 2412
+wlp3s0: BSS: Add new id 73 BSSID 1c:28:af:81:55:41 SSID 'Ospiti' freq 2412
+wlp3s0: BSS: Add new id 74 BSSID 1c:28:af:81:4c:e1 SSID 'Ospiti' freq 2412
+BSS: last_scan_res_used=75/128
+wlp3s0: New scan results available (own=0 ext=1)
+wlp3s0: Do not use results from externally requested scan operation for network selection
+wlp3s0: Starting radio work 'scan'@0x555c8a440f40 after 3.684054 second wait
+wlp3s0: nl80211: scan request
+Scan requested (ret=0) - scan timeout 30 seconds
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: Own scan request started a scan in 0.000084 seconds
+nl80211: Drv Event 20 (NL80211_CMD_DEL_STATION) received for wlp3s0
+nl80211: Delete station 5c:a6:e6:3f:e2:da
+nl80211: Drv Event 37 (NL80211_CMD_AUTHENTICATE) received for wlp3s0
+nl80211: MLME event 37; timeout with 5c:a6:e6:3f:e2:da
+wlp3s0: Event AUTH_TIMED_OUT (13) received
+wlp3s0: SME: Authentication timed out
+BSSID 5c:a6:e6:3f:e2:da ignore list count incremented to 3, ignoring for 60 seconds
+wlp3s0: Consecutive connection failures: 3 --> request scan in 1000 ms
+wlp3s0: Setting scan request: 1.000000 sec
+nl80211: Data frame filter flags=0x0
+wlp3s0: State: SCANNING -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+nl80211: Drv Event 42 (NL80211_CMD_REG_BEACON_HINT) received for wlp3s0
+nl80211: Regulatory beacon hint
+nl80211: Channel (before): freq=5180 max_tx_power=2300 no-IR
+nl80211: Channel (after): freq=5180 max_tx_power=2300
+wlp3s0: Event CHANNEL_LIST_CHANGED (27) received
+wlp3s0: CTRL-EVENT-REGDOM-CHANGE init=BEACON_HINT type=UNKNOWN
+wlp3s0: Updating hw mode
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180 5200[NO_IR] 5220 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR] 5560[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+wlp3s0: State: DISCONNECTED -> SCANNING
+wlp3s0: Starting AP scan for wildcard SSID
+wlp3s0: Reject scan trigger since one is already pending
+wlp3s0: Failed to initiate AP scan
+wlp3s0: State: SCANNING -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+wlp3s0: Setting scan request: 1.000000 sec
+wlp3s0: State: DISCONNECTED -> SCANNING
+wlp3s0: Starting AP scan for wildcard SSID
+wlp3s0: Reject scan trigger since one is already pending
+wlp3s0: Failed to initiate AP scan
+wlp3s0: State: SCANNING -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+wlp3s0: Setting scan request: 1.000000 sec
+wlp3s0: State: DISCONNECTED -> SCANNING
+wlp3s0: Starting AP scan for wildcard SSID
+wlp3s0: Reject scan trigger since one is already pending
+wlp3s0: Failed to initiate AP scan
+wlp3s0: State: SCANNING -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+wlp3s0: Setting scan request: 1.000000 sec
+wlp3s0: State: DISCONNECTED -> SCANNING
+wlp3s0: Starting AP scan for wildcard SSID
+wlp3s0: Reject scan trigger since one is already pending
+wlp3s0: Failed to initiate AP scan
+wlp3s0: State: SCANNING -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+wlp3s0: Setting scan request: 1.000000 sec
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x1003 ([UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700 5720 5745 5765 5785 5805 5825 5845
+wlp3s0: Event SCAN_RESULTS (3) received
+wlp3s0: Scan completed in 5.104812 seconds
+nl80211: Received scan results (82 BSSes)
+wlp3s0: BSS: Start scan result update 3
+wlp3s0: BSS: Add new id 75 BSSID 28:d1:27:d3:28:f2 SSID '' freq 2437
+wlp3s0: BSS: Add new id 76 BSSID a8:5b:f7:11:c0:03 SSID 'eduroam' freq 2437
+wlp3s0: BSS: Add new id 77 BSSID 1c:28:af:82:9e:60 SSID 'Ateneo' freq 2437
+wlp3s0: BSS: Add new id 78 BSSID a8:5b:f7:11:c0:02 SSID 'Studenti' freq 2437
+wlp3s0: BSS: Add new id 79 BSSID 1c:28:af:81:52:f3 SSID 'eduroam' freq 5180
+wlp3s0: BSS: Add new id 80 BSSID 1c:28:af:81:52:f0 SSID 'Ateneo' freq 5180
+wlp3s0: BSS: Add new id 81 BSSID 1c:28:af:81:52:e1 SSID 'Ospiti' freq 2437
+wlp3s0: BSS: Add new id 82 BSSID 1c:28:af:81:52:f1 SSID 'Ospiti' freq 5180
+BSS: last_scan_res_used=82/128
+wlp3s0: New scan results available (own=1 ext=0)
+WPS: AP[0] 02:71:47:a0:7a:f8 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+wlp3s0: Radio work 'scan'@0x555c8a440f40 done in 5.107765 seconds
+wlp3s0: radio_work_free('scan'@0x555c8a440f40): num_active_works --> 0
+wlp3s0: Selecting BSS from priority group 0
+wlp3s0: 0: 1c:28:af:81:6e:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 1: 1c:28:af:81:6e:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 2: 1c:28:af:81:6e:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 3: 50:64:2b:18:ce:be ssid='MuLan_5' wpa_ie_len=0 rsn_ie_len=24 caps=0x1011 level=-67 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 4: 28:d1:27:d3:28:f3 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x31 level=-74 freq=5180 
+wlp3s0:    skip - SSID not known
+wlp3s0: 5: 1c:28:af:81:55:50 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-75 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 6: 1c:28:af:81:55:52 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-76 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 7: 1c:28:af:81:55:53 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 8: 1c:28:af:80:ee:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 9: 1c:28:af:80:ee:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 10: a8:5b:f7:11:7c:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 11: 1c:28:af:80:ee:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 12: a8:5b:f7:11:7c:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 13: a8:5b:f7:11:7c:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 14: 28:d1:27:d3:28:f2 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x431 level=-71 freq=2437 
+wlp3s0:    skip - SSID not known
+wlp3s0: 15: 1c:28:af:82:9e:62 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-79 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 16: 1c:28:af:82:9e:63 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 17: 1c:28:af:81:52:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 18: a8:5b:f7:11:c0:03 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 19: 1c:28:af:81:52:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 20: a8:5b:f7:11:c0:00 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 21: 1c:28:af:82:9e:60 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 22: 1c:28:af:81:52:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 23: a8:5b:f7:11:c0:02 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 24: 02:71:47:a0:7a:f8 ssid='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220  wps p2p
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 25: 1c:28:af:81:66:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 26: 1c:28:af:81:66:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 27: 1c:28:af:81:66:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 28: 1c:28:af:82:b3:d2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 29: 1c:28:af:82:b3:d3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 30: 1c:28:af:82:52:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 31: 1c:28:af:82:52:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 32: 1c:28:af:82:52:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 33: 1c:28:af:82:b3:d0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 34: 1c:28:af:80:c6:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 35: 1c:28:af:80:c6:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 36: 1c:28:af:81:52:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-88 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 37: 1c:28:af:80:c6:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-87 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 38: 1c:28:af:81:52:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-89 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 39: 1c:28:af:81:cc:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-89 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 40: 1c:28:af:81:cc:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-90 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 41: 1c:28:af:81:cc:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-90 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 42: 1c:28:af:81:6e:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-56 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 43: 1c:28:af:81:6e:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-57 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 44: 1c:28:af:81:6e:22 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-57 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 45: a8:5b:f7:11:7c:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 46: a8:5b:f7:11:7c:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 47: a8:5b:f7:11:7c:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-70 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 48: 1c:28:af:80:ee:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-71 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 49: 1c:28:af:80:ee:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-72 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 50: 1c:28:af:81:66:82 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 51: 1c:28:af:81:66:83 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 52: 1c:28:af:80:ee:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 53: 1c:28:af:82:52:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 54: 1c:28:af:81:66:80 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 55: 1c:28:af:82:52:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 56: 1c:28:af:82:52:22 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 57: 1c:28:af:81:55:40 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-79 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 58: 1c:28:af:81:55:43 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-79 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 59: 1c:28:af:81:55:42 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 60: 1c:28:af:81:4c:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 61: 1c:28:af:81:4c:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-87 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 62: ce:21:19:a3:aa:32 ssid='AndroidAP8070' wpa_ie_len=0 rsn_ie_len=20 caps=0x1511 level=-88 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 63: 1c:28:af:81:4c:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-88 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 64: 1c:28:af:81:6e:31 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 65: 1c:28:af:81:55:51 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-78 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 66: 1c:28:af:80:ee:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 67: a8:5b:f7:11:7c:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-79 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 68: 1c:28:af:81:52:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 69: 1c:28:af:81:66:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-84 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 70: 1c:28:af:82:b3:d1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-83 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 71: 1c:28:af:82:52:31 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 72: 1c:28:af:80:c6:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-86 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 73: 1c:28:af:81:cc:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-90 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 74: 1c:28:af:81:52:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-91 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 75: 1c:28:af:81:6e:21 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-57 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 76: a8:5b:f7:11:7c:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 77: 1c:28:af:81:66:81 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 78: 1c:28:af:80:ee:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-75 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 79: 1c:28:af:82:52:21 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 80: 1c:28:af:81:55:41 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-79 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 81: 1c:28:af:81:4c:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-87 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: No APs found - clear BSSID ignore list and try again
+Removed BSSID 5c:a6:e6:3f:e2:da from ignore list (clear)
+wlp3s0: Selecting BSS from priority group 0
+wlp3s0: 0: 1c:28:af:81:6e:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 1: 1c:28:af:81:6e:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 2: 1c:28:af:81:6e:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 3: 50:64:2b:18:ce:be ssid='MuLan_5' wpa_ie_len=0 rsn_ie_len=24 caps=0x1011 level=-67 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 4: 28:d1:27:d3:28:f3 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x31 level=-74 freq=5180 
+wlp3s0:    skip - SSID not known
+wlp3s0: 5: 1c:28:af:81:55:50 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-75 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 6: 1c:28:af:81:55:52 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-76 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 7: 1c:28:af:81:55:53 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 8: 1c:28:af:80:ee:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 9: 1c:28:af:80:ee:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 10: a8:5b:f7:11:7c:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 11: 1c:28:af:80:ee:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 12: a8:5b:f7:11:7c:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 13: a8:5b:f7:11:7c:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 14: 28:d1:27:d3:28:f2 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x431 level=-71 freq=2437 
+wlp3s0:    skip - SSID not known
+wlp3s0: 15: 1c:28:af:82:9e:62 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-79 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 16: 1c:28:af:82:9e:63 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 17: 1c:28:af:81:52:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 18: a8:5b:f7:11:c0:03 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 19: 1c:28:af:81:52:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 20: a8:5b:f7:11:c0:00 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 21: 1c:28:af:82:9e:60 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 22: 1c:28:af:81:52:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 23: a8:5b:f7:11:c0:02 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 24: 02:71:47:a0:7a:f8 ssid='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220  wps p2p
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 25: 1c:28:af:81:66:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 26: 1c:28:af:81:66:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 27: 1c:28:af:81:66:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 28: 1c:28:af:82:b3:d2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 29: 1c:28:af:82:b3:d3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 30: 1c:28:af:82:52:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 31: 1c:28:af:82:52:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 32: 1c:28:af:82:52:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 33: 1c:28:af:82:b3:d0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 34: 1c:28:af:80:c6:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 35: 1c:28:af:80:c6:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 36: 1c:28:af:81:52:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-88 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 37: 1c:28:af:80:c6:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-87 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 38: 1c:28:af:81:52:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-89 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 39: 1c:28:af:81:cc:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-89 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 40: 1c:28:af:81:cc:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-90 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 41: 1c:28:af:81:cc:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-90 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 42: 1c:28:af:81:6e:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-56 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 43: 1c:28:af:81:6e:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-57 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 44: 1c:28:af:81:6e:22 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-57 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 45: a8:5b:f7:11:7c:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 46: a8:5b:f7:11:7c:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 47: a8:5b:f7:11:7c:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-70 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 48: 1c:28:af:80:ee:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-71 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 49: 1c:28:af:80:ee:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-72 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 50: 1c:28:af:81:66:82 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 51: 1c:28:af:81:66:83 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 52: 1c:28:af:80:ee:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 53: 1c:28:af:82:52:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 54: 1c:28:af:81:66:80 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 55: 1c:28:af:82:52:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 56: 1c:28:af:82:52:22 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 57: 1c:28:af:81:55:40 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-79 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 58: 1c:28:af:81:55:43 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-79 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 59: 1c:28:af:81:55:42 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 60: 1c:28:af:81:4c:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 61: 1c:28:af:81:4c:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-87 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 62: ce:21:19:a3:aa:32 ssid='AndroidAP8070' wpa_ie_len=0 rsn_ie_len=20 caps=0x1511 level=-88 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 63: 1c:28:af:81:4c:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-88 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 64: 1c:28:af:81:6e:31 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 65: 1c:28:af:81:55:51 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-78 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 66: 1c:28:af:80:ee:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 67: a8:5b:f7:11:7c:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-79 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 68: 1c:28:af:81:52:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 69: 1c:28:af:81:66:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-84 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 70: 1c:28:af:82:b3:d1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-83 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 71: 1c:28:af:82:52:31 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 72: 1c:28:af:80:c6:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-86 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 73: 1c:28:af:81:cc:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-90 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 74: 1c:28:af:81:52:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-91 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 75: 1c:28:af:81:6e:21 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-57 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 76: a8:5b:f7:11:7c:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 77: 1c:28:af:81:66:81 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 78: 1c:28:af:80:ee:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-75 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 79: 1c:28:af:82:52:21 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 80: 1c:28:af:81:55:41 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-79 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 81: 1c:28:af:81:4c:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-87 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: No suitable network found
+wlp3s0: Ignore new scan request for 5.000000 sec since an earlier request is scheduled to trigger sooner
+nl80211: Drv Event 19 (NL80211_CMD_NEW_STATION) received for wlp3s0
+nl80211: New station 1c:28:af:81:55:52
+wlp3s0: State: DISCONNECTED -> SCANNING
+wlp3s0: Starting AP scan for wildcard SSID
+wlp3s0: Determining shared radio frequencies (max len 2)
+wlp3s0: Shared frequencies (len=0): completed iteration
+wlp3s0: Add radio work 'scan'@0x555c8a428df0
+wlp3s0: First radio work item in the queue - schedule start immediately
+wlp3s0: Starting radio work 'scan'@0x555c8a428df0 after 0.000028 second wait
+wlp3s0: nl80211: scan request
+Scan requested (ret=0) - scan timeout 30 seconds
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: Own scan request started a scan in 0.000082 seconds
+nl80211: Drv Event 20 (NL80211_CMD_DEL_STATION) received for wlp3s0
+nl80211: Delete station 1c:28:af:81:55:52
+nl80211: Drv Event 37 (NL80211_CMD_AUTHENTICATE) received for wlp3s0
+nl80211: MLME event 37; timeout with 1c:28:af:81:55:52
+wlp3s0: Event AUTH_TIMED_OUT (13) received
+wlp3s0: SME: Authentication timed out
+Added BSSID 00:00:00:00:00:00 into ignore list, ignoring for 10 seconds
+wlp3s0: Consecutive connection failures: 4 --> request scan in 5000 ms
+wlp3s0: Setting scan request: 5.000000 sec
+nl80211: Data frame filter flags=0x0
+wlp3s0: State: SCANNING -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x1003 ([UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700 5720 5745 5765 5785 5805 5825 5845
+wlp3s0: Event SCAN_RESULTS (3) received
+wlp3s0: Scan completed in 5.671604 seconds
+nl80211: Received scan results (89 BSSes)
+wlp3s0: BSS: Start scan result update 4
+wlp3s0: BSS: Add new id 83 BSSID 1c:28:af:82:84:c2 SSID 'Studenti' freq 2437
+wlp3s0: BSS: Add new id 84 BSSID 1c:28:af:82:84:c3 SSID 'eduroam' freq 2437
+wlp3s0: BSS: Add new id 85 BSSID 1c:28:af:81:52:f2 SSID 'Studenti' freq 5180
+wlp3s0: BSS: Add new id 86 BSSID 1c:28:af:80:c6:83 SSID 'eduroam' freq 2462
+wlp3s0: BSS: Add new id 87 BSSID 1c:28:af:80:c6:82 SSID 'Studenti' freq 2462
+wlp3s0: BSS: Add new id 88 BSSID a8:5b:f7:11:c0:01 SSID 'Ospiti' freq 2437
+wlp3s0: BSS: Add new id 89 BSSID 1c:28:af:80:c6:81 SSID 'Ospiti' freq 2462
+wlp3s0: BSS: Remove id 27 BSSID 5c:a6:e6:3f:e2:da SSID 'WPA3-PK-Network' due to no match in scan
+BSS: last_scan_res_used=89/128
+wlp3s0: New scan results available (own=1 ext=0)
+WPS: AP[0] 02:71:47:a0:7a:f8 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+wlp3s0: Radio work 'scan'@0x555c8a428df0 done in 5.675702 seconds
+wlp3s0: radio_work_free('scan'@0x555c8a428df0): num_active_works --> 0
+wlp3s0: Selecting BSS from priority group 0
+wlp3s0: 0: 1c:28:af:81:6e:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 1: 1c:28:af:81:6e:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 2: 1c:28:af:81:6e:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 3: 50:64:2b:18:ce:be ssid='MuLan_5' wpa_ie_len=0 rsn_ie_len=24 caps=0x1011 level=-67 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 4: 28:d1:27:d3:28:f3 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x31 level=-72 freq=5180 
+wlp3s0:    skip - SSID not known
+wlp3s0: 5: 1c:28:af:81:55:53 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-76 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 6: 1c:28:af:81:55:50 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 7: 1c:28:af:81:55:52 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 8: 1c:28:af:80:ee:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 9: 1c:28:af:80:ee:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 10: 1c:28:af:80:ee:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 11: 28:d1:27:d3:28:f2 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x431 level=-68 freq=2437 
+wlp3s0:    skip - SSID not known
+wlp3s0: 12: a8:5b:f7:11:c0:03 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 13: 1c:28:af:82:9e:62 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-81 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 14: a8:5b:f7:11:c0:02 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-81 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 15: 1c:28:af:82:9e:63 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-82 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 16: 1c:28:af:81:52:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 17: 1c:28:af:81:52:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 18: a8:5b:f7:11:c0:00 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 19: 1c:28:af:82:9e:60 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 20: 1c:28:af:82:84:c2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 21: 1c:28:af:82:84:c3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 22: 1c:28:af:81:52:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 23: a8:5b:f7:11:7c:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-80 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 24: a8:5b:f7:11:7c:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-80 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 25: 02:71:47:a0:7a:f8 ssid='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-76 freq=5220  wps p2p
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 26: a8:5b:f7:11:7c:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-81 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 27: 1c:28:af:81:66:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 28: 1c:28:af:81:66:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 29: 1c:28:af:81:66:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 30: 1c:28:af:81:cc:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 31: 1c:28:af:82:52:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 32: 1c:28:af:82:52:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 33: 1c:28:af:82:52:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 34: 1c:28:af:82:b3:d0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 35: 1c:28:af:80:c6:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 36: 1c:28:af:80:c6:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 37: 1c:28:af:80:c6:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-86 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 38: 1c:28:af:81:52:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-89 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 39: 1c:28:af:81:52:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-89 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 40: 1c:28:af:82:b3:d2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-88 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 41: 1c:28:af:81:cc:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-90 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 42: 1c:28:af:81:cc:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-90 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 43: 1c:28:af:82:b3:d3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-89 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 44: 1c:28:af:81:52:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-91 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 45: 1c:28:af:81:6e:22 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-56 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 46: 1c:28:af:81:6e:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-57 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 47: 1c:28:af:81:6e:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-58 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 48: a8:5b:f7:11:7c:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 49: a8:5b:f7:11:7c:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-70 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 50: a8:5b:f7:11:7c:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-70 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 51: 1c:28:af:80:ee:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-71 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 52: 1c:28:af:80:ee:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-72 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 53: 1c:28:af:81:66:83 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 54: 1c:28:af:81:66:82 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 55: 1c:28:af:81:66:80 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 56: 1c:28:af:80:ee:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 57: 1c:28:af:82:52:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 58: 1c:28:af:82:52:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 59: 1c:28:af:82:52:22 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 60: 1c:28:af:81:55:40 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 61: 1c:28:af:81:55:42 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 62: 1c:28:af:81:55:43 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 63: 1c:28:af:81:4c:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 64: 1c:28:af:80:c6:83 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 65: 1c:28:af:81:4c:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-87 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 66: ce:21:19:a3:aa:32 ssid='AndroidAP8070' wpa_ie_len=0 rsn_ie_len=20 caps=0x1511 level=-88 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 67: 1c:28:af:81:4c:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-88 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 68: 1c:28:af:80:c6:82 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-88 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 69: 1c:28:af:81:6e:31 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-66 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 70: 1c:28:af:81:55:51 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 71: 1c:28:af:80:ee:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 72: 1c:28:af:81:52:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 73: a8:5b:f7:11:c0:01 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 74: a8:5b:f7:11:7c:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-81 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 75: 1c:28:af:81:66:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-84 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 76: 1c:28:af:82:52:31 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 77: 1c:28:af:82:b3:d1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 78: 1c:28:af:81:cc:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-91 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 79: 1c:28:af:81:52:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-91 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 80: 1c:28:af:80:c6:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-90 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 81: 1c:28:af:81:6e:21 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-57 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 82: a8:5b:f7:11:7c:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 83: 1c:28:af:80:ee:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-72 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 84: 1c:28:af:81:66:81 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 85: 1c:28:af:82:52:21 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 86: 1c:28:af:81:55:41 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-79 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 87: 1c:28:af:80:c6:81 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-84 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 88: 1c:28:af:81:4c:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-87 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: No APs found - clear BSSID ignore list and try again
+Removed BSSID 00:00:00:00:00:00 from ignore list (clear)
+wlp3s0: Selecting BSS from priority group 0
+wlp3s0: 0: 1c:28:af:81:6e:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 1: 1c:28:af:81:6e:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 2: 1c:28:af:81:6e:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 3: 50:64:2b:18:ce:be ssid='MuLan_5' wpa_ie_len=0 rsn_ie_len=24 caps=0x1011 level=-67 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 4: 28:d1:27:d3:28:f3 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x31 level=-72 freq=5180 
+wlp3s0:    skip - SSID not known
+wlp3s0: 5: 1c:28:af:81:55:53 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-76 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 6: 1c:28:af:81:55:50 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 7: 1c:28:af:81:55:52 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 8: 1c:28:af:80:ee:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 9: 1c:28:af:80:ee:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 10: 1c:28:af:80:ee:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 11: 28:d1:27:d3:28:f2 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x431 level=-68 freq=2437 
+wlp3s0:    skip - SSID not known
+wlp3s0: 12: a8:5b:f7:11:c0:03 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 13: 1c:28:af:82:9e:62 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-81 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 14: a8:5b:f7:11:c0:02 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-81 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 15: 1c:28:af:82:9e:63 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-82 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 16: 1c:28:af:81:52:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 17: 1c:28:af:81:52:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 18: a8:5b:f7:11:c0:00 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 19: 1c:28:af:82:9e:60 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 20: 1c:28:af:82:84:c2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 21: 1c:28:af:82:84:c3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 22: 1c:28:af:81:52:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 23: a8:5b:f7:11:7c:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-80 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 24: a8:5b:f7:11:7c:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-80 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 25: 02:71:47:a0:7a:f8 ssid='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-76 freq=5220  wps p2p
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 26: a8:5b:f7:11:7c:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-81 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 27: 1c:28:af:81:66:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 28: 1c:28:af:81:66:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 29: 1c:28:af:81:66:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 30: 1c:28:af:81:cc:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 31: 1c:28:af:82:52:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 32: 1c:28:af:82:52:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 33: 1c:28:af:82:52:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 34: 1c:28:af:82:b3:d0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 35: 1c:28:af:80:c6:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 36: 1c:28:af:80:c6:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 37: 1c:28:af:80:c6:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-86 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 38: 1c:28:af:81:52:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-89 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 39: 1c:28:af:81:52:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-89 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 40: 1c:28:af:82:b3:d2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-88 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 41: 1c:28:af:81:cc:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-90 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 42: 1c:28:af:81:cc:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-90 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 43: 1c:28:af:82:b3:d3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-89 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 44: 1c:28:af:81:52:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-91 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 45: 1c:28:af:81:6e:22 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-56 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 46: 1c:28:af:81:6e:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-57 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 47: 1c:28:af:81:6e:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-58 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 48: a8:5b:f7:11:7c:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 49: a8:5b:f7:11:7c:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-70 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 50: a8:5b:f7:11:7c:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-70 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 51: 1c:28:af:80:ee:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-71 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 52: 1c:28:af:80:ee:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-72 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 53: 1c:28:af:81:66:83 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 54: 1c:28:af:81:66:82 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 55: 1c:28:af:81:66:80 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 56: 1c:28:af:80:ee:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 57: 1c:28:af:82:52:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 58: 1c:28:af:82:52:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 59: 1c:28:af:82:52:22 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 60: 1c:28:af:81:55:40 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 61: 1c:28:af:81:55:42 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 62: 1c:28:af:81:55:43 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 63: 1c:28:af:81:4c:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 64: 1c:28:af:80:c6:83 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 65: 1c:28:af:81:4c:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-87 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 66: ce:21:19:a3:aa:32 ssid='AndroidAP8070' wpa_ie_len=0 rsn_ie_len=20 caps=0x1511 level=-88 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 67: 1c:28:af:81:4c:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-88 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 68: 1c:28:af:80:c6:82 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-88 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 69: 1c:28:af:81:6e:31 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-66 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 70: 1c:28:af:81:55:51 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 71: 1c:28:af:80:ee:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 72: 1c:28:af:81:52:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 73: a8:5b:f7:11:c0:01 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 74: a8:5b:f7:11:7c:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-81 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 75: 1c:28:af:81:66:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-84 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 76: 1c:28:af:82:52:31 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 77: 1c:28:af:82:b3:d1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 78: 1c:28:af:81:cc:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-91 freq=5580 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 79: 1c:28:af:81:52:f1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-91 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 80: 1c:28:af:80:c6:91 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x1 level=-90 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 81: 1c:28:af:81:6e:21 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-57 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 82: a8:5b:f7:11:7c:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 83: 1c:28:af:80:ee:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-72 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 84: 1c:28:af:81:66:81 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 85: 1c:28:af:82:52:21 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 86: 1c:28:af:81:55:41 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-79 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 87: 1c:28:af:80:c6:81 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-84 freq=2462 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 88: 1c:28:af:81:4c:e1 ssid='Ospiti' wpa_ie_len=0 rsn_ie_len=0 caps=0x421 level=-87 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: No suitable network found
+wlp3s0: Ignore new scan request for 5.000000 sec since an earlier request is scheduled to trigger sooner
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: External program started a scan
+wlp3s0: State: DISCONNECTED -> SCANNING
+wlp3s0: Starting AP scan for wildcard SSID
+wlp3s0: Determining shared radio frequencies (max len 2)
+wlp3s0: Shared frequencies (len=0): completed iteration
+wlp3s0: Add radio work 'scan'@0x555c8a429360
+wlp3s0: First radio work item in the queue - schedule start immediately
+Delay radio work start until externally triggered scan completes
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x1003 ([UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID 'Studenti'
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700 5720 5745 5765 5785 5805 5825 5845
+wlp3s0: Event SCAN_RESULTS (3) received
+nl80211: Received scan results (94 BSSes)
+wlp3s0: BSS: Start scan result update 5
+wlp3s0: BSS: Add new id 90 BSSID 02:71:47:a0:7a:f8 SSID 'DIRECT-Ot-FireTV_257f' freq 5220
+wlp3s0: BSS: Add new id 91 BSSID 5c:a6:e6:3f:e2:da SSID 'WPA3-PK-Network' freq 2412
+wlp3s0: BSS: Add new id 92 BSSID 1c:28:af:82:34:e2 SSID 'Studenti' freq 2462
+wlp3s0: BSS: Add new id 93 BSSID 1c:28:af:82:b3:c0 SSID 'Ateneo' freq 2462
+wlp3s0: BSS: Add new id 94 BSSID 1c:28:af:82:9e:61 SSID 'Ospiti' freq 2437
+BSS: last_scan_res_used=94/128
+wlp3s0: New scan results available (own=0 ext=1)
+wlp3s0: Do not use results from externally requested scan operation for network selection
+wlp3s0: Starting radio work 'scan'@0x555c8a429360 after 4.139988 second wait
+wlp3s0: nl80211: scan request
+Scan requested (ret=0) - scan timeout 30 seconds
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: Own scan request started a scan in 0.000238 seconds
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x1003 ([UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700 5720 5745 5765 5785 5805 5825 5845
+wlp3s0: Event SCAN_RESULTS (3) received
+wlp3s0: Scan completed in 4.551273 seconds
+nl80211: Received scan results (97 BSSes)
+wlp3s0: BSS: Start scan result update 6
+wlp3s0: BSS: Add new id 95 BSSID 50:64:2b:18:ce:bd SSID 'MuLan_2.4GHz' freq 2437
+wlp3s0: BSS: Add new id 96 BSSID 1c:28:af:80:c6:80 SSID 'Ateneo' freq 2462
+wlp3s0: BSS: Add new id 97 BSSID 1c:28:af:82:b3:c3 SSID 'eduroam' freq 2462
+BSS: last_scan_res_used=97/128
+wlp3s0: New scan results available (own=1 ext=0)
+WPS: AP[0] 02:71:47:a0:7a:f8 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+wlp3s0: Radio work 'scan'@0x555c8a429360 done in 4.553301 seconds
+wlp3s0: radio_work_free('scan'@0x555c8a429360): num_active_works --> 0
+wlp3s0: Selecting BSS from priority group 0
+wlp3s0: 0: 1c:28:af:81:6e:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-65 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 1: 1c:28:af:81:6e:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-66 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 2: 1c:28:af:81:6e:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-66 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 3: 50:64:2b:18:ce:be ssid='MuLan_5' wpa_ie_len=0 rsn_ie_len=24 caps=0x1011 level=-66 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 4: 28:d1:27:d3:28:f3 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x31 level=-73 freq=5180 
+wlp3s0:    skip - SSID not known
+wlp3s0: 5: 1c:28:af:81:55:53 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 6: 1c:28:af:81:55:50 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 7: 1c:28:af:81:55:52 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 8: 1c:28:af:80:ee:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 9: 1c:28:af:80:ee:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 10: 1c:28:af:80:ee:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 11: a8:5b:f7:11:7c:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 12: a8:5b:f7:11:7c:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-79 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 13: 50:64:2b:18:ce:bd ssid='MuLan_2.4GHz' wpa_ie_len=0 rsn_ie_len=24 caps=0x1431 level=-56 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 14: a8:5b:f7:11:7c:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-67 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 15: 28:d1:27:d3:28:f2 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x431 level=-67 freq=2437 
+wlp3s0:    skip - SSID not known
+wlp3s0: 16: a8:5b:f7:11:7c:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-69 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 17: a8:5b:f7:11:7c:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-70 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 18: 1c:28:af:81:66:80 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-75 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 19: 1c:28:af:82:52:20 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 20: 1c:28:af:81:66:82 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-76 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 21: 1c:28:af:82:52:22 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-77 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 22: 1c:28:af:82:52:23 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-78 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 23: 1c:28:af:81:66:83 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-79 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 24: 1c:28:af:82:9e:63 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-79 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 25: 1c:28:af:81:55:40 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 26: 1c:28:af:81:55:42 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 27: 1c:28:af:81:55:43 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 28: 1c:28:af:82:9e:62 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-79 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 29: 1c:28:af:82:9e:60 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-79 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 30: a8:5b:f7:11:c0:03 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 31: 1c:28:af:81:52:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-81 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 32: a8:5b:f7:11:c0:02 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-81 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 33: 1c:28:af:81:52:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 34: 1c:28:af:82:84:c3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 35: 1c:28:af:81:52:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 36: 1c:28:af:81:4c:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-85 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 37: a8:5b:f7:11:c0:00 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 38: 1c:28:af:82:84:c2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 39: 1c:28:af:81:4c:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-87 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 40: ce:21:19:a3:aa:32 ssid='AndroidAP8070' wpa_ie_len=0 rsn_ie_len=20 caps=0x1511 level=-88 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 41: 1c:28:af:81:4c:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-88 freq=2412 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 42: a8:5b:f7:11:7c:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-80 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 43: 02:71:47:a0:7a:f8 ssid='DIRECT-Ot-FireTV_257f' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-76 freq=5220  wps p2p
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 44: 02:71:47:a0:7a:f8 ssid='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220  wps p2p
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 45: 5c:a6:e6:3f:e2:da ssid='WPA3-PK-Network' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-43 freq=2412 
+wlp3s0:    selected based on RSN IE
+wlp3s0:    selected BSS 5c:a6:e6:3f:e2:da ssid='WPA3-PK-Network'
+wlp3s0: Considering connect request: reassociate: 0  selected: 5c:a6:e6:3f:e2:da  bssid: 00:00:00:00:00:00  pending: 00:00:00:00:00:00  wpa_state: SCANNING  ssid=0x555c8a3535d0  current_ssid=(nil)
+wlp3s0: Request association with 5c:a6:e6:3f:e2:da
+wlp3s0: Re-association to the same ESS
+wlp3s0: No ongoing scan/p2p-scan found to abort
+wlp3s0: Add radio work 'sme-connect'@0x555c8a429360
+wlp3s0: First radio work item in the queue - schedule start immediately
+wlp3s0: Starting radio work 'sme-connect'@0x555c8a429360 after 0.000018 second wait
+wlp3s0: WPA: clearing own WPA/RSN IE
+wlp3s0: RSN: clearing own RSNXE
+wlp3s0: Automatic auth_alg selection: 0x1
+wlp3s0: Using SAE auth_alg
+RSN: PMKSA cache search - network_ctx=(nil) try_opportunistic=0 akmp=0x0
+RSN: Search for BSSID 5c:a6:e6:3f:e2:da
+RSN: No PMKSA cache entry found
+wlp3s0: RSN: using IEEE 802.11i/D9.0
+wlp3s0: WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 1024 proto 2
+wlp3s0: WPA: Selected mgmt group cipher 32
+wlp3s0: WPA: clearing AP WPA IE
+WPA: set AP RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00
+wlp3s0: WPA: clearing AP RSNXE
+wlp3s0: WPA: AP group 0x10 network profile group 0x18; available group 0x10
+wlp3s0: WPA: using GTK CCMP
+wlp3s0: WPA: AP pairwise 0x10 network profile pairwise 0x18; available pairwise 0x10
+wlp3s0: WPA: using PTK CCMP
+wlp3s0: WPA: AP key_mgmt 0x400 network profile key_mgmt 0x400; available key_mgmt 0x400
+wlp3s0: RSN: using KEY_MGMT SAE
+wlp3s0: WPA: AP mgmt_group_cipher 0x20 network profile mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+wlp3s0: WPA: using MGMT group cipher AES-128-CMAC
+WPA: Set own WPA IE default - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 00 00 00 0f ac 06
+RSN: Set own RSNXE default - hexdump(len=0):
+wlp3s0: SME: Selected AP supports MFP: require MFP
+RRM: Determining whether RRM can be used - device support: 0x30
+RRM: No RRM in network
+Added supported operating classes IE - hexdump(len=22): 3b 14 51 51 53 54 73 74 75 76 77 78 79 7a 7b 7c 7d 7e 7f 80 81 82
+RSN: PMKSA cache search - network_ctx=0x555c8a3535d0 try_opportunistic=0 akmp=0x400
+RSN: Search for BSSID 5c:a6:e6:3f:e2:da
+RSN: No PMKSA cache entry found
+SAE: Selecting supported ECC group 19
+wlp3s0: SME: Selected SAE group 19
+SAE: password - hexdump_ascii(len=14): [REMOVED]
+SAE: PWE derivation - addr1=3c:a0:67:80:99:a3 addr2=5c:a6:e6:3f:e2:da
+SAE: counter = 001
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0x00
+SAE: counter = 002
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 003
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 004
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 005
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 006
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 007
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 008
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 009
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 010
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 011
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 012
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 013
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 014
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 015
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 016
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 017
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 018
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 019
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 020
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 021
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 022
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 023
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 024
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 025
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 026
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 027
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 028
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 029
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 030
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 031
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 032
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 033
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 034
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 035
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 036
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 037
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 038
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 039
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 040
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: PWE - hexdump(len=64): [REMOVED]
+SAE: own commit-scalar - hexdump(len=32): 2d 2c ce 31 1d a4 72 80 de ee 08 78 0a ec 9e 70 f4 d5 4e 0f 3d 58 22 94 0c 30 32 06 1c ba 2f e6
+SAE: own commit-element(x) - hexdump(len=32): cd 5d e4 6d 3f 0e ee 92 e8 ba 54 07 e6 04 3d 4b 79 c8 38 3c bf 70 b4 55 26 b8 fd f4 7b 92 80 17
+SAE: own commit-element(y) - hexdump(len=32): 4c d7 5d bb af f0 53 31 c2 97 fd 50 d0 5c c5 86 96 02 9f 2b be 0f d8 5b 3b c0 15 e9 8d 0f 94 b8
+EAPOL: External notification - EAP success=0
+EAPOL: External notification - EAP fail=0
+EAPOL: External notification - portControl=Auto
+wlp3s0: Cancelling scan request
+wlp3s0: SME: Trying to authenticate with 5c:a6:e6:3f:e2:da (SSID='WPA3-PK-Network' freq=2412 MHz)
+EAPOL: External notification - portValid=0
+wlp3s0: State: SCANNING -> AUTHENTICATING
+Not configuring frame filtering - BSS 00:00:00:00:00:00 is not a Hotspot 2.0 network
+nl80211: Authenticate (ifindex=3)
+  * bssid=5c:a6:e6:3f:e2:da
+  * freq=2412
+  * SSID=WPA3-PK-Network
+  * IEs - hexdump(len=0): [NULL]
+  * auth_data - hexdump(len=102): 01 00 00 00 13 00 2d 2c ce 31 1d a4 72 80 de ee 08 78 0a ec 9e 70 f4 d5 4e 0f 3d 58 22 94 0c 30 32 06 1c ba 2f e6 cd 5d e4 6d 3f 0e ee 92 e8 ba 54 07 e6 04 3d 4b 79 c8 38 3c bf 70 b4 55 26 b8 fd f4 7b 92 80 17 4c d7 5d bb af f0 53 31 c2 97 fd 50 d0 5c c5 86 96 02 9f 2b be 0f d8 5b 3b c0 15 e9 8d 0f 94 b8
+  * Auth Type 4
+nl80211: Authentication request send successfully
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: External program started a scan
+nl80211: Drv Event 19 (NL80211_CMD_NEW_STATION) received for wlp3s0
+nl80211: New station 5c:a6:e6:3f:e2:da
+nl80211: Drv Event 37 (NL80211_CMD_AUTHENTICATE) received for wlp3s0
+nl80211: Authenticate event
+wlp3s0: Event AUTH (10) received
+wlp3s0: SME: Authentication response: peer=5c:a6:e6:3f:e2:da auth_type=3 auth_transaction=1 status_code=0
+wlp3s0: SME: SAE authentication transaction 1 status code 0
+wlp3s0: SME SAE commit
+SAE: Peer commit-scalar - hexdump(len=32): 21 1b 92 a1 3b 7f d2 79 c8 7b f7 39 99 1e 9f 6d d9 d7 19 12 28 88 2c 76 ba d4 b3 4b 34 1d f8 e8
+SAE: Peer commit-element(x) - hexdump(len=32): f7 ed 1e 57 44 e7 62 00 83 1b 5b e8 9e 9c 0c 05 91 85 fc 05 f6 e6 20 81 16 92 c3 1a 84 1b a5 da
+SAE: Peer commit-element(y) - hexdump(len=32): 57 9d 80 e5 1c 5c b3 21 a6 07 d6 81 5e 96 23 5a e5 d6 f5 e9 f0 1f d7 e9 b3 90 62 89 55 e9 ff 64
+SAE: Possible elements at the end of the frame - hexdump(len=0):
+SAE: k - hexdump(len=32): [REMOVED]
+SAE: salt for keyseed derivation - hexdump(len=32): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+SAE: keyseed - hexdump(len=32): [REMOVED]
+SAE: PMKID - hexdump(len=16): 4e 48 60 d2 59 24 44 fa a7 69 ff b1 a4 0b 3d de
+SAE: KCK - hexdump(len=32): [REMOVED]
+SAE: PMK - hexdump(len=32): [REMOVED]
+wlp3s0: Automatic auth_alg selection: 0x1
+wlp3s0: Using SAE auth_alg
+RSN: PMKSA cache search - network_ctx=0x555c8a3535d0 try_opportunistic=0 akmp=0x0
+RSN: Search for BSSID 5c:a6:e6:3f:e2:da
+RSN: No PMKSA cache entry found
+wlp3s0: RSN: using IEEE 802.11i/D9.0
+wlp3s0: WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 1024 proto 2
+wlp3s0: WPA: Selected mgmt group cipher 32
+wlp3s0: WPA: clearing AP WPA IE
+WPA: set AP RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00
+wlp3s0: WPA: clearing AP RSNXE
+wlp3s0: WPA: AP group 0x10 network profile group 0x18; available group 0x10
+wlp3s0: WPA: using GTK CCMP
+wlp3s0: WPA: AP pairwise 0x10 network profile pairwise 0x18; available pairwise 0x10
+wlp3s0: WPA: using PTK CCMP
+wlp3s0: WPA: AP key_mgmt 0x400 network profile key_mgmt 0x400; available key_mgmt 0x400
+wlp3s0: RSN: using KEY_MGMT SAE
+wlp3s0: WPA: AP mgmt_group_cipher 0x20 network profile mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+wlp3s0: WPA: using MGMT group cipher AES-128-CMAC
+WPA: Set own WPA IE default - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 00 00 00 0f ac 06
+WPA: Leave previously set WPA IE default - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 00 00 00 0f ac 06
+RSN: Set own RSNXE default - hexdump(len=0):
+wlp3s0: SME: Selected AP supports MFP: require MFP
+RRM: Determining whether RRM can be used - device support: 0x30
+RRM: No RRM in network
+Added supported operating classes IE - hexdump(len=22): 3b 14 51 51 53 54 73 74 75 76 77 78 79 7a 7b 7c 7d 7e 7f 80 81 82
+RSN: PMKSA cache search - network_ctx=0x555c8a3535d0 try_opportunistic=0 akmp=0x400
+RSN: Search for BSSID 5c:a6:e6:3f:e2:da
+RSN: No PMKSA cache entry found
+EAPOL: External notification - EAP success=0
+EAPOL: External notification - EAP fail=0
+EAPOL: External notification - portControl=Auto
+wlp3s0: Cancelling scan request
+wlp3s0: SME: Trying to authenticate with 5c:a6:e6:3f:e2:da (SSID='WPA3-PK-Network' freq=2412 MHz)
+EAPOL: External notification - portValid=0
+wlp3s0: State: AUTHENTICATING -> AUTHENTICATING
+Not configuring frame filtering - BSS 00:00:00:00:00:00 is not a Hotspot 2.0 network
+nl80211: Authenticate (ifindex=3)
+  * bssid=5c:a6:e6:3f:e2:da
+  * freq=2412
+  * SSID=WPA3-PK-Network
+  * IEs - hexdump(len=0): [NULL]
+  * auth_data - hexdump(len=38): 02 00 00 00 01 00 79 12 de cf dc f3 57 5f 02 a6 a3 8f b9 64 d5 97 59 22 c8 d2 e6 c9 6f 38 9b a2 87 ac 6d 58 b8 1b
+  * Auth Type 4
+nl80211: Authentication request send successfully
+nl80211: Drv Event 35 (NL80211_CMD_SCAN_ABORTED) received for wlp3s0
+wlp3s0: nl80211: Scan aborted
+nl80211: Scan probed for SSID 'Studenti'
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 5180 5805 5640 2437 5260 5500 5580 2462 2412
+wlp3s0: Event SCAN_RESULTS (3) received
+nl80211: Received scan results (98 BSSes)
+wlp3s0: BSS: Start scan result update 7
+wlp3s0: BSS: Add new id 98 BSSID 1c:28:af:82:84:c1 SSID 'Ospiti' freq 2437
+wlp3s0: New scan results available (own=0 ext=1)
+wlp3s0: Do not use results from externally requested scan operation for network selection
+nl80211: Drv Event 20 (NL80211_CMD_DEL_STATION) received for wlp3s0
+nl80211: Delete station 5c:a6:e6:3f:e2:da
+nl80211: Drv Event 19 (NL80211_CMD_NEW_STATION) received for wlp3s0
+nl80211: New station 1c:28:af:81:6e:32
+nl80211: Drv Event 37 (NL80211_CMD_AUTHENTICATE) received for wlp3s0
+nl80211: Authenticate event
+wlp3s0: Event AUTH (10) received
+wlp3s0: SME: Ignore authentication with unexpected peer 1c:28:af:81:6e:32
+nl80211: Drv Event 38 (NL80211_CMD_ASSOCIATE) received for wlp3s0
+nl80211: Associate event
+nl80211: Associated on 5180 MHz
+nl80211: Associated with 1c:28:af:81:6e:32
+nl80211: Set drv->ssid based on scan res info to 'Studenti'
+wlp3s0: Event ASSOC (0) received
+wlp3s0: Association info event
+req_ies - hexdump(len=128): 00 08 53 74 75 64 65 6e 74 69 01 08 0c 12 18 24 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 80 00 2d 1a 6f 19 1b ff 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 7f 0b 04 00 0a 02 01 40 40 40 00 01 20 bf 0c 32 71 90 33 fe ff 00 00 fe ff 00 00 3b 14 80 51 53 54 73 74 75 76 77 78 79 7a 7b 7c 7d 7e 7f 80 81 82 dd 07 00 50 f2 02 00 01 00
+resp_ies - hexdump(len=121): 01 08 8c 12 98 24 b0 48 60 6c 2d 1a ef 09 17 ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3d 16 24 05 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7f 0a 04 00 08 00 00 00 00 40 00 40 bf 0c b1 79 89 0f fa ff 00 00 fa ff 00 00 c0 05 01 2a 00 00 00 dd 18 00 50 f2 02 01 01 80 00 03 a4 00 00 27 a4 00 00 42 43 5e 00 62 32 2f 00
+WPA: set own WPA/RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 80 00
+wlp3s0: RSN: clearing own RSNXE
+wlp3s0: State: AUTHENTICATING -> ASSOCIATED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+wlp3s0: Associated to a new BSS: BSSID=1c:28:af:81:6e:32
+wlp3s0: Driver-initiated BSS selection changed the SSID to Studenti
+wlp3s0: Select network based on association information
+wlp3s0: No network configuration found for the current AP
+wlp3s0: Request to deauthenticate - bssid=1c:28:af:81:6e:32 pending_bssid=00:00:00:00:00:00 reason=3 (DEAUTH_LEAVING) state=ASSOCIATED
+TDLS: Tear down peers
+wpa_driver_nl80211_deauthenticate(addr=1c:28:af:81:6e:32 reason_code=3)
+wlp3s0: nl80211: MLME command failed: reason=3 ret=-1 (Operation not permitted)
+wlp3s0: Event DEAUTH (11) received
+wlp3s0: Deauthentication notification
+wlp3s0:  * reason 3 (DEAUTH_LEAVING) locally_generated=1
+Deauthentication frame IE(s) - hexdump(len=0): [NULL]
+wlp3s0: CTRL-EVENT-DISCONNECTED bssid=1c:28:af:81:6e:32 reason=3 locally_generated=1
+wlp3s0: Auto connect enabled: try to reconnect (wps=0/0 wpa_state=6)
+wlp3s0: Setting scan request: 0.100000 sec
+wlp3s0: Radio work 'sme-connect'@0x555c8a429360 done in 0.187751 seconds
+wlp3s0: radio_work_free('sme-connect'@0x555c8a429360): num_active_works --> 0
+Added BSSID 1c:28:af:81:6e:32 into ignore list, ignoring for 10 seconds
+wlp3s0: Another BSS in this ESS has been seen; try it next
+BSSID 1c:28:af:81:6e:32 ignore list count incremented to 2, ignoring for 10 seconds
+Continuous association failures - consider temporary network disabling
+wlp3s0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="WPA3-PK-Network" auth_failures=1 duration=10 reason=CONN_FAILED
+wlp3s0: Consecutive connection failures: 5 --> request scan in 10000 ms
+wlp3s0: Ignore new scan request for 10.000000 sec since an earlier request is scheduled to trigger sooner
+TDLS: Remove peers on disassociation
+wlp3s0: WPA: Clear old PMK and PTK
+wlp3s0: Disconnect event - remove keys
+nl80211: Data frame filter flags=0x0
+wlp3s0: State: ASSOCIATED -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+EAPOL: External notification - EAP success=0
+nl80211: Data frame filter flags=0x0
+wlp3s0: State: DISCONNECTED -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+QM: Clear all active DSCP policies
+wlp3s0: CTRL-EVENT-DSCP-POLICY clear_all
+wlp3s0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=5 linkmode=1 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+nl80211: Drv Event 46 (NL80211_CMD_CONNECT) received for wlp3s0
+nl80211: Ignore connect event (cmd=46) when using userspace SME
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=282
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=283
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=284
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=285
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=286
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+wlp3s0: State: DISCONNECTED -> SCANNING
+wlp3s0: Starting AP scan for wildcard SSID
+wlp3s0: Optimize scan based on previously generated frequency list
+wlp3s0: Add radio work 'scan'@0x555c8a429360
+wlp3s0: First radio work item in the queue - schedule start immediately
+wlp3s0: Starting radio work 'scan'@0x555c8a429360 after 0.000061 second wait
+wlp3s0: nl80211: scan request
+Scan requested (ret=0) - scan timeout 30 seconds
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: Own scan request started a scan in 0.000107 seconds
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=287
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=288
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=289
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=290
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=291
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=292
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=293
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=6 linkmode=1 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 5220 5805 5640 2412 2437 5260 5580 5500 5180 2462
+wlp3s0: Event SCAN_RESULTS (3) received
+wlp3s0: Scan completed in 2.085679 seconds
+nl80211: Received scan results (98 BSSes)
+nl80211: Scan results indicate BSS status with 1c:28:af:81:6e:32 as associated
+nl80211: Local state (not associated) does not match with BSS state
+nl80211: Clear possible state mismatch (1c:28:af:81:6e:32)
+wlp3s0: nl80211: MLME command failed: reason=2 ret=-1 (Operation not permitted)
+wlp3s0: BSS: Start scan result update 8
+BSS: last_scan_res_used=98/128
+wlp3s0: New scan results available (own=1 ext=0)
+WPS: AP[0] 02:71:47:a0:7a:f8 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+wlp3s0: Radio work 'scan'@0x555c8a429360 done in 2.087617 seconds
+wlp3s0: radio_work_free('scan'@0x555c8a429360): num_active_works --> 0
+wlp3s0: Postpone network selection by 8 seconds since all networks are disabled
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: External program started a scan
+nl80211: Drv Event 64 (NL80211_CMD_NOTIFY_CQM) received for wlp3s0
+nl80211: Connection quality monitor event: RSSI high
+nl80211: Querying the driver for signal info failed
+nl80211: Noise: 9999 dBm
+wlp3s0: Event SIGNAL_CHANGE (24) received
+wlp3s0: CTRL-EVENT-SIGNAL-CHANGE above=1 signal=-9999 noise=9999 txrate=0
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700 5720 5745 5765 5785 5805 5825 5845
+wlp3s0: Event SCAN_RESULTS (3) received
+nl80211: Received scan results (92 BSSes)
+nl80211: Scan results indicate BSS status with 1c:28:af:81:6e:32 as associated
+nl80211: Local state (not associated) does not match with BSS state
+nl80211: Clear possible state mismatch (1c:28:af:81:6e:32)
+wlp3s0: nl80211: MLME command failed: reason=2 ret=-1 (Operation not permitted)
+wlp3s0: BSS: Start scan result update 9
+BSS: last_scan_res_used=92/128
+wlp3s0: New scan results available (own=0 ext=1)
+wlp3s0: Do not use results from externally requested scan operation for network selection
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: External program started a scan
+wlp3s0: Try to associate due to network getting re-enabled
+wlp3s0: CTRL-EVENT-SSID-REENABLED id=0 ssid="WPA3-PK-Network"
+wlp3s0: Selecting BSS from priority group 0
+wlp3s0: 0: 1c:28:af:81:6e:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-66 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 1: 1c:28:af:81:6e:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-66 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 2: 50:64:2b:18:ce:be ssid='MuLan_5' wpa_ie_len=0 rsn_ie_len=24 caps=0x1011 level=-67 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 3: 1c:28:af:81:6e:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-67 freq=5180 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 4: 28:d1:27:d3:28:f3 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x31 level=-72 freq=5180 
+wlp3s0:    skip - SSID not known
+wlp3s0: 5: 1c:28:af:80:ee:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 6: 1c:28:af:81:55:53 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 7: 1c:28:af:81:55:50 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 8: 1c:28:af:81:55:52 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 9: 1c:28:af:80:ee:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 10: 1c:28:af:80:ee:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-78 freq=5805 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 11: 50:64:2b:18:ce:bd ssid='MuLan_2.4GHz' wpa_ie_len=0 rsn_ie_len=24 caps=0x1431 level=-58 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 12: 28:d1:27:d3:28:f2 ssid='' wpa_ie_len=0 rsn_ie_len=28 caps=0x431 level=-68 freq=2437 
+wlp3s0:    skip - SSID not known
+wlp3s0: 13: 1c:28:af:82:9e:60 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-80 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 14: 1c:28:af:81:52:e3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-82 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 15: 1c:28:af:82:9e:62 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-82 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 16: 1c:28:af:81:52:e2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 17: 1c:28:af:81:52:e0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 18: 1c:28:af:82:9e:63 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 19: 1c:28:af:82:84:c3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-83 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 20: a8:5b:f7:11:c0:00 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 21: a8:5b:f7:11:c0:03 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 22: 1c:28:af:82:84:c2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-84 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 23: a8:5b:f7:11:c0:02 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-86 freq=2437 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 24: a8:5b:f7:11:7c:f2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-80 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 25: 02:71:47:a0:7a:f8 ssid='DIRECT-Ot-FireTV_257f' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-76 freq=5220  wps p2p
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 26: a8:5b:f7:11:7c:f0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-81 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 27: a8:5b:f7:11:7c:f3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-81 freq=5640 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 28: 02:71:47:a0:7a:f8 ssid='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-77 freq=5220  wps p2p
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 29: 1c:28:af:81:66:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 30: 1c:28:af:81:66:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 31: 1c:28:af:81:66:90 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5260 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 32: 1c:28:af:82:b3:d2 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 33: 1c:28:af:82:b3:d3 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-83 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 34: 1c:28:af:82:52:30 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 35: 1c:28:af:82:52:32 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 36: 1c:28:af:82:b3:d0 ssid='Ateneo' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-84 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 37: 1c:28:af:82:52:33 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 38: 1c:28:af:80:c6:93 ssid='eduroam' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 39: 1c:28:af:80:c6:92 ssid='Studenti' wpa_ie_len=0 rsn_ie_len=20 caps=0x11 level=-85 freq=5500 
+wlp3s0:    skip - SSID mismatch
+wlp3s0: 40: 5c:a6:e6:3f:e2:da ssid='WPA3-PK-Network' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-36 freq=2412 
+wlp3s0:    selected based on RSN IE
+wlp3s0:    selected BSS 5c:a6:e6:3f:e2:da ssid='WPA3-PK-Network'
+wlp3s0: Considering connect request: reassociate: 0  selected: 5c:a6:e6:3f:e2:da  bssid: 00:00:00:00:00:00  pending: 00:00:00:00:00:00  wpa_state: SCANNING  ssid=0x555c8a3535d0  current_ssid=(nil)
+wlp3s0: Request association with 5c:a6:e6:3f:e2:da
+wlp3s0: Re-association to the same ESS
+wlp3s0: No ongoing scan/p2p-scan found to abort
+wlp3s0: Add radio work 'sme-connect'@0x555c8a42ed80
+wlp3s0: First radio work item in the queue - schedule start immediately
+Delay radio work start until externally triggered scan completes
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID 'Studenti'
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700 5720 5745 5765 5785 5805 5825 5845
+wlp3s0: Event SCAN_RESULTS (3) received
+nl80211: Received scan results (96 BSSes)
+nl80211: Scan results indicate BSS status with 1c:28:af:81:6e:32 as associated
+nl80211: Local state (not associated) does not match with BSS state
+nl80211: Clear possible state mismatch (1c:28:af:81:6e:32)
+wlp3s0: nl80211: MLME command failed: reason=2 ret=-1 (Operation not permitted)
+wlp3s0: BSS: Start scan result update 10
+wlp3s0: BSS: Add new id 99 BSSID 06:c2:16:b8:d3:eb SSID '\x00\x00\x00\x00\x00\x00' freq 5220
+wlp3s0: BSS: Add new id 100 BSSID 1c:28:af:82:b3:c2 SSID 'Studenti' freq 2462
+wlp3s0: BSS: Add new id 101 BSSID 1c:28:af:82:b3:c1 SSID 'Ospiti' freq 2462
+wlp3s0: BSS: Remove id 64 BSSID 1c:28:af:81:4c:e0 SSID 'Ateneo' due to no match in scan
+wlp3s0: BSS: Remove id 65 BSSID 1c:28:af:81:4c:e3 SSID 'eduroam' due to no match in scan
+wlp3s0: BSS: Remove id 26 BSSID ce:21:19:a3:aa:32 SSID 'AndroidAP8070' due to no match in scan
+wlp3s0: BSS: Remove id 66 BSSID 1c:28:af:81:4c:e2 SSID 'Studenti' due to no match in scan
+wlp3s0: BSS: Remove id 74 BSSID 1c:28:af:81:4c:e1 SSID 'Ospiti' due to no match in scan
+BSS: last_scan_res_used=96/128
+wlp3s0: New scan results available (own=0 ext=1)
+wlp3s0: Do not use results from externally requested scan operation for network selection
+wlp3s0: Starting radio work 'sme-connect'@0x555c8a42ed80 after 5.202078 second wait
+wlp3s0: WPA: clearing own WPA/RSN IE
+wlp3s0: RSN: clearing own RSNXE
+wlp3s0: Automatic auth_alg selection: 0x1
+wlp3s0: Using SAE auth_alg
+RSN: PMKSA cache search - network_ctx=(nil) try_opportunistic=0 akmp=0x0
+RSN: Search for BSSID 5c:a6:e6:3f:e2:da
+RSN: No PMKSA cache entry found
+wlp3s0: RSN: using IEEE 802.11i/D9.0
+wlp3s0: WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 1024 proto 2
+wlp3s0: WPA: Selected mgmt group cipher 32
+wlp3s0: WPA: clearing AP WPA IE
+WPA: set AP RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00
+wlp3s0: WPA: clearing AP RSNXE
+wlp3s0: WPA: AP group 0x10 network profile group 0x18; available group 0x10
+wlp3s0: WPA: using GTK CCMP
+wlp3s0: WPA: AP pairwise 0x10 network profile pairwise 0x18; available pairwise 0x10
+wlp3s0: WPA: using PTK CCMP
+wlp3s0: WPA: AP key_mgmt 0x400 network profile key_mgmt 0x400; available key_mgmt 0x400
+wlp3s0: RSN: using KEY_MGMT SAE
+wlp3s0: WPA: AP mgmt_group_cipher 0x20 network profile mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+wlp3s0: WPA: using MGMT group cipher AES-128-CMAC
+WPA: Set own WPA IE default - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 00 00 00 0f ac 06
+RSN: Set own RSNXE default - hexdump(len=0):
+wlp3s0: SME: Selected AP supports MFP: require MFP
+RRM: Determining whether RRM can be used - device support: 0x30
+RRM: No RRM in network
+Added supported operating classes IE - hexdump(len=22): 3b 14 51 51 53 54 73 74 75 76 77 78 79 7a 7b 7c 7d 7e 7f 80 81 82
+RSN: PMKSA cache search - network_ctx=0x555c8a3535d0 try_opportunistic=0 akmp=0x400
+RSN: Search for BSSID 5c:a6:e6:3f:e2:da
+RSN: No PMKSA cache entry found
+SAE: Selecting supported ECC group 19
+wlp3s0: SME: Selected SAE group 19
+SAE: password - hexdump_ascii(len=14): [REMOVED]
+SAE: PWE derivation - addr1=3c:a0:67:80:99:a3 addr2=5c:a6:e6:3f:e2:da
+SAE: counter = 001
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0x00
+SAE: counter = 002
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 003
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 004
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 005
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 006
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 007
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 008
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 009
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 010
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 011
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 012
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 013
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 014
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 015
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 016
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 017
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 018
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 019
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 020
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 021
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 022
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 023
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 024
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 025
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 026
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 027
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 028
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 029
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 030
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 031
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 032
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 033
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 034
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 035
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 036
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 037
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 038
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 039
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 040
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: PWE - hexdump(len=64): [REMOVED]
+SAE: own commit-scalar - hexdump(len=32): 01 74 9e fd 9a 27 e4 86 2a d7 d5 db 8b 63 22 6e ed f4 65 c4 bd 5a 19 c2 18 30 8d d8 86 cd 65 76
+SAE: own commit-element(x) - hexdump(len=32): 6b df bf 1b e0 ef 0a 18 e4 49 49 00 a3 e4 1e cb 7b 40 50 59 9a 7b ae 81 ed ed 24 49 76 d5 46 aa
+SAE: own commit-element(y) - hexdump(len=32): 37 d0 2f 2d 2c c4 dc 68 f2 53 43 9a 73 ed 60 f8 a8 da 4e 3e cd 7a 82 ce 6d 87 04 11 b7 6c 19 13
+EAPOL: External notification - EAP success=0
+EAPOL: External notification - EAP fail=0
+EAPOL: External notification - portControl=Auto
+wlp3s0: Cancelling scan request
+wlp3s0: SME: Trying to authenticate with 5c:a6:e6:3f:e2:da (SSID='WPA3-PK-Network' freq=2412 MHz)
+EAPOL: External notification - portValid=0
+wlp3s0: State: SCANNING -> AUTHENTICATING
+Not configuring frame filtering - BSS 00:00:00:00:00:00 is not a Hotspot 2.0 network
+nl80211: Authenticate (ifindex=3)
+  * bssid=5c:a6:e6:3f:e2:da
+  * freq=2412
+  * SSID=WPA3-PK-Network
+  * IEs - hexdump(len=0): [NULL]
+  * auth_data - hexdump(len=102): 01 00 00 00 13 00 01 74 9e fd 9a 27 e4 86 2a d7 d5 db 8b 63 22 6e ed f4 65 c4 bd 5a 19 c2 18 30 8d d8 86 cd 65 76 6b df bf 1b e0 ef 0a 18 e4 49 49 00 a3 e4 1e cb 7b 40 50 59 9a 7b ae 81 ed ed 24 49 76 d5 46 aa 37 d0 2f 2d 2c c4 dc 68 f2 53 43 9a 73 ed 60 f8 a8 da 4e 3e cd 7a 82 ce 6d 87 04 11 b7 6c 19 13
+  * Auth Type 4
+nl80211: Authentication request send successfully
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=1 ifi_family=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x1003 ([UP])
+nl80211: Drv Event 20 (NL80211_CMD_DEL_STATION) received for wlp3s0
+nl80211: Delete station 1c:28:af:81:6e:32
+nl80211: Drv Event 39 (NL80211_CMD_DEAUTHENTICATE) received for wlp3s0
+nl80211: Deauthenticate event
+nl80211: Received a locally generated deauth event. Clear ignore_next_local_deauth flag
+nl80211: Drv Event 48 (NL80211_CMD_DISCONNECT) received for wlp3s0
+nl80211: Ignore disconnect event when using userspace SME
+nl80211: Drv Event 19 (NL80211_CMD_NEW_STATION) received for wlp3s0
+nl80211: New station 5c:a6:e6:3f:e2:da
+nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlp3s0
+nl80211: Regulatory domain change
+ * initiator=0
+ * type=1
+wlp3s0: Event CHANNEL_LIST_CHANGED (27) received
+wlp3s0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+wlp3s0: Updating hw mode
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220[NO_IR] 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlp3s0
+nl80211: Regulatory domain change
+ * initiator=1
+ * type=0
+ * alpha2=IT
+wlp3s0: Event CHANNEL_LIST_CHANGED (27) received
+wlp3s0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+wlp3s0: Updating hw mode
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220[NO_IR] 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Drv Event 37 (NL80211_CMD_AUTHENTICATE) received for wlp3s0
+nl80211: Authenticate event
+wlp3s0: Event AUTH (10) received
+wlp3s0: SME: Authentication response: peer=5c:a6:e6:3f:e2:da auth_type=3 auth_transaction=1 status_code=0
+wlp3s0: SME: SAE authentication transaction 1 status code 0
+wlp3s0: SME SAE commit
+SAE: Peer commit-scalar - hexdump(len=32): c1 af cd 27 84 47 05 5a 4d ce 76 5c 24 99 82 bd 28 55 92 3d 2d 92 ae 00 70 ee ca 60 c1 04 eb 87
+SAE: Peer commit-element(x) - hexdump(len=32): af 89 b0 3f bb 73 68 1c d1 ab 87 4e 67 92 fd 6b 89 92 81 10 c2 e6 04 3c bc 31 00 89 ca 6e ad 52
+SAE: Peer commit-element(y) - hexdump(len=32): e0 de 1c ce 8e d9 72 f2 f8 f2 be 66 6b 5f d6 a8 ad 3d 17 46 4f e7 d0 a3 03 dd 69 36 fd c1 29 6f
+SAE: Possible elements at the end of the frame - hexdump(len=0):
+SAE: k - hexdump(len=32): [REMOVED]
+SAE: salt for keyseed derivation - hexdump(len=32): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+SAE: keyseed - hexdump(len=32): [REMOVED]
+SAE: PMKID - hexdump(len=16): c3 24 6c 25 1e 6e e9 e0 78 a6 4c 37 af fc a5 2c
+SAE: KCK - hexdump(len=32): [REMOVED]
+SAE: PMK - hexdump(len=32): [REMOVED]
+wlp3s0: Automatic auth_alg selection: 0x1
+wlp3s0: Using SAE auth_alg
+RSN: PMKSA cache search - network_ctx=0x555c8a3535d0 try_opportunistic=0 akmp=0x0
+RSN: Search for BSSID 5c:a6:e6:3f:e2:da
+RSN: No PMKSA cache entry found
+wlp3s0: RSN: using IEEE 802.11i/D9.0
+wlp3s0: WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 1024 proto 2
+wlp3s0: WPA: Selected mgmt group cipher 32
+wlp3s0: WPA: clearing AP WPA IE
+WPA: set AP RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00
+wlp3s0: WPA: clearing AP RSNXE
+wlp3s0: WPA: AP group 0x10 network profile group 0x18; available group 0x10
+wlp3s0: WPA: using GTK CCMP
+wlp3s0: WPA: AP pairwise 0x10 network profile pairwise 0x18; available pairwise 0x10
+wlp3s0: WPA: using PTK CCMP
+wlp3s0: WPA: AP key_mgmt 0x400 network profile key_mgmt 0x400; available key_mgmt 0x400
+wlp3s0: RSN: using KEY_MGMT SAE
+wlp3s0: WPA: AP mgmt_group_cipher 0x20 network profile mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+wlp3s0: WPA: using MGMT group cipher AES-128-CMAC
+WPA: Set own WPA IE default - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 00 00 00 0f ac 06
+WPA: Leave previously set WPA IE default - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 00 00 00 0f ac 06
+RSN: Set own RSNXE default - hexdump(len=0):
+wlp3s0: SME: Selected AP supports MFP: require MFP
+RRM: Determining whether RRM can be used - device support: 0x30
+RRM: No RRM in network
+Added supported operating classes IE - hexdump(len=22): 3b 14 51 51 53 54 73 74 75 76 77 78 79 7a 7b 7c 7d 7e 7f 80 81 82
+RSN: PMKSA cache search - network_ctx=0x555c8a3535d0 try_opportunistic=0 akmp=0x400
+RSN: Search for BSSID 5c:a6:e6:3f:e2:da
+RSN: No PMKSA cache entry found
+EAPOL: External notification - EAP success=0
+EAPOL: External notification - EAP fail=0
+EAPOL: External notification - portControl=Auto
+wlp3s0: Cancelling scan request
+wlp3s0: SME: Trying to authenticate with 5c:a6:e6:3f:e2:da (SSID='WPA3-PK-Network' freq=2412 MHz)
+EAPOL: External notification - portValid=0
+wlp3s0: State: AUTHENTICATING -> AUTHENTICATING
+Not configuring frame filtering - BSS 00:00:00:00:00:00 is not a Hotspot 2.0 network
+nl80211: Authenticate (ifindex=3)
+  * bssid=5c:a6:e6:3f:e2:da
+  * freq=2412
+  * SSID=WPA3-PK-Network
+  * IEs - hexdump(len=0): [NULL]
+  * auth_data - hexdump(len=38): 02 00 00 00 01 00 34 61 9b 8e dd 11 c6 93 f2 f0 de 7a 6a cc 5f b1 51 54 46 26 67 85 b7 a0 ba 50 04 97 6f 48 ee e4
+  * Auth Type 4
+nl80211: Authentication request send successfully
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: External program started a scan
+nl80211: Drv Event 37 (NL80211_CMD_AUTHENTICATE) received for wlp3s0
+nl80211: Authenticate event
+wlp3s0: Event AUTH (10) received
+wlp3s0: SME: Authentication response: peer=5c:a6:e6:3f:e2:da auth_type=3 auth_transaction=2 status_code=1
+wlp3s0: SME: SAE authentication transaction 2 status code 1
+wlp3s0: CTRL-EVENT-AUTH-REJECT 5c:a6:e6:3f:e2:da auth_type=3 auth_transaction=2 status_code=1
+wlp3s0: Radio work 'sme-connect'@0x555c8a42ed80 done in 0.221035 seconds
+wlp3s0: radio_work_free('sme-connect'@0x555c8a42ed80): num_active_works --> 0
+Added BSSID 5c:a6:e6:3f:e2:da into ignore list, ignoring for 10 seconds
+Continuous association failures - consider temporary network disabling
+wlp3s0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="WPA3-PK-Network" auth_failures=2 duration=20 reason=CONN_FAILED
+wlp3s0: Consecutive connection failures: 6 --> request scan in 10000 ms
+wlp3s0: Setting scan request: 10.000000 sec
+wlp3s0: State: AUTHENTICATING -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+nl80211: Drv Event 20 (NL80211_CMD_DEL_STATION) received for wlp3s0
+nl80211: Delete station 5c:a6:e6:3f:e2:da
+nl80211: Drv Event 42 (NL80211_CMD_REG_BEACON_HINT) received for wlp3s0
+nl80211: Regulatory beacon hint
+nl80211: Channel (before): freq=5220 max_tx_power=2300 no-IR
+nl80211: Channel (after): freq=5220 max_tx_power=2300
+wlp3s0: Event CHANNEL_LIST_CHANGED (27) received
+wlp3s0: CTRL-EVENT-REGDOM-CHANGE init=BEACON_HINT type=UNKNOWN
+wlp3s0: Updating hw mode
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR] 5560[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Drv Event 42 (NL80211_CMD_REG_BEACON_HINT) received for wlp3s0
+nl80211: Regulatory beacon hint
+nl80211: Channel (before): freq=5805 max_tx_power=1300 no-IR
+nl80211: Channel (after): freq=5805 max_tx_power=1300
+wlp3s0: Event CHANNEL_LIST_CHANGED (27) received
+wlp3s0: CTRL-EVENT-REGDOM-CHANGE init=BEACON_HINT type=UNKNOWN
+wlp3s0: Updating hw mode
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR] 5560[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Drv Event 42 (NL80211_CMD_REG_BEACON_HINT) received for wlp3s0
+nl80211: Regulatory beacon hint
+nl80211: Channel (before): freq=5180 max_tx_power=2300 no-IR
+nl80211: Channel (after): freq=5180 max_tx_power=2300
+wlp3s0: Event CHANNEL_LIST_CHANGED (27) received
+wlp3s0: CTRL-EVENT-REGDOM-CHANGE init=BEACON_HINT type=UNKNOWN
+wlp3s0: Updating hw mode
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180 5200[NO_IR] 5220 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR] 5560[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x1003 ([UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID 'Studenti'
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 5220 5805 5640 2437 5260 5500 5580 5180 2462 2412
+wlp3s0: Event SCAN_RESULTS (3) received
+nl80211: Received scan results (97 BSSes)
+wlp3s0: BSS: Start scan result update 11
+wlp3s0: BSS: Add new id 102 BSSID 1c:28:af:82:84:c0 SSID 'Ateneo' freq 2437
+wlp3s0: BSS: Add new id 103 BSSID 1c:28:af:81:4c:e2 SSID 'Studenti' freq 2412
+BSS: last_scan_res_used=97/128
+wlp3s0: New scan results available (own=0 ext=1)
+wlp3s0: Do not use results from externally requested scan operation for network selection
+nl80211: Drv Event 19 (NL80211_CMD_NEW_STATION) received for wlp3s0
+nl80211: New station 1c:28:af:81:55:52
+nl80211: Drv Event 37 (NL80211_CMD_AUTHENTICATE) received for wlp3s0
+nl80211: Authenticate event
+wlp3s0: Event AUTH (10) received
+wlp3s0: SME: Ignore authentication event when not in authenticating state
+nl80211: Drv Event 38 (NL80211_CMD_ASSOCIATE) received for wlp3s0
+nl80211: Associate event
+nl80211: Associated on 5220 MHz
+nl80211: Associated with 1c:28:af:81:55:52
+nl80211: Set drv->ssid based on scan res info to 'Studenti'
+wlp3s0: Event ASSOC (0) received
+wlp3s0: Association info event
+req_ies - hexdump(len=146): 00 08 53 74 75 64 65 6e 74 69 01 08 0c 12 18 24 30 48 60 6c 30 26 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 80 00 01 00 dd db a6 77 06 a4 b1 7a d2 b8 19 fc 2f 77 58 8d 2d 1a 6f 19 1b ff 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 7f 0b 04 00 0a 02 01 40 40 40 00 01 20 bf 0c 32 71 90 33 fe ff 00 00 fe ff 00 00 3b 14 80 51 53 54 73 74 75 76 77 78 79 7a 7b 7c 7d 7e 7f 80 81 82 dd 07 00 50 f2 02 00 01 00
+resp_ies - hexdump(len=121): 01 08 8c 12 98 24 b0 48 60 6c 2d 1a ef 09 17 ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3d 16 2c 05 16 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7f 0a 04 00 08 00 00 00 00 40 00 40 bf 0c b1 79 89 0f fa ff 00 00 fa ff 00 00 c0 05 01 2a 00 00 00 dd 18 00 50 f2 02 01 01 80 00 03 a4 00 00 27 a4 00 00 42 43 5e 00 62 32 2f 00
+WPA: set own WPA/RSN IE - hexdump(len=40): 30 26 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 80 00 01 00 dd db a6 77 06 a4 b1 7a d2 b8 19 fc 2f 77 58 8d
+RSN: PMKSA cache search - network_ctx=(nil) try_opportunistic=0 akmp=0x0
+RSN: Search for PMKID - hexdump(len=16): dd db a6 77 06 a4 b1 7a d2 b8 19 fc 2f 77 58 8d
+RSN: No PMKSA cache entry found
+wlp3s0: RSN: PMKID from assoc IE not found from PMKSA cache
+wlp3s0: RSN: clearing own RSNXE
+wlp3s0: State: DISCONNECTED -> ASSOCIATED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+wlp3s0: Associated to a new BSS: BSSID=1c:28:af:81:55:52
+wlp3s0: Driver-initiated BSS selection changed the SSID to Studenti
+wlp3s0: Select network based on association information
+wlp3s0: No network configuration found for the current AP
+wlp3s0: Request to deauthenticate - bssid=1c:28:af:81:55:52 pending_bssid=00:00:00:00:00:00 reason=3 (DEAUTH_LEAVING) state=ASSOCIATED
+TDLS: Tear down peers
+wpa_driver_nl80211_deauthenticate(addr=1c:28:af:81:55:52 reason_code=3)
+wlp3s0: nl80211: MLME command failed: reason=3 ret=-1 (Operation not permitted)
+wlp3s0: Event DEAUTH (11) received
+wlp3s0: Deauthentication notification
+wlp3s0:  * reason 3 (DEAUTH_LEAVING) locally_generated=1
+Deauthentication frame IE(s) - hexdump(len=0): [NULL]
+wlp3s0: CTRL-EVENT-DISCONNECTED bssid=1c:28:af:81:55:52 reason=3 locally_generated=1
+wlp3s0: Auto connect enabled: try to reconnect (wps=0/0 wpa_state=6)
+wlp3s0: Rescheduling scan request: 0.100000 sec
+Added BSSID 1c:28:af:81:55:52 into ignore list, ignoring for 10 seconds
+wlp3s0: Another BSS in this ESS has been seen; try it next
+BSSID 1c:28:af:81:55:52 ignore list count incremented to 2, ignoring for 10 seconds
+Continuous association failures - consider temporary network disabling
+wlp3s0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="WPA3-PK-Network" auth_failures=3 duration=30 reason=CONN_FAILED
+wlp3s0: Consecutive connection failures: 7 --> request scan in 10000 ms
+wlp3s0: Ignore new scan request for 10.000000 sec since an earlier request is scheduled to trigger sooner
+TDLS: Remove peers on disassociation
+wlp3s0: WPA: Clear old PMK and PTK
+wlp3s0: Disconnect event - remove keys
+nl80211: Data frame filter flags=0x0
+wlp3s0: State: ASSOCIATED -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+EAPOL: External notification - EAP success=0
+nl80211: Data frame filter flags=0x0
+wlp3s0: State: DISCONNECTED -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+QM: Clear all active DSCP policies
+wlp3s0: CTRL-EVENT-DSCP-POLICY clear_all
+wlp3s0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=5 linkmode=1 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+nl80211: Drv Event 46 (NL80211_CMD_CONNECT) received for wlp3s0
+nl80211: Ignore connect event (cmd=46) when using userspace SME
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=294
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=295
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=296
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=297
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=298
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+wlp3s0: State: DISCONNECTED -> SCANNING
+wlp3s0: Starting AP scan for wildcard SSID
+wlp3s0: Optimize scan based on previously generated frequency list
+wlp3s0: Add radio work 'scan'@0x555c8a42e930
+wlp3s0: First radio work item in the queue - schedule start immediately
+wlp3s0: Starting radio work 'scan'@0x555c8a42e930 after 0.000022 second wait
+wlp3s0: nl80211: scan request
+Scan requested (ret=0) - scan timeout 30 seconds
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlp3s0
+wlp3s0: nl80211: Scan trigger
+wlp3s0: Event SCAN_STARTED (47) received
+wlp3s0: Own scan request started a scan in 0.000107 seconds
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=299
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=300
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=301
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=302
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=303
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=304
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=305
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=6 linkmode=1 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Drv Event 64 (NL80211_CMD_NOTIFY_CQM) received for wlp3s0
+nl80211: Connection quality monitor event: RSSI low
+nl80211: Querying the driver for signal info failed
+nl80211: Noise: 9999 dBm
+wlp3s0: Event SIGNAL_CHANGE (24) received
+wlp3s0: CTRL-EVENT-SIGNAL-CHANGE above=0 signal=-9999 noise=9999 txrate=0
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 wext ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlp3s0
+wlp3s0: nl80211: New scan results available
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2462 5180 5805 2437 5640 5260 5500 5580 2412
+wlp3s0: Event SCAN_RESULTS (3) received
+wlp3s0: Scan completed in 1.870488 seconds
+nl80211: Received scan results (98 BSSes)
+nl80211: Scan results indicate BSS status with 1c:28:af:81:55:52 as associated
+nl80211: Local state (not associated) does not match with BSS state
+nl80211: Clear possible state mismatch (1c:28:af:81:55:52)
+wlp3s0: nl80211: MLME command failed: reason=2 ret=-1 (Operation not permitted)
+wlp3s0: BSS: Start scan result update 12
+BSS: last_scan_res_used=98/128
+wlp3s0: New scan results available (own=1 ext=0)
+WPS: AP[0] 02:71:47:a0:7a:f8 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+wlp3s0: Radio work 'scan'@0x555c8a42e930 done in 1.873573 seconds
+wlp3s0: radio_work_free('scan'@0x555c8a42e930): num_active_works --> 0
+wlp3s0: Postpone network selection by 28 seconds since all networks are disabled
+wlp3s0: Removing interface wlp3s0
+nl80211: Getting wowlan status
+nl80211: wowlan is disabled
+wlp3s0: Request to deauthenticate - bssid=00:00:00:00:00:00 pending_bssid=00:00:00:00:00:00 reason=3 (DEAUTH_LEAVING) state=SCANNING
+TDLS: Tear down peers
+nl80211: Data frame filter flags=0x0
+wlp3s0: State: SCANNING -> DISCONNECTED
+nl80211: Set wlp3s0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+QM: Clear all active DSCP policies
+wlp3s0: CTRL-EVENT-DSCP-POLICY clear_all
+wlp3s0: WPA: Clear old PMK and PTK
+Removed BSSID 1c:28:af:81:55:52 from ignore list (clear)
+Removed BSSID 5c:a6:e6:3f:e2:da from ignore list (clear)
+Removed BSSID 1c:28:af:81:6e:32 from ignore list (clear)
+wlp3s0: BSS: Remove id 0 BSSID 1c:28:af:81:6e:30 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 1 BSSID 1c:28:af:81:6e:32 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 2 BSSID 1c:28:af:81:6e:33 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 3 BSSID 50:64:2b:18:ce:be SSID 'MuLan_5' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 4 BSSID 28:d1:27:d3:28:f3 SSID '' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 55 BSSID 1c:28:af:81:55:50 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 5 BSSID 1c:28:af:81:55:52 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 7 BSSID 1c:28:af:81:55:53 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 9 BSSID 1c:28:af:80:ee:f0 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 11 BSSID 1c:28:af:80:ee:f2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 95 BSSID 50:64:2b:18:ce:bd SSID 'MuLan_2.4GHz' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 56 BSSID a8:5b:f7:11:7c:e0 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 57 BSSID a8:5b:f7:11:7c:e2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 58 BSSID a8:5b:f7:11:7c:e3 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 75 BSSID 28:d1:27:d3:28:f2 SSID '' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 59 BSSID 1c:28:af:82:52:22 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 20 BSSID 1c:28:af:81:66:80 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 16 BSSID 1c:28:af:81:66:83 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 17 BSSID 1c:28:af:82:52:20 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 18 BSSID 1c:28:af:81:66:82 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 19 BSSID 1c:28:af:82:52:23 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 60 BSSID 1c:28:af:81:55:40 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 61 BSSID 1c:28:af:81:55:43 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 62 BSSID 1c:28:af:81:55:42 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 63 BSSID 1c:28:af:82:9e:62 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 23 BSSID 1c:28:af:81:52:e3 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 77 BSSID 1c:28:af:82:9e:60 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 21 BSSID 1c:28:af:82:9e:63 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 84 BSSID 1c:28:af:82:84:c3 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 22 BSSID 1c:28:af:81:52:e2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 67 BSSID a8:5b:f7:11:c0:00 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 83 BSSID 1c:28:af:82:84:c2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 76 BSSID a8:5b:f7:11:c0:03 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 102 BSSID 1c:28:af:82:84:c0 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 24 BSSID 1c:28:af:81:52:e0 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 78 BSSID a8:5b:f7:11:c0:02 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 25 BSSID a8:5b:f7:11:7c:f0 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 8 BSSID a8:5b:f7:11:7c:f3 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 6 BSSID 1c:28:af:80:ee:f3 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 10 BSSID a8:5b:f7:11:7c:f2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 90 BSSID 02:71:47:a0:7a:f8 SSID 'DIRECT-Ot-FireTV_257f' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 31 BSSID 02:71:47:a0:7a:f8 SSID '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 103 BSSID 1c:28:af:81:4c:e2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 91 BSSID 5c:a6:e6:3f:e2:da SSID 'WPA3-PK-Network' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 28 BSSID 1c:28:af:81:66:93 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 29 BSSID 1c:28:af:81:66:92 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 30 BSSID 1c:28:af:81:66:90 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 34 BSSID 1c:28:af:82:b3:d0 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 39 BSSID 1c:28:af:81:cc:90 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 40 BSSID 1c:28:af:81:cc:92 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 42 BSSID 1c:28:af:81:cc:93 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 99 BSSID 06:c2:16:b8:d3:eb SSID '\x00\x00\x00\x00\x00\x00' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 33 BSSID 1c:28:af:82:52:30 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 36 BSSID 1c:28:af:82:52:32 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 38 BSSID 1c:28:af:82:b3:d2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 37 BSSID 1c:28:af:80:c6:93 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 32 BSSID 1c:28:af:82:52:33 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 41 BSSID 1c:28:af:82:b3:d3 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 80 BSSID 1c:28:af:81:52:f0 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 68 BSSID 1c:28:af:80:c6:92 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 35 BSSID 1c:28:af:80:c6:90 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 79 BSSID 1c:28:af:81:52:f3 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 85 BSSID 1c:28:af:81:52:f2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 14 BSSID 1c:28:af:81:6e:23 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 12 BSSID 1c:28:af:81:6e:20 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 13 BSSID 1c:28:af:81:6e:22 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 15 BSSID 1c:28:af:80:ee:e2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 69 BSSID 1c:28:af:80:ee:e0 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 70 BSSID 1c:28:af:80:ee:e3 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 86 BSSID 1c:28:af:80:c6:83 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 87 BSSID 1c:28:af:80:c6:82 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 96 BSSID 1c:28:af:80:c6:80 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 92 BSSID 1c:28:af:82:34:e2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 93 BSSID 1c:28:af:82:b3:c0 SSID 'Ateneo' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 100 BSSID 1c:28:af:82:b3:c2 SSID 'Studenti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 97 BSSID 1c:28:af:82:b3:c3 SSID 'eduroam' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 43 BSSID 1c:28:af:81:6e:31 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 44 BSSID 1c:28:af:81:55:51 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 45 BSSID 1c:28:af:80:ee:f1 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 71 BSSID a8:5b:f7:11:7c:e1 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 49 BSSID 1c:28:af:81:66:81 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 72 BSSID 1c:28:af:82:52:21 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 73 BSSID 1c:28:af:81:55:41 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 94 BSSID 1c:28:af:82:9e:61 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 88 BSSID a8:5b:f7:11:c0:01 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 81 BSSID 1c:28:af:81:52:e1 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 98 BSSID 1c:28:af:82:84:c1 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 46 BSSID a8:5b:f7:11:7c:f1 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 50 BSSID 1c:28:af:81:66:91 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 54 BSSID 1c:28:af:82:b3:d1 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 53 BSSID 1c:28:af:82:52:31 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 52 BSSID 1c:28:af:81:cc:91 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 51 BSSID 1c:28:af:80:c6:91 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 82 BSSID 1c:28:af:81:52:f1 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 47 BSSID 1c:28:af:81:6e:21 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 48 BSSID 1c:28:af:80:ee:e1 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 89 BSSID 1c:28:af:80:c6:81 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: BSS: Remove id 101 BSSID 1c:28:af:82:b3:c1 SSID 'Ospiti' due to wpa_bss_flush
+wlp3s0: Cancelling scan request
+wlp3s0: Cancelling authentication timeout
+P2P: Removing pending group interface p2p-dev-wlp3s0
+nl80211: wpa_driver_nl80211_if_remove(type=6 ifname=p2p-dev-wlp3s0) ifindex=0 added_if=0
+Off-channel: Clear pending Action frame TX (pending_action_tx=(nil)
+nl80211: Data frame filter flags=0x0
+HS20: Delete all stored icons
+Off-channel: Action frame sequence done notification: pending_action_tx=(nil) drv_offchan_tx=1 action_tx_wait_time=0 off_channel_freq=0 roc_waiting_drv_freq=0
+QM: Clear all active DSCP policies
+wlp3s0: CTRL-EVENT-DSCP-POLICY clear_all
+Remove interface wlp3s0 from radio phy0
+Remove radio phy0
+nl80211: deinit ifname=wlp3s0 disabled_11b_rates=0
+nl80211: Remove monitor interface: refcount=0
+netlink: Operstate: ifindex=3 linkmode=0 (kernel-control), operstate=6 (IF_OPER_UP)
+nl80211: Set mode ifindex 3 iftype 2 (STATION)
+nl80211: Unsubscribe mgmt frames handle 0x8888ddd402bda709 (mode change)
+wlp3s0: CTRL-EVENT-TERMINATING 
+[0;36mwpa_supplicant is stopped.[0m
+

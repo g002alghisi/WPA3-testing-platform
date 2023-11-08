@@ -173,9 +173,9 @@ sta_run() {
     sta_print_info
     echo ""
     if [ $cli_mode -eq 0 ]; then
-        sudo wpa_supplicant -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
+        sudo wpa_supplicant -i "$wifi_if" -c "$wpa_supplicant_config_file" #-d
     else
-        sudo wpa_supplicant -B -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
+        sudo wpa_supplicant -B -i "$wifi_if" -c "$wpa_supplicant_config_file" #-d
 
         echo ""
         echo -e "${CYAN}wpa_cli is running too...${NC}"
