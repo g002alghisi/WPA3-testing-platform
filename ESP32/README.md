@@ -20,5 +20,5 @@ and looking for `CP2102 USB to UART Bridge Controller` string.
 
 
 ### Usefull links
-- Staring guide [https://wiki.keyestudio.com/KS0413_keyestudio_ESP32_Core_Board#Buy_From](https://wiki.keyestudio.com/KS0413_keyestudio_ESP32_Core_Board#Buy_From]
+- Staring guide [https://wiki.keyestudio.com/KS0413_keyestudio_ESP32_Core_Board#Buy_From](https://wiki.keyestudio.com/KS0413_keyestudio_ESP32_Core_Board#Buy_From)
 
