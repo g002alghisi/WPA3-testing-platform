@@ -1,5 +1,5 @@
 # Hostapd Access Point
-Creating an Acces Point with bridge on `Ubuntu`.
+Creating an Acces Point with bridge on Ubuntu.
 
 ### Basic idea
 The basic idea is to use `hostapd` to transform my PC into an acces point (AP).
