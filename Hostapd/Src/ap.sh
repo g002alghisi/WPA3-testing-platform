@@ -38,6 +38,10 @@ br_if="br-ap"
 HOSTAPD_WPA2_CONF_PATH="../Conf/Ko/hostapd_wpa2.conf"
 HOSTAPD_WPA3_CONF_PATH="../Conf/Ko/hostapd_wpa3.conf"
 HOSTAPD_WPA3_PK_CONF_PATH="../Conf/Ko/hostapd_wpa3_pk.conf"
+HOSTAPD_BASIC_WPA2_CONF_PATH="../Conf/Basic/hostapd_wpa2.conf"
+HOSTAPD_BASIC_WPA3_CONF_PATH="../Conf/Basic/hostapd_wpa3.conf"
+HOSTAPD_BASIC_WPA3_PK_CONF_PATH="../Conf/Basic/hostapd_wpa3_pk.conf"
+
 
 
 ### *** Support *** ###
@@ -259,10 +263,9 @@ ap_run() {
     echo -e "${CYAN}Running Hostapd. Press Ctrl-C to stop.${NC}"
     ap_print_info
     echo ""
-    pkill hostapd 
-    sudo "$hostapd" "$hostapd_config_file" #-d
+    killall hostapd
+    sudo "$hostapd" "$hostapd_config_file" -d
     echo -e "${CYAN}Hostapd is stopped.${NC}"
-    echo ""
 }
 
 ap_setdown() {
@@ -312,8 +315,17 @@ main() {
         "wpa3-pk")
             hostapd_config_file="$HOSTAPD_WPA3_PK_CONF_PATH"
             ;;
+        "basic-wpa2")
+            hostapd_config_file="$HOSTAPD_BASIC_WPA2_CONF_PATH"
+            ;;
+        "basic-wpa3")
+            hostapd_config_file="$HOSTAPD_BASIC_WPA3_CONF_PATH"
+            ;;
+        "basic-wpa3-pk")
+            hostapd_config_file="$HOSTAPD_BASIC_WPA3_PK_CONF_PATH"
+            ;;
         *)
-            echo -e "Invalid parameter (wpa2|wpa3)."
+            echo -e "Invalid parameter (wpa2|wpa3|wpa3-pk|basic-wpa2|basic-wpa3|basic-wpa3-pk)."
             exit 1
             ;;
     esac

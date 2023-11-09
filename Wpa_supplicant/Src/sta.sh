@@ -27,6 +27,7 @@
 ### *** Files, interfaces and constants *** ###
 
 wpa_supplicant="../Other/wpa_supplicant"
+#wpa_supplicant="../Other/vanhoef_wpa_supplicant"
 
 wifi_if="wlx5ca6e63fe2da"
 
@@ -174,9 +175,9 @@ sta_run() {
     echo ""
     sudo killall wpa_supplicant
     if [ $cli_mode -eq 0 ]; then
-        sudo "$wpa_supplicant" -i "$wifi_if" -c "$wpa_supplicant_config_file" #-d
+        sudo "$wpa_supplicant" -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
     else
-        sudo "$wpa_supplicant" -B -i "$wifi_if" -c "$wpa_supplicant_config_file" #-d
+        sudo "$wpa_supplicant" -B -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
         echo ""
         echo -e "${CYAN}wpa_cli is running too...${NC}"
         sudo wpa_cli
