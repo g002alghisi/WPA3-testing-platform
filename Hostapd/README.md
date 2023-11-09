@@ -6,6 +6,7 @@ The basic idea is to use `hostapd` to transform my PC into an acces point (AP).
 In particular, the PC is equipped with:
 + network controller: Qualcomm Atheros QCA9377 802.11ac Wireless Network Adapter (rev 31);
 + ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 12).
+
 These should be both used: `hostapd` is used to create an AP, and by means of `brctl` (from `bridge-utils` package) the traffic is forwarded to the ethernet LAN. In this way, it is not needed to configure the DHCP server on the PC.
 
 The specific version of `hostapd` is the 2.10, and it has been directly built from the source code that can be found on the Ubuntu repository. This is required because using the program obtained by doing `sudo apt install hostapd` doesn't properly support WPA3 with SAE-PK. More information can be found in the [README](Src/README.md) file in the `Build/` folder. 
