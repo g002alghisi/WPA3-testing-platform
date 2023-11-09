@@ -1,5 +1,5 @@
 # Supplicant Station with `sta.sh`
-This script allows you to seamlessly setup an supplicant Station to join a WiFi network.
+This script allows you to seamlessly setup a supplicant Station to join a WiFi network.
 
 In general, `wpa_supplicant` requires `.conf` files to be, as the extension suggests, configured. These can be found in the `Conf/` folder.
 
