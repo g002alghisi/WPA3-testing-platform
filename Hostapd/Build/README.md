@@ -1,12 +1,12 @@
 # Build folder
 This folder contains built code. In particular:
 - `hostapd` comes from the building process of the code from the official Ubuntu repository.
-    In particular, to obtain it the following process has been used:
+    To obtain it the following process has been used:
     1. Download the code from the Ubuntu repository by doing
     ```bash
     apt source hostapd
     ```
-    2. Go to the hostpd folder.
+    2. Go to the `hostapd/` folder.
     3. Create the `.config` file by means of the command
     ```bash
     cp defconf .config

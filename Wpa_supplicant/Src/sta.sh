@@ -26,8 +26,7 @@
 
 ### *** Files, interfaces and constants *** ###
 
-wpa_supplicant="../Other/wpa_supplicant"
-#wpa_supplicant="../Other/vanhoef_wpa_supplicant"
+wpa_supplicant="../Build/wpa_supplicant"
 
 wifi_if="wlx5ca6e63fe2da"
 

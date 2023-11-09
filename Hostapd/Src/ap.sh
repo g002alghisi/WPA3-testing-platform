@@ -29,7 +29,7 @@
 
 ### *** Files, interfaces and constants *** ###
 
-hostapd="../Other/hostapd"
+hostapd="../Build/hostapd"
 
 eth_if="enp4s0f1"
 wifi_if="wlp3s0"
