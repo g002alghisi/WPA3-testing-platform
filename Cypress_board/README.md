@@ -4,7 +4,7 @@ The board used for these tests is the Cypress CYW954907AEVAL1F.
 It is highly recommended to work on a Windows PC, because on Linux there can be problems with the IDE. It is okay also to use a virtual machine (like on VirtualBox).
 
 In addition to the IDE, a tool to read the messages from the serial interface is required. Some recommendations are
-- on Ubuntu use `minicom`;
+- on Ubuntu use `Minicom`;
 - on Widows use `Putty`.
 
 ### Usefull links
