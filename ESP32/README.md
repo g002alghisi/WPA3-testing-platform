@@ -14,7 +14,7 @@ However, an easier approach is the one of the official Espressif Arduino ESP32 i
 > ```bash
 > sudo dmesg
 > ```
-> and looking for `CP2102 USB to UART Bridge Controller` string.
+> and look for `CP2102 USB to UART Bridge Controller` string.
 
 ### Troubleshooting
 If you encounter an error like this
