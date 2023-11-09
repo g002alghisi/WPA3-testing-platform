@@ -12,7 +12,7 @@ On Ubuntu, to install everything needed it is enaugh to:
 sudo apt install arduino
 ```
 2. ath te countrary of what stated in the official starting guide, the USB-UART bridge driver is already included in the Linux kernel.
-You can check it by connecting the board to the PC and then inspecting the kernel message by doing
+You can check this by connecting the board to the PC and then inspecting the kernel message by doing
 ```bash
 sudo dmesg
 ```
