@@ -16,7 +16,7 @@ However, an easier approach is the one of the official Espressif Arduino ESP32 i
 > ```
 > and look for `CP2102 USB to UART Bridge Controller` string.
 
-> On Ubuntu (and other Linux systems) is very easy to install applications by means of `apt.
+> On Ubuntu (and other Linux systems) is very easy to install applications by means of `apt`.
 > There is a package for the Arduino IDE on current `apt` repositories, but it has not been updated for a while. As such, while it is still possible to install the IDE by running `sudo apt install arduino`, it is not recommended to do so, as asking for support when using outdated software is more difficult and there could be problems installing the ESP32 module.
 
 ## ESP32 Arduino Core’s documentation
