@@ -11,12 +11,11 @@ The following process has been used:
     ```bash
     cp defconf .config
     ```
-4. Check if the `.config` file contains the two following strings:
+4. Check if the `.config` file contains the two following strings (and are uncommented):
     ```bash
     CONFIG_SAE=y
     CONFIG_SAE_PK=y
     ```
-    If these are not preset, please add them.<br>
 5. Finally, execute
     ```bash
     make
