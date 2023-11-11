@@ -8,4 +8,6 @@
 
 ./ap.sh wpa3-pk
 
+sleep 5
+
 ./ap.sh rogue-wpa3-pk
