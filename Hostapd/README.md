@@ -3,9 +3,13 @@ Creating an Acces Point with bridge on Ubuntu.
 
 ## Basic idea
 The basic idea is to use `hostapd` to transform the PC into an acces point (AP).
-In particular, the PC is equipped with:
-+ network controller: Qualcomm Atheros QCA9377 802.11ac Wireless Network Adapter (rev 31);
-+ ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 12).
+In particular, the PC shall be equipped with:
+- an ethernet card, connected to a wired network with a DHCP server;
+- a wireless card, that supports AP mode and SAE.
+> To verify that the wireless card supports AP mode, inspect the result of
+> ```bash
+> iw list | grep -C10 "Supported interface modes:"
+> ```
 
 These should be both used: `hostapd` is used to create an AP, and by means of `brctl` (from `bridge-utils` package) the traffic is forwarded to the ethernet LAN. In this way, it is not needed to configure the DHCP server on the PC.
 
