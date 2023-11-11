@@ -58,7 +58,6 @@ make
 ```bash
 make sae_pk_gen.c
 ```
-> Thi process is explained at the Vanhoef's repository page.
 
 ### Generate a SAE-PK key
 These instructions are available at [https://github.com/vanhoefm/hostap-wpa3](https://github.com/vanhoefm/hostap-wpa3).
