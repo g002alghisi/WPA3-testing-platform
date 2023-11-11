@@ -1,5 +1,5 @@
 # Configuration folder
-In this folder, all the `.conf` files with `hostapd` are stored.
+In this folder, all the `.conf` files for `hostapd` are stored.
 These have been created based on the template that can be found at `/usr/share/doc/hostapd/examples/hostapd.conf` (Ubuntu).
 
 Several sub-folders have been created in order to be more organised:
