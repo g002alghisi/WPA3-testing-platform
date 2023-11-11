@@ -26,4 +26,4 @@ make
 > (this is valid for the code that can be found at [http://w1.fi/hostap.git](http://w1.fi/hostap.git)
 > and [https://github.com/vanhoefm/hostap-wpa3.git](https://github.com/vanhoefm/hostap-wpa3.git))
 
-It is important to highlight that in the `.config` build file there are a lot of other features that are not enabled by default (like OCV). If a new AP configuration doesn't work properly, please checkout if all the required `CONFIG` strings are enabled at build time.
+It is important to highlight that in the `.config` build file there are a lot of other features that are not enabled by default (like OCV). If a new Station configuration doesn't work properly, please checkout if all the required `CONFIG` strings are enabled at build time.
