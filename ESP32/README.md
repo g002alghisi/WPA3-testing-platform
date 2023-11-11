@@ -25,21 +25,21 @@ Visit [https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html](h
 The procedure depends on the choosen work flow:
 - In the use case of the ESP32 Arduino Core platform, follow the 'Getting Started' procedure at the page
   [https://docs.espressif.com/projects/arduino-esp32/en/latest/getting_started.html](https://docs.espressif.com/projects/arduino-esp32/en/latest/getting_started.html).
-  > On Ubuntu (and other Linux systems) is very easy to install applications by means of `apt`.
-  > There is a package for the Arduino IDE on current `apt` repositories, but it has not been updated for a while. As such, while it is still possible to install the IDE by running
-  > ```bash
-  > sudo apt install arduino
-  > ```
-  > it is not recommended to do so, as asking for support when using outdated software is more difficult and there could be problems installing the ESP32 module.
+    > On Ubuntu (and other Linux systems) is very easy to install applications by means of `apt`.
+    > There is a package for the Arduino IDE on current `apt` repositories, but it has not been updated for a while. As such, while it is still possible to install the IDE by running
+    > ```bash
+    > sudo apt install arduino
+    > ```
+    > it is not recommended to do so, as asking for support when using outdated software is more difficult and there could be problems installing the ESP32 module.
 
   > When you purchease an ESP32 board, usually you get the instruction manual, which shows the instruction procedure specific for that board. However, it is usually better
   > to follow the above web page because it avoids to install software manually by relying on the Arduino IDE extension manager.
 
 - To work with the ESP32 IDF, please follow the 'Get Started' procedure at
   [https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html).
-  > It is required to work with VSCode or Eclipse. I would recommend to use VSCode, which is the one I used and tested.
-  > In this case, please visit [https://github.com/espressif/vscode-esp-idf-extension](https://github.com/espressif/vscode-esp-idf-extension) for a detailed explanation about
-  > the installing procedure and use tutorial.
+    > It is required to work with VSCode or Eclipse. I would recommend to use VSCode, which is the one I used and tested.
+    > In this case, please visit [https://github.com/espressif/vscode-esp-idf-extension](https://github.com/espressif/vscode-esp-idf-extension) for a detailed explanation about
+    > the installing procedure and use tutorial.
 
 In both cases (Arduino Core and IDF), the board may require to install its driver.
 However, for Linux systems the USB-UART bridge driver is already included in the kernel.

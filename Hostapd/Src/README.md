@@ -11,6 +11,6 @@ The script handles few inputs:
 - a string to select the desired `.conf` file. Indeed, in order to have more flexibility, at the beginning of the script is possible to indicate different configuration files. In the main section, the inputs of the user are handled, and by means of a switch-case structure, the proper `.conf` file is selected in accordance.
 
 An example of use is the following:
-```bash
-./ap.sh -d -w wlan0 -e eth0 wpa3-pk
-```
+    ```bash
+    ./ap.sh -d -w wlan0 -e eth0 wpa3-pk
+    ```
