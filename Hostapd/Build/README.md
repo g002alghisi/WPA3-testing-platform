@@ -31,7 +31,7 @@ make
 It is important to highlight that in the `.config` build file there are a lot of other features that are not enabled by default (like OCV). If a new AP configuration doesn't work properly, please checkout if all the required `CONFIG` strings are enabled at build time.
 
 ## SAE-PK key generator
-`sae_pk_gen` comes from the building process of the code from the (unofficial) `hostapd-wpa3` repository,
+`sae_pk_gen` comes from the build process of the code from the (unofficial) `hostapd-wpa3` repository,
 owned by Mathy Vanhoef. Indeed, even though the code from the Ubuntu (version 2.10) and W1.fi repositories
 both contain the file `sae_pk_gen.c`, the relative MakeFile contains errors. These have been overcome by
 Vanhoef and Jouni Malinen and the fixes included in the `hostapd-wpa3` repository.<br>
