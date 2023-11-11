@@ -5,8 +5,8 @@
 
 #include <WiFi.h>
 
-const char *wpa2_ssid = "F3-rhcn";
-const char *wpa2_password = "TheCatCameBack";
+const char *ssid = "Hostapd-WPA3-PK";
+const char *password = "wfm4-3ogf-2e2j";
 
 
 void setup()
@@ -15,11 +15,11 @@ void setup()
     delay(10);
 
     // We start by connecting to a WiFi network
-    WiFi.begin(wpa2_ssid, wpa2_password);
+    WiFi.begin(ssid, password);
 
     Serial.println();
     Serial.println();
-    Serial.print("Waiting for WiFi... ");
+    Serial.print("Waiting for the WiFi");
 
     while(WiFi.status() != WL_CONNECTED) {
         Serial.print(".");

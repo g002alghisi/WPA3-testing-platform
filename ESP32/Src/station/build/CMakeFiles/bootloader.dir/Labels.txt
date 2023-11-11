@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/CMakeFiles/bootloader
+/home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/CMakeFiles/bootloader.rule
+/home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/CMakeFiles/bootloader-complete.rule
+/home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

@@ -1,0 +1,43 @@
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/alghisi/.Espressif/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/alghisi/.Espressif/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/alghisi/.Espressif/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/sdkconfig
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Found Python3: /home/alghisi/.Espressif/.espressif/python_env/idf5.1_py3.10_env/bin/python (found version "3.10.12") found components: Interpreter 
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- App "wifi_station" version: d26e5e7-dirty
+-- Adding linker script /home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/alghisi/.Espressif/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /home/alghisi/.Espressif/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/alghisi/.Espressif/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/alghisi/.Espressif/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/alghisi/.Espressif/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /home/alghisi/.Espressif/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /home/alghisi/.Espressif/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/alghisi/.Espressif/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/alghisi/.Espressif/esp-idf/components/app_trace /home/alghisi/.Espressif/esp-idf/components/app_update /home/alghisi/.Espressif/esp-idf/components/bootloader /home/alghisi/.Espressif/esp-idf/components/bootloader_support /home/alghisi/.Espressif/esp-idf/components/bt /home/alghisi/.Espressif/esp-idf/components/cmock /home/alghisi/.Espressif/esp-idf/components/console /home/alghisi/.Espressif/esp-idf/components/cxx /home/alghisi/.Espressif/esp-idf/components/driver /home/alghisi/.Espressif/esp-idf/components/efuse /home/alghisi/.Espressif/esp-idf/components/esp-tls /home/alghisi/.Espressif/esp-idf/components/esp_adc /home/alghisi/.Espressif/esp-idf/components/esp_app_format /home/alghisi/.Espressif/esp-idf/components/esp_coex /home/alghisi/.Espressif/esp-idf/components/esp_common /home/alghisi/.Espressif/esp-idf/components/esp_eth /home/alghisi/.Espressif/esp-idf/components/esp_event /home/alghisi/.Espressif/esp-idf/components/esp_gdbstub /home/alghisi/.Espressif/esp-idf/components/esp_hid /home/alghisi/.Espressif/esp-idf/components/esp_http_client /home/alghisi/.Espressif/esp-idf/components/esp_http_server /home/alghisi/.Espressif/esp-idf/components/esp_https_ota /home/alghisi/.Espressif/esp-idf/components/esp_https_server /home/alghisi/.Espressif/esp-idf/components/esp_hw_support /home/alghisi/.Espressif/esp-idf/components/esp_lcd /home/alghisi/.Espressif/esp-idf/components/esp_local_ctrl /home/alghisi/.Espressif/esp-idf/components/esp_mm /home/alghisi/.Espressif/esp-idf/components/esp_netif /home/alghisi/.Espressif/esp-idf/components/esp_netif_stack /home/alghisi/.Espressif/esp-idf/components/esp_partition /home/alghisi/.Espressif/esp-idf/components/esp_phy /home/alghisi/.Espressif/esp-idf/components/esp_pm /home/alghisi/.Espressif/esp-idf/components/esp_psram /home/alghisi/.Espressif/esp-idf/components/esp_ringbuf /home/alghisi/.Espressif/esp-idf/components/esp_rom /home/alghisi/.Espressif/esp-idf/components/esp_system /home/alghisi/.Espressif/esp-idf/components/esp_timer /home/alghisi/.Espressif/esp-idf/components/esp_wifi /home/alghisi/.Espressif/esp-idf/components/espcoredump /home/alghisi/.Espressif/esp-idf/components/esptool_py /home/alghisi/.Espressif/esp-idf/components/fatfs /home/alghisi/.Espressif/esp-idf/components/freertos /home/alghisi/.Espressif/esp-idf/components/hal /home/alghisi/.Espressif/esp-idf/components/heap /home/alghisi/.Espressif/esp-idf/components/http_parser /home/alghisi/.Espressif/esp-idf/components/idf_test /home/alghisi/.Espressif/esp-idf/components/ieee802154 /home/alghisi/.Espressif/esp-idf/components/json /home/alghisi/.Espressif/esp-idf/components/log /home/alghisi/.Espressif/esp-idf/components/lwip /home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/main /home/alghisi/.Espressif/esp-idf/components/mbedtls /home/alghisi/.Espressif/esp-idf/components/mqtt /home/alghisi/.Espressif/esp-idf/components/newlib /home/alghisi/.Espressif/esp-idf/components/nvs_flash /home/alghisi/.Espressif/esp-idf/components/openthread /home/alghisi/.Espressif/esp-idf/components/partition_table /home/alghisi/.Espressif/esp-idf/components/perfmon /home/alghisi/.Espressif/esp-idf/components/protobuf-c /home/alghisi/.Espressif/esp-idf/components/protocomm /home/alghisi/.Espressif/esp-idf/components/pthread /home/alghisi/.Espressif/esp-idf/components/sdmmc /home/alghisi/.Espressif/esp-idf/components/soc /home/alghisi/.Espressif/esp-idf/components/spi_flash /home/alghisi/.Espressif/esp-idf/components/spiffs /home/alghisi/.Espressif/esp-idf/components/tcp_transport /home/alghisi/.Espressif/esp-idf/components/ulp /home/alghisi/.Espressif/esp-idf/components/unity /home/alghisi/.Espressif/esp-idf/components/usb /home/alghisi/.Espressif/esp-idf/components/vfs /home/alghisi/.Espressif/esp-idf/components/wear_levelling /home/alghisi/.Espressif/esp-idf/components/wifi_provisioning /home/alghisi/.Espressif/esp-idf/components/wpa_supplicant /home/alghisi/.Espressif/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/alghisi/GitHub/Hostapd-test/ESP32/Src/station/build
