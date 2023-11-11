@@ -2,7 +2,7 @@
 Creating an Acces Point with bridge on Ubuntu.
 
 ## Basic idea
-The basic idea is to use `hostapd` to transform my PC into an acces point (AP).
+The basic idea is to use `hostapd` to transform the PC into an acces point (AP).
 In particular, the PC is equipped with:
 + network controller: Qualcomm Atheros QCA9377 802.11ac Wireless Network Adapter (rev 31);
 + ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 12).
