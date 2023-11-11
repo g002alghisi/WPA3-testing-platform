@@ -5,16 +5,17 @@ Creating an Acces Point with bridge on Ubuntu.
 The basic idea is to use `hostapd` to transform the PC into an acces point (AP).
 In particular, the PC shall be equipped with:
 - an ethernet card, connected to a wired network with a DHCP server;
-- a wireless card, that supports AP mode and SAE.
+- a wireless card, that supports AP mode.
 > To verify that the wireless card supports AP mode, inspect the result of
 > ```bash
-> iw list | grep -C10 "Supported interface modes:"
+> iw list
 > ```
+> and look for `"Supported interface modes"` section. It should be there specified if the AP mode is supported or not.
 
-Both the interfaces are needed: `hostapd` is used to create an AP, and by means of `brctl` (from `bridge-utils` package) the traffic is forwarded to the ethernet LAN. In this way, it is not needed to configure the DHCP server on the PC.<br>
-In case of lacking an ethernet interface card, it should be possible to install a DHCP server on the computer directly, but this option has not been analyzed.
+Both the interfaces are needed: `hostapd` is used to create an AP by using the wireless card, and by means of `brctl` (from `bridge-utils` package) the traffic is forwarded to the wired LAN passing through the ethernet card. In this way, it is not needed to configure the DHCP server on the PC.<br>
+In case the PC lacks the ethernet interface card, it should be possible to install a DHCP server on the computer directly, but this option has not been analyzed.
 
-To deal with everything, the `ap.sh` bash script has been created: it allows to safely launch `hostapd` by automatically de-connecting from the WiFi, and it creates the bridge towards the Ethernet LAN.
+To deal with everything, the `ap.sh` bash script has been created: it allows to safely launch `hostapd` by checking the physical interfaces state, creating the bridge towards the ethernet LAN, stopping system services that could interfere with the process (like NetworkManager), running `hostapd`, and finally (almost completely) restoring the initial state of the system.
 
 ## Few words about the Hostapd version...
 The specific version of `hostapd` is the 2.10, and it has been directly built from the source code that can be found on the Ubuntu repository. This is required because the program obtained by doing `sudo apt install hostapd` doesn't properly support WPA3 with SAE-PK (instead, bare WPA3). Additional information can be found in the [README](Src/README.md) file in the `Build/` folder. 
