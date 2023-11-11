@@ -43,7 +43,7 @@ The procedure depends on the choosen work flow:
 
 In both cases (Arduino Core and IDF), the board may require to install its driver.
 However, for Linux systems the USB-UART bridge driver is already included in the kernel.
-You can check this by connecting the board to the PC and then inspecting the kernel message by doing
+You can check this by connecting the board to the PC and then inspecting kernel messages with
 ```bash
 sudo dmesg
 ```
