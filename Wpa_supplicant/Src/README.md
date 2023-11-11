@@ -5,6 +5,7 @@ In general, `wpa_supplicant` requires `.conf` files to be, as the extension sugg
 
 ## Usage
 The script handles few inputs:
+- the `-d` optional parameter to enable the verbose mode.
 - the `-w wifi_if` optional parameter to specify the wireless interface, if different from the default one specified inside the code.
 - a string to select the desired `.conf` file; indeed, to achieve more flexibility, at the beginning of the program is possible to specifie different configuration files. in the main section, the input of the user are handled, and by means of a switch-case structure, the proper `.conf` file is selected in accordance.
 
