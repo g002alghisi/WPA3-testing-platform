@@ -27,6 +27,7 @@
 ### *** Files, interfaces and constants *** ###
 
 wpa_supplicant="../Build/wpa_supplicant"
+wpa_supplicant_verbose_mode=0
 
 wifi_if="wlx5ca6e63fe2da"
 
@@ -174,9 +175,13 @@ sta_run() {
     echo ""
     sudo killall wpa_supplicant
     if [ $cli_mode -eq 0 ]; then
-        sudo "$wpa_supplicant" -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
+        if [ $wpa_supplicant_verbose_mode -eq 0 ]; then
+            sudo "$wpa_supplicant" -i "$wifi_if" -c "$wpa_supplicant_config_file"
+        else
+            sudo "$wpa_supplicant" -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
+        fi
     else
-        sudo "$wpa_supplicant" -B -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
+        sudo "$wpa_supplicant" -B -i "$wifi_if" -c "$wpa_supplicant_config_file"
         echo ""
         echo -e "${CYAN}wpa_cli is running too...${NC}"
         sudo wpa_cli
@@ -197,10 +202,13 @@ sta_setdown() {
 
 
 main() {
-     while getopts "w:" opt; do
+     while getopts "w:d" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
+                ;;
+            d)
+                wpa_supplicant_verbose_mode=1
                 ;;
             \?)
                 echo "Invalid option: -$OPTARG" >&2

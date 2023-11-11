@@ -1,5 +1,5 @@
 #!/bin/bash
-# set -x  # Debug mode.
+#set -x  # Debug mode.
 
 ### ### ### Hostapd Acces Point script ### ### ###
 # The function of this script is setting up an AP using hostapd and, by means
@@ -30,6 +30,7 @@
 ### *** Files, interfaces and constants *** ###
 
 hostapd="../Build/hostapd"
+hostapd_mode_verbose=0;
 
 eth_if="enp4s0f1"
 wifi_if="wlp3s0"
@@ -264,7 +265,11 @@ ap_run() {
     ap_print_info
     echo ""
     killall hostapd
-    sudo "$hostapd" "$hostapd_config_file" -d
+    if [ "$hostapd_mode_verbose" -eq 0 ]; then
+        sudo "$hostapd" "$hostapd_config_file"
+    else
+        sudo "$hostapd" "$hostapd_config_file" -d
+    fi
     echo -e "${CYAN}Hostapd is stopped.${NC}"
 }
 
@@ -277,7 +282,7 @@ ap_setdown() {
 
 
 main() {
-    while getopts "w:e:" opt; do
+    while getopts "w:e:d" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -285,12 +290,15 @@ main() {
             e)
                 eth_if="$OPTARG"
                 ;;
+            d)
+                hostapd_mode_verbose=1
+                ;;
             \?)
-                echo "Invalid option: -$OPTARG" >&2
+                echo "Invalid option: -$OPTARG"
                 exit 1
                 ;;
             :)
-                echo "Option -$OPTARG requires an argument." >&2
+                echo "Option -$OPTARG requires an argument."
                 exit 1
                 ;;
         esac
@@ -299,7 +307,7 @@ main() {
     shift $((OPTIND-1))
 
     if [ $# -ne 1 ]; then
-        echo "Usage: $0 [-w wifi_if|-e eth_if] wpa2|wpa3|wpa3-pk"
+        echo "Usage: $0 [-d] [-w wifi_if] [-e eth_if] <wpa2|wpa3|wpa3-pk>"
         exit 1
     fi
 
