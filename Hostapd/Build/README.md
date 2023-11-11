@@ -2,8 +2,8 @@
 This folder contains built code.
 
 ## Hostapd
-`hostapd` comes from the building process of the code from the official Ubuntu repository.
-To obtain it the following process has been used:
+`hostapd` comes from the build process of the code from the official Ubuntu repository.
+The following process has been used:
 1. Download the code from the Ubuntu repository by doing
 ```bash
 apt source hostapd

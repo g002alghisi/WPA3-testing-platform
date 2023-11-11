@@ -4,7 +4,7 @@ ESP32 is a series of low-cost, low-power system on a chip microcontrollers with 
 This folder collects some (not all) the code that comes from testing the development board KS0413 keyestudio ESP32 Core Board, based on the Espressif ESP32-WROOM-32, with `hostapd`.
 The main goal is to be able to make it join a WPA3 with SAE-PK network and analyze its behaviour.
 
-## Programming the ESP32 board
+## Work with the ESP32 board
 The ESP32 offers two primary avenues for development: the ESP32 Arduino Core and the ESP32 IDF (Espressif IoT Development Framework).
 
 ### ESP32 Arduino Core
@@ -21,7 +21,7 @@ and get direct control over the hardware features. It's perfect for those comple
 Visit [https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html) for more information.
 
 
-## Installing procedure
+## Install procedure
 The procedure depends on the choosen work flow:
 - In the use case of the ESP32 Arduino Core platform, follow the 'Getting Started' procedure at the page
   [https://docs.espressif.com/projects/arduino-esp32/en/latest/getting_started.html](https://docs.espressif.com/projects/arduino-esp32/en/latest/getting_started.html).
