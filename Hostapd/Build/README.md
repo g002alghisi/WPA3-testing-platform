@@ -32,7 +32,7 @@ It is important to highlight that in the `.config` build file there are a lot of
 
 ## SAE-PK key generator
 `sae_pk_gen` comes from the build process of the code from the (unofficial) `hostapd-wpa3` repository,
-owned by Mathy Vanhoef. Indeed, even though the code from the Ubuntu (version 2.10) and W1.fi repositories
+owned by Mathy Vanhoef. Indeed, even though the code from the Ubuntu (version 2.10) and w1.fi repositories
 both contain the file `sae_pk_gen.c`, the relative MakeFile contains errors. These have been overcome by
 Vanhoef and Jouni Malinen and the fixes included in the `hostapd-wpa3` repository.<br>
 To compile the program, the process is similar to the one followed for `hostapd`:
