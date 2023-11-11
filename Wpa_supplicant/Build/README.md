@@ -16,7 +16,7 @@ The following process has been used:
     CONFIG_SAE=y
     CONFIG_SAE_PK=y
     ```
-If these are not preset, please add them.<br>
+    If these are not preset, please add them.<br>
 5. Finally, execute
     ```bash
     make
