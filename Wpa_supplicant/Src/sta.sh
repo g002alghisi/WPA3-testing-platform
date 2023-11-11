@@ -24,17 +24,25 @@
 ### Output
 # To do...
 
+
 ### *** Files, interfaces and constants *** ###
 
-wpa_supplicant="../Build/wpa_supplicant"
+# Move to Wpa_supplicant/ folder
+current_path="$0"
+while [[ "$current_path" != *"/Hostapd" ]]; do
+    cd ..
+    current_path=$(pwd)
+done
+
+wpa_supplicant="Build/wpa_supplicant"
 wpa_supplicant_verbose_mode=0
 
 wifi_if="wlx5ca6e63fe2da"
 
-WPA_SUPPLICANT_WPA2_CONF_PATH="../Conf/Ko/wpa_supplicant_wpa2.conf"
-WPA_SUPPLICANT_WPA3_CONF_PATH="../Conf/Ko/wpa_supplicant_wpa3.conf"
-WPA_SUPPLICANT_WPA3_PK_CONF_PATH="../Conf/Ko/wpa_supplicant_wpa3_pk.conf"
-WPA_SUPPLICANT_CLI_CONF_PATH="../Conf/Ko/wpa_supplicant_cli.conf"
+WPA_SUPPLICANT_WPA2_CONF_PATH="Conf/Ko/wpa_supplicant_wpa2.conf"
+WPA_SUPPLICANT_WPA3_CONF_PATH="Conf/Ko/wpa_supplicant_wpa3.conf"
+WPA_SUPPLICANT_WPA3_PK_CONF_PATH="Conf/Ko/wpa_supplicant_wpa3_pk.conf"
+WPA_SUPPLICANT_CLI_CONF_PATH="Conf/Ko/wpa_supplicant_cli.conf"
 
 
 ### *** Support *** ###

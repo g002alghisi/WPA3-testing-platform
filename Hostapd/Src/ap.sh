@@ -29,19 +29,28 @@
 
 ### *** Files, interfaces and constants *** ###
 
-hostapd="../Build/hostapd"
+# Move to Hostapd/ folder
+current_path="$0"
+while [[ "$current_path" != *"/Hostapd" ]]; do
+    cd ..
+    current_path=$(pwd)
+done
+
+hostapd="Build/hostapd"
 hostapd_mode_verbose=0;
 
 eth_if="enp4s0f1"
 wifi_if="wlp3s0"
 br_if="br-ap"
 
-HOSTAPD_WPA2_CONF_PATH="../Conf/Ko/hostapd_wpa2.conf"
-HOSTAPD_WPA3_CONF_PATH="../Conf/Ko/hostapd_wpa3.conf"
-HOSTAPD_WPA3_PK_CONF_PATH="../Conf/Ko/hostapd_wpa3_pk.conf"
-HOSTAPD_BASIC_WPA2_CONF_PATH="../Conf/Basic/hostapd_wpa2.conf"
-HOSTAPD_BASIC_WPA3_CONF_PATH="../Conf/Basic/hostapd_wpa3.conf"
-HOSTAPD_BASIC_WPA3_PK_CONF_PATH="../Conf/Basic/hostapd_wpa3_pk.conf"
+HOSTAPD_WPA2_CONF_PATH="Conf/Ko/hostapd_wpa2.conf"
+HOSTAPD_WPA3_CONF_PATH="Conf/Ko/hostapd_wpa3.conf"
+HOSTAPD_WPA3_PK_CONF_PATH="Conf/Ko/hostapd_wpa3_pk.conf"
+HOSTAPD_ROGUE_WPA3_PK_CONF_PATH="Conf/Ko/hostapd_rogue_wpa3_pk.conf"
+
+HOSTAPD_BASIC_WPA2_CONF_PATH="Conf/Basic/hostapd_wpa2.conf"
+HOSTAPD_BASIC_WPA3_CONF_PATH="Conf/Basic/hostapd_wpa3.conf"
+HOSTAPD_BASIC_WPA3_PK_CONF_PATH="Conf/Basic/hostapd_wpa3_pk.conf"
 
 
 
@@ -264,7 +273,7 @@ ap_run() {
     echo -e "${CYAN}Running Hostapd. Press Ctrl-C to stop.${NC}"
     ap_print_info
     echo ""
-    killall hostapd
+    killall hostapd &> /dev/null
     if [ "$hostapd_mode_verbose" -eq 0 ]; then
         sudo "$hostapd" "$hostapd_config_file"
     else
@@ -282,7 +291,8 @@ ap_setdown() {
 
 
 main() {
-    while getopts "w:e:d" opt; do
+
+        while getopts "w:e:d" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -331,6 +341,9 @@ main() {
             ;;
         "basic-wpa3-pk")
             hostapd_config_file="$HOSTAPD_BASIC_WPA3_PK_CONF_PATH"
+            ;;
+        "rogue-wpa3-pk")
+            hostapd_config_file="$HOSTAPD_ROGUE_WPA3_PK_CONF_PATH"
             ;;
         *)
             echo -e "Invalid parameter (wpa2|wpa3|wpa3-pk|basic-wpa2|basic-wpa3|basic-wpa3-pk)."

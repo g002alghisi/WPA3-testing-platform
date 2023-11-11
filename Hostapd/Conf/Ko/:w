@@ -62,7 +62,21 @@ logger_stdout=-1
 logger_stdout_level=1
 
 
-### *** IEEE 802.11 related configuration *** ### # SSID ssid=Hostapd-WPA3-PK # Country code (ISO/IEC 3166-1) # Used to set regulatory domain, can limit available channels and transmit power.  country_code=IT # Operation mode: # - a = 802.11a (5 GHz) # - b = 802.11b (2.4 GHz) # - g = 802.11g (2.4 GHz) # - ad = 802.11ad (60 GHz) # For 802.11n (HT), specify band using a/g options.
+### *** IEEE 802.11 related configuration *** ###
+
+# SSID
+ssid=Hostapd-WPA3-PK
+
+# Country code (ISO/IEC 3166-1)
+# Used to set regulatory domain, can limit available channels and transmit power.
+country_code=IT
+
+# Operation mode:
+# - a = 802.11a (5 GHz)
+# - b = 802.11b (2.4 GHz)
+# - g = 802.11g (2.4 GHz)
+# - ad = 802.11ad (60 GHz)
+# For 802.11n (HT), specify band using a/g options.
 # For 802.11ac (VHT), set hw_mode=a.
 # For 802.11ax (HE) on 6 GHz, set hw_mode=a.
 # When using ACS (see channel parameter), "any" can be used to indicate
@@ -85,7 +99,41 @@ auth_algs=1
 # Hide SSID
 # - 0 = show ssid
 # - 1 = send empty ssid
-# - 2 = clear ssid, but keep length ignore_broadcast_ssid=0 # ieee80211ac: Whether IEEE 802.11ac (VHT) is enabled # - 0 = disabled (default) # - 1 = enabled # Note: hw_mode=a is used to specify that 5 GHz band is used with VHT.  #ieee80211ac=1 ##### ##### ##### Security settings ##### ##### ##### ### *** WPA3-Personal Hard settings *** ### # Enable WPA # - bit0 = WPA # - bit1 = IEEE 802.11i/RSN (WPA2, WPA3) (dot11RSNAEnabled) # Note that WPA3 is also configured with bit1 since it uses RSN just like WPA2.  wpa=2 # WPA pre-shared keys # Formats: # - a 256-bit secret in hex format (64 hex digits) # - wpa_psk # - an ASCII passphrase (8..63 characters, converted to PSK using the SSID) #wpa_psk=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef #wpa_passphrase=argoargoargo # Key management algorithms.  # The entries are separated with a space.  # WPA-PSK = WPA-Personal / WPA2-Personal # WPA-PSK-SHA256 = WPA2-Personal using SHA256 # SAE = SAE (WPA3-Personal) # OWE = Opportunistic Wireless Encryption (a.k.a. Enhanced Open)
+# - 2 = clear ssid, but keep length
+ignore_broadcast_ssid=0
+
+# ieee80211ac: Whether IEEE 802.11ac (VHT) is enabled
+# - 0 = disabled (default)
+# - 1 = enabled
+# Note: hw_mode=a is used to specify that 5 GHz band is used with VHT.
+#ieee80211ac=1
+
+
+
+##### ##### ##### Security settings ##### ##### #####
+
+### *** WPA3-Personal Hard settings *** ###
+
+# Enable WPA
+# - bit0 = WPA
+# - bit1 = IEEE 802.11i/RSN (WPA2, WPA3) (dot11RSNAEnabled)
+# Note that WPA3 is also configured with bit1 since it uses RSN just like WPA2.
+wpa=2
+
+# WPA pre-shared keys
+# Formats:
+# - a 256-bit secret in hex format (64 hex digits)
+# - wpa_psk
+# - an ASCII passphrase (8..63 characters, converted to PSK using the SSID)
+#wpa_psk=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+#wpa_passphrase=argoargoargo
+
+# Key management algorithms.
+# The entries are separated with a space.
+# WPA-PSK = WPA-Personal / WPA2-Personal
+# WPA-PSK-SHA256 = WPA2-Personal using SHA256
+# SAE = SAE (WPA3-Personal)
+# OWE = Opportunistic Wireless Encryption (a.k.a. Enhanced Open)
 wpa_key_mgmt=SAE
 
 # SAE password
@@ -139,7 +187,21 @@ ieee80211w=2
 # Other options (depending on driver support):
 # - BIP-GMAC-128
 # - BIP-GMAC-256
-# - BIP-CMAC-256 #group_mgmt_cipher=AES-128-CMAC ### *** WPA3-Personal Soft settings *** ### # Beacon Protection # This depends on management frame protection being enabled (ieee80211w != 0) # and beacon protection support indication from the driver.  # - 0 = disabled (default) # - 1 = enabled #beacon_prot=0 # Operating Channel Validation (OCV) # Enabling this automatically also enables ieee80211w, if not yet enabled.
+# - BIP-CMAC-256
+#group_mgmt_cipher=AES-128-CMAC
+
+
+### *** WPA3-Personal Soft settings *** ###
+
+# Beacon Protection
+# This depends on management frame protection being enabled (ieee80211w != 0)
+# and beacon protection support indication from the driver.
+# - 0 = disabled (default)
+# - 1 = enabled
+#beacon_prot=0
+
+# Operating Channel Validation (OCV)
+# Enabling this automatically also enables ieee80211w, if not yet enabled.
 # 0 = disabled (default)
 # 1 = enabled
 # 2 = workaround mode: see the documentation.
