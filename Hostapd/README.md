@@ -18,7 +18,7 @@ In case the PC lacks the ethernet interface card, it should be possible to insta
 To deal with everything, the `ap.sh` bash script has been created: it allows to safely launch `hostapd` by checking the physical interfaces state, creating the bridge towards the ethernet LAN, stopping system services that could interfere with the process (like NetworkManager), running `hostapd`, and finally (almost completely) restoring the initial state of the system.
 
 ## Few words about the Hostapd version...
-The specific version of `hostapd` is the 2.10, and it has been directly built from the source code that can be found on the Ubuntu repository. This is required because the program obtained by doing `sudo apt install hostapd` doesn't properly support WPA3 with SAE-PK (instead, bare WPA3). Additional information can be found in the [README](Src/README.md) file in the `Build/` folder. 
+The specific version of `hostapd` is the 2.10, and it has been directly built from the source code that can be found on the Ubuntu repository. This is required because the same version of the program obtained by doing `sudo apt install hostapd` doesn't properly support WPA3 with SAE-PK (instead, bare WPA3). Additional information can be found in the [README](Src/README.md) file in the `Build/` folder. 
 
 ## Access Point configuration
 To setup wireless LANs with different security protocol, different `.conf` files for `hostapd` have been created. In particular, `ap.sh` allows to directly select the desired `.conf` file (between the ones specified in the code directly) by means of a string parameter.
