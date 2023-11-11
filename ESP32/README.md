@@ -35,15 +35,16 @@ The procedure depends on the choosen work flow:
   > When you purchease an ESP32 board, usually you get the instruction manual, which shows the instruction procedure specific for that board. However, it is usually better
   > to follow the above web page because it avoids to install software manually by relying on the Arduino IDE extension manager.
 
-- To work with the ESP32 IDF, please follow the 'Get Started' procedure at [https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html).
+- To work with the ESP32 IDF, please follow the 'Get Started' procedure at
+  [https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html).
   > It is required to work with VSCode or Eclipse. I would recommend to use VSCode, which is the one I used and tested.
   > In this case, please visit [https://github.com/espressif/vscode-esp-idf-extension](https://github.com/espressif/vscode-esp-idf-extension) for a detailed explanation about
   > the installing procedure and use tutorial.
 
-> In both cases (Arduino Core and IDF), the board may require to install its driver.
-> However, for Linux systems the USB-UART bridge driver is already included in the kernel.
-> You can check this by connecting the board to the PC and then inspecting the kernel message by doing
-> ```bash
-> sudo dmesg
-> ```
-> and look for `CP2102 USB to UART Bridge Controller` string.
+In both cases (Arduino Core and IDF), the board may require to install its driver.
+However, for Linux systems the USB-UART bridge driver is already included in the kernel.
+You can check this by connecting the board to the PC and then inspecting the kernel message by doing
+```bash
+sudo dmesg
+```
+and look for `CP2102 USB to UART Bridge Controller` string.
