@@ -25,7 +25,7 @@ The following process has been used:
     ```
 
 > It has been noted that if the `hostapd` version is equal or greater than the 2.11,
-> then the `.config` file should already contains the two strings to allow the use of SAE and SAE_PK
+> then the `.config` file should already contains the two strings to allow the use of SAE and SAE-PK
 > (this is valid for the code that can be found at [http://w1.fi/hostap.git](http://w1.fi/hostap.git)
 > and [https://github.com/vanhoefm/hostap-wpa3.git](https://github.com/vanhoefm/hostap-wpa3.git)).
 
