@@ -1,9 +1,9 @@
 # Access Point with `ap.sh`
-This script allows you to seamlessly setup an Access Point by using hostapd.
+This script allows you to seamlessly setup an Access Point by using `hostapd`.
 
-In general, `hostapd` requires `.conf` files to be, as the extension suggests, configured. These can be found in the `Conf/` folder.
+In general, `hostapd` requires `.conf` files, as the extension suggests, to be configured. These can be found in the `Conf/` folder.
 
-### Usage
+## Usage
 The script handles few inputs:
 - the `-w wifi_if` optional parameter to specify the wireless interface, if different from the default one specified inside the code.
 - the `-e eth_if` optional parameter to specify the ethernet interface, if different from the default one specified inside the code.
