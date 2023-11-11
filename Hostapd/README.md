@@ -25,7 +25,7 @@ In general, APs created with `hostapd` can be configured by editing special `.co
 In short, this is the work flow to setup the Access Point:
 1. Prepare the `.conf` setting file and place it in the `Conf/` directory (not mandatory, but recommended).
 2. Edit the `ap.sh` to create a new mapping string that points to your `.conf` file.
-3. Run `ap.sh` by passing your mapping string.
+3. Run `ap.sh` by passing it your mapping string.
 
 ## WPA3 with SAE-PK
 To use WPA3 SAE-PK, a special PSK is required and has to be included in the `.conf` file. To generate, the program `sae_pk_gen` is used. This shall be compiled from scratch following the [README](Build/) in the `Build/` directory.
