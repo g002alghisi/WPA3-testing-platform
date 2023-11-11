@@ -7,5 +7,5 @@ In order to better handle them, several sub-folders have been created:
 - `Basic/` contains configurations copied from Mathy Vanhoef (these are minimal working configurations, but are not well commented).
 
 ## General settings
-~The `.conf` configuration files from `Ko/` and `Basic` have been set to turn on an 802.11ac AP with Automatic Channel Selection (ACS), performed by the driver of the Wireless NIC.~ <br>
-The `.conf` configuration files from `Ko/` and `Basic` have been written to setup an 802.11g AP, operating on the channel 1. The reason behind this choice is that it allows to have the broadest compatibility with various types of devices.
+~The `.conf` configuration files from `Ko/` and `Basic/` have been set to turn on an 802.11ac AP with Automatic Channel Selection (ACS), performed by the driver of the Wireless NIC.~ <br>
+The `.conf` configuration files from `Ko/` and `Basic/` have been written to setup an 802.11g AP, operating on the channel 1. The reason behind this choice is that it allows to have the broadest compatibility with various types of devices.
