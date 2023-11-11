@@ -1,9 +1,10 @@
 # Configuration folder
-In this folder, all the `hostapd.conf` files are stored.
+In this folder, all the `.conf` files with `hostapd` are stored.
+These have been created based on the template that can be found at `/usr/share/doc/hostapd/examples/hostapd.conf` (Ubuntu).
 
-In order to better handle them, several sub-folders have been created:
-- `Skeleton/` contains frame configuration files that can be used to create personal solutions.
-- `Ko/` contains personal solutions.
+Several sub-folders have been created in order to be more organised:
+- `Skeleton/` contains bare configuration files that can be used to create personal solutions.
+- `Ko/` contains the solutions developed personally.
 - `Basic/` contains configurations copied from Mathy Vanhoef (these are minimal working configurations, but are not well commented).
 
 ## General settings
