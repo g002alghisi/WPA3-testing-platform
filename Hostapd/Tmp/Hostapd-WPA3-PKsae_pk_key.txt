@@ -1,0 +1,12 @@
+# SAE-PK password/M/private key for Sec=3.
+sae_password=2mqp-3pyt-ywrg|pk=641533bbe7211fd5ba0d56dcf07d788a:MHcCAQEEIHoBHyOdVKn+jsaxMlS5YMK0RAurYaN4q0kNOL3yDvyqoAoGCCqGSM49AwEHoUQDQgAEgc9iS2Kd2biw/64axvO9uqFUnR8mJ6jtWR9OADwNnX59Fr+gvss5P/UU4Tf7LyMsi3VrdUDQNVEWEyRQja3jVg==
+# Longer passwords can be used for improved security at the cost of usability:
+# 2mqp-3pyt-ywrx-6roa
+# 2mqp-3pyt-ywrx-6rox-usya
+# 2mqp-3pyt-ywrx-6rox-usyp-qdfk
+# 2mqp-3pyt-ywrx-6rox-usyp-qdfn-y6hr
+# 2mqp-3pyt-ywrx-6rox-usyp-qdfn-y6hg-64cx
+# 2mqp-3pyt-ywrx-6rox-usyp-qdfn-y6hg-64co-ujfx
+# 2mqp-3pyt-ywrx-6rox-usyp-qdfn-y6hg-64co-ujfu-wkxr
+# 2mqp-3pyt-ywrx-6rox-usyp-qdfn-y6hg-64co-ujfu-wkx7-ysi5
+# 2mqp-3pyt-ywrx-6rox-usyp-qdfn-y6hg-64co-ujfu-wkx7-ysi6-6uub

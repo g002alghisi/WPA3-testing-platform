@@ -63,6 +63,11 @@ If these are not preset, please add them (they should be already present).
     ```
 
 ### Generate a SAE-PK key
+To generate the SAE-PK key, there are two possibilities:
+- use `sae_pk_gen` directly, following the process explained below.
+- use `sae_pk_key_gen.sh`, that automate the entire process. This can be found in the `Src/` directory.
+
+#### Manually generate the SAE-PK key
 These instructions are available at [https://github.com/vanhoefm/hostap-wpa3](https://github.com/vanhoefm/hostap-wpa3).
 
 First generate a private key:

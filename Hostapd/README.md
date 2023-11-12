@@ -29,4 +29,4 @@ In short, this is the work flow to setup the Access Point:
 3. Run `ap.sh` by passing it your mapping string.
 
 ## WPA3 with SAE-PK
-To use WPA3 SAE-PK, a special PSK is required and has to be included in the `.conf` file. To generate, the program `sae_pk_gen` is used. This shall be compiled from scratch following the [README](Build/) in the `Build/` directory.
+To use WPA3 SAE-PK, a special PSK is required and has to be included in the `.conf` file. To generate it, the script `sae_pk_key_gen.sh` can be used (located in the `Src/` folder).

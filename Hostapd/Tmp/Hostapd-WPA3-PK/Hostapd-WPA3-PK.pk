@@ -1,0 +1,12 @@
+# SAE-PK password/M/private key for Sec=3.
+sae_password=raip-67ub-w4vr|pk=fe4a32b99d450da333d6c641a0661034:MHcCAQEEIHoBHyOdVKn+jsaxMlS5YMK0RAurYaN4q0kNOL3yDvyqoAoGCCqGSM49AwEHoUQDQgAEgc9iS2Kd2biw/64axvO9uqFUnR8mJ6jtWR9OADwNnX59Fr+gvss5P/UU4Tf7LyMsi3VrdUDQNVEWEyRQja3jVg==
+# Longer passwords can be used for improved security at the cost of usability:
+# raip-67ub-w4v7-vza3
+# raip-67ub-w4v7-vzac-r3fk
+# raip-67ub-w4v7-vzac-r3f2-sldt
+# raip-67ub-w4v7-vzac-r3f2-sldy-wnv6
+# raip-67ub-w4v7-vzac-r3f2-sldy-wnvu-3lkr
+# raip-67ub-w4v7-vzac-r3f2-sldy-wnvu-3lkx-xasl
+# raip-67ub-w4v7-vzac-r3f2-sldy-wnvu-3lkx-xas4-6o4u
+# raip-67ub-w4v7-vzac-r3f2-sldy-wnvu-3lkx-xas4-6o4y-3eku
+# raip-67ub-w4v7-vzac-r3f2-sldy-wnvu-3lkx-xas4-6o4y-3ekk-46c6
