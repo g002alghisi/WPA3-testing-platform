@@ -1,9 +1,12 @@
-# Access Point with `ap.sh`
+# Source folder
+This folder contains the source code written to work with `hostapd`. Note that the `hostapd` source code it not stored here.
+
+## Access Point with `ap.sh`
 This script allows you to seamlessly setup an Access Point by using `hostapd`.
 
 In general, `hostapd` requires `.conf` files, as the extension suggests, to be configured. These can be found in the `Conf/` folder.
 
-## Usage
+### Usage
 The script handles few inputs:
 - the `-d` optional parameter to select the verbose mode.
 - the `-w wifi_if` optional parameter to specify the wireless interface, if different from the default one specified inside the code.

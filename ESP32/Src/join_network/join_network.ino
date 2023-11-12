@@ -5,8 +5,8 @@
 
 #include <WiFi.h>
 
-const char *ssid = "Hostapd-WPA3-PK";
-const char *password = "wfm4-3ogf-2e2j";
+const char *ssid = "Hostapd-WPA3";
+const char *password = "argoargoargo;
 
 
 void setup()
