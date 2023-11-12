@@ -8,6 +8,10 @@
 
 ./ap.sh wpa3-pk
 
-sleep 5
+sleep 3
 
-./ap.sh rogue-wpa3-pk
+./ap.sh rogue-wpa3-pk-without-pk
+
+sleep 3
+
+./ap.sh rogue-wpa3-pk-wrong-priv-key

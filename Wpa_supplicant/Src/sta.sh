@@ -1,5 +1,5 @@
 #!/bin/bash
-# set -x  # Debug mode.
+#set -x  # Debug mode.
 
 ### ### ### WPA-supplicant Station script ### ### ###
 # The function of this script is setting up a Supplicant STA using wpa-supplicant.
@@ -27,9 +27,10 @@
 
 ### *** Files, interfaces and constants *** ###
 
-# Move to Wpa_supplicant/ folder
-current_path="$0"
-while [[ "$current_path" != *"/Hostapd" ]]; do
+# Move to Hostapd/ folder
+cd "$(dirname "$0")"
+ecurrent_path=$(pwd)
+while [[ "$current_path" != *"/Wpa_supplicant" ]]; do
     cd ..
     current_path=$(pwd)
 done
@@ -173,10 +174,10 @@ sta_setup() {
     wifi_check_if &&
     wifi_check_conn &&
     nm_stop
+    echo ""
 }
 
 sta_run() {
-    echo ""
     echo -e "${CYAN}Running Wpa-supplicant. Press Ctrl-C to stop.${NC}"
     echo ""
     sta_print_info
@@ -191,16 +192,16 @@ sta_run() {
     else
         sudo "$wpa_supplicant" -B -i "$wifi_if" -c "$wpa_supplicant_config_file"
         echo ""
-        echo -e "${CYAN}wpa_cli is running too...${NC}"
+        echo -e "${CYAN}Wpa_cli is running too...${NC}"
+        echo ""
         sudo wpa_cli
     fi
-
-    echo -e "${CYAN}wpa_supplicant is stopped.${NC}"
+    echo ""
+    echo -e "${CYAN}Wpa_supplicant is stopped.${NC}"
     echo ""
 }
 
 sta_setdown() {
-    echo ""
     sudo killall wpa_supplicant &> /dev/null
     sudo killall wpa_cli &> /dev/null
     nm_start

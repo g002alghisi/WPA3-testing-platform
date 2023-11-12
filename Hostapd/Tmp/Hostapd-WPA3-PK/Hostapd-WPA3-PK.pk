@@ -1,12 +1,12 @@
 # SAE-PK password/M/private key for Sec=3.
-sae_password=raip-67ub-w4vr|pk=fe4a32b99d450da333d6c641a0661034:MHcCAQEEIHoBHyOdVKn+jsaxMlS5YMK0RAurYaN4q0kNOL3yDvyqoAoGCCqGSM49AwEHoUQDQgAEgc9iS2Kd2biw/64axvO9uqFUnR8mJ6jtWR9OADwNnX59Fr+gvss5P/UU4Tf7LyMsi3VrdUDQNVEWEyRQja3jVg==
+sae_password=6zvd-3ds6-suxw|pk=9f0a24796f6225cfd0f46f42393ffe07:MHcCAQEEIFZtktgy/OFsN+5s/wwPnuXc+OUYXgAAVgI8AnXHaMe8oAoGCCqGSM49AwEHoUQDQgAE3UTIrnHl/6d0uRI8bgGmCWrTZdjE0uDMcJd8bWsK+qURX/5vv//sF9N+kQ+sv6Cx8aXADGSnwbNHWxNznNYkUA==
 # Longer passwords can be used for improved security at the cost of usability:
-# raip-67ub-w4v7-vza3
-# raip-67ub-w4v7-vzac-r3fk
-# raip-67ub-w4v7-vzac-r3f2-sldt
-# raip-67ub-w4v7-vzac-r3f2-sldy-wnv6
-# raip-67ub-w4v7-vzac-r3f2-sldy-wnvu-3lkr
-# raip-67ub-w4v7-vzac-r3f2-sldy-wnvu-3lkx-xasl
-# raip-67ub-w4v7-vzac-r3f2-sldy-wnvu-3lkx-xas4-6o4u
-# raip-67ub-w4v7-vzac-r3f2-sldy-wnvu-3lkx-xas4-6o4y-3eku
-# raip-67ub-w4v7-vzac-r3f2-sldy-wnvu-3lkx-xas4-6o4y-3ekk-46c6
+# 6zvd-3ds6-suxq-ytu6
+# 6zvd-3ds6-suxq-ytud-5ihd
+# 6zvd-3ds6-suxq-ytud-5ihu-slkq
+# 6zvd-3ds6-suxq-ytud-5ihu-slkb-2jbr
+# 6zvd-3ds6-suxq-ytud-5ihu-slkb-2jbq-s4kr
+# 6zvd-3ds6-suxq-ytud-5ihu-slkb-2jbq-s4k4-twk2
+# 6zvd-3ds6-suxq-ytud-5ihu-slkb-2jbq-s4k4-twkk-7z34
+# 6zvd-3ds6-suxq-ytud-5ihu-slkb-2jbq-s4k4-twkk-7z3r-qrwo
+# 6zvd-3ds6-suxq-ytud-5ihu-slkb-2jbq-s4k4-twkk-7z3r-qrwm-qh4x

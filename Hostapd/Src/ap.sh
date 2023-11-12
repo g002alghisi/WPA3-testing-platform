@@ -30,7 +30,8 @@
 ### *** Files, interfaces and constants *** ###
 
 # Move to Hostapd/ folder
-current_path="$0"
+cd "$(dirname "$0")"
+ecurrent_path=$(pwd)
 while [[ "$current_path" != *"/Hostapd" ]]; do
     cd ..
     current_path=$(pwd)
@@ -46,7 +47,8 @@ br_if="br-ap"
 HOSTAPD_WPA2_CONF_PATH="Conf/Ko/hostapd_wpa2.conf"
 HOSTAPD_WPA3_CONF_PATH="Conf/Ko/hostapd_wpa3.conf"
 HOSTAPD_WPA3_PK_CONF_PATH="Conf/Ko/hostapd_wpa3_pk.conf"
-HOSTAPD_ROGUE_WPA3_PK_CONF_PATH="Conf/Ko/hostapd_rogue_wpa3_pk.conf"
+HOSTAPD_ROGUE_WPA3_PK_WITHOUT_PK_CONF_PATH="Conf/Ko/hostapd_rogue_wpa3_pk_without_pk.conf"
+HOSTAPD_ROGUE_WPA3_PK_WRONG_PRIV_KEY_CONF_PATH="Conf/Ko/hostapd_rogue_wpa3_pk_wrong_priv_key.conf"
 
 HOSTAPD_BASIC_WPA2_CONF_PATH="Conf/Basic/hostapd_wpa2.conf"
 HOSTAPD_BASIC_WPA3_CONF_PATH="Conf/Basic/hostapd_wpa3.conf"
@@ -271,6 +273,7 @@ ap_setup() {
 ap_run() {
     echo ""
     echo -e "${CYAN}Running Hostapd. Press Ctrl-C to stop.${NC}"
+    echo ""
     ap_print_info
     echo ""
     killall hostapd &> /dev/null
@@ -279,7 +282,9 @@ ap_run() {
     else
         sudo "$hostapd" "$hostapd_config_file" -d
     fi
+    echo ""
     echo -e "${CYAN}Hostapd is stopped.${NC}"
+    echo ""
 }
 
 ap_setdown() {
@@ -317,7 +322,7 @@ main() {
     shift $((OPTIND-1))
 
     if [ $# -ne 1 ]; then
-        echo "Usage: $0 [-d] [-w wifi_if] [-e eth_if] <wpa2|wpa3|wpa3-pk>"
+        echo "Usage: $0 [-d] [-w wifi_if] [-e eth_if] <wpa2|wpa3|wpa3-pk|...>"
         exit 1
     fi
 
@@ -342,11 +347,14 @@ main() {
         "basic-wpa3-pk")
             hostapd_config_file="$HOSTAPD_BASIC_WPA3_PK_CONF_PATH"
             ;;
-        "rogue-wpa3-pk")
-            hostapd_config_file="$HOSTAPD_ROGUE_WPA3_PK_CONF_PATH"
+        "rogue-wpa3-pk-without-pk")
+            hostapd_config_file="$HOSTAPD_ROGUE_WPA3_PK_WITHOUT_PK_CONF_PATH"
+            ;;
+        "rogue-wpa3-pk-wrong-priv-key")
+        hostapd_config_file="$HOSTAPD_ROGUE_WPA3_PK_WRONG_PRIV_KEY_CONF_PATH"
             ;;
         *)
-            echo -e "Invalid parameter (wpa2|wpa3|wpa3-pk|basic-wpa2|basic-wpa3|basic-wpa3-pk)."
+            echo -e "Invalid parameter (wpa2|wpa3|wpa3-pk|...)."
             exit 1
             ;;
     esac

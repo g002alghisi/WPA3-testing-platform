@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -x     # Debug mode
+# set -x # Debug mode
 
 ##### ##### ##### SAE-PK Key generator ##### ##### #####
 # In order to work with hostapd using SAE-PK, the special key has to be generated.
@@ -11,6 +11,10 @@
 # - <3|5>, Sec parameter.
 # - <ssid_name>
 
+### Output
+# The script prints the output of the sae_pk_gen program.
+# In addition, it saves the publik-private key .der file and the sae_pk_gen output in the Tmp/ folder.
+
 
 # Check the number of parameters.
 if [ $# -ne 2 ]; then
@@ -21,10 +25,10 @@ fi
 # Assegna i parametri alle variabili
 sec="$1"
 ssid="$2"
-key_der_file="$ssid.der"
 
 # Move to Hostapd/ folder
-current_path="$0"
+cd "$(dirname "$0")"
+ecurrent_path=$(pwd)
 while [[ "$current_path" != *"/Hostapd" ]]; do
     cd ..
     current_path=$(pwd)
@@ -36,12 +40,11 @@ tmp_dir="Tmp/$ssid/"
 mkdir -p "$tmp_dir"
 
 # First generate a private key inside Tmp/ folder
-mkdir -p Tmp
-mkdir -p "$ssid"
-openssl ecparam -name prime256v1 -genkey -noout -out "$tmp_dir""$key_der_file" -outform der
+openssl ecparam -name prime256v1 -genkey -noout -out "$ssid.der" -outform der
+mv "$ssid.der" "$tmp_dir"
 
 # Now derive the password from it:
-./Build/sae_pk_gen "Tmp/$key_der_file" "$sec" "$ssid" | tee "$tmp_dir""$ssid"".pk"
+./Build/sae_pk_gen "$tmp_dir""$ssid.der" "$sec" "$ssid" | tee "$tmp_dir""$ssid"".pk"
 
 
 #The program will print a special string that starts like this:
