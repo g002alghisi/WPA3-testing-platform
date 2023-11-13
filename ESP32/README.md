@@ -32,8 +32,8 @@ The procedure depends on the choosen work flow:
     > ```
     > it is not recommended to do so, as asking for support when using outdated software is more difficult and there could be problems installing the ESP32 module.
 
-  > When you purchease an ESP32 board, usually you get the instruction manual, which shows the instruction procedure specific for that board. However, it is usually better
-  > to follow the above web page because it avoids to install software manually by relying on the Arduino IDE extension manager.
+    > When you purchease an ESP32 board, usually you get the instruction manual, which shows the instruction procedure specific for that board. However, it is usually better
+    > to follow the above web page because it avoids to install software manually by relying on the Arduino IDE extension manager.
 
 - To work with the ESP32 IDF, please follow the 'Get Started' procedure at
   [https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html).
