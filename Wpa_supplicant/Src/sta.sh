@@ -21,13 +21,11 @@
 # protocol to be used between WPA2-Personal and WPA3-Personal.
 #       wpa_supplicant_sta.sh (wpa2|wpa3|wpa3-pk)
 
-### Output
-# To do...
 
 
 ### *** Files, interfaces and constants *** ###
 
-# Move to Hostapd/ folder
+# Move to Wpa_supplicant/ folder
 cd "$(dirname "$0")"
 ecurrent_path=$(pwd)
 while [[ "$current_path" != *"/Wpa_supplicant" ]]; do
@@ -43,6 +41,7 @@ wifi_if="wlx5ca6e63fe2da"
 WPA_SUPPLICANT_WPA2_CONF_PATH="Conf/Ko/wpa_supplicant_wpa2.conf"
 WPA_SUPPLICANT_WPA3_CONF_PATH="Conf/Ko/wpa_supplicant_wpa3.conf"
 WPA_SUPPLICANT_WPA3_PK_CONF_PATH="Conf/Ko/wpa_supplicant_wpa3_pk.conf"
+WPA_SUPPLICANT_WPA2_WPA3="Conf/Ko/wpa_supplicant_wpa2_wpa3.conf"
 WPA_SUPPLICANT_CLI_CONF_PATH="Conf/Ko/wpa_supplicant_cli.conf"
 
 
@@ -250,7 +249,10 @@ main() {
         "wpa3-pk")
             wpa_supplicant_config_file="$WPA_SUPPLICANT_WPA3_PK_CONF_PATH"
             ;;
-        "cli")
+        "wpa2-wpa3")
+            wpa_supplicant_config_file="$WPA_SUPPLICANT_WPA2_WPA3"
+            ;;
+       	"cli")
             wpa_supplicant_config_file="$WPA_SUPPLICANT_CLI_CONF_PATH"
             cli_mode=1
             ;;

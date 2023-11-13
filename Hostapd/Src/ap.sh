@@ -46,9 +46,12 @@ br_if="br-ap"
 
 HOSTAPD_WPA2_CONF_PATH="Conf/Ko/hostapd_wpa2.conf"
 HOSTAPD_WPA3_CONF_PATH="Conf/Ko/hostapd_wpa3.conf"
+HOSTAPD_WPA2_WPA3_CONF_PATH="Conf/Ko/hostapd_wpa2_wpa3.conf"
 HOSTAPD_WPA3_PK_CONF_PATH="Conf/Ko/hostapd_wpa3_pk.conf"
 HOSTAPD_ROGUE_WPA3_PK_WITHOUT_PK_CONF_PATH="Conf/Ko/hostapd_rogue_wpa3_pk_without_pk.conf"
 HOSTAPD_ROGUE_WPA3_PK_WRONG_PRIV_KEY_CONF_PATH="Conf/Ko/hostapd_rogue_wpa3_pk_wrong_priv_key.conf"
+HOSTAPD_ROGUE_WPA3_WITH_WPA2_CONF_PATH="Conf/Ko/hostapd_rogue_wpa3_with_wpa2.conf"
+
 
 HOSTAPD_BASIC_WPA2_CONF_PATH="Conf/Basic/hostapd_wpa2.conf"
 HOSTAPD_BASIC_WPA3_CONF_PATH="Conf/Basic/hostapd_wpa3.conf"
@@ -335,6 +338,9 @@ main() {
         "wpa3")
             hostapd_config_file="$HOSTAPD_WPA3_CONF_PATH"
             ;;
+        "wpa2-wpa3")
+            hostapd_config_file="$HOSTAPD_WPA2_WPA3_CONF_PATH"
+            ;;
         "wpa3-pk")
             hostapd_config_file="$HOSTAPD_WPA3_PK_CONF_PATH"
             ;;
@@ -351,7 +357,10 @@ main() {
             hostapd_config_file="$HOSTAPD_ROGUE_WPA3_PK_WITHOUT_PK_CONF_PATH"
             ;;
         "rogue-wpa3-pk-wrong-priv-key")
-        hostapd_config_file="$HOSTAPD_ROGUE_WPA3_PK_WRONG_PRIV_KEY_CONF_PATH"
+            hostapd_config_file="$HOSTAPD_ROGUE_WPA3_PK_WRONG_PRIV_KEY_CONF_PATH"
+            ;;
+        "rogue-wpa3-with-wpa2")
+            hostapd_config_file="$HOSTAPD_ROGUE_WPA3_WITH_WPA2_CONF_PATH"
             ;;
         *)
             echo -e "Invalid parameter (wpa2|wpa3|wpa3-pk|...)."
