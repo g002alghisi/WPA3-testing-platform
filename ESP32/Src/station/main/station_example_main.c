@@ -55,24 +55,23 @@
 #elif CONFIG_ESP_WIFI_AUTH_WAPI_PSK
 #define ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD WIFI_AUTH_WAPI_PSK
 #endif
-/* Enable SAE-PK via project configuration menu does not force the use of SAE-PK always.
-   The ESP32 WiFi module can use SAE-PK in three different ways:
-   - SAE-PK only mode: connect to a WPA3 network iff SAE-PK is used;
-   - SAE-PK disabled mode: connecto to a WPA3 network iff SAE-PK is not used;
-   - SAE-PK automatic mode: connect to a WPA3 network with SAE-PK if supported; otherwise connect with bare SAE.
 
-   Thus, enabling SAE-PK via project configuration menu is not enough to prevent evil-twin attacks: if SAE-PK automatic mode (the default one) is set (and transition
-   disable is not used), them it is quite easy for an attacker to trick the ESP32, spoofing the real AP.
-
-   With the followinf line, it is possible to define the value of ESP_WIFI_WPA3_SAE_PK_MODE based on CONFIG_ESP_WIFI_ENABLE_SAE_PK. It will be used in the .sta field
-   of the wifi_config_t instance to set the SAE-PK mode.
-*/
-#if CONFIG_ESP_WIFI_ENABLE_SAE_PK
-#define ESP_WIFI_WPA3_SAE_PK_MODE WPA3_SAE_PK_MODE_ONLY
+#if CONFIG_WPA3_SAE_PK_MODE_ONLY
+#define EXAMPLE_ESP_WIFI_SAE_PK_MODE WPA3_SAE_PK_MODE_ONLY
+#elif CONFIG_WPA3_SAE_PK_MODE_DISABLED
+#define EXAMPLE_ESP_WIFI_SAE_PK_MODE WPA3_SAE_PK_MODE_DISABLED
+#elif CONFIG_WPA3_SAE_PK_MODE_AUTOMATIC
+#define EXAMPLE_ESP_WIFI_SAE_PK_MODE WPA3_SAE_PK_MODE_AUTOMATIC
 #else
-#define ESP_WIFI_WPA3_SAE_PK_MODE WPA3_SAE_PK_MODE_DISABLED
+#define EXAMPLE_ESP_WIFI_SAE_PK_MODE WPA3_SAE_PK_MODE_AUTOMATIC
 #endif
 
+
+#if CONFIG_ESP_WIFI_TRANSITION_DISABLE
+#define EXAMPLE_ESP_WIFI_TRANSITION_DISABLE 1
+#else
+#define EXAMPLE_ESP_WIFI_TRANSITION_DISABLE 0
+#endif
 
 /* FreeRTOS event group to signal when we are connected*/
 static EventGroupHandle_t s_wifi_event_group;
@@ -147,8 +146,8 @@ void wifi_init_sta(void)
             .threshold.authmode = ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD,
             .sae_pwe_h2e = ESP_WIFI_SAE_MODE,
             .sae_h2e_identifier = EXAMPLE_H2E_IDENTIFIER,
-            .sae_pk_mode = ESP_WIFI_WPA3_SAE_PK_MODE,
-            .transition_disable = 1,    // It doesn't seem active by default
+            .sae_pk_mode = EXAMPLE_ESP_WIFI_SAE_PK_MODE,
+            .transition_disable = 0,
         },
     };
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );

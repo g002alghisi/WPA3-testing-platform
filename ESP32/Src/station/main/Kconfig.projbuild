@@ -64,4 +64,24 @@ menu "Example Configuration"
             bool "WAPI PSK"
     endchoice
 
+
+    config ESP_WIFI_TRANSITION_DISABLE
+        bool "Enable Transition Disable"
+        help
+            Enable or disable Transition Disable feature.
+
+    choice ESP_WIFI_SAE_PK_MODE
+        prompt "WPA3 SAE-PK mode selection"
+        depends on ESP_WIFI_ENABLE_SAE_PK
+        default WPA3_SAE_PK_MODE_ONLY
+        help
+            Select mode for SAE-PK as Only, Disabled or Automatic.
+        config WPA3_SAE_PK_MODE_ONLY
+            bool "ONLY"
+        config WPA3_SAE_PK_MODE_DISABLED
+            bool "DISABLED"
+        config WPA3_SAE_PK_MODE_AUTOMATIC
+            bool "AUTOMATIC"
+    endchoice
+
 endmenu
