@@ -147,8 +147,8 @@ void wifi_init_sta(void)
             .threshold.authmode = ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD,
             .sae_pwe_h2e = ESP_WIFI_SAE_MODE,
             .sae_h2e_identifier = EXAMPLE_H2E_IDENTIFIER,
-            //.sae_pk_mode = ESP_WIFI_WPA3_SAE_PK_MODE,
-            //.transition_disable = 0,    // Should be active by default
+            .sae_pk_mode = ESP_WIFI_WPA3_SAE_PK_MODE,
+            .transition_disable = 1,    // It doesn't seem active by default
         },
     };
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );

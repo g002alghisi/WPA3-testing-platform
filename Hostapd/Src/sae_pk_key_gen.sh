@@ -18,7 +18,7 @@
 
 # Check the number of parameters.
 if [ $# -ne 2 ]; then
-    echo "Usage: $0 <3|5> <ssid_name>"
+    echo "Usage: $0 <Sec:3|5> <ssid_name>"
     exit 1
 fi
 
