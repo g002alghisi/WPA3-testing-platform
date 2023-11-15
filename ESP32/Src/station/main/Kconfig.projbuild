@@ -67,6 +67,7 @@ menu "Example Configuration"
 
     config ESP_WIFI_TRANSITION_DISABLE
         bool "Enable Transition Disable"
+        default y
         help
             Enable or disable Transition Disable feature.
 

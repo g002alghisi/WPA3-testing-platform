@@ -18,4 +18,115 @@ All these examples are also available from GitHub ([https://github.com/espressif
 Also in this case, a lot of use examples for each library come with the ESP32-IDF module when installed.
 In particular, `station` goal is to enable the ESP32 to join a desired network. The code is not as simple to understand as the `join_network` Arduino counterpart, but in this case it is possible to easily select the security protocol, set the ssid and password, and enable SAE-PK by means of the project menuconfig. However, if SAE-PK is used with the original code,
 it is enabled in automatic mode. The ESP32 is thus able to use SAE-PK, but if such a network is not available, it joins networks with bare SAE. This exposes the board to evil-twin attacks.
-To avoid it, the code has been modified to force the SAE-PK only mode if SAE-PK is enabled from menuconfig.
+
+To avoid it, the `station` source code has been slightly modified with respect the original one provided by Espressif:
+- Now it is possible to select the SAE-PK mode between `Automatic`, `Disabled` and `Only` (default).
+- A new checkbox is available to activate or deactivate the Transition Disable feature (that seems to be deactivate by default...). This allows to should avoid (after the first connection to the real AP) downgrades attacks. However, a better analysis of this feature implementation in the ESP32-IDF firmware will be provided in the next subsection.
+
+### ESP32-IDF Transition Disable mechanism
+The behaviour of the ESP32-IDF firmware regarding the Transition Disable feature has been inspected.
+At first, the attention was on WPA2/WPA3 transition mode. In this case, the board acts correctly, and once got the Transition Disable indication from the AP, it refuses to join rogue WPA2 networks.
+
+Subsequently, SAE/SAE-PK transition mode analysis has been carried out. Sadly, it was noted that the board gets the Transition disable indication and, if in debug mode, presents to the user the information. However, it does not care too much, and if it has possibility, it tries to join a rogue WPA3 network without SAE-PK (just SAE).<br>
+For this reason, the source code has been quickly analized.
+
+In this case, `grep` comes in hand, and by trying the following commands
+```bash
+cd ~/.Espressif/esp-idf/    # Where I saved my installation files
+grep -r "transition disable"
+# Inspect the code
+grep -r "transition_disable"
+# Inspect the code
+grep -r "TRANSITION_DISABLE_WPA3_PERSONAL"
+```
+the problem has been narrowed down to `esp_wpas_glue.c`.
+
+To be honest, how the code is organized is still hazy... However, the same inspection has been done in the source folder of `wpa_supplicant`, the one available from the Ubuntu repository. There the "original" counterpart `wpas_glue.c` has been found, thus compared to the Espressif version.
+
+It is interesting to note that the string `"TRANSITION_DISABLE_WPA3_PERSONAL"` brings to the function:
+```c
+// ESP32-IDF version
+void wpa_supplicant_transition_disable(void *sm, u8 bitmap)
+{
+    wpa_printf(MSG_DEBUG, "TRANSITION_DISABLE %02x", bitmap);
+
+    if (bitmap & TRANSITION_DISABLE_WPA3_PERSONAL) {
+        esp_wifi_sta_disable_wpa2_authmode_internal();
+    }   
+}
+
+// Original version
+static void wpa_supplicant_transition_disable(void *_wpa_s, u8 bitmap)
+{
+	struct wpa_supplicant *wpa_s = _wpa_s;
+	struct wpa_ssid *ssid;
+	int changed = 0;
+
+	wpa_msg(wpa_s, MSG_INFO, TRANSITION_DISABLE "%02x", bitmap);
+
+	ssid = wpa_s->current_ssid;
+	if (!ssid)
+		return;
+
+#ifdef CONFIG_SAE
+	if ((bitmap & TRANSITION_DISABLE_WPA3_PERSONAL) &&
+	    wpa_key_mgmt_sae(wpa_s->key_mgmt) &&
+	    (ssid->key_mgmt & (WPA_KEY_MGMT_SAE | WPA_KEY_MGMT_FT_SAE)) &&
+	    (ssid->ieee80211w != MGMT_FRAME_PROTECTION_REQUIRED ||
+	     (ssid->group_cipher & WPA_CIPHER_TKIP))) {
+		wpa_printf(MSG_DEBUG,
+			   "WPA3-Personal transition mode disabled based on AP notification");
+		disable_wpa_wpa2(ssid);
+		changed = 1;
+	}
+
+	if ((bitmap & TRANSITION_DISABLE_SAE_PK) &&
+	    wpa_key_mgmt_sae(wpa_s->key_mgmt) &&
+#ifdef CONFIG_SME
+	    wpa_s->sme.sae.state == SAE_ACCEPTED &&
+	    wpa_s->sme.sae.pk &&
+#endif /* CONFIG_SME */
+	    (ssid->key_mgmt & (WPA_KEY_MGMT_SAE | WPA_KEY_MGMT_FT_SAE)) &&
+	    (ssid->sae_pk != SAE_PK_MODE_ONLY ||
+	     ssid->ieee80211w != MGMT_FRAME_PROTECTION_REQUIRED ||
+	     (ssid->group_cipher & WPA_CIPHER_TKIP))) {
+		wpa_printf(MSG_DEBUG,
+			   "SAE-PK: SAE authentication without PK disabled based on AP notification");
+		disable_wpa_wpa2(ssid);
+		ssid->sae_pk = SAE_PK_MODE_ONLY;
+		changed = 1;
+	}
+#endif /* CONFIG_SAE */
+
+	if ((bitmap & TRANSITION_DISABLE_WPA3_ENTERPRISE) &&
+	    wpa_key_mgmt_wpa_ieee8021x(wpa_s->key_mgmt) &&
+	    (ssid->key_mgmt & (WPA_KEY_MGMT_IEEE8021X |
+			       WPA_KEY_MGMT_FT_IEEE8021X |
+			       WPA_KEY_MGMT_IEEE8021X_SHA256)) &&
+	    (ssid->ieee80211w != MGMT_FRAME_PROTECTION_REQUIRED ||
+	     (ssid->group_cipher & WPA_CIPHER_TKIP))) {
+		disable_wpa_wpa2(ssid);
+		changed = 1;
+	}
+
+	if ((bitmap & TRANSITION_DISABLE_ENHANCED_OPEN) &&
+	    wpa_s->key_mgmt == WPA_KEY_MGMT_OWE &&
+	    (ssid->key_mgmt & WPA_KEY_MGMT_OWE) &&
+	    !ssid->owe_only) {
+		ssid->owe_only = 1;
+		changed = 1;
+	}
+
+	if (!changed)
+		return;
+
+#ifndef CONFIG_NO_CONFIG_WRITE
+	if (wpa_s->conf->update_config &&
+	    wpa_config_write(wpa_s->confname, wpa_s->conf))
+		wpa_printf(MSG_DEBUG, "Failed to update configuration");
+#endif /* CONFIG_NO_CONFIG_WRITE */
+}
+```
+The difference is quite suspicious... It seems like the EPS32 version does not implement anything more thant the WPA2/WPA3 Transition Disable feature, but not all the others related to SAE/SAE-PK, WPA3-Enterprise and OWE.
+
+#### Waiting for updates from Espressif...

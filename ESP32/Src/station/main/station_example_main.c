@@ -147,7 +147,7 @@ void wifi_init_sta(void)
             .sae_pwe_h2e = ESP_WIFI_SAE_MODE,
             .sae_h2e_identifier = EXAMPLE_H2E_IDENTIFIER,
             .sae_pk_mode = EXAMPLE_ESP_WIFI_SAE_PK_MODE,
-            .transition_disable = 0,
+            .transition_disable = EXAMPLE_ESP_WIFI_TRANSITION_DISABLE,
         },
     };
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );
@@ -179,6 +179,9 @@ void wifi_init_sta(void)
 
 void app_main(void)
 {
+    printf("EXAMPLE_ESP_WIFI_TRANSITION_DISABLE: %d\n", EXAMPLE_ESP_WIFI_TRANSITION_DISABLE);
+    printf("EXAMPLE_ESP_WIFI_SAE_PK_MODE: %d\n", EXAMPLE_ESP_WIFI_SAE_PK_MODE);
+
     //Initialize NVS
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
