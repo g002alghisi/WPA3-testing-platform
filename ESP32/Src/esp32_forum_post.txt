@@ -1,0 +1,52 @@
+Hello everybody,
+I'm an engineering student working on my master thesis, and I am studying WPA3 security with a focus on SAE-PK.
+
+I have a development board, the KS0413 Keyestudio ESP32 Core Board, based on the ESP32-WROOM-32 chip. I am using VSCode as my IDE, on which I have installed the Espressif IDF v1.6.5 (the latest available), and have started using the board.
+
+I have figured out how to enable SAE-PK and Transition Disable, and I tested them with Hostapd (I'm working on Linux, with Pop-OS!). SAE-PK works without problems (I tried all the different SAE-PK modes: Automatic, Only, and Disabled), but I am having some trouble with Transition Disable. Here are the situations I have faced:
+
+- If I use WPA2/3 on the AP and enable transition disable (with bits 0x01, thus preventing the transition between WPA3 -> WPA2), after being connected to it, the board is not able to connect to a rogue AP with just WPA2.
+- If I use WPA3 with SAE-PK on the AP and enable transition disable (with bits 0x02, thus preventing transitions between SAE-PK -> SAE), the board is still able to join a rogue AP with WPA3 without SAE-PK.
+
+I conducted these tests with wpa-supplicant, and everything works fine in both cases.
+
+So, I started inspecting the source code (the one that I found in esp-idf/* folders), and I narrowed the problem down to the esp_wpas_glue.c file. I noticed that it is the counterpart of the official wpa-supplicant wpas_glue.c file. In particular, I compared these two functions from the two files:
+
+[Codebox]
+// ESP32-IDF version
+void wpa_supplicant_transition_disable(void *sm, u8 bitmap)
+{
+    wpa_printf(MSG_DEBUG, "TRANSITION_DISABLE %02x", bitmap);
+
+    if (bitmap & TRANSITION_DISABLE_WPA3_PERSONAL) {
+        esp_wifi_sta_disable_wpa2_authmode_internal();
+    }   
+}
+
+// Original version
+static void wpa_supplicant_transition_disable(void *_wpa_s, u8 bitmap)
+{
+    struct wpa_supplicant *wpa_s = _wpa_s;
+    struct wpa_ssid *ssid;
+    int changed = 0;
+
+    wpa_msg(wpa_s, MSG_INFO, TRANSITION_DISABLE "%02x", bitmap);
+
+    ssid = wpa_s->current_ssid;
+    if (!ssid)
+        return;
+
+    // ... (rest of the code)
+
+#ifndef CONFIG_NO_CONFIG_WRITE
+    if (wpa_s->conf->update_config &&
+        wpa_config_write(wpa_s->confname, wpa_s->conf))
+        wpa_printf(MSG_DEBUG, "Failed to update configuration");
+#endif /* CONFIG_NO_CONFIG_WRITE */
+}
+[/Codebox]
+
+So, my question is, am I the only one with this kind of problem, or is the ESP32-IDF implementation of wpas_glue.c outdated and still doesn't support the full implementation of the Transition Disable mechanism?
+
+Thank you all in advance; I hope all the information provided is enough.
+
