@@ -1,6 +1,7 @@
 # My ProjectHostapd-test
 
 ## Todo List
+
 ### ESP32
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (OK)
@@ -9,15 +10,16 @@
 
 ### Cypress board
 - [x] Test with WPA3 (OK)
-- [ ] Test with WPA2/3
+- [x] Test with SAE-PK (--)
 - [x] Test with WPA2/3 and transition disable (--)
 - [x] Test with SAE-PK and transition disable (--)
 
 ### Raspberry Pi 4
 - [x] Test with WPA3 (!!)
 - [ ] Test with WPA2/3 and transition disable
-- [ ] Test with MFP
+- [x] Test with SAE-PK (--)
 - [x] Test with SAE-PK and transition disable (--)
+- [ ] Test with MFP set as required
 - [ ] Test with `iwd`
       
 ### Wpa-supplicant
