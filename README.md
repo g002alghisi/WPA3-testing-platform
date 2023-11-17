@@ -28,13 +28,13 @@
 - [x] Test with WPA2/3 and transition disable (OK)
 - [x] Test with SAE-PK and transition disable (OK)
 
-### Test POCO F3
+### POCO F3
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (!!)
 - [x] Test with WPA2/3 and transition disable (!!)
 - [x] Test with SAE-PK and transition disable (--)
 
-### Test iPad
+### iPad
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (!!)
 - [x] Test with WPA2/3 and transition disable (OK)
