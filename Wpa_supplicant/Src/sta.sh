@@ -33,16 +33,17 @@ while [[ "$current_path" != *"/Wpa_supplicant" ]]; do
     current_path=$(pwd)
 done
 
-wpa_supplicant="Build/wpa_supplicant"
+#wpa_supplicant="Build/wpa_supplicant"
+wpa_supplicant="wpa_supplicant"
 wpa_supplicant_verbose_mode=0
 
-wifi_if="wlx5ca6e63fe2da"
+wifi_if="wlan0"
 
-WPA_SUPPLICANT_WPA2_CONF_PATH="Conf/Ko/wpa_supplicant_wpa2.conf"
-WPA_SUPPLICANT_WPA3_CONF_PATH="Conf/Ko/wpa_supplicant_wpa3.conf"
-WPA_SUPPLICANT_WPA3_PK_CONF_PATH="Conf/Ko/wpa_supplicant_wpa3_pk.conf"
-WPA_SUPPLICANT_WPA2_WPA3="Conf/Ko/wpa_supplicant_wpa2_wpa3.conf"
-WPA_SUPPLICANT_CLI_CONF_PATH="Conf/Ko/wpa_supplicant_cli.conf"
+WPA_SUPPLICANT_WPA2_CONF_PATH="Conf/Minimal/wpa_supplicant_wpa2.conf"
+WPA_SUPPLICANT_WPA3_CONF_PATH="Conf/Minimal/wpa_supplicant_wpa3.conf"
+WPA_SUPPLICANT_WPA3_PK_CONF_PATH="Conf/Minimal/wpa_supplicant_wpa3_pk.conf"
+WPA_SUPPLICANT_WPA2_WPA3="Conf/Minimal/wpa_supplicant_wpa2_wpa3.conf"
+WPA_SUPPLICANT_CLI_CONF_PATH="Conf/Minimal/wpa_supplicant_cli.conf"
 
 
 ### *** Support *** ###
