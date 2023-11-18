@@ -33,11 +33,11 @@ while [[ "$current_path" != *"/Wpa_supplicant" ]]; do
     current_path=$(pwd)
 done
 
-#wpa_supplicant="Build/wpa_supplicant"
-wpa_supplicant="wpa_supplicant"
+wpa_supplicant="Build/wpa_supplicant"
+#wpa_supplicant="wpa_supplicant"
 wpa_supplicant_verbose_mode=0
 
-wifi_if="wlan0"
+wifi_if="wlx5ca6e63fe2da"
 
 WPA_SUPPLICANT_WPA2_CONF_PATH="Conf/Minimal/wpa_supplicant_wpa2.conf"
 WPA_SUPPLICANT_WPA3_CONF_PATH="Conf/Minimal/wpa_supplicant_wpa3.conf"
@@ -182,7 +182,7 @@ sta_run() {
     echo ""
     sta_print_info
     echo ""
-    sudo killall wpa_supplicant
+    sudo killall wpa_supplicant &> /dev/null
     if [ $cli_mode -eq 0 ]; then
         if [ $wpa_supplicant_verbose_mode -eq 0 ]; then
             sudo "$wpa_supplicant" -i "$wifi_if" -c "$wpa_supplicant_config_file"

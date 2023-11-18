@@ -16,11 +16,11 @@
 
 ### Raspberry Pi 4
 - [x] Test with WPA3 (!!)
-- [ ] Test with WPA2/3 and transition disable
+- [x] Test with WPA2/3 and transition disable
 - [x] Test with SAE-PK (--)
 - [x] Test with SAE-PK and transition disable (--)
-- [ ] Test with MFP set as required
-- [ ] Test with `iwd`
+- [x] Test with MFP set as required (--)
+- [x] Test with `iwd` (--)
       
 ### Wpa-supplicant
 - [x] Test with WPA3 (OK)
