@@ -74,6 +74,7 @@ First generate a private key:
     ```
     openssl ecparam -name prime256v1 -genkey -noout -out <key_file.der> -outform der
     ```
+
 Now derive the password from it:
     ```
     ./sae_pk_gen <key_file.der> <3|5> <ssid_name>
@@ -82,6 +83,7 @@ The program will print a special string that starts like this:
     ```
     sae_password=abcd-defg-hijk|pk=...
     ```
+
 This string can be directly copied in the hostapd.conf file and will automatically enable WPA3 with SAE-PK.
 
 Note that:
