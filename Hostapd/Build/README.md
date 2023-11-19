@@ -8,17 +8,21 @@ The following process has been used:
     ```bash
     apt source hostapd
     ```
+
 2. Go to the `hostapd/` folder.
+
 3. Create the `.config` file by means of the command
     ```bash
     cp defconf .config
     ```
+
 4. Check if the `.config` file contains the two following strings:
     ```bash
     CONFIG_SAE=y
     CONFIG_SAE_PK=y
     ```
     If these are not preset, please add them.
+
 5. Finally, execute
     ```bash
     make
