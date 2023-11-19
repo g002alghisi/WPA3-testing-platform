@@ -5,6 +5,8 @@ These have been created based on the template that can be found at `/usr/share/d
 Several sub-folders have been created in order to be more organised:
 - `Skeleton/` contains bare configuration files that can be used to create personal solutions.
 - `Ko/` contains solutions developed personally.
+- 'Minimal/' contains a revision of 'Ko/' files extrimely shrinked and for which APs have all the same name
+    (usefull to make tests with evil-twins).
 - `Basic/` contains configurations copied from Mathy Vanhoef (these are minimal working configurations, but are not well commented).
 
 ## General settings
