@@ -1,5 +1,5 @@
 #!/bin/bash
-# set -x  # Debug mode.
+#set -x  # Debug mode.
 
 ### ### ### Launch Wireshark script ### ### ###
 # This script is used to setup everything needed to use wireshark with the wireless card.
@@ -15,7 +15,17 @@
 
 ### *** Files, interfaces and constants *** ###
 
+# Move to Sniff/ folder
+cd "$(dirname "$0")"
+ecurrent_path=$(pwd)
+while [[ "$current_path" != *"/Sniff" ]]; do
+    cd ..
+    current_path=$(pwd)
+done
+
+
 wifi_if="wlx5ca6e63fe2da"
+channel=0
 
 
 ### *** Support *** ###
@@ -84,10 +94,14 @@ wifi_check_conn() {
 wifi_if_set_monitor () {
     log_info "Setting $wifi_if in monitor mode... "
     sudo airmon-ng check kill > /dev/null &&
-    sudo airmon-ng start "$wifi_if" > /dev/null &&
+    if [ "$channel" -eq 0 ]; then
+        sudo airmon-ng start "$wifi_if" > /dev/null
+    else
+        sudo airmon-ng start "$wifi_if" channel "$channel" > /dev/null
+    fi
+    new_wifi_if="$(ifconfig | grep "$wifi_if" | cut -d ":" -f 1)"
     if [ $? -eq 0 ]; then
         log_success
-        ifconfig | grep "$wifi_if" | cut -d ":" -f 1
         # The previous command is needed because sometimes
         # the wifi_interface name is changed in this way:
         #   wlan0 -> wlan0mon
@@ -100,8 +114,8 @@ wifi_if_set_monitor () {
 }
 
 wifi_if_set_default () {
-    log_info "Setting $wifi_if in default mode... "
-    sudo airmon-ng stop "$wifi_if" > /dev/null &&
+    log_info "Setting $new_wifi_if in default mode... "
+    sudo airmon-ng stop "$new_wifi_if" > /dev/null &&
     sudo ip link set "$wifi_if" up > /dev/null
     if [ $? -eq 0 ]; then
         log_success
@@ -151,7 +165,7 @@ wireshark_setup () {
     echo ""
     wifi_check_if &&
     wifi_check_conn &&
-    nm_stop
+    nm_stop &&
     wifi_if_set_monitor
 }
 
@@ -159,7 +173,7 @@ wireshark_run() {
     echo ""
     echo -e "${CYAN}Running Wireshark. Press Ctrl-C to stop.${NC}"
     echo ""
-    sudo wireshark -i "$wifi_if"
+    sudo wireshark
     echo ""
     echo -e "${CYAN}Wiresharkd is stopped.${NC}"
     echo ""
@@ -174,10 +188,13 @@ wireshark_setdown() {
 
 
 main() {
-    while getopts "w:" opt; do
+    while getopts "w:c:" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
+                ;;
+            c)
+                channel="$OPTARG"
                 ;;
             \?)
                 echo "Invalid option: -$OPTARG" >&2
@@ -193,7 +210,7 @@ main() {
     shift $((OPTIND-1))
 
     if [ $# -ne 0 ]; then
-        echo "Usage: $0 [-w wifi_if]"
+        echo "Usage: $0 [-w wifi_if] [-c channel]"
         exit 1
     fi
 

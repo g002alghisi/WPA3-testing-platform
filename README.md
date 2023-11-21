@@ -53,6 +53,12 @@ To use the Wi-Fi donge, it is required to install the drivers.
 In general, one can follow the official guide. However, in Linux few problems have been encountered.
 To overcome them and use the USB Wireless Interface, try the Morrowr's driver,available on GitHub at [https://github.com/morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)
 
+### Other useful links
+- [https://www.aircrack-ng.org/doku.php?id=compatibility_drivers#compatibility](https://www.aircrack-ng.org/doku.php?id=compatibility_drivers#compatibility)
+- [https://wikidevi.wi-cat.ru/TP-LINK_Archer_T2U_v3](https://wikidevi.wi-cat.ru/TP-LINK_Archer_T2U_v3)
+- [https://github.com/morrownr/Monitor_Mode](https://github.com/morrownr/Monitor_Mode)
+
+
 ## Cypress Board CYW954907AEVAL1F
 The Cypress CYW954907AEVAL1F Evaluation Kit serves as a platform to assess and create single-chip Wi-Fi applications employing the CYW54907 device. This kit is centered around a module that harnesses the capabilities of the CYW54907, a single-chip 802.11ac dual-band Wi-Fi System-on-Chip (SoC) supporting both 2.4 GHz and 5 GHz frequencies.
 More information can be found at [https://www.infineon.com/cms/en/product/evaluation-boards/cyw954907aeval1f/](https://www.infineon.com/cms/en/product/evaluation-boards/cyw954907aeval1f/).

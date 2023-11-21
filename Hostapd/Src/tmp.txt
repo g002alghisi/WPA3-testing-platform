@@ -1,0 +1,1003 @@
+
+INFO: NetworkManager is already active.
+INFO: Looking for Conf/Minimal/hostapd_wpa3_pk.conf... 
+[0;32mSuccess.[0m
+INFO: Checking Ethernet interface... 
+[0;32mSuccess.[0m
+INFO: Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+INFO: Checking Ethernet connection... 
+[0;32mSuccess.[0m
+INFO: enp4s0f1 currently connected to Home.
+INFO: Checking WiFi interface... 
+[0;32mSuccess.[0m
+INFO: Forcing WiFi interface up... 
+[0;32mSuccess.[0m
+INFO: Checking WiFi connection... 
+[0;32mSuccess.[0m
+INFO: wlp3s0 currently connected to Casa-A-gbtyTYgnGTBYjf. Disconnecting...
+[0;32mSuccess.[0m
+INFO: Stopping Network Manager... 
+[0;32mSuccess.[0m
+INFO: Creating the bridge... 
+[0;32mSuccess.[0m
+INFO: Forcing up the bridge... 
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+logger_syslog=8
+logger_syslog_level=0
+logger_stdout=11
+logger_stdout_level=0
+interface=wlp3s0
+bridge=br-ap
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+wpa=2
+rsn_pairwise=CCMP
+ssid=Hostapd-AP
+utf8_ssid=1
+sae_password=tshr-vuqe-xxwj|pk=e130caaf2ff3935380236cf9368b0188:MHcCAQEEIOGPzwmPAuKxAqDQu3IVJSFakFdedhJYm+9BZGhaKqDXoAoGCCqGSM49AwEHoUQDQgAEMqlgp4P38V0CfZj4PHZ5rs/GdY9P+peMztUVMTrNHP0UhIjAPNIUxQyAjgO5M1GjPfGiNGOx8V+fhlrC3fPOmg==
+wpa_key_mgmt=SAE
+sae_pwe=2
+ieee80211w=2
+transition_disable=0x03
+
+
+random: Trying to read entropy from /dev/random
+Configuration file: Conf/Minimal/hostapd_wpa3_pk.conf
+nl80211: TDLS supported
+nl80211: TDLS external setup
+nl80211: Supported cipher 00-0f-ac:1
+nl80211: Supported cipher 00-0f-ac:5
+nl80211: Supported cipher 00-0f-ac:2
+nl80211: Supported cipher 00-0f-ac:4
+nl80211: Supported cipher 00-0f-ac:6
+nl80211: Supported cipher 00-0f-ac:13
+nl80211: Supported cipher 00-0f-ac:11
+nl80211: Supported cipher 00-0f-ac:12
+nl80211: Supports Probe Response offload in AP mode
+nl80211: Using driver-based off-channel TX
+nl80211: Driver-advertised extended capabilities (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+nl80211: Driver-advertised extended capabilities mask (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+nl80211: Use separate P2P group interface (driver advertised support)
+nl80211: Enable multi-channel concurrent (driver advertised support)
+nl80211: use P2P_DEVICE support
+nl80211: key_mgmt=0x1fd0f enc=0xf0f auth=0x7 flags=0x4000531fb7bfbe0 rrm_flags=0x30 probe_resp_offloads=0x7 max_stations=32 max_remain_on_chan=5000 max_scan_ssids=16
+nl80211: interface wlp3s0 in phy phy0
+nl80211: Set mode ifindex 3 iftype 3 (AP)
+nl80211: Setup AP(wlp3s0) - device_ap_sme=0 use_monitor=0
+nl80211: Subscribe to mgmt frames with AP handle 0x555d1f1650e0
+nl80211: Register frame type=0xb0 (WLAN_FC_STYPE_AUTH) nl_handle=0x555d1f1650e0 match= multicast=0
+nl80211: Register frame type=0x0 (WLAN_FC_STYPE_ASSOC_REQ) nl_handle=0x555d1f1650e0 match= multicast=0
+nl80211: Register frame type=0x20 (WLAN_FC_STYPE_REASSOC_REQ) nl_handle=0x555d1f1650e0 match= multicast=0
+nl80211: Register frame type=0xa0 (WLAN_FC_STYPE_DISASSOC) nl_handle=0x555d1f1650e0 match= multicast=0
+nl80211: Register frame type=0xc0 (WLAN_FC_STYPE_DEAUTH) nl_handle=0x555d1f1650e0 match= multicast=0
+nl80211: Register frame type=0x40 (WLAN_FC_STYPE_PROBE_REQ) nl_handle=0x555d1f1650e0 match= multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555d1f1650e0 match=04 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555d1f1650e0 match=0501 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555d1f1650e0 match=0503 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555d1f1650e0 match=0504 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555d1f1650e0 match=06 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555d1f1650e0 match=08 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555d1f1650e0 match=09 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555d1f1650e0 match=0a multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555d1f1650e0 match=11 multicast=0
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x555d1f1650e0 match=7f multicast=0
+rfkill: initial event: idx=3 type=1 op=0 soft=0 hard=0
+nl80211: Add own interface ifindex 36 (ifidx_reason 3)
+nl80211: if_indices[16]: 36(3)
+nl80211: Add own interface ifindex 3 (ifidx_reason -1)
+nl80211: if_indices[16]: 36(3) 3(-1)
+nl80211: Adding interface wlp3s0 into bridge br-ap
+nl80211: Do not open EAPOL RX socket - using control port for RX
+phy: phy0
+BSS count 1, BSSID mask 00:00:00:00:00:00 (0 bits)
+wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+Previous country code IT, new country code IT 
+nl80211: Regulatory information - country=IT (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-66000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220[NO_IR] 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+Completing interface initialization
+Mode: IEEE 802.11g  Channel: 1  Frequency: 2412 MHz
+DFS 0 channels required radar detection
+nl80211: Set freq 2412 (ht_enabled=0, vht_enabled=0, he_enabled=0, bandwidth=20 MHz, cf1=2412 MHz, cf2=0 MHz)
+  * freq=2412
+  * he_enabled=0
+  * vht_enabled=0
+  * ht_enabled=0
+  * channel_type=0
+RATE[0] rate=10 flags=0x1
+RATE[1] rate=20 flags=0x1
+RATE[2] rate=55 flags=0x1
+RATE[3] rate=110 flags=0x1
+RATE[4] rate=60 flags=0x0
+RATE[5] rate=90 flags=0x0
+RATE[6] rate=120 flags=0x0
+RATE[7] rate=180 flags=0x0
+RATE[8] rate=240 flags=0x0
+RATE[9] rate=360 flags=0x0
+RATE[10] rate=480 flags=0x0
+RATE[11] rate=540 flags=0x0
+hostapd_setup_bss(hapd=0x555d1f14fc10 (wlp3s0), first=1)
+nl80211: flush -> DEL_STATION wlp3s0 (all)
+Using interface wlp3s0 with hwaddr 3c:a0:67:80:99:a3 and ssid "Hostapd-AP"
+SAE: Derive PT - group 19
+SAE: SSID - hexdump_ascii(len=10):
+     48 6f 73 74 61 70 64 2d 41 50                     Hostapd-AP      
+SAE: password - hexdump_ascii(len=14): [REMOVED]
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value (u1 P1) - hexdump(len=48): [REMOVED]
+SAE: u1 - hexdump(len=32): [REMOVED]
+SSWU: m - hexdump(len=32): [REMOVED]
+SSWU: t - hexdump(len=32): [REMOVED]
+SSWU: x1a = b / (z * a) - hexdump(len=32): [REMOVED]
+SSWU: x1b = (-b/a) * (1 + t) - hexdump(len=32): [REMOVED]
+SSWU: x1 = CSEL(l, x1a, x1b) - hexdump(len=32): [REMOVED]
+SSWU: gx1 = x1^3 + a * x1 + b - hexdump(len=32): [REMOVED]
+SSWU: x2 = z * u^2 * x1 - hexdump(len=32): [REMOVED]
+SSWU: gx2 = x2^3 + a * x2 + b - hexdump(len=32): [REMOVED]
+SSWU: gx1^((p-1)/2) modulo p - hexdump(len=32): [REMOVED]
+SSWU: v = CSEL(l, gx1, gx2) - hexdump(len=32): [REMOVED]
+SSWU: x = CSEL(l, x1, x2) - hexdump(len=32): [REMOVED]
+SSWU: y = sqrt(v) - hexdump(len=32): [REMOVED]
+SSWU: p - y - hexdump(len=32): [REMOVED]
+SSWU: P.x - hexdump(len=32): [REMOVED]
+SSWU: P.y - hexdump(len=32): [REMOVED]
+SAE: pwd-value (u2 P2) - hexdump(len=48): [REMOVED]
+SAE: u2 - hexdump(len=32): [REMOVED]
+SSWU: m - hexdump(len=32): [REMOVED]
+SSWU: t - hexdump(len=32): [REMOVED]
+SSWU: x1a = b / (z * a) - hexdump(len=32): [REMOVED]
+SSWU: x1b = (-b/a) * (1 + t) - hexdump(len=32): [REMOVED]
+SSWU: x1 = CSEL(l, x1a, x1b) - hexdump(len=32): [REMOVED]
+SSWU: gx1 = x1^3 + a * x1 + b - hexdump(len=32): [REMOVED]
+SSWU: x2 = z * u^2 * x1 - hexdump(len=32): [REMOVED]
+SSWU: gx2 = x2^3 + a * x2 + b - hexdump(len=32): [REMOVED]
+SSWU: gx1^((p-1)/2) modulo p - hexdump(len=32): [REMOVED]
+SSWU: v = CSEL(l, gx1, gx2) - hexdump(len=32): [REMOVED]
+SSWU: x = CSEL(l, x1, x2) - hexdump(len=32): [REMOVED]
+SSWU: y = sqrt(v) - hexdump(len=32): [REMOVED]
+SSWU: p - y - hexdump(len=32): [REMOVED]
+SSWU: P.x - hexdump(len=32): [REMOVED]
+SSWU: P.y - hexdump(len=32): [REMOVED]
+random: Got 20/20 random bytes
+GMK - hexdump(len=32): [REMOVED]
+Key Counter - hexdump(len=32): [REMOVED]
+WPA: Delay group state machine start until Beacon frames have been configured
+nl80211: Set beacon (beacon_set=0)
+nl80211: Beacon head - hexdump(len=61): 80 00 00 00 ff ff ff ff ff ff 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0a 48 6f 73 74 61 70 64 2d 41 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01
+nl80211: Beacon tail - hexdump(len=52): 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 3b 02 51 00 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl80211: ifindex=3
+nl80211: beacon_int=100
+nl80211: beacon_rate=0
+nl80211: rate_type=0
+nl80211: dtim_period=2
+nl80211: ssid=Hostapd-AP
+  * beacon_int=100
+  * dtim_period=2
+nl80211: proberesp (offload) - hexdump(len=113): 50 00 00 00 00 00 00 00 00 00 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0a 48 6f 73 74 61 70 64 2d 41 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 3b 02 51 00 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl80211: hidden SSID not in use
+nl80211: privacy=2
+nl80211: auth_algs=0x1
+nl80211: wpa_version=0x2
+nl80211: key_mgmt_suites=0x400
+nl80211: pairwise_ciphers=0x10
+nl80211: group_cipher=0x10
+nl80211: beacon_ies - hexdump(len=14): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01
+nl80211: proberesp_ies - hexdump(len=14): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01
+nl80211: assocresp_ies - hexdump(len=17): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl802111: sae_pwe=2
+nl80211: multicast to unicast disabled on interface wlp3s0
+wlp3s0: Deauthenticate all stations at BSS start
+nl80211: send_mlme - da=ff:ff:ff:ff:ff:ff noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0xc0 (WLAN_FC_STYPE_DEAUTH) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+WPA: Start group state machine to set initial keys
+WPA: group state machine entering state GTK_INIT (VLAN-ID 0)
+GTK - hexdump(len=16): [REMOVED]
+IGTK - hexdump(len=16): [REMOVED]
+WPA: group state machine entering state SETKEYSDONE (VLAN-ID 0)
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=3 addr=0x555d1d6e6652 key_idx=1 set_tx=1 seq_len=0 key_len=16 key_flag=0x1a
+nl80211: NEW_KEY
+nl80211: KEY_DATA - hexdump(len=16): [REMOVED]
+   broadcast key
+nl80211: NL80211_CMD_SET_KEY - default key
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=4 addr=0x555d1d6e6652 key_idx=4 set_tx=1 seq_len=0 key_len=16 key_flag=0x1a
+nl80211: NEW_KEY
+nl80211: KEY_DATA - hexdump(len=16): [REMOVED]
+   broadcast key
+nl80211: NL80211_CMD_SET_KEY - default key
+nl80211: Set wlp3s0 operstate 0->1 (UP)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=6 (IF_OPER_UP)
+nl80211: TX queue param set: queue=0 aifs=1 cw_min=3 cw_max=7 burst_time=15 --> res=0
+nl80211: TX queue param set: queue=1 aifs=1 cw_min=7 cw_max=15 burst_time=30 --> res=0
+nl80211: TX queue param set: queue=2 aifs=3 cw_min=15 cw_max=63 burst_time=0 --> res=0
+nl80211: TX queue param set: queue=3 aifs=7 cw_min=15 cw_max=1023 burst_time=0 --> res=0
+wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+wlp3s0: AP-ENABLED 
+wlp3s0: Setup of interface done.
+ctrl_iface not configured!
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=0 ifi_family=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=0 master=36 ifi_family=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=0 master=36 ifi_family=0 ifi_flags=0x1003 ([UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=36 operstate=2 ifi_family=7 ifi_flags=0x1003 ([UP])
+nl80211: Add ifindex 36 for bridge br-ap
+nl80211: Add own interface ifindex 36 (ifidx_reason 3)
+nl80211: ifindex 36 already in the list
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=36 operstate=6 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Add ifindex 36 for bridge br-ap
+nl80211: Add own interface ifindex 36 (ifidx_reason 3)
+nl80211: ifindex 36 already in the list
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=36 operstate=6 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Add ifindex 36 for bridge br-ap
+nl80211: Add own interface ifindex 36 (ifidx_reason 3)
+nl80211: ifindex 36 already in the list
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=6 linkmode=0 master=36 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Drv Event 15 (NL80211_CMD_START_AP) received for wlp3s0
+wlp3s0: nl80211: Ignored unknown event (cmd=15)
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Frame TX status event A1=ff:ff:ff:ff:ff:ff stype=12 cookie=0x111 ack=0
+wlp3s0: Event TX_STATUS (16) received
+mgmt::deauth cb
+RTM_NEWLINK: ifi_index=36 ifname=br-ap operstate=6 linkmode=0 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+wlp3s0: Event INTERFACE_STATUS (5) received
+Unknown event 5
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=5c:a6:e6:3f:e2:da bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-40 fc=0x40 seq_ctrl=0x10 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=149
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=5c:a6:e6:3f:e2:da bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-42 fc=0x40 seq_ctrl=0x30 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=149
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=5c:a6:e6:3f:e2:da bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-46 fc=0x40 seq_ctrl=0x50 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=149
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=3c:a0:67:80:99:a3 sa=5c:a6:e6:3f:e2:da bssid=3c:a0:67:80:99:a3 freq=2412 ssi_signal=-40 fc=0x8b0 seq_ctrl=0x220 stype=11 (WLAN_FC_STYPE_AUTH) len=30
+wlp3s0: Event RX_MGMT (18) received
+mgmt::auth
+authentication: STA=5c:a6:e6:3f:e2:da auth_alg=0 auth_transaction=1 status_code=0 wep=0 seq_ctrl=0x220 retry
+  New STA
+ap_sta_add: register ap_handle_timer timeout for 5c:a6:e6:3f:e2:da (300 seconds - ap_max_inactivity)
+nl80211: sta_remove -> DEL_STATION wlp3s0 5c:a6:e6:3f:e2:da --> -2 (No such file or directory)
+nl80211: Add STA 5c:a6:e6:3f:e2:da
+  * supported rates - hexdump(len=4): 02 04 0b 16
+  * capability=0x0
+  * aid=1 (UNASSOC_STA workaround)
+  * listen_interval=0
+  * flags set=0x0 mask=0xa0
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: authentication OK (open system)
+authentication reply: STA=5c:a6:e6:3f:e2:da auth_alg=0 auth_transaction=2 resp=0 (IE len=0) (dbg=handle-auth)
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0xb0 (WLAN_FC_STYPE_AUTH) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+nl80211: Drv Event 19 (NL80211_CMD_NEW_STATION) received for wlp3s0
+nl80211: New station 5c:a6:e6:3f:e2:da
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Frame TX status event A1=5c:a6:e6:3f:e2:da stype=11 cookie=0x112 ack=1
+wlp3s0: Event TX_STATUS (16) received
+mgmt::auth cb
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: authenticated
+nl80211: Set STA flags - ifname=wlp3s0 addr=5c:a6:e6:3f:e2:da total_flags=0x20 flags_or=0x0 flags_and=0xfffffff1 authorized=0
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=3c:a0:67:80:99:a3 sa=5c:a6:e6:3f:e2:da bssid=3c:a0:67:80:99:a3 freq=2412 ssi_signal=-41 fc=0x0 seq_ctrl=0x230 stype=0 (WLAN_FC_STYPE_ASSOC_REQ) len=100
+wlp3s0: Event RX_MGMT (18) received
+mgmt::assoc_req
+association request: STA=5c:a6:e6:3f:e2:da capab_info=0x511 listen_interval=3 seq_ctrl=0x230
+RSN IE: STA PMKID - hexdump(len=16): df 2d 82 6a 2b 53 86 dc 45 62 51 2e 58 1b 71 cd
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: No PMKSA cache entry found for SAE
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x10 (WLAN_FC_STYPE_ASSOC_RESP) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+nl80211: sta_remove -> DEL_STATION wlp3s0 5c:a6:e6:3f:e2:da --> 0 (Success)
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Frame TX status event A1=5c:a6:e6:3f:e2:da stype=1 cookie=0x113 ack=1
+wlp3s0: Event TX_STATUS (16) received
+mgmt::assoc_resp cb
+nl80211: Drv Event 20 (NL80211_CMD_DEL_STATION) received for wlp3s0
+nl80211: Delete station 5c:a6:e6:3f:e2:da
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=5c:a6:e6:3f:e2:da bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-40 fc=0x40 seq_ctrl=0x250 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=149
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=5c:a6:e6:3f:e2:da bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-41 fc=0x40 seq_ctrl=0x270 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=149
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+RTM_NEWLINK: ifi_index=2 ifname=enp4s0f1 master=36 operstate=6 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=36 operstate=6 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+nl80211: Add ifindex 36 for bridge br-ap
+nl80211: Add own interface ifindex 36 (ifidx_reason 3)
+nl80211: ifindex 36 already in the list
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=3c:a0:67:80:99:a3 sa=5c:a6:e6:3f:e2:da bssid=3c:a0:67:80:99:a3 freq=2412 ssi_signal=-40 fc=0xb0 seq_ctrl=0x460 stype=11 (WLAN_FC_STYPE_AUTH) len=128
+wlp3s0: Event RX_MGMT (18) received
+mgmt::auth
+authentication: STA=5c:a6:e6:3f:e2:da auth_alg=3 auth_transaction=1 status_code=127 wep=0 seq_ctrl=0x460
+SAE: Queue Authentication message from 5c:a6:e6:3f:e2:da for processing (queue_len 0)
+SAE: Process next available message from queue
+authentication: STA=5c:a6:e6:3f:e2:da auth_alg=3 auth_transaction=1 status_code=127 wep=0 seq_ctrl=0x460 (from queue)
+nl80211: sta_remove -> DEL_STATION wlp3s0 5c:a6:e6:3f:e2:da --> -2 (No such file or directory)
+nl80211: Add STA 5c:a6:e6:3f:e2:da
+  * supported rates - hexdump(len=12): 82 84 8b 96 0c 12 18 24 30 48 60 6c
+  * capability=0x0
+  * aid=1 (UNASSOC_STA workaround)
+  * listen_interval=0
+  * flags set=0x0 mask=0xa0
+SAE: State Nothing -> Nothing for peer 5c:a6:e6:3f:e2:da (Init)
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: start SAE authentication (RX commit, status=127 (SAE_PK))
+SAE: Selecting supported ECC group 19
+SAE: Peer commit-scalar - hexdump(len=32): 75 53 28 b9 ac be ad 3c 1e 38 0c 82 c8 f7 cf 52 36 96 76 da f8 89 0f 5f 42 d3 fa 93 5d 11 6b 99
+SAE: Peer commit-element(x) - hexdump(len=32): ac ae cc da 3d 2c 96 c5 7f ef 01 67 da ac f5 be f1 3f a2 65 85 4d 3e 96 43 ed 0b e2 34 07 aa 81
+SAE: Peer commit-element(y) - hexdump(len=32): 4f 88 e7 dd 1f d6 09 86 c8 8f c2 71 ed cf 4a e2 7c 26 a7 c5 ce 2a cb 33 73 69 f9 06 f8 07 b6 93
+SAE: Possible elements at the end of the frame - hexdump(len=0):
+SAE: Possible elements at the end of the frame - hexdump(len=0):
+SAE: Possible elements at the end of the frame - hexdump(len=0):
+SAE: Peer 5c:a6:e6:3f:e2:da state=Nothing auth_trans=1
+SAE: Derive PWE from PT
+SAE: PT.x - hexdump(len=32): [REMOVED]
+SAE: PT.y - hexdump(len=32): [REMOVED]
+SAE: val = H(0^n, MAX(addrs) || MIN(addrs))
+SAE: val - hexdump(len=32): dc 3a dc 18 6e b8 a8 db 61 91 37 1d 4f d2 9a 46 10 a9 0c 60 ed 26 f6 69 85 f1 52 c7 2c 4d 90 13
+SAE: val(reduced to 1..q-1) - hexdump(len=32): [REMOVED]
+SAE: PWE.x - hexdump(len=32): [REMOVED]
+SAE: PWE.y - hexdump(len=32): [REMOVED]
+SAE: own commit-scalar - hexdump(len=32): ee 52 1d 66 f3 80 c1 29 54 fa b9 9d c8 a5 e6 58 3a a2 4f 68 fd f2 03 e5 ef ab f9 d4 c0 ea 81 ba
+SAE: own commit-element(x) - hexdump(len=32): 95 33 a5 1a 47 40 a8 61 a0 c1 b4 5a 1e 40 35 6a 7a 18 51 64 9b e8 3c 08 40 29 4a fd 59 60 b8 47
+SAE: own commit-element(y) - hexdump(len=32): c6 02 24 f2 c9 ae 70 38 e1 6c af 54 1e dd d4 e4 1f d5 3b 52 76 a3 cc 24 71 62 76 86 a5 eb 1b 49
+authentication reply: STA=5c:a6:e6:3f:e2:da auth_alg=3 auth_transaction=1 resp=127 (IE len=98) (dbg=sae-send-commit)
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0xb0 (WLAN_FC_STYPE_AUTH) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+SAE: State Nothing -> Committed for peer 5c:a6:e6:3f:e2:da (Sent Commit)
+SAE: k - hexdump(len=32): [REMOVED]
+SAE: salt for keyseed derivation - hexdump(len=32): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+SAE: keyseed - hexdump(len=32): [REMOVED]
+SAE: PMKID - hexdump(len=16): 63 a5 46 21 a0 3f 6e 64 73 32 c6 20 91 9d b5 aa
+SAE: KEK for SAE-PK - hexdump(len=32): [REMOVED]
+SAE: KCK - hexdump(len=32): [REMOVED]
+SAE: PMK - hexdump(len=32): [REMOVED]
+nl80211: Drv Event 19 (NL80211_CMD_NEW_STATION) received for wlp3s0
+nl80211: New station 5c:a6:e6:3f:e2:da
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Frame TX status event A1=5c:a6:e6:3f:e2:da stype=11 cookie=0x114 ack=1
+wlp3s0: Event TX_STATUS (16) received
+mgmt::auth cb
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=3c:a0:67:80:99:a3 sa=5c:a6:e6:3f:e2:da bssid=3c:a0:67:80:99:a3 freq=2412 ssi_signal=-40 fc=0xb0 seq_ctrl=0x470 stype=11 (WLAN_FC_STYPE_AUTH) len=64
+wlp3s0: Event RX_MGMT (18) received
+mgmt::auth
+authentication: STA=5c:a6:e6:3f:e2:da auth_alg=3 auth_transaction=2 status_code=0 wep=0 seq_ctrl=0x470
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: SAE authentication (RX confirm, status=0 (SUCCESS))
+SAE: peer-send-confirm 1
+SAE: Peer 5c:a6:e6:3f:e2:da state=Committed auth_trans=2
+SAE-PK: Data to be signed for KeyAuth - hexdump(len=279): [REMOVED]
+SAE-PK: hash(data to be signed) - hexdump(len=32): 1a 25 e7 9c c8 cf 13 a5 6f 70 3f 19 80 ed f6 05 0e 2d ef 4d 2b ba 7f dd 51 f2 da 34 a6 1e 03 c7
+SAE-PK: KeyAuth = Sig_AP() - hexdump(len=71): 30 45 02 21 00 9e 13 e8 95 ff 1e d2 a7 41 63 27 f8 0d dc f2 c7 12 ea 6f d9 a0 e8 16 b1 9e bb f5 52 a4 02 52 4c 02 20 60 ee 45 b8 91 99 c4 27 e2 f3 98 a0 6e a1 dd cd 3f 4b 73 f3 37 43 31 0a 16 0f 1f 91 be 3b 93 93
+SAE-PK: EncryptedModifier - hexdump(len=32): d5 ff ed 3e 2e b6 5a 82 46 a2 8e 8f 1f f0 34 69 f4 bd 83 4e b2 b5 da eb ca 1d 41 03 9d a4 66 aa
+authentication reply: STA=5c:a6:e6:3f:e2:da auth_alg=3 auth_transaction=2 resp=0 (IE len=209) (dbg=sae-send-confirm)
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0xb0 (WLAN_FC_STYPE_AUTH) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+SAE: State Committed -> Confirmed for peer 5c:a6:e6:3f:e2:da (Sent Confirm)
+SAE: Peer 5c:a6:e6:3f:e2:da state=Confirmed auth_trans=2
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=0x555d1f1ab430 key_idx=0 set_tx=1 seq_len=0 key_len=0 key_flag=0x20
+nl80211: DEL_KEY
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: event 0 notification
+SAE: State Confirmed -> Accepted for peer 5c:a6:e6:3f:e2:da (Accept Confirm)
+RSN: Cache PMK from SAE - hexdump(len=32): [REMOVED]
+RSN: added PMKSA cache entry for 5c:a6:e6:3f:e2:da
+RSN: added PMKID - hexdump(len=16): 63 a5 46 21 a0 3f 6e 64 73 32 c6 20 91 9d b5 aa
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Frame TX status event A1=5c:a6:e6:3f:e2:da stype=11 cookie=0x115 ack=1
+wlp3s0: Event TX_STATUS (16) received
+mgmt::auth cb
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=3c:a0:67:80:99:a3 sa=5c:a6:e6:3f:e2:da bssid=3c:a0:67:80:99:a3 freq=2412 ssi_signal=-40 fc=0x0 seq_ctrl=0x480 stype=0 (WLAN_FC_STYPE_ASSOC_REQ) len=84
+wlp3s0: Event RX_MGMT (18) received
+mgmt::assoc_req
+association request: STA=5c:a6:e6:3f:e2:da capab_info=0x511 listen_interval=3 seq_ctrl=0x480
+  new AID 1
+nl80211: Set beacon (beacon_set=1)
+nl80211: Beacon head - hexdump(len=61): 80 00 00 00 ff ff ff ff ff ff 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0a 48 6f 73 74 61 70 64 2d 41 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01
+nl80211: Beacon tail - hexdump(len=52): 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 3b 02 51 00 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl80211: ifindex=3
+nl80211: beacon_int=100
+nl80211: beacon_rate=0
+nl80211: rate_type=0
+nl80211: dtim_period=2
+nl80211: ssid=Hostapd-AP
+  * beacon_int=100
+  * dtim_period=2
+nl80211: proberesp (offload) - hexdump(len=113): 50 00 00 00 00 00 00 00 00 00 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0a 48 6f 73 74 61 70 64 2d 41 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 3b 02 51 00 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl80211: hidden SSID not in use
+nl80211: privacy=2
+nl80211: auth_algs=0x1
+nl80211: wpa_version=0x2
+nl80211: key_mgmt_suites=0x400
+nl80211: pairwise_ciphers=0x10
+nl80211: group_cipher=0x10
+nl80211: beacon_ies - hexdump(len=14): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01
+nl80211: proberesp_ies - hexdump(len=14): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01
+nl80211: assocresp_ies - hexdump(len=17): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl802111: sae_pwe=2
+nl80211: multicast to unicast disabled on interface wlp3s0
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: association OK (aid 1)
+Add associated STA 5c:a6:e6:3f:e2:da (added_unassoc=1 auth_alg=3 ft_over_ds=0 reassoc=0 authorized=0 ft_tk=0 fils_tk=0)
+nl80211: Set STA 5c:a6:e6:3f:e2:da
+  * supported rates - hexdump(len=12): 82 84 8b 96 0c 12 18 24 30 48 60 6c
+  * capability=0x511
+  * aid=1
+  * listen_interval=3
+  * flags set=0xb0 mask=0xb0
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x10 (WLAN_FC_STYPE_ASSOC_RESP) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Frame TX status event A1=5c:a6:e6:3f:e2:da stype=1 cookie=0x116 ack=1
+wlp3s0: Event TX_STATUS (16) received
+mgmt::assoc_resp cb
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: associated (aid 1)
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=0x555d1f1ab430 key_idx=0 set_tx=1 seq_len=0 key_len=0 key_flag=0x20
+nl80211: DEL_KEY
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: binding station to interface 'wlp3s0'
+nl80211: wlp3s0[3]: set_sta_vlan(5c:a6:e6:3f:e2:da, ifname=wlp3s0[3], vlan_id=0)
+nl80211: Set STA flags - ifname=wlp3s0 addr=5c:a6:e6:3f:e2:da total_flags=0x68 flags_or=0x8 flags_and=0xfffffff9 authorized=0
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: event 1 notification
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=0x555d1f1ab430 key_idx=0 set_tx=1 seq_len=0 key_len=0 key_flag=0x20
+nl80211: DEL_KEY
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+IEEE 802.1X: Ignore STA - 802.1X not enabled or forced for WPS
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: start authentication
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state INITIALIZE
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=0x555d1f1ab430 key_idx=0 set_tx=1 seq_len=0 key_len=0 key_flag=0x20
+nl80211: DEL_KEY
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+nl80211: Set STA flags - ifname=wlp3s0 addr=5c:a6:e6:3f:e2:da total_flags=0x68 flags_or=0x0 flags_and=0xfffffffe authorized=0
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.1X: unauthorizing port
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK_GROUP entering state IDLE
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state AUTHENTICATION
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state AUTHENTICATION2
+WPA: Re-initialize GMK/Counter on first station
+GMK - hexdump(len=32): [REMOVED]
+Key Counter - hexdump(len=32): [REMOVED]
+GTK - hexdump(len=16): [REMOVED]
+IGTK - hexdump(len=16): [REMOVED]
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=3 addr=0x555d1d6e6652 key_idx=1 set_tx=1 seq_len=0 key_len=16 key_flag=0x1a
+nl80211: NEW_KEY
+nl80211: KEY_DATA - hexdump(len=16): [REMOVED]
+   broadcast key
+nl80211: NL80211_CMD_SET_KEY - default key
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=4 addr=0x555d1d6e6652 key_idx=4 set_tx=1 seq_len=0 key_len=16 key_flag=0x1a
+nl80211: NEW_KEY
+nl80211: KEY_DATA - hexdump(len=16): [REMOVED]
+   broadcast key
+nl80211: NL80211_CMD_SET_KEY - default key
+WPA: Assign ANonce - hexdump(len=32): fd 7e 6f e3 45 98 6c 90 5d f5 a1 c1 c4 67 a1 e8 f3 ca dd f9 8c ad a7 71 42 88 a5 0b 86 b4 15 b0
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state INITPSK
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state PTKSTART
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: sending 1/4 msg of 4-Way Handshake
+RSN: Message 1/4 PMKID from SAE - hexdump(len=16): 63 a5 46 21 a0 3f 6e 64 73 32 c6 20 91 9d b5 aa
+WPA: Send EAPOL(version=0 secure=0 mic=0 ack=1 install=0 pairwise=1 kde_len=22 keyidx=0 encr=0)
+WPA: Replay Counter - hexdump(len=8): 00 00 00 00 00 00 00 01
+nl80211: Send over control port dest=5c:a6:e6:3f:e2:da proto=0x888e len=121 no_encrypt=1
+nl80211: tx_control_port cookie=0x117
+WPA: Use EAPOL-Key timeout of 100 ms (retry counter 1)
+wlp3s0: hostapd_new_assoc_sta: reschedule ap_handle_timer timeout for 5c:a6:e6:3f:e2:da (300 seconds - ap_max_inactivity)
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=279
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+IEEE 802.1X: 5c:a6:e6:3f:e2:da TX status - version=2 type=3 length=117 - ack=1
+WPA: EAPOL-Key TX status for STA 5c:a6:e6:3f:e2:da ack=1
+WPA: Increase initial EAPOL-Key 1/4 timeout by 1000 ms because of acknowledged frame
+nl80211: BSS Event 129 (NL80211_CMD_CONTROL_PORT_FRAME) received for wlp3s0
+wlp3s0: Event EAPOL_RX (23) received
+IEEE 802.1X: 127 bytes from 5c:a6:e6:3f:e2:da
+   IEEE 802.1X: version=1 type=3 length=123
+WPA: Received EAPOL-Key from 5c:a6:e6:3f:e2:da key_info=0x108 type=2 mic_len=16 key_data_length=28
+WPA: Received Key Nonce - hexdump(len=32): cf fe 6a cd 5a ab 8b 93 ad 7f ef 70 21 40 de fb 1c 48 46 05 7e b5 e5 a0 eb 8a e6 29 60 95 1c fa
+WPA: Received Replay Counter - hexdump(len=8): 00 00 00 00 00 00 00 01
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: received EAPOL-Key frame (2/4 Pairwise)
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state PTKCALCNEGOTIATING
+WPA: PTK derivation using PRF(SHA256)
+WPA: PTK derivation - A1=3c:a0:67:80:99:a3 A2=5c:a6:e6:3f:e2:da
+WPA: Nonce1 - hexdump(len=32): fd 7e 6f e3 45 98 6c 90 5d f5 a1 c1 c4 67 a1 e8 f3 ca dd f9 8c ad a7 71 42 88 a5 0b 86 b4 15 b0
+WPA: Nonce2 - hexdump(len=32): cf fe 6a cd 5a ab 8b 93 ad 7f ef 70 21 40 de fb 1c 48 46 05 7e b5 e5 a0 eb 8a e6 29 60 95 1c fa
+WPA: PMK - hexdump(len=32): [REMOVED]
+WPA: PTK - hexdump(len=48): [REMOVED]
+WPA: KCK - hexdump(len=16): [REMOVED]
+WPA: KEK - hexdump(len=16): [REMOVED]
+WPA: TK - hexdump(len=16): [REMOVED]
+WPA: EAPOL-Key MIC using AES-CMAC (AKM-defined - SAE)
+WPA: RSN IE in EAPOL-Key - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 00 00 00 0f ac 06
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state PTKCALCNEGOTIATING2
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state PTKINITNEGOTIATING
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: sending 3/4 msg of 4-Way Handshake
+WPA: Send EAPOL(version=0 secure=1 mic=1 ack=1 install=1 pairwise=1 kde_len=86 keyidx=0 encr=1)
+WPA: Replay Counter - hexdump(len=8): 00 00 00 00 00 00 00 02
+Plaintext EAPOL-Key Key Data - hexdump(len=96): [REMOVED]
+WPA: Encrypt Key Data using AES-WRAP (KEK length 16)
+WPA: EAPOL-Key MIC using AES-CMAC (AKM-defined - SAE)
+nl80211: Send over control port dest=5c:a6:e6:3f:e2:da proto=0x888e len=195 no_encrypt=1
+nl80211: tx_control_port cookie=0x118
+WPA: Use EAPOL-Key timeout of 100 ms (retry counter 1)
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=280
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+IEEE 802.1X: 5c:a6:e6:3f:e2:da TX status - version=2 type=3 length=191 - ack=1
+WPA: EAPOL-Key TX status for STA 5c:a6:e6:3f:e2:da ack=1
+nl80211: BSS Event 129 (NL80211_CMD_CONTROL_PORT_FRAME) received for wlp3s0
+wlp3s0: Event EAPOL_RX (23) received
+IEEE 802.1X: 99 bytes from 5c:a6:e6:3f:e2:da
+   IEEE 802.1X: version=1 type=3 length=95
+WPA: Received EAPOL-Key from 5c:a6:e6:3f:e2:da key_info=0x308 type=2 mic_len=16 key_data_length=0
+WPA: Received Key Nonce - hexdump(len=32): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+WPA: Received Replay Counter - hexdump(len=8): 00 00 00 00 00 00 00 02
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: received EAPOL-Key frame (4/4 Pairwise)
+WPA: EAPOL-Key MIC using AES-CMAC (AKM-defined - SAE)
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state PTKINITDONE
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=3 addr=0x555d1f1ab430 key_idx=0 set_tx=1 seq_len=0 key_len=16 key_flag=0x2c
+nl80211: NEW_KEY
+nl80211: KEY_DATA - hexdump(len=16): [REMOVED]
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+wlp3s0: AP-STA-CONNECTED 5c:a6:e6:3f:e2:da
+nl80211: Set STA flags - ifname=wlp3s0 addr=5c:a6:e6:3f:e2:da total_flags=0x69 flags_or=0x1 flags_and=0xffffffff authorized=1
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.1X: authorizing port
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: pairwise key handshake completed (RSN)
+wlp3s0: EAPOL-4WAY-HS-COMPLETED 5c:a6:e6:3f:e2:da
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=3c:a0:67:80:99:a3 sa=5c:a6:e6:3f:e2:da bssid=3c:a0:67:80:99:a3 freq=2412 ssi_signal=-50 fc=0x40c0 seq_ctrl=0x510 stype=12 (WLAN_FC_STYPE_DEAUTH) len=26
+wlp3s0: Event RX_MGMT (18) received
+wlp3s0: mgmt::deauth
+wlp3s0: deauthentication: STA=5c:a6:e6:3f:e2:da reason_code=3
+wlp3s0: AP-STA-DISCONNECTED 5c:a6:e6:3f:e2:da
+nl80211: Set STA flags - ifname=wlp3s0 addr=5c:a6:e6:3f:e2:da total_flags=0x8 flags_or=0x8 flags_and=0xfffffff9 authorized=0
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: event 3 notification
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=0x555d1f1ab430 key_idx=0 set_tx=1 seq_len=0 key_len=0 key_flag=0x20
+nl80211: DEL_KEY
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state DISCONNECTED
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state INITIALIZE
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=0x555d1f1ab430 key_idx=0 set_tx=1 seq_len=0 key_len=0 key_flag=0x20
+nl80211: DEL_KEY
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+nl80211: Set STA flags - ifname=wlp3s0 addr=5c:a6:e6:3f:e2:da total_flags=0x8 flags_or=0x0 flags_and=0xfffffffe authorized=0
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.1X: unauthorizing port
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: deauthenticated
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=0x555d1f1ab430 key_idx=0 set_tx=1 seq_len=0 key_len=0 key_flag=0x20
+nl80211: DEL_KEY
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+nl80211: Set STA flags - ifname=wlp3s0 addr=5c:a6:e6:3f:e2:da total_flags=0x8 flags_or=0x8 flags_and=0xfffffff9 authorized=0
+nl80211: sta_remove -> DEL_STATION wlp3s0 5c:a6:e6:3f:e2:da --> 0 (Success)
+nl80211: Set beacon (beacon_set=1)
+nl80211: Beacon head - hexdump(len=61): 80 00 00 00 ff ff ff ff ff ff 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0a 48 6f 73 74 61 70 64 2d 41 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01
+nl80211: Beacon tail - hexdump(len=52): 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 3b 02 51 00 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl80211: ifindex=3
+nl80211: beacon_int=100
+nl80211: beacon_rate=0
+nl80211: rate_type=0
+nl80211: dtim_period=2
+nl80211: ssid=Hostapd-AP
+  * beacon_int=100
+  * dtim_period=2
+nl80211: proberesp (offload) - hexdump(len=113): 50 00 00 00 00 00 00 00 00 00 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0a 48 6f 73 74 61 70 64 2d 41 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 3b 02 51 00 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl80211: hidden SSID not in use
+nl80211: privacy=2
+nl80211: auth_algs=0x1
+nl80211: wpa_version=0x2
+nl80211: key_mgmt_suites=0x400
+nl80211: pairwise_ciphers=0x10
+nl80211: group_cipher=0x10
+nl80211: beacon_ies - hexdump(len=14): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01
+nl80211: proberesp_ies - hexdump(len=14): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01
+nl80211: assocresp_ies - hexdump(len=17): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl802111: sae_pwe=2
+nl80211: multicast to unicast disabled on interface wlp3s0
+ap_free_sta: cancel ap_handle_timer for 5c:a6:e6:3f:e2:da
+nl80211: Drv Event 20 (NL80211_CMD_DEL_STATION) received for wlp3s0
+nl80211: Delete station 5c:a6:e6:3f:e2:da
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=3c:a0:67:80:99:a3 sa=5c:a6:e6:3f:e2:da bssid=3c:a0:67:80:99:a3 freq=2412 ssi_signal=-33 fc=0x8b0 seq_ctrl=0x0 stype=11 (WLAN_FC_STYPE_AUTH) len=128
+wlp3s0: Event RX_MGMT (18) received
+mgmt::auth
+authentication: STA=5c:a6:e6:3f:e2:da auth_alg=3 auth_transaction=1 status_code=0 wep=0 seq_ctrl=0x0 retry
+SAE: Queue Authentication message from 5c:a6:e6:3f:e2:da for processing (queue_len 0)
+SAE: Process next available message from queue
+authentication: STA=5c:a6:e6:3f:e2:da auth_alg=3 auth_transaction=1 status_code=0 wep=0 seq_ctrl=0x0 retry (from queue)
+  New STA
+ap_sta_add: register ap_handle_timer timeout for 5c:a6:e6:3f:e2:da (300 seconds - ap_max_inactivity)
+nl80211: sta_remove -> DEL_STATION wlp3s0 5c:a6:e6:3f:e2:da --> -2 (No such file or directory)
+nl80211: Add STA 5c:a6:e6:3f:e2:da
+  * supported rates - hexdump(len=4): 02 04 0b 16
+  * capability=0x0
+  * aid=1 (UNASSOC_STA workaround)
+  * listen_interval=0
+  * flags set=0x0 mask=0xa0
+SAE: State Nothing -> Nothing for peer 5c:a6:e6:3f:e2:da (Init)
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: start SAE authentication (RX commit, status=0 (SUCCESS))
+SAE: Selecting supported ECC group 19
+SAE: Peer commit-scalar - hexdump(len=32): ee 99 fc 68 74 8f 93 31 1a 28 ea 6a 7a f1 fb 70 fe cc b5 c1 5b 53 e5 5a 3f 6b 64 50 af 2e bb 6a
+SAE: Peer commit-element(x) - hexdump(len=32): 03 d3 50 93 24 35 6d 06 69 b9 1d 34 cd de 62 84 1c 95 17 f2 ef 4f ab ae 19 f7 c0 0a d3 46 5f ac
+SAE: Peer commit-element(y) - hexdump(len=32): d2 d8 5f a2 fc bf 3a 74 56 94 02 fb f7 21 ec a1 35 db d4 6c 16 83 24 37 86 85 53 5c de 76 af f9
+SAE: Possible elements at the end of the frame - hexdump(len=0):
+SAE: Peer 5c:a6:e6:3f:e2:da state=Nothing auth_trans=1
+SAE: password - hexdump_ascii(len=14): [REMOVED]
+SAE: PWE derivation - addr1=3c:a0:67:80:99:a3 addr2=5c:a6:e6:3f:e2:da
+SAE: counter = 001
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0x00
+SAE: counter = 002
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0x00
+SAE: counter = 003
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 004
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 005
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 006
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 007
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 008
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 009
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 010
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 011
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 012
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 013
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 014
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 015
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 016
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 017
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 018
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 019
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 020
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 021
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 022
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 023
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 024
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 025
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 026
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 027
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 028
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 029
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 030
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 031
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 032
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 033
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 034
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 035
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 036
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 037
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 038
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: counter = 039
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 0 found=0xff
+SAE: counter = 040
+SAE: pwd-seed - hexdump(len=32): [REMOVED]
+SAE: pwd-value - hexdump(len=32): [REMOVED]
+SAE: pwd-seed result 1 found=0xff
+SAE: PWE - hexdump(len=64): [REMOVED]
+SAE: own commit-scalar - hexdump(len=32): d1 1e 8c e9 73 ba ba 0d 5b e9 bb 5a 1b 55 d6 c8 7a 10 8d 75 35 b3 3f 5c 0a 43 d3 4a c6 4b b0 1e
+SAE: own commit-element(x) - hexdump(len=32): 17 bd 1c 65 45 d9 6b 70 ef 52 4b 84 7d 5e 61 a4 42 03 19 cb 08 f2 b0 b5 f7 dd bb af 44 77 ca d0
+SAE: own commit-element(y) - hexdump(len=32): 39 de 15 4e 6d fa b8 b5 e2 91 a1 e1 65 3f b1 9b e6 43 aa e4 e9 6f a3 d6 70 c3 3c 5f a1 42 75 16
+authentication reply: STA=5c:a6:e6:3f:e2:da auth_alg=3 auth_transaction=1 resp=0 (IE len=98) (dbg=sae-send-commit)
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0xb0 (WLAN_FC_STYPE_AUTH) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+SAE: State Nothing -> Committed for peer 5c:a6:e6:3f:e2:da (Sent Commit)
+SAE: k - hexdump(len=32): [REMOVED]
+SAE: salt for keyseed derivation - hexdump(len=32): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+SAE: keyseed - hexdump(len=32): [REMOVED]
+SAE: PMKID - hexdump(len=16): bf b8 89 52 e8 4a 4d 3d 76 12 a5 c4 96 47 d2 39
+SAE: KCK - hexdump(len=32): [REMOVED]
+SAE: PMK - hexdump(len=32): [REMOVED]
+nl80211: Drv Event 19 (NL80211_CMD_NEW_STATION) received for wlp3s0
+nl80211: New station 5c:a6:e6:3f:e2:da
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Frame TX status event A1=5c:a6:e6:3f:e2:da stype=11 cookie=0x119 ack=1
+wlp3s0: Event TX_STATUS (16) received
+mgmt::auth cb
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=3c:a0:67:80:99:a3 sa=5c:a6:e6:3f:e2:da bssid=3c:a0:67:80:99:a3 freq=2412 ssi_signal=-34 fc=0xb0 seq_ctrl=0x10 stype=11 (WLAN_FC_STYPE_AUTH) len=64
+wlp3s0: Event RX_MGMT (18) received
+mgmt::auth
+authentication: STA=5c:a6:e6:3f:e2:da auth_alg=3 auth_transaction=2 status_code=0 wep=0 seq_ctrl=0x10
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: SAE authentication (RX confirm, status=0 (SUCCESS))
+SAE: peer-send-confirm 1
+SAE: Peer 5c:a6:e6:3f:e2:da state=Committed auth_trans=2
+authentication reply: STA=5c:a6:e6:3f:e2:da auth_alg=3 auth_transaction=2 resp=0 (IE len=34) (dbg=sae-send-confirm)
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0xb0 (WLAN_FC_STYPE_AUTH) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+SAE: State Committed -> Confirmed for peer 5c:a6:e6:3f:e2:da (Sent Confirm)
+SAE: Peer 5c:a6:e6:3f:e2:da state=Confirmed auth_trans=2
+SAE: State Confirmed -> Accepted for peer 5c:a6:e6:3f:e2:da (Accept Confirm)
+RSN: Cache PMK from SAE - hexdump(len=32): [REMOVED]
+RSN: added PMKSA cache entry for 5c:a6:e6:3f:e2:da
+RSN: added PMKID - hexdump(len=16): bf b8 89 52 e8 4a 4d 3d 76 12 a5 c4 96 47 d2 39
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Frame TX status event A1=5c:a6:e6:3f:e2:da stype=11 cookie=0x11a ack=1
+wlp3s0: Event TX_STATUS (16) received
+mgmt::auth cb
+nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+nl80211: RX frame da=3c:a0:67:80:99:a3 sa=5c:a6:e6:3f:e2:da bssid=3c:a0:67:80:99:a3 freq=2412 ssi_signal=-34 fc=0x0 seq_ctrl=0x20 stype=0 (WLAN_FC_STYPE_ASSOC_REQ) len=84
+wlp3s0: Event RX_MGMT (18) received
+mgmt::assoc_req
+association request: STA=5c:a6:e6:3f:e2:da capab_info=0x511 listen_interval=3 seq_ctrl=0x20
+  new AID 1
+nl80211: Set beacon (beacon_set=1)
+nl80211: Beacon head - hexdump(len=61): 80 00 00 00 ff ff ff ff ff ff 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0a 48 6f 73 74 61 70 64 2d 41 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01
+nl80211: Beacon tail - hexdump(len=52): 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 3b 02 51 00 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl80211: ifindex=3
+nl80211: beacon_int=100
+nl80211: beacon_rate=0
+nl80211: rate_type=0
+nl80211: dtim_period=2
+nl80211: ssid=Hostapd-AP
+  * beacon_int=100
+  * dtim_period=2
+nl80211: proberesp (offload) - hexdump(len=113): 50 00 00 00 00 00 00 00 00 00 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0a 48 6f 73 74 61 70 64 2d 41 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 3b 02 51 00 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl80211: hidden SSID not in use
+nl80211: privacy=2
+nl80211: auth_algs=0x1
+nl80211: wpa_version=0x2
+nl80211: key_mgmt_suites=0x400
+nl80211: pairwise_ciphers=0x10
+nl80211: group_cipher=0x10
+nl80211: beacon_ies - hexdump(len=14): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01
+nl80211: proberesp_ies - hexdump(len=14): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01
+nl80211: assocresp_ies - hexdump(len=17): 7f 0c 04 00 00 00 00 00 01 40 00 00 00 01 f4 01 60
+nl802111: sae_pwe=2
+nl80211: multicast to unicast disabled on interface wlp3s0
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: association OK (aid 1)
+Add associated STA 5c:a6:e6:3f:e2:da (added_unassoc=1 auth_alg=3 ft_over_ds=0 reassoc=0 authorized=0 ft_tk=0 fils_tk=0)
+nl80211: Set STA 5c:a6:e6:3f:e2:da
+  * supported rates - hexdump(len=12): 82 84 8b 96 0c 12 18 24 30 48 60 6c
+  * capability=0x511
+  * aid=1
+  * listen_interval=3
+  * flags set=0xb0 mask=0xb0
+nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x10 (WLAN_FC_STYPE_ASSOC_RESP) nlmode=3
+nl80211: send_mlme - Use bss->freq=2412
+nl80211: send_mlme -> send_frame_cmd
+nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Frame TX status event A1=5c:a6:e6:3f:e2:da stype=1 cookie=0x11b ack=1
+wlp3s0: Event TX_STATUS (16) received
+mgmt::assoc_resp cb
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: associated (aid 1)
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=0x555d1f214ea0 key_idx=0 set_tx=1 seq_len=0 key_len=0 key_flag=0x20
+nl80211: DEL_KEY
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.11: binding station to interface 'wlp3s0'
+nl80211: wlp3s0[3]: set_sta_vlan(5c:a6:e6:3f:e2:da, ifname=wlp3s0[3], vlan_id=0)
+nl80211: Set STA flags - ifname=wlp3s0 addr=5c:a6:e6:3f:e2:da total_flags=0x68 flags_or=0x8 flags_and=0xfffffff9 authorized=0
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: event 1 notification
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=0x555d1f214ea0 key_idx=0 set_tx=1 seq_len=0 key_len=0 key_flag=0x20
+nl80211: DEL_KEY
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+IEEE 802.1X: Ignore STA - 802.1X not enabled or forced for WPS
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: start authentication
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state INITIALIZE
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=0 addr=0x555d1f214ea0 key_idx=0 set_tx=1 seq_len=0 key_len=0 key_flag=0x20
+nl80211: DEL_KEY
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+nl80211: Set STA flags - ifname=wlp3s0 addr=5c:a6:e6:3f:e2:da total_flags=0x68 flags_or=0x0 flags_and=0xfffffffe authorized=0
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.1X: unauthorizing port
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK_GROUP entering state IDLE
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state AUTHENTICATION
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state AUTHENTICATION2
+WPA: Assign ANonce - hexdump(len=32): 49 2b 24 9c c1 51 40 47 00 ab aa ed 84 9e 56 b3 71 ba 9e e3 44 87 0d de fd 3c 3a c2 ea f4 0d 12
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state INITPSK
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state PTKSTART
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: sending 1/4 msg of 4-Way Handshake
+RSN: Message 1/4 PMKID from SAE - hexdump(len=16): bf b8 89 52 e8 4a 4d 3d 76 12 a5 c4 96 47 d2 39
+WPA: Send EAPOL(version=0 secure=0 mic=0 ack=1 install=0 pairwise=1 kde_len=22 keyidx=0 encr=0)
+WPA: Replay Counter - hexdump(len=8): 00 00 00 00 00 00 00 01
+nl80211: Send over control port dest=5c:a6:e6:3f:e2:da proto=0x888e len=121 no_encrypt=1
+nl80211: tx_control_port cookie=0x11c
+WPA: Use EAPOL-Key timeout of 100 ms (retry counter 1)
+wlp3s0: hostapd_new_assoc_sta: reschedule ap_handle_timer timeout for 5c:a6:e6:3f:e2:da (300 seconds - ap_max_inactivity)
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=284
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+IEEE 802.1X: 5c:a6:e6:3f:e2:da TX status - version=2 type=3 length=117 - ack=1
+WPA: EAPOL-Key TX status for STA 5c:a6:e6:3f:e2:da ack=1
+WPA: Increase initial EAPOL-Key 1/4 timeout by 1000 ms because of acknowledged frame
+nl80211: BSS Event 129 (NL80211_CMD_CONTROL_PORT_FRAME) received for wlp3s0
+wlp3s0: Event EAPOL_RX (23) received
+IEEE 802.1X: 127 bytes from 5c:a6:e6:3f:e2:da
+   IEEE 802.1X: version=1 type=3 length=123
+WPA: Received EAPOL-Key from 5c:a6:e6:3f:e2:da key_info=0x108 type=2 mic_len=16 key_data_length=28
+WPA: Received Key Nonce - hexdump(len=32): 08 6b 25 cc 1d 08 50 68 58 f1 bd c7 f0 94 ec 68 91 cf 49 c5 2c 2a 3b 7d 44 11 a2 bb a2 20 0b 0c
+WPA: Received Replay Counter - hexdump(len=8): 00 00 00 00 00 00 00 01
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: received EAPOL-Key frame (2/4 Pairwise)
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state PTKCALCNEGOTIATING
+WPA: PTK derivation using PRF(SHA256)
+WPA: PTK derivation - A1=3c:a0:67:80:99:a3 A2=5c:a6:e6:3f:e2:da
+WPA: Nonce1 - hexdump(len=32): 49 2b 24 9c c1 51 40 47 00 ab aa ed 84 9e 56 b3 71 ba 9e e3 44 87 0d de fd 3c 3a c2 ea f4 0d 12
+WPA: Nonce2 - hexdump(len=32): 08 6b 25 cc 1d 08 50 68 58 f1 bd c7 f0 94 ec 68 91 cf 49 c5 2c 2a 3b 7d 44 11 a2 bb a2 20 0b 0c
+WPA: PMK - hexdump(len=32): [REMOVED]
+WPA: PTK - hexdump(len=48): [REMOVED]
+WPA: KCK - hexdump(len=16): [REMOVED]
+WPA: KEK - hexdump(len=16): [REMOVED]
+WPA: TK - hexdump(len=16): [REMOVED]
+WPA: EAPOL-Key MIC using AES-CMAC (AKM-defined - SAE)
+WPA: RSN IE in EAPOL-Key - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 00 00 00 0f ac 06
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state PTKCALCNEGOTIATING2
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state PTKINITNEGOTIATING
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: sending 3/4 msg of 4-Way Handshake
+WPA: Send EAPOL(version=0 secure=1 mic=1 ack=1 install=1 pairwise=1 kde_len=86 keyidx=0 encr=1)
+WPA: Replay Counter - hexdump(len=8): 00 00 00 00 00 00 00 02
+Plaintext EAPOL-Key Key Data - hexdump(len=96): [REMOVED]
+WPA: Encrypt Key Data using AES-WRAP (KEK length 16)
+WPA: EAPOL-Key MIC using AES-CMAC (AKM-defined - SAE)
+nl80211: Send over control port dest=5c:a6:e6:3f:e2:da proto=0x888e len=195 no_encrypt=1
+nl80211: tx_control_port cookie=0x11d
+WPA: Use EAPOL-Key timeout of 100 ms (retry counter 1)
+nl80211: Drv Event 139 (NL80211_CMD_CONTROL_PORT_FRAME_TX_STATUS) received for wlp3s0
+nl80211: Control port TX status (ack=1), cookie=285
+wlp3s0: Event EAPOL_TX_STATUS (37) received
+IEEE 802.1X: 5c:a6:e6:3f:e2:da TX status - version=2 type=3 length=191 - ack=1
+WPA: EAPOL-Key TX status for STA 5c:a6:e6:3f:e2:da ack=1
+nl80211: BSS Event 129 (NL80211_CMD_CONTROL_PORT_FRAME) received for wlp3s0
+wlp3s0: Event EAPOL_RX (23) received
+IEEE 802.1X: 99 bytes from 5c:a6:e6:3f:e2:da
+   IEEE 802.1X: version=1 type=3 length=95
+WPA: Received EAPOL-Key from 5c:a6:e6:3f:e2:da key_info=0x308 type=2 mic_len=16 key_data_length=0
+WPA: Received Key Nonce - hexdump(len=32): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+WPA: Received Replay Counter - hexdump(len=8): 00 00 00 00 00 00 00 02
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: received EAPOL-Key frame (4/4 Pairwise)
+WPA: EAPOL-Key MIC using AES-CMAC (AKM-defined - SAE)
+WPA: 5c:a6:e6:3f:e2:da WPA_PTK entering state PTKINITDONE
+wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=3 addr=0x555d1f214ea0 key_idx=0 set_tx=1 seq_len=0 key_len=16 key_flag=0x2c
+nl80211: NEW_KEY
+nl80211: KEY_DATA - hexdump(len=16): [REMOVED]
+   addr=5c:a6:e6:3f:e2:da
+   pairwise key
+wlp3s0: AP-STA-CONNECTED 5c:a6:e6:3f:e2:da
+nl80211: Set STA flags - ifname=wlp3s0 addr=5c:a6:e6:3f:e2:da total_flags=0x69 flags_or=0x1 flags_and=0xffffffff authorized=1
+wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.1X: authorizing port
+wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: pairwise key handshake completed (RSN)
+wlp3s0: EAPOL-4WAY-HS-COMPLETED 5c:a6:e6:3f:e2:da
