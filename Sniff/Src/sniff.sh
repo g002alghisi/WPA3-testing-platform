@@ -97,7 +97,7 @@ wifi_if_set_monitor () {
     if [ "$channel" -eq 0 ]; then
         sudo airmon-ng start "$wifi_if" > /dev/null
     else
-        sudo airmon-ng start "$wifi_if" channel "$channel" > /dev/null
+        sudo airmon-ng start "$wifi_if" "$channel" > /dev/null
     fi
     new_wifi_if="$(ifconfig | grep "$wifi_if" | cut -d ":" -f 1)"
     if [ $? -eq 0 ]; then
@@ -109,8 +109,6 @@ wifi_if_set_monitor () {
         log_error
         return 1
     fi
-
-    # sudo airodump-ng "$wifi_if"
 }
 
 wifi_if_set_default () {
