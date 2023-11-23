@@ -24,13 +24,13 @@ log_error() {
 
 ### ### ### AS ### ### ###
 
-as_conf_file_check() {
-    log_info "Looking for $as_conf_file... "
-    if [ -e "$as_conf_file" ]; then
+as_conf_dir_check() {
+    log_info "Looking for $as_conf_dir... "
+    if [ -e "$as_conf_dir" ]; then
         log_success
     else
         log_success
-        echo "FreeRADIUS configuration file $as_conf_file not found. Please check the file path."
+        echo "FreeRADIUS configuration file $as_conf_dir not found. Please check the file path."
         return 1
     fi
 }
@@ -38,13 +38,13 @@ as_conf_file_check() {
 as_print_info() {
     echo "AS settings:"
     echo ""
-    cat "$as_conf_file" | grep -vE '^(#|$)'
+    cat "$as_conf_dir" | grep -vE '^(#|$)'
     echo ""
 }
 
 as_setup() {
     echo ""
-    as_conf_file_check
+    as_conf_dir_check
 }
 
 as_run() {
@@ -55,11 +55,9 @@ as_run() {
     echo ""
     killall freeradius &> /dev/null
     if [ "$as_verbose_mode" -eq 0 ]; then
-        #sudo freeradius -i "$as_ip_addr" -p "$as_port" -d "$as_conf_dir"
-        sudo freeradius -i "$as_ip_addr" -p "$as_port"
+        sudo freeradius -i "$as_ip_addr" -p "$as_port" -d "$as_conf_dir"
     else
-        sudo freeradius -i "$as_ip_addr" -p "$as_port" -X
-        #sudo freeradius -i "$as_ip_addr" -p "$as_port" -d "$as_conf_dir" -X
+        sudo freeradius -i "$as_ip_addr" -p "$as_port" -d "$as_conf_dir" -X
     fi
     echo ""
     echo -e "${CYAN}FreeRADIUS is stopped.${NC}"
