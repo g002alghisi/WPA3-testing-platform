@@ -155,7 +155,7 @@ nm_start() {
     if systemctl is-active NetworkManager > /dev/null; then
         log_info "NetworkManager is already active."
     else
-        log_info "Starting Network Manager... "
+        log_info "Starting NetworkManager... "
         if sudo systemctl start NetworkManager; then
             log_success
         else
@@ -166,7 +166,7 @@ nm_start() {
 }
 
 nm_stop() {
-    log_info "Stopping Network Manager... "
+    log_info "Stopping NetworkManager... "
     if sudo systemctl stop NetworkManager; then
         log_success
     else
@@ -180,12 +180,12 @@ nm_stop() {
 ### ### ### AP ### ### ###
 
 ap_conf_file_check() {
-    log_info "Looking for $ap_config_file... "
-    if [ -e "$ap_config_file" ]; then
+    log_info "Looking for $ap_conf_file... "
+    if [ -e "$ap_conf_file" ]; then
         log_success
     else
         log_success
-        echo "Hostapd configuration file $ap_config_file not found. Please check the file path."
+        echo "Hostapd configuration file $ap_conf_file not found. Please check the file path."
         return 1
     fi
 }
@@ -193,7 +193,7 @@ ap_conf_file_check() {
 ap_print_info() {
     echo "AP settings:"
     echo ""
-    cat "$ap_config_file" | grep -vE '^(#|$)'
+    cat "$ap_conf_file" | grep -vE '^(#|$)'
     echo ""
 }
 
@@ -217,9 +217,9 @@ ap_run() {
     echo ""
     killall hostapd &> /dev/null
     if [ "$ap_verbose_mode" -eq 0 ]; then
-        sudo "$HOSTAPD_PATH" "$ap_config_file"
+        sudo "$HOSTAPD_PATH" "$ap_conf_file"
     else
-        sudo "$HOSTAPD_PATH" "$ap_config_file" -d
+        sudo "$HOSTAPD_PATH" "$ap_conf_file" -d
     fi
     echo ""
     echo -e "${CYAN}Hostapd is stopped.${NC}"
@@ -240,7 +240,7 @@ main() {
     wifi_if=""
     eth_if=""
     br_if=""
-    ap_config_file=""
+    ap_conf_file=""
     ap_verbose_mode=0
     while getopts "w:e:b:c:d" opt; do
         case $opt in
@@ -254,7 +254,7 @@ main() {
                 br_if="$OPTARG"
                 ;;
             c)
-                ap_config_file="$OPTARG"
+                ap_conf_file="$OPTARG"
                 ;;
             d)
                 ap_verbose_mode=1
@@ -270,7 +270,7 @@ main() {
         esac
     done
 
-    if [ "$wifi_if" == "" ] || [ "$eth_if" == "" ] || [ "$br_if" == "" ] || [ "$ap_config_file" == "" ]; then
+    if [ "$wifi_if" == "" ] || [ "$eth_if" == "" ] || [ "$br_if" == "" ] || [ "$ap_conf_file" == "" ]; then
         echo "Usage: $0 -w wifi_if -e eth_if -b br_if -c conf [-d]"
         exit 1
     fi
