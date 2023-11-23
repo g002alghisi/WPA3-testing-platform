@@ -1,6 +1,7 @@
 #!/bin/bash
 #set -x  # debug mode
 
+
 WPA_SUPPLICANT_PATH="Build/wpa_supplicant"
 
 ### ### ### Logging ### ### ###
@@ -20,23 +21,6 @@ log_success() {
 
 log_error() {
     echo -e "${RED}Error.${NC}"
-}
-
-wpa_supplicant_verbose_mode=0
-
-
-
-### ### ### wpa_supplicant config file ### ### ###
-
-wpa_supplicant_conf_file_check() {
-    log_info "Looking for $wpa_supplicant_config_file... "
-    if [ -e "$wpa_supplicant_config_file" ]; then
-        log_success
-    else
-        log_success
-        echo "wpa_supplicant configuration file $wpa_supplicant_config_file not found. Please check the file path."
-        return 1
-    fi
 }
 
 
@@ -105,19 +89,30 @@ nm_stop() {
 
 
 
-### ### ### Print STA information ### ### ###
+### ### ### STA ### ### ###
+
+sta_conf_file_check() {
+    log_info "Looking for $sta_conf_file... "
+    if [ -e "$sta_conf_file" ]; then
+        log_success
+    else
+        log_success
+        echo "wpa_supplicant configuration file $sta_conf_file not found. Please check the file path."
+        return 1
+    fi
+}
 
 sta_print_info() {
     echo "STA settings:"
     echo ""
-    cat "$wpa_supplicant_config_file" | grep -vE '^(#|$)'
+    cat "$sta_conf_file" | grep -vE '^(#|$)'
     echo ""
 }
 
 sta_setup() {
     echo ""
     nm_start > /dev/null &&
-    wpa_supplicant_conf_file_check &&
+    sta_conf_file_check &&
     wifi_check_if &&
     wifi_check_conn &&
     nm_stop
@@ -130,14 +125,14 @@ sta_run() {
     sta_print_info
     echo ""
     sudo killall wpa_supplicant &> /dev/null
-    if [ $cli_mode -eq 0 ]; then
-        if [ $wpa_supplicant_verbose_mode -eq 0 ]; then
-            sudo "$wpa_supplicant" -i "$wifi_if" -c "$wpa_supplicant_config_file"
+    if [ $sta_cli_mode -eq 0 ]; then
+        if [ $sta_verbose_mode -eq 0 ]; then
+            sudo "$WPA_SUPPLICANT_PATH" -i "$wifi_if" -c "$sta_conf_file"
         else
-            sudo "$wpa_supplicant" -i "$wifi_if" -c "$wpa_supplicant_config_file" -d
+            sudo "$WPA_SUPPLICANT_PATH" -i "$wifi_if" -c "$sta_conf_file" -d
         fi
     else
-        sudo "$wpa_supplicant" -B -i "$wifi_if" -c "$wpa_supplicant_config_file"
+        sudo "$WPA_SUPPLICANT_PATH" -B -i "$wifi_if" -c "$sta_conf_file"
         echo ""
         echo -e "${CYAN}Wpa_cli is running too...${NC}"
         echo ""
@@ -161,23 +156,23 @@ sta_setdown() {
 
 main() {
     wifi_if=""
-    wpa_supplicant_config_file=""
-    wpa_supplicant_verbose_mode=0
-    cli_mode=0
+    sta_conf_file=""
+    sta_verbose_mode=0
+    sta_cli_mode=0
     while getopts "w:c:l:d" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
                 ;;
             c)
-                wpa_supplicant_config_file="$OPTARG"
+                sta_conf_file="$OPTARG"
                 ;;
             l)
-                cli_mode=1
-                wpa_supplicant_config_file="$OPTARG"
+                sta_cli_mode=1
+                sta_conf_file="$OPTARG"
                 ;;
             d)
-                wpa_supplicant_verbose_mode=1
+                sta_verbose_mode=1
                 ;;
             \?)
                 echo "Invalid option: -$OPTARG" >&2
@@ -190,7 +185,7 @@ main() {
         esac
     done
 
-    if [ "$wifi_if" == "" ] || [ "$wpa_supplicant_config_file" == "" ]; then
+    if [ "$wifi_if" == "" ] || [ "$sta_conf_file" == "" ]; then
         echo "Usage: $0 -w wifi_if <-c conf | -l conf_cli> [-d]"
         exit 1
     fi
@@ -199,10 +194,16 @@ main() {
     # during the execution of the successive commands).
     sudo -v
 
+    if [ "$sta_cli_mode" -eq 0 ]; then
+        stty -echo
+    fi
+
     sta_setup &&
     sta_run
     sta_setdown
+
+    stty echo
 }
 
 
-main $@
+main "$@"

@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x  # debug mode
+#set -x  # debug mode
 
 # Home
 HOME_FOLDER="Wpa_supplicant"
@@ -8,7 +8,7 @@ HOME_FOLDER="Wpa_supplicant"
 STA_PATH="Src/sta.sh"
 
 # Interfaces
-wifi_if="wlp3s0"
+wifi_if="wlx5ca6e63fe2da"
 
 # Personal
 CONF_P_WPA2="Conf/Minimal/Personal/p_wpa2.conf"
@@ -63,40 +63,42 @@ main() {
     shift $((OPTIND-1))
 
     if [ $# -ne 1 ]; then
-        echo "Usage: $0 [-w wifi_if] wpa2|wpa3|wpa3-pk|cli"
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-d] <sta_conf_string>"
         exit 1
     fi
 
     sta_cli_mode=0
-    input_string="$1"
-    case $input_string in
-        "wpa2")
-            wpa_supplicant_config_file="$CONF_P_WPA2"
+    sta_conf_string="$1"
+    case $sta_conf_string in
+        "p:wpa2")
+            sta_conf_file="$CONF_P_WPA2"
             ;;
-        "wpa3")
-            wpa_supplicant_config_file="$CONF_P_WPA3"
+        "p:wpa3")
+            sta_conf_file="$CONF_P_WPA3"
             ;;
-        "wpa3-pk")
-            wpa_supplicant_config_file="$CONF_P_WPA3_PK"
+        "p:wpa3-pk")
+            sta_conf_file="$CONF_P_WPA3_PK"
             ;;
-        "wpa2-wpa3")
-            wpa_supplicant_config_file="$CONF_P_WPA2_WPA3"
+        "p:wpa2-wpa3")
+            sta_conf_file="$CONF_P_WPA2_WPA3"
             ;;
-       	"cli")
+       	"p:cli")
             sta_cli_mode=1
-            wpa_supplicant_config_file="$CONF_P_CLI"
+            sta_conf_file="$CONF_P_CLI"
             ;;
         *)
-            echo -e "Invalid input_string."
+            echo -e "Invalid sta_conf_string."
             exit 1
             ;;
     esac
 
     if [ "$sta_cli_mode" -eq 1 ]; then
-        "$STA_PATH" -w "$wifi_if" -l "$wpa_supplicant_config_file"
+        "$STA_PATH" -w "$wifi_if" -l "$sta_conf_file"
     elif [ "$sta_verbose_mode" -eq 0 ]; then 
-        "$STA_PATH" -w "$wifi_if" -c "$wpa_supplicant_config_file"
+        "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file"
     else
-        "$STA_PATH" -w "$wifi_if" -c "$wpa_supplicant_config_file" -d
+        "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file" -d
     fi
 }
+
+main "$@"
