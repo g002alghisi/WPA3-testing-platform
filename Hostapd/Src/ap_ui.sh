@@ -20,7 +20,7 @@ CONF_P_WPA3_PK="Conf/Minimal/Personal/p_wpa3_pk.conf"
 CONF_P_FAKE_WPA3_PK="Conf/Minimal/Personal/p_fake_wpa3_pk.conf"
 
 # Enterprise
-# ...
+CONF_E_WPA2="Conf/Ko/Enterprise/e_wpa2.conf"
 
 
 
@@ -91,6 +91,9 @@ main() {
             ;;
         "p:fake-wpa3-pk")
             ap_conf_file="$CONF_P_FAKE_WPA3_PK"
+            ;;
+        "e:wpa2")
+            ap_conf_file="$CONF_E_WPA2"
             ;;
         *)
             echo -e "Invalid ap_conf_string."

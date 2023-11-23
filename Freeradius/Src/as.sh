@@ -55,9 +55,9 @@ as_run() {
     echo ""
     killall freeradius &> /dev/null
     if [ "$as_verbose_mode" -eq 0 ]; then
-        sudo freeradius -i "$as_ip_addr" -p "$as_port" -d "$as_conf_dir"
+        sudo freeradius -d "$as_conf_dir"
     else
-        sudo freeradius -i "$as_ip_addr" -p "$as_port" -d "$as_conf_dir" -X
+        sudo freeradius -d "$as_conf_dir" -X
     fi
     echo ""
     echo -e "${CYAN}FreeRADIUS is stopped.${NC}"
@@ -79,12 +79,6 @@ main() {
     as_verbose_mode=0
     while getopts "i:p:d:X" opt; do
         case $opt in
-            i)
-                as_ip_addr="$OPTARG"
-                ;;
-            p)
-                as_port="$OPTARG"
-                ;;
             d)
                 as_conf_dir="$OPTARG"
                 ;;
@@ -102,7 +96,7 @@ main() {
         esac
     done
 
-    if [ "$as_ip_addr" == "" ] || [ "$as_port" == "" ] || [ "$as_conf_dir" == "" ]; then
+    if [ "$as_conf_dir" == "" ]; then
         echo "Usage: $0 -i ip_addr -p port -d conf_dir [-X]"
         exit 1
     fi
