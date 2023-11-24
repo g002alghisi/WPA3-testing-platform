@@ -16,6 +16,7 @@ CONF_P_WPA3="Conf/Minimal/Personal/p_wpa3.conf"
 CONF_P_WPA2_WPA3="Conf/Minimal/Personal/p_wpa2_wpa3.conf"
 CONF_P_WPA3_PK="Conf/Minimal/Personal/p_wpa3_pk.conf"
 CONF_P_FAKE_WPA3_PK="Conf/Minimal/Personal/p_fake_wpa3_pk.conf"
+CONF_P_CLI="Conf/Minimal/Personal/p_cli.conf"
 
 # Enterprise
 # ...
@@ -92,12 +93,14 @@ main() {
             ;;
     esac
 
-    if [ "$sta_cli_mode" -eq 1 ]; then
-        "$STA_PATH" -w "$wifi_if" -l "$sta_conf_file"
-    elif [ "$sta_verbose_mode" -eq 0 ]; then 
+    if [ "$sta_cli_mode" -eq 0 ] && [ "$sta_verbose_mode" -eq 0 ]; then
         "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file"
-    else
+    elif [ "$sta_cli_mode" -eq 0 ] && [ "$sta_verbose_mode" -eq 1 ]; then 
         "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file" -d
+    elif [ "$sta_cli_mode" -eq 1 ] && [ "$sta_verbose_mode" -eq 0 ]; then
+        "$STA_PATH" -w "$wifi_if" -l "$sta_conf_file"
+    else
+        "$STA_PATH" -w "$wifi_if" -l "$sta_conf_file" -d
     fi
 }
 
