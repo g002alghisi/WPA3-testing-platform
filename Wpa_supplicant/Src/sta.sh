@@ -1,8 +1,8 @@
 #!/bin/bash
 #set -x  # debug mode
 
-
 WPA_SUPPLICANT_PATH="Build/wpa_supplicant"
+WPA_SUPPLICNT_CTRL_SOCKET="Tmp"
 
 ### ### ### Logging ### ### ###
 
@@ -110,6 +110,7 @@ sta_print_info() {
 }
 
 sta_setup() {
+
     echo ""
     nm_start > /dev/null &&
     sta_conf_file_check &&
@@ -120,32 +121,34 @@ sta_setup() {
 }
 
 sta_run() {
+    sudo killall wpa_supplicant &> /dev/null
+    sudo killall wpa_cli &> /dev/null
+
+    if [ $sta_cli_mode -eq 1 ]; then
+        gnome-terminal -- sudo wpa_cli -p "$WPA_SUPPLICNT_CTRL_SOCKET"
+
+    fi
+
     echo -e "${CYAN}Running Wpa-supplicant. Press Ctrl-C to stop.${NC}"
     echo ""
     sta_print_info
     echo ""
-    sudo killall wpa_supplicant &> /dev/null
-    if [ $sta_cli_mode -eq 0 ]; then
-        if [ $sta_verbose_mode -eq 0 ]; then
-            sudo "$WPA_SUPPLICANT_PATH" -i "$wifi_if" -c "$sta_conf_file"
-        else
-            sudo "$WPA_SUPPLICANT_PATH" -i "$wifi_if" -c "$sta_conf_file" -d
-        fi
+
+    if [ $sta_verbose_mode -eq 0 ]; then
+        sudo "$WPA_SUPPLICANT_PATH" -i "$wifi_if" -c "$sta_conf_file"
     else
-        sudo "$WPA_SUPPLICANT_PATH" -B -i "$wifi_if" -c "$sta_conf_file"
-        echo ""
-        echo -e "${CYAN}Wpa_cli is running too...${NC}"
-        echo ""
-        sudo wpa_cli
+        sudo "$WPA_SUPPLICANT_PATH" -i "$wifi_if" -c "$sta_conf_file" -d
     fi
+
     echo ""
     echo -e "${CYAN}Wpa_supplicant is stopped.${NC}"
     echo ""
+
+    sudo killall wpa_supplicant &> /dev/null
+    sudo killall wpa_cli &> /dev/null
 }
 
 sta_setdown() {
-    sudo killall wpa_supplicant &> /dev/null
-    sudo killall wpa_cli &> /dev/null
     nm_start
     echo ""
 }
@@ -194,9 +197,7 @@ main() {
     # during the execution of the successive commands).
     sudo -v
 
-    if [ "$sta_cli_mode" -eq 0 ]; then
-        stty -echo
-    fi
+    stty -echo
 
     sta_setup &&
     sta_run
