@@ -42,7 +42,9 @@ main() {
     go_home "$HOME_FOLDER"
 
     ap_verbose_mode=0
-    while getopts "w:e:b:d" opt; do
+    ap_conf_file=""
+    ap_conf_string=""
+    while getopts "w:e:b:c:d" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -56,6 +58,9 @@ main() {
             d)
                 ap_verbose_mode=1
                 ;;
+            c)
+                ap_conf_string="$OPTARG"
+                ;;
             \?)
                 echo "Invalid option: -$OPTARG"
                 exit 1
@@ -67,15 +72,11 @@ main() {
         esac
     done
 
-    shift $((OPTIND-1))
-
-    if [ $# -ne 1 ]; then
-        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-d] <ap_conf_string>"
+    if [ "$ap_conf_string" == "" ]; then
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-d] <-c ap_conf_string>"
         exit 1
     fi
 
-    ap_conf_string="$1"
-    ap_conf_file=""
     case $ap_conf_string in
         "p:wpa2")
             ap_conf_file="$CONF_P_WPA2"
@@ -102,6 +103,7 @@ main() {
     esac
 
     sed -i "s/^interface=.*/interface=$wifi_if/" "$ap_conf_file"
+    sed -i "s/^bridge=.*/bridge=$br_if/" "$ap_conf_file"
 
     if [ "$ap_verbose_mode" -eq 0 ]; then
         "$AP_PATH" -w "$wifi_if" -e "$eth_if" -b "$br_if" -c "$ap_conf_file"
