@@ -77,7 +77,7 @@ main() {
     as_port=""
     as_conf_dir=""
     as_verbose_mode=0
-    while getopts "i:p:d:X" opt; do
+    while getopts "d:X" opt; do
         case $opt in
             d)
                 as_conf_dir="$OPTARG"
