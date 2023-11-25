@@ -12,22 +12,13 @@ eth_if="enp4s0f1"
 wifi_if="wlp3s0"
 br_if="br0"
 
-# Personal
-CONF_P_WPA2="Conf/Minimal/Personal/p_wpa2.conf"
-CONF_P_WPA3="Conf/Minimal/Personal/p_wpa3.conf"
-CONF_P_WPA2_WPA3="Conf/Minimal/Personal/p_wpa2_wpa3.conf"
-CONF_P_WPA3_PK="Conf/Minimal/Personal/p_wpa3_pk.conf"
-CONF_P_FAKE_WPA3_PK="Conf/Minimal/Personal/p_fake_wpa3_pk.conf"
-
-# Enterprise
-CONF_E_WPA2="Conf/Ko/Enterprise/e_wpa2.conf"
-
-
+# Configuration files list
+CONF_LIST_PATH="Conf/conf_list.txt"
 
 ### ### ### Utilities ### ### ###
 
 go_home() {
-    cd "$(dirname "$1")"
+    cd "$(dirname "$HOME_FOLDER")"
     current_path=$(pwd)
     while [[ "$current_path" != *"$HOME_FOLDER" ]] && [[ "$current_path" != "/" ]]; do
         cd ..
@@ -39,7 +30,7 @@ go_home() {
 ### ### ### Main ### ### ###
 
 main() {
-    go_home "$HOME_FOLDER"
+    go_home
 
     ap_verbose_mode=0
     ap_conf_file=""
@@ -55,11 +46,11 @@ main() {
             b)
                 br_if="$OPTARG"
                 ;;
-            d)
-                ap_verbose_mode=1
-                ;;
             c)
                 ap_conf_string="$OPTARG"
+                ;;
+            d)
+                ap_verbose_mode=1
                 ;;
             \?)
                 echo "Invalid option: -$OPTARG"
@@ -77,30 +68,11 @@ main() {
         exit 1
     fi
 
-    case $ap_conf_string in
-        "p:wpa2")
-            ap_conf_file="$CONF_P_WPA2"
-            ;;
-        "p:wpa3")
-            ap_conf_file="$CONF_P_WPA3"
-            ;;
-        "p:wpa2-wpa3")
-            ap_conf_file="$CONF_P_WPA2_WPA3"
-            ;;
-        "p:wpa3-pk")
-            ap_conf_file="$CONF_P_WPA3_PK"
-            ;;
-        "p:fake-wpa3-pk")
-            ap_conf_file="$CONF_P_FAKE_WPA3_PK"
-            ;;
-        "e:wpa2")
-            ap_conf_file="$CONF_E_WPA2"
-            ;;
-        *)
-            echo -e "Invalid ap_conf_string."
-            exit 1
-            ;;
-    esac
+    ap_conf_file="$(grep "$ap_conf_string""=" "$CONF_LIST_PATH" | cut -d "=" -f 2)"
+    if [ "$ap_conf_file" == "" ]; then
+        echo "Invalid ap_conf_string."
+        exit 1
+    fi
 
     sed -i "s/^interface=.*/interface=$wifi_if/" "$ap_conf_file"
     sed -i "s/^bridge=.*/bridge=$br_if/" "$ap_conf_file"

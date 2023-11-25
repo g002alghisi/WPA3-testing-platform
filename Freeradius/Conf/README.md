@@ -7,7 +7,7 @@ to work without modifying the original ones. The process used to prepare them is
 sudo cp -r /etc/freeradius/3.0/ .
 
 # 2. Change owner and group
-sudo chown -R freeradius:freeradius *
+sudo chown -R freerad:freerad *
 ```
 
 Please notice that, as specified in the original FreeRADIUS guide, these files should be

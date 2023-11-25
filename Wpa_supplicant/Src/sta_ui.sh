@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -x  # debug mode
+set -x  # debug mode
 
 # Home
 HOME_FOLDER="Wpa_supplicant"
@@ -10,23 +10,15 @@ STA_PATH="Src/sta.sh"
 # Interfaces
 wifi_if="wlx5ca6e63fe2da"
 
-# Personal
-CONF_P_WPA2="Conf/Minimal/Personal/p_wpa2.conf"
-CONF_P_WPA3="Conf/Minimal/Personal/p_wpa3.conf"
-CONF_P_WPA2_WPA3="Conf/Minimal/Personal/p_wpa2_wpa3.conf"
-CONF_P_WPA3_PK="Conf/Minimal/Personal/p_wpa3_pk.conf"
-CONF_P_FAKE_WPA3_PK="Conf/Minimal/Personal/p_fake_wpa3_pk.conf"
-CONF_P_CLI="Conf/Minimal/Personal/p_cli.conf"
-
-# Enterprise
-# ...
+# Configuration files list
+CONF_LIST_PATH="Conf/conf_list.txt"
 
 
 
 ### ### ### Utilities ### ### ###
 
 go_home() {
-    cd "$(dirname "$1")"
+    cd "$(dirname "$HOME_FOLDER")"
     current_path=$(pwd)
     while [[ "$current_path" != *"$HOME_FOLDER" ]] && [[ "$current_path" != "/" ]]; do
         cd ..
@@ -39,13 +31,26 @@ go_home() {
 ### ### ### Main ### ### ###
 
 main() {
-    go_home "$HOME_FOLDER"
+    go_home
 
     sta_verbose_mode=0
-    while getopts "w:d" opt; do
+    sta_cli_mode=0
+    sta_gui_mode=0
+    while getopts "w:c:l:g:d" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
+                ;;
+            c)
+                sta_conf_string="$OPTARG"
+                ;;
+            l)
+                sta_cli_mode=1
+                sta_conf_string="$OPTARG"
+                ;;
+            g)
+                sta_gui_mode=1
+                sta_conf_string="$OPTARG"
                 ;;
             d)
                 sta_verbose_mode=1
@@ -61,47 +66,32 @@ main() {
         esac
     done
 
-    shift $((OPTIND-1))
-
-    if [ $# -ne 1 ]; then
-        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-d] <sta_conf_string>"
+    if [ "$sta_conf_string" == "" ]; then
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-d] <-c conf | -l conf_cli | -g conf_gui>"
         exit 1
     fi
 
-    sta_cli_mode=0
-    sta_conf_string="$1"
-    case $sta_conf_string in
-        "p:wpa2")
-            sta_conf_file="$CONF_P_WPA2"
-            ;;
-        "p:wpa3")
-            sta_conf_file="$CONF_P_WPA3"
-            ;;
-        "p:wpa3-pk")
-            sta_conf_file="$CONF_P_WPA3_PK"
-            ;;
-        "p:wpa2-wpa3")
-            sta_conf_file="$CONF_P_WPA2_WPA3"
-            ;;
-       	"p:cli")
-            sta_cli_mode=1
-            sta_conf_file="$CONF_P_CLI"
-            ;;
-        *)
-            echo -e "Invalid sta_conf_string."
-            exit 1
-            ;;
-    esac
-
-    if [ "$sta_cli_mode" -eq 0 ] && [ "$sta_verbose_mode" -eq 0 ]; then
-        "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file"
-    elif [ "$sta_cli_mode" -eq 0 ] && [ "$sta_verbose_mode" -eq 1 ]; then 
-        "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file" -d
-    elif [ "$sta_cli_mode" -eq 1 ] && [ "$sta_verbose_mode" -eq 0 ]; then
-        "$STA_PATH" -w "$wifi_if" -l "$sta_conf_file"
-    else
-        "$STA_PATH" -w "$wifi_if" -l "$sta_conf_file" -d
+    sta_conf_file="$(grep "$sta_conf_string""=" "$CONF_LIST_PATH" | cut -d "=" -f 2)"
+    if [ "$sta_conf_file" == "" ]; then
+        echo "Invalid sta_conf_string."
+        exit 1
     fi
+
+    sta_cmd=""
+    if [ "$sta_cli_mode" -eq 0 ] && [ "$sta_gui_mode" -eq 0 ]; then
+        sta_cmd="$STA_PATH -w $wifi_if -c $sta_conf_file"
+    elif [ "$sta_cli_mode" -eq 1 ] && [ "$sta_gui_mode" -eq 0 ]; then 
+        sta_cmd="$STA_PATH -w $wifi_if -l $sta_conf_file"
+    elif [ "$sta_cli_mode" -eq 0 ] && [ "$sta_gui_mode" -eq 1 ]; then 
+        sta_cmd="$STA_PATH -w $wifi_if -g $sta_conf_file"
+    fi
+
+    if [ "$sta_verbose_mode" -eq 1 ]; then
+        sta_cmd="$sta_cmd"" -d"
+    fi
+
+    eval "$sta_cmd"
 }
+
 
 main "$@"

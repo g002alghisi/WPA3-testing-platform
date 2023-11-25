@@ -1,6 +1,9 @@
 #!/bin/bash
 #set -x  # debug mode
 
+# Home. DO NOT TERMINATE WITH /
+HOME_FOLDER="Wpa_supplicant"
+
 WPA_SUPPLICANT_PATH="Build/wpa_supplicant"
 WPA_SUPPLICNT_CTRL_SOCKET="Tmp"
 
@@ -21,6 +24,19 @@ log_success() {
 
 log_error() {
     echo -e "${RED}Error.${NC}"
+}
+
+
+
+### ### ### Utilities ### ### ###
+
+go_home() {
+    cd "$(dirname "$HOME_FOLDER")"
+    current_path=$(pwd)
+    while [[ "$current_path" != *"$HOME_FOLDER" ]] && [[ "$current_path" != "/" ]]; do
+        cd ..
+        current_path=$(pwd)
+    done
 }
 
 
@@ -122,10 +138,15 @@ sta_setup() {
 
 sta_run() {
     sudo killall wpa_supplicant &> /dev/null
-    sudo killall wpa_cli &> /dev/null
+    sudo killall wpa_gui &> /dev/null
 
     if [ $sta_cli_mode -eq 1 ]; then
         gnome-terminal -- sudo wpa_cli -p "$WPA_SUPPLICNT_CTRL_SOCKET"
+
+    fi
+
+    if [ $sta_gui_mode -eq 1 ]; then
+        gnome-terminal -- sudo wpa_gui -p "$WPA_SUPPLICNT_CTRL_SOCKET" -i "$wifi_if"
 
     fi
 
@@ -158,11 +179,14 @@ sta_setdown() {
 ### ### ### Main section ### ### ###
 
 main() {
+    go_home
+
     wifi_if=""
     sta_conf_file=""
     sta_verbose_mode=0
     sta_cli_mode=0
-    while getopts "w:c:l:d" opt; do
+    sta_gui_mode=0
+    while getopts "w:c:l:g:d" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -172,6 +196,10 @@ main() {
                 ;;
             l)
                 sta_cli_mode=1
+                sta_conf_file="$OPTARG"
+                ;;
+            g)
+                sta_gui_mode=1
                 sta_conf_file="$OPTARG"
                 ;;
             d)
@@ -189,7 +217,7 @@ main() {
     done
 
     if [ "$wifi_if" == "" ] || [ "$sta_conf_file" == "" ]; then
-        echo "Usage: $0 -w wifi_if <-c conf | -l conf_cli> [-d]"
+        echo "Usage: $0 -w wifi_if <-c conf | -l conf_cli | -g conf_gui> [-d]"
         exit 1
     fi
 

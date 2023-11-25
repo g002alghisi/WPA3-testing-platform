@@ -1,5 +1,16 @@
 #!/bin/bash
-#set -x  # debug mode
+set -x  # debug mode
+
+# Home
+HOME_FOLDER="Freeradius"
+
+# Tmp
+TMP_FOLDER="Tmp"
+
+# Specify the file relatively to the $as_conf_folder
+CA_CERT_PEM="certs/ca.pem"
+CA_CERT_DER="certs/ca.der"
+
 
 ### ### ### Logging ### ### ###s
 
@@ -22,29 +33,41 @@ log_error() {
 
 
 
+### ### ### Utilities ### ### ###
+
+go_home() {
+    cd "$(dirname "$HOME_FOLDER")"
+    current_path=$(pwd)
+    while [[ "$current_path" != *"$HOME_FOLDER" ]] && [[ "$current_path" != "/" ]]; do
+        cd ..
+        current_path=$(pwd)
+    done
+}
+
+
+
 ### ### ### AS ### ### ###
 
-as_conf_dir_check() {
-    log_info "Looking for $as_conf_dir... "
-    if [ -e "$as_conf_dir" ]; then
+as_conf_folder_check() {
+    log_info "Looking for $as_conf_folder... "
+    if [ -e "$as_conf_folder" ]; then
         log_success
     else
         log_success
-        echo "FreeRADIUS configuration file $as_conf_dir not found. Please check the file path."
+        echo "FreeRADIUS configuration file $as_conf_folder not found. Please check the file path."
         return 1
     fi
 }
 
-as_print_info() {
-    echo "AS settings:"
-    echo ""
-    cat "$as_conf_dir" | grep -vE '^(#|$)'
-    echo ""
+as_cp_cert_files() {
+    cp "$CA_CERT_PEM" "$TMP_FOLDER"
+    cp "$CA_CERT_DER" "$TMP_FOLDER"
 }
 
 as_setup() {
     echo ""
-    as_conf_dir_check
+    as_conf_folder_check &&
+    as_cp_cert_files
 }
 
 as_run() {
@@ -55,9 +78,9 @@ as_run() {
     echo ""
     killall freeradius &> /dev/null
     if [ "$as_verbose_mode" -eq 0 ]; then
-        sudo freeradius -d "$as_conf_dir"
+        sudo freeradius -d "$as_conf_folder"
     else
-        sudo freeradius -d "$as_conf_dir" -X
+        sudo freeradius -d "$as_conf_folder" -X
     fi
     echo ""
     echo -e "${CYAN}FreeRADIUS is stopped.${NC}"
@@ -73,14 +96,16 @@ as_setdown() {
 ### ### ### Main section ### ### ###
 
 main() {
+    go_home
+
     as_ip_addr=""
     as_port=""
-    as_conf_dir=""
+    as_conf_folder=""
     as_verbose_mode=0
     while getopts "d:X" opt; do
         case $opt in
             d)
-                as_conf_dir="$OPTARG"
+                as_conf_folder="$OPTARG"
                 ;;
             X)
                 as_verbose_mode=1
@@ -96,10 +121,18 @@ main() {
         esac
     done
 
-    if [ "$as_conf_dir" == "" ]; then
-        echo "Usage: $0 -i ip_addr -p port -d conf_dir [-X]"
+    if [ "$as_conf_folder" == "" ]; then
+        echo "Usage: $0 -d conf_dir [-X]"
+        #echo "Usage: $0 -i ip_addr -p port -d conf_dir [-X]"
         exit 1
     fi
+
+    # Check if $as_conf_folder ends with "/"
+    if [ "$as_conf_folder" != */ ]; then
+        as_conf_folder="$as_conf_folder/"
+    fi
+    CA_CERT_PEM="$as_conf_folder""$CA_CERT_PEM"
+    CA_CERT_DER="$as_conf_folder""$CA_CERT_DER"
 
     stty -echo
 
