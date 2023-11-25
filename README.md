@@ -1,6 +1,16 @@
 # My ProjectHostapd-test
 
-## Todo List
+## To do list
+- [ ] Try to use WPA-Enterprise
+- [ ] Look for new dev boards with WPA3
+- [ ] Write the `FreeRADIUS/` README file
+- [ ] Write the `Freeradius/Conf` README file
+- [ ] Write the `FreeRADIUS/Src` README file
+- [ ] Update the `Hostapd/` README files (based on the new features of `ap.sh` and `ap_ui.sh`)
+- [ ] Update the `Wpa_supplicant/` README files (based on the new features of `ap.sh` and `ap_ui.sh`)
+
+
+## Tests
 
 ### ESP32
 - [x] Test with WPA3 (OK)
@@ -37,14 +47,15 @@
 ### iPad
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (!!)
-- [x] Test with WPA2/3 and transition disable (OK)
+- [x] Test with WPA2/3 and transition disable (~~)
 - [x] Test with SAE-PK and transition disable (--)
 
 ### Ubuntu (out-of-the-box)
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (!!)
-- [ ] Test with WPA2/3 and transition disable
+- [x] Test with WPA2/3 and transition disable (~~)
 - [x] Test with SAE-PK and transition disable (--)
+
 
 ## TP-Link Archer T2U
 
@@ -79,6 +90,7 @@ This program comes with the installation of WICED-Studio and can be found in the
 
 ### Supported security protocols
 The board supports WPA3, but support to SAE-PK has not been found.
+
 
 ## Raspberry Pi 4
 This folder contains information about the Wi-Fi related tests made with a Raspberry Pi 4 board, equipped with Linux raspberrypi 6.1.0-rpi4-rpi-v8 #1 SMP PREEMPT Debian 1:6.1.54-1+rpt2 (2023-10-05) aarch64 GNU/Linux.
