@@ -7,7 +7,7 @@
 - [ ] Write the `Freeradius/Conf` README file
 - [ ] Write the `FreeRADIUS/Src` README file
 - [ ] Update the `Hostapd/` README files (based on the new features of `ap.sh` and `ap_ui.sh`)
-- [ ] Update the `Wpa_supplicant/` README files (based on the new features of `ap.sh` and `ap_ui.sh`)
+- [ ] Update the `Wpa_supplicant/` README files (based on the new features of `sta.sh` and `sta_ui.sh`)
 
 
 ## Tests
