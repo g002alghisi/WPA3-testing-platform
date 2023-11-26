@@ -1,11 +1,11 @@
 #!/bin/bash
-#set -x  # debug mode
+set -x  # debug mode
 
 # Home. DO NOT TERMINATE WITH /
 HOME_FOLDER="Wpa_supplicant"
 
 WPA_SUPPLICANT_PATH="Build/wpa_supplicant"
-WPA_SUPPLICNT_CTRL_SOCKET="Tmp"
+WPA_SUPPLICNT_CTRL_SOCKET_FOLDER="Tmp"
 
 ### ### ### Logging ### ### ###
 
@@ -37,6 +37,22 @@ go_home() {
         cd ..
         current_path=$(pwd)
     done
+
+    if [[ "$current_path" == "/" ]]; then
+        echo "Error. Wrong HOME_FOLDER"
+        exit 1
+    fi
+}
+
+terminal_check() {
+	if pgrep -x "gnome-terminal" > /dev/null; then
+	    terminal_exec_cmd="gnome-terminal --"
+	elif pgrep -x "qterminal" > /dev/null; then
+	    terminal_exec_cmd="qterminal -e"
+	else
+	    echo "Unknown terminal."
+	    return 1
+	fi
 }
 
 
@@ -128,26 +144,26 @@ sta_print_info() {
 sta_setup() {
 
     echo ""
-    nm_start > /dev/null &&
+    nm_start &&
     sta_conf_file_check &&
     wifi_check_if &&
     wifi_check_conn &&
-    nm_stop
+    nm_stop &&
+    terminal_check &&
     echo ""
 }
 
 sta_run() {
     sudo killall wpa_supplicant &> /dev/null
     sudo killall wpa_gui &> /dev/null
+    rm "$WPA_SUPPLICNT_CTRL_SOCKET_FOLDER""/*" &> /dev/null
 
     if [ $sta_cli_mode -eq 1 ]; then
-        gnome-terminal -- sudo wpa_cli -p "$WPA_SUPPLICNT_CTRL_SOCKET"
-
+        "$terminal_exec_cmd sudo wpa_cli -p $WPA_SUPPLICNT_CTRL_SOCKET_FOLDER -i $wifi_if"
     fi
 
     if [ $sta_gui_mode -eq 1 ]; then
-        gnome-terminal -- sudo wpa_gui -p "$WPA_SUPPLICNT_CTRL_SOCKET" -i "$wifi_if"
-
+        "$terminal_exec_cmd sudo wpa_gui -p $WPA_SUPPLICNT_CTRL_SOCKET_FOLDER -i $wifi_if"
     fi
 
     echo -e "${CYAN}Running Wpa-supplicant. Press Ctrl-C to stop.${NC}"

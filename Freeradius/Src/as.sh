@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x  # debug mode
+#set -x  # debug mode
 
 # Home
 HOME_FOLDER="Freeradius"
@@ -128,8 +128,8 @@ main() {
     fi
 
     # Check if $as_conf_folder ends with "/"
-    if [ "$as_conf_folder" != */ ]; then
-        as_conf_folder="$as_conf_folder/"
+    if [[ "$as_conf_folder" != */ ]]; then
+        as_conf_folder="$as_conf_folder""/"
     fi
     CA_CERT_PEM="$as_conf_folder""$CA_CERT_PEM"
     CA_CERT_DER="$as_conf_folder""$CA_CERT_DER"

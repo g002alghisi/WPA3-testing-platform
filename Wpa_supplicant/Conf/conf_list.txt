@@ -8,8 +8,8 @@ p:wpa3-pk=Conf/Minimal/Personal/p_wpa3_pk.conf
 p:fake-wpa3-pk=Conf/Minimal/Personal/p_fake_wpa3_pk.conf
 
 # Enterprise
-# ...
+e:wpa2=Conf/Ko/Enterprise/e_wpa2.conf
 
 # Other
-o:cli=Conf/Minimal/Personal/o_cli.conf
-o:gui=Conf/Minimal/Personal/o_gui.conf
+o:cli=Conf/Other/o_cli.conf
+o:gui=Conf/Other/o_gui.conf
