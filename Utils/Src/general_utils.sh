@@ -2,6 +2,11 @@
 
 GENERAL_UTILS_IS_LOADED=True
 
+CODE_OK=0
+CODE_KO=1
+CODE_ERROR=2
+
+
 ### *** Go Home *** ###
 
 HOME_FOLDER="Hostapd-test"  # Without final "/"
@@ -15,8 +20,8 @@ go_home() {
     done
 
     if [[ "$current_path" == "/" ]]; then
-        echo "Error in $0, reached "/" position. Wrong HOME_FOLDER"
-        return 1
+        echo "Error in $FUNCNAME, reached "/" position. Wrong HOME_FOLDER"
+        return "$CODE_ERROR"
     fi
 }
 
@@ -31,7 +36,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'    # No color
 
 log_info() {
-    echo "INFO: $1"
+    echo "INFO: $@"
 }
 
 log_success() {
@@ -40,4 +45,62 @@ log_success() {
 
 log_error() {
     echo -e "${RED}Error.${NC}"
+}
+
+
+
+### *** Check file *** ###
+
+file_exists() {
+    if [ "$#" -ne 1 ]; then
+        echo "Error in $FUNCNAME. Usage: $FUNCNAME file."
+        return "$CODE_ERROR"
+    fi
+
+    _file="$1"
+    if [ ! -e "$_file" ]; then
+        return "$CODE_KO"
+    fi
+}
+
+
+
+### *** Get from list *** ###
+
+get_from_list() {
+    _file_list=""
+    _string=""
+    while getopts "f:s:" opt; do
+        case $opt in
+            f)
+                _file_list="$OPTARG"
+                ;;
+            s)
+                _string="$OPTARG"
+                ;;
+            \?)
+                echo "Error in $FUNCNAME. Invalid option: -$OPTARG."
+                return $CODE_ERROR
+                ;;
+            :)
+                echo "Error in $FUNCNAME. Option -$OPTARG requires an argument."
+                return $CODE_ERROR
+                ;;
+        esac
+    done
+    OPTIND=1
+
+    if [ "$_file_list" == "" ] || [ "$_string" == "" ]; then
+        echo "Error in $FUNCNAME. Usage: $FUNCNAME -f file -s string."
+        return $CODE_ERROR
+    fi
+
+    file_exists $_file_list || return "$?"
+
+    _output="$(grep "$ap_conf_string""=" "$CONF_LIST_PATH" | cut -d "=" -f 2)"
+    if [ "$_output" == "" ]; then
+        echo "$FUNCNAME: Cannot find $_string in $_file_list."
+        return $CODE_KO
+    fi
+    echo "$_output"
 }

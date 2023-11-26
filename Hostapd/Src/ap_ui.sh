@@ -1,21 +1,9 @@
 #!/bin/bash
 #set -x  # debug mode
 
+
 # Home
-HOME_FOLDER="Hostapd"
-
-# ap.sh path
-AP_PATH="Src/ap.sh"
-
-# Interfaces
-eth_if="enp4s0f1"
-wifi_if="wlp3s0"
-br_if="br0"
-
-# Configuration files list
-CONF_LIST_PATH="Conf/conf_list.txt"
-
-### ### ### Utilities ### ### ###
+HOME_FOLDER="Hostapd-test"  # Without final "/"
 
 go_home() {
     cd "$(dirname "$HOME_FOLDER")"
@@ -24,18 +12,41 @@ go_home() {
         cd ..
         current_path=$(pwd)
     done
+
+    if [[ "$current_path" == "/" ]]; then
+        echo "Error in $0, reached "/" position. Wrong HOME_FOLDER"
+        return 1
+    fi
 }
+
+# All the file positions are now relative to the Main Repository folder.
+# Load utils scripts
+go_home
+source Utils/Src/general_utils.sh
+source Utils/Src/nm_utils.sh
+source Utils/Src/br_utils.sh
+source Utils/Src/net_if_utils.sh
+
+# ap.sh path
+AP_PATH="Hostapd/Src/ap.sh"
+
+# Interfaces
+eth_if="enp4s0f1"
+wifi_if="wlp3s0"
+br_if="br0"
+
+# Configuration files list
+CONF_LIST_PATH="Hostapd/Conf/conf_list.txt"
+
 
 
 ### ### ### Main ### ### ###
 
 main() {
-    go_home
-
-    ap_verbose_mode=0
     ap_conf_file=""
     ap_conf_string=""
-    while getopts "w:e:b:c:d" opt; do
+    ap_verbose_mode=0
+    while getopts "w:e:b:c:v" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -49,7 +60,7 @@ main() {
             c)
                 ap_conf_string="$OPTARG"
                 ;;
-            d)
+            v)
                 ap_verbose_mode=1
                 ;;
             \?)
@@ -62,17 +73,15 @@ main() {
                 ;;
         esac
     done
+    OPTIND=1
 
     if [ "$ap_conf_string" == "" ]; then
-        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-d] <-c ap_conf_string>"
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-v] <-c ap_conf_string>"
         exit 1
     fi
 
-    ap_conf_file="$(grep "$ap_conf_string""=" "$CONF_LIST_PATH" | cut -d "=" -f 2)"
-    if [ "$ap_conf_file" == "" ]; then
-        echo "Invalid ap_conf_string."
+    ap_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$ap_conf_string")" || \
         exit 1
-    fi
 
     sed -i "s/^interface=.*/interface=$wifi_if/" "$ap_conf_file"
     sed -i "s/^bridge=.*/bridge=$br_if/" "$ap_conf_file"
@@ -80,9 +89,9 @@ main() {
     if [ "$ap_verbose_mode" -eq 0 ]; then
         "$AP_PATH" -w "$wifi_if" -e "$eth_if" -b "$br_if" -c "$ap_conf_file"
     else
-        "$AP_PATH" -w "$wifi_if" -e "$eth_if" -b "$br_if" -c "$ap_conf_file" -d
+        "$AP_PATH" -w "$wifi_if" -e "$eth_if" -b "$br_if" -c "$ap_conf_file" -v
     fi
 }
 
 
-main "$@"
+main $@

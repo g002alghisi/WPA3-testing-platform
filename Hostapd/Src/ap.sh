@@ -1,34 +1,9 @@
 #!/bin/bash
 #set -x  # debug mode
 
-# Home. DO NOT TERMINATE WITH /
-HOME_FOLDER="Hostapd"
 
-# Hostapd path
-HOSTAPD_PATH="Build/hostapd"
-
-### ### ### Logging ### ### ###s
-
-CYAN='\033[0;36m'
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-NC='\033[0m'    # No color
-
-log_info() {
-    echo "INFO: $1"
-}
-
-log_success() {
-    echo -e "${GREEN}Success.${NC}"
-}
-
-log_error() {
-    echo -e "${RED}Error.${NC}"
-}
-
-
-
-### ### ### Utilities ### ### ###
+# Home
+HOME_FOLDER="Hostapd-test"  # Without final "/"
 
 go_home() {
     cd "$(dirname "$HOME_FOLDER")"
@@ -37,216 +12,101 @@ go_home() {
         cd ..
         current_path=$(pwd)
     done
-}
 
-
-
-### ### ### Ethernet ### ### ###
-
-eth_check_if() {
-    log_info "Checking Ethernet interface... "
-
-    eth_if_status=$(nmcli -t device status | grep "$eth_if" | grep ':ethernet:')
-    if [ $? -eq 0 ]; then
-        log_success
-    else
-        log_error
-        return 1
-    fi
-
-   log_info "Forcing Ethernet interface up... "
-   if sudo ip link set "$eth_if" up; then
-       log_success
-   else
-       log_error
-       return 1
-   fi
-}
-
-eth_check_conn() {
-    log_info "Checking Ethernet connection... "
-
-    eth_current_conn=$(echo "$eth_if_status" | grep ":connected:" | cut -d ':' -f 4)
-    if [ -n "$eth_current_conn" ]; then
-        log_success
-        log_info "$eth_if currently connected to $eth_current_conn."
-    else
-        log_error
+    if [[ "$current_path" == "/" ]]; then
+        echo "Error in $0, reached "/" position. Wrong HOME_FOLDER"
         return 1
     fi
 }
 
+# All the file positions are now relative to the Main Repository folder.
+# Load utils scripts
+go_home
+source Utils/Src/general_utils.sh
+source Utils/Src/nm_utils.sh
+source Utils/Src/br_utils.sh
+source Utils/Src/net_if_utils.sh
 
 
-### ### ### WiFi ### ### ###
-
-wifi_check_if() {
-    log_info "Checking WiFi interface... "
-
-    wifi_if_status=$(nmcli -t device status | grep "$wifi_if" | grep ':wifi:')
-    if [ $? -eq 0 ]; then
-        log_success
-    else
-        log_error
-        return 1
-    fi
-
-   log_info "Forcing WiFi interface up... "
-   if sudo ip link set "$wifi_if" up; then
-       log_success
-   else
-       log_error
-       return 1
-   fi
-}
-
-wifi_check_conn() {
-    log_info "Checking WiFi connection... "
-
-    wifi_current_conn=$(echo "$wifi_if_status" | grep ":connected:" | cut -d ':' -f 4)
-    if [ -n "$wifi_current_conn" ]; then
-        log_success
-        log_info "$wifi_if currently connected to $wifi_current_conn. Disconnecting..."
-        # Setting down the current connection. Can interfere with hostapd.
-        if nmcli c down "$wifi_current_conn" > /dev/null; then
-            log_success
-        else
-            log_error
-            return 1
-        fi
-    else
-        log_success
-        log_info "$wifi_if currently not connected."
-    fi
-}
+# Hostapd path
+HOSTAPD_PATH="Hostapd/Build/hostapd"
 
 
 
-### ### ### Bridge ### ### ###
-
-br_setup() {
-    log_info "Creating the bridge... "
-    if brctl show | grep -q "$br_if"; then
-        br_setdown
-    fi
-    if sudo brctl addbr "$br_if" &&
-        sudo brctl addif "$br_if" "$eth_if"; then
-        log_success
-    else
-        log_error
-        return 1
-    fi
-
-    log_info "Forcing up the bridge... "
-    if sudo ip link set "$br_if" up; then
-        log_success
-    else
-        log_error
-        return 1
-    fi
-}
-
-br_setdown() {
-    log_info "Forcing down the bridge $br_if... "
-    if sudo ip link set "$br_if" down; then
-        log_success
-    else
-        log_error
-        return 1
-    fi
-
-    log_info "Deleting the bridge... "
-    if sudo brctl delbr "$br_if"; then
-        log_success
-    else
-        log_error
-        return 1
-    fi
-}
-
-
-
-### ### ### NetworkManager ### ### ###
-
-nm_start() {
-    if systemctl is-active NetworkManager > /dev/null; then
-        log_info "NetworkManager is already active."
-    else
-        log_info "Starting NetworkManager... "
-        if sudo systemctl start NetworkManager; then
-            log_success
-        else
-            log_error
-            return 1
-        fi
-    fi
-}
-
-nm_stop() {
-    log_info "Stopping NetworkManager... "
-    if sudo systemctl stop NetworkManager; then
-        log_success
-    else
-        log_error
-        return 1
-    fi
-}
-
-
-
-### ### ### AP ### ### ###
-
-ap_conf_file_check() {
-    log_info "Looking for $ap_conf_file... "
-    if [ -e "$ap_conf_file" ]; then
-        log_success
-    else
-        log_success
-        echo "Hostapd configuration file $ap_conf_file not found. Please check the file path."
-        return 1
-    fi
-}
+### *** AP *** ###
 
 ap_print_info() {
     echo "AP settings:"
     echo ""
     cat "$ap_conf_file" | grep -vE '^(#|$)'
     echo ""
+    echo ""
 }
 
 ap_setup() {
-    echo ""
-    nm_start &&
-    ap_conf_file_check &&
-    eth_check_if &&
-    eth_check_conn &&
-    wifi_check_if &&
-    wifi_check_conn &&
-    nm_stop &&    # Disable nmcli. It can interfere with brctl.
-    br_setup
+    # Start NetworkManager 
+    nm_start &> /dev/null
+
+    # Check Ethernet
+    log_info "Checking Ethernet interface... "
+    net_if_exists -e "$eth_if" && log_success || { log_error; return 1; }
+
+    log_info "Forcing Ethernet interface up... "
+    net_if_force_up -e "$eth_if" && log_success || { log_error; return 1; }
+
+    #log_info "Checking Ethernet connection... "
+    #net_if_is_connected -e "$eth_if" && log_success || { log_error; return 1; }
+
+    # Check Wi-Fi
+    log_info "Checking Wi-Fi interface... "
+    net_if_exists -w "$wifi_if" && log_success || { log_error; return 1; }
+
+    log_info "Forcing Wi-Fi interface up... "
+    net_if_force_up -w "$wifi_if" && log_success || { log_error; return 1; }
+
+    # Stop Network Manager
+    log_info "Stopping NetworkManager... "
+    nm_stop && log_success || { log_error; return 1; }
+
+    # Create the Bridge
+    log_info "Creating the bridge... "
+    br_setup "$br_if" && log_success || { log_error; return 1; }
+
+    log_info "Creating the bridge... "
+    br_add_if -b "$br_if" -n "$eth_if" && log_success || { log_error; return 1; }
+
+    # Check AP config file
+    log_info "Looking for $ap_conf_file..."
+    file_exists "$ap_conf_file" && log_success || { log_error; return 1; }
+
+    # Killing previous instances of Hostapd
+    pkill hostapd &> /dev/null
+    
+    return 0
 }
 
 ap_run() {
-    echo ""
-    echo -e "${CYAN}Running Hostapd. Press Ctrl-C to stop.${NC}"
-    echo ""
+    echo -e "\n${CYAN}Running Hostapd. Press Ctrl-C to stop.${NC}\n"
+
     ap_print_info
-    echo ""
-    killall hostapd &> /dev/null
+    
     if [ "$ap_verbose_mode" -eq 0 ]; then
         sudo "$HOSTAPD_PATH" "$ap_conf_file"
     else
         sudo "$HOSTAPD_PATH" "$ap_conf_file" -d
     fi
-    echo ""
-    echo -e "${CYAN}Hostapd is stopped.${NC}"
-    echo ""
+
+    echo -e "\n${CYAN}Hostapd is stopped.${NC}\n"
 }
 
 ap_setdown() {
-    br_setdown
-    nm_start
-    echo ""
+    # Delete the bridge
+    log_info "Deleting the bridge... "
+    br_setdown "$br_if" && log_success || log_error
+    
+    # Start Network Manager
+    log_info "Starting NetworkManager... "
+    nm_start && log_success || log_error
 }
 
 
@@ -254,14 +114,12 @@ ap_setdown() {
 ### ### ### Main section ### ### ###
 
 main() {
-    go_home
-
     wifi_if=""
     eth_if=""
     br_if=""
     ap_conf_file=""
     ap_verbose_mode=0
-    while getopts "w:e:b:c:d" opt; do
+    while getopts "w:e:b:c:v" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -275,7 +133,7 @@ main() {
             c)
                 ap_conf_file="$OPTARG"
                 ;;
-            d)
+            v)
                 ap_verbose_mode=1
                 ;;
             \?)
@@ -288,9 +146,10 @@ main() {
                 ;;
         esac
     done
+    OPTIND=1
 
     if [ "$wifi_if" == "" ] || [ "$eth_if" == "" ] || [ "$br_if" == "" ] || [ "$ap_conf_file" == "" ]; then
-        echo "Usage: $0 -w wifi_if -e eth_if -b br_if -c conf [-d]"
+        echo "Usage: $0 -w wifi_if -e eth_if -b br_if -c conf [-v]"
         exit 1
     fi
 
@@ -298,13 +157,17 @@ main() {
     # during the execution of the successive commands).
     sudo -v
 
+    # Do not show keyboard input
     stty -echo
 
+    echo ""
     ap_setup &&
     ap_run
     ap_setdown
+    echo ""
 
+    # Show keyboard input
     stty echo
 }
 
-main "$@"
+main $@
