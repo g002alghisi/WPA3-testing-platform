@@ -20,7 +20,7 @@ go_home() {
     done
 
     if [[ "$current_path" == "/" ]]; then
-        echo "Error in $FUNCNAME, reached "/" position. Wrong HOME_FOLDER"
+        echo "Error in $FUNCNAME(), reached "/" position. Wrong HOME_FOLDER"
         return "$CODE_ERROR"
     fi
 }
@@ -47,18 +47,23 @@ log_error() {
     echo -e "${RED}Error.${NC}"
 }
 
+log_title() {
+    echo -e "\n${CYAN}$@${NC}\n"
+}
+
 
 
 ### *** Check file *** ###
 
 file_exists() {
     if [ "$#" -ne 1 ]; then
-        echo "Error in $FUNCNAME. Usage: $FUNCNAME file."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() file."
         return "$CODE_ERROR"
     fi
 
     _file="$1"
     if [ ! -e "$_file" ]; then
+        echo "$FUNCNAME(): File $_file does not exist."
         return "$CODE_KO"
     fi
 }
@@ -79,11 +84,11 @@ get_from_list() {
                 _string="$OPTARG"
                 ;;
             \?)
-                echo "Error in $FUNCNAME. Invalid option: -$OPTARG."
+                echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
                 return $CODE_ERROR
                 ;;
             :)
-                echo "Error in $FUNCNAME. Option -$OPTARG requires an argument."
+                echo "Error in $FUNCNAME(). Option -$OPTARG requires an argument."
                 return $CODE_ERROR
                 ;;
         esac
@@ -91,7 +96,7 @@ get_from_list() {
     OPTIND=1
 
     if [ "$_file_list" == "" ] || [ "$_string" == "" ]; then
-        echo "Error in $FUNCNAME. Usage: $FUNCNAME -f file -s string."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -f file -s string."
         return $CODE_ERROR
     fi
 
@@ -99,8 +104,28 @@ get_from_list() {
 
     _output="$(grep "$ap_conf_string""=" "$CONF_LIST_PATH" | cut -d "=" -f 2)"
     if [ "$_output" == "" ]; then
-        echo "$FUNCNAME: Cannot find $_string in $_file_list."
+        echo "$FUNCNAME(): Cannot find $_string in $_file_list."
         return $CODE_KO
     fi
     echo "$_output"
 }
+
+
+
+### *** Terminal check *** ###
+
+terminal_check() {
+	if pgrep -x "gnome-terminal" > /dev/null; then
+	    _terminal_exec_cmd="gnome-terminal --"
+        echo "$_terminal_exec_cmd"
+        return $CODE_OK
+	elif pgrep -x "qterminal" > /dev/null; then
+	    _terminal_exec_cmd="qterminal -e"
+        echo "$_terminal_exec_cmd"
+        return $CODE_OK
+	else
+        echo "$FUNCNAME(): Cannot recognise the terminal type."
+        return $CODE_KO
+	fi
+}
+

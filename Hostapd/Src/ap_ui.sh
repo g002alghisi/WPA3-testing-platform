@@ -2,8 +2,8 @@
 #set -x  # debug mode
 
 
-# Home
-HOME_FOLDER="Hostapd-test"  # Without final "/"
+# Home. DO NOT TERMINATE WITH "/"
+HOME_FOLDER="Hostapd-test"
 
 go_home() {
     cd "$(dirname "$HOME_FOLDER")"
@@ -23,30 +23,48 @@ go_home() {
 # Load utils scripts
 go_home
 source Utils/Src/general_utils.sh
-source Utils/Src/nm_utils.sh
-source Utils/Src/br_utils.sh
-source Utils/Src/net_if_utils.sh
 
 # ap.sh path
 AP_PATH="Hostapd/Src/ap.sh"
 
 # Interfaces
-eth_if="enp4s0f1"
-wifi_if="wlp3s0"
-br_if="br0"
+ETH_IF_DEFAULT="enp4s0f1"
+WIFI_IF_DEFAULT="wlp3s0"
+BR_IF_DEFAULT="br0"
 
 # Configuration files list
 CONF_LIST_PATH="Hostapd/Conf/conf_list.txt"
 
 
 
-### ### ### Main ### ### ###
+### *** Handle config file *** ###
+
+ap_ui_handle_conf_file() {
+    # Get configuration file from conf_list
+    log_info "Fetching configuration file associated to $ap_conf_string..."
+    ap_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$ap_conf_string")" &&
+        log_success || { echo "$ap_conf_file"; log_error; echo ""; exit 1; }
+
+    # Change interface and bridge name inside the conf_file
+    log_info "Changing interface and bridge name inside $ap_conf_file..."
+    { sed -i "s/^interface=.*/interface=$wifi_if/" "$ap_conf_file" &&
+    sed -i "s/^bridge=.*/bridge=$br_if/" "$ap_conf_file"; } &&
+        log_success || { log_error; echo ""; exit 1; }
+}
+
+
+
+### *** Main *** ###
 
 main() {
+    wifi_if="$WIFI_IF_DEFAULT"
+    eth_if="$ETH_IF_DEFAULT"
+    br_if="$BR_IF_DEFAULT"
     ap_conf_file=""
     ap_conf_string=""
     ap_verbose_mode=0
-    while getopts "w:e:b:c:v" opt; do
+    ap_debug_mode=0
+    while getopts "w:e:b:c:v:d" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -63,6 +81,9 @@ main() {
             v)
                 ap_verbose_mode=1
                 ;;
+            d)
+                ap_debub_mode=1
+                ;;
             \?)
                 echo "Invalid option: -$OPTARG"
                 exit 1
@@ -75,17 +96,23 @@ main() {
     done
     OPTIND=1
 
+    # Check if the input is valid (the user have to insert at least the
+    #   configuration string)
     if [ "$ap_conf_string" == "" ]; then
-        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-v] <-c ap_conf_string>"
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v] [-d]."
         exit 1
     fi
 
-    ap_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$ap_conf_string")" || \
-        exit 1
+    # Enable debug for the bash script vith the flag -d
+    if [ "$ap_debug_mode" -eq 1 ]; then
+        set -x
+    fi
 
-    sed -i "s/^interface=.*/interface=$wifi_if/" "$ap_conf_file"
-    sed -i "s/^bridge=.*/bridge=$br_if/" "$ap_conf_file"
+    # Fetch, check and modify ap_conf_file
+    echo ""
+    ap_ui_handle_conf_file
 
+    # Run hostapd
     if [ "$ap_verbose_mode" -eq 0 ]; then
         "$AP_PATH" -w "$wifi_if" -e "$eth_if" -b "$br_if" -c "$ap_conf_file"
     else

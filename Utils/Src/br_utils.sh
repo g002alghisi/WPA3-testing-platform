@@ -23,11 +23,11 @@ _br_handle_param() {
                 _net_if="$OPTARG"
                 ;;
             \?)
-                echo "Error in $FUNCNAME. Invalid option: -$OPTARG."
+                echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
                 exit "$CODE_ERROR"
                 ;;
             :)
-                echo "Error in $FUNCNAME. Option -$OPTARG requires an argument."
+                echo "Error in $FUNCNAME(). Option -$OPTARG requires an argument."
                 exit "$CODE_ERROR"
                 ;;
         esac
@@ -35,20 +35,20 @@ _br_handle_param() {
     OPTIND=1
 
     if [ "$_br_handle_param_num" -ne 1 ] && [ "$_br_handle_param_num" -ne 2 ]; then
-        echo "Error in $FUNCNAME. Usage: $FUNCNAME -n 1 -b br_if, or: $FUNCNAME -n 2 -b br_if -n net_if."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -n 1 -b br_if, or: $FUNCNAME() -n 2 -b br_if -n net_if."
         return "$CODE_ERROR"
     fi
 
     if [ "$_br_handle_param_num" -eq 1 ] && [ "$_br_if" == "" ]; then
-        echo "Error in $FUNCNAME. Usage: $FUNCNAME -n 1 -b br_if."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -n 1 -b br_if."
         return "$CODE_ERROR"
     fi
 
     if [ "$_br_handle_param_num" -eq 2 ] && [ "$_br_if" == "" ]; then
-        echo "Error in $FUNCNAME. Usage: $FUNCNAME -n 2 -b br_if -n net_if."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -n 2 -b br_if -n net_if."
         return "$CODE_ERROR"
     elif [ "$_br_handle_param_num" -eq 2 ] && [ "$_net_if" == "" ]; then
-        echo "Error in $FUNCNAME. Usage: $FUNCNAME -n 2 -b br_if -n net_if."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -n 2 -b br_if -n net_if."
         return "$CODE_ERROR"
     fi
 }
@@ -58,7 +58,7 @@ br_exists() {
 
     brctl show | grep -q "$_br_if" &> /dev/null
     if [ "$?" -ne 0 ]; then
-        echo "$FUNCNAME: Bridge $_br_if does not exists."
+        echo "$FUNCNAME(): Bridge $_br_if does not exists."
         return "$CODE_KO"
     fi
 }
@@ -73,7 +73,7 @@ br_setup() {
 
     sudo brctl addbr "$_br_if" &> /dev/null 
     if [ "$?" -ne 0 ]; then
-        echo "$FUNCNAME: Cannot create the bridge $_br_if."
+        echo "$FUNCNAME(): Cannot create the bridge $_br_if."
         return "$CODE_KO"
     fi
 }
@@ -84,7 +84,7 @@ br_add_if() {
 
     sudo brctl addif "$_br_if" "$_net_if" &> /dev/null
     if [ "$?" -ne 0 ]; then
-        echo "$FUNCNAME: Cannot add $_net_if to the bridge $_br_if."
+        echo "$FUNCNAME(): Cannot add $_net_if to the bridge $_br_if."
         return "$CODE_KO"
     fi
 }
@@ -95,13 +95,13 @@ br_setdown() {
 
     sudo ip link set "$_br_if" down &> /dev/null
     if [ "$?" -ne 0 ]; then
-        echo "$FUNCNAME: Cannot force $_br_if down."
+        echo "$FUNCNAME(): Cannot force $_br_if down."
         return "$CODE_KO"
     fi
 
     sudo brctl delbr "$_br_if" &> /dev/null
     if [ "$?" -ne 0 ]; then
-        echo "$FUNCNAME: Cannot delete the bridge $_br_if."
+        echo "$FUNCNAME(): Cannot delete the bridge $_br_if."
         return "$CODE_KO"
     fi
 }

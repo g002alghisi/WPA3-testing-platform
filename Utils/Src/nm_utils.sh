@@ -12,7 +12,7 @@ CODE_ERROR=2
 nm_start() {
     sudo systemctl start NetworkManager &> /dev/null
     if [ "$?" -ne 0 ]; then
-    echo "$FUNCNAME: Cannot star NetworkManager." 
+    echo "$FUNCNAME(): Cannot star NetworkManager." 
         return "$CODE_KO"
     fi
 }
@@ -20,7 +20,7 @@ nm_start() {
 nm_stop() {
     sudo systemctl stop NetworkManager &> /dev/null
     if [ "$?" -ne 0 ]; then
-        echo "$FUNCNAME: Cannot stop NetworkManager." 
+        echo "$FUNCNAME(): Cannot stop NetworkManager." 
         return "$CODE_KO"
     fi
 }

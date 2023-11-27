@@ -23,11 +23,11 @@ _net_if_handle_param() {
                 _net_if_type="e"
                 ;;
             \?)
-                echo "Error in $FUNCNAME. Invalid option: -$OPTARG."
+                echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
                 return $CODE_ERROR
                 ;;
             :)
-                echo "Error in $FUNCNAME. Option -$OPTARG requires an argument."
+                echo "Error in $FUNCNAME(). Option -$OPTARG requires an argument."
                 return $CODE_ERROR
                 ;;
         esac
@@ -35,7 +35,7 @@ _net_if_handle_param() {
     OPTIND=1
 
     if [ "$_net_if" == "" ]; then
-        echo "Error in $FUNCNAME. Usage: $FUNCNAME < -w wifi_if | -e eth_if >"
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() < -w wifi_if | -e eth_if >"
         return $CODE_ERROR
     fi
 }
@@ -49,7 +49,7 @@ net_if_exists() {
 
     systemctl is-active NetworkManager &> /dev/null
     if [ "$?" -ne 0 ]; then
-        echo "Error in $FUNCNAME. NetworkManager not active."
+        echo "Error in $FUNCNAME(). NetworkManager not active."
         return "$CODE_ERROR"
     fi
 
@@ -59,7 +59,7 @@ net_if_exists() {
             nmcli -t device status | grep "$_net_if" | \
                 grep ':wifi:' &> /dev/null
             if [ "$?" -ne 0 ]; then
-                echo "$FUNCNAME: Interface $_net_if_type:$_net_if does not exist."
+                echo "$FUNCNAME(): Interface $_net_if_type:$_net_if does not exist."
                 return "$CODE_KO"
             fi
             ;;
@@ -67,16 +67,16 @@ net_if_exists() {
             nmcli -t device status | grep "$_net_if" | \
                 grep ':ethernet:' &> /dev/null
             if [ "$?" -ne 0 ]; then
-                echo "$FUNCNAME: Interface $_net_if_type:$_net_if does not exist."
+                echo "$FUNCNAME(): Interface $_net_if_type:$_net_if does not exist."
                 return "$CODE_KO"
             fi
             ;;
         \?)
-            echo "Error in $FUNCNAME. Invalid option: -$OPTARG."
+            echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
             return "$CODE_ERROR"
             ;;
         :)
-            echo "Error in $FUNCNAME. Option -$OPTARG requires an argument."
+            echo "Error in $FUNCNAME(). Option -$OPTARG requires an argument."
             return "$CODE_ERROR"
             ;;    
     esac
@@ -89,7 +89,7 @@ net_if_force_up() {
     # Force up
     sudo ip link set "$_net_if" up &> /dev/null
     if [ "$?" -ne 0 ]; then
-        echo "$FUNCNAME: Cannot set $_net_if up."
+        echo "$FUNCNAME(): Cannot set $_net_if up."
         return "$CODE_KO"
     fi
 }
@@ -99,7 +99,7 @@ net_if_is_connected() {
 
     systemctl is-active NetworkManager &> /dev/null
     if [ "$?" -ne 0 ]; then
-        echo "Error in $FUNCNAME. NetworkManager not active."
+        echo "Error in $FUNCNAME(). NetworkManager not active."
         return "$CODE_ERROR"
     fi
 
@@ -114,17 +114,17 @@ net_if_is_connected() {
                 grep ':wifi:' | cut -d ':' -f 4)"
             ;;
         \?)
-            echo "Error in $FUNCNAME. Invalid option: -$OPTARG."
+            echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
             return "$CODE_ERROR"
             ;;
         :)
-            echo "Error in $FUNCNAME. Option -$OPTARG requires an argument."
+            echo "Error in $FUNCNAME(). Option -$OPTARG requires an argument."
             return "$CODE_ERROR"
             ;;    
     esac
 
     if [ "$_net_if_status" != "connected" ]; then
-        echo "$FUNCNAME: $_net_if is not connected."
+        echo "$FUNCNAME(): $_net_if is not connected."
         return "$CODE_KO"
     fi
 }

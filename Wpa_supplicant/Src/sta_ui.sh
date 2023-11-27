@@ -1,21 +1,8 @@
 #!/bin/bash
 #set -x  # debug mode
 
-# Home
-HOME_FOLDER="Wpa_supplicant"
-
-# sta.sh path
-STA_PATH="Src/sta.sh"
-
-# Interfaces
-wifi_if="wlx5ca6e63fe2da"
-
-# Configuration files list
-CONF_LIST_PATH="Conf/conf_list.txt"
-
-
-
-### ### ### Utilities ### ### ###
+# Home. DO NOT TERMINATE WITH "/"
+HOME_FOLDER="Hostapd-test"
 
 go_home() {
     cd "$(dirname "$HOME_FOLDER")"
@@ -24,19 +11,53 @@ go_home() {
         cd ..
         current_path=$(pwd)
     done
+
+    if [[ "$current_path" == "/" ]]; then
+        echo "Error in $0, reached "/" position. Wrong HOME_FOLDER"
+        return 1
+    fi
+}
+
+# All the file positions are now relative to the Main Repository folder.
+# Load utils scripts
+go_home
+source Utils/Src/general_utils.sh
+
+# sta.sh path
+STA_PATH="Wpa_supplicant/Src/sta.sh"
+
+# Interfaces
+WIFI_IF_DEFAULT="wlx5ca6e63fe2da"
+
+# Configuration files list
+CONF_LIST_PATH="Wpa_supplicant/Conf/conf_list.txt"
+
+# Socket folder
+WPA_SUPPLICNT_CTRL_SOCKET_FOLDER="Wpa_supplicant/Tmp"
+
+
+
+### *** Handle config file *** ###
+
+sta_ui_handle_conf_file() {
+    # Get configuration file from conf_list
+    log_info "Fetching configuration file associated to $sta_conf_string..."
+    sta_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$sta_conf_string")" &&
+        log_success || { echo "$sta_conf_file"; log_error; echo ""; exit 1; }
 }
 
 
-
-### ### ### Main ### ### ###
+### *** Main *** ###
 
 main() {
-    go_home
-
+    wifi_if="$WIFI_IF_DEFAULT"
+    sta_conf_file=""
+    sta_conf_string=""
     sta_verbose_mode=0
     sta_cli_mode=0
     sta_gui_mode=0
-    while getopts "w:c:l:g:d" opt; do
+    sta_debug_mode=0
+    while getopts "w:c:l:g:vd" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -52,8 +73,11 @@ main() {
                 sta_gui_mode=1
                 sta_conf_string="$OPTARG"
                 ;;
-            d)
+            v)
                 sta_verbose_mode=1
+                ;;
+            d) 
+                sta_debug_mode=1
                 ;;
             \?)
                 echo "Invalid option: -$OPTARG" >&2
@@ -65,33 +89,50 @@ main() {
                 ;;
         esac
     done
+    OPTIND=1
 
+    # Check if the input is valid (the user have to insert at least the
+    #   configuration string)
     if [ "$sta_conf_string" == "" ]; then
-        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-d] <-c conf | -l conf_cli | -g conf_gui>"
+        echo "Usage: $0 [-w wifi_if] [-d] <-c conf | -l conf_cli | -g conf_gui>"
         exit 1
     fi
 
-    sta_conf_file="$(grep "$sta_conf_string""=" "$CONF_LIST_PATH" | cut -d "=" -f 2)"
-    if [ "$sta_conf_file" == "" ]; then
-        echo "Invalid sta_conf_string."
-        exit 1
+    # Enable debug for the bash script vith the flag -d
+    if [ "$sta_debug_mode" -eq 1 ]; then
+        set -x
     fi
 
-    sta_cmd=""
-    if [ "$sta_cli_mode" -eq 0 ] && [ "$sta_gui_mode" -eq 0 ]; then
-        sta_cmd="$STA_PATH -w $wifi_if -c $sta_conf_file"
-    elif [ "$sta_cli_mode" -eq 1 ] && [ "$sta_gui_mode" -eq 0 ]; then 
-        sta_cmd="$STA_PATH -w $wifi_if -l $sta_conf_file"
-    elif [ "$sta_cli_mode" -eq 0 ] && [ "$sta_gui_mode" -eq 1 ]; then 
-        sta_cmd="$STA_PATH -w $wifi_if -g $sta_conf_file"
-    fi
+    # Fetch sta_conf_file
+    echo ""
+    sta_ui_handle_conf_file
 
-    if [ "$sta_verbose_mode" -eq 1 ]; then
-        sta_cmd="$sta_cmd"" -d"
+    # Run wpa_supplicant
+    if [ "$sta_verbose_mode" -eq 0 ]; then
+        "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file"
+    else
+        "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file" -v
     fi
-
-    eval "$sta_cmd"
 }
 
+main $@
 
-main "$@"
+
+
+
+
+
+
+
+
+
+
+
+
+    if [ $sta_cli_mode -eq 1 ]; then
+        "$terminal_exec_cmd sudo wpa_cli -p $WPA_SUPPLICNT_CTRL_SOCKET_FOLDER -i $wifi_if"
+    fi
+
+    if [ $sta_gui_mode -eq 1 ]; then
+        "$terminal_exec_cmd sudo wpa_gui -p $WPA_SUPPLICNT_CTRL_SOCKET_FOLDER -i $wifi_if"
+    fi
