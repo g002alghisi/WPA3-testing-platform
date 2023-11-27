@@ -37,19 +37,19 @@ CONF_LIST_PATH="Hostapd/Conf/conf_list.txt"
 
 
 
-### *** Handle config file *** ###
+### *** AP UI *** ###
 
 ap_ui_setup() {
     # Get configuration file from conf_list
     log_info "Fetching configuration file associated to $ap_conf_string..."
     ap_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$ap_conf_string")" &&
-        log_success || { echo "$ap_conf_file"; log_error; echo ""; exit 1; }
+        log_success || { echo "$ap_conf_file"; log_error; echo ""; return 1; }
 
     # Change interface and bridge name inside the conf_file
     log_info "Changing interface and bridge name inside $ap_conf_file..."
     { sed -i "s/^interface=.*/interface=$wifi_if/" "$ap_conf_file" &&
     sed -i "s/^bridge=.*/bridge=$br_if/" "$ap_conf_file"; } &&
-        log_success || { log_error; echo ""; exit 1; }
+        log_success || { log_error; echo ""; return 1; }
 }
 
 
@@ -63,8 +63,7 @@ main() {
     ap_conf_file=""
     ap_conf_string=""
     ap_verbose_mode=0
-    ap_debug_mode=0
-    while getopts "w:e:b:c:v:d" opt; do
+    while getopts "w:e:b:c:v" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -81,9 +80,6 @@ main() {
             v)
                 ap_verbose_mode=1
                 ;;
-            d)
-                ap_debub_mode=1
-                ;;
             \?)
                 echo "Invalid option: -$OPTARG"
                 exit 1
@@ -99,13 +95,8 @@ main() {
     # Check if the input is valid (the user have to insert at least the
     #   configuration string)
     if [ "$ap_conf_string" == "" ]; then
-        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v] [-d]."
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v]."
         exit 1
-    fi
-
-    # Enable debug for the bash script vith the flag -d
-    if [ "$ap_debug_mode" -eq 1 ]; then
-        set -x
     fi
 
     # Update the cached credentials (this avoid the insertion of the sudo password
@@ -114,9 +105,9 @@ main() {
 
     # Fetch, check and modify ap_conf_file
     echo ""
-    ap_ui_setup
+    ap_ui_setup &&
 
-    # Run hostapd
+    # Run ap.sh
     if [ "$ap_verbose_mode" -eq 0 ]; then
         "$AP_PATH" -w "$wifi_if" -e "$eth_if" -b "$br_if" -c "$ap_conf_file"
     else

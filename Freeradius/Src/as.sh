@@ -73,7 +73,7 @@ as_setdown() {
     # If something goes wrong, try to kill freeradius
     sudo killall freeradius &> /dev/null
 
-    log_info "Deleting certs inside $TMP_DIR..."
+    log_info "Deleting certs from $TMP_DIR..."
     rm -f "$TMP_DIR/*" && log_success || log_error
 }
 
@@ -86,7 +86,6 @@ main() {
     as_port=""
     as_conf_dir=""
     as_verbose_mode=0
-    as_debug_mode=0
     while getopts "c:vd" opt; do
         case $opt in
             c)
@@ -96,7 +95,8 @@ main() {
                 as_verbose_mode=1
                 ;;
             d)
-                as_debug_mode=1
+                # Enable debug for the bash script
+                set -x
                 ;;
             \?)
                 echo "Invalid option: -$OPTARG"
@@ -115,11 +115,6 @@ main() {
     if [ "$as_conf_dir" == "" ]; then
         echo "Usage: $0 -c conf_dir [-v] [-d]."
         exit 1
-    fi
-
-    # Enable debug for the bash script vith the flag -d
-    if [ "$as_debug_mode" -eq 1 ]; then
-        set -x
     fi
 
     # Update the cached credentials (this avoid the insertion of the sudo password

@@ -97,9 +97,7 @@ sta_setdown() {
 main() {
     wifi_if=""
     sta_conf_file=""
-    sta_verbose_mode=0
-    sta_debug_mode=0
-    while getopts "w:c:vd" opt; do
+    while getopts "w:c:v" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -109,9 +107,6 @@ main() {
                 ;;
             v)
                 sta_verbose_mode=1
-                ;;
-            d)
-                sta_debug_mode=1
                 ;;
             \?)
                 echo "Invalid option: -$OPTARG" >&2
@@ -128,13 +123,8 @@ main() {
     # Check if the input is valid (the user have to insert at lease the name
     # of the wifi interface, and the configuration file path).
     if [ "$wifi_if" == "" ] || [ "$sta_conf_file" == "" ]; then
-        echo "Usage: $0 -w wifi_if -c conf [-v] [-d]"
+        echo "Usage: $0 -w wifi_if -c conf [-v]."
         exit 1
-    fi
-
-    # Enable debug for the bash script vith the flag -d
-    if [ "$sta_debug_mode" -eq 1 ]; then
-        set -x
     fi
 
     # Update the cached credentials (this avoid the insertion of the sudo password

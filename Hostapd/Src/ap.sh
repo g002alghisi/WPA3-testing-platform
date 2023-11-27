@@ -125,9 +125,7 @@ main() {
     eth_if=""
     br_if=""
     ap_conf_file=""
-    ap_verbose_mode=0
-    ap_debug_mode=0
-    while getopts "w:e:b:c:vd" opt; do
+    while getopts "w:e:b:c:v" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -144,9 +142,6 @@ main() {
             v)
                 ap_verbose_mode=1
                 ;;
-            d)
-                ap_debug_mode=1
-                ;;
             \?)
                 echo "Invalid option: -$OPTARG"
                 exit 1
@@ -162,13 +157,8 @@ main() {
     # Check if the input is valid (the user have to insert at least
     #   the name of all the interfaces, and the configuration file path)
     if [ "$wifi_if" == "" ] || [ "$eth_if" == "" ] || [ "$br_if" == "" ] || [ "$ap_conf_file" == "" ]; then
-        echo "Usage: $0 -w wifi_if -e eth_if -b br_if -c conf [-v] [-d]."
+        echo "Usage: $0 -w wifi_if -e eth_if -b br_if -c conf [-v]."
         exit 1
-    fi
-
-    # Enable debug for the bash script vith the flag -d
-    if [ "$ap_debug_mode" -eq 1 ]; then
-        set -x
     fi
 
     # Update the cached credentials (this avoid the insertion of the sudo password

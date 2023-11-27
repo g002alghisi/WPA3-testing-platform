@@ -95,8 +95,7 @@ main() {
     sta_verbose_mode=0
     sta_cli_mode=0
     sta_gui_mode=0
-    sta_debug_mode=0
-    while getopts "w:c:l:g:vd" opt; do
+    while getopts "w:c:l:g:v" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -115,9 +114,6 @@ main() {
             v)
                 sta_verbose_mode=1
                 ;;
-            d) 
-                sta_debug_mode=1
-                ;;
             \?)
                 echo "Invalid option: -$OPTARG" >&2
                 exit 1
@@ -133,13 +129,8 @@ main() {
     # Check if the input is valid (the user have to insert at least the
     #   configuration string)
     if [ "$sta_conf_string" == "" ]; then
-        echo "Usage: $0 [-w wifi_if] [-d] <-c conf | -l conf_cli | -g conf_gui>"
+        echo "Usage: $0 [-w wifi_if] <-c conf | -l conf_cli | -g conf_gui> [-v]."
         exit 1
-    fi
-
-    # Enable debug for the bash script vith the flag -d
-    if [ "$sta_debug_mode" -eq 1 ]; then
-        set -x
     fi
 
     # Update the cached credentials (this avoid the insertion of the sudo password
