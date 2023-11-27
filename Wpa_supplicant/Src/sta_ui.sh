@@ -32,19 +32,58 @@ WIFI_IF_DEFAULT="wlx5ca6e63fe2da"
 # Configuration files list
 CONF_LIST_PATH="Wpa_supplicant/Conf/conf_list.txt"
 
-# Socket folder
-WPA_SUPPLICNT_CTRL_SOCKET_FOLDER="Wpa_supplicant/Tmp"
-
 
 
 ### *** Handle config file *** ###
 
-sta_ui_handle_conf_file() {
+sta_ui_setup() {
     # Get configuration file from conf_list
     log_info "Fetching configuration file associated to $sta_conf_string..."
     sta_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$sta_conf_string")" &&
-        log_success || { echo "$sta_conf_file"; log_error; echo ""; exit 1; }
+        log_success || { echo "$sta_conf_file"; log_error; return 1; }
+
+    if [ "$sta_gui_mode" -eq 1 ] || [ "$sta_cli_mode" -eq 1 ]; then
+            log_info "Checking terminal type..."
+            terminal_exec_cmd="$(get_terminal_exec_cmd)" &&
+                log_success || { echo "$terminal_exec_cmd"; log_error; return 1; }
+    fi
+
+    # Try to kill wpa_cli and wpa_gui
+    sudo killall wpa_cli &> /dev/null
+    sudo killall wpa_gui &> /dev/null  
+
+    if [ "$sta_gui_mode" -eq 1 ]; then
+        log_info "Launching GUI..."
+        $terminal_exec_cmd bash -c "sleep 3; wpa_gui -i $wifi_if;" &
+        if [ "$?" -eq 0 ]; then
+            log_success
+        else
+            log_error
+            return 1
+        fi
+    fi
+    
+    if [ "$sta_cli_mode" -eq 1 ]; then
+        log_info "Launching CLI..."
+        $terminal_exec_cmd bash -c "sleep 3; wpa_cli -i $wifi_if;" &
+        if [ "$?" -eq 0 ]; then
+            log_success
+        else
+            log_error
+            return 1
+        fi
+    fi
 }
+
+sta_ui_setdown() {
+    # Try to kill wpa_cli and wpa_gui
+    sudo killall wpa_cli &> /dev/null
+    sudo killall wpa_gui &> /dev/null
+
+    # Try to kill all the terminal windows created
+    sudo pkill -P $$ &> /dev/null
+}
+
 
 
 ### *** Main *** ###
@@ -103,9 +142,13 @@ main() {
         set -x
     fi
 
+    # Update the cached credentials (this avoid the insertion of the sudo password
+    # during the execution of the successive commands).
+    sudo -v
+
     # Fetch sta_conf_file
     echo ""
-    sta_ui_handle_conf_file
+    sta_ui_setup &&
 
     # Run wpa_supplicant
     if [ "$sta_verbose_mode" -eq 0 ]; then
@@ -113,26 +156,9 @@ main() {
     else
         "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file" -v
     fi
+
+    sta_ui_setdown
+    echo ""
 }
 
 main $@
-
-
-
-
-
-
-
-
-
-
-
-
-
-    if [ $sta_cli_mode -eq 1 ]; then
-        "$terminal_exec_cmd sudo wpa_cli -p $WPA_SUPPLICNT_CTRL_SOCKET_FOLDER -i $wifi_if"
-    fi
-
-    if [ $sta_gui_mode -eq 1 ]; then
-        "$terminal_exec_cmd sudo wpa_gui -p $WPA_SUPPLICNT_CTRL_SOCKET_FOLDER -i $wifi_if"
-    fi

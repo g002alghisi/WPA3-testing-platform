@@ -39,7 +39,7 @@ CONF_LIST_PATH="Hostapd/Conf/conf_list.txt"
 
 ### *** Handle config file *** ###
 
-ap_ui_handle_conf_file() {
+ap_ui_setup() {
     # Get configuration file from conf_list
     log_info "Fetching configuration file associated to $ap_conf_string..."
     ap_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$ap_conf_string")" &&
@@ -108,9 +108,13 @@ main() {
         set -x
     fi
 
+    # Update the cached credentials (this avoid the insertion of the sudo password
+    # during the execution of the successive commands).
+    sudo -v
+
     # Fetch, check and modify ap_conf_file
     echo ""
-    ap_ui_handle_conf_file
+    ap_ui_setup
 
     # Run hostapd
     if [ "$ap_verbose_mode" -eq 0 ]; then

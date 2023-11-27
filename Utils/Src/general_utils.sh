@@ -114,18 +114,16 @@ get_from_list() {
 
 ### *** Terminal check *** ###
 
-terminal_check() {
-	if pgrep -x "gnome-terminal" > /dev/null; then
+get_terminal_exec_cmd() {
+	if pgrep "gnome-terminal" > /dev/null; then
 	    _terminal_exec_cmd="gnome-terminal --"
-        echo "$_terminal_exec_cmd"
-        return $CODE_OK
-	elif pgrep -x "qterminal" > /dev/null; then
+	elif pgrep "qterminal" > /dev/null; then
 	    _terminal_exec_cmd="qterminal -e"
-        echo "$_terminal_exec_cmd"
-        return $CODE_OK
 	else
         echo "$FUNCNAME(): Cannot recognise the terminal type."
         return $CODE_KO
 	fi
+    echo "$_terminal_exec_cmd"
+    return $CODE_OK
 }
 

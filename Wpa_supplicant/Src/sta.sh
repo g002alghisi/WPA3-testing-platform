@@ -63,11 +63,6 @@ sta_setup() {
 
     # Kill previous instances of wpa_supplicant, wpa_cli and wpa_gui
     sudo killall wpa_supplicant &> /dev/null
-    sudo killall wpa_cli &> /dev/null
-    sudo killall wpa_gui &> /dev/null
-
-    # Remove previous ctrl sockets
-    rm "$WPA_SUPPLICNT_CTRL_SOCKET_FOLDER""/*" &> /dev/null
 
     return 0
 }
@@ -87,10 +82,8 @@ sta_run() {
 }
 
 sta_setdown() {
-    # If something goes wrong, try to kill wpa_supplicant, wpa_cli and wpa_gui
+    # If something goes wrong, try to kill wpa_supplicant
     sudo killall wpa_supplicant &> /dev/null
-    sudo killall wpa_cli &> /dev/null
-    sudo killall wpa_gui &> /dev/null
 
     # Start Network Manager
     log_info "Starting NetworkManager... "
