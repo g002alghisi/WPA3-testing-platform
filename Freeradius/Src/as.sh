@@ -1,114 +1,102 @@
 #!/bin/bash
 #set -x  # debug mode
 
-# Home
-HOME_FOLDER="Freeradius"
 
-# Tmp
-TMP_FOLDER="Tmp"
-
-# Specify the file relatively to the $as_conf_folder
-CA_CERT_PEM="certs/ca.pem"
-CA_CERT_DER="certs/ca.der"
-
-
-### ### ### Logging ### ### ###s
-
-CYAN='\033[0;36m'
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-NC='\033[0m'    # No color
-
-log_info() {
-    echo "INFO: $1"
-}
-
-log_success() {
-    echo -e "${GREEN}Success.${NC}"
-}
-
-log_error() {
-    echo -e "${RED}Error.${NC}"
-}
-
-
-
-### ### ### Utilities ### ### ###
+# Home. DO NOT TERMINATE WITH "/"
+HOME_DIR="Hostapd-test"
 
 go_home() {
-    cd "$(dirname "$HOME_FOLDER")"
+    cd "$(dirname "$HOME_DIR")"
     current_path=$(pwd)
-    while [[ "$current_path" != *"$HOME_FOLDER" ]] && [[ "$current_path" != "/" ]]; do
+    while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
         cd ..
         current_path=$(pwd)
     done
-}
 
-
-
-### ### ### AS ### ### ###
-
-as_conf_folder_check() {
-    log_info "Looking for $as_conf_folder... "
-    if [ -e "$as_conf_folder" ]; then
-        log_success
-    else
-        log_success
-        echo "FreeRADIUS configuration file $as_conf_folder not found. Please check the file path."
+    if [[ "$current_path" == "/" ]]; then
+        echo "Error in $0, reached "/" position. Wrong HOME_DIR"
         return 1
     fi
 }
 
-as_cp_cert_files() {
-    cp "$CA_CERT_PEM" "$TMP_FOLDER"
-    cp "$CA_CERT_DER" "$TMP_FOLDER"
-}
+# All the file positions are now relative to the Main Repository DIR.
+# Load utils scripts
+go_home
+source Utils/Src/general_utils.sh
+
+# Tmp DIR to store the certificates
+TMP_DIR="Freeradius/Tmp"
+
+# Specify the file relatively to the $as_conf_dir
+ca_cert_pem="certs/ca.pem"
+ca_cert_der="certs/ca.der"
+
+
+
+### *** AS *** ###
 
 as_setup() {
-    echo ""
-    as_conf_folder_check &&
-    as_cp_cert_files
+    # Check if $as_conf_dir ends with "/"
+    if [[ "$as_conf_dir" != */ ]]; then
+        as_conf_dir="$as_conf_dir""/"
+    fi
+    ca_cert_pem="$as_conf_dir""$ca_cert_pem"
+    ca_cert_der="$as_conf_dir""$ca_cert_der"
+
+    # Check AS config directory
+    log_info "Looking for $as_conf_dir..."
+    file_exists -d $as_conf_dir && log_success || { log_error; return 1; }
+   
+    log_info "Copying certs inside $TMP_DIR..."
+    { cp "$ca_cert_pem" "$TMP_DIR" && cp "$ca_cert_der" "$TMP_DIR"; } &&
+        log_success || { log_error; return 1; }
+    
+    # Kill previous instances of Freeradius
+    sudo killall freeradius &> /dev/null
+
+    return 0
 }
 
 as_run() {
-    echo ""
-    echo -e "${CYAN}Running FreeRADIUS. Press Ctrl-C to stop.${NC}"
-    echo ""
-    #as_print_info
-    echo ""
-    killall freeradius &> /dev/null
+    log_title "Running FreeRADIUS. Press Ctrl-C to stop."
+
     if [ "$as_verbose_mode" -eq 0 ]; then
-        sudo freeradius -d "$as_conf_folder"
+        sudo freeradius -f -d "$as_conf_dir"
     else
-        sudo freeradius -d "$as_conf_folder" -X
+        sudo freeradius -d "$as_conf_dir" -X
     fi
-    echo ""
-    echo -e "${CYAN}FreeRADIUS is stopped.${NC}"
-    echo ""
+
+    log_title "FreeRADIUS is stopped."
 }
 
 as_setdown() {
-    echo ""
+    # If something goes wrong, try to kill freeradius
+    sudo killall freeradius &> /dev/null
+
+    log_info "Deleting certs inside $TMP_DIR..."
+    rm -f "$TMP_DIR/*" && log_success || log_error
 }
 
 
 
-### ### ### Main section ### ### ###
+### *** Main section *** ###
 
 main() {
-    go_home
-
     as_ip_addr=""
     as_port=""
-    as_conf_folder=""
+    as_conf_dir=""
     as_verbose_mode=0
-    while getopts "d:X" opt; do
+    as_debug_mode=0
+    while getopts "c:vd" opt; do
         case $opt in
-            d)
-                as_conf_folder="$OPTARG"
+            c)
+                as_conf_dir="$OPTARG"
                 ;;
-            X)
+            v)
                 as_verbose_mode=1
+                ;;
+            d)
+                as_debug_mode=1
                 ;;
             \?)
                 echo "Invalid option: -$OPTARG"
@@ -120,27 +108,37 @@ main() {
                 ;;
         esac
     done
+    OPTIND=1
 
-    if [ "$as_conf_folder" == "" ]; then
-        echo "Usage: $0 -d conf_dir [-X]"
-        #echo "Usage: $0 -i ip_addr -p port -d conf_dir [-X]"
+    # Check if the input is valid (the user have to insert at lease the
+    #   configuration dir path)
+    if [ "$as_conf_dir" == "" ]; then
+        echo "Usage: $0 -c conf_dir [-v] [-d]."
         exit 1
     fi
 
-    # Check if $as_conf_folder ends with "/"
-    if [[ "$as_conf_folder" != */ ]]; then
-        as_conf_folder="$as_conf_folder""/"
+    # Enable debug for the bash script vith the flag -d
+    if [ "$as_debug_mode" -eq 1 ]; then
+        set -x
     fi
-    CA_CERT_PEM="$as_conf_folder""$CA_CERT_PEM"
-    CA_CERT_DER="$as_conf_folder""$CA_CERT_DER"
 
+    # Update the cached credentials (this avoid the insertion of the sudo password
+    #   during the execution of the successive commands)
+    sudo -v
+
+    # Hide keyboard input
     stty -echo
 
+    # If the setup fails, then do not run, but skip this phase and execute
+    #   the setdown
+    echo ""
     as_setup &&
     as_run
     as_setdown
+    echo ""
 
+    # Show keyboard input
     stty echo
 }
 
-main "$@"
+main $@

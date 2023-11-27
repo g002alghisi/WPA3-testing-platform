@@ -3,23 +3,23 @@
 
 
 # Home. DO NOT TERMINATE WITH /
-HOME_FOLDER="Hostapd-test"
+HOME_DIR="Hostapd-test"
 
 go_home() {
-    cd "$(dirname "$HOME_FOLDER")"
+    cd "$(dirname "$HOME_DIR")"
     current_path=$(pwd)
-    while [[ "$current_path" != *"$HOME_FOLDER" ]] && [[ "$current_path" != "/" ]]; do
+    while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
         cd ..
         current_path=$(pwd)
     done
 
     if [[ "$current_path" == "/" ]]; then
-        echo "Error in $0, reached "/" position. Wrong HOME_FOLDER"
+        echo "Error in $0, reached "/" position. Wrong HOME_DIR"
         return 1
     fi
 }
 
-# All the file positions are now relative to the Main Repository folder.
+# All the file positions are now relative to the Main Repository DIR.
 
 # Load utils scripts
 go_home
@@ -59,7 +59,7 @@ sta_setup() {
 
     # Check STA config file
     log_info "Looking for $sta_conf_file..."
-    file_exists "$sta_conf_file" && log_success || { log_error; return 1; }
+    file_exists -f "$sta_conf_file" && log_success || { log_error; return 1; }
 
     # Kill previous instances of wpa_supplicant, wpa_cli and wpa_gui
     sudo killall wpa_supplicant &> /dev/null

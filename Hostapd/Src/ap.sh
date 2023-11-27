@@ -3,23 +3,23 @@
 
 
 # Home. DO NOT TERMINATE WITH "/"
-HOME_FOLDER="Hostapd-test"
+HOME_DIR="Hostapd-test"
 
 go_home() {
-    cd "$(dirname "$HOME_FOLDER")"
+    cd "$(dirname "$HOME_DIR")"
     current_path=$(pwd)
-    while [[ "$current_path" != *"$HOME_FOLDER" ]] && [[ "$current_path" != "/" ]]; do
+    while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
         cd ..
         current_path=$(pwd)
     done
 
     if [[ "$current_path" == "/" ]]; then
-        echo "Error in $0, reached "/" position. Wrong HOME_FOLDER"
+        echo "Error in $0, reached "/" position. Wrong HOME_DIR"
         return 1
     fi
 }
 
-# All the file positions are now relative to the Main Repository folder.
+# All the file positions are now relative to the Main Repository DIR.
 
 # Load utils scripts
 go_home
@@ -81,7 +81,7 @@ ap_setup() {
 
     # Check AP config file
     log_info "Looking for $ap_conf_file..."
-    file_exists "$ap_conf_file" && log_success || { log_error; return 1; }
+    file_exists -f "$ap_conf_file" && log_success || { log_error; return 1; }
 
     # Killing previous instances of Hostapd
     sudo killall hostapd &> /dev/null
@@ -159,8 +159,8 @@ main() {
     done
     OPTIND=1
 
-    # Check if the input is valid (the user have to insert at lease the name of all the interfaces,
-    #   and the configuration file path)
+    # Check if the input is valid (the user have to insert at least
+    #   the name of all the interfaces, and the configuration file path)
     if [ "$wifi_if" == "" ] || [ "$eth_if" == "" ] || [ "$br_if" == "" ] || [ "$ap_conf_file" == "" ]; then
         echo "Usage: $0 -w wifi_if -e eth_if -b br_if -c conf [-v] [-d]."
         exit 1
@@ -172,14 +172,14 @@ main() {
     fi
 
     # Update the cached credentials (this avoid the insertion of the sudo password
-    # during the execution of the successive commands)
+    #   during the execution of the successive commands)
     sudo -v
 
     # Hide keyboard input
     stty -echo
 
     # If the setup fails, then do not run, but skip this phase and execute
-    # the setdown
+    #   the setdown
     echo ""
     ap_setup &&
     ap_run

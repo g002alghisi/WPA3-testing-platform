@@ -9,18 +9,18 @@ CODE_ERROR=2
 
 ### *** Go Home *** ###
 
-HOME_FOLDER="Hostapd-test"  # Without final "/"
+HOME_DIR="Hostapd-test"  # Without final "/"
 
 go_home() {
-    cd "$(dirname "$HOME_FOLDER")"
+    cd "$(dirname "$HOME_DIR")"
     current_path=$(pwd)
-    while [[ "$current_path" != *"$HOME_FOLDER" ]] && [[ "$current_path" != "/" ]]; do
+    while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
         cd ..
         current_path=$(pwd)
     done
 
     if [[ "$current_path" == "/" ]]; then
-        echo "Error in $FUNCNAME(), reached "/" position. Wrong HOME_FOLDER"
+        echo "Error in $FUNCNAME(), reached "/" position. Wrong HOME_DIR"
         return "$CODE_ERROR"
     fi
 }
@@ -56,14 +56,41 @@ log_title() {
 ### *** Check file *** ###
 
 file_exists() {
-    if [ "$#" -ne 1 ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() file."
+    _file=""
+    _file_is_dir=0
+    while getopts "f:d:" opt; do
+        case $opt in
+            f)
+                _file="$OPTARG"
+                ;;
+            d)
+                _file="$OPTARG"
+                _file_is_dir=1
+                ;;
+            \?)
+                echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
+                return $CODE_ERROR
+                ;;
+            :)
+                echo "Error in $FUNCNAME(). Option -$OPTARG requires an argument."
+                return $CODE_ERROR
+                ;;
+        esac
+    done
+    OPTIND=1
+
+    if [ "$_file" == "" ]; then
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() < -f file | -d dir >."
         return "$CODE_ERROR"
     fi
 
-    _file="$1"
-    if [ ! -e "$_file" ]; then
+    if [ "$_file_is_dir" == 0 ] && [ ! -e "$_file" ]; then
         echo "$FUNCNAME(): File $_file does not exist."
+        return "$CODE_KO"
+    fi
+
+    if [ "$_file_is_dir" == 1 ] && [ ! -d "$_file" ]; then
+        echo "$FUNCNAME(): Directory $_file does not exist."
         return "$CODE_KO"
     fi
 }
@@ -100,7 +127,7 @@ get_from_list() {
         return $CODE_ERROR
     fi
 
-    file_exists $_file_list || return "$?"
+    file_exists -f $_file_list || return "$?"
 
     _output="$(grep "$ap_conf_string""=" "$CONF_LIST_PATH" | cut -d "=" -f 2)"
     if [ "$_output" == "" ]; then
@@ -126,4 +153,3 @@ get_terminal_exec_cmd() {
     echo "$_terminal_exec_cmd"
     return $CODE_OK
 }
-

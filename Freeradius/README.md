@@ -1,27 +1,22 @@
 # RADIUS Server with Freeradius
 
-## Useful links
-- [https://freeradius.org/](https://freeradius.org/)
-- [https://wiki.freeradius.org/guide/Concepts](https://wiki.freeradius.org/guide/Concepts)
-- [https://wiki.freeradius.org/guide/Getting-Started](https://wiki.freeradius.org/guide/Getting-Started)
-
-
-# Introduction to RADIUS, EAP, and AAA Standards
+Freeradius is an open-source Authentication, Authorization, and Accounting (AAA) server widely used for managing access to networks and services.
+It can be employed to authenticate users on Wi-Fi networks, VPNs, remote access networks, and other network services.
+Freeradius implements standard authentication protocols such as Extensible Authentication Protocol (EAP) and supports
+a variety of authentication methods, including username/password, digital certificates, and other mechanisms.
 
 If you are new to RADIUS, EAP, or AAA (Authentication, Authorization, and Accounting) in general, it is recommended to familiarize yourself with the following standards:
-
 - [RFC 2865](https://datatracker.ietf.org/doc/html/rfc2865): Remote Authentication Dial In User Service (RADIUS)
 - [RFC 2866](https://datatracker.ietf.org/doc/html/rfc2866): RADIUS Accounting
 
 If you are working with EAP, additional standards include:
-
 - [RFC 3748](https://datatracker.ietf.org/doc/html/rfc3748): Extensible Authentication Protocol (EAP)
 - [RFC 3579](https://datatracker.ietf.org/doc/html/rfc3579): RADIUS (Remote Authentication Dial In User Service) Support For Extensible Authentication Protocol (EAP)
 
 These standards provide a solid foundation in RADIUS and EAP at a protocol level.
 
 
-# Understanding RADIUS Operation
+## Understanding RADIUS Operation
 
 ![FreeRADIUS request flow](README/freeradius_request_flow.svg)
 
@@ -29,7 +24,7 @@ These standards provide a solid foundation in RADIUS and EAP at a protocol level
 
 In RADIUS, the client initiates the communication by sending a RADIUS authentication request to the server. It's important to note that the client determines the content of the request.
 
-## Auth-Type Selection - `authorize {}`
+### Auth-Type Selection - `authorize {}`
 
 Upon receiving the request, the RADIUS server evaluates its capability to handle the request. This determination relies on the authentication types enabled in the server, database lookup capabilities, and the content of the request.
 
@@ -47,7 +42,7 @@ When a module identifies recognizable attributes, it declares its capability to 
 ```
 If a module doesn't find any recognizable information or deems no lookup necessary, it remains inactive.
 
-### Understanding Auth-Type in RADIUS
+#### Understanding Auth-Type in RADIUS
 
 The `Auth-Type` is a variable used in the context of the RADIUS (Remote Authentication Dial-In User Service) server to indicate the type of authentication that should be performed for a specific user or authentication request. Essentially, it is a way for the server to determine which specific authentication method should be applied for a particular user.
 
@@ -56,7 +51,7 @@ When the RADIUS server receives an authentication request from the client, the s
 The use of `Auth-Type` provides flexibility to the RADIUS server to dynamically adapt to various supported authentication methods, allowing it to choose the appropriate module based on the characteristics of the authentication request.
 
 
-## User Authentication Process - `authenticate {}`
+### User Authentication Process - `authenticate {}`
 
 After the authorization process, the server checks whether anything has set the `Auth-Type`. If nothing has, the server immediately rejects the request.
 
@@ -76,7 +71,7 @@ Suppose the LDAP module was listed in the authorize section. It will have execut
 ```
 If successful, the LDAP module would have added the "known good" password to the request, enabling another module in the `authenticate` phase to use it.
 
-### EAP and LEAP interaction
+#### EAP and LEAP interaction
 
 We discussed the interaction between EAP (Extensible Authentication Protocol) and LDAP (Lightweight Directory Access Protocol) in the context of FreeRADIUS. EAP is a framework for authentication, while LDAP is a protocol used to access and manage directory information. In FreeRADIUS, LDAP can be employed as a module to retrieve user credentials during the authentication process.
 Specifically, when a module like LDAP is "listed" in FreeRADIUS configuration, it means that it is included in the sequence of modules executed during the authentication or authorization process. This listing determines the order in which modules are executed.
@@ -85,7 +80,7 @@ If you want to configure FreeRADIUS to use LEAP (Lightweight Extensible Authenti
 
 In summary, FreeRADIUS allows flexibility in authentication methods through modules like LDAP, and LEAP can be configured as the authentication protocol for wireless connections. The configuration involves specifying modules in the appropriate sections and ensuring that the necessary protocols and secrets are enabled and set.
 
-## Insufficient Information
+### Insufficient Information
 
 Let's analyze the process when there is not enough information.
 
@@ -99,3 +94,20 @@ The server's response is contingent on the capabilities of the MSCHAP module.
     ```plaintext
     Sorry, I can't authenticate the user because I don't have the information I need to validate MSCHAP.
     ```
+
+## Installation guide
+To install Freeradius it is enough to do, from the terminal,
+```bash
+sudo apt install freeradius
+```
+
+However, in order to use it with the program `as.sh`, remember to disable the related service by doing
+```bash
+sudo systemctl disable freeradius
+```
+
+
+## Useful links
+- [https://freeradius.org/](https://freeradius.org/)
+- [https://wiki.freeradius.org/guide/Concepts](https://wiki.freeradius.org/guide/Concepts)
+- [https://wiki.freeradius.org/guide/Getting-Started](https://wiki.freeradius.org/guide/Getting-Started)
