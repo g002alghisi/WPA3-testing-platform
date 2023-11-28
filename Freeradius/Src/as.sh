@@ -30,7 +30,9 @@ TMP_DIR="Freeradius/Tmp"
 # Specify the file relatively to the $as_conf_dir
 ca_cert_pem="certs/ca.pem"
 ca_cert_der="certs/ca.der"
-
+clien_cert_pem="certs/client.pem"
+clien_cert_crt="certs/client.crt"
+clien_key="certs/client.key"
 
 
 ### *** AS *** ###
@@ -47,9 +49,21 @@ as_setup() {
     log_info "Looking for $as_conf_dir..."
     file_exists -d $as_conf_dir && log_success || { log_error; return 1; }
    
-    log_info "Copying certs inside $TMP_DIR..."
-    { cp "$ca_cert_pem" "$TMP_DIR" && cp "$ca_cert_der" "$TMP_DIR"; } &&
-        log_success || { log_error; return 1; }
+    # Copying certs and keys in Tmp/Conf* directory
+    as_conf_dir_basename="$(basename "$as_conf_dir")"
+    log_info "Copying certs inside $TMP_DIR/$as_conf_dir_basename/..."
+    cp "$ca_cert_pem" "$TMP_DIR" &&
+        cp "$ca_cert_der" "$TMP_DIR" &&
+        cp "$clien_cert_crt" "$TMP_DIR" &&
+        cp "$clien_cert_pem" "$TMP_DIR" &&
+        cp "$clien_key" "$TMP_DIR"
+
+    if [ "$?" -eq 0 ]; then
+        log_success
+    else
+        log_error
+        return 1
+    fi
     
     # Kill previous instances of Freeradius
     sudo killall freeradius &> /dev/null
@@ -72,9 +86,6 @@ as_run() {
 as_setdown() {
     # If something goes wrong, try to kill freeradius
     sudo killall freeradius &> /dev/null
-
-    log_info "Deleting certs from $TMP_DIR..."
-    rm -f "$TMP_DIR/*" && log_success || log_error
 }
 
 
