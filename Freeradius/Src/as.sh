@@ -25,7 +25,7 @@ go_home
 source Utils/Src/general_utils.sh
 
 # Tmp DIR to store the certificates
-TMP_DIR="Freeradius/Tmp"
+tmp_dir="Freeradius/Tmp"
 
 # Specify the file relatively to the $as_conf_dir
 ca_cert_pem="certs/ca.pem"
@@ -42,21 +42,25 @@ as_setup() {
     if [[ "$as_conf_dir" != */ ]]; then
         as_conf_dir="$as_conf_dir""/"
     fi
+    # Add to the cert variables the root part (respect Home)
     ca_cert_pem="$as_conf_dir""$ca_cert_pem"
     ca_cert_der="$as_conf_dir""$ca_cert_der"
+    clien_cert_crt="$as_conf_dir""$clien_cert_crt"
+    clien_cert_pem="$as_conf_dir""$clien_cert_pem"
+    clien_key="$as_conf_dir""$clien_key"
 
     # Check AS config directory
     log_info "Looking for $as_conf_dir..."
     file_exists -d $as_conf_dir && log_success || { log_error; return 1; }
    
     # Copying certs and keys in Tmp/Conf* directory
-    as_conf_dir_basename="$(basename "$as_conf_dir")"
-    log_info "Copying certs inside $TMP_DIR/$as_conf_dir_basename/..."
-    cp "$ca_cert_pem" "$TMP_DIR" &&
-        cp "$ca_cert_der" "$TMP_DIR" &&
-        cp "$clien_cert_crt" "$TMP_DIR" &&
-        cp "$clien_cert_pem" "$TMP_DIR" &&
-        cp "$clien_key" "$TMP_DIR"
+    tmp_dir="$tmp_dir/$(basename $as_conf_dir)"
+    log_info "Copying certs inside $tmp_dir/..."
+    cp "$ca_cert_pem" "$tmp_dir" &&
+        cp "$ca_cert_der" "$tmp_dir" &&
+        cp "$clien_cert_crt" "$tmp_dir" &&
+        cp "$clien_cert_pem" "$tmp_dir" &&
+        cp "$clien_key" "$tmp_dir"
 
     if [ "$?" -eq 0 ]; then
         log_success
