@@ -2,19 +2,21 @@
 
 ## Todo List
 
-### ESP32
+### Personal
+
+#### ESP32
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (OK)
 - [x] Test with WPA2/3 and transition disable (OK)
 - [x] Test with SAE-PK and transition disable (!!)
 
-### Cypress board
+#### Cypress board
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (--)
 - [x] Test with WPA2/3 and transition disable (--)
 - [x] Test with SAE-PK and transition disable (--)
 
-### Raspberry Pi 4
+#### Raspberry Pi 4
 - [x] Test with WPA3 (!!)
 - [x] Test with WPA2/3 and transition disable
 - [x] Test with SAE-PK (--)
@@ -22,29 +24,49 @@
 - [x] Test with MFP set as required (--)
 - [x] Test with `iwd` (--)
 
-### Wpa-supplicant
+#### Wpa-supplicant
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (OK)
 - [x] Test with WPA2/3 and transition disable (OK)
 - [x] Test with SAE-PK and transition disable (OK)
 
-### POCO F3
+#### POCO F3
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (!!)
 - [x] Test with WPA2/3 and transition disable (!!)
 - [x] Test with SAE-PK and transition disable (--)
 
-### iPad
+#### iPad
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (!!)
 - [x] Test with WPA2/3 and transition disable (OK)
 - [x] Test with SAE-PK and transition disable (--)
 
-### Ubuntu (out-of-the-box)
+#### Ubuntu (out-of-the-box)
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (!!)
 - [ ] Test with WPA2/3 and transition disable
 - [x] Test with SAE-PK and transition disable (--)
+
+
+### Enterprise
+
+#### ESP32
+- [ ] Test with WPA2-Enterprise
+- [ ] Test with WPA3-Enterprise
+
+#### Cypress board
+
+#### Raspberry Pi 4
+
+#### Wpa-supplicant
+
+#### POCO F3
+
+#### iPad
+
+#### Ubuntu (out-of-the-box)
+
 
 ## TP-Link Archer T2U
 

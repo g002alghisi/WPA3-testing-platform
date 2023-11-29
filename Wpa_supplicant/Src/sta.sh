@@ -97,6 +97,7 @@ sta_setdown() {
 main() {
     wifi_if=""
     sta_conf_file=""
+    sta_verbose_mode=0
     while getopts "w:c:v" opt; do
         case $opt in
             w)

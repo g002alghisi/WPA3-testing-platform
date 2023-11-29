@@ -54,7 +54,7 @@ sta_ui_setup() {
 
     if [ "$sta_gui_mode" -eq 1 ]; then
         log_info "Launching GUI..."
-        $terminal_exec_cmd bash -c "sleep 3; wpa_gui -i $wifi_if;" &
+        $terminal_exec_cmd "sleep 3; wpa_gui -i $wifi_if;" &
         if [ "$?" -eq 0 ]; then
             log_success
         else
@@ -65,7 +65,7 @@ sta_ui_setup() {
     
     if [ "$sta_cli_mode" -eq 1 ]; then
         log_info "Launching CLI..."
-        $terminal_exec_cmd bash -c "sleep 3; wpa_cli -i $wifi_if;" &
+        $terminal_exec_cmd "sleep 3; wpa_cli -i $wifi_if;" &
         if [ "$?" -eq 0 ]; then
             log_success
         else

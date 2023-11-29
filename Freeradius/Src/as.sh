@@ -56,7 +56,8 @@ as_setup() {
     # Copying certs and keys in Tmp/Conf* directory
     tmp_dir="$tmp_dir/$(basename $as_conf_dir)"
     log_info "Copying certs inside $tmp_dir/..."
-    cp "$ca_cert_pem" "$tmp_dir" &&
+        mkdir -p "$tmp_dir" &&
+        cp "$ca_cert_pem" "$tmp_dir" &&
         cp "$ca_cert_der" "$tmp_dir" &&
         cp "$clien_cert_crt" "$tmp_dir" &&
         cp "$clien_cert_pem" "$tmp_dir" &&

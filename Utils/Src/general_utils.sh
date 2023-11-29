@@ -129,7 +129,7 @@ get_from_list() {
 
     file_exists -f $_file_list || return "$?"
 
-    _output="$(grep "$ap_conf_string""=" "$CONF_LIST_PATH" | cut -d "=" -f 2)"
+    _output="$(grep "$_string""=" "$_file_list" | cut -d "=" -f 2)"
     if [ "$_output" == "" ]; then
         echo "$FUNCNAME(): Cannot find $_string in $_file_list."
         return $CODE_KO
@@ -143,13 +143,39 @@ get_from_list() {
 
 get_terminal_exec_cmd() {
 	if pgrep "gnome-terminal" > /dev/null; then
-	    _terminal_exec_cmd="gnome-terminal --"
+	    _terminal_exec_cmd="gnome-terminal -- bash -c"
 	elif pgrep "qterminal" > /dev/null; then
-	    _terminal_exec_cmd="qterminal -e"
+	    _terminal_exec_cmd="qterminal -e bash -c"
 	else
         echo "$FUNCNAME(): Cannot recognise the terminal type."
         return $CODE_KO
 	fi
     echo "$_terminal_exec_cmd"
     return $CODE_OK
+}
+
+
+
+### *** Wait *** ###
+
+sleep_with_dots() {
+    if [ "$#" -ne 1 ]; then
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() sec."
+        return $CODE_ERROR
+    fi
+
+    # Check if the input is a number
+    if [ -n "$1" ] || [ "$1" -eq "$1" ] &>/dev/null; then
+        _sec="$1"
+    else
+        echo "Error in $FUNCNAME(). Input parameter is not a number."
+        return $CODE_ERROR
+    fi
+
+    echo "Wait $_sec s."
+    for ((i=1; i<=$_sec; i++)); do
+        sleep 1
+        echo -n "."
+    done
+    echo ""
 }

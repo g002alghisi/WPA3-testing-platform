@@ -1,3 +1,4 @@
 ### ### ### Configuration files list ### ### ###
 
-conf1=Freeradius/Conf/Conf1
+e:wpa2=Freeradius/Conf/E_wpa2
+e:fake-wpa2=Freeradius/Conf/E_fake_wpa2

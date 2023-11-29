@@ -125,6 +125,7 @@ main() {
     eth_if=""
     br_if=""
     ap_conf_file=""
+    ap_verbose_mode=0
     while getopts "w:e:b:c:v" opt; do
         case $opt in
             w)
