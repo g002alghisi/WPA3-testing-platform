@@ -17,12 +17,8 @@ sudo killall hostapd &> /dev/null
 sudo killall freeradius &> /dev/null
 
 
-# Wait 5s
-for i in {1..5}; do
-    sleep 1
-    echo -n "."
-done
-echo ""
+# Sleep for 5s
+sleep_with_dots 5
 
 
 # Launch the FAKE AS in a new window
