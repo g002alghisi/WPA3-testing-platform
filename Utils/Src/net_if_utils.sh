@@ -108,11 +108,11 @@ net_if_is_connected() {
     case "$_net_if_type" in
         w)
             _net_if_status="$(nmcli -t device status | grep "$_net_if" | \
-                grep ':wifi:' | cut -d ':' -f 3)"
+                grep ':wifi:')"
             ;;
         e)
             _net_if_status="$(nmcli -t device status | grep "$_net_if" | \
-                grep ':ethernet:' | cut -d ':' -f 3)"
+                grep ':ethernet:')"
             ;;
         \?)
             echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
@@ -124,8 +124,11 @@ net_if_is_connected() {
             ;;    
     esac
 
-    if [ "$_net_if_status" != "connected" ]; then
+    if [ "$(echo $_net_if_status | cut -d ':' -f 3)" != "connected" ]; then
         echo "$FUNCNAME(): $_net_if is not connected."
         return "$CODE_KO"
+    else
+    	echo "$_net_if_status"
+    	return "$CODE_OK"
     fi
 }

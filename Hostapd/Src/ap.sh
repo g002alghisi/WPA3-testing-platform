@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x  # debug mode
+#set -x  # debug mode
 
 
 # Home. DO NOT TERMINATE WITH "/"
@@ -45,7 +45,7 @@ ap_print_info() {
 
 ap_setup() {
     # Start NetworkManager 
-    #nm_start &> /dev/null
+    nm_start &> /dev/null
 
     # Check Ethernet
     log_info "Checking Ethernet interface... "
@@ -68,11 +68,11 @@ ap_setup() {
     net_if_force_up -w "$wifi_if" && log_success || { log_error; return 1; }
 
     # Check if Wi-Fi connected
-    log_info "Checking Wi-Fi connection... "
-    net_if_is_connected -w "$wifi_if" && log_success || { log_error; return 1; }
+    #log_info "Checking Wi-Fi connection... "
+    #net_if_is_connected -w "$wifi_if" && log_success || { log_error; return 1; }
     
     # Disconnecting from Wi-Fi
-    nmcli c down "$wifi_current_conn" &> /dev/null
+    #nmcli c down "$wifi_current_conn" &> /dev/null
 
     # Stop Network Manager
     log_info "Stopping NetworkManager... "

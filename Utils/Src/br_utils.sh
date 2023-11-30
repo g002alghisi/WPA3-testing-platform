@@ -76,6 +76,12 @@ br_setup() {
         echo "$FUNCNAME(): Cannot create the bridge $_br_if."
         return "$CODE_KO"
     fi
+    
+    sudo ip link set "$_br_if" up &> /dev/null
+    if [ "$?" -ne 0 ]; then
+        echo "$FUNCNAME(): Cannot force up the bridge $_br_if."
+        return "$CODE_KO"
+    fi
 }
 
 br_add_if() {

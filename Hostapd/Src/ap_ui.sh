@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x  # debug mode
+#set -x  # debug mode
 
 
 # Home. DO NOT TERMINATE WITH "/"
