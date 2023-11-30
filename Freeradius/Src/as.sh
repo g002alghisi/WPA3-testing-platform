@@ -28,8 +28,7 @@ source Utils/Src/general_utils.sh
 tmp_dir="Freeradius/Tmp"
 
 # Specify the file relatively to the $as_conf_dir
-ca_cert_pem="certs/ca.pem"
-ca_cert_der="certs/ca.der"
+cert_dir="certs"
 
 
 ### *** AS *** ###
@@ -39,20 +38,19 @@ as_setup() {
     if [[ "$as_conf_dir" != */ ]]; then
         as_conf_dir="$as_conf_dir""/"
     fi
-    # Add to the cert variables the root part (respect Home)
-    ca_cert_pem="$as_conf_dir""$ca_cert_pem"
-    ca_cert_der="$as_conf_dir""$ca_cert_der"
 
     # Check AS config directory
     log_info "Looking for $as_conf_dir..."
     file_exists -d $as_conf_dir && log_success || { log_error; return 1; }
    
+    # Add to the cert_dir variables the root part (respect Home)
+    cert_dir="$as_conf_dir""$cert_dir"
+
     # Copying certs and keys in Tmp/Conf* directory
     tmp_dir="$tmp_dir/$(basename $as_conf_dir)"
     log_info "Copying certs inside $tmp_dir/..."
         mkdir -p "$tmp_dir" &&
-        cp "$ca_cert_pem" "$tmp_dir" &&
-        cp "$ca_cert_der" "$tmp_dir"
+        cp "$cert_dir/"* "$tmp_dir"
 
     if [ "$?" -eq 0 ]; then
         log_success
