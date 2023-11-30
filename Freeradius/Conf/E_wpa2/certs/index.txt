@@ -1,2 +1,1 @@
-V	240126174817Z		01	unknown	/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org
-V	240126174817Z		02	unknown	/C=FR/ST=Radius/O=Example Inc./CN=user@example.org/emailAddress=user@example.org
+V	240128191014Z		01	unknown	/C=GL/ST=New World/O=StrawHat Networking/CN=radius.strawhat.com/emailAddress=radius@strawhat.com

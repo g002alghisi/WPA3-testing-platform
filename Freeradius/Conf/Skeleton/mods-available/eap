@@ -235,7 +235,7 @@ eap {
 		#  When setting "auto_chain = no", the server certificate
 		#  file MUST include the full certificate chain.
 		#
-	#	auto_chain = yes
+		auto_chain = yes
 
 		#  If OpenSSL supports TLS-PSK, then we can use a
 		#  fixed PSK identity and (hex) password.  As of

@@ -1,4 +1,5 @@
 #!/bin/bash
+#set -x
 
 NET_IF_UTILS_IS_LOADED=True
 
@@ -111,7 +112,7 @@ net_if_is_connected() {
             ;;
         e)
             _net_if_status="$(nmcli -t device status | grep "$_net_if" | \
-                grep ':wifi:' | cut -d ':' -f 4)"
+                grep ':ethernet:' | cut -d ':' -f 3)"
             ;;
         \?)
             echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."

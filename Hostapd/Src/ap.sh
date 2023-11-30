@@ -56,8 +56,8 @@ ap_setup() {
     net_if_force_up -e "$eth_if" && log_success || { log_error; return 1; }
 
     # Check if Ethernet connected
-    #log_info "Checking Ethernet connection... "
-    #net_if_is_connected -e "$eth_if" && log_success || { log_error; return 1; }
+    log_info "Checking Ethernet connection... "
+    net_if_is_connected -e "$eth_if" && log_success || { log_error; return 1; }
 
     # Check Wi-Fi
     log_info "Checking Wi-Fi interface... "

@@ -6,5 +6,5 @@ source test_setup.sh
 
 
 # Launch the AP
-$AP_UI_PATH -c p:wpa2
+$AP_UI_PATH -c p:wpa2 -e enx2613d81aec29
 

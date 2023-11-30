@@ -30,9 +30,6 @@ tmp_dir="Freeradius/Tmp"
 # Specify the file relatively to the $as_conf_dir
 ca_cert_pem="certs/ca.pem"
 ca_cert_der="certs/ca.der"
-clien_cert_pem="certs/client.pem"
-clien_cert_crt="certs/client.crt"
-clien_key="certs/client.key"
 
 
 ### *** AS *** ###
@@ -45,9 +42,6 @@ as_setup() {
     # Add to the cert variables the root part (respect Home)
     ca_cert_pem="$as_conf_dir""$ca_cert_pem"
     ca_cert_der="$as_conf_dir""$ca_cert_der"
-    clien_cert_crt="$as_conf_dir""$clien_cert_crt"
-    clien_cert_pem="$as_conf_dir""$clien_cert_pem"
-    clien_key="$as_conf_dir""$clien_key"
 
     # Check AS config directory
     log_info "Looking for $as_conf_dir..."
@@ -58,10 +52,7 @@ as_setup() {
     log_info "Copying certs inside $tmp_dir/..."
         mkdir -p "$tmp_dir" &&
         cp "$ca_cert_pem" "$tmp_dir" &&
-        cp "$ca_cert_der" "$tmp_dir" &&
-        cp "$clien_cert_crt" "$tmp_dir" &&
-        cp "$clien_cert_pem" "$tmp_dir" &&
-        cp "$clien_key" "$tmp_dir"
+        cp "$ca_cert_der" "$tmp_dir"
 
     if [ "$?" -eq 0 ]; then
         log_success
