@@ -108,7 +108,7 @@ net_if_is_connected() {
     case "$_net_if_type" in
         w)
             _net_if_status="$(nmcli -t device status | grep "$_net_if" | \
-                grep ':wifi:' | cut -d ':' -f 4)"
+                grep ':wifi:' | cut -d ':' -f 3)"
             ;;
         e)
             _net_if_status="$(nmcli -t device status | grep "$_net_if" | \

@@ -45,7 +45,7 @@ ap_print_info() {
 
 ap_setup() {
     # Start NetworkManager 
-    nm_start &> /dev/null
+    #nm_start &> /dev/null
 
     # Check Ethernet
     log_info "Checking Ethernet interface... "
@@ -66,6 +66,13 @@ ap_setup() {
     # Force Wi-Fi up
     log_info "Forcing Wi-Fi interface up... "
     net_if_force_up -w "$wifi_if" && log_success || { log_error; return 1; }
+
+    # Check if Wi-Fi connected
+    log_info "Checking Wi-Fi connection... "
+    net_if_is_connected -w "$wifi_if" && log_success || { log_error; return 1; }
+    
+    # Disconnecting from Wi-Fi
+    nmcli c down "$wifi_current_conn" &> /dev/null
 
     # Stop Network Manager
     log_info "Stopping NetworkManager... "
