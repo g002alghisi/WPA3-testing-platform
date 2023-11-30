@@ -49,8 +49,8 @@ x509_extensions		= v3_ca
 [certificate_authority]
 countryName         = GL
 stateOrProvinceName = New World
-localityName        = Laugh Tale
-organizationName    = StrawHat Networking
+localityName        = Raftel
+organizationName    = Straw Hat Networking
 emailAddress        = ca@strawhat.com
 commonName          = "ca.strawhat.com"
 
