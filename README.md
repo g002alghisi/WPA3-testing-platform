@@ -18,7 +18,7 @@
 
 #### Raspberry Pi 4
 - [x] Test with WPA3 (!!)
-- [x] Test with WPA2/3 and transition disable
+- [x] Test with WPA2/3 and transition disable (--)
 - [x] Test with SAE-PK (--)
 - [x] Test with SAE-PK and transition disable (--)
 - [x] Test with MFP set as required (--)
@@ -45,7 +45,7 @@
 #### Ubuntu (out-of-the-box)
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (!!)
-- [ ] Test with WPA2/3 and transition disable
+- [x] Test with WPA2/3 and transition disable (..)
 - [x] Test with SAE-PK and transition disable (--)
 
 
@@ -57,7 +57,7 @@
 - [ ] Test with TOD
 
 #### Cypress board
-- [ ] Test with WPA2-Enterprise
+- [x] Test with WPA2-Enterprise (OK)
 - [ ] Test with WPA3-Enterprise
 - [ ] Test with TOD
 
@@ -67,7 +67,7 @@
 - [ ] Test with TOD
 
 #### Wpa-supplicant
-- [x] Test with WPA2-Enterprise (--)
+- [ ] Test with WPA2-Enterprise
 - [ ] Test with WPA3-Enterprise
 - [ ] Test with TOD
 
@@ -89,10 +89,10 @@
 
 ## TP-Link Archer T2U
 
-To use the Wi-Fi donge, it is required to install the drivers.
+To use the Wi-Fi donge it is necessary to install the drivers.
 
-In general, one can follow the official guide. However, in Linux few problems have been encountered.
-To overcome them and use the USB Wireless Interface, try the Morrowr's driver,available on GitHub at [https://github.com/morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708)
+In general, one can follow the official guide. However, in Linux few errors arose.
+The Morrowr's driver comes in hand; please visit the GitHub repo at [https://github.com/morrownr/8821au-20210708](https://github.com/morrownr/8821au-20210708) for more information.
 
 ### Other useful links
 - [https://www.aircrack-ng.org/doku.php?id=compatibility_drivers#compatibility](https://www.aircrack-ng.org/doku.php?id=compatibility_drivers#compatibility)
@@ -100,31 +100,9 @@ To overcome them and use the USB Wireless Interface, try the Morrowr's driver,av
 - [https://github.com/morrownr/Monitor_Mode](https://github.com/morrownr/Monitor_Mode)
 
 
-## Cypress Board CYW954907AEVAL1F
-The Cypress CYW954907AEVAL1F Evaluation Kit serves as a platform to assess and create single-chip Wi-Fi applications employing the CYW54907 device. This kit is centered around a module that harnesses the capabilities of the CYW54907, a single-chip 802.11ac dual-band Wi-Fi System-on-Chip (SoC) supporting both 2.4 GHz and 5 GHz frequencies.
-More information can be found at [https://www.infineon.com/cms/en/product/evaluation-boards/cyw954907aeval1f/](https://www.infineon.com/cms/en/product/evaluation-boards/cyw954907aeval1f/).
-
-### Work with the Cypress board
-This board can be prorgammed by means of the official SDK called WICED-Studio, and a practical guide is available at [https://www.infineon.com/dgdl/Infineon-CYW954907AEVAL1F_Evaluation_Kit_User_Guide-UserManual-v01_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0eff8331169e](https://www.infineon.com/dgdl/Infineon-CYW954907AEVAL1F_Evaluation_Kit_User_Guide-UserManual-v01_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0eff8331169e).
-
-It is highly recommended to work on a Windows PC, because on Linux there can be problems with the IDE. It is okay also to use a virtual machine (like on VirtualBox).
-
-In addition to the IDE, a tool to read messages from the serial interface is required. Some recommendations are
-- on Ubuntu use `Minicom`;
-- on Widows use `Putty`.
-
-### Test the board
-The manual offers some exaples to begin working with the board. However, the most useful tool available withouth diving too much into the code complexity is probably `snip.config_mode`. This application demonstrates how to use WICED Configuration Mode to automatically configure application parameters and Wi-Fi settings via a softAP and webserver.
-This program comes with the installation of WICED-Studio and can be found in the `W3xxx_Wi-Fi/snip/` folder.
-
-### Useful links
-- [https://community.infineon.com/t5/Public-Archive/WICED-Enterprise-Security-User-Guide/td-p/254388/page/2](https://community.infineon.com/t5/Public-Archive/WICED-Enterprise-Security-User-Guide/td-p/254388/page/2)
-
-### Supported security protocols
-The board supports WPA3 R2, but not WPA3 R3. Thus SAE-PK is, for the moment, not available yet.
-
 ## Raspberry Pi 4
 This folder contains information about the Wi-Fi related tests made with a Raspberry Pi 4 board, equipped with Linux raspberrypi 6.1.0-rpi4-rpi-v8 #1 SMP PREEMPT Debian 1:6.1.54-1+rpt2 (2023-10-05) aarch64 GNU/Linux.
+
 
 ### Wi-Fi test results
 Unfortunately, the Raspberry Pi 4 (and olders) doesn't support WPA3 out-of-the-box.
