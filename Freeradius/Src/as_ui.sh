@@ -35,10 +35,10 @@ CONF_LIST_PATH="Freeradius/Conf/conf_list.txt"
 ### *** AP UI *** ###
 
 as_ui_setup() {
-    # Get configuration file from conf_list
-    log_info "Fetching configuration file associated to $as_conf_string..."
-    as_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$as_conf_string")" &&
-        log_success || { echo "$as_conf_file"; log_error; echo ""; return 1; }
+    # Get configuration dir from conf_list
+    log_info "Fetching configuration directory associated to $as_conf_string..."
+    as_conf_dir="$(get_from_list -f "$CONF_LIST_PATH" -s "$as_conf_string")" &&
+        log_success || { echo "$as_conf_dir"; log_error; echo ""; return 1; }
 }
 
 
@@ -46,11 +46,11 @@ as_ui_setup() {
 ### *** Main *** ###
 
 main() {
-    as_conf_file=""
+    as_conf_dir=""
     as_conf_string=""
     as_verbose_mode=0
     as_debug_mode=0
-    while getopts "c:vd" opt; do
+    while getopts "c:v" opt; do
         case $opt in
             c)
                 as_conf_string="$OPTARG"
@@ -68,10 +68,6 @@ main() {
                 ;;
         esac
     done
-    # Enable debug for the bash script vith the flag -d
-    if [ "$as_debug_mode" -eq 1 ]; then
-        set -x
-    fi
     OPTIND=1
 
     # Check if the input is valid (the user have to insert at least the
@@ -85,15 +81,14 @@ main() {
     # during the execution of the successive commands).
     sudo -v
 
-    # Fetch, check and modify as_conf_file
     echo ""
     as_ui_setup &&
 
     # Run as.sh
     if [ "$as_verbose_mode" -eq 0 ]; then
-        "$AS_PATH" -c "$as_conf_file"
+        "$AS_PATH" -c "$as_conf_dir"
     else
-        "$AS_PATH" -c "$as_conf_file" -v
+        "$AS_PATH" -c "$as_conf_dir" -v
     fi
 }
 
