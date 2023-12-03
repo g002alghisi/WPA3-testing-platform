@@ -37,7 +37,7 @@ client_pem="client.pem"
 client_key="client.key"
 
 
-pem2cypress_cert() {
+c2cc_convert() {
     tmp_file=""
     cert_file=""
 
@@ -79,25 +79,7 @@ pem2cypress_cert() {
     cat "$tmp_file" && return $CODE_OK
 }
 
-
-
-### *** Main *** ###
-
-main() {
-    as_conf_dir=""
-    as_conf_string=""
-    as_cert_dir=""
-
-    # Check input parameter
-    if [ "$#" -ne 1 ]; then
-        echo "Usage: $0 cert_string."
-        exit 1
-    fi
-
-    as_conf_string="$1"
-
-    echo ""
-
+c2cc_setup() {
     # Get configuration file from conf_list
     log_info "Fetching configuration directory associated to $as_conf_string..."
     as_conf_dir="$(get_from_list -f "$CONF_LIST_PATH" -s "$as_conf_string")" &&
@@ -112,8 +94,9 @@ main() {
     # Copy basename of as_cert_dir for the tmp_dir
     tmp_dir="$tmp_dir/$(basename "$as_conf_dir")"
     mkdir -p "$tmp_dir"
+}
 
-
+c2cc_run() {
     echo ""
 
     # Check ca.pem file
@@ -123,7 +106,7 @@ main() {
 
     # Converting ca.pem file
     log_info "Converting $ca_pem..."
-    ca_pem_cypress="$(pem2cypress_cert "$ca_pem")" && log_success || { echo "$ca_pem_cypress"; log_error; return 1; }
+    ca_pem_cypress="$(c2cc_convert "$ca_pem")" && log_success || { echo "$ca_pem_cypress"; log_error; return 1; }
 
     log_title "Certificate: ca.pem"
     echo "$ca_pem_cypress"
@@ -137,7 +120,7 @@ main() {
 
     # Converting client.pem file
     log_info "Converting $client_pem..."
-    client_pem_cypress="$(pem2cypress_cert "$client_pem")" && log_success || { echo "$client_pem_cypress"; log_error; return 1; }
+    client_pem_cypress="$(c2cc_convert "$client_pem")" && log_success || { echo "$client_pem_cypress"; log_error; return 1; }
 
     log_title "Certificate: client.pem"
     echo "$client_pem_cypress"
@@ -151,12 +134,51 @@ main() {
 
     # Converting client.key file
     log_info "Converting $client_key..."
-    client_key_cypress="$(pem2cypress_cert "$client_key")" && log_success || { echo "$client_key_cypress"; log_error; return 1; }
+    client_key_cypress="$(c2cc_convert "$client_key")" && log_success || { echo "$client_key_cypress"; log_error; return 1; }
 
     log_title "Certificate: client.key"
     echo "$client_key_cypress"
 
     echo ""
+}
+
+
+
+### *** Main *** ###
+
+main() {
+    as_conf_dir=""
+    as_conf_string=""
+    as_cert_dir=""
+
+    while getopts "c:" opt; do
+        case $opt in
+            c)
+                as_conf_string="$OPTARG"
+                ;;
+
+            \?)
+                echo "Invalid option: -$OPTARG"
+                exit 1
+                ;;
+            :)
+                echo "Option -$OPTARG requires an argument."
+                exit 1
+                ;;
+        esac
+    done
+    OPTIND=1
+
+    # Check if the input is valid (the user have to insert at least the
+    #   configuration string)
+    if [ "$as_conf_string" == "" ]; then
+        echo "Usage: $0 -c as_conf_string."
+        exit 1
+    fi
+
+    echo ""
+    c2cc_setup &&
+    c2cc_run
 
     return 0
 }
