@@ -52,20 +52,39 @@
 ### Enterprise
 
 #### ESP32
-- [ ] Test with WPA2-Enterprise
+- [x] Test with WPA2-Enterprise (OK)
 - [ ] Test with WPA3-Enterprise
+- [ ] Test with TOD
 
 #### Cypress board
+- [ ] Test with WPA2-Enterprise
+- [ ] Test with WPA3-Enterprise
+- [ ] Test with TOD
 
 #### Raspberry Pi 4
+- [ ] Test with WPA2-Enterprise
+- [ ] Test with WPA3-Enterprise
+- [ ] Test with TOD
 
 #### Wpa-supplicant
+- [x] Test with WPA2-Enterprise (--)
+- [ ] Test with WPA3-Enterprise
+- [ ] Test with TOD
 
 #### POCO F3
+- [x] Test with WPA2-Enterprise (!!)
+- [ ] Test with WPA3-Enterprise
+- [ ] Test with TOD
 
 #### iPad
+- [x] Test with WPA2-Enterprise (OK)
+- [ ] Test with WPA3-Enterprise
+- [ ] Test with TOD
 
 #### Ubuntu (out-of-the-box)
+- [x] Test with WPA2-Enterprise (OK)
+- [ ] Test with WPA3-Enterprise
+- [ ] Test with TOD
 
 
 ## TP-Link Archer T2U
@@ -95,12 +114,14 @@ In addition to the IDE, a tool to read messages from the serial interface is req
 - on Widows use `Putty`.
 
 ### Test the board
-The manual offers some exaples to begin working with the board. However, the most useful tool available withouth diving too much into the code complexity is probably `test.console`.
-This program comes with the installation of WICED-Studio and can be found in the folder `W3xxx_Wi-Fi/apps/`
-> Note that `test.console` is not in `snip.xxx`.
+The manual offers some exaples to begin working with the board. However, the most useful tool available withouth diving too much into the code complexity is probably `snip.config_mode`. This application demonstrates how to use WICED Configuration Mode to automatically configure application parameters and Wi-Fi settings via a softAP and webserver.
+This program comes with the installation of WICED-Studio and can be found in the `W3xxx_Wi-Fi/snip/` folder.
+
+### Useful links
+- [https://community.infineon.com/t5/Public-Archive/WICED-Enterprise-Security-User-Guide/td-p/254388/page/2](https://community.infineon.com/t5/Public-Archive/WICED-Enterprise-Security-User-Guide/td-p/254388/page/2)
 
 ### Supported security protocols
-The board supports WPA3, but support to SAE-PK has not been found.
+The board supports WPA3 R2, but not WPA3 R3. Thus SAE-PK is, for the moment, not available yet.
 
 ## Raspberry Pi 4
 This folder contains information about the Wi-Fi related tests made with a Raspberry Pi 4 board, equipped with Linux raspberrypi 6.1.0-rpi4-rpi-v8 #1 SMP PREEMPT Debian 1:6.1.54-1+rpt2 (2023-10-05) aarch64 GNU/Linux.

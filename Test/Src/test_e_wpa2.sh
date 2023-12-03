@@ -9,7 +9,7 @@ source test_setup.sh
 $terminal_exec_cmd "$AS_UI_PATH -c e:wpa2 -v; sleep 10" 
 
 # Launch the AS in a new window
-$AP_UI_PATH -e enx26184acd5a23 -c e:wpa2
+$AP_UI_PATH -e enxd6f56bb825aa -c e:wpa2
 #$AP_UI_PATH -c e:wpa2
 
 # Try to kill all the terminal windows created, hostapd and freeradius

@@ -5,15 +5,15 @@
 source test_setup.sh
 
 # launch the fake AP with wpa2 (not wpa3)
-$ap_ui_path -c p:wpa2
+$AP_UI_PATH -c p:wpa2 -e enxd6f56bb825aa
 
 
 # Wait 5s
 sleep_with_dots 1
 
 
-# launch the REAL AP with wpa3
-$ap_ui_path -c p:wpa2
+# launch the REAL AP with wpa2-wpa3
+$AP_UI_PATH -c p:wpa2-wpa3 -e enxd6f56bb825aa
 
 
 # Wait 5s
@@ -21,5 +21,5 @@ sleep_with_dots 1
 
 
 # launch the fake AP with wpa2 (not wpa3)
-$ap_ui_path -c p:wpa2
+$AP_UI_PATH -c p:wpa2 -e enxd6f56bb825aa
 
