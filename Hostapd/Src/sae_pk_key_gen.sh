@@ -69,6 +69,9 @@ key_gen_run() {
 }
 
 
+
+### *** Main *** ###
+
 main() {
     # Check the number of parameters.
     if [ $# -ne 2 ]; then
