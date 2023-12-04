@@ -25,7 +25,7 @@ go_home
 source Utils/Src/general_utils.sh
 
 
-# Temporary directory and file paths
+# Temporary directory and file paths. DO NOT TERMINATE WITH "/"
 tmp_dir="Cypress/Tmp"
 
 # Configuration files list
@@ -37,6 +37,7 @@ client_pem="client.pem"
 client_key="client.key"
 
 
+### *** Cert 2 Cypress Cert Convertion *** ###
 c2cc_convert() {
     tmp_file=""
     cert_file=""
@@ -91,9 +92,11 @@ c2cc_setup() {
     log_info "Looking for $as_cert_dir..."
     file_exists -d $as_conf_dir && log_success || { log_error; return 1; }
 
-    # Copy basename of as_cert_dir for the tmp_dir
-    tmp_dir="$tmp_dir/$(basename "$as_conf_dir")"
-    mkdir -p "$tmp_dir"
+    # Create tmp_dir to store temporary files
+    log_info "Creating $tmp_dir/ temporary directory."
+    # Copy basename of as_cert_dir for the tmp_dir. DO NOT TERMINATE WITH "/"
+    tmp_dir="$tmp_dir/$(basename "$as_conf_dir")" && mkdir -p "$tmp_dir" &&
+        log_success || { log_error; return 1; }
 }
 
 c2cc_run() {
