@@ -4,7 +4,8 @@ This folder stores all the code used to test the ESP32 dev board.
 As explained in the [README](../README.md) from the `ESP32/` folder, there are 2 possible ways to program the ESP32 microcontroller:
 - making use of the Arduino Core;
 - by means of ESP32-IDF.
-In general, working with the Arduino Core is quite straightforward; however, this approach is not granular. For example, it is not possible to work with SAE-PK.
+
+In general, working with the Arduino Core is quite straightforward; however, this approach is not so granular. For example, it is not possible to work with SAE-PK.
 On the other hand, leveraging the ESP32-IDF is not so easy, but allows to fully control the microcontroller. 
 
 ## Arduino Core code
@@ -12,16 +13,35 @@ Programs of this kind are programmed with the arduino IDE, where a lot of exampl
 - `wifi_scan`, to scan all the available WiFi networks;
 - `join network`, to connect to an AP and test the Internet connection.
 
-All these examples are also available from GitHub ([https://github.com/espressif/arduino-esp32/tree/master/libraries](https://github.com/espressif/arduino-esp32/tree/master/libraries))
+All these examples are also available on [GitHub](https://github.com/espressif/arduino-esp32/tree/master/libraries).
 
 ## ESP32-IDF
 Also in this case, a lot of use examples for each library come with the ESP32-IDF module when installed.
-In particular, `station` goal is to enable the ESP32 to join a desired network. The code is not as simple to understand as the `join_network` Arduino counterpart, but in this case it is possible to easily select the security protocol, set the ssid and password, and enable SAE-PK by means of the project menuconfig. However, if SAE-PK is used with the original code,
-it is enabled in automatic mode. The ESP32 is thus able to use SAE-PK, but if such a network is not available, it joins networks with bare SAE. This exposes the board to evil-twin attacks.
+In prticular, two programs have been harnessed:
+- `station`, which enables the ESP32 to join a desired network protected with WPA-Personal.
+- `wifi_enterprise`, that carries out a similar function of `station`, but this time with focus on WPA-Enterprise.
 
-To avoid it, the `station` source code has been slightly modified with respect the original one provided by Espressif:
-- Now it is possible to select the SAE-PK mode between `Automatic`, `Disabled` and `Only` (default).
-- A new checkbox is available to activate or deactivate the Transition Disable feature (that seems to be deactivate by default...). This allows to should avoid (after the first connection to the real AP) downgrades attacks. However, a better analysis of this feature implementation in the ESP32-IDF firmware will be provided in the next subsection.
+All these examples are also available on [GitHub](https://github.com/espressif/esp-idf/tree/master/examples).
+
+### `station`
+The code is not as simple to understand as the `join_network` Arduino counterpart, but in this case it is possible to easily select the security protocol, set the ssid and password, and enable SAE-PK by means of the project menuconfig.
+However, if SAE-PK is used with the original code, it is enabled in automatic mode.
+The ESP32 is thus able to use SAE-PK, but if such a network is not available, it joins networks with bare SAE. This exposes the board to evil-twin attacks.
+
+To avoid this problem, the `station` source code has been slightly modified with respect the original one provided by Espressif:
+- Now it is possible to select the SAE-PK mode between `Automatic`, `Disabled` and `Only` (default) directly from the project menuconfig. 
+- A new checkbox is available to activate or deactivate the Transition Disable mechanism (that seems to be deactivate by default).
+	This should prevent (after the first connection to the real AP, thus based on a Trust On First Use policy) downgrades attacks.
+	However, a better analysis of this feature implementation in the ESP32-IDF firmware will be provided in [ESP32-IDF Transition Disable mechanism](#ESP32-IDF Transition Disable mechanism) section.
+
+### `wifi_enterprise`
+This time the program is quite complete out-of-the-box: further changes neither to the main code nor to the project menuconfig are required. The program carefully distinct WPA2 and WPA3 enterprise settings, preventing the user to select "no certificate is required for this network" box.
+
+To use it, the following certificates are required inside the main folder:
+- `ca.pem`, that is the root certificate used by the server to sign its certificate sent at the beginning of the TLS session;
+- `client.pem`, that is the client certificate sent to the server when performing EAP-TLS or when required by the server itself;
+- `client.crt`, same as above, but a different format;
+- `client.key`, which contains the private key of the client associated to `client.pem`.
 
 ### ESP32-IDF Transition Disable mechanism
 The behaviour of the ESP32-IDF firmware regarding the Transition Disable feature has been inspected.
@@ -130,3 +150,4 @@ static void wpa_supplicant_transition_disable(void *_wpa_s, u8 bitmap)
 The difference is quite suspicious... It seems like the EPS32 version does not implement anything more thant the WPA2/WPA3 Transition Disable feature, but not all the others related to SAE/SAE-PK, WPA3-Enterprise and OWE.
 
 #### Waiting for updates from Espressif...
+All the files related to this claim are stored in [`Other/`](../Other/).
