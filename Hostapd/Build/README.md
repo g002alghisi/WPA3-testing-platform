@@ -1,5 +1,5 @@
 # Build folder
-This folder contains built code.
+This folder contains built code used to setup the AP with `as.sh` and `as_ui.sh` stored in the `Src/`.
 
 ## Hostapd
 `hostapd` comes from the build process of the code from the official Ubuntu repository.
