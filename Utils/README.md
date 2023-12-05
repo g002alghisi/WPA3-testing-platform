@@ -1,6 +1,13 @@
 # Utilities
+
+1. [Introduction](#introduction)
+2. [Module list](#module-list)
+3. [Getting file from `conf_list.txt`](#getting-file-from-conf_listtxt)
+
+## Introduction
 This folder contains "utility libraries" written in bash and mainly used by scripts from `Hostapd/`, `Wpa_supplicant/` and `Freeradius/`, but not only.
 
+## Module list
 These modules provides several functions that can be useful in different contexts.
 In particular, `Src/` contains four modules:
 - `general_utils.sh`, for general functions.

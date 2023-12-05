@@ -1,17 +1,32 @@
 # Access Point with `hostapd`
-Setup an Acces Point with bridge on Ubuntu by using `hostapd` and `brutils`.
+
+1. [Introduction](#introduction)
+2. [Basic idea](#basic-idea)
+3. [Workflow](#workflow)
+4. [Few words about the Hostapd version](#few-words-about-the-hostapd-version)
+5. [WPA3 Personal with SAE-PK](#wpa3-personal-with-sae-pk)
+6. [WPA Enterprise](#wpa-enterprise)
+
+
+## Introduction
+Hostapd, an abbreviation for Host Access Point Daemon, is an open-source software implementation for Wi-Fi access points. It allows to turn a compatible wireless network interface card into a full-featured access point, supporting a range of security protocols and authentication methods.
+
+Hostapd is commonly used in various networking scenarios, including creating secure Wi-Fi networks, implementing WPA3 security standards, and facilitating enterprise-level authentication. It supports both WPA (Wi-Fi Protected Access) and WPA2, providing robust security features for wireless communication.
+
+It is recommended to familiarize with the following documentation:
+- [Hostapd Linux Page](https://wireless.wiki.kernel.org/en/users/documentation/hostapd) provides comprehensive information about Hostapd, its features, and configuration options.
+- [Hostapd Configuration Guide](https://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf) details the configuration parameters for Hostapd.
+
+For deeper technical insights and guidance, you may want to explore:
+- [IEEE 802.11 standards](https://www.ieee802.org/11/) cover the technical specifications for wireless LAN (Local Area Network) communication.
+- [The official Hostapd and Wpa Supplicant homepage](https://w1.fi/)
+
 
 ## Basic idea
 The basic idea is to use `hostapd` to transform the PC into an acces point (AP).
 The PC shall be equipped with:
 - an ethernet card, connected to a wired network with a DHCP server;
 - a wireless card, that supports AP mode.
-
-> To verify that the wireless card supports AP mode, inspect the result of
-> ```bash
-> iw list
-> ```
-> and look for `"Supported interface modes"` section. It should be there specified if the AP mode is supported or not.
 
 Both the interfaces are needed: `hostapd` is used to create an AP with the wireless card, and by means of `brctl` (from `bridge-utils` package) the traffic is forwarded to the wired LAN passing through the ethernet card. In this way, it is not necessary to configure the DHCP server on the PC.<br>
 In case the PC lacks the ethernet interface card, it should be possible to install a DHCP server on the computer directly, but this option has not been analyzed.
@@ -22,7 +37,7 @@ To carry out all these operations, two bash scripts have been created:
 - `ap.sh` is a wrapper around `hostapd`, and it is used to create the Access Point with bridge;
 - `ap_ui.sh` acts as a front-end and offers to the user an easier way to setup the AP.
 
-## Work flow
+## Workflow
 In general, APs created with `hostapd` can be configured by editing special `.conf` files, for which some example come with the software download.
 Once edited, the user is free to leverage this configuration file by passing it to `ap.sh`, specifying the desired Ethernet and Wi-Fi cards to be used.<br>
 However, to efficiently work with different settings and seamlessly switch between them, `ap_ui.sh` comes in hand, allowing to directly select the desired `.conf` file by means of a string parameter. Each special string maps (by means of its path) a specific `.conf` file, that should be placed in the `Conf/` directory (or subdirectories). The mapping is encoded in a special file called `conf_list.txt` and located inside `Conf/`.<br>
@@ -35,7 +50,7 @@ In short, this is the work flow to setup the Access Point:
 
 More details can be found in the `Conf/` [README](Conf/README.md) and the `Src/` [README](Src/README.md) files.
 
-## Few words about the Hostapd version...
+## Few words about the Hostapd version
 The specific version of `hostapd` is the 2.10, and it has been directly built from the source code that can be downloaded from the Ubuntu repository.
 This is required because the same version obtained by doing `sudo apt install hostapd` doesn't properly support WPA3 with SAE-PK (instead, bare WPA3). 
 Additional information can be found in the `Build/` [README](Build/README.md) file. 
