@@ -96,6 +96,6 @@ Here's a minimal example:
 
 ### Important
 - The script assumes that all file paths are relative to the main repository directory.
-- The default Wi-Fi interface is set to "wlx5ca6e63fe2da."
+- The default Wi-Fi interface is set to `wlx5ca6e63fe2da`.
 - Ensure that the STA script (`sta.sh`) path is correctly specified.
  
