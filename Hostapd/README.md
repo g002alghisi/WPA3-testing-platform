@@ -1,5 +1,5 @@
 # Access Point with `hostapd`
-Setup an Acces Point with bridge on Ubuntu.
+Setup an Acces Point with bridge on Ubuntu by using `hostapd` and `brutils`.
 
 ## Basic idea
 The basic idea is to use `hostapd` to transform the PC into an acces point (AP).
@@ -24,7 +24,7 @@ To carry out all these operations, two bash scripts have been created:
 
 ## Work flow
 In general, APs created with `hostapd` can be configured by editing special `.conf` files, for which some example come with the software download.
-Once edited, the user is free to leverage this configuration file by passing it to `ap.sh`, specifying the Ethernet and Wi-Fi card.<br>
+Once edited, the user is free to leverage this configuration file by passing it to `ap.sh`, specifying the desired Ethernet and Wi-Fi cards to be used.<br>
 However, to efficiently work with different settings and seamlessly switch between them, `ap_ui.sh` comes in hand, allowing to directly select the desired `.conf` file by means of a string parameter. Each special string maps (by means of its path) a specific `.conf` file, that should be placed in the `Conf/` directory (or subdirectories). The mapping is encoded in a special file called `conf_list.txt` and located inside `Conf/`.<br>
 In addition, it can be annoying to specify at each execution the name of the interfaces. For this reason, `ap_ui.sh` internally defines default interfaces to be used.
 
