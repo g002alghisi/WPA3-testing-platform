@@ -60,4 +60,14 @@ Woriking with Enterprise networks is not as easy as Personal ones. Thus, the fra
 Among other things, it details how to include certificates.
 It is recommended to read it, but to make it short, this operation is carried out by editing the `certificate.h` file located under `43xxx_Wi-Fi > libraries > utilities > command_console > wifi`.
 
-By inspecting the file, it is quickly noticeable how tedious can be to include the certificate inside it. To streamline the process, the `cert2cypress_cert.sh` script comes in hand. Please refer to the [README](Src/README.md) file inside the `Src/` folder for more details.
+By inspecting the file, it is quickly noticeable how tedious can be to include the certificate inside it. To streamline the process, the `cert2cypress_cert.sh` script comes in hand. Please refer to the [README](Src/README.md) file inside the `Src/` folder for more details
+
+
+## Other boards
+- The PSoC™ 6 WiFi-BT Pioneer Kit (CY8CKIT-062-WiFi-BT) is a low-cost hardware platform that enables design and debug of the PSoC™ 62 MCU and the Murata LBEE5KL1DX Module (CYW4343W WiFi + Bluetooth Combo Chip).
+    Visit:
+    - [the home page](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062-wifi-bt/);
+    - [the CYW4343W page](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-wi-fi-plus-bluetooth-combos/wi-fi-4-802.11n/cyw4343w/); here they state that it supports WPA2;
+    - [this pdf](https://www.infineon.com/dgdl/Infineon-CYW4343W_Single-chip_ultra-low_power_IEEE_802.11b_g_nMAC_baseband_radio_with_integrated_Bluetooth_4.2_for_IoT_applications-ProductBrief-v03_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0f6643ff542e) claims that it supports WPA3;
+    - [the Pi Pico W page](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html) says that it uses the same Wi-Fi module, but using the `libwyc43` library; [here](https://github.com/georgerobotics/cyw43-driver/tree/195dfcc10bb6f379e3dea45147590db2203d3c7b/src) the source code is available; inspecting it, WPA3 support has not been found;
+    - reading [here](https://iotexpert.com/category/devkits/cy8ckit-062-wifi-bt/) and [here]() it seems that WPA3 works, but not WPA3-R3; 

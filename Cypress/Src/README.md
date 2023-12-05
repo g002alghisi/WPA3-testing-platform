@@ -36,7 +36,7 @@ OhzkU4YMOFnTqiFeK+Fs9bCPFHOsoLLJBQ9gtkxcJ8kbEaaEjNvKMIHO/hx9pFo=
 -----END CERTIFICATE-----
 ```
 
-Now, let's say you need to upload this certificate to the Cypress board.
+Now, let's that is required to upload this certificate to the Cypress board.
 To do this, the procedure involves editing the `certificate.h` file located under `43xxx_Wi-Fi > libraries > utilities > command_console > wifi`, as follows:
 ```c
 #define WIFI_ROOT_CERTIFICATE_STRING  \
