@@ -1,0 +1,137 @@
+X-Mozilla-Status: 0015
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                 
+MIME-Version: 1.0
+Date: Wed, 29 Nov 2023 08:56:51 +0100
+References: <65b1f2ce-0577-4406-8776-7f01cfaac27d@gmail.com>
+	<BDAB0458-8258-4634-B05D-8509AA21F1CB@espressif.com>
+In-Reply-To: <BDAB0458-8258-4634-B05D-8509AA21F1CB@espressif.com>
+Message-ID: <CAA4BZVGkqzX=ddpgvOOKb0DFa5o3euwK=keZNQEMiAXCwNdbOw@mail.gmail.com>
+Subject: Re: ...
+From: Giovanni Alghisi <g.alghisi002@gmail.com>
+To: bugbounty <bugbounty@espressif.com>
+Content-Type: multipart/alternative; boundary="000000000000c31cef060b45e0b1"
+
+--000000000000c31cef060b45e0b1
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+Thanks for the reply. I thought that the problem I found was related to
+security. Indeed, your company claims that the ESP32 supports SAE-PK, but
+actually it seems very easy to me to downgrade it to SAE, because the
+transition disable doesn't work properly for SAE->SAE-PK (and this is a
+required feature, accordingly the Wi-Fi standard).
+
+Let's suppose to have a public caf=C3=A9 with a WPA3 with SAE-PK AP, for wh=
+ich
+the password is written on a sign. An attacker can easily create an
+evil-twin (with just SAE) and induce the ESP32 to connect it. Indeed, even
+though the ESP32 supports SAE-PK, it is useless if it is set in "automatic
+mode" (the default mode for what I understand). The ESP32 can connect to
+the real AP, but nothing will prevent it to join the rogue network (because
+the transition disable seems not to be working properly, thus nothing is
+preventing ESP32 to be downgraded).
+
+If you think this is not the proper place to talk about this matter, I will
+write a GitHub issue.
+
+Let me know,
+Alghisi Giovanni
+
+Il mer 29 nov 2023, 8:44 AM bugbounty <bugbounty@espressif.com> ha scritto:
+
+> Hi Giovanni Alghisi
+>
+> Thanks for choosing ESP. You can submit the topic on our ESP-IDF issue
+> https://github.com/espressif/esp-idf/issues or participate in discussions
+> on the ESP32 forum https://www.esp32.com/viewforum.php?f=3D13.
+> BBP is a platform used for reporting any unknown security-related bug in
+> our latest ESP-IDF.
+>
+> Best Regards
+> BBP
+>
+>
+> =EF=BB=BFOn 2023/11/28, 22:15, "Giovanni Alghisi" <g.alghisi002@gmail.com=
+ <mailto:
+> g.alghisi002@gmail.com>> wrote:
+>
+>
+> [You don't often get email from g.alghisi002@gmail.com <mailto:
+> g.alghisi002@gmail.com>. Learn why this is important at
+> https://aka.ms/LearnAboutSenderIdentification <
+> https://aka.ms/LearnAboutSenderIdentification> ]
+>
+>
+> [External: This email originated outside Espressif]
+>
+>
+>
+>
+
+--000000000000c31cef060b45e0b1
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Hi,<div dir=3D"auto">Thanks for the reply. I thought that=
+ the problem I found was related to security. Indeed, your company claims t=
+hat the ESP32 supports SAE-PK, but actually it seems very easy to me to dow=
+ngrade it to SAE, because the transition disable doesn&#39;t work properly =
+for SAE-&gt;SAE-PK (and this is a required feature, accordingly the Wi-Fi s=
+tandard).</div><div dir=3D"auto"><br></div><div dir=3D"auto">Let&#39;s supp=
+ose to have a public caf=C3=A9 with a WPA3 with SAE-PK AP, for which the pa=
+ssword is written on a sign. An attacker can easily create an evil-twin (wi=
+th just SAE) and induce the ESP32 to connect it. Indeed, even though the ES=
+P32 supports SAE-PK, it is useless if it is set in &quot;automatic mode&quo=
+t; (the default mode for what I understand). The ESP32 can connect to the r=
+eal AP, but nothing will prevent it to join the rogue network (because the =
+transition disable seems not to be working properly, thus nothing is preven=
+ting ESP32 to be downgraded).</div><div dir=3D"auto"><br></div><div dir=3D"=
+auto">If you think this is not the proper place to talk about this matter, =
+I will write a GitHub issue.</div><div dir=3D"auto"><br></div><div dir=3D"a=
+uto">Let me know,=C2=A0</div><div dir=3D"auto">Alghisi Giovanni=C2=A0</div>=
+</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">=
+Il mer 29 nov 2023, 8:44 AM bugbounty &lt;<a href=3D"mailto:bugbounty@espre=
+ssif.com">bugbounty@espressif.com</a>&gt; ha scritto:<br></div><blockquote =
+class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid=
+;padding-left:1ex">Hi Giovanni Alghisi<br>
+<br>
+Thanks for choosing ESP. You can submit the topic on our ESP-IDF issue <a h=
+ref=3D"https://github.com/espressif/esp-idf/issues" rel=3D"noreferrer noref=
+errer" target=3D"_blank">https://github.com/espressif/esp-idf/issues</a> or=
+ participate in discussions on the ESP32 forum <a href=3D"https://www.esp32=
+.com/viewforum.php?f=3D13" rel=3D"noreferrer noreferrer" target=3D"_blank">=
+https://www.esp32.com/viewforum.php?f=3D13</a>.<br>
+BBP is a platform used for reporting any unknown security-related bug in ou=
+r latest ESP-IDF.<br>
+<br>
+Best Regards<br>
+BBP<br>
+<br>
+<br>
+=EF=BB=BFOn 2023/11/28, 22:15, &quot;Giovanni Alghisi&quot; &lt;<a href=3D"=
+mailto:g.alghisi002@gmail.com" target=3D"_blank" rel=3D"noreferrer">g.alghi=
+si002@gmail.com</a> &lt;mailto:<a href=3D"mailto:g.alghisi002@gmail.com" ta=
+rget=3D"_blank" rel=3D"noreferrer">g.alghisi002@gmail.com</a>&gt;&gt; wrote=
+:<br>
+<br>
+<br>
+[You don&#39;t often get email from <a href=3D"mailto:g.alghisi002@gmail.co=
+m" target=3D"_blank" rel=3D"noreferrer">g.alghisi002@gmail.com</a> &lt;mail=
+to:<a href=3D"mailto:g.alghisi002@gmail.com" target=3D"_blank" rel=3D"noref=
+errer">g.alghisi002@gmail.com</a>&gt;. Learn why this is important at <a hr=
+ef=3D"https://aka.ms/LearnAboutSenderIdentification" rel=3D"noreferrer nore=
+ferrer" target=3D"_blank">https://aka.ms/LearnAboutSenderIdentification</a>=
+ &lt;<a href=3D"https://aka.ms/LearnAboutSenderIdentification" rel=3D"noref=
+errer noreferrer" target=3D"_blank">https://aka.ms/LearnAboutSenderIdentifi=
+cation</a>&gt; ]<br>
+<br>
+<br>
+[External: This email originated outside Espressif]<br>
+<br>
+<br>
+<br>
+</blockquote></div>
+
+--000000000000c31cef060b45e0b1--
