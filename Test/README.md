@@ -71,6 +71,8 @@
 
 ## Results
 
+### Template
+
 - Personal
 
     - [ ] Test WPA3
@@ -113,38 +115,7 @@
     - [ ] Test WPA2 
     - [ ] Test WPA3 UOSC
     - [ ] Test TOD Mechanism
-
-### iPad Air 2022
-
-- Personal
-
-    - [ ] Test WPA3
-    - [ ] Test SAE-PK
-    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
-    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
-
-- Enterprise
-
-    - [ ] Test WPA2 
-    - [ ] Test WPA3 UOSC
-    - [ ] Test TOD Mechanism
-
 ### Ubuntu Desktop 23.10.1
-
-- Personal
-
-    - [ ] Test WPA3
-    - [ ] Test SAE-PK
-    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
-    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
-
-- Enterprise
-
-    - [ ] Test WPA2 
-    - [ ] Test WPA3 UOSC
-    - [ ] Test TOD Mechanism
-
-### iPad Air 2022
 
 - Personal
 
@@ -174,37 +145,7 @@
     - [ ] Test WPA3 UOSC
     - [ ] Test TOD Mechanism
 
-### iPad Air 2022
-
-- Personal
-
-    - [ ] Test WPA3
-    - [ ] Test SAE-PK
-    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
-    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
-
-- Enterprise
-
-    - [ ] Test WPA2 
-    - [ ] Test WPA3 UOSC
-    - [ ] Test TOD Mechanism
-
 ### Cypress Board CYW954907AEVAL1F
-
-- Personal
-
-    - [ ] Test WPA3
-    - [ ] Test SAE-PK
-    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
-    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
-
-- Enterprise
-
-    - [ ] Test WPA2 
-    - [ ] Test WPA3 UOSC
-    - [ ] Test TOD Mechanism
-
-### iPad Air 2022
 
 - Personal
 
@@ -234,37 +175,7 @@
     - [ ] Test WPA3 UOSC
     - [ ] Test TOD Mechanism
 
-### iPad Air 2022
-
-- Personal
-
-    - [ ] Test WPA3
-    - [ ] Test SAE-PK
-    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
-    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
-
-- Enterprise
-
-    - [ ] Test WPA2 
-    - [ ] Test WPA3 UOSC
-    - [ ] Test TOD Mechanism
-
 ### Raspverry Pi 4 [addi informations about version]
-
-- Personal
-
-    - [ ] Test WPA3
-    - [ ] Test SAE-PK
-    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
-    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
-
-- Enterprise
-
-    - [ ] Test WPA2 
-    - [ ] Test WPA3 UOSC
-    - [ ] Test TOD Mechanism
-
-### iPad Air 2022
 
 - Personal
 
