@@ -23,7 +23,7 @@
 - Test WPA3. Create a WPA3 network and check if devices are able to connect.
     Allows both PWE methods (Hunting-and-Pecking and Hash-to-curve).
 
-- Test SAE-PK. Create a WPA3 network with SAE-PK and verify which devices are already support it.
+- Test SAE-PK. Create a WPA3 network with SAE-PK and verify which devices are already support it. Threaten it to join a rogue WPA3 network.
 
 - Test WPA2/3 and transition disable WPA3 -> WPA2.
 
@@ -35,13 +35,19 @@
 - Test SAE-PK and Transition disable SAE-PK -> SAE.
 
     1. Set up the real AP with WPA3, SAE-PK and Transition Disable SAE-PK -> SAE enabled.
-    2. The device joins the network.
-    3. The real AP is setdown and a rogue AP with just SAE (not SAE-PK) is created.
-    4. Check if the device connets to the rogue network.
+    2. Select `Automatic Mode` for SAE-PK on the supplicant device.
+    3. The device joins the network.
+    4. The real AP is setdown and a rogue AP with just SAE (not SAE-PK) is created.
+    5. Check if the device connets to the rogue network.
+
+- [ ] Test WPA3
+- [ ] Test SAE-PK
+- [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+- [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
 
 ### Enterprise
 
-- Test WPA2-Enterprise.
+- Test WPA2-Enterprise. Verify if the device distrusts fake server certificates.
 
     1. Always prepare the client Network Profile and install the root certificate (`ca.pem`). 
     2. Set up the real AP and AS.
@@ -49,7 +55,7 @@
     4. The real AP is setdown and a rogue AP (and a rogue AS) with WPA2 is created.
     5. Check if the device connets to the rogue network.
 
-- Test WPA3-Enterprise UOSD. Set up a WPA3-Enterprise protected AP, thus that announces PMF as required.
+- Test WPA3-Enterprise UOSC. Set up a WPA3-Enterprise protected AP, thus that announces PMF as required.
 
     1. Do not edit the client Network Profile and do not install the root certificate (`ca.pem`). 
     2. Set up the AP and AS.
@@ -63,7 +69,213 @@
     4. The real AP is setdown and a rogue AP (and AS) with WPA3 is created.
     5. Check if the device connets to the rogue network. If not, verify that the supplicant has inhibited UOSC. The system shall not enquire to trust the new certificate from the rogue AP.
 
+## Results
 
+- Personal
 
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
 
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### iPad Air 2022
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### POCO F3
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### iPad Air 2022
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### Ubuntu Desktop 23.10.1
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### iPad Air 2022
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### Windows 11 [add version]
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### iPad Air 2022
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### Cypress Board CYW954907AEVAL1F
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### iPad Air 2022
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+###  Keystudio ESP32 Core Board, with ESP32-WROOM-32 and Espressif IDF v5.1.1.
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### iPad Air 2022
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### Raspverry Pi 4 [addi informations about version]
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
+
+### iPad Air 2022
+
+- Personal
+
+    - [ ] Test WPA3
+    - [ ] Test SAE-PK
+    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
+    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2 
+    - [ ] Test WPA3 UOSC
+    - [ ] Test TOD Mechanism
 
