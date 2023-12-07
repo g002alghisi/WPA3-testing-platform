@@ -13,7 +13,7 @@ source test_setup.sh
 
 
 #but  Launch the REAL AP with SAE-PK
-$AP_UI_PATH -c p:wpa3-pk
+$AP_UI_PATH -c p:wpa3-pk -e enx9677d3c1defb
 
 
 # Wait 5s
@@ -21,6 +21,6 @@ sleep_with_dots 1
 
 
 # Launch the FAKE AP without SAE-PK
-$AP_UI_PATH -c p:fake-wpa3-pk
+$AP_UI_PATH -c p:fake-wpa3-pk -e enx9677d3c1defb
 
 
