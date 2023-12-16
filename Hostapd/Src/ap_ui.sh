@@ -80,6 +80,9 @@ main() {
             v)
                 ap_verbose_mode=1
                 ;;
+            c)
+                ap_conf_string="$OPTARG"
+                ;;
             \?)
                 echo "Invalid option: -$OPTARG"
                 exit 1
@@ -106,6 +109,36 @@ main() {
     # Fetch, check and modify ap_conf_file
     echo ""
     ap_ui_setup &&
+
+    if [ "$ap_conf_string" == "" ]; then
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-d] -c ap_conf_string"
+        exit 1
+    fi
+
+    case $ap_conf_string in
+        "p:wpa2")
+            ap_conf_file="$CONF_P_WPA2"
+            ;;
+        "p:wpa3")
+            ap_conf_file="$CONF_P_WPA3"
+            ;;
+        "p:wpa2-wpa3")
+            ap_conf_file="$CONF_P_WPA2_WPA3"
+            ;;
+        "p:wpa3-pk")
+            ap_conf_file="$CONF_P_WPA3_PK"
+            ;;
+        "p:fake-wpa3-pk")
+            ap_conf_file="$CONF_P_FAKE_WPA3_PK"
+            ;;
+        *)
+            echo -e "Invalid ap_conf_string."
+            exit 1
+            ;;
+    esac
+
+    sed -i "s/^interface=.*/interface=$wifi_if/" "$ap_conf_file"
+    sed -i "s/^bridge=.*/bridge=$br_if/" "$ap_conf_file"
 
     # Run ap.sh
     if [ "$ap_verbose_mode" -eq 0 ]; then

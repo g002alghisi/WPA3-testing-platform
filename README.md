@@ -92,7 +92,7 @@ This is a very poor and dangerous implementation of the supplicant program.
 
 - [x] Test with WPA3 (OK)
 - [x] Test with SAE-PK (!!)
-- [x] Test with WPA2/3 and transition disable (OK)
+- [x] Test with WPA2/3 and transition disable (~~)
 - [x] Test with SAE-PK and transition disable (--)
 
 The device behaves better than POCO F3 phone with respect transition disable. The upcoming test has been conducted:
@@ -184,9 +184,11 @@ The Morrowr's driver comes in hand; please visit the GitHub repo at [https://git
     - [This PDF](https://www.infineon.com/dgdl/Infineon-CYW43439-DataSheet-v05_00-EN.pdf?fileId=8ac78c8c8929aa4d01893ee30e391f7a), again, says that it support WPA3, but do not specify WPA3 R3.
     - 
 
-
 - The PSoC 6 WiFi-BT Pioneer Kit (CY8CKIT-062-WiFi-BT) is a low-cost hardware platform that enables design and debug of the PSoC™ 62 MCU and the Murata LBEE5KL1DX Module (CYW4343W WiFi + Bluetooth Combo Chip).
     Visit:
+
+## Raspberry Pi 4
+This folder contains information about the Wi-Fi related tests made with a Raspberry Pi 4 board, equipped with Linux raspberrypi 6.1.0-rpi4-rpi-v8 #1 SMP PREEMPT Debian 1:6.1.54-1+rpt2 (2023-10-05) aarch64 GNU/Linux.
 
     - [the home page](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062-wifi-bt/);
     - [the CYW4343W page](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-wi-fi-plus-bluetooth-combos/wi-fi-4-802.11n/cyw4343w/); here they state that it supports WPA2;
