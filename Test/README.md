@@ -21,7 +21,7 @@
 
 - [Test WPA3-Personal](Src/test_p_wpa3.sh). Create a WPA3 network and check if devices are able to connect. Allow both PWE methods (Hunting-and-Pecking and Hash-to-curve).
 
-- [Test WPA3 SAE-PK](Src/test_p_wpa3_pk.sh). Create a WPA3 network with SAE-PK and verify which devices are already support it. Threaten it to join a rogue WPA3 network.
+- [Test WPA3-Personal SAE-PK](Src/test_p_wpa3_pk.sh). Create a WPA3 network with SAE-PK and verify which devices are already support it. Threaten it to join a rogue WPA3 network.
 
 - [Test WPA2/3-Personal and transition disable WPA3 -> WPA2](Src/test_p_wpa2_wpa3.sh).
 
@@ -30,7 +30,7 @@
     3. The real AP is setdown and a rogue AP with just WPA2 is created.
     4. Check if the device connets to the rogue network.
 
-- [Test WPA3 SAE-PK and Transition disable SAE-PK -> SAE](Src/test_p_wpa3_pk.sh).
+- [Test WPA3-Personal SAE-PK and Transition disable SAE-PK -> SAE](Src/test_p_wpa3_pk.sh).
 
     1. Set up the real AP with WPA3, SAE-PK and Transition Disable SAE-PK -> SAE enabled.
     2. Select `Automatic Mode` for SAE-PK on the supplicant device.
@@ -76,67 +76,7 @@
 - Enterprise
 
     - [ ] Test WPA2-Enterprise
-    - [ ] Test WPA3Enterprise UOSC
-    - [ ] Test WPA3-Enterprise TOD Mechanism
-
-### iPad Air 2022
-
-- Personal
-
-    - [ ] Test WPA3-Personal
-    - [ ] Test WPA3-Personal SAE-PK
-    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
-
-- Enterprise
-
-    - [ ] Test WPA2-Enterprise
-    - [ ] Test WPA3Enterprise UOSC
-    - [ ] Test WPA3-Enterprise TOD Mechanism
-
-### POCO F3
-
-- Personal
-
-    - [ ] Test WPA3-Personal
-    - [ ] Test WPA3-Personal SAE-PK
-    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
-
-- Enterprise
-
-    - [ ] Test WPA2-Enterprise
-    - [ ] Test WPA3Enterprise UOSC
-    - [ ] Test WPA3-Enterprise TOD Mechanism
-
-### Ubuntu Desktop 23.10.1
-
-- Personal
-
-    - [ ] Test WPA3-Personal
-    - [ ] Test WPA3-Personal SAE-PK
-    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
-
-- Enterprise
-
-    - [ ] Test WPA2-Enterprise
-    - [ ] Test WPA3Enterprise UOSC
-    - [ ] Test WPA3-Enterprise TOD Mechanism
-
-### Windows 11 [add version]
-
-- Personal
-
-    - [ ] Test WPA3-Personal
-    - [ ] Test WPA3-Personal SAE-PK
-    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
-
-- Enterprise
-
-    - [ ] Test WPA2-Enterprise
-    - [ ] Test WPA3Enterprise UOSC
+    - [ ] Test WPA3-Enterprise UOSC
     - [ ] Test WPA3-Enterprise TOD Mechanism
 
 ### Cypress Board CYW954907AEVAL1F
@@ -151,37 +91,97 @@
 - Enterprise
 
     - [ ] Test WPA2-Enterprise
-    - [ ] Test WPA3Enterprise UOSC
+    - [ ] Test WPA3-Enterprise UOSC
     - [ ] Test WPA3-Enterprise TOD Mechanism
 
-###  Keystudio ESP32 Core Board, with ESP32-WROOM-32 and Espressif IDF v5.1.1.
+### Keystudio ESP32 Core Board
 
 - Personal
 
-    - [ ] Test WPA3
-    - [ ] Test SAE-PK
-    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
-    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+    - [ ] Test WPA3-Personal
+    - [ ] Test WPA3-Personal SAE-PK
+    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
+    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
 
 - Enterprise
 
-    - [ ] Test WPA2 
-    - [ ] Test WPA3 UOSC
-    - [ ] Test TOD Mechanism
+    - [ ] Test WPA2-Enterprise
+    - [ ] Test WPA3-Enterprise UOSC
+    - [ ] Test WPA3-Enterprise TOD Mechanism
 
-### Raspverry Pi 4 [addi informations about version]
+### Raspberry Pi 4
 
 - Personal
 
-    - [ ] Test WPA3
-    - [ ] Test SAE-PK
-    - [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
-    - [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
+    - [ ] Test WPA3-Personal
+    - [ ] Test WPA3-Personal SAE-PK
+    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
+    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
 
 - Enterprise
 
-    - [ ] Test WPA2 
-    - [ ] Test WPA3 UOSC
-    - [ ] Test TOD Mechanism
+    - [ ] Test WPA2-Enterprise
+    - [ ] Test WPA3-Enterprise UOSC
+    - [ ] Test WPA3-Enterprise TOD Mechanism
+
+### iPad Air 2022, iPadOS 17.1.2
+
+- Personal
+
+    - [ ] Test WPA3-Personal
+    - [ ] Test WPA3-Personal SAE-PK
+    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
+    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2-Enterprise
+    - [ ] Test WPA3-Enterprise UOSC
+    - [ ] Test WPA3-Enterprise TOD Mechanism
+
+### POCO F3
+
+- Personal
+
+    - [ ] Test WPA3-Personal
+    - [ ] Test WPA3-Personal SAE-PK
+    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
+    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2-Enterprise
+    - [ ] Test WPA3-Enterprise UOSC
+    - [ ] Test WPA3-Enterprise TOD Mechanism
+
+###  Ubuntu Desktop 23.10.1
+
+- Personal
+
+    - [ ] Test WPA3-Personal
+    - [ ] Test WPA3-Personal SAE-PK
+    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
+    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2-Enterprise
+    - [ ] Test WPA3-Enterprise UOSC
+    - [ ] Test WPA3-Enterprise TOD Mechanism
+
+### Windows 11
+
+- Personal
+
+    - [ ] Test WPA3-Personal
+    - [ ] Test WPA3-Personal SAE-PK
+    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
+    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+
+- Enterprise
+
+    - [ ] Test WPA2-Enterprise
+    - [ ] Test WPA3-Enterprise UOSC
+    - [ ] Test WPA3-Enterprise TOD Mechanism
 
 
