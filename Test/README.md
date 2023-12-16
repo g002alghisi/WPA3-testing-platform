@@ -19,48 +19,48 @@
 
 ### Personal
 
-- [Test WPA3-Personal](Src/test_p_wpa3.sh). Create a WPA3 network and check if devices are able to connect. Allow both PWE methods (Hunting-and-Pecking and Hash-to-curve).
+- Test WPA3-Personal by means of [`test_p_wpa3.sh`](Src/test_p_wpa3.sh). Create a WPA3 network and check if devices are able to connect. Allow both PWE methods (Hunting-and-Pecking and Hash-to-curve).
 
-- [Test WPA3-Personal SAE-PK](Src/test_p_wpa3_pk.sh). Create a WPA3 network with SAE-PK and verify which devices are already support it. Threaten it to join a rogue WPA3 network.
+- Test WPA3-Personal SAE-PK by means of [`test_p_wpa3_pk_rogue.sh`](Src/test_p_wpa3_pk_rogue.sh). Create a WPA3 network with SAE-PK and verify which devices are already support it. Threaten it to join a rogue WPA3 network.
 
-- [Test WPA2/3-Personal and transition disable WPA3 -> WPA2](Src/test_p_wpa2_wpa3.sh).
+- Test WPA2/3-Personal and transition disable WPA3 -> WPA2 by means of [`test_p_wpa2_wpa3.sh`](Src/test_p_wpa2_wpa3.sh).
 
     1. Set up the real AP with WPA2/3 and Transition Disable WPA3 -> WPA2 enabled.
     2. The device joins the network.
     3. The real AP is setdown and a rogue AP with just WPA2 is created.
-    4. Check if the device connets to the rogue network.
+    4. Check if the device connects to the rogue network.
 
-- [Test WPA3-Personal SAE-PK and Transition disable SAE-PK -> SAE](Src/test_p_wpa3_pk.sh).
+- Test WPA3-Personal SAE-PK and Transition disable SAE-PK -> SAE by means of [`test_p_wpa3_pk_downgrade.sh`](Src/test_p_wpa3_pk_downgrade.sh).
 
     1. Set up the real AP with WPA3, SAE-PK and Transition Disable SAE-PK -> SAE enabled.
     2. Select `Automatic Mode` for SAE-PK on the supplicant device.
     3. The device joins the network.
     4. The real AP is setdown and a rogue AP with just SAE (not SAE-PK) is created.
-    5. Check if the device connets to the rogue network.
+    5. Check if the device connects to the rogue network.
 
 ### Enterprise
 
-- [Test WPA2-Enterprise](Src/test_e_wpa2.sh). Verify if the device distrusts fake server certificates.
+- Test WPA2-Enterprise by means of [`test_p_wpa3_pk_rogue.sh`](Src/test_e_wpa2.sh). Verify if the device distrusts fake server certificates.
 
-    1. Always prepare the client Network Profile and install the root certificate (`ca.pem`). 
+    1. Always prepare the client Network Profile and install the root certificate (`ca.pem`).
     2. Set up the real AP and AS.
     3. The device joins the network.
     4. The real AP is setdown and a rogue AP (and a rogue AS) with WPA2 is created.
-    5. Check if the device connets to the rogue network.
+    5. Check if the device connects to the rogue network.
 
-- [Test WPA3-Enterprise UOSC](Src/test_e_wpa3.sh). Set up a WPA3-Enterprise protected AP, thus that announces PMF as required.
+- Test WPA3-Enterprise UOSC by means of [`test_p_wpa3_pk_rogue.sh`](Src/test_e_wpa3.sh). Set up a WPA3-Enterprise protected AP, thus that announces PMF as required.
 
-    1. Do not edit the client Network Profile and do not install the root certificate (`ca.pem`). 
+    1. Do not edit the client Network Profile and do not install the root certificate (`ca.pem`).
     2. Set up the AP and AS.
     3. Check it the device automatically joins the network. If not, control if prompts any pop-up message asking the user to trust the server certificate.
 
-- [Test WPA3-Enterprise TOD](Src/test_e_wpa3.sh). In this case, the examination is geared towards the Trust Override Disable Policies of the supplicant. In particular, TOD-TOFU policy is enforced by means of the server certificate (`server.pem`).
+- Test WPA3-Enterprise TOD by means of [`test_p_wpa3_pk_rogue.sh`](Src/test_e_wpa3.sh). In this case, the examination is geared towards the Trust Override Disable Policies of the supplicant. In particular, TOD-TOFU policy is enforced by means of the server certificate (`server.pem`).
     
-    1. Do not edit the client Network Profile and do not install the root certificate (`ca.pem`). 
-    2. Set up the real AP. The AS 
+    1. Do not edit the client Network Profile and do not install the root certificate (`ca.pem`).
+    2. Set up the real AP and AS.
     3. The device joins the network.
     4. The real AP is setdown and a rogue AP (and AS) with WPA3 is created.
-    5. Check if the device connets to the rogue network. If not, verify that the supplicant has inhibited UOSC. The system shall not enquire to trust the new certificate from the rogue AP.
+    5. Check if the device connects to the rogue network. If not, verify that the supplicant has inhibited UOSC. The system shall not enquire to trust the new certificate from the rogue AP.
 
 ## Results
 

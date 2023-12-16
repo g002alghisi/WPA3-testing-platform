@@ -4,23 +4,25 @@
 # Surce test_setup.sh to prepare the environment
 source test_setup.sh
 
-# Launch the FAKE AP without SAE-PK
-#$AP_UI_PATH -c p:fake-wpa3-pk
+TEST_ETH_IF_STRING="-e ..."
 
 
-# Wait 5s
+# Launch the ROGUE AP with SAE-PK and wrokg modifier/pP keys
+#$AP_UI_PATH -c p:rogue-wpa3-pk $TEST_ETH_IF_STRING
+
+
+# Wait 1s
 #sleep_with_dots 1
 
 
 #but  Launch the REAL AP with SAE-PK
-$AP_UI_PATH -c p:wpa3-pk -e enx9677d3c1defb
+$AP_UI_PATH -c p:wpa3-pk $TEST_ETH_IF_STRING
 
 
-# Wait 5s
+# Wait 1s
 sleep_with_dots 1
 
 
-# Launch the FAKE AP without SAE-PK
-$AP_UI_PATH -c p:fake-wpa3-pk -e enx9677d3c1defb
-
+# Launch the ROGUE AP with SAE-PK and wrokg modifier/pP keys
+$AP_UI_PATH -c p:rogue-wpa3-pk $TEST_ETH_IF_STRING
 

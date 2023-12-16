@@ -4,7 +4,9 @@
 # Surce test_setup.sh to prepare the environment
 source test_setup.sh
 
+TEST_ETH_IF_STRING="-e ..."
+
 
 # Launch the AP
-$AP_UI_PATH -c p:wpa2 -e enxce2678e9d10e
+$AP_UI_PATH -c p:wpa2 $TEST_ETH_IF_STRING
 

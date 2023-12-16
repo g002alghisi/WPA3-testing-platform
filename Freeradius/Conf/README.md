@@ -17,7 +17,9 @@ Please notice that, as specified in the original FreeRADIUS guide, these files s
 Several sub-folders store the configuration directories with the goal to be more organised:
 
 - `E_wpa2/` contains configuration files used to set up the Authentication Server (AS) for a WPA-Enterprise Wi-Fi network.
-- `E_fake_wpa2/` contains a copy of `E_wpa2` used to set up the fake AS for a WPA-Enterprise Wi-Fi evil twin network of `E-wpa2`.
+- `E_rogue_wpa2/` contains a copy of `E_wpa2` used to set up the fake AS for a WPA-Enterprise Wi-Fi evil twin network of `E_wpa2`.
+- `E_wpa3/` contains configuration files used to set up the Authentication Server (AS) for a WPA-Enterprise Wi-Fi network.
+- `E_rogue_wpa3/` contains a copy of `E_wpa3` used to set up the fake AS for a WPA-Enterprise Wi-Fi evil twin network of `E_wpa3`.
 - `Skeleton/` contains the copy of the original files that come with the installation of `freeradius`.
 
 ## Switching between different configurations
