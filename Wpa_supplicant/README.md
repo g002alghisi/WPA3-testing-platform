@@ -26,7 +26,7 @@ For a deeper understanding and technical insights, explore:
 The basic idea is to use `wpa_supplicant` to turn the PC into a Supplicant Station.
 The PC shall be equipped with a wireless card.
 
-Similarly to `hostapd`, using `hostapd` is not straight-forward. Indeed, it is important to check the state of the physical interface and to stop all the servicies that can interfere with the process (like `NetworkManager`).
+Similarly to `hostapd`, using `hostapd` is not straight-forward. Indeed, it is important to check the state of the physical interface and to stop all the services that can interfere with the process (like `NetworkManager`).
 moreover, the process needs to be reversed once finished, as to reset the original state of the system.
 To carry out all these operations, two bash scripts have been created:
 
@@ -46,7 +46,7 @@ In short, this is the work flow to setup the Station:
 2. Edit the `conf_list.txt` file to create a new mapping string that points to your `.conf` file.
 3. Run `sta_ui.sh` by passing it your mapping string (and the name of the interfaces to be used, if different from the ones specified inside the code).
 
-Supplicant Stations setup with `sta.sh` are mainly used to join wireless networks created with the counterpart `ap.sh`, from the `Hostapd/` folder. For these reason, the `.conf` files stored in the `Conf/` folder are themselves the counterparts of the `hostapd` configuration files from the `Hostapd/Conf/` folder. However, to achive greater flexibility, `ap_ui.sh` allows to interact with `wpa_supplicant` by means of:
+Supplicant Stations setup with `sta.sh` are mainly used to join wireless networks created with the counterpart `ap.sh`, from the `Hostapd/` folder. For these reason, the `.conf` files stored in the `Conf/` folder are themselves the counterparts of the `hostapd` configuration files from the `Hostapd/Conf/` folder. However, to achieve greater flexibility, `ap_ui.sh` allows to interact with `wpa_supplicant` by means of:
 
 - `wpa_cli`, a program that comes with the installation of `wpa_supplicant`, which enables control in CLI mode;
 - `wpa_gui`, an additional tool that needs to be manually installed via `apt`, that offers to the user a graphical and intuitive way to interact with `wpa_supplicant` by means of a popup window.

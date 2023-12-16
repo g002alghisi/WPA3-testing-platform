@@ -8,7 +8,7 @@
 
 - Cypress Board CYW954907AEVAL1F, Wi-Fi module based on CYW54907 device.
 - Keystudio ESP32 Core Board, with ESP32-WROOM-32 and Espressif IDF v5.1.1.
-- Raspberry Pi 4, [add informations about version].
+- Raspberry Pi 4, [add information about version].
 - iPad Air 2022, iPadOS 17.1.2.
 - POCO F3, Android 13 TKQ1.220829.002, MIUI Global 14.0.9.
 - Ubuntu Desktop 23.10.1, running on a Virtual Machine (VirtualBOX) and set up USB passthrough for the TP-Link Archer T2U v3 Wi-Fi dongle.
@@ -55,7 +55,7 @@
     3. Check it the device automatically joins the network. If not, control if prompts any pop-up message asking the user to trust the server certificate.
 
 - Test WPA3-Enterprise TOD by means of [`test_p_wpa3_pk_rogue.sh`](Src/test_e_wpa3.sh). In this case, the examination is geared towards the Trust Override Disable Policies of the supplicant. In particular, TOD-TOFU policy is enforced by means of the server certificate (`server.pem`).
-    
+
     1. Do not edit the client Network Profile and do not install the root certificate (`ca.pem`).
     2. Set up the real AP and AS.
     3. The device joins the network.
@@ -71,13 +71,13 @@
     - [ ] Test WPA3-Personal
     - [ ] Test WPA3-Personal SAE-PK
     - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+    - [ ] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE
 
 - Enterprise
 
-    - [ ] Test WPA2-Enterprise
-    - [ ] Test WPA3-Enterprise UOSC
-    - [ ] Test WPA3-Enterprise TOD Mechanism
+  - [ ] Test WPA2-Enterprise
+  - [ ] Test WPA3-Enterprise UOSC
+  - [ ] Test WPA3-Enterprise TOD Mechanism
 
 ### Cypress Board CYW954907AEVAL1F
 
@@ -86,7 +86,7 @@
     - [ ] Test WPA3-Personal
     - [ ] Test WPA3-Personal SAE-PK
     - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+    - [ ] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE
 
 - Enterprise
 
@@ -101,7 +101,7 @@
     - [ ] Test WPA3-Personal
     - [ ] Test WPA3-Personal SAE-PK
     - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+    - [ ] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE
 
 - Enterprise
 
@@ -116,7 +116,7 @@
     - [ ] Test WPA3-Personal
     - [ ] Test WPA3-Personal SAE-PK
     - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+    - [ ] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE
 
 - Enterprise
 
@@ -131,7 +131,7 @@
     - [ ] Test WPA3-Personal
     - [ ] Test WPA3-Personal SAE-PK
     - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+    - [ ] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE
 
 - Enterprise
 
@@ -146,7 +146,7 @@
     - [ ] Test WPA3-Personal
     - [ ] Test WPA3-Personal SAE-PK
     - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+    - [ ] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE
 
 - Enterprise
 
@@ -154,14 +154,14 @@
     - [ ] Test WPA3-Enterprise UOSC
     - [ ] Test WPA3-Enterprise TOD Mechanism
 
-###  Ubuntu Desktop 23.10.1
+### Ubuntu Desktop 23.10.1
 
 - Personal
 
     - [ ] Test WPA3-Personal
     - [ ] Test WPA3-Personal SAE-PK
     - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+    - [ ] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE
 
 - Enterprise
 
@@ -176,12 +176,10 @@
     - [ ] Test WPA3-Personal
     - [ ] Test WPA3-Personal SAE-PK
     - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Trandisition Disable SAE-PK -> SAE
+    - [ ] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE
 
 - Enterprise
 
     - [ ] Test WPA2-Enterprise
     - [ ] Test WPA3-Enterprise UOSC
     - [ ] Test WPA3-Enterprise TOD Mechanism
-
-

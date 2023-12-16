@@ -1,12 +1,12 @@
-# ESP32
+# Keyestudio KS0413 ESP32 Core Board
 
-1. [Indroduction](#introduction)
+1. [Introduction](#introduction)
 2. [Working with the ESP32 board](#working-with-the-esp32-board)
 3. [Testing the board](#testing-the-board)
 
 ## Introduction
 
-ESP32 is a series of low-cost, low-power system on a chip microcontrollers with integrated Wi-Fi and dual-mode Bluetooth.
+The Keystudio ESP32 Core Board is a compact development board featuring the ESP-WROOM-32 module, a leading integrated WiFi and Bluetooth solution. With accessible I/O ports on 2.54mm pitch pin headers and standard headers on both sides, it simplifies prototyping and debugging. The ESP-WROOM-32 module integrates key components, including an antenna switch, RF balun, power amplifiers, and more, using TSMC's low-power 40nm technology for reliable performance. This board is ideal for streamlined development in IoT and other applications.
 
 ## Working with the ESP32 board
 
@@ -14,7 +14,7 @@ The ESP32 offers two primary avenues for development: the ESP32 Arduino Core and
 
 ### ESP32 Arduino Core
 
-Let's start with the [ESP32 Arduino Core](https://docs.espressif.com/projects/arduino-esp32/en/latest/index.html). It's like the "Arduino way" of working with the ESP32. Think of it as a familiar environment for Arduino enthusiasts.
+Let's start with the [ESP32 Arduino Core](https://docs.espreKS0413ssif.com/projects/arduino-esp32/en/latest/index.html). It's like the "Arduino way" of working with the ESP32. Think of it as a familiar environment for Arduino enthusiasts.
 This option allows to use the Arduino IDE, write code in a simplified version of C++, and tap into a vast array of libraries that make handling tasks like
 connecting to sensors or displays a breeze. This setup is great for those who already love working with Arduino and want an easier transition to ESP32 development.
 
@@ -28,7 +28,7 @@ Follow the 'Getting Started' procedure at [this page](https://docs.espressif.com
 >
 > it is not recommended to do so, as asking for support when using outdated software is more difficult and there could be problems installing the ESP32 module.
 
-> When you purchease an ESP32 board, usually you get the instruction manual, which shows the instruction procedure specific for that board. However, it is usually better
+> When you purchase an ESP32 board, usually you get the instruction manual, which shows the instruction procedure specific for that board. However, it is usually better
 > to follow the above web page because it avoids to install software manually by relying on the Arduino IDE extension manager.
 
 ### ESP32-IDF

@@ -1,9 +1,14 @@
-# Cypress Board CYW954907AEVAL1F
+# Cypress CYW954907AEVAL1F Board
+
+1. [Introduction](#introduction)
+2. [Working with the Cypress board](#working-with-the-cypress-board)
+3. [Testing the board](#testing-the-board)
+
+## Introduction
 
 The Cypress CYW954907AEVAL1F Evaluation Kit serves as a platform for assessing and developing single-chip Wi-Fi applications using the CYW54907 device.
 This kit is centered around a module that harnesses the capabilities of the CYW54907, a single-chip 802.11ac dual-band Wi-Fi System-on-Chip (SoC) supporting both 2.4 GHz and 5 GHz frequencies.
 For more information, visit [Infineon's product page](https://www.infineon.com/cms/en/product/evaluation-boards/cyw954907aeval1f/).
-
 
 ## Working with the Cypress board
 
@@ -20,8 +25,6 @@ A practical starting guide is available [here](https://www.infineon.com/dgdl/Inf
 - Instructions on how to install the SDK and set everything up.
 - A step-by-step tutorial to build, download, and run programs on the board.
 - Example programs for initial testing.
-
-## Documentation
 
 In addition to the getting started guide, you can find support by searching online. However, the most accurate and comprehensive documentation is available directly inside the IDE. In the project tree, under `43xxx_Wi-Fi > doc`, several PDF files can be found, each focusing on a specific aspect of the platform. For convenience, some of them have been copied inside the [`Doc/`](Doc/) folder.
 
@@ -74,7 +77,7 @@ It is recommended to read it, but to make it short, this operation is carried ou
 
 By inspecting the file, it is quickly noticeable how tedious can be to include the certificate inside it. To streamline the process, the `cert2cypress_cert.sh` script comes in hand.
 
-### Getting cypress certificates
+### Getting Cypress certificates
 
 The script `cert2cypress_cert.sh` assists users in integrating certificates into the source code of the Cypress board.
 To understand the problem being addressed, consider the following example.
@@ -140,7 +143,7 @@ To do this, the procedure involves editing the `certificate.h` file located unde
 "AQH/BAUwAwEB/zAvBgNVHR8EKDAmMCSgIqAghh5odHRwOi8vd3d3LnN0cmF3aGF0\r\n"\
 "LmNvbS9jYS5jcmwwDQYJKoZIhvcNAQELBQADggEBAIoXxrIkPjPTKB2BRYz2GEdc\r\n"\
 "vb2/sVcN84uDTpChobOWp1fD8oS3IOg6P2dMjlS7/tHTtgUDfSViCdBHH+L8tpyi\r\n"\
-"+TQYEoGx1h8EtPxJXNPfL5zeEOrJK6ThRFhqO5RD9P2589o9iOccFHWD+sIlqT11\r\n"\
+"+TQYEoGx1h8EtPxJXNPfL5zeEOrJK6ThRFhqO5RD9P2589o9iOccFHWD+sIlqT11\r\n"\c
 "8H+kAHmhIzJERJEcU1dzHZkd3hHUcKsG1/uKvTilZQ3Ivx4IM41Ema+m5gf5zb1f\r\n"\
 "Skn6kspl8/i+vi+dIUWkZjFqTkiDH91nTx8e14PzkphHqpSgNPWFARtoTh2/Osaf\r\n"\
 "OhzkU4YMOFnTqiFeK+Fs9bCPFHOsoLLJBQ9gtkxcJ8kbEaaEjNvKMIHO/hx9pFo=\r\n"\
@@ -149,7 +152,7 @@ To do this, the procedure involves editing the `certificate.h` file located unde
 "\0"
 ```
 
-As one can imagine, manually editing the file by adding `"` at the beginning of and appending `\r\n"\` at the end of each line can be quite tedious.
+As one can imagine, manually editing the file by adding `"` at the beginning and appending `\r\n"\` at the end of each line can be quite tedious.
 Additionally, this operation may be necessary (if `eap-tls` is used) for two other files: `client.pem` and `client.key`.
 But this is where `cert2cypress_cert.sh` comes into play.
 
