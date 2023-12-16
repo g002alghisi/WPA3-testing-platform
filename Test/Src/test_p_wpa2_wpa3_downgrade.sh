@@ -4,7 +4,7 @@
 # Surce test_setup.sh to prepare the environment
 source test_setup.sh
 
-TEST_ETH_IF_STRING="-e eth-usb-f3"
+TEST_ETH_IF_STRING="-e ethf3"
 
 
 # launch the ROGUE AP with wpa2 (not wpa3)

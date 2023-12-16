@@ -4,14 +4,14 @@
 # Surce test_setup.sh to prepare the environment
 source test_setup.sh
 
-TEST_ETH_IF_STRING="-e eth-usb-f3"
+TEST_ETH_IF_STRING="-e ethf3"
 
 
 # Launch the AS
 $terminal_exec_cmd "$AS_UI_PATH -c e:wpa3 -v; sleep 10" 
 
 # Launch the AP in a new window
-$AP_UI_PATH -c e:wpa3 $TEST_ETH_IF_TRING
+$AP_UI_PATH -c e:wpa3 $TEST_ETH_IF_STRING
 
 # Try to kill all the terminal windows created, hostapd and freeradius
 sudo pkill -P $$ &> /dev/null

@@ -45,9 +45,9 @@ The `as_ui.sh` script streamlines the setup by allowing users to seamlessly swit
 
 ## Workflow
 
-Follow these detailed steps to set up an AP with WPA-Enterprise using `freeradius`:
+Follow these detailed steps to set up an AP with WPA-Enterprise using Freeradius:
 
-1. Create a `.conf` setting file and place it in the `Conf/` directory or a subdirectory. Templates and examples are provided for reference.
+1. Navigate to `Hostapd/Conf/` folder, then create a `.conf` setting file and place it in the directory or a subdirectory. Templates and examples are provided for reference.
 
 2. Open `conf_list.txt` and create a new mapping string pointing to your `.conf` file.
 
