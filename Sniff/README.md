@@ -18,6 +18,6 @@ Monitor mode is essential for wireless traffic sniffing, allowing tools like Wir
 The bash script `sniff.sh` facilitates the controlled initiation of Wireshark in Monitor Mode. It is necessary to put the wireless card in Monitor Mode before starting Wireshark. The script has been created to execute all the essential steps to set the interface up and, upon completion, set everything down.
 To make it short, this bash script is designed to facilitate Wireshark usage in Monitor Mode.
 
-More details can be found in the `Src/` [README.md](Src/README.md) file.
+More details can be found in the `Src/` [README](Src/README.md) file.
 
 Please note that the script needs modification based on the specific wireless interface used, as each chipset/driver has a specific configuration method. The current version of the program is compatible with the TP-Link Archer T2U V3. For more information, visit [this page](https://wiki.wireshark.org/CaptureSetup/WLAN).
