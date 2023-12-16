@@ -1,3 +1,4 @@
 # Ignore all the Private directories.
 Private/
 Tmp/
+.vscode/

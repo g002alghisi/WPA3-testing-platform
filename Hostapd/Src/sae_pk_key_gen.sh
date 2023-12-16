@@ -1,52 +1,91 @@
 #!/bin/bash
-# set -x # Debug mode
-
-##### ##### ##### SAE-PK Key generator ##### ##### #####
-# In order to work with hostapd using SAE-PK, the special key has to be generated.
-# To do so, the program sae_pk_gen (from the hostapd repository) is leveraged.
-#
-# These instructions are available at https://github.com/vanhoefm/hostap-wpa3.
-
-### Input
-# - <3|5>, Sec parameter.
-# - <ssid_name>
-
-### Output
-# The script prints the output of the sae_pk_gen program.
-# In addition, it saves the publik-private key .der file and the sae_pk_gen output in the Tmp/ folder.
+#set -x  # Debug mode
 
 
-# Check the number of parameters.
-if [ $# -ne 2 ]; then
-    echo "Usage: $0 <Sec:3|5> <ssid_name>"
-    exit 1
-fi
+# Home. DO NOT TERMINATE WITH "/"
+HOME_DIR="Hostapd-test"
 
-# Assegna i parametri alle variabili
-sec="$1"
-ssid="$2"
-
-# Move to Hostapd/ folder
-cd "$(dirname "$0")"
-ecurrent_path=$(pwd)
-while [[ "$current_path" != *"/Hostapd" ]]; do
-    cd ..
+go_home() {
+    cd "$(dirname "$HOME_DIR")"
     current_path=$(pwd)
-done
+    while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
+        cd ..
+        current_path=$(pwd)
+    done
+
+    if [[ "$current_path" == "/" ]]; then
+        echo "Error in $0, reached "/" position. Wrong HOME_DIR"
+        return 1
+    fi
+}
+
+# All the file positions are now relative to the Main Repository DIR.
+# Load utils scripts
+go_home
+source Utils/Src/general_utils.sh
+
+# Temporary directory and file paths. DO NOT TERMINATE WITH "/"
+tmp_dir="Hostapd/Tmp"
+
+# Configuration files list
+CONF_LIST_PATH="Hostapd/Conf/conf_list.txt"
+
+# sae_pk_gen file path
+SAE_PK_GEN_PATH="Hostapd/Build/sae_pk_gen"
 
 
-# Create a temp folder to store generated data.
-tmp_dir="Tmp/$ssid/"
-mkdir -p "$tmp_dir"
 
-# First generate a private key inside Tmp/ folder
-openssl ecparam -name prime256v1 -genkey -noout -out "$ssid.der" -outform der
-mv "$ssid.der" "$tmp_dir"
+### *** Key Generator *** ###
 
-# Now derive the password from it:
-./Build/sae_pk_gen "$tmp_dir""$ssid.der" "$sec" "$ssid" | tee "$tmp_dir""$ssid"".pk"
+key_gen_setup() {
+    # Create tmp_dir to store generated data
+    log_info "Creating $tmp_dir/ temporary directory..."
+    tmp_dir="$tmp_dir/$ssid" && mkdir -p "$tmp_dir" &&
+        log_success || { log_error; return 1; }
+
+    # Generate a private key inside tmp_dir
+    log_info "Generating $ssid.der private key inside $tmp_dir..."
+    openssl ecparam -name prime256v1 -genkey -noout -out "$ssid.der" -outform der &&
+        mv "$ssid.der" "$tmp_dir" &&
+        log_success || { log_error; return 1; }
+
+    # Paths to the .der and .pk files
+    ssid_der="$tmp_dir/$ssid.der"
+    ssid_pk="$tmp_dir/$ssid.pk"
+}
+
+key_gen_run() {
+    log_title "Running sae_pk_gen. Press Ctrl-C to stop."
+
+    # Derive the password from ssid.der
+    log_info "Generating $ssid.pk SAE-PK key inside $tmp_dir..."
+    $SAE_PK_GEN_PATH "$ssid_der" "$sec" "$ssid" | tee "$ssid_pk"
+    
+    #The program will print a special string that starts like this:
+    #    sae_password=abcd-defg-hijk|pk=...
+    #This string can be directly copied in the hostapd.conf file and will automatically enable WPA3 with SAE-PK.
+
+    log_title "sae_pk_gen is stopped."
+}
 
 
-#The program will print a special string that starts like this:
-#    sae_password=abcd-defg-hijk|pk=...
-#This string can be directly copied in the hostapd.conf file and will automatically enable WPA3 with SAE-PK.
+
+### *** Main *** ###
+
+main() {
+    # Check the number of parameters.
+    if [ $# -ne 2 ]; then
+        echo "Usage: $0 <Sec:3|5> <ssid_name>."
+        exit 1
+    fi
+
+    # Get parameters
+    sec="$1"
+    ssid="$2"
+
+    echo ""
+    key_gen_setup &&
+    key_gen_run
+}
+
+main $@

@@ -1,53 +1,117 @@
 #!/bin/bash
 #set -x  # debug mode
 
-# Home
-HOME_FOLDER="Wpa_supplicant"
-
-# sta.sh path
-STA_PATH="Src/sta.sh"
-
-# Interfaces
-wifi_if="wlx5ca6e63fe2da"
-
-# Personal
-CONF_P_WPA2="Conf/Minimal/Personal/p_wpa2.conf"
-CONF_P_WPA3="Conf/Minimal/Personal/p_wpa3.conf"
-CONF_P_WPA2_WPA3="Conf/Minimal/Personal/p_wpa2_wpa3.conf"
-CONF_P_WPA3_PK="Conf/Minimal/Personal/p_wpa3_pk.conf"
-CONF_P_FAKE_WPA3_PK="Conf/Minimal/Personal/p_fake_wpa3_pk.conf"
-CONF_P_CLI="Conf/Minimal/Personal/p_cli.conf"
-
-# Enterprise
-# ...
-
-
-
-### ### ### Utilities ### ### ###
+# Home. DO NOT TERMINATE WITH "/"
+HOME_DIR="Hostapd-test"
 
 go_home() {
-    cd "$(dirname "$1")"
+    cd "$(dirname "$HOME_DIR")"
     current_path=$(pwd)
-    while [[ "$current_path" != *"$HOME_FOLDER" ]] && [[ "$current_path" != "/" ]]; do
+    while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
         cd ..
         current_path=$(pwd)
     done
+
+    if [[ "$current_path" == "/" ]]; then
+        echo "Error in $0, reached "/" position. Wrong HOME_DIR"
+        return 1
+    fi
+}
+
+# All the file positions are now relative to the Main Repository DIR.
+# Load utils scripts
+go_home
+source Utils/Src/general_utils.sh
+
+# sta.sh path
+STA_PATH="Wpa_supplicant/Src/sta.sh"
+
+# Interfaces
+WIFI_IF_DEFAULT="wlx5ca6e63fe2da"
+
+# Configuration files list
+CONF_LIST_PATH="Wpa_supplicant/Conf/conf_list.txt"
+
+
+
+### *** Handle config file *** ###
+
+sta_ui_setup() {
+    # Get configuration file from conf_list
+    log_info "Fetching configuration file associated to $sta_conf_string..."
+    sta_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$sta_conf_string")" &&
+        log_success || { echo "$sta_conf_file"; log_error; return 1; }
+
+    if [ "$sta_gui_mode" -eq 1 ] || [ "$sta_cli_mode" -eq 1 ]; then
+            log_info "Checking terminal type..."
+            terminal_exec_cmd="$(get_terminal_exec_cmd)" &&
+                log_success || { echo "$terminal_exec_cmd"; log_error; return 1; }
+    fi
+
+    # Try to kill wpa_cli and wpa_gui
+    sudo killall wpa_cli &> /dev/null
+    sudo killall wpa_gui &> /dev/null  
+
+    if [ "$sta_gui_mode" -eq 1 ]; then
+        log_info "Launching GUI..."
+        $terminal_exec_cmd "sleep 3; wpa_gui -i $wifi_if;" &
+        if [ "$?" -eq 0 ]; then
+            log_success
+        else
+            log_error
+            return 1
+        fi
+    fi
+    
+    if [ "$sta_cli_mode" -eq 1 ]; then
+        log_info "Launching CLI..."
+        $terminal_exec_cmd "sleep 3; wpa_cli -i $wifi_if;" &
+        if [ "$?" -eq 0 ]; then
+            log_success
+        else
+            log_error
+            return 1
+        fi
+    fi
+}
+
+sta_ui_setdown() {
+    # Try to kill wpa_cli and wpa_gui
+    sudo killall wpa_cli &> /dev/null
+    sudo killall wpa_gui &> /dev/null
+
+    # Try to kill all the terminal windows created
+    sudo pkill -P $$ &> /dev/null
 }
 
 
 
-### ### ### Main ### ### ###
+### *** Main *** ###
 
 main() {
-    go_home "$HOME_FOLDER"
-
+    wifi_if="$WIFI_IF_DEFAULT"
+    sta_conf_file=""
+    sta_conf_string=""
     sta_verbose_mode=0
-    while getopts "w:d" opt; do
+    sta_cli_mode=0
+    sta_gui_mode=0
+    while getopts "w:c:l:g:v" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
                 ;;
-            d)
+            c)
+                sta_conf_string="$OPTARG"
+                ;;
+            l)
+                sta_cli_mode=1
+                sta_conf_string="$OPTARG"
+                ;;
+            g)
+                sta_gui_mode=1
+                sta_conf_string="$OPTARG"
+                ;;
+            v)
                 sta_verbose_mode=1
                 ;;
             \?)
@@ -60,48 +124,32 @@ main() {
                 ;;
         esac
     done
+    OPTIND=1
 
-    shift $((OPTIND-1))
-
-    if [ $# -ne 1 ]; then
-        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] [-d] <sta_conf_string>"
+    # Check if the input is valid (the user have to insert at least the
+    #   configuration string)
+    if [ "$sta_conf_string" == "" ]; then
+        echo "Usage: $0 [-w wifi_if] <-c conf | -l conf_cli | -g conf_gui> [-v]."
         exit 1
     fi
 
-    sta_cli_mode=0
-    sta_conf_string="$1"
-    case $sta_conf_string in
-        "p:wpa2")
-            sta_conf_file="$CONF_P_WPA2"
-            ;;
-        "p:wpa3")
-            sta_conf_file="$CONF_P_WPA3"
-            ;;
-        "p:wpa3-pk")
-            sta_conf_file="$CONF_P_WPA3_PK"
-            ;;
-        "p:wpa2-wpa3")
-            sta_conf_file="$CONF_P_WPA2_WPA3"
-            ;;
-       	"p:cli")
-            sta_cli_mode=1
-            sta_conf_file="$CONF_P_CLI"
-            ;;
-        *)
-            echo -e "Invalid sta_conf_string."
-            exit 1
-            ;;
-    esac
+    # Update the cached credentials (this avoid the insertion of the sudo password
+    # during the execution of the successive commands).
+    sudo -v
 
-    if [ "$sta_cli_mode" -eq 0 ] && [ "$sta_verbose_mode" -eq 0 ]; then
+    # Fetch sta_conf_file
+    echo ""
+    sta_ui_setup &&
+
+    # Run wpa_supplicant
+    if [ "$sta_verbose_mode" -eq 0 ]; then
         "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file"
-    elif [ "$sta_cli_mode" -eq 0 ] && [ "$sta_verbose_mode" -eq 1 ]; then 
-        "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file" -d
-    elif [ "$sta_cli_mode" -eq 1 ] && [ "$sta_verbose_mode" -eq 0 ]; then
-        "$STA_PATH" -w "$wifi_if" -l "$sta_conf_file"
     else
-        "$STA_PATH" -w "$wifi_if" -l "$sta_conf_file" -d
+        "$STA_PATH" -w "$wifi_if" -c "$sta_conf_file" -v
     fi
+
+    sta_ui_setdown
+    echo ""
 }
 
-main "$@"
+main $@

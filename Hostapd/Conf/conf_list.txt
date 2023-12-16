@@ -1,0 +1,12 @@
+### ### ### Configuration file list ### ### ###
+
+# Personal
+p:wpa2=Hostapd/Conf/Minimal/Personal/p_wpa2.conf
+p:wpa3=Hostapd/Conf/Minimal/Personal/p_wpa3.conf
+p:wpa2-wpa3=Hostapd/Conf/Minimal/Personal/p_wpa2_wpa3.conf
+p:wpa3-pk=Hostapd/Conf/Minimal/Personal/p_wpa3_pk.conf
+p:fake-wpa3-pk=Hostapd/Conf/Minimal/Personal/p_fake_wpa3_pk.conf
+
+# Enterprise
+e:wpa2=Hostapd/Conf/Ko/Enterprise/e_wpa2.conf
+e:wpa3=Hostapd/Conf/Ko/Enterprise/e_wpa3.conf
