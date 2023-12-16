@@ -44,9 +44,9 @@ To carry out all these operations, two bash scripts have been created:
 
 In case the PC lacks the ethernet interface card, it should be possible to install a DHCP server on the computer directly, but this option has not been analyzed.
 
-Otherwise, another option is to use a phone with internet connectivity and harness the USB-Tethering, a feature that allows a mobile device to share its cellular data connection with another device using a USB cable.
+Otherwise, another option is to use a phone with internet connectivity and harness the USB-Tethering, a feature that allows a mobile device to share its cellular data connection with another one by means of a USB cable.
 
-However, the default behaviour of Ubuntu is to change the interface name assigned to the device (in simple terms, the string retrieved by `ifconfig`) upon each connection. This matter is related to `udev`, a device manager that dynamically creates and manages device nodes in the /dev directory, facilitating automatic device detection and configuration. To overcome this issue, please procede as follows:
+However, the default behaviour of Ubuntu is to change the interface name assigned to the device (in simple terms, the string retrieved by `ifconfig`) upon each connection. This matter is related to `udev`, a device manager that dynamically creates and handles device nodes in the `/dev` directory, facilitating automatic detection and configuration. To overcome this issue, please procede as follows:
 
 1. Connect the device via USB to the computer, and enable the USB-Tethering function.
 
