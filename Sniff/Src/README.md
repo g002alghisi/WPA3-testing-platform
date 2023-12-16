@@ -49,6 +49,6 @@ Default values are provided for the Wi-Fi interface (`wlx5ca6e63fe2da`) and chan
 
 ### Notes
 
-Ensure that the script is executed with appropriate permissions (may require sudo).
-The script is designed for the TP-Link Archer T2U v3; modify the Wi-Fi interface variable (`wifi_if`) and configuration as needed for different wireless interfaces.
-Press `Ctrl-C` to stop Wireshark and complete the execution.
+- Ensure that the script is executed with appropriate permissions (may require sudo).
+- The script is designed for the TP-Link Archer T2U v3; modify the Wi-Fi interface variable (`wifi_if`) and configuration as needed for different wireless interfaces.
+- Press `Ctrl-C` to stop Wireshark and complete the execution.
