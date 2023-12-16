@@ -2,7 +2,7 @@
 
 1. [Introduction](#introduction)
 2. [Monitor Mode](#monitor-mode)
-3. [Bash script: `sniff.sh`](#bash-script-sniffsh)
+3. [Workflow](#workflow)
 
 ## Introduction
 [Wireshark](https://www.wireshark.org/), an open-source network analysis tool, is crucial for capturing, analyzing, and visualizing network traffic. It provides meticulous packet analysis, protocol decoding, layered visualization based on the OSI model, and detailed network statistics. Wireshark supports customization through filters and plugins, making it a versatile tool for network administrators and analysts globally.
