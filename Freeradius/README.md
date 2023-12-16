@@ -1,4 +1,4 @@
-# Setting up WPA-Enterprise Authentication with `freeradius`
+# Setting up WPA-Enterprise Authentication with Freeradius
 
 1. [Introduction](#introduction)
 2. [Basic idea](#basic-idea)
