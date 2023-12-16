@@ -6,5 +6,5 @@ source test_setup.sh
 
 
 # Launch the AP
-$AP_UI_PATH -c p:wpa3 -e enx9677d3c1defb
+$AP_UI_PATH -c p:wpa3 -e enxce2678e9d10e
 

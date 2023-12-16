@@ -12,7 +12,7 @@
 - Windows 11, running on a Virtual Machine in VirtualBOX [add dongle and driver information].
 - Cypress Board CYW954907AEVAL1F, Wi-Fi module based on CYW54907 device.
 - Keystudio ESP32 Core Board, with ESP32-WROOM-32 and Espressif IDF v5.1.1.
-- Raspverry Pi 4, [addi informations about version].
+- Raspverry Pi 4, [add informations about version].
 
 [Give information about TP-Link dongle]
 
@@ -39,11 +39,6 @@
     3. The device joins the network.
     4. The real AP is setdown and a rogue AP with just SAE (not SAE-PK) is created.
     5. Check if the device connets to the rogue network.
-
-- [ ] Test WPA3
-- [ ] Test SAE-PK
-- [ ] Test WPA2/3 and Transition Disable WPA3 -> WPA2
-- [ ] Test SAE-PK and Trandisition Disable SAE-PK -> SAE
 
 ### Enterprise
 
@@ -115,6 +110,7 @@
     - [ ] Test WPA2 
     - [ ] Test WPA3 UOSC
     - [ ] Test TOD Mechanism
+
 ### Ubuntu Desktop 23.10.1
 
 - Personal

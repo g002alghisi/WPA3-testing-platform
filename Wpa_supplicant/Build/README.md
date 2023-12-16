@@ -1,22 +1,31 @@
 # Build folder
+
 This folder contains built code. In particular:
 `wpa_supplicant` comes from the build process of the code from the official Ubuntu repository.
 The following process has been used:
+
 1. Download the code from the Ubuntu repository by doing
+
     ```bash
     apt source wpasupplicant
     ```
-2. Go to the `wpa_supplicant/` folder.
+
+2. Go to the `wpa_supplicant/` subfolder.
 3. Create the `.config` file by means of the command
+
     ```bash
     cp defconf .config
     ```
+
 4. Check if the `.config` file contains the two following strings (and are uncommented):
+
     ```bash
     CONFIG_SAE=y
     CONFIG_SAE_PK=y
     ```
+
 5. Finally, execute
+
     ```bash
     make
     ```

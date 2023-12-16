@@ -3,8 +3,8 @@
 1. [`sta.sh`](#stash)
 2. [`sta_ui.sh`](#sta_uish)
 
-
 ## `sta.sh`
+
 This Bash script facilitates the configuration and testing of a Wi-Fi station (STA) using Wpa-supplicant. It automates the setup, execution, and teardown phases, allowing users to quickly test and configure Wi-Fi connections. The script performs the following main tasks:
 
 1. **Setup Phase:**
@@ -24,30 +24,36 @@ This Bash script facilitates the configuration and testing of a Wi-Fi station (S
    - Restarts NetworkManager.
 
 ### Prerequisites
+
 - NetworkManager installed.
 - Wpa-supplicant built and available at the specified path.
 
 ### Usage
+
 ```bash
 ./sta.sh -w wifi_if -c conf [-v]
 ```
+
 where:
-- `w wifi_if`: Specifies the Wi-Fi interface to be used.
-- `c conf`: Specifies the path to the STA configuration file.
-- `v`: Enables verbose mode.
+
+- `-w wifi_if` specifies the Wi-Fi interface to be used.
+- `-c conf` specifies the path to the STA configuration file.
+- `-v` enables verbose mode.
 
 Here's a minimal example
+
 ```bash
 ./sta.sh -w wlan0 -c path/to/sta.conf -v
 ```
 
 ### Important
-- The script assumes that all file paths are relative to the main repository directory `Hostapd-test`.
+
+- The script assumes that all file paths are relative to the main repository directory `Hostapd-test/`.
 - The Wpa-supplicant executable is expected to be at `Wpa_supplicant/Build/wpa_supplicant`.
 - This script is designed for testing purposes and may require adjustments based on specific use cases.
 
-
 ## `sta_ui.sh`
+
 This Bash script serves as a wrapper around the `sta.sh` script, offering a user interface (UI) for configuring and testing Wi-Fi connections. The script simplifies the setup, execution, and teardown phases, enabling users to interact with Wpa-supplicant via a graphical user interface (GUI) or a command-line interface (CLI). Key features include:
 
 - Fetching the Wpa-supplicant configuration file based on a configuration string.
@@ -73,33 +79,42 @@ The script is organized into three primary phases:
 
 These phases collectively streamline the process of configuring and testing Wi-Fi connections, providing users with a seamless and efficient experience.
 
-
 ### Prerequisites
+
 - Bash environment.
-- Wpa-supplicant STA script available at the specified path.
+- `sta.sh` script available at the specified path.
 - Wpa-supplicant configuration file list (`conf_list.txt`) for associating configuration strings with file paths.
 - `wpa_gui` to be installed via `apt`.
 
 ### Usage
+
 ```bash
 ./sta_ui.sh [-w wifi_if] <-c conf | -l conf_cli | -g conf_gui> [-v]
 ```
+
 where:
-- `w wifi_if`: Specifies the Wi-Fi interface to be used (default: "wlx5ca6e63fe2da").
-- `c conf`: Specifies the configuration string for general Wpa-supplicant usage.
-- `l conf_cli`: Activates CLI mode and specifies the configuration string.
-- `g conf_gui`: Activates GUI mode and specifies the configuration string.
-- `v`: Enables verbose mode.
+
+- `-w wifi_if` specifies the Wi-Fi interface to be used (default: "wlx5ca6e63fe2da").
+- `-c conf` specifies the configuration string for general Wpa-supplicant usage.
+- `-l conf_cli`: activates CLI mode and specifies the configuration string.
+- `-g conf_gui` activates GUI mode and specifies the configuration string.
+- `-v` enables verbose mode.
 
 Here's a minimal example:
+
 ```bash
-./wrapper.sh -w wlan0 -c "example_config" -v
-./wrapper.sh -l "cli_config" -v
-./wrapper.sh -g "gui_config" -v
+# Without user interaction
+./sta_ui.sh -w wlan0 -c "example_config" -v
+
+# With CLI interaction
+./sta_ui.sh -l "cli_config" -v
+
+# With GUI interaction
+./sta_ui.sh -g "gui_config" -v
 ```
 
 ### Important
+
 - The script assumes that all file paths are relative to the main repository directory.
 - The default Wi-Fi interface is set to `wlx5ca6e63fe2da`.
 - Ensure that the STA script (`sta.sh`) path is correctly specified.
- 

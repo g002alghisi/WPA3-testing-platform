@@ -9,7 +9,7 @@ source test_setup.sh
 $terminal_exec_cmd "$AS_UI_PATH -c e:wpa2 -v; sleep 3"
 
 # Launch the REAL AP
-$AP_UI_PATH -c e:wpa2 -e enx1e3094297dd3
+$AP_UI_PATH -c e:wpa2 -e enxdea50d1b87b8
 
 # Try to kill all the terminal windows created, hostapd and freeradius
 sudo pkill -P $$ &> /dev/null
@@ -25,7 +25,7 @@ sleep_with_dots 1
 $terminal_exec_cmd "$AS_UI_PATH -c e:fake-wpa2 -v; sleep 3"
 
 # Launch the FAKE AP
-$AP_UI_PATH -c e:wpa2 -e enx1e3094297dd3
+$AP_UI_PATH -c e:wpa2 -e enxdea50d1b87b8
 
 # Try to kill all the terminal windows created, hostapd and freeradius
 sudo pkill -P $$ &> /dev/null

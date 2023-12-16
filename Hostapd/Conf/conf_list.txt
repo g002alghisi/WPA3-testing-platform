@@ -9,3 +9,4 @@ p:fake-wpa3-pk=Hostapd/Conf/Minimal/Personal/p_fake_wpa3_pk.conf
 
 # Enterprise
 e:wpa2=Hostapd/Conf/Ko/Enterprise/e_wpa2.conf
+e:wpa3=Hostapd/Conf/Ko/Enterprise/e_wpa3.conf
