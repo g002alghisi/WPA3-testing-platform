@@ -1,6 +1,6 @@
 # Build folder
 
-This folder contains built code used to setup the AP with `as.sh` and `as_ui.sh` stored in the `Src/`.
+This folder contains built code used to setup the AP with `ap.sh` and `ap_ui.sh` stored in the `Src/`.
 
 ## `hostapd`
 
