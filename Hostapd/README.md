@@ -33,14 +33,51 @@ The PC shall be equipped with:
 
 Both the interfaces are needed: `hostapd` is used to create an AP with the wireless card, and by means of `brctl` (from `bridge-utils` package) the traffic is forwarded to the wired LAN passing through the ethernet card. In this way, it is not necessary to configure the DHCP server on the PC.
 
-In case the PC lacks the ethernet interface card, it should be possible to install a DHCP server on the computer directly, but this option has not been analyzed.
-
 In general, using `hostapd` is not straight-forward. Indeed, it is important to check the state of the physical interfaces, stop all the services that can interfere with the process (like `NetworkManager`) and prepare the bridge;
 moreover, the process needs to be reversed once finished, as to get the original state of the system.
 To carry out all these operations, two bash scripts have been created:
 
 - `ap.sh` is a wrapper around `hostapd`, and it is used to create the Access Point with bridge;
 - `ap_ui.sh` acts as a front-end and offers to the user an easier way to setup the AP.
+
+### Overcome Ethernet iterface lack
+
+In case the PC lacks the ethernet interface card, it should be possible to install a DHCP server on the computer directly, but this option has not been analyzed.
+
+Otherwise, another option is to use a phone with internet connectivity and harness the USB-Tethering, a feature that allows a mobile device to share its cellular data connection with another device using a USB cable.
+
+However, the default behaviour of Ubuntu is to change the interface name assigned to the device (in simple terms, the string retrieved by `ifconfig`) upon each connection. This matter is related to `udev`, a device manager that dynamically creates and manages device nodes in the /dev directory, facilitating automatic device detection and configuration. To overcome this issue, please procede as follows:
+
+1. Connect the device via USB to the computer, and enable the USB-Tethering function.
+
+2. Get the temporary `temp_eth_if` name by means of `ifconfig`
+
+3. Get the environment `ID_SERIAL_SHORT` string related to the phone by doing
+
+    ```
+    sudo udevadm info /sys/class/net/temp_eth_if
+    ```
+
+3. Edit `/etc/udev/rules.d/99-persistent-net.rules` file
+   
+    ```
+    sudo vim /etc/udev/rules.d/99-persistent-net.rules
+    ```
+
+    and add the following string
+
+    ```
+    SUBSYSTEM=="net", ENV{ID_SERIAL_SHORT}="your_id_serial_short_string", ACTION=="add", NAME="desired-eth-usb-if-name"
+    ```
+
+4. Reload the `udev` rules
+
+   ```
+   sudo udevadm control --reload-rules && sudo udevadm trigger
+   ```
+
+5. Unplug and replug the USB cable, enable the USB-Tethering mode and finally check if the interface name is now correct.
+
 
 ## Workflow
 
