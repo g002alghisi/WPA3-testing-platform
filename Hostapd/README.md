@@ -100,7 +100,7 @@ More details can be found in the README files inside [`Conf/`](Conf/) and the [`
 
 The specific version of Hostapd is the 2.10, and it has been directly built from the source code that can be downloaded from the Ubuntu repository.
 This is required because the same version obtained by doing `sudo apt install hostapd` doesn't properly support WPA3 with SAE-PK (instead, bare WPA3).
-Additional information can be found reading the [README](Build/README.md) file from the [`Build/`] folder.
+Additional information can be found reading the [README](Build/README.md) file from the [`Build/`](Build/) folder.
 
 ## WPA3 Personal with SAE-PK
 
