@@ -94,17 +94,17 @@ In short, this is the work flow to setup the Access Point:
 2. Edit the `conf_list.txt` file to create a new mapping string that points to your `.conf` file.
 3. Run `ap_ui.sh` by passing it your mapping string (and the name of the interfaces to be used, if different from the ones specified inside the code).
 
-More details can be found in the README files inside [`Conf/`] and the [`Src/`].
+More details can be found in the README files inside [`Conf/`](Conf/) and the [`Src/`](Src/).
 
 ## Few words about the Hostapd version
 
 The specific version of Hostapd is the 2.10, and it has been directly built from the source code that can be downloaded from the Ubuntu repository.
 This is required because the same version obtained by doing `sudo apt install hostapd` doesn't properly support WPA3 with SAE-PK (instead, bare WPA3).
-Additional information can be found reading the [README](Build/README.md) file from the [`Build/`] folder.
+Additional information can be found reading the [README](Build/README.md) file from the [`Build/`](Build/) folder.
 
 ## WPA3 Personal with SAE-PK
 
-To use WPA3 SAE-PK, a special PSK is required and has to be included in the specific `.conf` file. To generate it, the script `sae_pk_key_gen.sh`, located in the [`Src/`] folder, carries out the task.
+To use WPA3 SAE-PK, a special PSK is required and has to be included in the specific `.conf` file. To generate it, the script `sae_pk_key_gen.sh`, located in the [`Src/`](Src/) folder, carries out the task.
 
 ## WPA Enterprise
 
