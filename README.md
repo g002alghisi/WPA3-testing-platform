@@ -43,3 +43,6 @@ This folder contains information about the Wi-Fi related tests made with a Raspb
 - [The Pi Pico W page](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html) says that it uses the same Wi-Fi module, but using the `libwyc43` library; [here](https://github.com/georgerobotics/cyw43-driver/tree/195dfcc10bb6f379e3dea45147590db2203d3c7b/src) the source code is available; inspecting it, WPA3 support has not been found;
 - [This article](https://rachelbythebay.com/w/2023/11/06/wpa3/) states that probably the Pi 5 board still doesn't support WPA3.
     
+### Persistent USB Tethering Interface name
+
+- Consider [this forum reply](https://unix.stackexchange.com/questions/750214/disable-udev-renaming-for-android-usb-tethering-using-randon-macs) and [this one](https://unix.stackexchange.com/questions/726258/consistent-persistent-network-connection-naming-like-udev) to understand how to make USB Tethering interface name persistent on Ubunut.

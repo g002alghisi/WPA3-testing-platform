@@ -4,7 +4,7 @@
 # Surce test_setup.sh to prepare the environment
 source test_setup.sh
 
-TEST_ETH_IF_STRING="-e ..."
+TEST_ETH_IF_STRING="-e eth-usb-f3"
 
 
 # launch the FAKE AP with WPA3 (not SAE-PK)
