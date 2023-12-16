@@ -52,7 +52,7 @@ However, the default behaviour of Ubuntu is to change the interface name assigne
 
 2. Get the temporary `temp_eth_if` name by means of `ifconfig`
 
-3. Get the environment `ID_SERIAL_SHORT` string related to the phone by doing
+3. Get the environment `ID_SERIAL_SHORT` string from the output of
 
     ```
     sudo udevadm info /sys/class/net/temp_eth_if
