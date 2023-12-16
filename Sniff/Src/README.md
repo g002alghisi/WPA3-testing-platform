@@ -43,9 +43,9 @@ Here's a minimal example:
 
 ### Important
 
-The script assumes that all file paths are relative to the main repository directory.
-Ensure that Wireshark is installed on the system.
-Default values are provided for the Wi-Fi interface (`wlx5ca6e63fe2da`) and channel (`1`).
+- The script assumes that all file paths are relative to the main repository directory.
+- Ensure that Wireshark is installed on the system.
+- Default values are provided for the Wi-Fi interface (`wlx5ca6e63fe2da`) and channel (`1`).
 
 ### Notes
 
