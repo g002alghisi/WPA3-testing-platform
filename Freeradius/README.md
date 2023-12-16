@@ -32,13 +32,13 @@ Other useful sources of information are:
 
 ## Basic idea
 
-This guide walks you through the process of configuring an Authentication Server (AS) with RADIUS for a WPA-Enterprise Wi-Fi network using `freeradius` on Ubuntu. Unlike having the AS on-board the Access Point (AP), this approach involves the AP acting as a relay for EAP frames between the Station (STA) and an external AS reachable via the Distribution System.
+This guide walks you through the process of configuring an Authentication Server (AS) with RADIUS for a WPA-Enterprise Wi-Fi network using Freeradius on Ubuntu. Unlike having the AS on-board the Access Point (AP), this approach involves the AP acting as a relay for EAP frames between the Station (STA) and an external AS reachable via the Distribution System.
 
-In the realm of WPA-Enterprise security, establishing an effective Wi-Fi network involves integrating an Authentication Server (AS) with RADIUS. `freeradius` serves this purpose, and its complexity necessitates a careful setup.
+In the realm of WPA-Enterprise security, establishing an effective Wi-Fi network involves integrating an Authentication Server (AS) with RADIUS. Freeradius serves this purpose, and its complexity necessitates a careful setup.
 
 To facilitate the configuration process, two bash scripts are provided:
 
-- `as.sh`: A wrapper around `freeradius`, used to create the AS.
+- `as.sh`: A wrapper around Freeradius, used to create the AS.
 - `as_ui.sh`: An intuitive front-end offering users an easier way to configure the AS.
 
 The `as_ui.sh` script streamlines the setup by allowing users to seamlessly switch between different configurations. It achieves this by retrieving the desired configuration folder based on special strings passed as parameters. A mapping of these strings to specific configuration folders is maintained in a `conf_list.txt` file within `Freeradius/Conf/`.
