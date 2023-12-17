@@ -27,6 +27,9 @@ source Utils/Src/general_utils.sh
 # ap.sh path
 AP_PATH="Hostapd/Src/ap.sh"
 
+# ap.sh and ap_ui.sh log path. WITHOUT "/"
+AP_LOG_PATH="Hostapd/Tmp/Log_ap"
+
 # Interfaces
 ETH_IF_DEFAULT="enp4s0f1"
 WIFI_IF_DEFAULT="wlp3s0"
@@ -40,6 +43,16 @@ CONF_LIST_PATH="Hostapd/Conf/conf_list.txt"
 ### *** AP UI *** ###
 
 ap_ui_setup() {
+    # If log is enabled, start logging
+    if [ "$ap_log_old_session" -eq 1 ]; then
+        log_info "Strating logging of the process stdout and stderr..."
+        log_fun -d "$ap_log_dir" -t "ap"
+    elif [ "$ap_log_new_session" -eq 1 ]; then
+        log_info "Strating logging of the process stdout and stderr..."     
+        log_fun -d "$ap_log_dir" -t "ap" -n
+    fi &&
+        log_success || { log_error; echo ""; return 1; }
+
     # Get configuration file from conf_list
     log_info "Fetching configuration file associated to $ap_conf_string..."
     ap_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$ap_conf_string")" &&
@@ -63,7 +76,10 @@ main() {
     ap_conf_file=""
     ap_conf_string=""
     ap_verbose_mode=0
-    while getopts "w:e:b:c:v" opt; do
+    ap_log_dir=""
+    ap_log_old_session=0
+    ap_log_new_session=0
+    while getopts "w:e:b:c:l:L:v" opt; do
         case $opt in
             w)
                 wifi_if="$OPTARG"
@@ -83,6 +99,14 @@ main() {
             c)
                 ap_conf_string="$OPTARG"
                 ;;
+            l)
+                ap_log_old_session=1
+                ap_log_dir="$OPTARG"
+                ;;
+            L)
+                ap_log_new_session=1
+                ap_log_dir="$OPTARG"
+                ;;
             \?)
                 echo "Invalid option: -$OPTARG"
                 exit 1
@@ -97,8 +121,8 @@ main() {
 
     # Check if the input is valid (the user have to insert at least the
     #   configuration string)
-    if [ "$ap_conf_string" == "" ]; then
-        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v]."
+    if [ "$ap_conf_string" == "" ] || { [ "$ap_log_old_session" -eq 1 ] && [ "$ap_log_new_session" -eq 1 ]; }; then
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v] [-l log_dir (old session)| -L log_dir (new session)]."
         exit 1
     fi
 

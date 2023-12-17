@@ -179,3 +179,96 @@ sleep_with_dots() {
     done
     echo ""
 }
+
+
+
+### *** Handle Logs *** ###
+
+# Log hieracy:
+#
+#   - log_dir (es. Test/Tmp/iPad/test_e_wpa2)
+#   |
+#   ----- progressive number (es. 1)
+#   |   |
+#   |   ----- log_target.log (es. ap.log)
+#   |   |
+#   |   ----- another log_target.log (es. as.log)
+#   |
+#   ----- next progressive number (es. 2)
+#       |
+#       ----- log_target.log (es. ap.log)
+#       |
+#       ----- another log_target.log (es. as.log)
+
+log_fun() {
+    _log_path=""
+    _log_dir=""
+    _log_target=""
+    _log_new_session=0
+    while getopts "d:t:n" opt; do
+        case $opt in
+            d)
+                #  Name of the main log directory (es. Test/Tmp/iPad)
+                _log_dir="$OPTARG"
+                ;;
+            t)
+                # Name of the subprogram to be logged (es. ap, or as)
+                _log_target="$OPTARG"
+                ;;
+            n)
+                # Enforce number progression or not 
+                _log_n&&ew_session=1
+                ;;
+            \?)
+                echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
+                return $CODE_ERROR
+                ;;
+            :)
+                echo "Error in $FUNCNAME(). Option -$OPTARG requires an argument."
+                return $CODE_ERROR
+                ;;
+        esac
+    done
+    OPTIND=1
+
+    # Check if the input is valid
+    if [ "$_log_dir" == "" ] || [ "$_log_target" == "" ] || [ "$_log_command" == ""]; then
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -d log_dir -t log_target [-a] -c command."
+        return $CODE_ERROR
+    fi
+
+    # Check if _log_dir ends with "/" or not
+    if [ "$_log_dir" == *"/" ]; then
+        _log_path="$_log_dir"
+    else
+        _log_path="$_log_dir/"
+    fi
+
+    # Check the last numbered subfolder
+    _last_progr_num=$(ls -d $_log_path/* | grep -Eo '[0-9]+' | sort -n | tail -n 1 2>/dev/null)
+    if [ -z "$_last_progr_num" ]; then
+        _last_progr_num=0
+    fi
+
+    # Calculate the next _log_progr_number
+    if [ "$_log_new_session" -eq 1 ]; then
+        _log_progr_number=$((_last_progr_num + 1))
+    elif [ "$_log_new_session" -eq 0 ] && [ "$_last_progr_num" -ne 0 ]; then
+        _log_progr_number=$_last_progr_num
+    elif [ "$_log_new_session" -eq 0 ] && [ "$_last_progr_num" -eq 0 ]; then
+        echo "Error in $FUNCNAME(). Not initializing new log session, but cannot find an old one."
+        return $CODE_KO
+    fi
+
+    # Update _log_path, ceate the sub directory if does not exists yet and
+    # finally get the _log_file full path name
+    _log_path="$_log_path/$_log_progr_number"
+    mkdir -p "$_log_path"
+    _log_file="$_log_path/$_log_target.log"
+
+    # Copy stdout and stderr inside _log_file
+    exec > >(tee -a "$_log_file") 2>&1 ||
+        { echo "Error in $FUNCNAME(). Cannot initialize log session."; return $CODE_KO; }
+
+    return $CODE_OK
+}
