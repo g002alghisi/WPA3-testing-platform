@@ -36,19 +36,19 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'    # No color
 
-log_info() {
+print_info() {
     echo "INFO: $@"
 }
 
-log_success() {
+print_success() {
     echo -e "${GREEN}Success.${NC}"
 }
 
-log_error() {
+print_error() {
     echo -e "${RED}Error.${NC}"
 }
 
-log_title() {
+print_title() {
     echo -e "\n${CYAN}$@${NC}\n"
 }
 

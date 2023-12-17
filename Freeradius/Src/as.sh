@@ -38,8 +38,8 @@ as_setup() {
     fi
 
     # Check AS config directory
-    log_info "Looking for $as_conf_dir..."
-    file_exists -d $as_conf_dir && log_success || { log_error; return 1; }
+    print_info "Looking for $as_conf_dir..."
+    file_exists -d $as_conf_dir && print_success || { print_error; return 1; }
 
     # Kill previous instances of Freeradius
     sudo killall freeradius &> /dev/null
@@ -48,7 +48,7 @@ as_setup() {
 }
 
 as_run() {
-    log_title "Running FreeRADIUS. Press Ctrl-C to stop."
+    print_title "Running FreeRADIUS. Press Ctrl-C to stop."
 
     if [ "$as_verbose_mode" -eq 0 ]; then
         sudo freeradius -f -d "$as_conf_dir"
@@ -56,7 +56,7 @@ as_run() {
         sudo freeradius -d "$as_conf_dir" -X
     fi
 
-    log_title "FreeRADIUS is stopped."
+    print_title "FreeRADIUS is stopped."
 }
 
 as_setdown() {

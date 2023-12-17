@@ -39,15 +39,15 @@ SAE_PK_GEN_PATH="Hostapd/Build/sae_pk_gen"
 
 key_gen_setup() {
     # Create tmp_dir to store generated data
-    log_info "Creating $tmp_dir/ temporary directory..."
+    print_info "Creating $tmp_dir/ temporary directory..."
     tmp_dir="$tmp_dir/$ssid" && mkdir -p "$tmp_dir" &&
-        log_success || { log_error; return 1; }
+        print_success || { print_error; return 1; }
 
     # Generate a private key inside tmp_dir
-    log_info "Generating $ssid.der private key inside $tmp_dir..."
+    print_info "Generating $ssid.der private key inside $tmp_dir..."
     openssl ecparam -name prime256v1 -genkey -noout -out "$ssid.der" -outform der &&
         mv "$ssid.der" "$tmp_dir" &&
-        log_success || { log_error; return 1; }
+        print_success || { print_error; return 1; }
 
     # Paths to the .der and .pk files
     ssid_der="$tmp_dir/$ssid.der"
@@ -55,17 +55,17 @@ key_gen_setup() {
 }
 
 key_gen_run() {
-    log_title "Running sae_pk_gen. Press Ctrl-C to stop."
+    print_title "Running sae_pk_gen. Press Ctrl-C to stop."
 
     # Derive the password from ssid.der
-    log_info "Generating $ssid.pk SAE-PK key inside $tmp_dir..."
+    print_info "Generating $ssid.pk SAE-PK key inside $tmp_dir..."
     $SAE_PK_GEN_PATH "$ssid_der" "$sec" "$ssid" | tee "$ssid_pk"
     
     #The program will print a special string that starts like this:
     #    sae_password=abcd-defg-hijk|pk=...
     #This string can be directly copied in the hostapd.conf file and will automatically enable WPA3 with SAE-PK.
 
-    log_title "sae_pk_gen is stopped."
+    print_title "sae_pk_gen is stopped."
 }
 
 

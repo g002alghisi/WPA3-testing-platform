@@ -46,20 +46,20 @@ sta_setup() {
     nm_start &> /dev/null    
 
     # Check Wi-Fi
-    log_info "Checking Wi-Fi interface... "
-    net_if_exists -w "$wifi_if" && log_success || { log_error; return 1; }
+    print_info "Checking Wi-Fi interface... "
+    net_if_exists -w "$wifi_if" && print_success || { print_error; return 1; }
 
     # Force Wi-Fi up
-    log_info "Forcing Wi-Fi interface up... "
-    net_if_force_up -w "$wifi_if" && log_success || { log_error; return 1; }
+    print_info "Forcing Wi-Fi interface up... "
+    net_if_force_up -w "$wifi_if" && print_success || { print_error; return 1; }
 
     # Stop Network Manager
-    log_info "Stopping NetworkManager... "
-    nm_stop && log_success || { log_error; return 1; }
+    print_info "Stopping NetworkManager... "
+    nm_stop && print_success || { print_error; return 1; }
 
     # Check STA config file
-    log_info "Looking for $sta_conf_file..."
-    file_exists -f "$sta_conf_file" && log_success || { log_error; return 1; }
+    print_info "Looking for $sta_conf_file..."
+    file_exists -f "$sta_conf_file" && print_success || { print_error; return 1; }
 
     # Kill previous instances of wpa_supplicant, wpa_cli and wpa_gui
     sudo killall wpa_supplicant &> /dev/null
@@ -68,7 +68,7 @@ sta_setup() {
 }
 
 sta_run() {
-    log_title "Running Wpa-supplicant. Press Ctrl-C to stop."
+    print_title "Running Wpa-supplicant. Press Ctrl-C to stop."
 
     sta_print_info
 
@@ -78,7 +78,7 @@ sta_run() {
         sudo "$WPA_SUPPLICANT_PATH" -i "$wifi_if" -c "$sta_conf_file" -d
     fi
 
-   log_title "Wpa_supplicant is stopped."
+   print_title "Wpa_supplicant is stopped."
 }
 
 sta_setdown() {
@@ -86,8 +86,8 @@ sta_setdown() {
     sudo killall wpa_supplicant &> /dev/null
 
     # Start Network Manager
-    log_info "Starting NetworkManager... "
-    nm_start && log_success || log_error
+    print_info "Starting NetworkManager... "
+    nm_start && print_success || print_error
 }
 
 

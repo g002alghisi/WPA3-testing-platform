@@ -45,25 +45,25 @@ CONF_LIST_PATH="Hostapd/Conf/conf_list.txt"
 ap_ui_setup() {
     # If log is enabled, start logging
     if [ "$ap_log_old_session" -eq 1 ]; then
-        log_info "Strating logging of the process stdout and stderr..."
+        print_info "Strating logging of the process stdout and stderr..."
         log_fun -d "$ap_log_dir" -t "ap" &&
-            log_success || { log_error; echo ""; return 1; }
+            print_success || { print_error; echo ""; return 1; }
     elif [ "$ap_log_new_session" -eq 1 ]; then
-        log_info "Strating logging of the process stdout and stderr..."     
+        print_info "Strating logging of the process stdout and stderr..."     
         log_fun -d "$ap_log_dir" -t "ap" -n &&
-            log_success || { log_error; echo ""; return 1; }
+            print_success || { print_error; echo ""; return 1; }
     fi
 
     # Get configuration file from conf_list
-    log_info "Fetching configuration file associated to $ap_conf_string..."
+    print_info "Fetching configuration file associated to $ap_conf_string..."
     ap_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$ap_conf_string")" &&
-        log_success || { echo "$ap_conf_file"; log_error; echo ""; return 1; }
+        print_success || { echo "$ap_conf_file"; print_error; echo ""; return 1; }
 
     # Change interface and bridge name inside the conf_file
-    log_info "Changing interface and bridge name inside $ap_conf_file..."
+    print_info "Changing interface and bridge name inside $ap_conf_file..."
     { sed -i "s/^interface=.*/interface=$wifi_if/" "$ap_conf_file" &&
     sed -i "s/^bridge=.*/bridge=$br_if/" "$ap_conf_file"; } &&
-        log_success || { log_error; echo ""; return 1; }
+        print_success || { print_error; echo ""; return 1; }
 }
 
 

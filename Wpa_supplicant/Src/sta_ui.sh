@@ -38,14 +38,14 @@ CONF_LIST_PATH="Wpa_supplicant/Conf/conf_list.txt"
 
 sta_ui_setup() {
     # Get configuration file from conf_list
-    log_info "Fetching configuration file associated to $sta_conf_string..."
+    print_info "Fetching configuration file associated to $sta_conf_string..."
     sta_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$sta_conf_string")" &&
-        log_success || { echo "$sta_conf_file"; log_error; return 1; }
+        print_success || { echo "$sta_conf_file"; print_error; return 1; }
 
     if [ "$sta_gui_mode" -eq 1 ] || [ "$sta_cli_mode" -eq 1 ]; then
-            log_info "Checking terminal type..."
+            print_info "Checking terminal type..."
             terminal_exec_cmd="$(get_terminal_exec_cmd)" &&
-                log_success || { echo "$terminal_exec_cmd"; log_error; return 1; }
+                print_success || { echo "$terminal_exec_cmd"; print_error; return 1; }
     fi
 
     # Try to kill wpa_cli and wpa_gui
@@ -53,23 +53,23 @@ sta_ui_setup() {
     sudo killall wpa_gui &> /dev/null  
 
     if [ "$sta_gui_mode" -eq 1 ]; then
-        log_info "Launching GUI..."
+        print_info "Launching GUI..."
         $terminal_exec_cmd "sleep 3; wpa_gui -i $wifi_if;" &
         if [ "$?" -eq 0 ]; then
-            log_success
+            print_success
         else
-            log_error
+            print_error
             return 1
         fi
     fi
     
     if [ "$sta_cli_mode" -eq 1 ]; then
-        log_info "Launching CLI..."
+        print_info "Launching CLI..."
         $terminal_exec_cmd "sleep 3; wpa_cli -i $wifi_if;" &
         if [ "$?" -eq 0 ]; then
-            log_success
+            print_success
         else
-            log_error
+            print_error
             return 1
         fi
     fi

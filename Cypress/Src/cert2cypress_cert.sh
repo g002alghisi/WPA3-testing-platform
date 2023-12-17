@@ -82,21 +82,21 @@ c2cc_convert() {
 
 c2cc_setup() {
     # Get configuration file from conf_list
-    log_info "Fetching configuration directory associated to $as_conf_string..."
+    print_info "Fetching configuration directory associated to $as_conf_string..."
     as_conf_dir="$(get_from_list -f "$CONF_LIST_PATH" -s "$as_conf_string")" &&
-        log_success || { echo "$as_conf_dir"; log_error; return 1; }
+        print_success || { echo "$as_conf_dir"; print_error; return 1; }
 
     as_cert_dir="$as_conf_dir/certs"
 
     # Check AS config directory
-    log_info "Looking for $as_cert_dir..."
-    file_exists -d $as_conf_dir && log_success || { log_error; return 1; }
+    print_info "Looking for $as_cert_dir..."
+    file_exists -d $as_conf_dir && print_success || { print_error; return 1; }
 
     # Create tmp_dir to store temporary files
-    log_info "Creating $tmp_dir/ temporary directory."
+    print_info "Creating $tmp_dir/ temporary directory."
     # Copy basename of as_cert_dir for the tmp_dir. DO NOT TERMINATE WITH "/"
     tmp_dir="$tmp_dir/$(basename "$as_conf_dir")" && mkdir -p "$tmp_dir" &&
-        log_success || { log_error; return 1; }
+        print_success || { print_error; return 1; }
 }
 
 c2cc_run() {
@@ -104,42 +104,42 @@ c2cc_run() {
 
     # Check ca.pem file
     ca_pem="$as_cert_dir/$ca_pem"
-    log_info "Looking for $ca_pem..."
-    file_exists -f $ca_pem && log_success || { log_error; return 1; }
+    print_info "Looking for $ca_pem..."
+    file_exists -f $ca_pem && print_success || { print_error; return 1; }
 
     # Converting ca.pem file
-    log_info "Converting $ca_pem..."
-    ca_pem_cypress="$(c2cc_convert "$ca_pem")" && log_success || { echo "$ca_pem_cypress"; log_error; return 1; }
+    print_info "Converting $ca_pem..."
+    ca_pem_cypress="$(c2cc_convert "$ca_pem")" && print_success || { echo "$ca_pem_cypress"; print_error; return 1; }
 
-    log_title "Certificate: ca.pem"
+    print_title "Certificate: ca.pem"
     echo "$ca_pem_cypress"
 
     echo ""
 
     # Check client.pem file
     client_pem="$as_cert_dir/$client_pem"
-    log_info "Looking for $client_pem..."
-    file_exists -f $client_pem && log_success || { log_error; return 1; }
+    print_info "Looking for $client_pem..."
+    file_exists -f $client_pem && print_success || { print_error; return 1; }
 
     # Converting client.pem file
-    log_info "Converting $client_pem..."
-    client_pem_cypress="$(c2cc_convert "$client_pem")" && log_success || { echo "$client_pem_cypress"; log_error; return 1; }
+    print_info "Converting $client_pem..."
+    client_pem_cypress="$(c2cc_convert "$client_pem")" && print_success || { echo "$client_pem_cypress"; print_error; return 1; }
 
-    log_title "Certificate: client.pem"
+    print_title "Certificate: client.pem"
     echo "$client_pem_cypress"
 
     echo ""
 
     # Check client.key file
     client_key="$as_cert_dir/$client_key"
-    log_info "Looking for $client_key..."
-    file_exists -f $client_key && log_success || { log_error; return 1; }
+    print_info "Looking for $client_key..."
+    file_exists -f $client_key && print_success || { print_error; return 1; }
 
     # Converting client.key file
-    log_info "Converting $client_key..."
-    client_key_cypress="$(c2cc_convert "$client_key")" && log_success || { echo "$client_key_cypress"; log_error; return 1; }
+    print_info "Converting $client_key..."
+    client_key_cypress="$(c2cc_convert "$client_key")" && print_success || { echo "$client_key_cypress"; print_error; return 1; }
 
-    log_title "Certificate: client.key"
+    print_title "Certificate: client.key"
     echo "$client_key_cypress"
 
     echo ""
