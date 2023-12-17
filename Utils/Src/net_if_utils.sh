@@ -124,7 +124,6 @@ net_if_is_connected() {
         echo "$FUNCNAME(): $_net_if is not connected."
         return "$CODE_KO"
     else
-    	echo "$_net_if_status"
     	return "$CODE_OK"
     fi
 }

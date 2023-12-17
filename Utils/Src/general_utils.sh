@@ -1,4 +1,5 @@
 #!/bin/bash
+#set -x
 
 GENERAL_UTILS_IS_LOADED=True
 
@@ -217,7 +218,7 @@ log_fun() {
                 ;;
             n)
                 # Enforce number progression or not 
-                _log_n&&ew_session=1
+                _log_new_session=1
                 ;;
             \?)
                 echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
@@ -232,20 +233,23 @@ log_fun() {
     OPTIND=1
 
     # Check if the input is valid
-    if [ "$_log_dir" == "" ] || [ "$_log_target" == "" ] || [ "$_log_command" == ""]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -d log_dir -t log_target [-a] -c command."
+    if [ "$_log_dir" == "" ] || [ "$_log_target" == "" ]; then
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -d log_dir -t log_target [-a]."
         return $CODE_ERROR
     fi
 
     # Check if _log_dir ends with "/" or not
-    if [ "$_log_dir" == *"/" ]; then
+    if [[ "$_log_dir" == *"/" ]]; then
         _log_path="$_log_dir"
     else
         _log_path="$_log_dir/"
     fi
 
+    # Create it if it does not exist
+    mkdir -p "$_log_path"
+
     # Check the last numbered subfolder
-    _last_progr_num=$(ls -d $_log_path/* | grep -Eo '[0-9]+' | sort -n | tail -n 1 2>/dev/null)
+    _last_progr_num=$(ls $_log_path | grep -Eo '[0-9]+' | sort -n | tail -n 1 2>/dev/null)
     if [ -z "$_last_progr_num" ]; then
         _last_progr_num=0
     fi
@@ -267,7 +271,7 @@ log_fun() {
     _log_file="$_log_path/$_log_target.log"
 
     # Copy stdout and stderr inside _log_file
-    exec > >(tee -a "$_log_file") 2>&1 ||
+    exec > >(tee -a "$_log_file") ||
         { echo "Error in $FUNCNAME(). Cannot initialize log session."; return $CODE_KO; }
 
     return $CODE_OK

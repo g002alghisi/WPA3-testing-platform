@@ -8,5 +8,5 @@ TEST_ETH_IF_STRING="-e ethf3"
 
 
 # Launch the AP
-$AP_UI_PATH -c p:wpa2 $TEST_ETH_IF_STRING
-
+$AP_UI_PATH -c p:wpa2 $TEST_ETH_IF_STRING -L "$LOG_DIR_PATH"
+#$AP_UI_PATH -c p:wpa2 $TEST_ETH_IF_STRING

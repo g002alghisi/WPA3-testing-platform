@@ -1,0 +1,57 @@
+[0;32mSuccess.[0m
+INFO: Fetching configuration file associated to p:wpa2...
+[0;32mSuccess.[0m
+INFO: Changing interface and bridge name inside Hostapd/Conf/Minimal/Personal/p_wpa2.conf...
+[0;32mSuccess.[0m
+
+INFO: Checking Ethernet interface... 
+[0;32mSuccess.[0m
+INFO: Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+INFO: Checking Ethernet connection... 
+ethf3:ethernet:connected:Open
+[0;32mSuccess.[0m
+INFO: Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+INFO: Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+INFO: Stopping NetworkManager... 
+[0;32mSuccess.[0m
+INFO: Creating the bridge... 
+[0;32mSuccess.[0m
+INFO: Adding ethf3 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+INFO: Looking for Hostapd/Conf/Minimal/Personal/p_wpa2.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+logger_syslog=8
+logger_syslog_level=0
+logger_stdout=11
+logger_stdout_level=0
+interface=wlp3s0
+bridge=br0
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+wpa=2
+rsn_pairwise=CCMP
+ssid=Hostapd-AP
+utf8_ssid=1
+wpa_passphrase=argoargoargo
+wpa_key_mgmt=WPA-PSK
+ieee80211w=1
+
+
+wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+wlp3s0: AP-ENABLED 
+[0;32mSuccess.[0m
+INFO: Fetching configuration file associated to p:wpa2...
+[0;32mSuccess.[0m
+INFO: Changing interface and bridge name inside Hostapd/Conf/Minimal/Personal/p_wpa2.conf...
+[0;32mSuccess.[0m

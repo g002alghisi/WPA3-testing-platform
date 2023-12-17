@@ -46,12 +46,13 @@ ap_ui_setup() {
     # If log is enabled, start logging
     if [ "$ap_log_old_session" -eq 1 ]; then
         log_info "Strating logging of the process stdout and stderr..."
-        log_fun -d "$ap_log_dir" -t "ap"
+        log_fun -d "$ap_log_dir" -t "ap" &&
+            log_success || { log_error; echo ""; return 1; }
     elif [ "$ap_log_new_session" -eq 1 ]; then
         log_info "Strating logging of the process stdout and stderr..."     
-        log_fun -d "$ap_log_dir" -t "ap" -n
-    fi &&
-        log_success || { log_error; echo ""; return 1; }
+        log_fun -d "$ap_log_dir" -t "ap" -n &&
+            log_success || { log_error; echo ""; return 1; }
+    fi
 
     # Get configuration file from conf_list
     log_info "Fetching configuration file associated to $ap_conf_string..."
@@ -121,7 +122,12 @@ main() {
 
     # Check if the input is valid (the user have to insert at least the
     #   configuration string)
-    if [ "$ap_conf_string" == "" ] || { [ "$ap_log_old_session" -eq 1 ] && [ "$ap_log_new_session" -eq 1 ]; }; then
+    if [ "$ap_conf_string" == "" ]; then
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v] [-l log_dir (old session)| -L log_dir (new session)]."
+        exit 1
+    fi
+
+    if { [ "$ap_log_old_session" -eq 1 ] || [ "$ap_log_new_session" -eq 1 ]; } && [ "$ap_log_dir" == "" ] ; then
         echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v] [-l log_dir (old session)| -L log_dir (new session)]."
         exit 1
     fi
