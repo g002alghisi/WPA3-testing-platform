@@ -30,12 +30,12 @@ AP_PATH="Hostapd/Src/ap.sh"
 AP_LOG_PATH="Hostapd/Tmp/Log_ap"
 
 # Interfaces
-ETH_IF_DEFAULT="enp4s0f1"
+ETH_IF_DEFAULT="enp0s20f0u1"
 WIFI_IF_DEFAULT="wlp3s0"
 BR_IF_DEFAULT="br0"
 
 # Configuration files list
-CONF_LIST_PATH="Hostapd/Conf/conf_list.txt"
+AP_UI_CONF_LIST_PATH="Hostapd/Conf/conf_list.txt"
 
 
 
@@ -111,20 +111,19 @@ ap_ui_handle_input() {
 }
 
 ap_ui_setup() {
-    # Start logging if required
     if [ "$ap_ui_log_mode" == "app" ]; then
-        log_output -d $ap_ui_log_dir -t "ap" &&
-            print_info "Beginning logging session inside $ap_ui_log_dir..." &&
+        log_output -d $ap_ui_log_dir -t "$ap_ui_conf_string" &&
+            print_info "Beginning saving session of stdout and stderr $ap_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     elif [ "$ap_ui_log_mode" == "new" ]; then
-        log_output -d $ap_ui_log_dir -t "ap" -n &&
-            print_info "Beginning logging session inside $ap_ui_log_dir..." &&
+        log_output -d $ap_ui_log_dir -t "$ap_ui_conf_string" -n &&
+            print_info "Beginning saving session of stdout and stderr $ap_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     fi
 
     # Get configuration file from conf_list
     print_info "Fetching configuration file associated to $ap_ui_conf_string..."
-    ap_ui_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$ap_ui_conf_string")" &&
+    ap_ui_conf_file="$(get_from_list -f "$AP_UI_CONF_LIST_PATH" -s "$ap_ui_conf_string")" &&
         print_success || { echo "$ap_ui_conf_file"; print_error; echo ""; return 1; }
 
     # Change interface and bridge name inside the conf_file

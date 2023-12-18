@@ -1,8 +1,9 @@
+INFO: Beginning saving session of stdout and stderr Test/Log/test_e_wpa2...
 [0;32mSuccess.[0m
 
-INFO: Fetching configuration file associated to p:wpa2...
+INFO: Fetching configuration file associated to e:wpa2...
 [0;32mSuccess.[0m
-INFO: Changing interface and bridge name inside Hostapd/Conf/Minimal/Personal/p_wpa2.conf...
+INFO: Changing interface and bridge name inside Hostapd/Conf/Ko/Enterprise/e_wpa2.conf...
 [0;32mSuccess.[0m
 
 INFO: Checking Ethernet interface... 
@@ -21,33 +22,43 @@ INFO: Creating the bridge...
 [0;32mSuccess.[0m
 INFO: Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
 [0;32mSuccess.[0m
-INFO: Looking for Hostapd/Conf/Minimal/Personal/p_wpa2.conf...
+INFO: Looking for Hostapd/Conf/Ko/Enterprise/e_wpa2.conf...
 [0;32mSuccess.[0m
 
 [0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
 
 AP settings:
 
-logger_syslog=8
-logger_syslog_level=0
-logger_stdout=11
-logger_stdout_level=0
 interface=wlp3s0
 bridge=br0
+driver=nl80211
+logger_syslog=15
+logger_syslog_level=0
+logger_stdout=15
+logger_stdout_level=0
+ssid=Hostapd-AP-WPA2-E
+utf8_ssid=1
 country_code=IT
 hw_mode=g
 channel=1
 auth_algs=1
+ieee8021x=1
+eap_server=0
+own_ip_addr=127.0.0.1
+radius_client_addr=127.0.0.1
+auth_server_addr=127.0.0.1
+auth_server_port=1812
+auth_server_shared_secret=argoargoargo
 wpa=2
+wpa_key_mgmt=WPA-EAP
 rsn_pairwise=CCMP
-ssid=Hostapd-AP
-utf8_ssid=1
-wpa_passphrase=argoargoargo
-wpa_key_mgmt=WPA-PSK
+group_cipher=CCMP
 ieee80211w=1
+group_mgmt_cipher=AES-128-CMAC
 
 
 wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+wlp3s0: RADIUS Authentication server 127.0.0.1:1812
 wlp3s0: interface state COUNTRY_UPDATE->ENABLED
 wlp3s0: AP-ENABLED 
 wlp3s0: interface state ENABLED->DISABLED

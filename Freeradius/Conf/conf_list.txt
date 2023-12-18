@@ -1,7 +1,7 @@
 ### ### ### Configuration files list ### ### ###
 
-e:wpa2=Freeradius/Conf/E_wpa2
-e:rogue-wpa2=Freeradius/Conf/E_rogue_wpa2
+e_wpa2=Freeradius/Conf/E_wpa2
+e_rogue_wpa2=Freeradius/Conf/E_rogue_wpa2
 
-e:wpa3=Freeradius/Conf/E_wpa3
-e:rogue-wpa3=Freeradius/Conf/E_rogue_wpa3
+e_wpa3=Freeradius/Conf/E_wpa3
+e_rogue_wpa3=Freeradius/Conf/E_rogue_wpa3

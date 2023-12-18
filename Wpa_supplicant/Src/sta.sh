@@ -6,16 +6,15 @@
 HOME_DIR="Hostapd-test"
 
 go_home() {
-    cd "$(dirname "$HOME_DIR")"
-    current_path=$(pwd)
-    while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
+    current_dir="$(basename $(pwd))"
+    while [ "$current_dir" != "$HOME_DIR" ] && [ "$current_dir" != "/" ]; do
         cd ..
-        current_path=$(pwd)
+        current_dir="$(basename $(pwd))"
     done
 
-    if [[ "$current_path" == "/" ]]; then
-        echo "Error in $0, reached "/" position. Wrong HOME_DIR"
-        return 1
+    if [ "$current_dir" == "/" ]; then
+        echo "Error in $0, reached "/" position."
+        exit 1
     fi
 }
 
@@ -33,6 +32,41 @@ WPA_SUPPLICANT_PATH="Wpa_supplicant/Build/wpa_supplicant"
 
 ### *** STA *** ###
 
+sta_handle_input() {
+    sta_wifi_if=""
+    sta_conf_file=""
+    sta_verb_mode=0
+    while getopts "w:c:v" opt; do
+        case $opt in
+            w)
+                sta_wifi_if="$OPTARG"
+                ;;
+            c)
+                sta_conf_file="$OPTARG"
+                ;;
+            v)
+                sta_verb_mode=1
+                ;;
+            \?)
+                echo "Invalid option: -$OPTARG" >&2
+                exit 1
+                ;;
+            :)
+                echo "Option -$OPTARG requires an argument." >&2
+                exit 1
+                ;;
+        esac
+    done
+    OPTIND=1
+
+    # Check if the input is valid (the user have to insert at lease the name
+    # of the wifi interface, and the configuration file path).
+    if [ "$sta_wifi_if" == "" ] || [ "$sta_conf_file" == "" ]; then
+        echo "Usage: $0 -w sta_wifi_if -c conf [-v]."
+        exit 1
+    fi
+}
+
 sta_print_info() {
     echo "STA settings:"
     echo ""
@@ -47,11 +81,11 @@ sta_setup() {
 
     # Check Wi-Fi
     print_info "Checking Wi-Fi interface... "
-    net_if_exists -w "$wifi_if" && print_success || { print_error; return 1; }
+    net_if_exists -w "$sta_wifi_if" && print_success || { print_error; return 1; }
 
     # Force Wi-Fi up
     print_info "Forcing Wi-Fi interface up... "
-    net_if_force_up -w "$wifi_if" && print_success || { print_error; return 1; }
+    net_if_force_up -w "$sta_wifi_if" && print_success || { print_error; return 1; }
 
     # Stop Network Manager
     print_info "Stopping NetworkManager... "
@@ -72,10 +106,10 @@ sta_run() {
 
     sta_print_info
 
-    if [ $sta_verbose_mode -eq 0 ]; then
-        sudo "$WPA_SUPPLICANT_PATH" -i "$wifi_if" -c "$sta_conf_file"
+    if [ $sta_verb_mode -eq 0 ]; then
+        sudo "$WPA_SUPPLICANT_PATH" -i "$sta_wifi_if" -c "$sta_conf_file"
     else
-        sudo "$WPA_SUPPLICANT_PATH" -i "$wifi_if" -c "$sta_conf_file" -d
+        sudo "$WPA_SUPPLICANT_PATH" -i "$sta_wifi_if" -c "$sta_conf_file" -d
     fi
 
    print_title "Wpa_supplicant is stopped."
@@ -94,46 +128,15 @@ sta_setdown() {
 
 ### ### ### Main section ### ### ###
 
-main() {
-    wifi_if=""
-    sta_conf_file=""
-    sta_verbose_mode=0
-    while getopts "w:c:v" opt; do
-        case $opt in
-            w)
-                wifi_if="$OPTARG"
-                ;;
-            c)
-                sta_conf_file="$OPTARG"
-                ;;
-            v)
-                sta_verbose_mode=1
-                ;;
-            \?)
-                echo "Invalid option: -$OPTARG" >&2
-                exit 1
-                ;;
-            :)
-                echo "Option -$OPTARG requires an argument." >&2
-                exit 1
-                ;;
-        esac
-    done
-    OPTIND=1
-
-    # Check if the input is valid (the user have to insert at lease the name
-    # of the wifi interface, and the configuration file path).
-    if [ "$wifi_if" == "" ] || [ "$sta_conf_file" == "" ]; then
-        echo "Usage: $0 -w wifi_if -c conf [-v]."
-        exit 1
-    fi
-
+sta_main() {
     # Update the cached credentials (this avoid the insertion of the sudo password
     # during the execution of the successive commands).
     sudo -v
 
     # Hide keyboard input
     stty -echo
+
+    sta_handle_input $@
 
     # If the setup fails, then do not run, but skip this phase and execute
     # the setdown
@@ -147,4 +150,4 @@ main() {
     stty echo
 }
 
-main $@
+sta_main $@

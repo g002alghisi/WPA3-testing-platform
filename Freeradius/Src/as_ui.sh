@@ -27,7 +27,7 @@ source Utils/Src/general_utils.sh
 AS_PATH="Freeradius/Src/as.sh"
 
 # Configuration files list
-CONF_LIST_PATH="Freeradius/Conf/conf_list.txt"
+AS_UI_CONF_LIST_PATH="Freeradius/Conf/conf_list.txt"
 
 
 
@@ -89,9 +89,20 @@ as_ui_handle_input() {
 }
 
 as_ui_setup() {
+    # Start logging if required
+    if [ "$as_ui_log_mode" == "app" ]; then
+        log_output -d $as_ui_log_dir -t "$as_ui_conf_string" &&
+            print_info "Beginning saving session of stdout and stderr $as_ui_log_dir..." &&
+            { print_success; echo ""; } || { print_error; return 1; }
+    elif [ "$as_ui_log_mode" == "new" ]; then
+        log_output -d $as_ui_log_dir -t "$as_ui_conf_string" -n &&
+            print_info "Beginning saving session of stdout and stderr $as_ui_log_dir..." &&
+            { print_success; echo ""; } || { print_error; return 1; }
+    fi
+
     # Get configuration dir from conf_list
     print_info "Fetching configuration directory associated to $as_ui_conf_string..."
-    as_ui_conf_dir="$(get_from_list -f "$CONF_LIST_PATH" -s "$as_ui_conf_string")" &&
+    as_ui_conf_dir="$(get_from_list -f "$AS_UI_CONF_LIST_PATH" -s "$as_ui_conf_string")" &&
         print_success || { echo "$as_ui_conf_dir"; print_error; echo ""; return 1; }
 }
 

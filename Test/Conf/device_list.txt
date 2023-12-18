@@ -1,0 +1,3 @@
+ipad=iPad
+poco-f3=Poco_F3
+cypress-board=Cypress_board

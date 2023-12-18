@@ -1,7 +1,7 @@
 #!/bin/bash
 #set -x
 
-GENERAL_UTILS_IS_LOADED=True
+GENERAL_UTILS_IS_LOADED=true
 
 CODE_OK=0
 CODE_KO=1
@@ -258,19 +258,16 @@ log_output() {
     # Calculate the next _log_progr_num
     if [ "$_log_mode" == "new" ]; then
         _log_progr_num=$((_log_last_progr_num + 1))
-    elif [ "$_log_mode" == "add" ] && [ "$_log_last_progr_num" -ne 0 ]; then
+    elif [ "$_log_mode" == "app" ] && [ "$_log_last_progr_num" -ne 0 ]; then
         _log_progr_num=$_log_last_progr_num
-    elif [ "$_log_mode" == "add" ] && [ "$_log_last_progr_num" -eq 0 ]; then
+    elif [ "$_log_mode" == "app" ] && [ "$_log_last_progr_num" -eq 0 ]; then
         echo "Error in $FUNCNAME(). Not initializing new log session, but cannot find an old one."
         return $CODE_KO
     fi
 
-    # Get _log_data
-    local _log_data="$(date +"%Y-%m-%d_%H-%M-%S")"
-
     # Update _log_file, ceate the sub directory if does not exists yet and
     # finally get the _log_file full path name
-    _log_file="$_log_file""$_log_progr_num""_""$_log_data"
+    _log_file="$_log_file""$_log_progr_num"
     mkdir -p "$_log_file"
     _log_file="$_log_file/$_log_target.log"
 
@@ -278,4 +275,60 @@ log_output() {
     exec > >(trap '' INT; tee "$_log_file")
 
     return "$?"
+}
+
+
+
+
+### *** Interprocessing *** ###
+
+exec_new_term() {
+    local _exec_wait_process=""
+    local _exec_wait_process_request=false
+    local _exec_input_cmd_string=""
+    while getopts "w:c:" opt; do
+        case $opt in
+            w)
+                _exec_wait_process_request=true
+                _exec_wait_process="$OPTARG"
+                ;;
+            c)
+                _exec_input_cmd_string="$OPTARG"
+                ;;
+            \?)
+                echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
+                return $CODE_ERROR
+                ;;
+            :)
+                echo "Error in $FUNCNAME(). Option -$OPTARG requires an argument."
+                return $CODE_ERROR
+                ;;
+        esac
+    done
+    OPTIND=1
+
+    # Check if the input is valid
+    if [ "$_exec_input_cmd_string" == "" ]; then
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -w process_to_wait -c \"cmd_string\"."
+        return $CODE_ERROR
+    fi
+
+    if [ $_exec_wait_process_request ] && [ "$_exec_wait_process" == "" ]; then
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -w process_to_wait -c \"cmd_string\"."
+        return $CODE_ERROR
+    fi
+
+    # Prepare _exec, the cmd to open a new terminal window and execute stuff
+    _exec_cmd="$(get_terminal_exec_cmd)"
+
+    _exec_wait_cmd='while [ "$(pgrep '$_exec_wait_process')" == "" ]; do sleep 1; done'
+
+    # Execute the _exec_cmd. Wait for the other process if specified
+    if [ $_exec_wait_process_request ]; then
+        $_exec_cmd "$_exec_wait_cmd; $_exec_input_cmd_string; sleep 3;"
+    else
+        $_exec_cmd "$_exec_input_cmd_string; sleep 3;"
+    fi
+    
+    return
 }

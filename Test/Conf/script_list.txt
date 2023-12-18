@@ -1,0 +1,6 @@
+# Personal
+p_wpa2=Test/Src/test_p_wpa2.sh
+
+# Enterprise
+e_wpa2=Test/Src/test_e_wpa2.sh
+

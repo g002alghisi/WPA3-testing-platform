@@ -4,11 +4,9 @@
 # Surce test_setup.sh to prepare the environment
 source test_setup.sh
 
-TEST_ETH_IF_STRING="-e enp0s20f0u1"
-
 
 # launch the FAKE AP with WPA3 (not SAE-PK)
-#$AP_UI_PATH -c p:fake-wpa3-pk $TEST_ETH_IF_TRING
+#$AP_UI_PATH -c p:fake-wpa3-pk
 
 
 # Wait 1s
@@ -16,7 +14,7 @@ TEST_ETH_IF_STRING="-e enp0s20f0u1"
 
 
 # launch the REAL AP with SAE-PK
-$AP_UI_PATH -c p:wpa3-pk $TEST_ETH_IF_TRING
+$AP_UI_PATH -c p:wpa3-pk
 
 
 # Wait 1s
@@ -24,4 +22,4 @@ sleep_with_dots 1
 
 
 # launch the FAKE AP with WPA3 (not SAE-PK)
-$AP_UI_PATH -c p:fake-wpa3-pk $TEST_ETH_IF_TRING
+$AP_UI_PATH -c p:fake-wpa3-pk
