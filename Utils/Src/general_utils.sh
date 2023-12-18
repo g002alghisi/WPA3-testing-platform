@@ -14,7 +14,7 @@ HOME_DIR="Hostapd-test"  # Without final "/"
 
 go_home() {
     cd "$(dirname "$HOME_DIR")"
-    current_path=$(pwd)
+    local current_path=$(pwd)
     while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
         cd ..
         current_path=$(pwd)
@@ -22,7 +22,7 @@ go_home() {
 
     if [[ "$current_path" == "/" ]]; then
         echo "Error in $FUNCNAME(), reached "/" position. Wrong HOME_DIR"
-        return "$CODE_ERROR"
+        exit 1
     fi
 }
 
@@ -57,8 +57,8 @@ print_title() {
 ### *** Check file *** ###
 
 file_exists() {
-    _file=""
-    _file_is_dir=0
+    local _file=""
+    local _file_is_dir=0
     while getopts "f:d:" opt; do
         case $opt in
             f)
@@ -101,8 +101,8 @@ file_exists() {
 ### *** Get from list *** ###
 
 get_from_list() {
-    _file_list=""
-    _string=""
+    local _file_list=""
+    local _string=""
     while getopts "f:s:" opt; do
         case $opt in
             f)
@@ -130,7 +130,7 @@ get_from_list() {
 
     file_exists -f $_file_list || return "$?"
 
-    _output="$(grep "$_string""=" "$_file_list" | cut -d "=" -f 2)"
+    local _output="$(grep "$_string""=" "$_file_list" | cut -d "=" -f 2)"
     if [ "$_output" == "" ]; then
         echo "$FUNCNAME(): Cannot find $_string in $_file_list."
         return $CODE_KO
@@ -167,7 +167,7 @@ sleep_with_dots() {
 
     # Check if the input is a number
     if [ -n "$1" ] || [ "$1" -eq "$1" ] &>/dev/null; then
-        _sec="$1"
+        local _sec="$1"
     else
         echo "Error in $FUNCNAME(). Input parameter is not a number."
         return $CODE_ERROR
@@ -202,11 +202,10 @@ sleep_with_dots() {
 #       ----- another log_target.log (es. as.log)
 
 log_output() {
-    _log_path=""
-    _log_dir=""
-    _log_target=""
-    _log_new_session=0
-    _log_cmd=""
+    local _log_file=""
+    local _log_dir=""
+    local _log_target=""
+    local _log_mode="app"
     while getopts "d:t:n" opt; do
         case $opt in
             d)
@@ -219,7 +218,7 @@ log_output() {
                 ;;
             n)
                 # Enforce number progression or not 
-                _log_new_session=1
+                _log_mode="new"
                 ;;
             \?)
                 echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
@@ -241,38 +240,42 @@ log_output() {
 
     # Check if _log_dir ends with "/" or not
     if [[ "$_log_dir" == *"/" ]]; then
-        _log_path="$_log_dir"
+        _log_file="$_log_dir"
     else
-        _log_path="$_log_dir/"
+        _log_file="$_log_dir/"
     fi
 
     # Create it if it does not exist
-    mkdir -p "$_log_path"
+    mkdir -p "$_log_dir"
 
     # Check the last numbered subfolder
-    _last_progr_num=$(ls $_log_path | grep -Eo '[0-9]+' | sort -n | tail -n 1 2>/dev/null)
-    if [ -z "$_last_progr_num" ]; then
-        _last_progr_num=0
+    local _log_progr_num=0
+    local _log_last_progr_num=$(ls $_log_file | grep -Eo '^[0-9]+' | sort -n | tail -n 1 2>/dev/null)
+    if [ -z "$_log_last_progr_num" ]; then
+        _log_last_progr_num=0
     fi
 
-    # Calculate the next _log_progr_number
-    if [ "$_log_new_session" -eq 1 ]; then
-        _log_progr_number=$((_last_progr_num + 1))
-    elif [ "$_log_new_session" -eq 0 ] && [ "$_last_progr_num" -ne 0 ]; then
-        _log_progr_number=$_last_progr_num
-    elif [ "$_log_new_session" -eq 0 ] && [ "$_last_progr_num" -eq 0 ]; then
+    # Calculate the next _log_progr_num
+    if [ "$_log_mode" == "new" ]; then
+        _log_progr_num=$((_log_last_progr_num + 1))
+    elif [ "$_log_mode" == "add" ] && [ "$_log_last_progr_num" -ne 0 ]; then
+        _log_progr_num=$_log_last_progr_num
+    elif [ "$_log_mode" == "add" ] && [ "$_log_last_progr_num" -eq 0 ]; then
         echo "Error in $FUNCNAME(). Not initializing new log session, but cannot find an old one."
         return $CODE_KO
     fi
 
-    # Update _log_path, ceate the sub directory if does not exists yet and
+    # Get _log_data
+    local _log_data="$(date +"%Y-%m-%d_%H-%M-%S")"
+
+    # Update _log_file, ceate the sub directory if does not exists yet and
     # finally get the _log_file full path name
-    _log_path="$_log_path$_log_progr_number"
-    mkdir -p "$_log_path"
-    _log_file="$_log_path/$_log_target.log"
+    _log_file="$_log_file""$_log_progr_num""_""$_log_data"
+    mkdir -p "$_log_file"
+    _log_file="$_log_file/$_log_target.log"
 
     # Save stdout and stderr inside _log_file
-    exec > >(trap '' INT; tee $_log_file)
+    exec > >(trap '' INT; tee "$_log_file")
 
     return "$?"
 }

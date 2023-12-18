@@ -6,16 +6,15 @@
 HOME_DIR="Hostapd-test"
 
 go_home() {
-    cd "$(dirname "$HOME_DIR")"
-    current_path=$(pwd)
-    while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
+    current_dir="$(basename $(pwd))"
+    while [ "$current_dir" != "$HOME_DIR" ] && [ "$current_dir" != "/" ]; do
         cd ..
-        current_path=$(pwd)
+        current_dir="$(basename $(pwd))"
     done
 
-    if [[ "$current_path" == "/" ]]; then
-        echo "Error in $0, reached "/" position. Wrong HOME_DIR"
-        return 1
+    if [ "$current_dir" == "/" ]; then
+        echo "Error in $0, reached "/" position."
+        exit 1
     fi
 }
 
@@ -32,32 +31,37 @@ CONF_LIST_PATH="Freeradius/Conf/conf_list.txt"
 
 
 
-### *** AP UI *** ###
+### *** AS UI *** ###
 
-as_ui_setup() {
-    # Get configuration dir from conf_list
-    print_info "Fetching configuration directory associated to $as_conf_string..."
-    as_conf_dir="$(get_from_list -f "$CONF_LIST_PATH" -s "$as_conf_string")" &&
-        print_success || { echo "$as_conf_dir"; print_error; echo ""; return 1; }
-}
-
-
-
-### *** Main *** ###
-
-main() {
-    as_conf_dir=""
-    as_conf_string=""
-    as_verbose_mode=0
-    as_debug_mode=0
-    while getopts "c:v" opt; do
+as_ui_handle_input() {
+    as_ui_conf_dir=""
+    as_ui_conf_string=""
+    as_ui_verb_mode=0
+    as_ui_debug_mode=0
+    as_ui_log_dir=""
+    as_ui_log_mode=""
+    while getopts "c:l:L:v" opt; do
         case $opt in
             c)
-                as_conf_string="$OPTARG"
+                # c -> Configuration string
+                as_ui_conf_string="$OPTARG"
                 ;;
             v)
-                as_verbose_mode=1
+                # v -> Verbose
+                as_ui_verb_mode=1
                 ;;
+            l)
+                # l -> Log session (append to the last progressive number dir)
+                # Option to not generate a new log session ("app" = append)
+                as_ui_log_dir="$OPTARG"
+                as_ui_log_mode="app"
+                ;;
+            L)
+                # L -> Log session (increment progressive number dir)
+                # Option to generate a new log session
+                as_ui_log_dir="$OPTARG"
+                as_ui_log_mode="new"
+                ;;                
             \?)
                 echo "Invalid option: -$OPTARG"
                 exit 1
@@ -72,25 +76,46 @@ main() {
 
     # Check if the input is valid (the user have to insert at least the
     #   configuration string)
-    if [ "$as_conf_string" == "" ]; then
-        echo "Usage: $0 -c as_conf_string [-v]."
+    if [ "$as_ui_conf_string" == "" ]; then
+        echo "Usage: $0 -c as_ui_conf_string [-v] [-l|L log_dir]."
         exit 1
     fi
 
+    # Check if as_ui_log_dir is valid when -l or -L used
+    if [ "$as_ui_log_mode" != "" ] && [ "$as_ui_log_dir" == "" ]; then
+        echo "Usage: $0 -c as_ui_conf_string [-v] [-l|L log_dir]."
+        exit 1
+    fi
+}
+
+as_ui_setup() {
+    # Get configuration dir from conf_list
+    print_info "Fetching configuration directory associated to $as_ui_conf_string..."
+    as_ui_conf_dir="$(get_from_list -f "$CONF_LIST_PATH" -s "$as_ui_conf_string")" &&
+        print_success || { echo "$as_ui_conf_dir"; print_error; echo ""; return 1; }
+}
+
+
+
+### *** Main *** ###
+
+as_ui_main() {
     # Update the cached credentials (this avoid the insertion of the sudo password
     # during the execution of the successive commands).
     sudo -v
+
+    as_ui_handle_input $@
 
     echo ""
     as_ui_setup &&
 
     # Run as.sh
-    if [ "$as_verbose_mode" -eq 0 ]; then
-        "$AS_PATH" -c "$as_conf_dir"
+    if [ "$as_ui_verb_mode" -eq 0 ]; then
+        "$AS_PATH" -c "$as_ui_conf_dir"
     else
-        "$AS_PATH" -c "$as_conf_dir" -v
+        "$AS_PATH" -c "$as_ui_conf_dir" -v
     fi
 }
 
 
-main $@
+as_ui_main $@

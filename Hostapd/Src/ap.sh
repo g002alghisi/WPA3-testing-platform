@@ -6,16 +6,15 @@
 HOME_DIR="Hostapd-test"
 
 go_home() {
-    cd "$(dirname "$HOME_DIR")"
-    current_path=$(pwd)
-    while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
+    current_dir="$(basename $(pwd))"
+    while [ "$current_dir" != "$HOME_DIR" ] && [ "$current_dir" != "/" ]; do
         cd ..
-        current_path=$(pwd)
+        current_dir="$(basename $(pwd))"
     done
 
-    if [[ "$current_path" == "/" ]]; then
-        echo "Error in $0, reached "/" position. Wrong HOME_DIR"
-        return 1
+    if [ "$current_dir" == "/" ]; then
+        echo "Error in $0, reached "/" position."
+        exit 1
     fi
 }
 
@@ -35,6 +34,54 @@ HOSTAPD_PATH="Hostapd/Build/hostapd"
 
 ### *** AP *** ###
 
+ap_handle_input() {
+    ap_wifi_if=""
+    ap_eth_if=""
+    ap_br_if=""
+    ap_conf_file=""
+    ap_verb_mode=0
+    while getopts "w:e:b:c:v" opt; do
+        case $opt in
+            w)
+                # w -> Wi-Fi interface
+                ap_wifi_if="$OPTARG"
+                ;;
+            e)
+                # e -> Ethernet interface
+                ap_eth_if="$OPTARG"
+                ;;
+            b)
+                # b -> Bridge interface
+                ap_br_if="$OPTARG"
+                ;;
+            c)
+                # c -> Configuration string
+                ap_conf_file="$OPTARG"
+                ;;
+            v)
+                # v -> Verbose
+                ap_verb_mode=1
+                ;;
+            \?)
+                echo "Invalid option: -$OPTARG"
+                exit 1
+                ;;
+            :)
+                echo "Option -$OPTARG requires an argument."
+                exit 1
+                ;;
+        esac
+    done
+    OPTIND=1
+
+    # Check if the input is valid (the user have to insert at least
+    #   the name of all the interfaces, and the configuration file path)
+    if [ "$ap_wifi_if" == "" ] || [ "$ap_eth_if" == "" ] || [ "$ap_br_if" == "" ] || [ "$ap_conf_file" == "" ]; then
+        echo "Usage: $0 -w ap_wifi_if -e ap_eth_if -b ap_br_if -c conf [-v]."
+        exit 1
+    fi
+}
+
 ap_print_info() {
     echo "AP settings:"
     echo ""
@@ -49,30 +96,23 @@ ap_setup() {
 
     # Check Ethernet
     print_info "Checking Ethernet interface... "
-    net_if_exists -e "$eth_if" && print_success || { print_error; return 1; }
+    net_if_exists -e "$ap_eth_if" && print_success || { print_error; return 1; }
 
     # Force Ethernet up
     print_info "Forcing Ethernet interface up... "
-    net_if_force_up -e "$eth_if" && print_success || { print_error; return 1; }
+    net_if_force_up -e "$ap_eth_if" && print_success || { print_error; return 1; }
 
     # Check if Ethernet connected
     print_info "Checking Ethernet connection... "
-    net_if_is_connected -e "$eth_if" && print_success || { print_error; return 1; }
+    net_if_is_connected -e "$ap_eth_if" && print_success || { print_error; return 1; }
 
     # Check Wi-Fi
     print_info "Checking Wi-Fi interface... "
-    net_if_exists -w "$wifi_if" && print_success || { print_error; return 1; }
+    net_if_exists -w "$ap_wifi_if" && print_success || { print_error; return 1; }
 
     # Force Wi-Fi up
     print_info "Forcing Wi-Fi interface up... "
-    net_if_force_up -w "$wifi_if" && print_success || { print_error; return 1; }
-
-    # Check if Wi-Fi connected
-    #print_info "Checking Wi-Fi connection... "
-    #net_if_is_connected -w "$wifi_if" && print_success || { print_error; return 1; }
-    
-    # Disconnecting from Wi-Fi
-    #nmcli c down "$wifi_current_conn" &> /dev/null
+    net_if_force_up -w "$ap_wifi_if" && print_success || { print_error; return 1; }
 
     # Stop Network Manager
     print_info "Stopping NetworkManager... "
@@ -80,11 +120,11 @@ ap_setup() {
 
     # Create the Bridge
     print_info "Creating the bridge... "
-    br_setup "$br_if" && print_success || { print_error; return 1; }
+    br_setup "$ap_br_if" && print_success || { print_error; return 1; }
 
     # Add Ethernet interface to the bridge
-    print_info "Adding $eth_if to the bridge ($wifi_if is added later by hostapd)... "
-    br_add_if -b "$br_if" -n "$eth_if" && print_success || { print_error; return 1; }
+    print_info "Adding $ap_eth_if to the bridge ($ap_wifi_if is added later by hostapd)... "
+    br_add_if -b "$ap_br_if" -n "$ap_eth_if" && print_success || { print_error; return 1; }
 
     # Check AP config file
     print_info "Looking for $ap_conf_file..."
@@ -101,7 +141,7 @@ ap_run() {
 
     ap_print_info
     
-    if [ "$ap_verbose_mode" -eq 0 ]; then
+    if [ "$ap_verb_mode" -eq 0 ]; then
         sudo "$HOSTAPD_PATH" "$ap_conf_file"
     else
         sudo "$HOSTAPD_PATH" "$ap_conf_file" -d
@@ -116,7 +156,7 @@ ap_setdown() {
 
     # Delete the bridge
     print_info "Deleting the bridge... "
-    br_setdown "$br_if" && print_success || print_error
+    br_setdown "$ap_br_if" && print_success || print_error
     
     # Start Network Manager
     print_info "Starting NetworkManager... "
@@ -127,48 +167,7 @@ ap_setdown() {
 
 ### *** Main section *** ###
 
-main() {
-    wifi_if=""
-    eth_if=""
-    br_if=""
-    ap_conf_file=""
-    ap_verbose_mode=0
-    while getopts "w:e:b:c:v" opt; do
-        case $opt in
-            w)
-                wifi_if="$OPTARG"
-                ;;
-            e)
-                eth_if="$OPTARG"
-                ;;
-            b)
-                br_if="$OPTARG"
-                ;;
-            c)
-                ap_conf_file="$OPTARG"
-                ;;
-            v)
-                ap_verbose_mode=1
-                ;;
-            \?)
-                echo "Invalid option: -$OPTARG"
-                exit 1
-                ;;
-            :)
-                echo "Option -$OPTARG requires an argument."
-                exit 1
-                ;;
-        esac
-    done
-    OPTIND=1
-
-    # Check if the input is valid (the user have to insert at least
-    #   the name of all the interfaces, and the configuration file path)
-    if [ "$wifi_if" == "" ] || [ "$eth_if" == "" ] || [ "$br_if" == "" ] || [ "$ap_conf_file" == "" ]; then
-        echo "Usage: $0 -w wifi_if -e eth_if -b br_if -c conf [-v]."
-        exit 1
-    fi
-
+ap_main() {
     # Update the cached credentials (this avoid the insertion of the sudo password
     #   during the execution of the successive commands)
     sudo -v
@@ -176,8 +175,7 @@ main() {
     # Hide keyboard input
     stty -echo
 
-    # Handle ctrl-c by executing setdown functio
-    #trap 'echo "ciao ciao"' INT
+    ap_handle_input $@
 
     # If the setup fails, then do not run, but skip this phase and execute
     #   the setdown
@@ -193,4 +191,4 @@ main() {
     exit 0
 }
 
-main $@
+ap_main $@

@@ -52,22 +52,22 @@ However, the default behaviour of Ubuntu is to change the interface name assigne
 
 2. Get the temporary `temp_eth_if` name by means of `ifconfig`
 
-3. Get the environment `ID_SERIAL_SHORT` string from the output of
+3. Get the environment `ID_NET_NAME` string from the output of
 
     ```
     sudo udevadm info /sys/class/net/temp_eth_if
     ```
 
-3. Edit `/etc/udev/rules.d/99-persistent-net.rules` file
+3. Edit `/etc/udev/rules.d/76-network.rules` file
    
     ```
-    sudo vim /etc/udev/rules.d/99-persistent-net.rules
+    sudo vim /etc/udev/rules.d/76-network.rules
     ```
 
     and add the following string
 
     ```
-    SUBSYSTEM=="net", ENV{ID_SERIAL_SHORT}="your_id_serial_short_string", ACTION=="add", NAME="desired-eth-usb-if-name"
+    SUBSYSTEM=="net", ENV{ID_NET_NAME}="your_id_net_name", ACTION=="add", NAME="your_id_net_name"
     ```
 
 4. Reload the `udev` rules
@@ -78,6 +78,7 @@ However, the default behaviour of Ubuntu is to change the interface name assigne
 
 5. Unplug and replug the USB cable, enable the USB-Tethering mode and finally check if the interface name is now correct.
 
+This solution is derived from [this forum](https://unix.stackexchange.com/questions/388300/udev-does-not-renawlp3s0: STA f2:e3:2e:b3:5b:7c IEEE
 
 ## Workflow
 

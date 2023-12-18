@@ -4,7 +4,7 @@
 # Surce test_setup.sh to prepare the environment
 source test_setup.sh
 
-TEST_ETH_IF_STRING="-e ethf3"
+TEST_ETH_IF_STRING="-e enp0s20f0u1"
 
 
 # Launch the ROGUE AP with SAE-PK and wrokg modifier/pP keys

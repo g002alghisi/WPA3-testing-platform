@@ -1,3 +1,5 @@
+INFO: Beginning logging session inside Test/Log/test_p_wpa2...
+[0;32mSuccess.[0m
 
 INFO: Fetching configuration file associated to p:wpa2...
 [0;32mSuccess.[0m
@@ -18,7 +20,7 @@ INFO: Stopping NetworkManager...
 [0;32mSuccess.[0m
 INFO: Creating the bridge... 
 [0;32mSuccess.[0m
-INFO: Adding ethf3 to the bridge (wlp3s0 is added later by hostapd)... 
+INFO: Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
 [0;32mSuccess.[0m
 INFO: Looking for Hostapd/Conf/Minimal/Personal/p_wpa2.conf...
 [0;32mSuccess.[0m
@@ -49,3 +51,15 @@ ieee80211w=1
 wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
 wlp3s0: interface state COUNTRY_UPDATE->ENABLED
 wlp3s0: AP-ENABLED 
+wlp3s0: interface state ENABLED->DISABLED
+wlp3s0: AP-DISABLED 
+wlp3s0: CTRL-EVENT-TERMINATING 
+nl80211: deinit ifname=wlp3s0 disabled_11b_rates=0
+
+[0;36mHostapd is stopped.[0m
+
+INFO: Deleting the bridge... 
+[0;32mSuccess.[0m
+INFO: Starting NetworkManager... 
+[0;32mSuccess.[0m
+

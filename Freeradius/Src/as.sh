@@ -6,16 +6,15 @@
 HOME_DIR="Hostapd-test"
 
 go_home() {
-    cd "$(dirname "$HOME_DIR")"
-    current_path=$(pwd)
-    while [[ "$current_path" != *"$HOME_DIR" ]] && [[ "$current_path" != "/" ]]; do
+    current_dir="$(basename $(pwd))"
+    while [ "$current_dir" != "$HOME_DIR" ] && [ "$current_dir" != "/" ]; do
         cd ..
-        current_path=$(pwd)
+        current_dir="$(basename $(pwd))"
     done
 
-    if [[ "$current_path" == "/" ]]; then
-        echo "Error in $0, reached "/" position. Wrong HOME_DIR"
-        return 1
+    if [ "$current_dir" == "/" ]; then
+        echo "Error in $0, reached "/" position."
+        exit 1
     fi
 }
 
@@ -30,6 +29,39 @@ tmp_dir="Freeradius/Tmp"
 
 
 ### *** AS *** ###
+
+as_handle_input() {
+    as_ip_addr=""
+    as_port=""
+    as_conf_dir=""
+    as_verb_mode=0
+    while getopts "c:v" opt; do
+        case $opt in
+            c)
+                as_conf_dir="$OPTARG"
+                ;;
+            v)
+                as_verb_mode=1
+                ;;
+            \?)
+                echo "Invalid option: -$OPTARG"
+                exit 1
+                ;;
+            :)
+                echo "Option -$OPTARG requires an argument."
+                exit 1
+                ;;
+        esac
+    done
+    OPTIND=1
+
+    # Check if the input is valid (the user have to insert at lease the
+    #   configuration dir path)
+    if [ "$as_conf_dir" == "" ]; then
+        echo "Usage: $0 -c conf_dir [-v] [-l|L log_dir]."
+        exit 1
+    fi
+}
 
 as_setup() {
     # Check if $as_conf_dir ends with "/"
@@ -50,7 +82,7 @@ as_setup() {
 as_run() {
     print_title "Running FreeRADIUS. Press Ctrl-C to stop."
 
-    if [ "$as_verbose_mode" -eq 0 ]; then
+    if [ "$as_verb_mode" -eq 0 ]; then
         sudo freeradius -f -d "$as_conf_dir"
     else
         sudo freeradius -d "$as_conf_dir" -X
@@ -68,48 +100,16 @@ as_setdown() {
 
 ### *** Main section *** ###
 
-main() {
-    as_ip_addr=""
-    as_port=""
-    as_conf_dir=""
-    as_verbose_mode=0
-    while getopts "c:vd" opt; do
-        case $opt in
-            c)
-                as_conf_dir="$OPTARG"
-                ;;
-            v)
-                as_verbose_mode=1
-                ;;
-            d)
-                # Enable debug for the bash script
-                set -x
-                ;;
-            \?)
-                echo "Invalid option: -$OPTARG"
-                exit 1
-                ;;
-            :)
-                echo "Option -$OPTARG requires an argument."
-                exit 1
-                ;;
-        esac
-    done
-    OPTIND=1
-
-    # Check if the input is valid (the user have to insert at lease the
-    #   configuration dir path)
-    if [ "$as_conf_dir" == "" ]; then
-        echo "Usage: $0 -c conf_dir [-v] [-d]."
-        exit 1
-    fi
-
+as_main() {
     # Update the cached credentials (this avoid the insertion of the sudo password
     #   during the execution of the successive commands)
     sudo -v
 
     # Hide keyboard input
     stty -echo
+
+    # Handle input
+    as_handle_input $@
 
     # If the setup fails, then do not run, but skip this phase and execute
     #   the setdown
@@ -123,4 +123,4 @@ main() {
     stty echo
 }
 
-main $@
+as_main $@
