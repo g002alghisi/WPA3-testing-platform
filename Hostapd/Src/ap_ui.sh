@@ -42,35 +42,7 @@ CONF_LIST_PATH="Hostapd/Conf/conf_list.txt"
 
 ### *** AP UI *** ###
 
-ap_ui_setup() {
-    # If log is enabled, start logging
-    if [ "$ap_log_old_session" -eq 1 ]; then
-        print_info "Strating logging of the process stdout and stderr..."
-        log_fun -d "$ap_log_dir" -t "ap" &&
-            print_success || { print_error; echo ""; return 1; }
-    elif [ "$ap_log_new_session" -eq 1 ]; then
-        print_info "Strating logging of the process stdout and stderr..."     
-        log_fun -d "$ap_log_dir" -t "ap" -n &&
-            print_success || { print_error; echo ""; return 1; }
-    fi
-
-    # Get configuration file from conf_list
-    print_info "Fetching configuration file associated to $ap_conf_string..."
-    ap_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$ap_conf_string")" &&
-        print_success || { echo "$ap_conf_file"; print_error; echo ""; return 1; }
-
-    # Change interface and bridge name inside the conf_file
-    print_info "Changing interface and bridge name inside $ap_conf_file..."
-    { sed -i "s/^interface=.*/interface=$wifi_if/" "$ap_conf_file" &&
-    sed -i "s/^bridge=.*/bridge=$br_if/" "$ap_conf_file"; } &&
-        print_success || { print_error; echo ""; return 1; }
-}
-
-
-
-### *** Main *** ###
-
-main() {
+ap_ui_handle_input() {
     wifi_if="$WIFI_IF_DEFAULT"
     eth_if="$ETH_IF_DEFAULT"
     br_if="$BR_IF_DEFAULT"
@@ -78,8 +50,7 @@ main() {
     ap_conf_string=""
     ap_verbose_mode=0
     ap_log_dir=""
-    ap_log_old_session=0
-    ap_log_new_session=0
+    ap_log_mode=""
     while getopts "w:e:b:c:l:L:v" opt; do
         case $opt in
             w)
@@ -101,12 +72,13 @@ main() {
                 ap_conf_string="$OPTARG"
                 ;;
             l)
-                ap_log_old_session=1
+                # Option to not generate a new log session ("app" = append)
                 ap_log_dir="$OPTARG"
+                ap_log_mode="app"
                 ;;
             L)
-                ap_log_new_session=1
                 ap_log_dir="$OPTARG"
+                ap_log_mode="new"
                 ;;
             \?)
                 echo "Invalid option: -$OPTARG"
@@ -123,20 +95,53 @@ main() {
     # Check if the input is valid (the user have to insert at least the
     #   configuration string)
     if [ "$ap_conf_string" == "" ]; then
-        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v] [-l log_dir (old session)| -L log_dir (new session)]."
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v] [-l|L log_dir]."
         exit 1
     fi
 
-    if { [ "$ap_log_old_session" -eq 1 ] || [ "$ap_log_new_session" -eq 1 ]; } && [ "$ap_log_dir" == "" ] ; then
-        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v] [-l log_dir (old session)| -L log_dir (new session)]."
+    # Check if ap_log_dir is valid when -l or -L used
+    if [ "$ap_log_mode" != "" ] && [ "$ap_log_dir" == "" ]; then
+        echo "Usage: $0 [-w wifi_if] [-e eth_if] [-b br_if] -c ap_conf_string [-v] [-l|L log_dir]."
         exit 1
     fi
+}
 
+ap_ui_setup() {
+    # Start logging if required
+    if [ "$ap_log_mode" == "app" ]; then
+        print_info "Beginning logging session inside $ap_log_dir..."
+        log_output -d $ap_log_dir -t "ap" &&
+            print_success || { print_error; return 1; }
+    elif [ "$ap_log_mode" == "new" ]; then
+        print_info "Beginning logging session inside $ap_log_dir..."
+        log_output -d $ap_log_dir -t "ap" -n &&
+            print_success || { print_error; return 1; }
+    fi
+
+    # Get configuration file from conf_list
+    print_info "Fetching configuration file associated to $ap_conf_string..."
+    ap_conf_file="$(get_from_list -f "$CONF_LIST_PATH" -s "$ap_conf_string")" &&
+        print_success || { echo "$ap_conf_file"; print_error; echo ""; return 1; }
+
+    # Change interface and bridge name inside the conf_file
+    print_info "Changing interface and bridge name inside $ap_conf_file..."
+    { sed -i "s/^interface=.*/interface=$wifi_if/" "$ap_conf_file" &&
+    sed -i "s/^bridge=.*/bridge=$br_if/" "$ap_conf_file"; } &&
+        print_success || { print_error; echo ""; return 1; }
+}
+
+
+
+### *** Main *** ###
+
+main() {
     # Update the cached credentials (this avoid the insertion of the sudo password
     # during the execution of the successive commands).
     sudo -v
 
-    # Fetch, check and modify ap_conf_file
+    ap_ui_handle_input $@
+
+    # Fetch, check and modify ap_conf_file, and eventually start logging
     echo ""
     ap_ui_setup &&
 
@@ -146,6 +151,8 @@ main() {
     else
         "$AP_PATH" -w "$wifi_if" -e "$eth_if" -b "$br_if" -c "$ap_conf_file" -v
     fi
+
+    exit 0
 }
 
 

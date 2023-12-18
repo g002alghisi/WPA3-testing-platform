@@ -4,7 +4,7 @@ AP_UI_PATH="Hostapd/Src/ap_ui.sh"
 AS_UI_PATH="Freeradius/Src/as_ui.sh"
 
 PROGRAM_NAME="$(basename "$0" .sh)"
-LOG_DIR_PATH="Test/Log"
+LOG_DIR_PATH="Test/Log/$PROGRAM_NAME"
 
 ### *** Go Home *** ###
 

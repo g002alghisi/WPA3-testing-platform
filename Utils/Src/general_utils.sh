@@ -201,11 +201,12 @@ sleep_with_dots() {
 #       |
 #       ----- another log_target.log (es. as.log)
 
-log_fun() {
+log_output() {
     _log_path=""
     _log_dir=""
     _log_target=""
     _log_new_session=0
+    _log_cmd=""
     while getopts "d:t:n" opt; do
         case $opt in
             d)
@@ -266,13 +267,12 @@ log_fun() {
 
     # Update _log_path, ceate the sub directory if does not exists yet and
     # finally get the _log_file full path name
-    _log_path="$_log_path/$_log_progr_number"
+    _log_path="$_log_path$_log_progr_number"
     mkdir -p "$_log_path"
     _log_file="$_log_path/$_log_target.log"
 
-    # Copy stdout and stderr inside _log_file
-    exec > >(tee -a "$_log_file") ||
-        { echo "Error in $FUNCNAME(). Cannot initialize log session."; return $CODE_KO; }
+    # Save stdout and stderr inside _log_file
+    exec > >(trap '' INT; tee $_log_file)
 
-    return $CODE_OK
+    return "$?"
 }

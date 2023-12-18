@@ -176,6 +176,9 @@ main() {
     # Hide keyboard input
     stty -echo
 
+    # Handle ctrl-c by executing setdown functio
+    #trap 'echo "ciao ciao"' INT
+
     # If the setup fails, then do not run, but skip this phase and execute
     #   the setdown
     echo ""
@@ -186,6 +189,8 @@ main() {
 
     # Show keyboard input
     stty echo
+
+    exit 0
 }
 
 main $@
