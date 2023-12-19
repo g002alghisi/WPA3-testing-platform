@@ -32,6 +32,7 @@ test_ui_log_dir="Test/Log"
 # Configuration files list
 TEST_UI_SCRIPT_LIST_PATH="Test/Conf/script_list.txt"
 TEST_UI_DEVICE_LIST_PATH="Test/Conf/device_list.txt"
+TEST_UI_COMMENT_TEMPLATE_PATH="Test/Tmp/comment_template.txt"
 TEST_UI_COMMENT_TMP_PATH="Test/Tmp/comment.txt"
 
 
@@ -74,6 +75,9 @@ test_ui_handle_input() {
 }
 
 test_ui_setup() {
+    # Save test time and date
+    test_ui_date_string="$(date "+%Y-%m-%d %H:%M:%S")"
+
     # Get script from conf_list
     print_info "Fetching test script associated to $test_ui_script_string..."
     test_ui_script="$(get_from_list -f "$TEST_UI_SCRIPT_LIST_PATH" -s "$test_ui_script_string")" &&
@@ -99,22 +103,30 @@ test_ui_handle_comment() {
     choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')
 
     if [ "$choice" = "Y" ]; then
-        # Create a temporary file
-        mkdir -p "$(dirname $TEST_UI_COMMENT_TMP_PATH)" &&
-            vim "$TEST_UI_COMMENT_TMP_PATH" &&
+        # Copy comment template, adapt and let te user modify it
+        cp "$TEST_UI_COMMENT_TEMPLATE_PATH" "$TEST_UI_COMMENT_TMP_PATH"
+        # Create a new subshell. If a cmd fails, then the subshell is stopped.
+        (
+            sed -i "s|@test_ui_date_string|$test_ui_date_string|g" "$TEST_UI_COMMENT_TMP_PATH"
+            sed -i "s|@test_ui_device|$test_ui_device|g" "$TEST_UI_COMMENT_TMP_PATH"
+            sed -i "/@test_ui_script_content/ r $test_ui_script" "$TEST_UI_COMMENT_TMP_PATH"
+            sed -i "s|@test_ui_script|$test_ui_script|g" "$TEST_UI_COMMENT_TMP_PATH"
+        )
 
-            # Create a new subshell (a new isolated environment) to save the comment
-            # by means of log_output().
-            (
-                # Start saving stdout and stderr of the subshell
-                log_output -d "$test_ui_log_dir" -t "comment"
+        # Let te user modify the comment.    
+        vim "$TEST_UI_COMMENT_TMP_PATH"
 
-                cat "$TEST_UI_COMMENT_TMP_PATH"
+        # Create a new subshell to save the comment by means of log_output()
+        (
+            # Start saving stdout and stderr of the subshell
+            log_output -d "$test_ui_log_dir" -t "comment"
 
-            ) > /dev/null
+            cat "$TEST_UI_COMMENT_TMP_PATH"
 
-            # Delete the tmp comment.txt file
-            rm "$TEST_UI_COMMENT_TMP_PATH"
+        ) > /dev/null
+
+        # Delete the tmp comment.txt file
+        rm "$TEST_UI_COMMENT_TMP_PATH"
     fi
 
     echo ""

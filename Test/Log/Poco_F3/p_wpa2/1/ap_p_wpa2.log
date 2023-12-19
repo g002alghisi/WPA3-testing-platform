@@ -1,4 +1,4 @@
-INFO: Beginning saving session of stdout and stderr Test/Log/iPad/p_wpa2...
+INFO: Beginning saving session of stdout and stderr Test/Log/Poco_F3/p_wpa2...
 [0;32mSuccess.[0m
 
 INFO: Fetching configuration file associated to p_wpa2...
@@ -51,7 +51,24 @@ ieee80211w=1
 wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
 wlp3s0: interface state COUNTRY_UPDATE->ENABLED
 wlp3s0: AP-ENABLED 
+wlp3s0: STA f2:e3:2e:b3:5b:7c IEEE 802.11: authentication OK (open system)
+wlp3s0: STA f2:e3:2e:b3:5b:7c IEEE 802.11: authenticated
+wlp3s0: STA f2:e3:2e:b3:5b:7c IEEE 802.11: association OK (aid 1)
+wlp3s0: STA f2:e3:2e:b3:5b:7c IEEE 802.11: associated (aid 1)
+wlp3s0: STA f2:e3:2e:b3:5b:7c IEEE 802.11: binding station to interface 'wlp3s0'
+wlp3s0: STA f2:e3:2e:b3:5b:7c WPA: event 1 notification
+wlp3s0: STA f2:e3:2e:b3:5b:7c WPA: start authentication
+wlp3s0: STA f2:e3:2e:b3:5b:7c IEEE 802.1X: unauthorizing port
+wlp3s0: STA f2:e3:2e:b3:5b:7c WPA: sending 1/4 msg of 4-Way Handshake
+wlp3s0: STA f2:e3:2e:b3:5b:7c WPA: received EAPOL-Key frame (2/4 Pairwise)
+wlp3s0: STA f2:e3:2e:b3:5b:7c WPA: sending 3/4 msg of 4-Way Handshake
+wlp3s0: STA f2:e3:2e:b3:5b:7c WPA: received EAPOL-Key frame (4/4 Pairwise)
+wlp3s0: AP-STA-CONNECTED f2:e3:2e:b3:5b:7c
+wlp3s0: STA f2:e3:2e:b3:5b:7c IEEE 802.1X: authorizing port
+wlp3s0: STA f2:e3:2e:b3:5b:7c WPA: pairwise key handshake completed (RSN)
+wlp3s0: EAPOL-4WAY-HS-COMPLETED f2:e3:2e:b3:5b:7c
 wlp3s0: interface state ENABLED->DISABLED
+wlp3s0: AP-STA-DISCONNECTED f2:e3:2e:b3:5b:7c
 wlp3s0: AP-DISABLED 
 wlp3s0: CTRL-EVENT-TERMINATING 
 nl80211: deinit ifname=wlp3s0 disabled_11b_rates=0
