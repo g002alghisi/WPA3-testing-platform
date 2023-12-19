@@ -148,10 +148,10 @@ test_ui_save_log() {
     choice_log=$(echo "$choice_log" | tr '[:lower:]' '[:upper:]')
 
     if [ "$choice_log" = "Y" ]; then
-        mv "$TEST_UI_LOG_TMP_DIR_ROOT"/* "$TEST_UI_LOG_DIR"
+        cp -r "$TEST_UI_LOG_TMP_DIR_ROOT"/* "$TEST_UI_LOG_DIR"
     fi
 
-    rm -rf "$TEST_UI_LOG_TMP_DIR_ROOT" > /dev/null
+    rm -rf "$TEST_UI_LOG_TMP_DIR_ROOT"
 }
 
 
@@ -180,6 +180,7 @@ test_ui_main() {
     test_ui_handle_comment
 
     test_ui_save_log
+    echo ""
 }
 
 test_ui_main $@
