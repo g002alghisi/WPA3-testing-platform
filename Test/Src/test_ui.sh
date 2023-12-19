@@ -119,7 +119,7 @@ test_ui_handle_comment() {
         # Create a new subshell to save the comment by means of log_output()
         (
             # Start saving stdout and stderr of the subshell
-            log_output -d "$test_ui_log_dir" -t "comment"
+            log_output -d "$test_ui_log_dir" -t "comment.md"
 
             cat "$TEST_UI_COMMENT_TMP_PATH"
 

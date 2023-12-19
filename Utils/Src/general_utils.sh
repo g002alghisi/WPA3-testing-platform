@@ -269,7 +269,7 @@ log_output() {
     # finally get the _log_file full path name
     _log_file="$_log_file""$_log_progr_num"
     mkdir -p "$_log_file"
-    _log_file="$_log_file/$_log_target.log"
+    _log_file="$_log_file/$_log_target"
 
     # Save stdout and stderr inside _log_file
     exec > >(trap '' INT; tee "$_log_file") 2>&1

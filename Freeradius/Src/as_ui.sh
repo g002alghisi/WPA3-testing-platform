@@ -91,11 +91,11 @@ as_ui_handle_input() {
 as_ui_setup() {
     # Start logging if required
     if [ "$as_ui_log_mode" == "app" ]; then
-        log_output -d $as_ui_log_dir -t "as_$as_ui_conf_string" &&
+        log_output -d $as_ui_log_dir -t "as_$as_ui_conf_string.log" &&
             print_info "Beginning saving session of stdout and stderr $as_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     elif [ "$as_ui_log_mode" == "new" ]; then
-        log_output -d $as_ui_log_dir -t "as_$as_ui_conf_string" -n &&
+        log_output -d $as_ui_log_dir -t "as_$as_ui_conf_string.log" -n &&
             print_info "Beginning saving session of stdout and stderr $as_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     fi
