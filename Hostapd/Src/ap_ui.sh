@@ -111,12 +111,13 @@ ap_ui_handle_input() {
 }
 
 ap_ui_setup() {
+    # Start logging if required
     if [ "$ap_ui_log_mode" == "app" ]; then
-        log_output -d $ap_ui_log_dir -t "$ap_ui_conf_string" &&
+        log_output -d $ap_ui_log_dir -t "ap_$ap_ui_conf_string" &&
             print_info "Beginning saving session of stdout and stderr $ap_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     elif [ "$ap_ui_log_mode" == "new" ]; then
-        log_output -d $ap_ui_log_dir -t "$ap_ui_conf_string" -n &&
+        log_output -d $ap_ui_log_dir -t "ap_$ap_ui_conf_string" -n &&
             print_info "Beginning saving session of stdout and stderr $ap_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     fi
@@ -138,13 +139,13 @@ ap_ui_setup() {
 ### *** Main *** ###
 
 ap_ui_main() {
+    ap_ui_handle_input $@
+    
     # Update the cached credentials (this avoid the insertion of the sudo password
     # during the execution of the successive commands).
     sudo -v
 
     echo ""
-    ap_ui_handle_input $@
-
     # Fetch, check and modify ap_ui_conf_file, and eventually start logging
     ap_ui_setup &&
 

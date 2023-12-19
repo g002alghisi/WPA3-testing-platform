@@ -101,15 +101,15 @@ as_setdown() {
 ### *** Main section *** ###
 
 as_main() {
+    # Handle input
+    as_handle_input $@
+    
     # Update the cached credentials (this avoid the insertion of the sudo password
     #   during the execution of the successive commands)
     sudo -v
 
     # Hide keyboard input
     stty -echo
-
-    # Handle input
-    as_handle_input $@
 
     # If the setup fails, then do not run, but skip this phase and execute
     #   the setdown

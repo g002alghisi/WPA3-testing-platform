@@ -1,10 +1,6 @@
 #!/bin/bash
 #set -x  # Debug mode
 
-# Surce test_setup.sh to prepare the environment
-source test_setup.sh
-
-
 # Launch the AP
-$AP_UI_PATH -c p:wpa3-pk
+$AP_UI_PATH -c p_wpa3_pk -L $test_ui_log_dir
 

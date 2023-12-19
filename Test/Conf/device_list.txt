@@ -1,3 +1,19 @@
+### ### ### test Device list ### ### ###
+
+# Basic
+wpa_supplicant=Wpa_supplicant
+
+# IoT
+cypress_board=Cypress_board
+pi_4=Raspberry_Pi_4
+pi_pico_w=Raspberry_Pi_Pico_W
+esp32=ESP32
+
+# Phones and Tablets
 ipad=iPad
-poco-f3=Poco_F3
-cypress-board=Cypress_board
+poco_f3=Poco_F3
+
+# PC OS
+ubuntu=Ubuntu
+lubuntu=Lubuntu
+windows_11=Windows_11

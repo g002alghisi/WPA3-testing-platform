@@ -1,15 +1,12 @@
 #!/bin/bash
 #set -x  # Debug mode
 
-# Surce test_setup.sh to prepare the environment
-source test_setup.sh
-
 
 # Launch the AS
-$terminal_exec_cmd "$AS_UI_PATH -c e:wpa3 -v; sleep 10" 
+exec_new_term -w "hostapd" -c "$AS_UI_PATH -c e_wpa3 -v -l $test_ui_log_dir" 
 
 # Launch the AP in a new window
-$AP_UI_PATH -c e:wpa3
+$AP_UI_PATH -c e_wpa3 -L $test_ui_log_dir
 
 # Try to kill all the terminal windows created, hostapd and freeradius
 sudo pkill -P $$ &> /dev/null

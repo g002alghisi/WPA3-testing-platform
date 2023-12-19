@@ -81,7 +81,7 @@ file_exists() {
     OPTIND=1
 
     if [ "$_file" == "" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() < -f file | -d dir >."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME < -f file | -d dir >."
         return "$CODE_ERROR"
     fi
 
@@ -124,7 +124,7 @@ get_from_list() {
     OPTIND=1
 
     if [ "$_file_list" == "" ] || [ "$_string" == "" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -f file -s string."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME -f file -s string."
         return $CODE_ERROR
     fi
 
@@ -161,7 +161,7 @@ get_terminal_exec_cmd() {
 
 sleep_with_dots() {
     if [ "$#" -ne 1 ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() sec."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME sec."
         return $CODE_ERROR
     fi
 
@@ -234,7 +234,7 @@ log_output() {
 
     # Check if the input is valid
     if [ "$_log_dir" == "" ] || [ "$_log_target" == "" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -d log_dir -t log_target [-a]."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME -d log_dir -t log_target [-a]."
         return $CODE_ERROR
     fi
 
@@ -272,7 +272,7 @@ log_output() {
     _log_file="$_log_file/$_log_target.log"
 
     # Save stdout and stderr inside _log_file
-    exec > >(trap '' INT; tee "$_log_file")
+    exec > >(trap '' INT; tee "$_log_file") 2>&1
 
     return "$?"
 }
@@ -309,12 +309,12 @@ exec_new_term() {
 
     # Check if the input is valid
     if [ "$_exec_input_cmd_string" == "" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -w process_to_wait -c \"cmd_string\"."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME -w process_to_wait -c \"cmd_string\"."
         return $CODE_ERROR
     fi
 
     if [ $_exec_wait_process_request ] && [ "$_exec_wait_process" == "" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -w process_to_wait -c \"cmd_string\"."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME -w process_to_wait -c \"cmd_string\"."
         return $CODE_ERROR
     fi
 

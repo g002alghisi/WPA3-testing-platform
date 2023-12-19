@@ -35,20 +35,20 @@ _br_handle_param() {
     OPTIND=1
 
     if [ "$_br_handle_param_num" -ne 1 ] && [ "$_br_handle_param_num" -ne 2 ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -n 1 -b br_if, or: $FUNCNAME() -n 2 -b br_if -n net_if."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME -n 1 -b br_if, or: $FUNCNAME() -n 2 -b br_if -n net_if."
         return "$CODE_ERROR"
     fi
 
     if [ "$_br_handle_param_num" -eq 1 ] && [ "$_br_if" == "" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -n 1 -b br_if."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME -n 1 -b br_if."
         return "$CODE_ERROR"
     fi
 
     if [ "$_br_handle_param_num" -eq 2 ] && [ "$_br_if" == "" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -n 2 -b br_if -n net_if."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME -n 2 -b br_if -n net_if."
         return "$CODE_ERROR"
     elif [ "$_br_handle_param_num" -eq 2 ] && [ "$_net_if" == "" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -n 2 -b br_if -n net_if."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME -n 2 -b br_if -n net_if."
         return "$CODE_ERROR"
     fi
 }

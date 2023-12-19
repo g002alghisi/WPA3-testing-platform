@@ -40,7 +40,7 @@ _net_if_handle_param() {
     OPTIND=1
 
     if [ "$_net_if" == "" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() < -w wifi_if | -e eth_if >"
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME < -w wifi_if | -e eth_if >"
         return $CODE_ERROR
     fi
 }
@@ -134,7 +134,7 @@ net_if_set_monitor_mode() {
 
     # Check that type is wireless
     if [ "$_net_if_type" != "w" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -w wifi_if [-c channel]."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME -w wifi_if [-c channel]."
         return $CODE_ERROR
     fi
 
@@ -166,7 +166,7 @@ net_if_set_default_mode() {
 
     # Check that type is wireless
     if [ "$_net_if_type" != "w" ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME() -w wifi_if."
+        echo "Error in $FUNCNAME(). Usage: $FUNCNAME -w wifi_if."
         return $CODE_ERROR
     fi
 

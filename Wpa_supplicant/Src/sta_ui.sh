@@ -134,11 +134,11 @@ sta_ui_setdown() {
 ### *** Main *** ###
 
 sta_ui_main() {
+    sta_ui_handle_input $@
+    
     # Update the cached credentials (this avoid the insertion of the sudo password
     # during the execution of the successive commands).
     sudo -v
-
-    sta_ui_handle_input $@
 
     # Fetch sta_ui_conf_file
     echo ""
