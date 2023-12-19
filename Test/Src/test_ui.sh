@@ -110,6 +110,7 @@ test_ui_handle_comment() {
             sed -i "s|@test_ui_date_string|$test_ui_date_string|g" "$TEST_UI_COMMENT_TMP_PATH"
             sed -i "s|@test_ui_device|$test_ui_device|g" "$TEST_UI_COMMENT_TMP_PATH"
             sed -i "/@test_ui_script_content/ r $test_ui_script" "$TEST_UI_COMMENT_TMP_PATH"
+            sed -i "/@test_ui_script_content/ d" "$TEST_UI_COMMENT_TMP_PATH"
             sed -i "s|@test_ui_script|$test_ui_script|g" "$TEST_UI_COMMENT_TMP_PATH"
         )
 
