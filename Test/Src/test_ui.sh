@@ -27,13 +27,17 @@ AP_UI_PATH="Hostapd/Src/ap_ui.sh"
 AS_UI_PATH="Freeradius/Src/as_ui.sh"
 
 # Log path. DO NOT TERMINATE WITH "/"
-test_ui_log_dir="Test/Log"
+TEST_UI_LOG_DIR="Test/Log"
+TEST_UI_LOG_TMP_DIR_ROOT="Test/Tmp/Log"
+test_ui_log_tmp_dir="$TEST_UI_LOG_TMP_DIR_ROOT"
 
 # Configuration files list
 TEST_UI_SCRIPT_LIST_PATH="Test/Conf/script_list.txt"
 TEST_UI_DEVICE_LIST_PATH="Test/Conf/device_list.txt"
-TEST_UI_COMMENT_TEMPLATE_PATH="Test/Tmp/comment_template.txt"
-TEST_UI_COMMENT_TMP_PATH="Test/Tmp/comment.txt"
+
+# Comment file
+TEST_UI_COMMENT_TEMPLATE_PATH="Test/Conf/comment_template.md"
+TEST_UI_COMMENT_TMP_PATH="Test/Tmp/comment.md"
 
 
 ### *** Test *** ###
@@ -89,20 +93,20 @@ test_ui_setup() {
         print_success || { echo "$test_ui_device"; print_error; echo ""; return 1; } 
 
     # Prepare log dir path
-    test_ui_log_dir="$test_ui_log_dir/$test_ui_device/$test_ui_script_string"
+    test_ui_log_tmp_dir="$test_ui_log_tmp_dir/$test_ui_device/$test_ui_script_string"
 }
 
 test_ui_handle_comment() {
     # Print query and get reply
-    read -p "Do you want to leave a comment? [y/N] " choice
+    read -p "Do you want to leave a comment? [y/N] " choice_comment
 
-    # Default choice is 'Y' if the user presses Enter without typing anything
-    choice=${choice:-N}
+    # Default choice is 'N' if the user presses Enter without typing anything
+    choice_comment=${choice_comment:-N}
 
     # Convert the choice to uppercase
-    choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')
+    choice_comment=$(echo "$choice_comment" | tr '[:lower:]' '[:upper:]')
 
-    if [ "$choice" = "Y" ]; then
+    if [ "$choice_comment" = "Y" ]; then
         # Copy comment template, adapt and let te user modify it
         cp "$TEST_UI_COMMENT_TEMPLATE_PATH" "$TEST_UI_COMMENT_TMP_PATH"
         # Create a new subshell. If a cmd fails, then the subshell is stopped.
@@ -120,7 +124,7 @@ test_ui_handle_comment() {
         # Create a new subshell to save the comment by means of log_output()
         (
             # Start saving stdout and stderr of the subshell
-            log_output -d "$test_ui_log_dir" -t "comment.md"
+            log_output -d "$test_ui_log_tmp_dir" -t "comment.md"
 
             cat "$TEST_UI_COMMENT_TMP_PATH"
 
@@ -131,6 +135,23 @@ test_ui_handle_comment() {
     fi
 
     echo ""
+}
+
+test_ui_save_log() {
+    # Print query and get reply
+    read -p "Do you want to save the log? [Y/n] " choice_log
+
+    # Default choice is 'Y' if the user presses Enter without typing anything
+    choice_log=${choice_log:-Y}
+
+    # Convert the choice to uppercase
+    choice_log=$(echo "$choice_log" | tr '[:lower:]' '[:upper:]')
+
+    if [ "$choice_log" = "Y" ]; then
+        mv "$TEST_UI_LOG_TMP_DIR_ROOT"/* "$TEST_UI_LOG_DIR"
+    fi
+
+    rm -rf "$TEST_UI_LOG_TMP_DIR_ROOT" > /dev/null
 }
 
 
@@ -146,6 +167,7 @@ test_ui_main() {
     # Hide keyboard input
     stty -echo
 
+    echo ""
     test_ui_setup || exit 1
 
     # Run test
@@ -156,6 +178,8 @@ test_ui_main() {
 
     # Ask the user to leave a comment
     test_ui_handle_comment
+
+    test_ui_save_log
 }
 
 test_ui_main $@

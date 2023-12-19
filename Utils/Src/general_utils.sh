@@ -249,25 +249,39 @@ log_output() {
     mkdir -p "$_log_dir"
 
     # Check the last numbered subfolder
-    local _log_progr_num=0
-    local _log_last_progr_num=$(ls $_log_file | grep -Eo '^[0-9]+' | sort -n | tail -n 1 2>/dev/null)
-    if [ -z "$_log_last_progr_num" ]; then
-        _log_last_progr_num=0
-    fi
+    # local _log_progr_num=0
+    # local _log_last_progr_num=$(ls $_log_file | grep -Eo '^[0-9]+' | sort -n | tail -n 1 2>/dev/null)
+    # if [ -z "$_log_last_progr_num" ]; then
+    #     _log_last_progr_num=0
+    # fi
+
+    # # Calculate the next _log_progr_num
+    # if [ "$_log_mode" == "new" ]; then
+    #     _log_progr_num=$((_log_last_progr_num + 1))
+    # elif [ "$_log_mode" == "app" ] && [ "$_log_last_progr_num" -ne 0 ]; then
+    #     _log_progr_num=$_log_last_progr_num
+    # elif [ "$_log_mode" == "app" ] && [ "$_log_last_progr_num" -eq 0 ]; then
+    #     echo "Error in $FUNCNAME(). Not initializing new log session, but cannot find an old one."
+    #     return $CODE_KO
+    # fi
+
+    # Get log dates
+    local _log_date=""
+    local _log_last_date=$(ls $_log_file | sort -n | tail -n 1 2>/dev/null)
 
     # Calculate the next _log_progr_num
     if [ "$_log_mode" == "new" ]; then
-        _log_progr_num=$((_log_last_progr_num + 1))
-    elif [ "$_log_mode" == "app" ] && [ "$_log_last_progr_num" -ne 0 ]; then
-        _log_progr_num=$_log_last_progr_num
-    elif [ "$_log_mode" == "app" ] && [ "$_log_last_progr_num" -eq 0 ]; then
+            local _log_date="$(date "+%Y-%m-%d_%H-%M-%S")"
+    elif [ "$_log_mode" == "app" ] && ! [ -z "$_log_last_date" ]; then
+        _log_date=$_log_last_date
+    elif [ "$_log_mode" == "app" ] && [ -z "$_log_last_date" ]; then
         echo "Error in $FUNCNAME(). Not initializing new log session, but cannot find an old one."
         return $CODE_KO
     fi
 
     # Update _log_file, ceate the sub directory if does not exists yet and
     # finally get the _log_file full path name
-    _log_file="$_log_file""$_log_progr_num"
+    _log_file="$_log_file""$_log_date"
     mkdir -p "$_log_file"
     _log_file="$_log_file/$_log_target"
 

@@ -1,11 +1,9 @@
-+ return 0
-+ cat Test/Tmp/comment.txt
 # Test Comment
 
 ## General information
 
-- Date:       2023-12-19 12:36:09
-- Device:     Poco_F3
+- Date:       2023-12-19 14:41:29
+- Device:     iPad
 - Script:     Test/Src/test_p_wpa2.sh
 - Result:     Good/Bad
 
@@ -16,11 +14,10 @@ Please add a description...
 ## Test script
 
 ```bash
-Test/Src/test_p_wpa2.sh_content
 #!/bin/bash
 #set -x  # Debug mode
 
 
 # Launch the AP
-$AP_UI_PATH -c p_wpa2 -L $test_ui_log_dir
+$AP_UI_PATH -c p_wpa2 -L $test_ui_log_tmp_dir
 ```
