@@ -139,10 +139,10 @@ test_ui_handle_comment() {
 
 test_ui_save_log() {
     # Print query and get reply
-    read -p "Do you want to save the log? [Y/n] " choice_log
+    read -p "Do you want to save the log? [y/N] " choice_log
 
-    # Default choice is 'Y' if the user presses Enter without typing anything
-    choice_log=${choice_log:-Y}
+    # Default choice is 'N' if the user presses Enter without typing anything
+    choice_log=${choice_log:-N}
 
     # Convert the choice to uppercase
     choice_log=$(echo "$choice_log" | tr '[:lower:]' '[:upper:]')

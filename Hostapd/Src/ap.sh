@@ -142,9 +142,9 @@ ap_run() {
     ap_print_info
     
     if [ "$ap_verb_mode" -eq 0 ]; then
-        sudo "$HOSTAPD_PATH" "$ap_conf_file" -K
+        exec_and_convert_timestamp sudo "$HOSTAPD_PATH" "$ap_conf_file" -K -t
     else
-        sudo "$HOSTAPD_PATH" "$ap_conf_file" -K -d
+        exec_and_convert_timestamp sudo "$HOSTAPD_PATH" "$ap_conf_file" -K -t -d
     fi
 
     print_title "Hostapd is stopped."

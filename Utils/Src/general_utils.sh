@@ -37,7 +37,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'    # No color
 
 print_info() {
-    echo "INFO: $@"
+    echo "[$(date "+%2H:%2M:%2S.%3N")] $@"
 }
 
 print_success() {
@@ -345,4 +345,38 @@ exec_new_term() {
     fi
     
     return
+}
+
+
+
+### *** Handle Hostapd and Wpa_supplicant timestamps *** ###
+# Function to convert Hostapd timestamp
+exec_and_convert_timestamp() {
+    # Run Hostapd and filter the output
+    $@ | while IFS= read -r line; do
+    # Find the timestamp pattern in Hostapd messages
+    if [[ $line =~ (^[0-9]+\.[0-9]+) ]]; then
+        local timestamp=${BASH_REMATCH[1]}
+
+        # Split seconds and microseconds
+        local seconds=$(echo "$timestamp" | cut -d'.' -f1)
+        local microseconds=$(echo "$timestamp" | cut -d'.' -f2)
+
+        # Calculate hours, minutes, and seconds
+        local minutes=$((seconds / 60))
+        local hours=$((minutes / 60))
+        seconds=$((seconds % 60))
+        local milliseconds=$((microseconds / 1000))
+        minutes=$((minutes % 60))
+
+        # Format the output string
+        local formatted_output=$(printf "[%02d:%02d:%02d.%03d]" "$hours" "$minutes" "$seconds" "$milliseconds")
+
+        # Replace the original timestamp with the converted one
+        line=${line//$timestamp/$formatted_output}
+    fi
+
+    # Process the line or do something else with the output
+    echo "$line"
+done
 }

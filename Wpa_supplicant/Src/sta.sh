@@ -107,9 +107,9 @@ sta_run() {
     sta_print_info
 
     if [ $sta_verb_mode -eq 0 ]; then
-        sudo "$WPA_SUPPLICANT_PATH" -i "$sta_wifi_if" -c "$sta_conf_file"
+        exec_and_convert_timestamp sudo "$WPA_SUPPLICANT_PATH" -i "$sta_wifi_if" -c "$sta_conf_file" -t
     else
-        sudo "$WPA_SUPPLICANT_PATH" -i "$sta_wifi_if" -c "$sta_conf_file" -d
+        exec_and_convert_timestamp sudo "$WPA_SUPPLICANT_PATH" -i "$sta_wifi_if" -c "$sta_conf_file" -t -d
     fi
 
    print_title "Wpa_supplicant is stopped."

@@ -1,7 +1,7 @@
 #!/bin/bash
 #set -x  # debug mode
 
-# Home. DO NOT TERMINATE WITH "/"
+# Home../test_ui.sh -s p_wpa2 -d wpa_supplicant DO NOT TERMINATE WITH "/"
 HOME_DIR="Hostapd-test"
 
 go_home() {
@@ -109,11 +109,11 @@ sta_ui_handle_input() {
 sta_ui_setup() {
     # Start logging if required
     if [ "$sta_ui_log_mode" == "app" ]; then
-        log_output -d $sta_ui_log_dir -t "sta_$sta_ui_conf_string.log" &&
+        log_output -d $sta_ui_log_dir -t "sta.log" &&
             print_info "Beginning saving session of stdout and stderr $sta_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     elif [ "$sta_ui_log_mode" == "new" ]; then
-        log_output -d $sta_ui_log_dir -t "sta_$sta_ui_conf_string.log" -n &&
+        log_output -d $sta_ui_log_dir -t "sta.log" -n &&
             print_info "Beginning saving session of stdout and stderr $sta_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     fi

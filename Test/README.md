@@ -21,16 +21,16 @@
 
 - Test WPA3-Personal by means of [`test_p_wpa3.sh`](Src/test_p_wpa3.sh). Create a WPA3 network and check if devices are able to connect. Allow both PWE methods (Hunting-and-Pecking and Hash-to-curve).
 
-- Test WPA3-Personal SAE-PK by means of [`test_p_wpa3_pk_rogue.sh`](Src/test_p_wpa3_pk_rogue.sh). Create a WPA3 network with SAE-PK and verify which devices are already support it. Threaten it to join a rogue WPA3 network.
+- Test WPA3-Personal SAE-PK by means of [`test_p_rogue_wpa3_pk.sh`](Src/test_p_rogue_wpa3.sh). Create a WPA3 network with SAE-PK and verify which devices already support it. Threaten it to join a rogue WPA3 network.
 
-- Test WPA2/3-Personal and transition disable WPA3 -> WPA2 by means of [`test_p_wpa2_wpa3.sh`](Src/test_p_wpa2_wpa3.sh).
+- Test WPA2/3-Personal and transition disable WPA3 -> WPA2 by means of [`test_p_downgrade_wpa2_wpa3.sh`](Src/test_p_downgrade_wpa2_wpa3.sh).
 
     1. Set up the real AP with WPA2/3 and Transition Disable WPA3 -> WPA2 enabled.
-    2. The device joins the network.
+    2. The device joins the network with a WPA2/3 profile.
     3. The real AP is setdown and a rogue AP with just WPA2 is created.
     4. Check if the device connects to the rogue network.
 
-- Test WPA3-Personal SAE-PK and Transition disable SAE-PK -> SAE by means of [`test_p_wpa3_pk_downgrade.sh`](Src/test_p_wpa3_pk_downgrade.sh).
+- Test WPA3-Personal SAE-PK and Transition disable SAE-PK -> SAE by means of [`test_p_downgrade_wpa3_pk.sh`](Src/test_p_downgrade_wpa3_pk.sh).
 
     1. Set up the real AP with WPA3, SAE-PK and Transition Disable SAE-PK -> SAE enabled.
     2. Select `Automatic Mode` for SAE-PK on the supplicant device.
