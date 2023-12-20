@@ -1,4 +1,4 @@
-luffy@strawhat.com	Cleartext-Password := "KingOfPirates"
+bob@example.org	Cleartext-Password := "argoargoargo"
 	Reply-Message := "Hello, %{User-Name}"
 #
 # 	Configuration file for the rlm_files module.

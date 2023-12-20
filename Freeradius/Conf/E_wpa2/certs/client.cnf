@@ -45,9 +45,9 @@ input_password		= whatever
 output_password		= whatever
 
 [client]
-countryName		= GL
-stateOrProvinceName	= New World
-localityName		= Raftel
-organizationName	= Straw Hat Networking
-emailAddress		= luffy@strawhat.com
-commonName		= luffy@strawhat.com
+countryName		    = FR
+stateOrProvinceName	= Radius
+localityName		= Somewhere
+organizationName	= Example Inc.
+emailAddress		= bob@example.org
+commonName		    = bob@example.org

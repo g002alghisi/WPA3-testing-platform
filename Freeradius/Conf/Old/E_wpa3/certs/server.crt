@@ -1,0 +1,87 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=GL, ST=New World, L=Raftel, O=Straw Hat Networking/emailAddress=ca@strawhat.com, CN=ca.strawhat.com
+        Validity
+            Not Before: Dec 16 09:10:12 2023 GMT
+            Not After : Feb 14 09:10:12 2024 GMT
+        Subject: C=GL, ST=New World, O=Straw Hat Networking, CN=radius.strawhat.com/emailAddress=radius@strawhat.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a2:36:e3:51:17:77:3f:d5:7c:ee:1a:25:eb:94:
+                    4a:b5:53:62:35:2e:eb:71:cf:9a:9d:e7:fc:98:c6:
+                    95:c9:c8:de:60:36:89:52:a1:e7:e5:3e:4c:97:01:
+                    23:54:6d:a2:97:ff:3e:5f:0a:7c:b6:96:0a:3e:71:
+                    cd:32:d7:d2:85:70:5e:98:92:91:79:92:26:36:ff:
+                    6b:7f:e2:df:aa:4b:f2:1b:f4:bf:c7:67:28:d8:02:
+                    cc:4b:81:e2:69:90:f5:22:c3:ea:83:4b:3f:7b:6f:
+                    f5:bd:f1:4c:61:23:0e:50:55:dc:c2:cd:c9:b5:1b:
+                    96:a3:3a:88:a8:b6:5a:f7:61:2e:ee:c1:69:a3:74:
+                    d7:2d:d0:ed:0d:01:42:e5:e5:ee:81:4b:08:75:26:
+                    73:fd:71:a7:7c:87:cc:c1:ef:dd:60:7c:9b:fd:81:
+                    60:a7:dc:19:e8:47:c7:5d:7c:f9:1a:06:71:a5:38:
+                    53:87:34:3c:95:29:58:07:c7:93:91:cd:91:28:32:
+                    97:8f:46:5c:3e:02:c7:7c:7e:17:33:be:c5:9e:27:
+                    be:3a:fb:12:7b:43:71:cb:f5:22:d2:eb:82:29:86:
+                    97:19:73:c4:5d:67:64:e5:5a:fe:fb:76:ff:98:3a:
+                    77:07:bb:16:0b:b1:a1:1b:36:49:6b:88:66:14:4c:
+                    74:c7
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 CRL Distribution Points: 
+                Full Name:
+                  URI:http://www.strawhat.com/ca.crl
+            X509v3 Certificate Policies: 
+                Policy: 1.3.6.1.4.1.40808.1.3.2
+            X509v3 Subject Key Identifier: 
+                87:D7:94:E0:15:94:31:AA:EF:10:05:19:1B:ED:6D:B6:3D:3D:F8:F7
+            X509v3 Authority Key Identifier: 
+                80:0C:42:7E:C0:19:53:1A:BC:B7:D6:00:04:04:C6:4B:D7:B0:7F:ED
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        97:6c:28:d2:3a:ce:36:8d:34:04:ee:4f:a9:05:8d:09:71:7a:
+        1b:cb:d8:08:2a:85:d7:82:6d:ed:33:b9:f9:5f:d8:56:3d:c8:
+        55:d9:ab:8b:73:1d:8c:c6:67:11:82:45:11:ee:54:e1:25:45:
+        1f:18:04:a3:37:a7:b9:a1:af:88:8e:1b:b3:b2:be:51:80:98:
+        38:36:17:e6:8f:80:f1:08:2b:75:e7:32:53:6b:0a:c7:03:a9:
+        83:85:60:7f:e3:a1:28:05:df:03:0b:e7:06:1c:ec:f6:0e:db:
+        28:e2:41:38:db:54:b8:c8:71:b9:89:d0:a2:ad:44:18:e8:06:
+        0a:01:df:a0:aa:fa:77:ad:f0:e2:93:84:f1:35:71:0e:f7:28:
+        ba:17:11:8e:0b:b3:fd:76:29:4b:33:37:54:68:9a:4d:c4:b7:
+        84:ba:8c:ac:3a:df:fb:e6:4f:32:55:b5:77:3a:8c:2a:6a:c5:
+        1c:94:6d:5c:b9:d4:55:10:e8:75:74:1a:2a:cb:2a:13:d3:fd:
+        5c:72:b1:cf:72:d4:9b:33:c2:7e:fa:c0:f7:e5:5e:57:35:0c:
+        83:50:b2:09:98:87:cc:17:43:dd:cd:27:32:eb:59:ee:9c:d2:
+        a3:a3:62:32:86:65:7b:2f:24:48:e9:c6:b2:37:bb:5b:20:7c:
+        23:3d:bb:83
+-----BEGIN CERTIFICATE-----
+MIIELjCCAxagAwIBAgIBATANBgkqhkiG9w0BAQsFADCBizELMAkGA1UEBhMCR0wx
+EjAQBgNVBAgMCU5ldyBXb3JsZDEPMA0GA1UEBwwGUmFmdGVsMR0wGwYDVQQKDBRT
+dHJhdyBIYXQgTmV0d29ya2luZzEeMBwGCSqGSIb3DQEJARYPY2FAc3RyYXdoYXQu
+Y29tMRgwFgYDVQQDDA9jYS5zdHJhd2hhdC5jb20wHhcNMjMxMjE2MDkxMDEyWhcN
+MjQwMjE0MDkxMDEyWjCBgjELMAkGA1UEBhMCR0wxEjAQBgNVBAgMCU5ldyBXb3Js
+ZDEdMBsGA1UECgwUU3RyYXcgSGF0IE5ldHdvcmtpbmcxHDAaBgNVBAMME3JhZGl1
+cy5zdHJhd2hhdC5jb20xIjAgBgkqhkiG9w0BCQEWE3JhZGl1c0BzdHJhd2hhdC5j
+b20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCiNuNRF3c/1XzuGiXr
+lEq1U2I1Lutxz5qd5/yYxpXJyN5gNolSoeflPkyXASNUbaKX/z5fCny2lgo+cc0y
+19KFcF6YkpF5kiY2/2t/4t+qS/Ib9L/HZyjYAsxLgeJpkPUiw+qDSz97b/W98Uxh
+Iw5QVdzCzcm1G5ajOoiotlr3YS7uwWmjdNct0O0NAULl5e6BSwh1JnP9cad8h8zB
+791gfJv9gWCn3BnoR8ddfPkaBnGlOFOHNDyVKVgHx5ORzZEoMpePRlw+Asd8fhcz
+vsWeJ746+xJ7Q3HL9SLS64IphpcZc8RdZ2TlWv77dv+YOncHuxYLsaEbNklriGYU
+THTHAgMBAAGjgaMwgaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwLwYDVR0fBCgwJjAk
+oCKgIIYeaHR0cDovL3d3dy5zdHJhd2hhdC5jb20vY2EuY3JsMBgGA1UdIAQRMA8w
+DQYLKwYBBAGCvmgBAwIwHQYDVR0OBBYEFIfXlOAVlDGq7xAFGRvtbbY9Pfj3MB8G
+A1UdIwQYMBaAFIAMQn7AGVMavLfWAAQExkvXsH/tMA0GCSqGSIb3DQEBCwUAA4IB
+AQCXbCjSOs42jTQE7k+pBY0JcXoby9gIKoXXgm3tM7n5X9hWPchV2auLcx2MxmcR
+gkUR7lThJUUfGASjN6e5oa+Ijhuzsr5RgJg4Nhfmj4DxCCt15zJTawrHA6mDhWB/
+46EoBd8DC+cGHOz2Dtso4kE421S4yHG5idCirUQY6AYKAd+gqvp3rfDik4TxNXEO
+9yi6FxGOC7P9dilLMzdUaJpNxLeEuoysOt/75k8yVbV3OowqasUclG1cudRVEOh1
+dBoqyyoT0/1ccrHPctSbM8J++sD35V5XNQyDULIJmIfMF0PdzScy61nunNKjo2Iy
+hmV7LyRI6cayN7tbIHwjPbuD
+-----END CERTIFICATE-----
