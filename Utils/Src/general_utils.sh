@@ -355,7 +355,7 @@ exec_and_convert_timestamp() {
     # Run Hostapd and filter the output
     $@ | while IFS= read -r line; do
     # Find the timestamp pattern in Hostapd messages
-    if [[ $line =~ (^[0-9]+\.[0-9]+) ]]; then
+    if [[ $line =~ (^[0-9]+\.[0-9]+:) ]]; then
         local timestamp=${BASH_REMATCH[1]}
 
         # Split seconds and microseconds
@@ -363,14 +363,9 @@ exec_and_convert_timestamp() {
         local microseconds=$(echo "$timestamp" | cut -d'.' -f2)
 
         # Calculate hours, minutes, and seconds
-        local minutes=$((seconds / 60))
-        local hours=$((minutes / 60))
-        seconds=$((seconds % 60))
-        local milliseconds=$((microseconds / 1000))
-        minutes=$((minutes % 60))
-
-        # Format the output string
-        local formatted_output=$(printf "[%02d:%02d:%02d.%03d]" "$hours" "$minutes" "$seconds" "$milliseconds")
+        local formatted_output=$(date -d "@$seconds" "+%2H:%2M:%2S")
+        local milliseconds=$(printf "%03d" "$((microsecondi / 1000))")
+        formatted_output="[$formatted_output.$milliseconds]"
 
         # Replace the original timestamp with the converted one
         line=${line//$timestamp/$formatted_output}

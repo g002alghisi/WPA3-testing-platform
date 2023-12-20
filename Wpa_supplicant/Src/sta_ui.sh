@@ -110,11 +110,11 @@ sta_ui_setup() {
     # Start logging if required
     if [ "$sta_ui_log_mode" == "app" ]; then
         log_output -d $sta_ui_log_dir -t "sta.log" &&
-            print_info "Beginning saving session of stdout and stderr $sta_ui_log_dir..." &&
+            print_info "Initiating the saving session of stdout and stderr inside $sta_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     elif [ "$sta_ui_log_mode" == "new" ]; then
         log_output -d $sta_ui_log_dir -t "sta.log" -n &&
-            print_info "Beginning saving session of stdout and stderr $sta_ui_log_dir..." &&
+            print_info "Initiating the saving session of stdout and stderr inside $sta_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     fi
 

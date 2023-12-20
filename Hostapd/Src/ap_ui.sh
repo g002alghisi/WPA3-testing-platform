@@ -114,11 +114,11 @@ ap_ui_setup() {
     # Start logging if required
     if [ "$ap_ui_log_mode" == "app" ]; then
         log_output -d $ap_ui_log_dir -t "ap.log" &&
-            print_info "Beginning saving session of stdout and stderr $ap_ui_log_dir..." &&
+            print_info "Initiating the saving session of stdout and stderr inside $ap_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     elif [ "$ap_ui_log_mode" == "new" ]; then
         log_output -d $ap_ui_log_dir -t "ap.log" -n &&
-            print_info "Beginning saving session of stdout and stderr $ap_ui_log_dir..." &&
+            print_info "Initiating the saving session of stdout and stderr inside $ap_ui_log_dir..." &&
             { print_success; echo ""; } || { print_error; return 1; }
     fi
 
