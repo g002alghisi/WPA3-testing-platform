@@ -1,14 +1,14 @@
 ### ### ### Configuration files list ### ### ###
 
 # Personal
-p_wpa2=Wpa_supplicant/Conf/Minimal/Personal/p_wpa2.conf
-p_wpa3=Wpa_supplicant/Conf/Minimal/Personal/p_wpa3.conf
-p_wpa2_wpa3=Wpa_supplicant/Conf/Minimal/Personal/p_wpa2_wpa3.conf
-p_wpa3_pk=Wpa_supplicant/Conf/Minimal/Personal/p_wpa3_pk.conf
-p_fake_wpa3_pk=Wpa_supplicant/Conf/Minimal/Personal/p_fake_wpa3_pk.conf
+p_wpa2=Wpa_supplicant/Conf/Personal/p_wpa2.conf
+p_wpa3=Wpa_supplicant/Conf/Personal/p_wpa3.conf
+p_wpa2_wpa3=Wpa_supplicant/Conf/Personal/p_wpa2_wpa3.conf
+p_wpa3_pk=Wpa_supplicant/Conf/Personal/p_wpa3_pk.conf
 
 # Enterprise
-e_wpa2=Wpa_supplicant/Conf/Ko/Enterprise/e_wpa2.conf
+e_wpa2=Wpa_supplicant/Conf/Enterprise/e_wpa2.conf
+e_wpa3=Wpa_supplicant/Conf/Enterprise/e_wpa3.conf
 
 # Other
 o_cli=Wpa_supplicant/Conf/Other/o_cli.conf
