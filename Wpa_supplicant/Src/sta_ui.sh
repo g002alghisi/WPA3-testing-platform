@@ -42,24 +42,43 @@ sta_ui_handle_input() {
     sta_ui_verbose_mode=0
     sta_ui_cli_mode=0
     sta_ui_gui_mode=0
-    while getopts "w:c:l:g:v" opt; do
+    sta_ui_log_dir=""
+    sta_ui_log_mode=""
+    while getopts "w:c:k:g:l:L:v" opt; do
         case $opt in
             w)
+                # w -> Wi-Fi interface
                 sta_ui_wifi="$OPTARG"
                 ;;
             c)
+                # c -> Configuration string
                 sta_ui_conf_string="$OPTARG"
                 ;;
-            l)
+            k)
+                # k -> Keyboard user interaction
                 sta_ui_cli_mode=1
                 sta_ui_conf_string="$OPTARG"
                 ;;
             g)
+                # G -> GUI user interaction
                 sta_ui_gui_mode=1
                 sta_ui_conf_string="$OPTARG"
                 ;;
             v)
+                # v -> Verbose mode
                 sta_ui_verbose_mode=1
+                ;;
+            l)
+                # l -> Log session (append to the last progressive number dir)
+                # Option to not generate a new log session ("app" = append)
+                sta_ui_log_dir="$OPTARG"
+                sta_ui_log_mode="app"
+                ;;
+            L)
+                # L -> Log session (increment progressive number dir)
+                # Option to generate a new log session
+                sta_ui_log_dir="$OPTARG"
+                sta_ui_log_mode="new"
                 ;;
             \?)
                 echo "Invalid option: -$OPTARG" >&2
@@ -76,30 +95,37 @@ sta_ui_handle_input() {
     # Check if the input is valid (the user have to insert at least the
     #   configuration string)
     if [ "$sta_ui_conf_string" == "" ]; then
-        echo "Usage: $0 [-w sta_ui_wifi] <-c conf | -l conf_cli | -g conf_gui> [-v]."
+        echo "Usage: $0 [-w sta_ui_wifi] <-c conf | -k conf_cli | -g conf_gui> [-v] [-l|L log_dir]."
+        exit 1
+    fi
+
+    # Check if sta_ui_log_dir is valid when -l or -L used
+    if [ "$sta_ui_log_mode" != "" ] && [ "$sta_ui_log_dir" == "" ]; then
+        echo "Usage: $0 [-w sta_ui_wifi] <-c conf | -k conf_cli | -g conf_gui> [-v] [-l|L log_dir]."
         exit 1
     fi
 }
 
 sta_ui_setup() {
+    # Start logging if required
+    if [ "$sta_ui_log_mode" == "app" ]; then
+        log_output -d $sta_ui_log_dir -t "sta_$sta_ui_conf_string.log" &&
+            print_info "Beginning saving session of stdout and stderr $sta_ui_log_dir..." &&
+            { print_success; echo ""; } || { print_error; return 1; }
+    elif [ "$sta_ui_log_mode" == "new" ]; then
+        log_output -d $sta_ui_log_dir -t "sta_$sta_ui_conf_string.log" -n &&
+            print_info "Beginning saving session of stdout and stderr $sta_ui_log_dir..." &&
+            { print_success; echo ""; } || { print_error; return 1; }
+    fi
+
     # Get configuration file from conf_list
     print_info "Fetching configuration file associated to $sta_ui_conf_string..."
     sta_ui_conf_file="$(get_from_list -f "$STA_UI_CONF_LIST_PATH" -s "$sta_ui_conf_string")" &&
         print_success || { echo "$sta_ui_conf_file"; print_error; return 1; }
 
-    if [ "$sta_ui_gui_mode" -eq 1 ] || [ "$sta_ui_cli_mode" -eq 1 ]; then
-            print_info "Checking terminal type..."
-            terminal_exec_cmd="$(get_terminal_exec_cmd)" &&
-                print_success || { echo "$terminal_exec_cmd"; print_error; return 1; }
-    fi
-
-    # Try to kill wpa_cli and wpa_gui
-    sudo killall wpa_cli &> /dev/null
-    sudo killall wpa_gui &> /dev/null  
-
     if [ "$sta_ui_gui_mode" -eq 1 ]; then
         print_info "Launching GUI..."
-        $terminal_exec_cmd "sleep 3; wpa_gui -i $sta_ui_wifi;" &
+        exec_new_term -w "wpa_supplicant" -c "wpa_gui -i $sta_ui_wifi;" &
         if [ "$?" -eq 0 ]; then
             print_success
         else
@@ -110,7 +136,7 @@ sta_ui_setup() {
     
     if [ "$sta_ui_cli_mode" -eq 1 ]; then
         print_info "Launching CLI..."
-        $terminal_exec_cmd "sleep 3; wpa_cli -i $sta_ui_wifi;" &
+        exec_new_term -w "wpa_supplicant" -c "wpa_cli -i $sta_ui_wifi;" &
         if [ "$?" -eq 0 ]; then
             print_success
         else
@@ -121,12 +147,15 @@ sta_ui_setup() {
 }
 
 sta_ui_setdown() {
+    # Try to kill all the terminal windows created
+    sudo pkill -P $$ &> /dev/null
+
     # Try to kill wpa_cli and wpa_gui
     sudo killall wpa_cli &> /dev/null
     sudo killall wpa_gui &> /dev/null
 
-    # Try to kill all the terminal windows created
-    sudo pkill -P $$ &> /dev/null
+    # Try to kill wpa_supplicant
+    sudo killall wpa_supplicant &> /dev/null
 }
 
 
