@@ -1,0 +1,65 @@
+[17:14:59.253] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/p_downgrade_wpa3_pk...
+[0;32mSuccess.[0m
+
+[17:14:59.254] Fetching configuration file associated to p_fake_wpa3_pk...
+[0;32mSuccess.[0m
+[17:14:59.259] Changing interface and bridge name inside Hostapd/Conf/Personal/p_fake_wpa3_pk.conf...
+[0;32mSuccess.[0m
+
+[17:14:59.298] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[17:14:59.302] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[17:14:59.320] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[17:14:59.355] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[17:14:59.360] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[17:14:59.377] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[17:14:59.537] Creating the bridge... 
+[0;32mSuccess.[0m
+[17:14:59.615] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[17:14:59.631] Looking for Hostapd/Conf/Personal/p_fake_wpa3_pk.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=11
+logger_syslog_level=0
+logger_stdout=11
+logger_stdout_level=0
+ssid=Hostapd-AP-P
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+wpa=2
+wpa_key_mgmt=SAE
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=2
+sae_password=vh7e-76e2-utg2
+sae_groups=19
+sae_pwe=2
+transition_disable=0x02
+
+
+[17:14:59.925] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[17:15:00.129] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[17:15:00.129] wlp3s0: AP-ENABLED
+
+[0;36mHostapd is stopped.[0m
+
+[17:15:33.711] Deleting the bridge... 
+[0;32mSuccess.[0m
+[17:15:33.843] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

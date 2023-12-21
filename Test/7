@@ -29,9 +29,6 @@
     2. The device joins the network with a WPA2/3 profile.
     3. The real AP is setdown and a rogue AP with just WPA2 is created.
     4. Check if the device connects to the rogue network.
-    5. If not, turn off the device.
-    6. Set up the rogue AP with just WPA2.
-    7. Turn on the device and try to join the network.
 
 - Test WPA3-Personal SAE-PK and Transition disable SAE-PK -> SAE by means of [`test_p_downgrade_wpa3_pk.sh`](Src/test_p_downgrade_wpa3_pk.sh).
 
@@ -40,9 +37,6 @@
     3. The device joins the network.
     4. The real AP is setdown and a rogue AP with just SAE (not SAE-PK) is created.
     5. Check if the device connects to the rogue network.
-    6. If not, turn off the device.
-    7. Set up the rogue AP with just SAE.
-    8. Turn on the device and try to join the network.
 
 ### Enterprise
 
@@ -67,7 +61,6 @@
     3. The device joins the network.
     4. The real AP is setdown and a rogue AP (and AS) with WPA3 is created.
     5. Check if the device connects to the rogue network. If not, verify that the supplicant has inhibited UOSC. The system shall not enquire to trust the new certificate from the rogue AP.
-
 
 ## Results
 

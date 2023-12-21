@@ -1,0 +1,61 @@
+[17:14:39.346] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/p_downgrade_wpa3_pk...
+[0;32mSuccess.[0m
+
+[17:14:39.348] Fetching configuration file associated to p_wpa3_pk...
+[0;32mSuccess.[0m
+
+[17:14:39.402] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[17:14:39.408] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[17:14:39.428] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[17:14:39.669] Looking for Wpa_supplicant/Conf/Personal/p_wpa3_pk.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Wpa-supplicant. Press Ctrl-C to stop.[0m
+
+STA settings:
+
+update_config=0
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=sudo
+ap_scan=1
+country=IT
+sae_groups=19
+sae_pwe=2
+ 
+network={
+  ssid="Hostapd-AP-P"
+  proto=RSN
+  key_mgmt=SAE
+  #auth_alg=OPEN
+  pairwise=CCMP
+  group=CCMP
+  group_mgmt=AES-128-CMAC
+  ieee80211w=2
+  sae_password="vh7e-76e2-utg2"
+  sae_pk=0
+  wps_disabled=1
+}
+
+
+[17:14:39.731] Successfully initialized wpa_supplicant
+[17:14:39.801] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[17:14:43.979] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-P' freq=2412 MHz)
+[17:14:43.988] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[17:14:44.210] wlx5ca6e63fe2da: PMKSA-CACHE-ADDED 3c:a0:67:80:99:a3 0
+[17:14:44.215] wlx5ca6e63fe2da: Associated with 3c:a0:67:80:99:a3
+[17:14:44.216] wlx5ca6e63fe2da: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[17:14:44.281] wlx5ca6e63fe2da: WPA: Key negotiation completed with 3c:a0:67:80:99:a3 [PTK=CCMP GTK=CCMP]
+[17:14:44.281] wlx5ca6e63fe2da: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+[17:14:44.282] wlx5ca6e63fe2da: TRANSITION-DISABLE 02
+[17:14:56.010] wlx5ca6e63fe2da: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=0
+[17:14:56.011] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[17:14:56.012] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+
+[0;36mWpa_supplicant is stopped.[0m
+
+[17:15:27.333] Starting NetworkManager... 
+[0;32mSuccess.[0m
+
