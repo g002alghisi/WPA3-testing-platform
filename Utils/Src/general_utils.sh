@@ -339,39 +339,41 @@ exec_new_term() {
 
     # Execute the _exec_cmd. Wait for the other process if specified
     if [ $_exec_wait_process_request ]; then
-        $_exec_cmd "$_exec_wait_cmd; $_exec_input_cmd_string; sleep 3;"
+        $_exec_cmd "$_exec_wait_cmd; $_exec_input_cmd_string;"
     else
-        $_exec_cmd "$_exec_input_cmd_string; sleep 3;"
+        $_exec_cmd "$_exec_input_cmd_string;"
     fi
     
     return
 }
 
 
-
 ### *** Handle Hostapd and Wpa_supplicant timestamps *** ###
+
 # Function to convert Hostapd timestamp
 exec_and_convert_timestamp() {
     # Run Hostapd and filter the output
+    local line
     $@ | while IFS= read -r line; do
-    # Find the timestamp pattern in Hostapd messages
-    if [[ $line =~ (^[0-9]+\.[0-9]+:) ]]; then
-        local timestamp=${BASH_REMATCH[1]}
+        line=$(echo $line | sed 's/ [0-9]*\.[0-9]*://g')
+        # Find the timestamp pattern in Hostapd messages
+        if [[ $line =~ (^[0-9]+\.[0-9]+:) ]]; then
+            local timestamp=${BASH_REMATCH[1]}
 
-        # Split seconds and microseconds
-        local seconds=$(echo "$timestamp" | cut -d'.' -f1)
-        local microseconds=$(echo "$timestamp" | cut -d'.' -f2)
+            # Split seconds and microseconds
+            local seconds=$(echo "$timestamp" | cut -d'.' -f 1)
+            local microseconds=$(echo "$timestamp" | cut -d'.' -f 2 | tr -d ":")
 
-        # Calculate hours, minutes, and seconds
-        local formatted_output=$(date -d "@$seconds" "+%2H:%2M:%2S")
-        local milliseconds=$(printf "%03d" "$((microsecondi / 1000))")
-        formatted_output="[$formatted_output.$milliseconds]"
+            # Calculate hours, minutes, and seconds
+            local formatted_output=$(date -d "@$seconds" "+%2H:%2M:%2S")
+            local milliseconds=$(printf "%03d" "$((microseconds / 1000))")
+            formatted_output="[$formatted_output.$milliseconds]"
 
-        # Replace the original timestamp with the converted one
-        line=${line//$timestamp/$formatted_output}
-    fi
+            # Replace the original timestamp with the converted one
+            line=${line//$timestamp/$formatted_output}
+        fi
 
-    # Process the line or do something else with the output
-    echo "$line"
-done
+        # Process the line or do something else with the output
+        echo "$line"
+    done
 }
