@@ -286,7 +286,7 @@ log_output() {
     _log_file="$_log_file/$_log_target"
 
     # Save stdout and stderr inside _log_file
-    exec > >(trap '' INT; tee "$_log_file") 2>&1
+    exec > >(trap '' INT; tee -a "$_log_file") 2>&1
 
     return "$?"
 }

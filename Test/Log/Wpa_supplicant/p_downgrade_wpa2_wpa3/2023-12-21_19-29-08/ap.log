@@ -1,0 +1,144 @@
+[19:29:08.649] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/p_downgrade_wpa2_wpa3...
+[0;32mSuccess.[0m
+
+[19:29:08.650] Fetching configuration file associated to p_wpa2_wpa3...
+[0;32mSuccess.[0m
+[19:29:08.655] Changing interface and bridge name inside Hostapd/Conf/Personal/p_wpa2_wpa3.conf...
+[0;32mSuccess.[0m
+
+[19:29:08.689] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[19:29:08.694] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[19:29:08.710] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[19:29:08.745] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[19:29:08.749] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[19:29:08.767] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[19:29:08.966] Creating the bridge... 
+[0;32mSuccess.[0m
+[19:29:09.072] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[19:29:09.089] Looking for Hostapd/Conf/Personal/p_wpa2_wpa3.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=11
+logger_syslog_level=0
+logger_stdout=11
+logger_stdout_level=0
+ssid=Hostapd-AP-P
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+wpa=2
+wpa_passphrase=argoargoargo
+wpa_key_mgmt=WPA-PSK SAE
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=1
+sae_groups=19
+sae_require_mfp=1
+sae_pwe=2
+transition_disable=0x01
+
+
+[19:29:09.376] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[19:29:09.580] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[19:29:09.580] wlp3s0: AP-ENABLED
+[19:29:18.374] wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE start SAE authentication (RX commit, status=126 (SAE_HASH_TO_ELEMENT))
+[19:29:18.447] wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE SAE authentication (RX confirm, status=0 (SUCCESS))
+[19:29:18.542] wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE association OK (aid 1)
+[19:29:18.544] wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE associated (aid 1)
+[19:29:18.544] wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE binding station to interface 'wlp3s0'
+[19:29:18.544] wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: event 1 notification
+[19:29:18.544] wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: start authentication
+[19:29:18.544] wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.1X: unauthorizing port
+[19:29:18.613] wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: sending 1/4 msg of 4-Way Handshake
+[19:29:18.618] wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: received EAPOL-Key frame (2/4 Pairwise)
+[19:29:18.618] wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: sending 3/4 msg of 4-Way Handshake
+[19:29:18.627] wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: received EAPOL-Key frame (4/4 Pairwise)
+[19:29:18.627] wlp3s0: AP-STA-CONNECTED 5c:a6:e6:3f:e2:da
+[19:29:18.627] wlp3s0: STA 5c:a6:e6:3f:e2:da IEEE 802.1X: authorizing port
+[19:29:18.627] wlp3s0: STA 5c:a6:e6:3f:e2:da WPA: pairwise key handshake completed (RSN)
+[19:29:18.627] wlp3s0: EAPOL-4WAY-HS-COMPLETED 5c:a6:e6:3f:e2:da
+
+[0;36mHostapd is stopped.[0m
+
+[19:29:22.730] Deleting the bridge... 
+[0;32mSuccess.[0m
+[19:29:22.871] Starting NetworkManager... 
+[0;32mSuccess.[0m
+
+[19:29:23.949] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/p_downgrade_wpa2_wpa3...
+[0;32mSuccess.[0m
+
+[19:29:23.951] Fetching configuration file associated to p_wpa2...
+[0;32mSuccess.[0m
+[19:29:23.955] Changing interface and bridge name inside Hostapd/Conf/Personal/p_wpa2.conf...
+[0;32mSuccess.[0m
+
+[19:29:23.992] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[19:29:23.997] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[19:29:24.014] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[19:29:24.052] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[19:29:24.057] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[19:29:24.074] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[19:29:24.200] Creating the bridge... 
+[0;32mSuccess.[0m
+[19:29:24.310] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[19:29:24.327] Looking for Hostapd/Conf/Personal/p_wpa2.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=11
+logger_syslog_level=0
+logger_stdout=11
+logger_stdout_level=0
+ssid=Hostapd-AP-P
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+wpa=2
+wpa_passphrase=argoargoargo
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=1
+
+
+[19:29:24.611] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[19:29:24.821] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[19:29:24.821] wlp3s0: AP-ENABLED
+
+[0;36mHostapd is stopped.[0m
+
+[19:29:56.590] Deleting the bridge... 
+[0;32mSuccess.[0m
+[19:29:56.719] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

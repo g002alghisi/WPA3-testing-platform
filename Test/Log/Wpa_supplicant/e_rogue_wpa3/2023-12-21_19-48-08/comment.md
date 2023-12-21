@@ -1,3 +1,19 @@
+# Test Comment
+
+## General information
+
+- Date:       2023-12-21 19:48:08
+- Device:     Wpa_supplicant
+- Script:     Test/Src/test_e_rogue_wpa3.sh
+- Result:     Good
+
+## Comment
+
+Ok.
+
+## Test script
+
+```bash
 #!/bin/bash
 #set -x  # Debug mode
 
@@ -24,3 +40,4 @@ $ap_ui_path -c e_rogue_wpa3 -l "$test_ui_log_tmp_dir"
 
 # Try to kill the terminal window created
 pkill "as_ui.sh" &> /dev/null
+```
