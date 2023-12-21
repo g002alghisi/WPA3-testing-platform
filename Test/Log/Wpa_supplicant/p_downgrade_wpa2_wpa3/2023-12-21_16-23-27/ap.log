@@ -1,0 +1,250 @@
+[16:24:27.441] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/p_downgrade_wpa2_wpa3...
+[0;32mSuccess.[0m
+
+[16:24:27.442] Fetching configuration file associated to p_wpa2...
+[0;32mSuccess.[0m
+[16:24:27.448] Changing interface and bridge name inside Hostapd/Conf/Personal/p_wpa2.conf...
+[0;32mSuccess.[0m
+
+[16:24:27.485] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[16:24:27.489] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[16:24:27.507] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[16:24:27.541] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[16:24:27.545] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[16:24:27.563] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[16:24:27.695] Creating the bridge... 
+[0;32mSuccess.[0m
+[16:24:27.814] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[16:24:27.830] Looking for Hostapd/Conf/Personal/p_wpa2.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=11
+logger_syslog_level=0
+logger_stdout=11
+logger_stdout_level=0
+ssid=Hostapd-AP-P
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+wpa=2
+wpa_passphrase=argoargoargo
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=1
+
+
+[16:24:27.858] random: Trying to read entropy from /dev/random
+[16:24:27.859] Configuration file: Hostapd/Conf/Personal/p_wpa2.conf
+[16:24:27.859] nl80211: TDLS supported
+[16:24:27.859] nl80211: TDLS external setup
+[16:24:27.859] nl80211: Supported cipher 00-0f-ac:1
+[16:24:27.859] nl80211: Supported cipher 00-0f-ac:5
+[16:24:27.859] nl80211: Supported cipher 00-0f-ac:2
+[16:24:27.859] nl80211: Supported cipher 00-0f-ac:4
+[16:24:27.859] nl80211: Supported cipher 00-0f-ac:6
+[16:24:27.859] nl80211: Supported cipher 00-0f-ac:13
+[16:24:27.859] nl80211: Supported cipher 00-0f-ac:11
+[16:24:27.859] nl80211: Supported cipher 00-0f-ac:12
+[16:24:27.859] nl80211: Supports Probe Response offload in AP mode
+[16:24:27.859] nl80211: Using driver-based off-channel TX
+[16:24:27.859] nl80211: Driver-advertised extended capabilities (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+[16:24:27.859] nl80211: Driver-advertised extended capabilities mask (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+[16:24:27.859] nl80211: Use separate P2P group interface (driver advertised support)
+[16:24:27.859] nl80211: Enable multi-channel concurrent (driver advertised support)
+[16:24:27.859] nl80211: use P2P_DEVICE support
+[16:24:27.859] nl80211: key_mgmt=0x1fd0f enc=0xf0f auth=0x7 flags=0x4000531fb7bfbe0 rrm_flags=0x30 probe_resp_offloads=0x7 max_stations=32 max_remain_on_chan=5000 max_scan_ssids=16
+[16:24:27.859] nl80211: interface wlp3s0 in phy phy0
+[16:24:27.859] nl80211: Set mode ifindex 3 iftype 3 (AP)
+[16:24:27.859] nl80211: Setup AP(wlp3s0) - device_ap_sme=0 use_monitor=0
+[16:24:27.859] nl80211: Subscribe to mgmt frames with AP handle 0x599deb646b10
+[16:24:27.859] nl80211: Register frame type=0xb0 (WLAN_FC_STYPE_AUTH) nl_handle=0x599deb646b10 match= multicast=0
+[16:24:27.859] nl80211: Register frame type=0x0 (WLAN_FC_STYPE_ASSOC_REQ) nl_handle=0x599deb646b10 match= multicast=0
+[16:24:27.859] nl80211: Register frame type=0x20 (WLAN_FC_STYPE_REASSOC_REQ) nl_handle=0x599deb646b10 match= multicast=0
+[16:24:27.859] nl80211: Register frame type=0xa0 (WLAN_FC_STYPE_DISASSOC) nl_handle=0x599deb646b10 match= multicast=0
+[16:24:27.859] nl80211: Register frame type=0xc0 (WLAN_FC_STYPE_DEAUTH) nl_handle=0x599deb646b10 match= multicast=0
+[16:24:27.859] nl80211: Register frame type=0x40 (WLAN_FC_STYPE_PROBE_REQ) nl_handle=0x599deb646b10 match= multicast=0
+[16:24:27.859] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x599deb646b10 match=04 multicast=0
+[16:24:27.859] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x599deb646b10 match=0501 multicast=0
+[16:24:27.859] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x599deb646b10 match=0503 multicast=0
+[16:24:27.859] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x599deb646b10 match=0504 multicast=0
+[16:24:27.859] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x599deb646b10 match=06 multicast=0
+[16:24:27.859] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x599deb646b10 match=08 multicast=0
+[16:24:27.859] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x599deb646b10 match=09 multicast=0
+[16:24:27.860] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x599deb646b10 match=0a multicast=0
+[16:24:27.860] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x599deb646b10 match=11 multicast=0
+[16:24:27.860] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x599deb646b10 match=7f multicast=0
+[16:24:27.860] rfkill: initial event: idx=3 type=1 op=0 soft=0 hard=0
+[16:24:28.118] nl80211: Add own interface ifindex 128 (ifidx_reason 3)
+[16:24:28.118] nl80211: if_indices[16]: 128(3)
+[16:24:28.118] nl80211: Add own interface ifindex 3 (ifidx_reason -1)
+[16:24:28.118] nl80211: if_indices[16]: 128(3) 3(-1)
+[16:24:28.118] nl80211: Adding interface wlp3s0 into bridge br0
+[16:24:28.118] nl80211: Do not open EAPOL RX socket - using control port for RX
+[16:24:28.118] phy: phy0
+[16:24:28.118] BSS count 1, BSSID mask 00:00:00:00:00:00 (0 bits)
+[16:24:28.118] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[16:24:28.118] Previous country code IT, new country code IT
+[16:24:28.118] nl80211: Regulatory information - country=IT (DFS-ETSI)
+[16:24:28.118] nl80211: 2400-2483 @ 40 MHz 20 mBm
+[16:24:28.118] nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+[16:24:28.118] nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+[16:24:28.118] nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+[16:24:28.118] nl80211: 5725-5875 @ 80 MHz 13 mBm
+[16:24:28.118] nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+[16:24:28.118] nl80211: 57000-66000 @ 2160 MHz 40 mBm
+[16:24:28.118] nl80211: Added 802.11b mode based on 802.11g information
+[16:24:28.118] nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+[16:24:28.118] nl80211: Mode IEEE 802.11a: 5180 5200[NO_IR] 5220[NO_IR] 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR] 5560[NO_IR][RADAR]
+[16:24:28.118] nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+[16:24:28.118] Completing interface initialization
+[16:24:28.118] Mode: IEEE 802.11g Channel: 1 Frequency: 2412 MHz
+[16:24:28.118] DFS 0 channels required radar detection
+[16:24:28.118] nl80211: Set freq 2412 (ht_enabled=0, vht_enabled=0, he_enabled=0, bandwidth=20 MHz, cf1=2412 MHz, cf2=0 MHz)
+[16:24:28.118] Cypress ESP32 Freeradius Hostapd Raspberry_Pi_Pico_W README.md Sniff Test Utils Wpa_supplicant freq=2412
+[16:24:28.118] Cypress ESP32 Freeradius Hostapd Raspberry_Pi_Pico_W README.md Sniff Test Utils Wpa_supplicant he_enabled=0
+[16:24:28.118] Cypress ESP32 Freeradius Hostapd Raspberry_Pi_Pico_W README.md Sniff Test Utils Wpa_supplicant vht_enabled=0
+[16:24:28.118] Cypress ESP32 Freeradius Hostapd Raspberry_Pi_Pico_W README.md Sniff Test Utils Wpa_supplicant ht_enabled=0
+[16:24:28.118] Cypress ESP32 Freeradius Hostapd Raspberry_Pi_Pico_W README.md Sniff Test Utils Wpa_supplicant channel_type=0
+[16:24:28.119] RATE[0] rate=10 flags=0x1
+[16:24:28.119] RATE[1] rate=20 flags=0x1
+[16:24:28.119] RATE[2] rate=55 flags=0x1
+[16:24:28.119] RATE[3] rate=110 flags=0x1
+[16:24:28.119] RATE[4] rate=60 flags=0x0
+[16:24:28.119] RATE[5] rate=90 flags=0x0
+[16:24:28.119] RATE[6] rate=120 flags=0x0
+[16:24:28.119] RATE[7] rate=180 flags=0x0
+[16:24:28.119] RATE[8] rate=240 flags=0x0
+[16:24:28.119] RATE[9] rate=360 flags=0x0
+[16:24:28.119] RATE[10] rate=480 flags=0x0
+[16:24:28.119] RATE[11] rate=540 flags=0x0
+[16:24:28.119] hostapd_setup_bss(hapd=0x599deb645c30 (wlp3s0), first=1)
+[16:24:28.119] nl80211: flush -> DEL_STATION wlp3s0 (all)
+[16:24:28.119] Using interface wlp3s0 with hwaddr 3c:a0:67:80:99:a3 and ssid "Hostapd-AP-P"
+[16:24:28.119] Deriving WPA PSK based on passphrase
+[16:24:28.119] SSID - hexdump_ascii(len=12):
+48 6f 73 74 61 70 64 2d 41 50 2d 50 Hostapd-AP-P
+[16:24:28.119] PSK (ASCII passphrase) - hexdump_ascii(len=12):
+61 72 67 6f 61 72 67 6f 61 72 67 6f argoargoargo
+[16:24:28.128] PSK (from passphrase) - hexdump(len=32): 75 b0 9c 13 4a 1c a5 0f 3d 01 4a 92 6d ad 53 c8 f3 3d 15 66 6f 90 ab a2 e5 cd f6 69 20 1a b3 38
+[16:24:28.128] random: Got 20/20 random bytes
+[16:24:28.128] GMK - hexdump(len=32): 45 88 b4 ae 9c 74 d7 65 21 f6 7c 4d 39 9a e4 05 4a 9c 58 ca 1f 25 0a 4c 96 53 ae 2b df 22 a8 07
+[16:24:28.129] Key Counter - hexdump(len=32): a4 06 30 53 4c 59 ca c2 ad 4b 76 86 29 dd 53 1c 25 c1 41 7f a3 33 b1 0f 51 f0 9f d5 34 af 03 e1
+[16:24:28.129] WPA: Delay group state machine start until Beacon frames have been configured
+[16:24:28.129] nl80211: Set beacon (beacon_set=0)
+[16:24:28.129] nl80211: Beacon head - hexdump(len=63): 80 00 00 00 ff ff ff ff ff ff 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0c 48 6f 73 74 61 70 64 2d 41 50 2d 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01
+[16:24:28.129] nl80211: Beacon tail - hexdump(len=45): 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 02 80 00 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+[16:24:28.129] nl80211: ifindex=3
+[16:24:28.129] nl80211: beacon_int=100
+[16:24:28.129] nl80211: beacon_rate=0
+[16:24:28.129] nl80211: rate_type=0
+[16:24:28.129] nl80211: dtim_period=2
+[16:24:28.129] nl80211: ssid=Hostapd-AP-P
+[16:24:28.129] Cypress ESP32 Freeradius Hostapd Raspberry_Pi_Pico_W README.md Sniff Test Utils Wpa_supplicant beacon_int=100
+[16:24:28.129] Cypress ESP32 Freeradius Hostapd Raspberry_Pi_Pico_W README.md Sniff Test Utils Wpa_supplicant dtim_period=2
+[16:24:28.129] nl80211: proberesp (offload) - hexdump(len=108): 50 00 00 00 00 00 00 00 00 00 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0c 48 6f 73 74 61 70 64 2d 41 50 2d 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 02 80 00 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40
+[16:24:28.129] nl80211: hidden SSID not in use
+[16:24:28.129] nl80211: privacy=2
+[16:24:28.129] nl80211: auth_algs=0x1
+[16:24:28.129] nl80211: wpa_version=0x2
+[16:24:28.129] nl80211: key_mgmt_suites=0x2
+[16:24:28.129] nl80211: pairwise_ciphers=0x10
+[16:24:28.129] nl80211: group_cipher=0x10
+[16:24:28.129] nl80211: beacon_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+[16:24:28.129] nl80211: proberesp_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+[16:24:28.129] nl80211: assocresp_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+[16:24:28.298] nl80211: multicast to unicast disabled on interface wlp3s0
+[16:24:28.298] wlp3s0: Deauthenticate all stations at BSS start
+[16:24:28.298] nl80211: send_mlme - da=ff:ff:ff:ff:ff:ff noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0xc0 (WLAN_FC_STYPE_DEAUTH) nlmode=3
+[16:24:28.298] nl80211: send_mlme - Use bss->freq=2412
+[16:24:28.298] nl80211: send_mlme -> send_frame_cmd
+[16:24:28.298] WPA: Start group state machine to set initial keys
+[16:24:28.298] WPA: group state machine entering state GTK_INIT (VLAN-ID 0)
+[16:24:28.298] GTK - hexdump(len=16): d8 ce 52 52 fc bb 0f 77 37 d5 a6 c3 48 94 48 1b
+[16:24:28.299] IGTK - hexdump(len=16): 4f d8 27 57 d2 69 bc a0 f9 be d3 9e 7a cb c5 2d
+[16:24:28.299] WPA: group state machine entering state SETKEYSDONE (VLAN-ID 0)
+[16:24:28.299] wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=3 addr=0x599deaa3d652 key_idx=1 set_tx=1 seq_len=0 key_len=16 key_flag=0x1a
+[16:24:28.299] nl80211: NEW_KEY
+[16:24:28.299] nl80211: KEY_DATA - hexdump(len=16): d8 ce 52 52 fc bb 0f 77 37 d5 a6 c3 48 94 48 1b
+[16:24:28.299] broadcast key
+[16:24:28.321] nl80211: NL80211_CMD_SET_KEY - default key
+[16:24:28.321] wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=4 addr=0x599deaa3d652 key_idx=4 set_tx=1 seq_len=0 key_len=16 key_flag=0x1a
+[16:24:28.321] nl80211: NEW_KEY
+[16:24:28.321] nl80211: KEY_DATA - hexdump(len=16): 4f d8 27 57 d2 69 bc a0 f9 be d3 9e 7a cb c5 2d
+[16:24:28.321] broadcast key
+[16:24:28.357] nl80211: NL80211_CMD_SET_KEY - default key
+[16:24:28.357] nl80211: Set wlp3s0 operstate 0->1 (UP)
+[16:24:28.357] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=6 (IF_OPER_UP)
+[16:24:28.357] nl80211: TX queue param set: queue=0 aifs=1 cw_min=3 cw_max=7 burst_time=15 --> res=0
+[16:24:28.357] nl80211: TX queue param set: queue=1 aifs=1 cw_min=7 cw_max=15 burst_time=30 --> res=0
+[16:24:28.357] nl80211: TX queue param set: queue=2 aifs=3 cw_min=15 cw_max=63 burst_time=0 --> res=0
+[16:24:28.358] nl80211: TX queue param set: queue=3 aifs=7 cw_min=15 cw_max=1023 burst_time=0 --> res=0
+[16:24:28.358] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[16:24:28.358] wlp3s0: AP-ENABLED
+[16:24:28.358] wlp3s0: Setup of interface done.
+[16:24:28.358] ctrl_iface not configured!
+[16:24:28.358] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=0 ifi_family=0 ifi_flags=0x1003 ([UP])
+[16:24:28.358] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=0 master=128 ifi_family=0 ifi_flags=0x1003 ([UP])
+[16:24:28.358] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=0 master=128 ifi_family=0 ifi_flags=0x1003 ([UP])
+[16:24:28.358] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=128 operstate=2 ifi_family=7 ifi_flags=0x1003 ([UP])
+[16:24:28.358] nl80211: Add ifindex 128 for bridge br0
+[16:24:28.358] nl80211: Add own interface ifindex 128 (ifidx_reason 3)
+[16:24:28.358] nl80211: ifindex 128 already in the list
+[16:24:28.358] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=128 operstate=6 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[16:24:28.358] nl80211: Add ifindex 128 for bridge br0
+[16:24:28.358] nl80211: Add own interface ifindex 128 (ifidx_reason 3)
+[16:24:28.358] nl80211: ifindex 128 already in the list
+[16:24:28.358] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=128 operstate=6 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[16:24:28.358] nl80211: Add ifindex 128 for bridge br0
+[16:24:28.358] nl80211: Add own interface ifindex 128 (ifidx_reason 3)
+[16:24:28.358] nl80211: ifindex 128 already in the list
+[16:24:28.358] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=6 linkmode=0 master=128 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[16:24:28.358] nl80211: Drv Event 15 (NL80211_CMD_START_AP) received for wlp3s0
+[16:24:28.358] wlp3s0: nl80211: Ignored unknown event (cmd=15)
+[16:24:28.358] nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+[16:24:28.358] nl80211: Frame TX status event A1=ff:ff:ff:ff:ff:ff stype=12 cookie=0x224 ack=0
+[16:24:28.358] wlp3s0: Event TX_STATUS (16) received
+[16:24:28.358] mgmt::deauth cb
+[16:24:28.640] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[16:24:28.640] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=5c:a6:e6:3f:e2:da bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-31 fc=0x40 seq_ctrl=0x6e0 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=149
+[16:24:28.640] nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[16:24:28.640] nl80211: send_mlme - Use bss->freq=2412
+[16:24:28.640] nl80211: send_mlme -> send_frame_cmd
+[16:24:28.773] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[16:24:28.773] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=5c:a6:e6:3f:e2:da bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-35 fc=0x40 seq_ctrl=0x700 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=149
+[16:24:28.773] nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[16:24:28.773] nl80211: send_mlme - Use bss->freq=2412
+[16:24:28.773] nl80211: send_mlme -> send_frame_cmd
+[16:24:28.917] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[16:24:28.917] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=5c:a6:e6:3f:e2:da bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-52 fc=0x40 seq_ctrl=0x720 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=149
+[16:24:28.917] nl80211: send_mlme - da=5c:a6:e6:3f:e2:da noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[16:24:28.917] nl80211: send_mlme - Use bss->freq=2412
+[16:24:28.917] nl80211: send_mlme -> send_frame_cmd
+[16:24:42.989] RTM_NEWLINK: ifi_index=99 ifname=enp0s20f0u1 master=128 operstate=0 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[16:24:43.501] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=128 operstate=6 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[16:24:43.501] nl80211: Add ifindex 128 for bridge br0
+[16:24:43.501] nl80211: Add own interface ifindex 128 (ifidx_reason 3)
+[16:24:43.501] nl80211: ifindex 128 already in the list
+
+[0;36mHostapd is stopped.[0m
+
+[16:26:08.122] Deleting the bridge... 
+[0;32mSuccess.[0m
+[16:26:08.276] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

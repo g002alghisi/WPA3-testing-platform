@@ -9,7 +9,7 @@ $exec_new_term -w hostapd "$AS_UI_PATH -c e_wpa2 -v -l $test_ui_log_tmp_dir"
 $ap_ui_path -c e_wpa2 -L "$test_ui_log_tmp_dir"
 
 # Try to kill the terminal window created.
-sudo pkill -P $$ &> /dev/null
+pkill "as_ui.sh" &> /dev/null
 
 
 # Sleep for 1s
@@ -24,4 +24,4 @@ $ap_ui_path -c e_rogue_wpa2 -l "$test_ui_log_tmp_dir"
 
 
 # Try to kill all terminal window created.
-sudo pkill -P $$ &> /dev/null
+pkill "as_ui.sh" &> /dev/null

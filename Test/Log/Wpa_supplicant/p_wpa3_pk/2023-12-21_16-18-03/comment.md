@@ -2,14 +2,14 @@
 
 ## General information
 
-- Date:       2023-12-20 18:56:17
+- Date:       2023-12-21 16:18:03
 - Device:     Wpa_supplicant
-- Script:     Test/Src/test_p_wpa3.sh
+- Script:     Test/Src/test_p_wpa3_pk.sh
 - Result:     Good
 
 ## Comment
 
-Ok, wpa_supplicant connects with WPA3.
+Perfect.
 
 ## Test script
 
@@ -19,6 +19,6 @@ Ok, wpa_supplicant connects with WPA3.
 
 
 # Launch the AP
-$AP_UI_PATH -c p_wpa3 -L $test_ui_log_tmp_dir
+$ap_ui_path -c p_wpa3_pk -L $test_ui_log_tmp_dir
 
 ```

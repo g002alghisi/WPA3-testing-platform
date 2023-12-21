@@ -1,0 +1,54 @@
+[16:17:18.380] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/p_wpa3...
+[0;32mSuccess.[0m
+
+[16:17:18.386] Fetching configuration file associated to p_wpa3...
+[0;32mSuccess.[0m
+
+[16:17:18.457] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[16:17:18.468] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[16:17:18.489] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[16:17:18.712] Looking for Wpa_supplicant/Conf/Personal/p_wpa3.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Wpa-supplicant. Press Ctrl-C to stop.[0m
+
+STA settings:
+
+update_config=0
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=sudo
+ap_scan=1
+country=IT
+sae_groups=19
+sae_pwe=2
+ 
+network={
+  ssid="Hostapd-AP-P"
+  proto=RSN
+  key_mgmt=SAE
+  #auth_alg=OPEN
+  pairwise=CCMP
+  group=CCMP
+  group_mgmt=AES-128-CMAC
+  ieee80211w=2
+  sae_password="argoargoargo"
+}
+
+
+[16:17:18.766] Successfully initialized wpa_supplicant
+[16:17:23.350] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-P' freq=2412 MHz)
+[16:17:23.368] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[16:17:23.612] wlx5ca6e63fe2da: PMKSA-CACHE-ADDED 3c:a0:67:80:99:a3 0
+[16:17:23.617] wlx5ca6e63fe2da: Associated with 3c:a0:67:80:99:a3
+[16:17:23.617] wlx5ca6e63fe2da: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[16:17:23.680] wlx5ca6e63fe2da: WPA: Key negotiation completed with 3c:a0:67:80:99:a3 [PTK=CCMP GTK=CCMP]
+[16:17:23.680] wlx5ca6e63fe2da: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+
+[0;36mWpa_supplicant is stopped.[0m
+
+[16:17:33.997] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

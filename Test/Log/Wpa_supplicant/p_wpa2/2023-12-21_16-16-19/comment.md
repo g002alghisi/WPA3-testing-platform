@@ -2,14 +2,14 @@
 
 ## General information
 
-- Date:       2023-12-20 18:53:28
+- Date:       2023-12-21 16:16:19
 - Device:     Wpa_supplicant
 - Script:     Test/Src/test_p_wpa2.sh
 - Result:     Good
 
 ## Comment
 
-Ok, wpa_supplicant works properly and connects to the WPA2 network.
+Perfect.
 
 ## Test script
 
@@ -19,5 +19,5 @@ Ok, wpa_supplicant works properly and connects to the WPA2 network.
 
 
 # Launch the AP
-$AP_UI_PATH -c p_wpa2 -L $test_ui_log_tmp_dir
+$ap_ui_path -c p_wpa2 -L $test_ui_log_tmp_dir
 ```

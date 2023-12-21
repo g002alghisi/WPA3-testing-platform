@@ -362,10 +362,14 @@ exec_and_convert_timestamp() {
 
             # Split seconds and microseconds
             local seconds=$(echo "$timestamp" | cut -d'.' -f 1)
+            # Remove leading zeros (can cause errors)
+            seconds=$(echo "$seconds" | sed 's/^0*//')
             local microseconds=$(echo "$timestamp" | cut -d'.' -f 2 | tr -d ":")
+            # Remove leading zeros (can cause errors)
+            microseconds=$(echo "$microseconds" | sed 's/^0*//')
 
             # Calculate hours, minutes, and seconds
-            local formatted_output=$(date -d "@$seconds" "+%2H:%2M:%2S")
+            local formatted_output=$(date -d "@$seconds" "+%T")
             local milliseconds=$(printf "%03d" "$((microseconds / 1000))")
             formatted_output="[$formatted_output.$milliseconds]"
 
