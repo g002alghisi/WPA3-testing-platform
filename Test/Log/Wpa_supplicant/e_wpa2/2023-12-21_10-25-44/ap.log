@@ -1,0 +1,72 @@
+[10:25:44.203] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/e_wpa2...
+[0;32mSuccess.[0m
+
+[10:25:44.204] Fetching configuration file associated to e_wpa2...
+[0;32mSuccess.[0m
+[10:25:44.212] Changing interface and bridge name inside Hostapd/Conf/Enterprise/e_wpa2.conf...
+[0;32mSuccess.[0m
+
+[10:25:44.259] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[10:25:44.265] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[10:25:44.290] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[10:25:44.332] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[10:25:44.339] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[10:25:44.359] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[10:25:44.580] Creating the bridge... 
+[0;32mSuccess.[0m
+[10:25:44.690] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[10:25:44.708] Looking for Hostapd/Conf/Enterprise/e_wpa2.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=15
+logger_syslog_level=0
+logger_stdout=15
+logger_stdout_level=0
+ssid=Hostapd-AP-E
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=2
+ieee8021x=1
+own_ip_addr=127.0.0.1
+auth_server_addr=127.0.0.1
+auth_server_port=1812
+auth_server_shared_secret=luckyluckylucky
+wpa=2
+wpa_key_mgmt=WPA-EAP
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=2
+
+
+[10:25:44.000] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[10:25:44.000] 1703150744.993636: wlp3s0: RADIUS Authentication server 127.0.0.1:1812
+[10:25:45.000] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[10:25:45.000] wlp3s0: AP-ENABLED 
+[10:29:35.000] Unsupported authentication algorithm (0)
+[10:29:40.000] Unsupported authentication algorithm (0)
+[10:29:45.000] Unsupported authentication algorithm (0)
+[10:29:51.000] Unsupported authentication algorithm (0)
+[10:30:03.000] Unsupported authentication algorithm (0)
+
+[0;36mHostapd is stopped.[0m
+
+[10:30:33.689] Deleting the bridge... 
+[0;32mSuccess.[0m
+[10:30:33.803] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

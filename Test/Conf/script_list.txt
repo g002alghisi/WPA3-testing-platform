@@ -13,6 +13,6 @@ p_rogue_wpa3_pk=Test/Src/test_p_rogue_wpa3_pk.sh
 # Enterprise
 e_wpa2=Test/Src/test_e_wpa2.sh
 e_wpa3=Test/Src/test_e_wpa3.sh
+e_wpa2_wpa3=Test/Src/test_e_wpa2_wpa3.sh
 e_rogue_wpa2=Test/Src/test_e_rogue_wpa2.sh
 e_rogue_wpa3=Test/Src/test_e_rogue_wpa3.sh
-e_wpa2_wpa3=Test/Src/test_e_wpa2_wpa3.sh

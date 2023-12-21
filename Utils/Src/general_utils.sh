@@ -130,7 +130,7 @@ get_from_list() {
 
     file_exists -f $_file_list || return "$?"
 
-    local _output="$(grep "$_string""=" "$_file_list" | cut -d "=" -f 2)"
+    local _output="$(grep "\b$_string\b""=" "$_file_list" | cut -d "=" -f 2)"
     if [ "$_output" == "" ]; then
         echo "$FUNCNAME(): Cannot find $_string in $_file_list."
         return $CODE_KO

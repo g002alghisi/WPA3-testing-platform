@@ -1,0 +1,81 @@
+[10:29:33.363] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/e_wpa2...
+[0;32mSuccess.[0m
+
+[10:29:33.365] Fetching configuration file associated to e_wpa2...
+[0;32mSuccess.[0m
+
+[10:29:33.440] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[10:29:33.448] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[10:29:33.472] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[10:29:33.575] Looking for Wpa_supplicant/Conf/Enterprise/e_wpa2.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Wpa-supplicant. Press Ctrl-C to stop.[0m
+
+STA settings:
+
+update_config=0
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=sudo
+eapol_version=2
+ap_scan=1
+country=IT
+ 
+network={
+  ssid="Hostapd-AP-E"
+  key_mgmt=WPA-EAP
+  ieee80211w=1
+  auth_alg=OPEN
+  pairwise=CCMP
+  group=CCMP
+  group_mgmt=AES-128-CMAC
+  eap=PEAP
+  ca_path="Freeradius/Conf/E_wpa2/certs/ca.pem"
+  subject_match="/C=FR/ST=Radius/L=Somewhere/CN=Example Certificate Authority/emailAddress=admin@example.com"
+  phase2="autheap=MSCHAPV2"
+  identity="bob@example.org"
+  anonymous_identity="anonymous"
+  password="argoargoargo"
+}
+
+
+[10:29:33.000] Successfully initialized wpa_supplicant
+[10:29:33.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[10:29:38.000] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-E' freq=2412 MHz)
+[10:29:38.000] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[10:29:39.000] wlx5ca6e63fe2da: CTRL-EVENT-ASSOC-REJECT status_code=13
+[10:29:39.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[10:29:39.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[10:29:43.000] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-E' freq=2412 MHz)
+[10:29:43.000] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[10:29:44.000] wlx5ca6e63fe2da: CTRL-EVENT-ASSOC-REJECT status_code=13
+[10:29:44.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[10:29:44.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[10:29:48.000] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-E' freq=2412 MHz)
+[10:29:48.000] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[10:29:50.000] wlx5ca6e63fe2da: CTRL-EVENT-ASSOC-REJECT status_code=13
+[10:29:50.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[10:29:50.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[10:29:54.000] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-E' freq=2412 MHz)
+[10:29:54.000] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[10:29:56.000] wlx5ca6e63fe2da: CTRL-EVENT-ASSOC-REJECT status_code=13
+[10:29:56.000] wlx5ca6e63fe2da: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=1 duration=10 reason=CONN_FAILED
+[10:29:56.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[10:29:56.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[10:30:06.000] wlx5ca6e63fe2da: CTRL-EVENT-SSID-REENABLED id=0 ssid="Hostapd-AP-E"
+[10:30:06.000] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-E' freq=2412 MHz)
+[10:30:07.000] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[10:30:08.000] wlx5ca6e63fe2da: CTRL-EVENT-ASSOC-REJECT status_code=13
+[10:30:08.000] BSSID 3c:a0:67:80:99:a3 ignore list count incremented to 2, ignoring for 10 seconds
+[10:30:08.000] wlx5ca6e63fe2da: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=2 duration=39 reason=CONN_FAILED
+[10:30:08.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[10:30:08.000] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+
+[0;36mWpa_supplicant is stopped.[0m
+
+[10:30:34.176] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

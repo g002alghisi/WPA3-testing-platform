@@ -3,4 +3,4 @@
 
 
 # Launch the AP
-$AP_UI_PATH -c p_wpa2 -L $test_ui_log_tmp_dir
+$ap_ui_path -c p_wpa2 -L $test_ui_log_tmp_dir

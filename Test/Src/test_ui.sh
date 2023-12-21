@@ -23,7 +23,7 @@ go_home
 source Utils/Src/general_utils.sh
 
 # ap.sh and as.sh paths
-AP_UI_PATH="Hostapd/Src/ap_ui.sh"
+ap_ui_path="Hostapd/Src/ap_ui.sh"
 AS_UI_PATH="Freeradius/Src/as_ui.sh"
 
 # Log path. DO NOT TERMINATE WITH "/"
@@ -46,7 +46,8 @@ test_ui_handle_input() {
     test_script=""
     test_ui_device_string=""
     test_ui_script_string=""
-    while getopts "d:s:" opt; do
+    test_ui_verb_mode=0
+    while getopts "d:s:v" opt; do
         case $opt in
             d)
                 # d -> Device string
@@ -55,6 +56,10 @@ test_ui_handle_input() {
             s)
                 # s -> Script string
                 test_ui_script_string="$OPTARG"
+                ;;
+            v)
+                # v -> Verbose mode
+                test_ui_verb_mode=1
                 ;;
             \?)
                 echo "Error in $FUNCNAME(). Invalid option: -$OPTARG."
@@ -170,6 +175,11 @@ test_ui_main() {
     echo ""
     test_ui_setup || exit 1
 
+    # Set verbose mode for hostapd if required by the user
+    if [ $test_ui_verb_mode -eq 1 ]; then
+        ap_ui_path="$ap_ui_path -v"
+    fi
+    
     # Run test
     source $test_ui_script
 
