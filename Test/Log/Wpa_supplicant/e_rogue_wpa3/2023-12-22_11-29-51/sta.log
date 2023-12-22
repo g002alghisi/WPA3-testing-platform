@@ -1,0 +1,2685 @@
+[11:29:41.860] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/e_rogue_wpa3...
+[0;32mSuccess.[0m
+
+[11:29:41.863] Fetching configuration file associated to e_rogue_wpa3...
+get_from_list(): Cannot find e_rogue_wpa3 in Wpa_supplicant/Conf/conf_list.txt.
+[0;31mError.[0m
+[11:30:03.829] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/e_rogue_wpa3...
+[0;32mSuccess.[0m
+
+[11:30:03.837] Fetching configuration file associated to e_wpa3...
+[0;32mSuccess.[0m
+
+[11:30:03.904] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[11:30:03.924] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[11:30:03.955] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[11:30:04.121] Looking for Wpa_supplicant/Conf/Enterprise/e_wpa3.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Wpa-supplicant. Press Ctrl-C to stop.[0m
+
+STA settings:
+
+update_config=0
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=sudo
+eapol_version=2
+ap_scan=1
+country=IT
+network={
+  ssid="Hostapd-AP-E"
+  key_mgmt=WPA-EAP
+  eap=PEAP
+  ieee80211w=2
+  identity="bob@example.org"
+  anonymous_identity="anonymous"
+  password="argoargoargo"
+  ca_cert="Freeradius/Conf/E_wpa3/certs/ca.pem"
+  subject_match="/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org"
+  phase2="auth=MSCHAPV2"
+  wps_disabled=1
+}
+
+
+[11:30:04.175] wpa_supplicant v2.10
+[11:30:04.175] random: Trying to read entropy from /dev/random
+[11:30:04.175] Successfully initialized wpa_supplicant
+[11:30:04.175] Initializing interface 'wlx5ca6e63fe2da' conf 'Wpa_supplicant/Conf/Enterprise/e_wpa3.conf' driver 'default' ctrl_interface 'N/A' bridge 'N/A'
+[11:30:04.175] Configuration file 'Wpa_supplicant/Conf/Enterprise/e_wpa3.conf' -> '/media/sf_GitHub/Hostapd-test/Wpa_supplicant/Conf/Enterprise/e_wpa3.conf'
+[11:30:04.175] Reading configuration file '/media/sf_GitHub/Hostapd-test/Wpa_supplicant/Conf/Enterprise/e_wpa3.conf'
+[11:30:04.176] update_config=0
+[11:30:04.176] ctrl_interface='/var/run/wpa_supplicant'
+[11:30:04.176] ctrl_interface_group='sudo'
+[11:30:04.176] eapol_version=2
+[11:30:04.176] ap_scan=1
+[11:30:04.176] country='IT'
+[11:30:04.177] Priority group 0
+[11:30:04.177]    id=0 ssid='Hostapd-AP-E'
+[11:30:04.177] nl80211: TDLS supported
+[11:30:04.177] nl80211: Supported cipher 00-0f-ac:1
+[11:30:04.177] nl80211: Supported cipher 00-0f-ac:5
+[11:30:04.177] nl80211: Supported cipher 00-0f-ac:2
+[11:30:04.177] nl80211: Supported cipher 00-0f-ac:4
+[11:30:04.177] nl80211: Supported cipher 00-0f-ac:6
+[11:30:04.177] nl80211: Supported vendor command: vendor_id=0x1a11 subcmd=4106
+[11:30:04.177] nl80211: Supported vendor command: vendor_id=0x1a11 subcmd=4107
+[11:30:04.177] nl80211: key_mgmt=0xd0f enc=0x10f auth=0x7 flags=0xa0858c0 rrm_flags=0x0 probe_resp_offloads=0x0 max_stations=0 max_remain_on_chan=5000 max_scan_ssids=9
+[11:30:04.177] nl80211: interface wlx5ca6e63fe2da in phy phy0
+[11:30:04.177] nl80211: Set mode ifindex 3 iftype 2 (STATION)
+[11:30:04.177] nl80211: Subscribe to mgmt frames with non-AP handle 0x55e2b0a66260
+[11:30:04.177] nl80211: Register frame type=0xb0 (WLAN_FC_STYPE_AUTH) nl_handle=0x55e2b0a66260 match=0300 multicast=0
+[11:30:04.177] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0104 multicast=0
+[11:30:04.177] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040a multicast=0
+[11:30:04.177] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040b multicast=0
+[11:30:04.177] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040c multicast=0
+[11:30:04.177] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040d multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090a multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090b multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090c multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090d multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0409506f9a09 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=7f506f9a09 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0409506f9a1a multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0801 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040e multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=06 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a07 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a11 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a1a multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1101 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1102 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0505 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0500 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1301 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1305 multicast=0
+[11:30:04.178] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=7e506f9a1a multicast=0
+[11:30:04.178] rfkill: initial event: idx=0 type=1 op=0 soft=0 hard=0
+[11:30:04.178] netlink: Operstate: ifindex=3 linkmode=1 (userspace-control), operstate=5 (IF_OPER_DORMANT)
+[11:30:04.178] Add interface wlx5ca6e63fe2da to a new radio phy0
+[11:30:04.179] nl80211: Regulatory information - country=IT (DFS-ETSI)
+[11:30:04.179] nl80211: 2400-2483 @ 40 MHz 20 mBm
+[11:30:04.179] nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+[11:30:04.179] nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+[11:30:04.179] nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+[11:30:04.179] nl80211: 5725-5875 @ 80 MHz 13 mBm
+[11:30:04.179] nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+[11:30:04.179] nl80211: 57000-66000 @ 2160 MHz 40 mBm
+[11:30:04.179] nl80211: Added 802.11b mode based on 802.11g information
+[11:30:04.179] nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:30:04.179] nl80211: Mode IEEE 802.11a: 5180 5200 5220 5240 5260[RADAR] 5280[RADAR] 5300[RADAR] 5320[RADAR] 5500[RADAR] 5520[RADAR] 5540[RADAR] 5560[RADAR] 5580[RADAR] 5600[RADAR] 5620[RADAR] 5640[RADAR] 5660[RADAR] 5680[RADAR]
+[11:30:04.179] nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:30:04.198] wlx5ca6e63fe2da: Own MAC address: 5c:a6:e6:3f:e2:da
+[11:30:04.198] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=0 addr=(nil) key_idx=0 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+[11:30:04.198] nl80211: DEL_KEY
+[11:30:04.198]    broadcast key
+[11:30:04.198] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=0 addr=(nil) key_idx=1 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+[11:30:04.198] nl80211: DEL_KEY
+[11:30:04.198]    broadcast key
+[11:30:04.198] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=0 addr=(nil) key_idx=2 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+[11:30:04.198] nl80211: DEL_KEY
+[11:30:04.198]    broadcast key
+[11:30:04.198] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=0 addr=(nil) key_idx=3 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+[11:30:04.198] nl80211: DEL_KEY
+[11:30:04.198]    broadcast key
+[11:30:04.198] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=0 addr=(nil) key_idx=4 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+[11:30:04.198] nl80211: DEL_KEY
+[11:30:04.198]    broadcast key
+[11:30:04.198] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=0 addr=(nil) key_idx=5 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+[11:30:04.198] nl80211: DEL_KEY
+[11:30:04.198]    broadcast key
+[11:30:04.198] wlx5ca6e63fe2da: RSN: flushing PMKID list in the driver
+[11:30:04.198] nl80211: Flush PMKIDs
+[11:30:04.198] wlx5ca6e63fe2da: Setting scan request: 0.100000 sec
+[11:30:04.214] TDLS: TDLS operation supported by driver
+[11:30:04.214] TDLS: Driver uses internal link setup
+[11:30:04.214] TDLS: Driver does not support TDLS channel switching
+[11:30:04.216] wlx5ca6e63fe2da: WPS: UUID based on MAC address: c28e4e98-2f99-594e-a1ec-65ee2f20c6c1
+[11:30:04.219] ENGINE: Loading builtin engines
+[11:30:04.220] ENGINE: Loading builtin engines
+[11:30:04.221] EAPOL: SUPP_PAE entering state DISCONNECTED
+[11:30:04.221] EAPOL: Supplicant port status: Unauthorized
+[11:30:04.221] nl80211: Skip set_supp_port(unauthorized) while not associated
+[11:30:04.221] EAPOL: KEY_RX entering state NO_KEY_RECEIVE
+[11:30:04.221] EAPOL: SUPP_BE entering state INITIALIZE
+[11:30:04.221] EAP: EAP entering state DISABLED
+[11:30:04.221] ctrl_interface_group=27 (from group name 'sudo')
+[11:30:04.221] P2P: Add operating class 81
+[11:30:04.221] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:04.221] P2P: Add operating class 115
+[11:30:04.221] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:04.221] P2P: Add operating class 116
+[11:30:04.221] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:04.221] P2P: Add operating class 117
+[11:30:04.221] P2P: Channels - hexdump(len=2): 28 30
+[11:30:04.221] P2P: Add operating class 128
+[11:30:04.222] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:04.222] P2P: Add operating class 130
+[11:30:04.222] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:04.222] P2P: Own listen channel: 81:6
+[11:30:04.222] P2P: Random operating channel: 81:1
+[11:30:04.222] P2P: initialized
+[11:30:04.222] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:04.222] P2P: cli_channels:
+[11:30:04.222] wlx5ca6e63fe2da: Added interface wlx5ca6e63fe2da
+[11:30:04.222] wlx5ca6e63fe2da: State: DISCONNECTED -> DISCONNECTED
+[11:30:04.222] nl80211: Set wlx5ca6e63fe2da operstate 0->0 (DORMANT)
+[11:30:04.222] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+[11:30:04.222] random: Got 20/20 bytes from /dev/random
+[11:30:04.222] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da operstate=2 linkmode=0 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:04.222] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da operstate=6 linkmode=0 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[11:30:04.222] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da operstate=5 linkmode=0 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:04.223] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da operstate=5 linkmode=1 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:04.303] wlx5ca6e63fe2da: State: DISCONNECTED -> SCANNING
+[11:30:04.303] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:04.303] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:04.303] P2P: Add operating class 81
+[11:30:04.303] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:04.303] P2P: Add operating class 115
+[11:30:04.303] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:04.304] P2P: Add operating class 116
+[11:30:04.304] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:04.304] P2P: Add operating class 117
+[11:30:04.304] P2P: Channels - hexdump(len=2): 28 30
+[11:30:04.304] P2P: Add operating class 128
+[11:30:04.304] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:04.304] P2P: Add operating class 130
+[11:30:04.304] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:04.304] P2P: Update channel list
+[11:30:04.304] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:04.304] P2P: cli_channels:
+[11:30:04.304] wlx5ca6e63fe2da: Starting AP scan for wildcard SSID
+[11:30:04.305] WPS: Building WPS IE for Probe Request
+[11:30:04.305] WPS:  * Version (hardcoded 0x10)
+[11:30:04.305] WPS:  * Request Type
+[11:30:04.305] WPS:  * Config Methods (3108)
+[11:30:04.305] WPS:  * UUID-E
+[11:30:04.305] WPS:  * Primary Device Type
+[11:30:04.305] WPS:  * RF Bands (3)
+[11:30:04.305] WPS:  * Association State
+[11:30:04.305] WPS:  * Configuration Error (0)
+[11:30:04.305] WPS:  * Device Password ID (0)
+[11:30:04.305] WPS:  * Manufacturer
+[11:30:04.305] WPS:  * Model Name
+[11:30:04.305] WPS:  * Model Number
+[11:30:04.305] WPS:  * Device Name
+[11:30:04.306] WPS:  * Version2 (0x20)
+[11:30:04.306] P2P: * P2P IE header
+[11:30:04.306] P2P: * Capability dev=21 group=00
+[11:30:04.306] P2P: * Listen Channel: Regulatory Class 81 Channel 6
+[11:30:04.306] wlx5ca6e63fe2da: Add radio work 'scan'@0x55e2b0ad4ac0
+[11:30:04.306] wlx5ca6e63fe2da: First radio work item in the queue - schedule start immediately
+[11:30:04.306] wlx5ca6e63fe2da: Starting radio work 'scan'@0x55e2b0ad4ac0 after 0.000090 second wait
+[11:30:04.306] wlx5ca6e63fe2da: nl80211: scan request
+[11:30:04.837] Scan requested (ret=0) - scan timeout 10 seconds
+[11:30:04.837] nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlx5ca6e63fe2da
+[11:30:04.837] wlx5ca6e63fe2da: nl80211: Scan trigger
+[11:30:04.838] wlx5ca6e63fe2da: Event SCAN_STARTED (47) received
+[11:30:04.838] wlx5ca6e63fe2da: Own scan request started a scan in 0.000313 seconds
+[11:30:05.222] EAPOL: disable timer tick
+[11:30:08.695] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:08.695] nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlx5ca6e63fe2da
+[11:30:08.695] wlx5ca6e63fe2da: nl80211: New scan results available
+[11:30:08.695] nl80211: Scan probed for SSID ''
+[11:30:08.695] nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700
+[11:30:08.695] wlx5ca6e63fe2da: Event SCAN_RESULTS (3) received
+[11:30:08.695] wlx5ca6e63fe2da: Scan completed in 3.857345 seconds
+[11:30:08.695] nl80211: Received scan results (9 BSSes)
+[11:30:08.695] wlx5ca6e63fe2da: BSS: Start scan result update 1
+[11:30:08.695] wlx5ca6e63fe2da: BSS: Add new id 0 BSSID b0:ea:bc:3f:32:26 SSID 'Casa-A-gbtyTYgnGTBYjf' freq 5260
+[11:30:08.695] wlx5ca6e63fe2da: BSS: Add new id 1 BSSID b0:ea:bc:3f:32:27 SSID 'Casa-A-gbtyTYgnGTBYjf' freq 2412
+[11:30:08.695] wlx5ca6e63fe2da: BSS: Add new id 2 BSSID 62:ea:bc:3f:32:24 SSID 'WOW FI - FASTWEB' freq 2412
+[11:30:08.696] wlx5ca6e63fe2da: BSS: Add new id 3 BSSID 3c:a0:67:80:99:a3 SSID 'Hostapd-AP-E' freq 2412
+[11:30:08.696] wlx5ca6e63fe2da: BSS: Add new id 4 BSSID f0:b0:14:cf:72:e2 SSID 'EIR-96252' freq 2437
+[11:30:08.696] wlx5ca6e63fe2da: BSS: Add new id 5 BSSID b0:45:30:aa:b4:a4 SSID 'SKYA38E4' freq 5180
+[11:30:08.696] wlx5ca6e63fe2da: BSS: Add new id 6 BSSID b2:95:7f:82:57:d7 SSID '' freq 5540 HESSID b2:95:7f:82:57:d7
+[11:30:08.696] wlx5ca6e63fe2da: BSS: Add new id 7 BSSID dc:15:c8:03:a4:16 SSID 'INTRED-56875' freq 2437
+[11:30:08.696] wlx5ca6e63fe2da: BSS: Add new id 8 BSSID dc:15:c8:03:a4:17 SSID 'INTRED-56875' freq 5260
+[11:30:08.696] BSS: last_scan_res_used=9/32
+[11:30:08.696] wlx5ca6e63fe2da: New scan results available (own=1 ext=0)
+[11:30:08.696] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:08.696] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:08.696] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:08.696] WPS: AP f0:b0:14:cf:72:e2 type 0 added
+[11:30:08.696] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:08.696] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:08.696] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:08.696] WPS: AP b0:45:30:aa:b4:a4 type 0 added
+[11:30:08.697] WPS: AP dc:15:c8:03:a4:16 type 0 added
+[11:30:08.697] WPS: AP dc:15:c8:03:a4:17 type 0 added
+[11:30:08.697] WPS: AP[0] f0:b0:14:cf:72:e2 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:30:08.697] WPS: AP[1] b0:45:30:aa:b4:a4 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:30:08.697] WPS: AP[2] dc:15:c8:03:a4:16 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:30:08.697] WPS: AP[3] dc:15:c8:03:a4:17 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:30:08.697] wlx5ca6e63fe2da: Radio work 'scan'@0x55e2b0ad4ac0 done in 4.390907 seconds
+[11:30:08.697] wlx5ca6e63fe2da: radio_work_free('scan'@0x55e2b0ad4ac0): num_active_works --> 0
+[11:30:08.697] wlx5ca6e63fe2da: Selecting BSS from priority group 0
+[11:30:08.697] wlx5ca6e63fe2da: 0: b0:ea:bc:3f:32:26 ssid='Casa-A-gbtyTYgnGTBYjf' wpa_ie_len=0 rsn_ie_len=20 caps=0x111 level=-58 freq=5260 
+[11:30:08.697] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:08.697] wlx5ca6e63fe2da: 1: b0:ea:bc:3f:32:27 ssid='Casa-A-gbtyTYgnGTBYjf' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-51 freq=2412 
+[11:30:08.697] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:08.698] wlx5ca6e63fe2da: 2: 62:ea:bc:3f:32:24 ssid='WOW FI - FASTWEB' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-51 freq=2412 
+[11:30:08.698] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:08.698] wlx5ca6e63fe2da: 3: 3c:a0:67:80:99:a3 ssid='Hostapd-AP-E' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-37 freq=2412 
+[11:30:08.698] wlx5ca6e63fe2da:    selected based on RSN IE
+[11:30:08.698] wlx5ca6e63fe2da:    selected BSS 3c:a0:67:80:99:a3 ssid='Hostapd-AP-E'
+[11:30:08.698] wlx5ca6e63fe2da: Considering connect request: reassociate: 0  selected: 3c:a0:67:80:99:a3  bssid: 00:00:00:00:00:00  pending: 00:00:00:00:00:00  wpa_state: SCANNING  ssid=0x55e2b0a671e0  current_ssid=(nil)
+[11:30:08.698] wlx5ca6e63fe2da: Request association with 3c:a0:67:80:99:a3
+[11:30:08.698] TDLS: TDLS is allowed in the target BSS
+[11:30:08.698] TDLS: TDLS channel switch allowed in the target BSS
+[11:30:08.698] wlx5ca6e63fe2da: No ongoing scan/p2p-scan found to abort
+[11:30:08.698] wlx5ca6e63fe2da: Add radio work 'connect'@0x55e2b0add610
+[11:30:08.698] wlx5ca6e63fe2da: First radio work item in the queue - schedule start immediately
+[11:30:08.698] RSN: Ignored PMKID candidate without preauth flag
+[11:30:08.698] wlx5ca6e63fe2da: Starting radio work 'connect'@0x55e2b0add610 after 0.000159 second wait
+[11:30:08.699] wlx5ca6e63fe2da: WPA: clearing own WPA/RSN IE
+[11:30:08.699] wlx5ca6e63fe2da: RSN: clearing own RSNXE
+[11:30:08.699] RSN: PMKSA cache search - network_ctx=0x55e2b0a671e0 try_opportunistic=0 akmp=0x0
+[11:30:08.699] RSN: Search for BSSID 3c:a0:67:80:99:a3
+[11:30:08.699] RSN: No PMKSA cache entry found
+[11:30:08.699] wlx5ca6e63fe2da: RSN: using IEEE 802.11i/D9.0
+[11:30:08.699] wlx5ca6e63fe2da: WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 1 proto 2
+[11:30:08.699] wlx5ca6e63fe2da: WPA: Selected mgmt group cipher 32
+[11:30:08.699] wlx5ca6e63fe2da: WPA: clearing AP WPA IE
+[11:30:08.699] WPA: set AP RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00
+[11:30:08.699] wlx5ca6e63fe2da: WPA: clearing AP RSNXE
+[11:30:08.699] wlx5ca6e63fe2da: WPA: AP group 0x10 network profile group 0x18; available group 0x10
+[11:30:08.699] wlx5ca6e63fe2da: WPA: using GTK CCMP
+[11:30:08.699] wlx5ca6e63fe2da: WPA: AP pairwise 0x10 network profile pairwise 0x18; available pairwise 0x10
+[11:30:08.699] wlx5ca6e63fe2da: WPA: using PTK CCMP
+[11:30:08.700] wlx5ca6e63fe2da: WPA: AP key_mgmt 0x1 network profile key_mgmt 0x1; available key_mgmt 0x1
+[11:30:08.700] wlx5ca6e63fe2da: WPA: using KEY_MGMT 802.1X
+[11:30:08.700] wlx5ca6e63fe2da: WPA: AP mgmt_group_cipher 0x20 network profile mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+[11:30:08.700] wlx5ca6e63fe2da: WPA: using MGMT group cipher AES-128-CMAC
+[11:30:08.700] WPA: Set own WPA IE default - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 00 00 00 0f ac 06
+[11:30:08.700] RSN: Set own RSNXE default - hexdump(len=0):
+[11:30:08.700] WPA: No current PMKSA - clear PMK
+[11:30:08.700] wlx5ca6e63fe2da: Automatic auth_alg selection: 0x1
+[11:30:08.700] Added supported operating classes IE - hexdump(len=18): 3b 10 51 51 53 54 73 74 75 76 77 78 79 7a 7b 80 81 82
+[11:30:08.700] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-E' freq=2412 MHz)
+[11:30:08.700] wlx5ca6e63fe2da: Cancelling scan request
+[11:30:08.700] wlx5ca6e63fe2da: State: SCANNING -> ASSOCIATING
+[11:30:08.700] nl80211: Set wlx5ca6e63fe2da operstate 0->0 (DORMANT)
+[11:30:08.700] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+[11:30:08.701] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:08.701] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:08.701] P2P: Add operating class 81
+[11:30:08.701] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:08.701] P2P: Add operating class 115
+[11:30:08.701] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:08.701] P2P: Add operating class 116
+[11:30:08.701] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:08.701] P2P: Add operating class 117
+[11:30:08.701] P2P: Channels - hexdump(len=2): 28 30
+[11:30:08.701] P2P: Add operating class 128
+[11:30:08.701] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:08.701] P2P: Add operating class 130
+[11:30:08.701] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:08.701] P2P: Update channel list
+[11:30:08.702] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:08.702] P2P: cli_channels:
+[11:30:08.702] Limit connection to BSSID 3c:a0:67:80:99:a3 freq=2412 MHz based on scan results (bssid_set=0 wps=0)
+[11:30:08.702] wlx5ca6e63fe2da: WPA: Selected AP supports MFP: require MFP
+[11:30:08.702] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:08.702] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:08.702] nl80211: Set mode ifindex 3 iftype 2 (STATION)
+[11:30:08.702] nl80211: Unsubscribe mgmt frames handle 0x8888dd6a382eeae9 (mode change)
+[11:30:08.703] nl80211: Subscribe to mgmt frames with non-AP handle 0x55e2b0a66260
+[11:30:08.703] nl80211: Register frame type=0xb0 (WLAN_FC_STYPE_AUTH) nl_handle=0x55e2b0a66260 match=0300 multicast=0
+[11:30:08.703] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0104 multicast=0
+[11:30:08.703] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040a multicast=0
+[11:30:08.703] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040b multicast=0
+[11:30:08.703] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040c multicast=0
+[11:30:08.703] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040d multicast=0
+[11:30:08.703] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090a multicast=0
+[11:30:08.703] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090b multicast=0
+[11:30:08.703] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090c multicast=0
+[11:30:08.703] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090d multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0409506f9a09 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=7f506f9a09 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0409506f9a1a multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0801 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040e multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=06 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a07 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a11 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a1a multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1101 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1102 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0505 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0500 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1301 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1305 multicast=0
+[11:30:08.704] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=7e506f9a1a multicast=0
+[11:30:08.704] nl80211: Connect (ifindex=3)
+[11:30:08.704]   * bssid=3c:a0:67:80:99:a3
+[11:30:08.704]   * bssid_hint=3c:a0:67:80:99:a3
+[11:30:08.704]   * freq=2412
+[11:30:08.704]   * freq_hint=2412
+[11:30:08.704]   * SSID=Hostapd-AP-E
+[11:30:08.704]   * IEs - hexdump(len=59): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 00 00 00 0f ac 06 7f 0b 00 00 00 00 00 00 40 00 00 00 20 3b 10 51 51 53 54 73 74 75 76 77 78 79 7a 7b 80 81 82
+[11:30:08.704]   * WPA Versions 0x2
+[11:30:08.704]   * pairwise=0xfac04
+[11:30:08.704]   * group=0xfac04
+[11:30:08.704]   * akm=0xfac01
+[11:30:08.704]   * Auth Type 0
+[11:30:08.708] nl80211: Connect request send successfully
+[11:30:08.708] wlx5ca6e63fe2da: Setting authentication timeout: 10 sec 0 usec
+[11:30:08.708] Not configuring frame filtering - BSS 00:00:00:00:00:00 is not a Hotspot 2.0 network
+[11:30:08.708] EAPOL: External notification - EAP success=0
+[11:30:08.708] EAPOL: External notification - EAP fail=0
+[11:30:08.708] EAPOL: External notification - portControl=Auto
+[11:30:08.715] nl80211: Drv Event 110 (NL80211_CMD_CH_SWITCH_STARTED_NOTIFY) received for wlx5ca6e63fe2da
+[11:30:08.715] nl80211: Channel switch started event
+[11:30:08.715] nl80211: Channel type: 0
+[11:30:08.715] wlx5ca6e63fe2da: Event CH_SWITCH_STARTED (39) received
+[11:30:08.715] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[11:30:08.878] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:08.878] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:08.878] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:08.878] nl80211: Drv Event 46 (NL80211_CMD_CONNECT) received for wlx5ca6e63fe2da
+[11:30:08.878] nl80211: Connect event (status=0 ignore_next_local_disconnect=0)
+[11:30:08.879] nl80211: Associated on 2412 MHz
+[11:30:08.879] nl80211: Associated with 3c:a0:67:80:99:a3
+[11:30:08.879] nl80211: Operating frequency for the associated BSS from scan results: 2412 MHz
+[11:30:08.879] nl80211: Associated on 2412 MHz
+[11:30:08.879] nl80211: Associated with 3c:a0:67:80:99:a3
+[11:30:08.879] nl80211: Set drv->ssid based on scan res info to 'Hostapd-AP-E'
+[11:30:08.879] wlx5ca6e63fe2da: Event ASSOC (0) received
+[11:30:08.879] wlx5ca6e63fe2da: Association info event
+[11:30:08.879] req_ies - hexdump(len=60): 03 00 00 0c 48 6f 73 74 61 70 64 2d 41 50 2d 45 01 08 82 84 8b 96 0c 12 18 24 32 04 30 48 60 6c 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 00 00 00 0f ac 06
+[11:30:08.879] resp_ies - hexdump(len=26): 01 08 82 84 8b 96 0c 12 18 24 32 04 30 48 60 6c 7f 08 04 00 00 00 00 00 00 40
+[11:30:08.879] wlx5ca6e63fe2da: freq=2412 MHz
+[11:30:08.879] WPA: set own WPA/RSN IE - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 00 00 00 0f ac 06
+[11:30:08.879] wlx5ca6e63fe2da: RSN: PMKID from assoc IE not found from PMKSA cache
+[11:30:08.879] wlx5ca6e63fe2da: RSN: clearing own RSNXE
+[11:30:08.879] wlx5ca6e63fe2da: State: ASSOCIATING -> ASSOCIATED
+[11:30:08.879] nl80211: Set wlx5ca6e63fe2da operstate 0->0 (DORMANT)
+[11:30:08.879] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+[11:30:08.879] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:08.879] wlx5ca6e63fe2da: Shared frequencies (len=1): completed iteration
+[11:30:08.879] wlx5ca6e63fe2da: freq[0]: 2412, flags=0x1
+[11:30:08.879] P2P: Add operating class 81
+[11:30:08.879] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:08.879] P2P: Add operating class 115
+[11:30:08.879] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:08.879] P2P: Add operating class 116
+[11:30:08.879] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:08.879] P2P: Add operating class 117
+[11:30:08.879] P2P: Channels - hexdump(len=2): 28 30
+[11:30:08.879] P2P: Add operating class 128
+[11:30:08.879] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:08.879] P2P: Add operating class 130
+[11:30:08.879] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:08.879] P2P: Update channel list
+[11:30:08.879] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:08.879] P2P: cli_channels:
+[11:30:08.879] wlx5ca6e63fe2da: Associated to a new BSS: BSSID=3c:a0:67:80:99:a3
+[11:30:08.879] WPA: Update cipher suite selection based on IEs in driver-generated WPA/RSNE in AssocReq - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 00 00 00 0f ac 06
+[11:30:08.879] wlx5ca6e63fe2da: WPA: AP key_mgmt 0x1 network key_mgmt 0x1; available key_mgmt 0x1
+[11:30:08.879] wlx5ca6e63fe2da: WPA: using KEY_MGMT WPA2/IEEE 802.1X/EAP and proto 2
+[11:30:08.879] wlx5ca6e63fe2da: WPA: AP pairwise cipher 0x10 network pairwise cipher 0x18; available pairwise cipher 0x10
+[11:30:08.879] wlx5ca6e63fe2da: WPA: using PTK CCMP
+[11:30:08.879] wlx5ca6e63fe2da: WPA: AP group cipher 0x10 network group cipher 0x18; available group cipher 0x10
+[11:30:08.879] wlx5ca6e63fe2da: WPA: using GTK CCMP
+[11:30:08.879] wlx5ca6e63fe2da: WPA: AP mgmt_group_cipher 0x20 network mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+[11:30:08.879] wlx5ca6e63fe2da: WPA: using MGMT group cipher BIP
+[11:30:08.879] wlx5ca6e63fe2da: Associated with 3c:a0:67:80:99:a3
+[11:30:08.879] wlx5ca6e63fe2da: WPA: Association event - clear replay counter
+[11:30:08.879] wlx5ca6e63fe2da: WPA: Clear old PTK
+[11:30:08.879] TDLS: Remove peers on association
+[11:30:08.879] EAPOL: External notification - portEnabled=0
+[11:30:08.879] EAPOL: External notification - portValid=0
+[11:30:08.879] EAPOL: External notification - portEnabled=1
+[11:30:08.879] EAPOL: SUPP_PAE entering state CONNECTING
+[11:30:08.879] EAPOL: enable timer tick
+[11:30:08.879] EAPOL: SUPP_BE entering state IDLE
+[11:30:08.879] EAP: EAP entering state INITIALIZE
+[11:30:08.879] EAP: EAP entering state IDLE
+[11:30:08.879] wlx5ca6e63fe2da: Setting authentication timeout: 10 sec 0 usec
+[11:30:08.879] wlx5ca6e63fe2da: Cancelling scan request
+[11:30:08.879] wlx5ca6e63fe2da: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[11:30:08.926] l2_packet_receive: src=3c:a0:67:80:99:a3 len=9
+[11:30:08.926] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:08.926] wlx5ca6e63fe2da: Setting authentication timeout: 70 sec 0 usec
+[11:30:08.926] EAPOL: Received EAP-Packet frame
+[11:30:08.926] EAPOL: SUPP_PAE entering state RESTART
+[11:30:08.926] EAP: EAP entering state INITIALIZE
+[11:30:08.926] EAP: EAP entering state IDLE
+[11:30:08.926] EAPOL: SUPP_PAE entering state AUTHENTICATING
+[11:30:08.926] EAPOL: SUPP_BE entering state REQUEST
+[11:30:08.926] EAPOL: getSuppRsp
+[11:30:08.926] EAP: EAP entering state RECEIVED
+[11:30:08.926] EAP: Received EAP-Request id=225 method=1 vendor=0 vendorMethod=0
+[11:30:08.926] EAP: EAP entering state IDENTITY
+[11:30:08.926] wlx5ca6e63fe2da: CTRL-EVENT-EAP-STARTED EAP authentication started
+[11:30:08.926] EAP: Status notification: started (param=)
+[11:30:08.926] EAP: EAP-Request Identity data - hexdump_ascii(len=0):
+[11:30:08.926] EAP: using anonymous identity - hexdump_ascii(len=9):
+     61 6e 6f 6e 79 6d 6f 75 73                        anonymous       
+[11:30:08.926] EAP: EAP entering state SEND_RESPONSE
+[11:30:08.926] EAP: EAP entering state IDLE
+[11:30:08.926] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:08.926] EAPOL: txSuppRsp
+[11:30:08.926] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:08.926] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:08.931] l2_packet_receive: src=3c:a0:67:80:99:a3 len=26
+[11:30:08.931] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:08.931] EAPOL: Received EAP-Packet frame
+[11:30:08.931] EAPOL: SUPP_BE entering state REQUEST
+[11:30:08.931] EAPOL: getSuppRsp
+[11:30:08.931] EAP: EAP entering state RECEIVED
+[11:30:08.931] EAP: Received EAP-Request id=226 method=4 vendor=0 vendorMethod=0
+[11:30:08.931] EAP: EAP entering state GET_METHOD
+[11:30:08.931] EAP: configuration does not allow: vendor 0 method 4
+[11:30:08.931] EAP: vendor 0 method 4 not allowed
+[11:30:08.931] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[11:30:08.931] EAP: Status notification: refuse proposed method (param=MD5)
+[11:30:08.931] EAP: Building EAP-Nak (requested type 4 vendor=0 method=0 not allowed)
+[11:30:08.931] EAP: allowed methods - hexdump(len=1): 19
+[11:30:08.931] EAP: EAP entering state SEND_RESPONSE
+[11:30:08.931] EAP: EAP entering state IDLE
+[11:30:08.931] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:08.931] EAPOL: txSuppRsp
+[11:30:08.931] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:08.931] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:08.935] l2_packet_receive: src=3c:a0:67:80:99:a3 len=10
+[11:30:08.935] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:08.935] EAPOL: Received EAP-Packet frame
+[11:30:08.935] EAPOL: SUPP_BE entering state REQUEST
+[11:30:08.935] EAPOL: getSuppRsp
+[11:30:08.935] EAP: EAP entering state RECEIVED
+[11:30:08.935] EAP: Received EAP-Request id=227 method=25 vendor=0 vendorMethod=0
+[11:30:08.935] EAP: EAP entering state GET_METHOD
+[11:30:08.935] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[11:30:08.935] EAP: Status notification: accept proposed method (param=PEAP)
+[11:30:08.935] EAP: Initialize selected EAP method: vendor 0 method 25 (PEAP)
+[11:30:08.935] TLS: Phase2 EAP types - hexdump(len=8): 00 00 00 00 1a 00 00 00
+[11:30:08.935] TLS: using phase1 config options
+[11:30:08.937] TLS: Trusted root certificate(s) loaded
+[11:30:08.937] wlx5ca6e63fe2da: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[11:30:08.937] EAP: EAP entering state METHOD
+[11:30:08.937] SSL: Received packet(len=6) - Flags 0x20
+[11:30:08.937] EAP-PEAP: Start (server ver=0, own ver=1)
+[11:30:08.937] EAP-PEAP: Using PEAP version 0
+[11:30:08.937] SSL: (where=0x10 ret=0x1)
+[11:30:08.937] SSL: (where=0x1001 ret=0x1)
+[11:30:08.937] SSL: SSL_connect:before SSL initialization
+[11:30:08.937] OpenSSL: TX ver=0x301 content_type=256 (TLS header info/)
+[11:30:08.937] OpenSSL: TX ver=0x303 content_type=22 (handshake/client hello)
+[11:30:08.937] SSL: (where=0x1001 ret=0x1)
+[11:30:08.937] SSL: SSL_connect:SSLv3/TLS write client hello
+[11:30:08.937] SSL: (where=0x1002 ret=0xffffffff)
+[11:30:08.937] SSL: SSL_connect:error in SSLv3/TLS write client hello
+[11:30:08.937] SSL: SSL_connect - want more data
+[11:30:08.937] SSL: 184 bytes pending from ssl_out
+[11:30:08.937] SSL: Using TLS version TLSv1.2
+[11:30:08.937] SSL: 184 bytes left to be sent out (of total 184 bytes)
+[11:30:08.937] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0af81e0
+[11:30:08.937] EAP: EAP entering state SEND_RESPONSE
+[11:30:08.937] EAP: EAP entering state IDLE
+[11:30:08.937] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:08.937] EAPOL: txSuppRsp
+[11:30:08.937] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:08.937] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:08.953] l2_packet_receive: src=3c:a0:67:80:99:a3 len=1008
+[11:30:08.953] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:08.953] EAPOL: Received EAP-Packet frame
+[11:30:08.953] EAPOL: SUPP_BE entering state REQUEST
+[11:30:08.953] EAPOL: getSuppRsp
+[11:30:08.953] EAP: EAP entering state RECEIVED
+[11:30:08.953] EAP: Received EAP-Request id=228 method=25 vendor=0 vendorMethod=0
+[11:30:08.953] EAP: EAP entering state METHOD
+[11:30:08.953] SSL: Received packet(len=1004) - Flags 0xc0
+[11:30:08.953] SSL: TLS Message Length: 2758
+[11:30:08.953] SSL: Need 1764 bytes more input data
+[11:30:08.953] SSL: Building ACK (type=25 id=228 ver=0)
+[11:30:08.953] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0ade7f0
+[11:30:08.953] EAP: EAP entering state SEND_RESPONSE
+[11:30:08.953] EAP: EAP entering state IDLE
+[11:30:08.953] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:08.953] EAPOL: txSuppRsp
+[11:30:08.953] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:08.953] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:08.964] l2_packet_receive: src=3c:a0:67:80:99:a3 len=1004
+[11:30:08.964] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:08.964] EAPOL: Received EAP-Packet frame
+[11:30:08.964] EAPOL: SUPP_BE entering state REQUEST
+[11:30:08.964] EAPOL: getSuppRsp
+[11:30:08.964] EAP: EAP entering state RECEIVED
+[11:30:08.964] EAP: Received EAP-Request id=229 method=25 vendor=0 vendorMethod=0
+[11:30:08.964] EAP: EAP entering state METHOD
+[11:30:08.964] SSL: Received packet(len=1000) - Flags 0x40
+[11:30:08.964] SSL: Need 770 bytes more input data
+[11:30:08.964] SSL: Building ACK (type=25 id=229 ver=0)
+[11:30:08.964] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0ade7f0
+[11:30:08.964] EAP: EAP entering state SEND_RESPONSE
+[11:30:08.964] EAP: EAP entering state IDLE
+[11:30:08.964] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:08.964] EAPOL: txSuppRsp
+[11:30:08.964] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:08.964] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:08.978] l2_packet_receive: src=3c:a0:67:80:99:a3 len=780
+[11:30:08.978] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:08.978] EAPOL: Received EAP-Packet frame
+[11:30:08.978] EAPOL: SUPP_BE entering state REQUEST
+[11:30:08.978] EAPOL: getSuppRsp
+[11:30:08.978] EAP: EAP entering state RECEIVED
+[11:30:08.978] EAP: Received EAP-Request id=230 method=25 vendor=0 vendorMethod=0
+[11:30:08.978] EAP: EAP entering state METHOD
+[11:30:08.978] SSL: Received packet(len=776) - Flags 0x00
+[11:30:08.978] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.978] SSL: (where=0x1001 ret=0x1)
+[11:30:08.978] SSL: SSL_connect:SSLv3/TLS write client hello
+[11:30:08.978] OpenSSL: RX ver=0x303 content_type=22 (handshake/server hello)
+[11:30:08.978] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.978] SSL: (where=0x1001 ret=0x1)
+[11:30:08.978] SSL: SSL_connect:SSLv3/TLS read server hello
+[11:30:08.978] OpenSSL: RX ver=0x303 content_type=22 (handshake/certificate)
+[11:30:08.981] OpenSSL: Peer certificate - depth 1
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            66:9e:28:ef:d6:42:8e:45:77:4f:1d:66:f1:b1:5f:b6:2d:50:77:6b
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=FR, ST=Radius, L=Somewhere, O=Example Inc./emailAddress=admin@example.org, CN=Example Certificate Authority
+        Validity
+            Not Before: Dec 20 14:38:35 2023 GMT
+            Not After : Feb 18 14:38:35 2024 GMT
+        Subject: C=FR, ST=Radius, L=Somewhere, O=Example Inc./emailAddress=admin@example.org, CN=Example Certificate Authority
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:be:84:7b:e8:e1:1c:01:b7:ec:f2:10:db:d1:2f:
+                    3a:f6:3d:d1:65:c8:15:f3:34:a5:2e:b8:ef:68:e5:
+                    49:c1:42:68:3f:94:0c:0c:9d:a0:38:dd:a9:90:57:
+                    f8:1f:7e:21:9f:5e:8a:14:e0:85:ff:f1:56:46:48:
+                    17:87:51:7a:74:88:76:a9:21:d4:4a:5e:f6:ed:c6:
+                    ef:a7:08:12:97:b2:e4:6c:57:a1:19:22:e5:f3:3e:
+                    47:e3:11:cf:7f:e1:e8:dd:06:8c:e4:27:34:f6:18:
+                    b9:35:28:1a:d0:8b:ba:19:df:24:b6:f7:60:8f:18:
+                    b5:aa:a0:08:df:55:08:bc:94:16:06:e8:af:80:25:
+                    82:b8:1e:a9:e2:61:bc:ef:e4:65:7b:6e:92:e1:bf:
+                    ad:70:fb:29:6d:4b:2d:67:31:79:7e:58:1e:65:1b:
+                    dc:bc:1b:1b:4d:5b:18:96:8a:c6:fe:f2:af:4f:db:
+                    d4:32:52:4f:01:87:85:18:5a:49:20:c5:66:6f:f3:
+                    2d:9c:ba:fd:ae:57:00:74:47:13:b0:73:6d:86:70:
+                    b6:dc:1c:07:24:48:02:67:6c:ca:5a:bb:68:b8:0a:
+                    5c:4e:c0:20:01:5e:8e:b8:75:fa:d4:2f:2f:e1:ec:
+                    9b:8e:52:e1:fc:37:b8:dd:29:73:d5:f7:41:22:86:
+                    a8:63
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                AA:BB:B8:28:79:FC:59:C9:A6:82:8B:36:AF:1A:67:7F:1F:08:1A:FC
+            X509v3 Authority Key Identifier: 
+                keyid:AA:BB:B8:28:79:FC:59:C9:A6:82:8B:36:AF:1A:67:7F:1F:08:1A:FC
+                DirName:/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority
+                serial:66:9E:28:EF:D6:42:8E:45:77:4F:1D:66:F1:B1:5F:B6:2D:50:77:6B
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 CRL Distribution Points: 
+                Full Name:
+                  URI:http://www.example.org/example_ca.crl
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        92:3f:43:f4:61:ad:7e:2a:d1:95:92:30:fa:c2:5e:5e:20:7d:
+        2a:15:ad:b3:76:4b:46:45:11:60:c1:32:eb:4d:79:bc:86:05:
+        6d:b7:03:df:4e:73:75:b2:70:45:b6:3a:9e:c6:da:78:8f:4b:
+        66:47:3e:e1:c8:44:91:12:b9:ec:ac:7e:f3:9d:84:62:b1:ff:
+        7b:42:41:6c:8e:de:b7:3f:13:c5:b1:52:72:2a:4f:d6:d6:22:
+        ce:84:8e:d2:e2:1f:99:88:1e:03:8c:f1:7c:dd:54:79:01:8e:
+        5c:9b:a7:a6:49:43:17:36:e3:20:e7:53:a2:bc:aa:3e:6c:3b:
+        5f:68:83:58:51:f4:70:c4:0c:eb:8f:31:f9:09:e3:4b:21:d5:
+        86:e6:16:9d:82:a2:d9:11:72:88:dd:5e:d1:1b:67:cb:ab:a8:
+        6f:b7:58:42:81:d5:8f:41:85:bf:44:d8:84:1b:fb:86:b4:e0:
+        e4:c9:85:ec:56:87:ef:49:59:94:1b:91:7c:ef:4d:9a:c4:f1:
+        1c:af:f9:cc:46:95:43:c6:d6:9f:33:3b:74:ac:9d:ed:21:bb:
+        04:1e:85:85:6e:2c:c8:a1:c8:66:87:47:e5:98:99:75:54:75:
+        53:d7:5e:6e:18:7c:7b:74:13:97:65:f2:a0:6f:24:da:ab:d3:
+        a4:48:8c:af
+
+[11:30:08.981] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=c7d1f8557ddf4ed57a483136f0464de35a5415d7c126847db1b11c84682e19df
+[11:30:08.982] TLS: tls_verify_cb - preverify_ok=1 err=0 (ok) ca_cert_verify=1 depth=1 buf='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+[11:30:08.982] OpenSSL: Peer certificate - depth 0
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=FR, ST=Radius, L=Somewhere, O=Example Inc./emailAddress=admin@example.org, CN=Example Certificate Authority
+        Validity
+            Not Before: Dec 20 14:38:43 2023 GMT
+            Not After : Feb 18 14:38:43 2024 GMT
+        Subject: C=FR, ST=Radius, O=Example Inc., CN=Example Server Certificate/emailAddress=admin@example.org
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:c6:7d:e5:2f:2c:a9:77:82:d5:53:b7:5f:ae:87:
+                    16:8f:c5:dc:b2:7c:b3:17:b9:5a:3a:25:0b:d7:8c:
+                    18:da:4a:f7:9a:b3:3a:81:21:fa:a4:d1:8f:44:3d:
+                    c7:76:f4:60:69:4d:b8:7c:09:24:cf:75:73:f9:72:
+                    0e:85:cc:aa:4c:a3:6d:5a:d7:33:8c:d6:f0:99:2d:
+                    34:87:7d:ea:50:a1:03:00:85:1c:8b:6a:a3:77:1b:
+                    57:19:ab:e9:dc:8a:d1:06:a0:f9:1d:9f:da:76:b0:
+                    90:cd:1b:18:58:13:7f:b5:7c:19:8e:f6:78:d4:94:
+                    31:97:9d:82:e8:ab:41:a3:d0:06:92:d5:fa:a5:51:
+                    1a:b8:c9:70:4a:ab:dd:02:1d:d0:91:e4:f4:0a:10:
+                    52:49:ce:c1:ed:b8:71:db:cc:8f:6d:1e:d2:88:b7:
+                    bf:21:97:1e:e1:05:d6:5b:ed:4d:e5:42:60:2f:63:
+                    09:54:3c:ef:12:97:62:92:f3:1b:30:58:1d:44:d9:
+                    29:6a:f5:9b:cf:1d:58:d2:57:e6:71:3a:cd:fc:e6:
+                    50:76:ac:04:3d:6e:13:91:a8:05:65:14:bb:03:8d:
+                    96:3e:a6:e5:5c:77:24:16:dc:6a:24:32:fb:a2:26:
+                    e7:be:05:f6:af:6b:d9:46:e3:a8:16:45:8e:60:9c:
+                    14:d7
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 CRL Distribution Points: 
+                Full Name:
+                  URI:http://www.example.com/example_ca.crl
+            X509v3 Certificate Policies: 
+                Policy: 1.3.6.1.4.1.40808.1.3.2
+            X509v3 Subject Key Identifier: 
+                70:F3:20:43:D5:F7:63:49:52:1E:B6:E6:74:FB:5B:27:79:8E:F7:3F
+            X509v3 Authority Key Identifier: 
+                AA:BB:B8:28:79:FC:59:C9:A6:82:8B:36:AF:1A:67:7F:1F:08:1A:FC
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        af:58:d4:58:c2:2d:ab:0b:c0:a0:85:df:9e:f3:ed:67:83:e7:
+        3a:66:bc:f3:92:50:c2:57:81:b8:60:4f:3a:61:17:b8:2a:77:
+        08:4d:53:ba:ea:c3:1d:da:49:3b:c1:6c:5c:28:eb:92:70:1c:
+        4d:fb:06:1d:d7:75:17:19:85:9e:5c:62:c9:bb:9c:67:90:93:
+        77:a5:77:06:28:ed:95:67:be:35:5b:c9:8f:e1:43:c0:66:b4:
+        48:79:55:d9:1f:ae:55:5c:75:7e:3b:d2:31:c8:2e:fa:ec:fd:
+        88:8d:d9:7a:94:57:c2:62:e2:78:b3:fb:da:f7:02:51:84:f0:
+        c3:f7:02:b6:ea:83:37:c8:49:aa:0b:bb:2b:42:c7:58:68:2c:
+        e6:92:b0:75:48:e2:3d:78:0d:4d:cc:fe:d6:65:18:d7:98:42:
+        35:a5:b5:95:ee:10:78:82:ef:de:44:94:97:5e:2f:be:9f:38:
+        b0:6c:7b:3e:09:87:06:41:18:09:ce:98:34:2f:9c:48:7a:b8:
+        66:d8:84:51:28:d0:eb:8d:b8:d2:4a:1f:69:78:f4:1c:c4:ab:
+        81:3a:51:67:02:d9:60:03:08:74:48:f4:25:b8:38:16:4e:3c:
+        34:19:af:9c:ac:50:75:57:71:cf:5d:87:bd:38:ef:6a:2a:32:
+        11:e1:39:98
+
+[11:30:08.983] OpenSSL: Certificate Policy 1.3.6.1.4.1.40808.1.3.2
+[11:30:08.983] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=29f32fbaba0544a9e4051904c199bb2639b8e0aa46f81bb715cfe1517846dcd3 tod=2
+[11:30:08.983] TLS: tls_verify_cb - preverify_ok=1 err=0 (ok) ca_cert_verify=1 depth=0 buf='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org'
+[11:30:08.983] EAP: Status notification: remote certificate verification (param=success)
+[11:30:08.983] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.983] SSL: (where=0x1001 ret=0x1)
+[11:30:08.983] SSL: SSL_connect:SSLv3/TLS read server certificate
+[11:30:08.983] OpenSSL: RX ver=0x303 content_type=22 (handshake/server key exchange)
+[11:30:08.983] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.983] SSL: (where=0x1001 ret=0x1)
+[11:30:08.983] SSL: SSL_connect:SSLv3/TLS read server key exchange
+[11:30:08.983] OpenSSL: RX ver=0x303 content_type=22 (handshake/server hello done)
+[11:30:08.983] SSL: (where=0x1001 ret=0x1)
+[11:30:08.983] SSL: SSL_connect:SSLv3/TLS read server done
+[11:30:08.983] OpenSSL: TX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.983] OpenSSL: TX ver=0x303 content_type=22 (handshake/client key exchange)
+[11:30:08.983] SSL: (where=0x1001 ret=0x1)
+[11:30:08.983] SSL: SSL_connect:SSLv3/TLS write client key exchange
+[11:30:08.983] OpenSSL: TX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.983] OpenSSL: TX ver=0x303 content_type=20 (change cipher spec/)
+[11:30:08.984] SSL: (where=0x1001 ret=0x1)
+[11:30:08.984] SSL: SSL_connect:SSLv3/TLS write change cipher spec
+[11:30:08.984] OpenSSL: TX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.984] OpenSSL: TX ver=0x303 content_type=22 (handshake/finished)
+[11:30:08.984] SSL: (where=0x1001 ret=0x1)
+[11:30:08.984] SSL: SSL_connect:SSLv3/TLS write finished
+[11:30:08.984] SSL: (where=0x1002 ret=0xffffffff)
+[11:30:08.984] SSL: SSL_connect:error in SSLv3/TLS write finished
+[11:30:08.984] SSL: SSL_connect - want more data
+[11:30:08.984] SSL: 93 bytes pending from ssl_out
+[11:30:08.984] SSL: Using TLS version TLSv1.2
+[11:30:08.984] SSL: 93 bytes left to be sent out (of total 93 bytes)
+[11:30:08.984] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0b0fcb0
+[11:30:08.984] EAP: EAP entering state SEND_RESPONSE
+[11:30:08.984] EAP: EAP entering state IDLE
+[11:30:08.984] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:08.984] EAPOL: txSuppRsp
+[11:30:08.984] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:08.984] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:08.992] l2_packet_receive: src=3c:a0:67:80:99:a3 len=61
+[11:30:08.992] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:08.992] EAPOL: Received EAP-Packet frame
+[11:30:08.992] EAPOL: SUPP_BE entering state REQUEST
+[11:30:08.992] EAPOL: getSuppRsp
+[11:30:08.992] EAP: EAP entering state RECEIVED
+[11:30:08.992] EAP: Received EAP-Request id=231 method=25 vendor=0 vendorMethod=0
+[11:30:08.992] EAP: EAP entering state METHOD
+[11:30:08.992] SSL: Received packet(len=57) - Flags 0x00
+[11:30:08.992] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.992] SSL: (where=0x1001 ret=0x1)
+[11:30:08.992] SSL: SSL_connect:SSLv3/TLS write finished
+[11:30:08.992] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.992] SSL: (where=0x1001 ret=0x1)
+[11:30:08.992] SSL: SSL_connect:SSLv3/TLS read change cipher spec
+[11:30:08.992] OpenSSL: RX ver=0x303 content_type=22 (handshake/finished)
+[11:30:08.992] SSL: (where=0x1001 ret=0x1)
+[11:30:08.992] SSL: SSL_connect:SSLv3/TLS read finished
+[11:30:08.992] SSL: (where=0x20 ret=0x1)
+[11:30:08.992] SSL: (where=0x1002 ret=0x1)
+[11:30:08.992] SSL: 0 bytes pending from ssl_out
+[11:30:08.992] OpenSSL: Handshake finished - resumed=0
+[11:30:08.992] SSL: No Application Data included
+[11:30:08.992] SSL: Using TLS version TLSv1.2
+[11:30:08.992] SSL: No data to be sent out
+[11:30:08.992] EAP-PEAP: TLS done, proceed to Phase 2
+[11:30:08.992] EAP-PEAP: using label 'client EAP encryption' in key derivation
+[11:30:08.992] EAP-PEAP: Derived key - hexdump(len=64): [REMOVED]
+[11:30:08.992] EAP-PEAP: Derived EMSK - hexdump(len=64): [REMOVED]
+[11:30:08.992] EAP-PEAP: Derived Session-Id - hexdump(len=65): 19 68 94 f6 4a 6f 63 b9 08 80 6e 97 1d 93 71 db 23 bc 5f e2 13 91 5f 8e 2f fa 7f cb cb 9b 09 3d 24 95 bd ec eb 6c 00 97 f6 37 e5 9e 2b be fd 5b c9 ad e2 56 6d 76 85 ec 59 ab 0e c5 28 af e3 18 21
+[11:30:08.992] SSL: Building ACK (type=25 id=231 ver=0)
+[11:30:08.992] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0adf920
+[11:30:08.992] EAP: EAP entering state SEND_RESPONSE
+[11:30:08.992] EAP: EAP entering state IDLE
+[11:30:08.992] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:08.992] EAPOL: txSuppRsp
+[11:30:08.992] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:08.992] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:08.998] l2_packet_receive: src=3c:a0:67:80:99:a3 len=44
+[11:30:08.998] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:08.998] EAPOL: Received EAP-Packet frame
+[11:30:08.998] EAPOL: SUPP_BE entering state REQUEST
+[11:30:08.998] EAPOL: getSuppRsp
+[11:30:08.998] EAP: EAP entering state RECEIVED
+[11:30:08.998] EAP: Received EAP-Request id=232 method=25 vendor=0 vendorMethod=0
+[11:30:08.998] EAP: EAP entering state METHOD
+[11:30:08.998] SSL: Received packet(len=40) - Flags 0x00
+[11:30:08.998] EAP-PEAP: received 34 bytes encrypted data for Phase 2
+[11:30:08.998] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.998] EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=5): 01 e8 00 05 01
+[11:30:08.998] EAP-PEAP: received Phase 2: code=1 identifier=232 length=5
+[11:30:08.998] EAP-PEAP: Phase 2 Request: type=1
+[11:30:08.998] EAP: using real identity - hexdump_ascii(len=15):
+     62 6f 62 40 65 78 61 6d 70 6c 65 2e 6f 72 67      bob@example.org 
+[11:30:08.998] EAP-PEAP: Encrypting Phase 2 data - hexdump(len=20): [REMOVED]
+[11:30:08.998] OpenSSL: TX ver=0x303 content_type=256 (TLS header info/)
+[11:30:08.998] SSL: 45 bytes left to be sent out (of total 45 bytes)
+[11:30:08.998] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0afaeb0
+[11:30:08.998] EAP: EAP entering state SEND_RESPONSE
+[11:30:08.998] EAP: EAP entering state IDLE
+[11:30:08.998] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:08.998] EAPOL: txSuppRsp
+[11:30:08.998] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:08.999] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:09.005] l2_packet_receive: src=3c:a0:67:80:99:a3 len=78
+[11:30:09.005] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:09.005] EAPOL: Received EAP-Packet frame
+[11:30:09.005] EAPOL: SUPP_BE entering state REQUEST
+[11:30:09.005] EAPOL: getSuppRsp
+[11:30:09.005] EAP: EAP entering state RECEIVED
+[11:30:09.005] EAP: Received EAP-Request id=233 method=25 vendor=0 vendorMethod=0
+[11:30:09.005] EAP: EAP entering state METHOD
+[11:30:09.005] SSL: Received packet(len=74) - Flags 0x00
+[11:30:09.005] EAP-PEAP: received 68 bytes encrypted data for Phase 2
+[11:30:09.005] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:09.005] EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=39): 1a 01 e9 00 26 10 ce c6 ea c8 7d f8 bd a5 22 28 16 7f 28 59 1d 39 66 72 65 65 72 61 64 69 75 73 2d 33 2e 30 2e 32 36
+[11:30:09.005] EAP-PEAP: received Phase 2: code=1 identifier=233 length=43
+[11:30:09.005] EAP-PEAP: Phase 2 Request: type=26
+[11:30:09.005] EAP-PEAP: Selected Phase 2 EAP vendor 0 method 26
+[11:30:09.005] EAP-MSCHAPV2: RX identifier 233 mschapv2_id 233
+[11:30:09.005] EAP-MSCHAPV2: Received challenge
+[11:30:09.005] EAP-MSCHAPV2: Authentication Servername - hexdump_ascii(len=17):
+     66 72 65 65 72 61 64 69 75 73 2d 33 2e 30 2e 32   freeradius-3.0.2
+     36                                                6               
+[11:30:09.005] EAP-MSCHAPV2: Generating Challenge Response
+[11:30:09.005] MSCHAPV2: Identity - hexdump_ascii(len=15):
+     62 6f 62 40 65 78 61 6d 70 6c 65 2e 6f 72 67      bob@example.org 
+[11:30:09.005] MSCHAPV2: Username - hexdump_ascii(len=15):
+     62 6f 62 40 65 78 61 6d 70 6c 65 2e 6f 72 67      bob@example.org 
+[11:30:09.005] MSCHAPV2: auth_challenge - hexdump(len=16): ce c6 ea c8 7d f8 bd a5 22 28 16 7f 28 59 1d 39
+[11:30:09.005] MSCHAPV2: peer_challenge - hexdump(len=16): 9b 30 bd 47 f4 59 c4 dc d5 1c e5 17 ed e7 67 65
+[11:30:09.005] MSCHAPV2: username - hexdump_ascii(len=15):
+     62 6f 62 40 65 78 61 6d 70 6c 65 2e 6f 72 67      bob@example.org 
+[11:30:09.005] MSCHAPV2: password - hexdump_ascii(len=12): [REMOVED]
+[11:30:09.005] MSCHAPV2: NT Response - hexdump(len=24): 2d ae 38 2a 0d 04 87 cf ea 1b 2e 59 26 7a 2e 38 02 69 c8 85 3b de 42 1a
+[11:30:09.005] MSCHAPV2: Auth Response - hexdump(len=20): eb c4 51 3f 8e 2a de b7 a4 69 80 b9 ae 57 16 5e c4 8d 5a 92
+[11:30:09.005] MSCHAPV2: Master Key - hexdump(len=16): [REMOVED]
+[11:30:09.005] EAP-MSCHAPV2: TX identifier 233 mschapv2_id 233 (response)
+[11:30:09.005] EAP-PEAP: Encrypting Phase 2 data - hexdump(len=74): [REMOVED]
+[11:30:09.005] OpenSSL: TX ver=0x303 content_type=256 (TLS header info/)
+[11:30:09.005] SSL: 99 bytes left to be sent out (of total 99 bytes)
+[11:30:09.005] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0af9a20
+[11:30:09.005] EAP: EAP entering state SEND_RESPONSE
+[11:30:09.005] EAP: EAP entering state IDLE
+[11:30:09.005] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:09.005] EAPOL: txSuppRsp
+[11:30:09.005] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:09.005] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:09.011] l2_packet_receive: src=3c:a0:67:80:99:a3 len=86
+[11:30:09.011] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:09.011] EAPOL: Received EAP-Packet frame
+[11:30:09.011] EAPOL: SUPP_BE entering state REQUEST
+[11:30:09.011] EAPOL: getSuppRsp
+[11:30:09.011] EAP: EAP entering state RECEIVED
+[11:30:09.011] EAP: Received EAP-Request id=234 method=25 vendor=0 vendorMethod=0
+[11:30:09.011] EAP: EAP entering state METHOD
+[11:30:09.011] SSL: Received packet(len=82) - Flags 0x00
+[11:30:09.011] EAP-PEAP: received 76 bytes encrypted data for Phase 2
+[11:30:09.011] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:09.011] EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=47): 1a 03 e9 00 2e 53 3d 45 42 43 34 35 31 33 46 38 45 32 41 44 45 42 37 41 34 36 39 38 30 42 39 41 45 35 37 31 36 35 45 43 34 38 44 35 41 39 32
+[11:30:09.012] EAP-PEAP: received Phase 2: code=1 identifier=234 length=51
+[11:30:09.012] EAP-PEAP: Phase 2 Request: type=26
+[11:30:09.012] EAP-MSCHAPV2: RX identifier 234 mschapv2_id 233
+[11:30:09.012] EAP-MSCHAPV2: Received success
+[11:30:09.012] EAP-MSCHAPV2: Success message - hexdump_ascii(len=0):
+[11:30:09.012] EAP-MSCHAPV2: Authentication succeeded
+[11:30:09.012] EAP-PEAP: Encrypting Phase 2 data - hexdump(len=6): [REMOVED]
+[11:30:09.012] OpenSSL: TX ver=0x303 content_type=256 (TLS header info/)
+[11:30:09.012] SSL: 31 bytes left to be sent out (of total 31 bytes)
+[11:30:09.012] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0b15340
+[11:30:09.012] EAP: Session-Id - hexdump(len=65): 19 68 94 f6 4a 6f 63 b9 08 80 6e 97 1d 93 71 db 23 bc 5f e2 13 91 5f 8e 2f fa 7f cb cb 9b 09 3d 24 95 bd ec eb 6c 00 97 f6 37 e5 9e 2b be fd 5b c9 ad e2 56 6d 76 85 ec 59 ab 0e c5 28 af e3 18 21
+[11:30:09.012] EAP: EAP entering state SEND_RESPONSE
+[11:30:09.012] EAP: EAP entering state IDLE
+[11:30:09.012] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:09.012] EAPOL: txSuppRsp
+[11:30:09.012] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:09.012] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:09.017] l2_packet_receive: src=3c:a0:67:80:99:a3 len=50
+[11:30:09.017] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:09.017] EAPOL: Received EAP-Packet frame
+[11:30:09.017] EAPOL: SUPP_BE entering state REQUEST
+[11:30:09.017] EAPOL: getSuppRsp
+[11:30:09.017] EAP: EAP entering state RECEIVED
+[11:30:09.017] EAP: Received EAP-Request id=235 method=25 vendor=0 vendorMethod=0
+[11:30:09.017] EAP: EAP entering state METHOD
+[11:30:09.017] SSL: Received packet(len=46) - Flags 0x00
+[11:30:09.017] EAP-PEAP: received 40 bytes encrypted data for Phase 2
+[11:30:09.017] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:09.017] EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=11): 01 eb 00 0b 21 80 03 00 02 00 01
+[11:30:09.017] EAP-PEAP: received Phase 2: code=1 identifier=235 length=11
+[11:30:09.017] EAP-PEAP: Phase 2 Request: type=33
+[11:30:09.017] EAP-TLV: Received TLVs - hexdump(len=6): 80 03 00 02 00 01
+[11:30:09.017] EAP-TLV: Result TLV - hexdump(len=2): 00 01
+[11:30:09.017] EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
+[11:30:09.017] EAP-PEAP: Encrypting Phase 2 data - hexdump(len=11): [REMOVED]
+[11:30:09.017] OpenSSL: TX ver=0x303 content_type=256 (TLS header info/)
+[11:30:09.018] SSL: 40 bytes left to be sent out (of total 40 bytes)
+[11:30:09.018] EAP: method process -> ignore=FALSE methodState=DONE decision=UNCOND_SUCC eapRespData=0x55e2b0afb370
+[11:30:09.018] EAP: Session-Id - hexdump(len=65): 19 68 94 f6 4a 6f 63 b9 08 80 6e 97 1d 93 71 db 23 bc 5f e2 13 91 5f 8e 2f fa 7f cb cb 9b 09 3d 24 95 bd ec eb 6c 00 97 f6 37 e5 9e 2b be fd 5b c9 ad e2 56 6d 76 85 ec 59 ab 0e c5 28 af e3 18 21
+[11:30:09.018] EAP: EAP entering state SEND_RESPONSE
+[11:30:09.018] EAP: EAP entering state IDLE
+[11:30:09.018] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:09.018] EAPOL: txSuppRsp
+[11:30:09.018] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:09.018] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:09.023] l2_packet_receive: src=3c:a0:67:80:99:a3 len=8
+[11:30:09.023] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:09.023] EAPOL: Received EAP-Packet frame
+[11:30:09.023] EAPOL: SUPP_BE entering state REQUEST
+[11:30:09.023] EAPOL: getSuppRsp
+[11:30:09.023] EAP: EAP entering state RECEIVED
+[11:30:09.023] EAP: Received EAP-Success
+[11:30:09.023] EAP: Status notification: completion (param=success)
+[11:30:09.023] EAP: EAP entering state SUCCESS
+[11:30:09.023] wlx5ca6e63fe2da: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+[11:30:09.023] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:09.023] EAPOL: SUPP_BE entering state SUCCESS
+[11:30:09.023] EAPOL: SUPP_BE entering state IDLE
+[11:30:09.024] l2_packet_receive: src=3c:a0:67:80:99:a3 len=121
+[11:30:09.024] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:09.024] EAPOL: Ignoring WPA EAPOL-Key frame in EAPOL state machines
+[11:30:09.024] wlx5ca6e63fe2da: IEEE 802.1X RX: version=2 type=3 length=117
+[11:30:09.025] wlx5ca6e63fe2da:   EAPOL-Key type=2
+[11:30:09.025] wlx5ca6e63fe2da:   key_info 0x8a (ver=2 keyidx=0 rsvd=0 Pairwise Ack)
+[11:30:09.025] wlx5ca6e63fe2da:   key_length=16 key_data_length=22
+[11:30:09.025]   replay_counter - hexdump(len=8): 00 00 00 00 00 00 00 01
+[11:30:09.025]   key_nonce - hexdump(len=32): ac 55 14 c6 2b ee c4 d4 a3 24 bb 16 72 a4 9a c1 e2 45 af 40 7e d4 f5 c9 ce 66 52 18 69 89 d3 ff
+[11:30:09.025]   key_iv - hexdump(len=16): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[11:30:09.025]   key_rsc - hexdump(len=8): 00 00 00 00 00 00 00 00
+[11:30:09.025]   key_id (reserved) - hexdump(len=8): 00 00 00 00 00 00 00 00
+[11:30:09.025]   key_mic - hexdump(len=16): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[11:30:09.025] wlx5ca6e63fe2da: State: ASSOCIATED -> 4WAY_HANDSHAKE
+[11:30:09.025] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:09.025] wlx5ca6e63fe2da: Shared frequencies (len=1): completed iteration
+[11:30:09.025] wlx5ca6e63fe2da: freq[0]: 2412, flags=0x1
+[11:30:09.025] P2P: Add operating class 81
+[11:30:09.025] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:09.025] P2P: Add operating class 115
+[11:30:09.025] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:09.025] P2P: Add operating class 116
+[11:30:09.025] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:09.025] P2P: Add operating class 117
+[11:30:09.025] P2P: Channels - hexdump(len=2): 28 30
+[11:30:09.025] P2P: Add operating class 128
+[11:30:09.025] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:09.025] P2P: Add operating class 130
+[11:30:09.025] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:09.025] P2P: Update channel list
+[11:30:09.025] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:09.025] P2P: cli_channels:
+[11:30:09.025] wlx5ca6e63fe2da: WPA: RX message 1 of 4-Way Handshake from 3c:a0:67:80:99:a3 (ver=2)
+[11:30:09.025] RSN: msg 1/4 key data - hexdump(len=22): dd 14 00 0f ac 04 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64
+[11:30:09.025] WPA: PMKID in EAPOL-Key - hexdump(len=22): dd 14 00 0f ac 04 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64
+[11:30:09.025] RSN: PMKID from Authenticator - hexdump(len=16): 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64
+[11:30:09.025] wlx5ca6e63fe2da: RSN: no matching PMKID found
+[11:30:09.025] EAPOL: Successfully fetched key (len=32)
+[11:30:09.025] EAPOL: Successfully fetched key (len=64)
+[11:30:09.025] WPA: PMK from EAPOL state machines - hexdump(len=32): [REMOVED]
+[11:30:09.025] RSN: Derive PMKID using HMAC-SHA-1
+[11:30:09.025] RSN: Derived PMKID - hexdump(len=16): 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64
+[11:30:09.025] RSN: Added PMKSA cache entry for 3c:a0:67:80:99:a3 network_ctx=0x55e2b0a671e0 akmp=0x1
+[11:30:09.025] wlx5ca6e63fe2da: PMKSA-CACHE-ADDED 3c:a0:67:80:99:a3 0
+[11:30:09.025] nl80211: Add PMKID for 3c:a0:67:80:99:a3
+[11:30:09.025] wlx5ca6e63fe2da: RSN: the new PMK matches with the PMKID
+[11:30:09.025] WPA: Renewed SNonce - hexdump(len=32): c0 b2 79 9f 84 24 17 b6 6c 9e d3 8b 03 2e 65 56 99 db 5c 5f 1b b9 09 c8 81 fb 2d d8 5b 3c fa 08
+[11:30:09.025] WPA: PTK derivation using PRF(SHA1)
+[11:30:09.025] WPA: PTK derivation - A1=5c:a6:e6:3f:e2:da A2=3c:a0:67:80:99:a3
+[11:30:09.025] WPA: Nonce1 - hexdump(len=32): c0 b2 79 9f 84 24 17 b6 6c 9e d3 8b 03 2e 65 56 99 db 5c 5f 1b b9 09 c8 81 fb 2d d8 5b 3c fa 08
+[11:30:09.025] WPA: Nonce2 - hexdump(len=32): ac 55 14 c6 2b ee c4 d4 a3 24 bb 16 72 a4 9a c1 e2 45 af 40 7e d4 f5 c9 ce 66 52 18 69 89 d3 ff
+[11:30:09.025] WPA: PMK - hexdump(len=32): [REMOVED]
+[11:30:09.025] WPA: PTK - hexdump(len=48): [REMOVED]
+[11:30:09.025] WPA: KCK - hexdump(len=16): [REMOVED]
+[11:30:09.025] WPA: KEK - hexdump(len=16): [REMOVED]
+[11:30:09.025] WPA: TK - hexdump(len=16): [REMOVED]
+[11:30:09.025] WPA: WPA IE for msg 2/4 - hexdump(len=28): 30 1a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 00 00 00 0f ac 06
+[11:30:09.025] WPA: Replay Counter - hexdump(len=8): 00 00 00 00 00 00 00 01
+[11:30:09.025] wlx5ca6e63fe2da: WPA: Sending EAPOL-Key 2/4
+[11:30:09.025] WPA: Send EAPOL-Key frame to 3c:a0:67:80:99:a3 ver=2 mic_len=16 key_mgmt=0x1
+[11:30:09.025] WPA: EAPOL-Key MIC using HMAC-SHA1
+[11:30:09.025] WPA: KCK - hexdump(len=16): [REMOVED]
+[11:30:09.025] WPA: Derived Key MIC - hexdump(len=16): 66 ac c8 9a 6c 2a ed ec f5 e0 b3 bb c6 20 f8 09
+[11:30:09.037] l2_packet_receive: src=3c:a0:67:80:99:a3 len=187
+[11:30:09.037] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:09.037] EAPOL: Ignoring WPA EAPOL-Key frame in EAPOL state machines
+[11:30:09.037] wlx5ca6e63fe2da: IEEE 802.1X RX: version=2 type=3 length=183
+[11:30:09.037] wlx5ca6e63fe2da:   EAPOL-Key type=2
+[11:30:09.037] wlx5ca6e63fe2da:   key_info 0x13ca (ver=2 keyidx=0 rsvd=0 Pairwise Install Ack MIC Secure Encr)
+[11:30:09.038] wlx5ca6e63fe2da:   key_length=16 key_data_length=88
+[11:30:09.038]   replay_counter - hexdump(len=8): 00 00 00 00 00 00 00 02
+[11:30:09.038]   key_nonce - hexdump(len=32): ac 55 14 c6 2b ee c4 d4 a3 24 bb 16 72 a4 9a c1 e2 45 af 40 7e d4 f5 c9 ce 66 52 18 69 89 d3 ff
+[11:30:09.038]   key_iv - hexdump(len=16): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[11:30:09.038]   key_rsc - hexdump(len=8): 00 00 00 00 00 00 00 00
+[11:30:09.038]   key_id (reserved) - hexdump(len=8): 00 00 00 00 00 00 00 00
+[11:30:09.038]   key_mic - hexdump(len=16): 3e b3 7a c1 92 d3 43 0e e6 0e 9c db 7e 5a a3 15
+[11:30:09.038] WPA: EAPOL-Key MIC using HMAC-SHA1
+[11:30:09.038] RSN: encrypted key data - hexdump(len=88): e0 1a 0c db 43 46 1e 29 da a9 3e fb dc 5a b6 2f 72 78 3a d8 c6 6a 08 ef 38 3e 4c 4a 91 5b d6 63 ad 98 cc 6d 0a 2c fe d2 b9 79 b3 de fe 26 85 f4 c0 53 20 79 07 04 61 b4 06 95 ac 0a bf c8 f7 9d 9a 80 41 f8 67 0c 96 b8 69 e3 24 37 97 d2 a7 a0 27 5c 9a 74 c2 54 56 e9
+[11:30:09.038] WPA: Decrypt Key Data using AES-UNWRAP (KEK length 16)
+[11:30:09.038] WPA: decrypted EAPOL-Key key data - hexdump(len=80): [REMOVED]
+[11:30:09.038] wlx5ca6e63fe2da: State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+[11:30:09.038] wlx5ca6e63fe2da: WPA: RX message 3 of 4-Way Handshake from 3c:a0:67:80:99:a3 (ver=2)
+[11:30:09.038] WPA: IE KeyData - hexdump(len=80): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 dd 16 00 0f ac 01 01 00 19 58 09 35 0a a6 59 62 05 b7 17 b0 54 66 b7 c3 dd 1c 00 0f ac 09 04 00 00 00 00 00 00 00 21 4b 73 6f 08 d2 48 71 3a 2f 3b ab 5e 0e 5a 26 dd 00 00 00
+[11:30:09.038] WPA: RSN IE in EAPOL-Key - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00
+[11:30:09.038] WPA: GTK in EAPOL-Key - hexdump(len=24): [REMOVED]
+[11:30:09.038] WPA: IGTK in EAPOL-Key - hexdump(len=30): [REMOVED]
+[11:30:09.038] wlx5ca6e63fe2da: WPA: Sending EAPOL-Key 4/4
+[11:30:09.038] WPA: Send EAPOL-Key frame to 3c:a0:67:80:99:a3 ver=2 mic_len=16 key_mgmt=0x1
+[11:30:09.038] WPA: EAPOL-Key MIC using HMAC-SHA1
+[11:30:09.038] WPA: KCK - hexdump(len=16): [REMOVED]
+[11:30:09.038] WPA: Derived Key MIC - hexdump(len=16): 1f bc 6b 6b 1e ed 6c 50 79 2e a1 3e 69 2e a2 c7
+[11:30:09.038] wlx5ca6e63fe2da: WPA: Installing PTK to the driver
+[11:30:09.038] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=3 addr=0x55e2b0a69120 key_idx=0 set_tx=1 seq_len=6 key_len=16 key_flag=0x2c
+[11:30:09.038] nl80211: NEW_KEY
+[11:30:09.038] nl80211: KEY_DATA - hexdump(len=16): [REMOVED]
+[11:30:09.038] nl80211: KEY_SEQ - hexdump(len=6): 00 00 00 00 00 00
+[11:30:09.038]    addr=3c:a0:67:80:99:a3
+[11:30:09.038]    pairwise key
+[11:30:09.038] EAPOL: External notification - portValid=1
+[11:30:09.038] EAPOL: SUPP_PAE entering state AUTHENTICATED
+[11:30:09.038] EAPOL: Supplicant port status: Authorized
+[11:30:09.038] nl80211: Set supplicant port authorized for 3c:a0:67:80:99:a3
+[11:30:09.038] EAPOL authentication completed - result=SUCCESS
+[11:30:09.038] wlx5ca6e63fe2da: State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+[11:30:09.038] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:09.038] wlx5ca6e63fe2da: Shared frequencies (len=1): completed iteration
+[11:30:09.038] wlx5ca6e63fe2da: freq[0]: 2412, flags=0x1
+[11:30:09.038] P2P: Add operating class 81
+[11:30:09.038] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:09.038] P2P: Add operating class 115
+[11:30:09.038] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:09.038] P2P: Add operating class 116
+[11:30:09.038] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:09.038] P2P: Add operating class 117
+[11:30:09.038] P2P: Channels - hexdump(len=2): 28 30
+[11:30:09.038] P2P: Add operating class 128
+[11:30:09.038] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:09.039] P2P: Add operating class 130
+[11:30:09.039] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:09.039] P2P: Update channel list
+[11:30:09.039] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:09.039] P2P: cli_channels:
+[11:30:09.039] RSN: received GTK in pairwise handshake - hexdump(len=18): [REMOVED]
+[11:30:09.039] WPA: Group Key - hexdump(len=16): [REMOVED]
+[11:30:09.039] wlx5ca6e63fe2da: WPA: Installing GTK to the driver (keyidx=1 tx=0 len=16)
+[11:30:09.039] WPA: RSC - hexdump(len=6): 00 00 00 00 00 00
+[11:30:09.039] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=3 addr=0x55e2affe9e20 key_idx=1 set_tx=0 seq_len=6 key_len=16 key_flag=0x14
+[11:30:09.039] nl80211: NEW_KEY
+[11:30:09.039] nl80211: KEY_DATA - hexdump(len=16): [REMOVED]
+[11:30:09.039] nl80211: KEY_SEQ - hexdump(len=6): 00 00 00 00 00 00
+[11:30:09.039]    broadcast key
+[11:30:09.039] wlx5ca6e63fe2da: WPA: IGTK keyid 4 pn 000000000000
+[11:30:09.039] WPA: IGTK - hexdump(len=16): [REMOVED]
+[11:30:09.039] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=4 addr=0x55e2affe9e20 key_idx=4 set_tx=0 seq_len=6 key_len=16 key_flag=0x14
+[11:30:09.039] nl80211: NEW_KEY
+[11:30:09.039] nl80211: KEY_DATA - hexdump(len=16): [REMOVED]
+[11:30:09.039] nl80211: KEY_SEQ - hexdump(len=6): 00 00 00 00 00 00
+[11:30:09.039]    broadcast key
+[11:30:09.039] wlx5ca6e63fe2da: WPA: Key negotiation completed with 3c:a0:67:80:99:a3 [PTK=CCMP GTK=CCMP]
+[11:30:09.039] wlx5ca6e63fe2da: Cancelling authentication timeout
+[11:30:09.039] wlx5ca6e63fe2da: State: GROUP_HANDSHAKE -> COMPLETED
+[11:30:09.039] wlx5ca6e63fe2da: Radio work 'connect'@0x55e2b0add610 done in 0.340389 seconds
+[11:30:09.039] wlx5ca6e63fe2da: radio_work_free('connect'@0x55e2b0add610): num_active_works --> 0
+[11:30:09.039] wlx5ca6e63fe2da: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+[11:30:09.039] nl80211: Set wlx5ca6e63fe2da operstate 0->1 (UP)
+[11:30:09.039] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=6 (IF_OPER_UP)
+[11:30:09.039] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:09.039] wlx5ca6e63fe2da: Shared frequencies (len=1): completed iteration
+[11:30:09.039] wlx5ca6e63fe2da: freq[0]: 2412, flags=0x1
+[11:30:09.039] P2P: Add operating class 81
+[11:30:09.039] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:09.039] P2P: Add operating class 115
+[11:30:09.039] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:09.039] P2P: Add operating class 116
+[11:30:09.039] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:09.039] P2P: Add operating class 117
+[11:30:09.039] P2P: Channels - hexdump(len=2): 28 30
+[11:30:09.039] P2P: Add operating class 128
+[11:30:09.039] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:09.039] P2P: Add operating class 130
+[11:30:09.039] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:09.039] P2P: Update channel list
+[11:30:09.039] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:09.039] P2P: cli_channels:
+[11:30:09.039] EAPOL: External notification - portValid=1
+[11:30:09.039] nl80211: Set rekey offload
+[11:30:09.039] nl80211: Driver does not support rekey offload
+[11:30:09.039] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da operstate=6 linkmode=1 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[11:30:10.883] EAPOL: startWhen --> 0
+[11:30:39.339] EAPOL: authWhile --> 0
+[11:30:39.345] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x1003 ([UP])
+[11:30:39.345] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da operstate=2 linkmode=1 ifi_family=0 ifi_flags=0x1003 ([UP])
+[11:30:39.345] nl80211: Drv Event 48 (NL80211_CMD_DISCONNECT) received for wlx5ca6e63fe2da
+[11:30:39.345] nl80211: Disconnect event
+[11:30:39.345] wlx5ca6e63fe2da: Event DEAUTH (11) received
+[11:30:39.345] wlx5ca6e63fe2da: Deauthentication notification
+[11:30:39.345] wlx5ca6e63fe2da:  * reason 0 (UNKNOWN)
+[11:30:39.345] Deauthentication frame IE(s) - hexdump(len=0): [NULL]
+[11:30:39.345] wlx5ca6e63fe2da: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=0
+[11:30:39.345] wlx5ca6e63fe2da: Auto connect enabled: try to reconnect (wps=0/0 wpa_state=9)
+[11:30:39.345] wlx5ca6e63fe2da: Setting scan request: 0.100000 sec
+[11:30:39.345] Added BSSID 3c:a0:67:80:99:a3 into ignore list, ignoring for 10 seconds
+[11:30:39.345] wlx5ca6e63fe2da: Consecutive connection failures: 1 --> request scan in 100 ms
+[11:30:39.345] wlx5ca6e63fe2da: Ignore new scan request for 0.100000 sec since an earlier request is scheduled to trigger sooner
+[11:30:39.345] RSN: Clear current PMKSA entry selection
+[11:30:39.345] TDLS: Remove peers on disassociation
+[11:30:39.345] wlx5ca6e63fe2da: WPA: Clear old PMK and PTK
+[11:30:39.345] wlx5ca6e63fe2da: Disconnect event - remove keys
+[11:30:39.345] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=0 addr=(nil) key_idx=0 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+[11:30:39.345] nl80211: DEL_KEY
+[11:30:39.345]    broadcast key
+[11:30:39.346] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=0 addr=(nil) key_idx=1 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+[11:30:39.346] nl80211: DEL_KEY
+[11:30:39.346]    broadcast key
+[11:30:39.346] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=0 addr=(nil) key_idx=4 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+[11:30:39.346] nl80211: DEL_KEY
+[11:30:39.346]    broadcast key
+[11:30:39.346] wpa_driver_nl80211_set_key: ifindex=3 (wlx5ca6e63fe2da) alg=0 addr=0x55e2b0a64800 key_idx=0 set_tx=0 seq_len=0 key_len=0 key_flag=0x20
+[11:30:39.346] nl80211: DEL_KEY
+[11:30:39.346]    addr=3c:a0:67:80:99:a3
+[11:30:39.346]    pairwise key
+[11:30:39.346] nl80211: Data frame filter flags=0x0
+[11:30:39.346] wlx5ca6e63fe2da: State: COMPLETED -> DISCONNECTED
+[11:30:39.346] nl80211: Set wlx5ca6e63fe2da operstate 1->0 (DORMANT)
+[11:30:39.346] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+[11:30:39.347] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:39.347] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:39.347] P2P: Add operating class 81
+[11:30:39.347] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:39.347] P2P: Add operating class 115
+[11:30:39.347] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.347] P2P: Add operating class 116
+[11:30:39.347] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:39.347] P2P: Add operating class 117
+[11:30:39.347] P2P: Channels - hexdump(len=2): 28 30
+[11:30:39.347] P2P: Add operating class 128
+[11:30:39.347] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.347] P2P: Add operating class 130
+[11:30:39.347] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.347] P2P: Update channel list
+[11:30:39.347] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:39.347] P2P: cli_channels:
+[11:30:39.347] EAPOL: External notification - portEnabled=0
+[11:30:39.347] EAPOL: SUPP_PAE entering state DISCONNECTED
+[11:30:39.347] EAPOL: Supplicant port status: Unauthorized
+[11:30:39.347] nl80211: Skip set_supp_port(unauthorized) while not associated
+[11:30:39.347] EAPOL: SUPP_BE entering state INITIALIZE
+[11:30:39.347] EAP: EAP entering state DISABLED
+[11:30:39.347] EAPOL: External notification - portValid=0
+[11:30:39.348] nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlx5ca6e63fe2da
+[11:30:39.348] nl80211: Regulatory domain change
+[11:30:39.348]  * initiator=0
+[11:30:39.348]  * type=1
+[11:30:39.348] wlx5ca6e63fe2da: Event CHANNEL_LIST_CHANGED (27) received
+[11:30:39.348] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[11:30:39.348] wlx5ca6e63fe2da: Updating hw mode
+[11:30:39.348] nl80211: Regulatory information - country=IT (DFS-ETSI)
+[11:30:39.348] nl80211: 2400-2483 @ 40 MHz 20 mBm
+[11:30:39.348] nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+[11:30:39.348] nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+[11:30:39.348] nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+[11:30:39.348] nl80211: 5725-5875 @ 80 MHz 13 mBm
+[11:30:39.348] nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+[11:30:39.348] nl80211: 57000-66000 @ 2160 MHz 40 mBm
+[11:30:39.348] nl80211: Added 802.11b mode based on 802.11g information
+[11:30:39.348] nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:30:39.348] nl80211: Mode IEEE 802.11a: 5180 5200 5220 5240 5260[RADAR] 5280[RADAR] 5300[RADAR] 5320[RADAR] 5500[RADAR] 5520[RADAR] 5540[RADAR] 5560[RADAR] 5580[RADAR] 5600[RADAR] 5620[RADAR] 5640[RADAR] 5660[RADAR] 5680[RADAR]
+[11:30:39.348] nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:30:39.348] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:39.348] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:39.348] P2P: Add operating class 81
+[11:30:39.348] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:39.348] P2P: Add operating class 115
+[11:30:39.348] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.348] P2P: Add operating class 116
+[11:30:39.348] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:39.348] P2P: Add operating class 117
+[11:30:39.348] P2P: Channels - hexdump(len=2): 28 30
+[11:30:39.348] P2P: Add operating class 128
+[11:30:39.348] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.348] P2P: Add operating class 130
+[11:30:39.348] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.348] P2P: Update channel list
+[11:30:39.348] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:39.348] P2P: cli_channels:
+[11:30:39.348] nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlx5ca6e63fe2da
+[11:30:39.348] nl80211: Regulatory domain change
+[11:30:39.348]  * initiator=1
+[11:30:39.348]  * type=0
+[11:30:39.348]  * alpha2=IT
+[11:30:39.348] wlx5ca6e63fe2da: Event CHANNEL_LIST_CHANGED (27) received
+[11:30:39.348] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[11:30:39.348] wlx5ca6e63fe2da: Updating hw mode
+[11:30:39.349] nl80211: Regulatory information - country=IT (DFS-ETSI)
+[11:30:39.349] nl80211: 2400-2483 @ 40 MHz 20 mBm
+[11:30:39.349] nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+[11:30:39.349] nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+[11:30:39.349] nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+[11:30:39.349] nl80211: 5725-5875 @ 80 MHz 13 mBm
+[11:30:39.349] nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+[11:30:39.349] nl80211: 57000-66000 @ 2160 MHz 40 mBm
+[11:30:39.349] nl80211: Added 802.11b mode based on 802.11g information
+[11:30:39.349] nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:30:39.349] nl80211: Mode IEEE 802.11a: 5180 5200 5220 5240 5260[RADAR] 5280[RADAR] 5300[RADAR] 5320[RADAR] 5500[RADAR] 5520[RADAR] 5540[RADAR] 5560[RADAR] 5580[RADAR] 5600[RADAR] 5620[RADAR] 5640[RADAR] 5660[RADAR] 5680[RADAR]
+[11:30:39.349] nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:30:39.349] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:39.349] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:39.349] P2P: Add operating class 81
+[11:30:39.349] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:39.349] P2P: Add operating class 115
+[11:30:39.349] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.349] P2P: Add operating class 116
+[11:30:39.349] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:39.349] P2P: Add operating class 117
+[11:30:39.349] P2P: Channels - hexdump(len=2): 28 30
+[11:30:39.349] P2P: Add operating class 128
+[11:30:39.349] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.349] P2P: Add operating class 130
+[11:30:39.349] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.349] P2P: Update channel list
+[11:30:39.349] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:39.349] P2P: cli_channels:
+[11:30:39.457] wlx5ca6e63fe2da: State: DISCONNECTED -> SCANNING
+[11:30:39.457] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:39.457] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:39.457] P2P: Add operating class 81
+[11:30:39.457] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:39.457] P2P: Add operating class 115
+[11:30:39.457] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.457] P2P: Add operating class 116
+[11:30:39.457] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:39.457] P2P: Add operating class 117
+[11:30:39.457] P2P: Channels - hexdump(len=2): 28 30
+[11:30:39.457] P2P: Add operating class 128
+[11:30:39.457] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.457] P2P: Add operating class 130
+[11:30:39.457] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:39.457] P2P: Update channel list
+[11:30:39.457] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:39.457] P2P: cli_channels:
+[11:30:39.457] wlx5ca6e63fe2da: Starting AP scan for wildcard SSID
+[11:30:39.457] WPS: Building WPS IE for Probe Request
+[11:30:39.457] WPS:  * Version (hardcoded 0x10)
+[11:30:39.457] WPS:  * Request Type
+[11:30:39.457] WPS:  * Config Methods (3108)
+[11:30:39.457] WPS:  * UUID-E
+[11:30:39.457] WPS:  * Primary Device Type
+[11:30:39.457] WPS:  * RF Bands (3)
+[11:30:39.457] WPS:  * Association State
+[11:30:39.457] WPS:  * Configuration Error (0)
+[11:30:39.457] WPS:  * Device Password ID (0)
+[11:30:39.457] WPS:  * Manufacturer
+[11:30:39.457] WPS:  * Model Name
+[11:30:39.457] WPS:  * Model Number
+[11:30:39.457] WPS:  * Device Name
+[11:30:39.457] WPS:  * Version2 (0x20)
+[11:30:39.457] P2P: * P2P IE header
+[11:30:39.457] P2P: * Capability dev=21 group=00
+[11:30:39.457] P2P: * Listen Channel: Regulatory Class 81 Channel 6
+[11:30:39.457] wlx5ca6e63fe2da: Add radio work 'scan'@0x55e2b0afb660
+[11:30:39.457] wlx5ca6e63fe2da: First radio work item in the queue - schedule start immediately
+[11:30:39.457] wlx5ca6e63fe2da: Starting radio work 'scan'@0x55e2b0afb660 after 0.000010 second wait
+[11:30:39.457] wlx5ca6e63fe2da: nl80211: scan request
+[11:30:39.458] Scan requested (ret=0) - scan timeout 30 seconds
+[11:30:39.458] nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlx5ca6e63fe2da
+[11:30:39.458] wlx5ca6e63fe2da: nl80211: Scan trigger
+[11:30:39.458] wlx5ca6e63fe2da: Event SCAN_STARTED (47) received
+[11:30:39.458] wlx5ca6e63fe2da: Own scan request started a scan in 0.000541 seconds
+[11:30:40.340] EAPOL: disable timer tick
+[11:30:43.355] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x1003 ([UP])
+[11:30:43.355] nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlx5ca6e63fe2da
+[11:30:43.355] wlx5ca6e63fe2da: nl80211: New scan results available
+[11:30:43.355] nl80211: Scan probed for SSID ''
+[11:30:43.355] nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700
+[11:30:43.355] wlx5ca6e63fe2da: Event SCAN_RESULTS (3) received
+[11:30:43.355] wlx5ca6e63fe2da: Scan completed in 3.896880 seconds
+[11:30:43.355] nl80211: Received scan results (7 BSSes)
+[11:30:43.355] wlx5ca6e63fe2da: BSS: Start scan result update 2
+[11:30:43.355] BSS: last_scan_res_used=7/32
+[11:30:43.355] wlx5ca6e63fe2da: New scan results available (own=1 ext=0)
+[11:30:43.355] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:43.355] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:43.355] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:43.355] WPS: AP f0:b0:14:cf:72:e2 type 0 added
+[11:30:43.355] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:43.355] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:43.355] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:43.355] WPS: AP b0:45:30:aa:b4:a4 type 0 added
+[11:30:43.355] WPS: AP dc:15:c8:03:a4:16 type 0 added
+[11:30:43.355] WPS: AP[0] f0:b0:14:cf:72:e2 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:30:43.355] WPS: AP[1] b0:45:30:aa:b4:a4 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:30:43.355] WPS: AP[2] dc:15:c8:03:a4:16 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:30:43.355] wlx5ca6e63fe2da: Radio work 'scan'@0x55e2b0afb660 done in 3.898070 seconds
+[11:30:43.355] wlx5ca6e63fe2da: radio_work_free('scan'@0x55e2b0afb660): num_active_works --> 0
+[11:30:43.355] wlx5ca6e63fe2da: Selecting BSS from priority group 0
+[11:30:43.355] wlx5ca6e63fe2da: 0: b0:ea:bc:3f:32:26 ssid='Casa-A-gbtyTYgnGTBYjf' wpa_ie_len=0 rsn_ie_len=20 caps=0x111 level=-53 freq=5260 
+[11:30:43.355] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:43.355] wlx5ca6e63fe2da: 1: b0:ea:bc:3f:32:27 ssid='Casa-A-gbtyTYgnGTBYjf' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-53 freq=2412 
+[11:30:43.355] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:43.356] wlx5ca6e63fe2da: 2: 62:ea:bc:3f:32:24 ssid='WOW FI - FASTWEB' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-53 freq=2412 
+[11:30:43.356] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:43.356] wlx5ca6e63fe2da: 3: 3c:a0:67:80:99:a3 ssid='Hostapd-AP-E' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-32 freq=2412 
+[11:30:43.356] wlx5ca6e63fe2da:    skip - BSSID ignored (count=1 limit=0)
+[11:30:43.356] wlx5ca6e63fe2da: 4: f0:b0:14:cf:72:e2 ssid='EIR-96252' wpa_ie_len=0 rsn_ie_len=20 caps=0x1431 level=-74 freq=2437  wps
+[11:30:43.356] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:43.356] wlx5ca6e63fe2da: 5: b0:45:30:aa:b4:a4 ssid='SKYA38E4' wpa_ie_len=0 rsn_ie_len=20 caps=0x1111 level=-84 freq=5180  wps
+[11:30:43.356] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:43.356] wlx5ca6e63fe2da: 6: dc:15:c8:03:a4:16 ssid='INTRED-56875' wpa_ie_len=0 rsn_ie_len=20 caps=0x1431 level=-80 freq=2437  wps
+[11:30:43.356] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:43.356] wlx5ca6e63fe2da: No APs found - clear BSSID ignore list and try again
+[11:30:43.356] Removed BSSID 3c:a0:67:80:99:a3 from ignore list (clear)
+[11:30:43.356] wlx5ca6e63fe2da: Selecting BSS from priority group 0
+[11:30:43.356] wlx5ca6e63fe2da: 0: b0:ea:bc:3f:32:26 ssid='Casa-A-gbtyTYgnGTBYjf' wpa_ie_len=0 rsn_ie_len=20 caps=0x111 level=-53 freq=5260 
+[11:30:43.356] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:43.356] wlx5ca6e63fe2da: 1: b0:ea:bc:3f:32:27 ssid='Casa-A-gbtyTYgnGTBYjf' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-53 freq=2412 
+[11:30:43.356] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:43.356] wlx5ca6e63fe2da: 2: 62:ea:bc:3f:32:24 ssid='WOW FI - FASTWEB' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-53 freq=2412 
+[11:30:43.356] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:30:43.356] wlx5ca6e63fe2da: 3: 3c:a0:67:80:99:a3 ssid='Hostapd-AP-E' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-32 freq=2412 
+[11:30:43.356] wlx5ca6e63fe2da:    selected based on RSN IE
+[11:30:43.356] wlx5ca6e63fe2da:    selected BSS 3c:a0:67:80:99:a3 ssid='Hostapd-AP-E'
+[11:30:43.356] wlx5ca6e63fe2da: Considering connect request: reassociate: 0  selected: 3c:a0:67:80:99:a3  bssid: 00:00:00:00:00:00  pending: 00:00:00:00:00:00  wpa_state: SCANNING  ssid=0x55e2b0a671e0  current_ssid=(nil)
+[11:30:43.356] wlx5ca6e63fe2da: Request association with 3c:a0:67:80:99:a3
+[11:30:43.356] wlx5ca6e63fe2da: Re-association to the same ESS
+[11:30:43.356] TDLS: TDLS is allowed in the target BSS
+[11:30:43.356] TDLS: TDLS channel switch allowed in the target BSS
+[11:30:43.356] wlx5ca6e63fe2da: No ongoing scan/p2p-scan found to abort
+[11:30:43.356] wlx5ca6e63fe2da: Add radio work 'connect'@0x55e2b0afb660
+[11:30:43.356] wlx5ca6e63fe2da: First radio work item in the queue - schedule start immediately
+[11:30:43.356] wlx5ca6e63fe2da: Starting radio work 'connect'@0x55e2b0afb660 after 0.000013 second wait
+[11:30:43.356] wlx5ca6e63fe2da: WPA: clearing own WPA/RSN IE
+[11:30:43.356] wlx5ca6e63fe2da: RSN: clearing own RSNXE
+[11:30:43.356] RSN: PMKSA cache search - network_ctx=0x55e2b0a671e0 try_opportunistic=0 akmp=0x0
+[11:30:43.356] RSN: Search for BSSID 3c:a0:67:80:99:a3
+[11:30:43.356] RSN: PMKSA cache entry found - PMKID - hexdump(len=16): 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64
+[11:30:43.356] RSN: Trying to use cached PMKSA
+[11:30:43.356] wlx5ca6e63fe2da: RSN: using IEEE 802.11i/D9.0
+[11:30:43.356] wlx5ca6e63fe2da: WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 1 proto 2
+[11:30:43.356] wlx5ca6e63fe2da: WPA: Selected mgmt group cipher 32
+[11:30:43.356] wlx5ca6e63fe2da: WPA: clearing AP WPA IE
+[11:30:43.356] WPA: set AP RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00
+[11:30:43.356] wlx5ca6e63fe2da: WPA: clearing AP RSNXE
+[11:30:43.356] wlx5ca6e63fe2da: WPA: AP group 0x10 network profile group 0x18; available group 0x10
+[11:30:43.356] wlx5ca6e63fe2da: WPA: using GTK CCMP
+[11:30:43.356] wlx5ca6e63fe2da: WPA: AP pairwise 0x10 network profile pairwise 0x18; available pairwise 0x10
+[11:30:43.356] wlx5ca6e63fe2da: WPA: using PTK CCMP
+[11:30:43.356] wlx5ca6e63fe2da: WPA: AP key_mgmt 0x1 network profile key_mgmt 0x1; available key_mgmt 0x1
+[11:30:43.356] wlx5ca6e63fe2da: WPA: using KEY_MGMT 802.1X
+[11:30:43.356] wlx5ca6e63fe2da: WPA: AP mgmt_group_cipher 0x20 network profile mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+[11:30:43.356] wlx5ca6e63fe2da: WPA: using MGMT group cipher AES-128-CMAC
+[11:30:43.356] WPA: Set own WPA IE default - hexdump(len=44): 30 2a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 01 00 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64 00 0f ac 06
+[11:30:43.356] RSN: Set own RSNXE default - hexdump(len=0):
+[11:30:43.356] WPA: Set PMK based on current PMKSA - hexdump(len=32): [REMOVED]
+[11:30:43.356] wlx5ca6e63fe2da: Automatic auth_alg selection: 0x1
+[11:30:43.356] Added supported operating classes IE - hexdump(len=18): 3b 10 51 51 53 54 73 74 75 76 77 78 79 7a 7b 80 81 82
+[11:30:43.356] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-E' freq=2412 MHz)
+[11:30:43.356] wlx5ca6e63fe2da: Cancelling scan request
+[11:30:43.356] wlx5ca6e63fe2da: State: SCANNING -> ASSOCIATING
+[11:30:43.356] nl80211: Set wlx5ca6e63fe2da operstate 0->0 (DORMANT)
+[11:30:43.356] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+[11:30:43.356] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:43.356] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:43.356] P2P: Add operating class 81
+[11:30:43.356] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:43.356] P2P: Add operating class 115
+[11:30:43.356] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:43.356] P2P: Add operating class 116
+[11:30:43.356] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:43.356] P2P: Add operating class 117
+[11:30:43.356] P2P: Channels - hexdump(len=2): 28 30
+[11:30:43.356] P2P: Add operating class 128
+[11:30:43.356] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:43.356] P2P: Add operating class 130
+[11:30:43.356] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:43.356] P2P: Update channel list
+[11:30:43.356] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:43.356] P2P: cli_channels:
+[11:30:43.356] Limit connection to BSSID 3c:a0:67:80:99:a3 freq=2412 MHz based on scan results (bssid_set=0 wps=0)
+[11:30:43.356] wlx5ca6e63fe2da: WPA: Selected AP supports MFP: require MFP
+[11:30:43.356] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:43.356] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:43.356] nl80211: Set mode ifindex 3 iftype 2 (STATION)
+[11:30:43.356] nl80211: Unsubscribe mgmt frames handle 0x8888dd6a382eeae9 (mode change)
+[11:30:43.356] nl80211: Subscribe to mgmt frames with non-AP handle 0x55e2b0a66260
+[11:30:43.356] nl80211: Register frame type=0xb0 (WLAN_FC_STYPE_AUTH) nl_handle=0x55e2b0a66260 match=0300 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0104 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040a multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040b multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040c multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040d multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090a multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090b multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090c multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090d multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0409506f9a09 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=7f506f9a09 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0409506f9a1a multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0801 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040e multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=06 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a07 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a11 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a1a multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1101 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1102 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0505 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0500 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1301 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1305 multicast=0
+[11:30:43.356] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=7e506f9a1a multicast=0
+[11:30:43.356] nl80211: Connect (ifindex=3)
+[11:30:43.356]   * bssid=3c:a0:67:80:99:a3
+[11:30:43.356]   * bssid_hint=3c:a0:67:80:99:a3
+[11:30:43.356]   * freq=2412
+[11:30:43.356]   * freq_hint=2412
+[11:30:43.356]   * SSID=Hostapd-AP-E
+[11:30:43.356]   * IEs - hexdump(len=75): 30 2a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 01 00 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64 00 0f ac 06 7f 0b 00 00 00 00 00 00 40 00 00 00 20 3b 10 51 51 53 54 73 74 75 76 77 78 79 7a 7b 80 81 82
+[11:30:43.356]   * WPA Versions 0x2
+[11:30:43.356]   * pairwise=0xfac04
+[11:30:43.356]   * group=0xfac04
+[11:30:43.356]   * akm=0xfac01
+[11:30:43.356]   * Auth Type 0
+[11:30:43.358] nl80211: Connect request send successfully
+[11:30:43.358] wlx5ca6e63fe2da: Setting authentication timeout: 10 sec 0 usec
+[11:30:43.358] Not configuring frame filtering - BSS 00:00:00:00:00:00 is not a Hotspot 2.0 network
+[11:30:43.358] EAPOL: External notification - EAP success=0
+[11:30:43.359] EAPOL: External notification - EAP fail=0
+[11:30:43.359] EAPOL: External notification - portControl=Auto
+[11:30:43.360] nl80211: Drv Event 110 (NL80211_CMD_CH_SWITCH_STARTED_NOTIFY) received for wlx5ca6e63fe2da
+[11:30:43.360] nl80211: Channel switch started event
+[11:30:43.360] nl80211: Channel type: 0
+[11:30:43.360] wlx5ca6e63fe2da: Event CH_SWITCH_STARTED (39) received
+[11:30:43.360] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[11:30:43.436] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:43.436] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:43.436] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:43.436] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da operstate=5 linkmode=1 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:30:43.436] nl80211: Drv Event 46 (NL80211_CMD_CONNECT) received for wlx5ca6e63fe2da
+[11:30:43.436] nl80211: Connect event (status=0 ignore_next_local_disconnect=0)
+[11:30:43.436] nl80211: Associated on 2412 MHz
+[11:30:43.436] nl80211: Associated with 3c:a0:67:80:99:a3
+[11:30:43.436] nl80211: Operating frequency for the associated BSS from scan results: 2412 MHz
+[11:30:43.436] nl80211: Associated on 2412 MHz
+[11:30:43.436] nl80211: Associated with 3c:a0:67:80:99:a3
+[11:30:43.436] nl80211: Set drv->ssid based on scan res info to 'Hostapd-AP-E'
+[11:30:43.436] wlx5ca6e63fe2da: Event ASSOC (0) received
+[11:30:43.436] wlx5ca6e63fe2da: Association info event
+[11:30:43.436] req_ies - hexdump(len=76): 03 00 00 0c 48 6f 73 74 61 70 64 2d 41 50 2d 45 01 08 82 84 8b 96 0c 12 18 24 32 04 30 48 60 6c 30 2a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 01 00 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64 00 0f ac 06
+[11:30:43.436] resp_ies - hexdump(len=26): 01 08 82 84 8b 96 0c 12 18 24 32 04 30 48 60 6c 7f 08 04 00 00 00 00 00 00 40
+[11:30:43.436] wlx5ca6e63fe2da: freq=2412 MHz
+[11:30:43.436] WPA: set own WPA/RSN IE - hexdump(len=44): 30 2a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 01 00 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64 00 0f ac 06
+[11:30:43.436] RSN: Clear current PMKSA entry selection
+[11:30:43.436] RSN: PMKSA cache search - network_ctx=(nil) try_opportunistic=0 akmp=0x0
+[11:30:43.436] RSN: Search for PMKID - hexdump(len=16): 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64
+[11:30:43.436] RSN: PMKSA cache entry found - PMKID - hexdump(len=16): 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64
+[11:30:43.436] RSN: Trying to use cached PMKSA
+[11:30:43.436] wlx5ca6e63fe2da: RSN: PMKID from assoc IE found from PMKSA cache
+[11:30:43.436] wlx5ca6e63fe2da: RSN: clearing own RSNXE
+[11:30:43.436] wlx5ca6e63fe2da: State: ASSOCIATING -> ASSOCIATED
+[11:30:43.436] nl80211: Set wlx5ca6e63fe2da operstate 0->0 (DORMANT)
+[11:30:43.436] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+[11:30:43.436] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:43.436] wlx5ca6e63fe2da: Shared frequencies (len=1): completed iteration
+[11:30:43.436] wlx5ca6e63fe2da: freq[0]: 2412, flags=0x1
+[11:30:43.436] P2P: Add operating class 81
+[11:30:43.436] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:43.436] P2P: Add operating class 115
+[11:30:43.436] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:43.436] P2P: Add operating class 116
+[11:30:43.436] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:43.436] P2P: Add operating class 117
+[11:30:43.436] P2P: Channels - hexdump(len=2): 28 30
+[11:30:43.436] P2P: Add operating class 128
+[11:30:43.436] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:43.436] P2P: Add operating class 130
+[11:30:43.436] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:43.436] P2P: Update channel list
+[11:30:43.436] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:43.436] P2P: cli_channels:
+[11:30:43.436] wlx5ca6e63fe2da: Associated to a new BSS: BSSID=3c:a0:67:80:99:a3
+[11:30:43.436] WPA: Update cipher suite selection based on IEs in driver-generated WPA/RSNE in AssocReq - hexdump(len=44): 30 2a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 01 00 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64 00 0f ac 06
+[11:30:43.436] wlx5ca6e63fe2da: WPA: AP key_mgmt 0x1 network key_mgmt 0x1; available key_mgmt 0x1
+[11:30:43.436] wlx5ca6e63fe2da: WPA: using KEY_MGMT WPA2/IEEE 802.1X/EAP and proto 2
+[11:30:43.436] wlx5ca6e63fe2da: WPA: AP pairwise cipher 0x10 network pairwise cipher 0x18; available pairwise cipher 0x10
+[11:30:43.436] wlx5ca6e63fe2da: WPA: using PTK CCMP
+[11:30:43.436] wlx5ca6e63fe2da: WPA: AP group cipher 0x10 network group cipher 0x18; available group cipher 0x10
+[11:30:43.436] wlx5ca6e63fe2da: WPA: using GTK CCMP
+[11:30:43.436] wlx5ca6e63fe2da: WPA: AP mgmt_group_cipher 0x20 network mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+[11:30:43.436] wlx5ca6e63fe2da: WPA: using MGMT group cipher BIP
+[11:30:43.436] wlx5ca6e63fe2da: Associated with 3c:a0:67:80:99:a3
+[11:30:43.436] wlx5ca6e63fe2da: WPA: Association event - clear replay counter
+[11:30:43.436] wlx5ca6e63fe2da: WPA: Clear old PTK
+[11:30:43.436] TDLS: Remove peers on association
+[11:30:43.436] EAPOL: External notification - portEnabled=0
+[11:30:43.436] EAPOL: External notification - portValid=0
+[11:30:43.436] EAPOL: External notification - portEnabled=1
+[11:30:43.436] EAPOL: SUPP_PAE entering state CONNECTING
+[11:30:43.436] EAPOL: enable timer tick
+[11:30:43.436] EAPOL: SUPP_BE entering state IDLE
+[11:30:43.436] EAP: EAP entering state INITIALIZE
+[11:30:43.436] EAP: maintaining EAP method data for fast reauthentication
+[11:30:43.436] EAP: EAP entering state IDLE
+[11:30:43.436] wlx5ca6e63fe2da: Setting authentication timeout: 10 sec 0 usec
+[11:30:43.436] wlx5ca6e63fe2da: Cancelling scan request
+[11:30:43.436] wlx5ca6e63fe2da: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[11:30:43.477] l2_packet_receive: src=3c:a0:67:80:99:a3 len=9
+[11:30:43.477] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:43.477] wlx5ca6e63fe2da: Setting authentication timeout: 70 sec 0 usec
+[11:30:43.477] RSN: Authenticator did not accept PMKID, doing full EAP authentication
+[11:30:43.477] EAPOL: Supplicant port status: Unauthorized
+[11:30:43.477] nl80211: Set supplicant port unauthorized for 3c:a0:67:80:99:a3
+[11:30:43.477] wlx5ca6e63fe2da: RSN: Cancelling PMKSA caching attempt
+[11:30:43.477] EAPOL: Received EAP-Packet frame
+[11:30:43.477] EAPOL: SUPP_PAE entering state RESTART
+[11:30:43.477] EAP: EAP entering state INITIALIZE
+[11:30:43.477] EAP: maintaining EAP method data for fast reauthentication
+[11:30:43.477] EAP: EAP entering state IDLE
+[11:30:43.477] EAPOL: SUPP_PAE entering state AUTHENTICATING
+[11:30:43.477] EAPOL: SUPP_BE entering state REQUEST
+[11:30:43.477] EAPOL: getSuppRsp
+[11:30:43.477] EAP: EAP entering state RECEIVED
+[11:30:43.477] EAP: Received EAP-Request id=253 method=1 vendor=0 vendorMethod=0
+[11:30:43.477] EAP: EAP entering state IDENTITY
+[11:30:43.477] wlx5ca6e63fe2da: CTRL-EVENT-EAP-STARTED EAP authentication started
+[11:30:43.477] EAP: Status notification: started (param=)
+[11:30:43.477] EAP: EAP-Request Identity data - hexdump_ascii(len=0):
+[11:30:43.477] EAP: using anonymous identity - hexdump_ascii(len=9):
+     61 6e 6f 6e 79 6d 6f 75 73                        anonymous       
+[11:30:43.477] EAP: EAP entering state SEND_RESPONSE
+[11:30:43.477] EAP: EAP entering state IDLE
+[11:30:43.477] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:43.477] EAPOL: txSuppRsp
+[11:30:43.477] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:43.477] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:46.386] l2_packet_receive: src=3c:a0:67:80:99:a3 len=26
+[11:30:46.386] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:46.387] EAPOL: Received EAP-Packet frame
+[11:30:46.387] EAPOL: SUPP_BE entering state REQUEST
+[11:30:46.387] EAPOL: getSuppRsp
+[11:30:46.387] EAP: EAP entering state RECEIVED
+[11:30:46.387] EAP: Received EAP-Request id=254 method=4 vendor=0 vendorMethod=0
+[11:30:46.387] EAP: EAP entering state GET_METHOD
+[11:30:46.387] EAP: configuration does not allow: vendor 0 method 4
+[11:30:46.387] EAP: vendor 0 method 4 not allowed
+[11:30:46.387] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[11:30:46.387] EAP: Status notification: refuse proposed method (param=MD5)
+[11:30:46.387] EAP: Building EAP-Nak (requested type 4 vendor=0 method=0 not allowed)
+[11:30:46.387] EAP: allowed methods - hexdump(len=1): 19
+[11:30:46.387] EAP: EAP entering state SEND_RESPONSE
+[11:30:46.387] EAP: EAP entering state IDLE
+[11:30:46.387] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:46.387] EAPOL: txSuppRsp
+[11:30:46.387] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:46.387] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:46.391] l2_packet_receive: src=3c:a0:67:80:99:a3 len=10
+[11:30:46.391] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:46.391] EAPOL: Received EAP-Packet frame
+[11:30:46.391] EAPOL: SUPP_BE entering state REQUEST
+[11:30:46.391] EAPOL: getSuppRsp
+[11:30:46.391] EAP: EAP entering state RECEIVED
+[11:30:46.391] EAP: Received EAP-Request id=255 method=25 vendor=0 vendorMethod=0
+[11:30:46.391] EAP: EAP entering state GET_METHOD
+[11:30:46.391] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[11:30:46.391] EAP: Status notification: accept proposed method (param=PEAP)
+[11:30:46.391] EAP: Using previous method data for fast re-authentication
+[11:30:46.391] EAP: Initialize selected EAP method: vendor 0 method 25 (PEAP)
+[11:30:46.391] wlx5ca6e63fe2da: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[11:30:46.391] EAP: EAP entering state METHOD
+[11:30:46.391] SSL: Received packet(len=6) - Flags 0x20
+[11:30:46.391] EAP-PEAP: Start (server ver=0, own ver=0)
+[11:30:46.391] EAP-PEAP: Using PEAP version 0
+[11:30:46.391] SSL: (where=0x10 ret=0x1)
+[11:30:46.391] SSL: (where=0x1001 ret=0x1)
+[11:30:46.391] SSL: SSL_connect:before SSL initialization
+[11:30:46.391] OpenSSL: TX ver=0x301 content_type=256 (TLS header info/)
+[11:30:46.391] OpenSSL: TX ver=0x303 content_type=22 (handshake/client hello)
+[11:30:46.391] SSL: (where=0x1001 ret=0x1)
+[11:30:46.391] SSL: SSL_connect:SSLv3/TLS write client hello
+[11:30:46.391] SSL: (where=0x1002 ret=0xffffffff)
+[11:30:46.391] SSL: SSL_connect:error in SSLv3/TLS write client hello
+[11:30:46.391] SSL: SSL_connect - want more data
+[11:30:46.391] SSL: 184 bytes pending from ssl_out
+[11:30:46.391] SSL: Using TLS version TLSv1.2
+[11:30:46.391] SSL: 184 bytes left to be sent out (of total 184 bytes)
+[11:30:46.391] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0adc280
+[11:30:46.391] EAP: EAP entering state SEND_RESPONSE
+[11:30:46.391] EAP: EAP entering state IDLE
+[11:30:46.391] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:46.391] EAPOL: txSuppRsp
+[11:30:46.391] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:46.391] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:46.407] l2_packet_receive: src=3c:a0:67:80:99:a3 len=1008
+[11:30:46.407] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:46.407] EAPOL: Received EAP-Packet frame
+[11:30:46.407] EAPOL: SUPP_BE entering state REQUEST
+[11:30:46.407] EAPOL: getSuppRsp
+[11:30:46.407] EAP: EAP entering state RECEIVED
+[11:30:46.407] EAP: Received EAP-Request id=0 method=25 vendor=0 vendorMethod=0
+[11:30:46.407] EAP: EAP entering state METHOD
+[11:30:46.407] SSL: Received packet(len=1004) - Flags 0xc0
+[11:30:46.407] SSL: TLS Message Length: 2758
+[11:30:46.407] SSL: Need 1764 bytes more input data
+[11:30:46.407] SSL: Building ACK (type=25 id=0 ver=0)
+[11:30:46.407] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0a6cec0
+[11:30:46.407] EAP: EAP entering state SEND_RESPONSE
+[11:30:46.407] EAP: EAP entering state IDLE
+[11:30:46.407] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:46.407] EAPOL: txSuppRsp
+[11:30:46.407] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:46.407] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:46.418] l2_packet_receive: src=3c:a0:67:80:99:a3 len=1004
+[11:30:46.418] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:46.418] EAPOL: Received EAP-Packet frame
+[11:30:46.418] EAPOL: SUPP_BE entering state REQUEST
+[11:30:46.418] EAPOL: getSuppRsp
+[11:30:46.418] EAP: EAP entering state RECEIVED
+[11:30:46.418] EAP: Received EAP-Request id=1 method=25 vendor=0 vendorMethod=0
+[11:30:46.418] EAP: EAP entering state METHOD
+[11:30:46.418] SSL: Received packet(len=1000) - Flags 0x40
+[11:30:46.418] SSL: Need 770 bytes more input data
+[11:30:46.418] SSL: Building ACK (type=25 id=1 ver=0)
+[11:30:46.418] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0af8b30
+[11:30:46.418] EAP: EAP entering state SEND_RESPONSE
+[11:30:46.418] EAP: EAP entering state IDLE
+[11:30:46.418] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:46.418] EAPOL: txSuppRsp
+[11:30:46.418] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:46.418] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:46.428] l2_packet_receive: src=3c:a0:67:80:99:a3 len=780
+[11:30:46.428] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:46.428] EAPOL: Received EAP-Packet frame
+[11:30:46.428] EAPOL: SUPP_BE entering state REQUEST
+[11:30:46.428] EAPOL: getSuppRsp
+[11:30:46.428] EAP: EAP entering state RECEIVED
+[11:30:46.428] EAP: Received EAP-Request id=2 method=25 vendor=0 vendorMethod=0
+[11:30:46.428] EAP: EAP entering state METHOD
+[11:30:46.428] SSL: Received packet(len=776) - Flags 0x00
+[11:30:46.428] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:46.428] SSL: (where=0x1001 ret=0x1)
+[11:30:46.428] SSL: SSL_connect:SSLv3/TLS write client hello
+[11:30:46.428] OpenSSL: RX ver=0x303 content_type=22 (handshake/server hello)
+[11:30:46.428] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:30:46.428] SSL: (where=0x1001 ret=0x1)
+[11:30:46.428] SSL: SSL_connect:SSLv3/TLS read server hello
+[11:30:46.428] OpenSSL: RX ver=0x303 content_type=22 (handshake/certificate)
+[11:30:46.431] OpenSSL: Peer certificate - depth 1
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            7d:47:21:72:51:ce:22:b1:ff:50:ee:4b:4a:08:8b:f5:a8:3a:d7:10
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=FR, ST=Radius, L=Somewhere, O=Example Inc./emailAddress=admin@example.org, CN=Example Certificate Authority
+        Validity
+            Not Before: Dec 20 14:40:52 2023 GMT
+            Not After : Feb 18 14:40:52 2024 GMT
+        Subject: C=FR, ST=Radius, L=Somewhere, O=Example Inc./emailAddress=admin@example.org, CN=Example Certificate Authority
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a5:07:47:a7:9d:ed:d5:8d:36:5b:0a:b1:7b:b5:
+                    02:50:82:ae:01:3e:00:25:13:10:7a:9d:ac:6f:80:
+                    56:2e:88:e7:33:6f:ba:6f:e5:df:03:04:e0:da:6d:
+                    85:9b:3e:59:23:76:4e:44:2b:45:03:ed:77:98:29:
+                    11:4a:5d:66:0b:14:b0:11:5a:f9:e1:65:9c:1c:6e:
+                    f9:dc:f3:8f:31:bd:51:36:05:1b:c2:9f:e7:16:84:
+                    25:be:65:f3:db:5b:7a:b4:df:66:3f:a1:07:53:61:
+                    4b:12:3c:26:8f:eb:93:d4:76:ce:82:31:37:a2:50:
+                    23:f9:c6:b4:a0:6e:a8:de:61:2a:4a:5c:c7:5d:e5:
+                    09:55:3e:d6:f6:13:e3:f1:d1:a0:5d:59:11:c5:6f:
+                    33:e0:30:60:fd:e9:53:e3:e1:0c:2a:2f:57:97:96:
+                    24:30:60:da:69:a4:bf:37:f0:64:7b:73:38:e9:9a:
+                    61:d1:36:4f:fa:07:4e:ba:c1:c8:b2:a7:ff:6f:b1:
+                    ee:fd:ac:67:68:85:c8:d6:f2:af:10:c2:d8:83:46:
+                    be:42:8d:f9:c8:28:86:41:eb:c3:31:0e:f2:82:30:
+                    20:78:5b:80:b4:09:dc:be:38:3a:43:61:6b:04:68:
+                    9a:2a:96:ac:1d:53:b2:99:5e:d1:e3:bc:a3:9e:e1:
+                    6c:49
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                54:7E:9E:86:EA:DB:16:E9:5A:57:69:B5:60:48:BB:F6:39:8F:33:04
+            X509v3 Authority Key Identifier: 
+                keyid:54:7E:9E:86:EA:DB:16:E9:5A:57:69:B5:60:48:BB:F6:39:8F:33:04
+                DirName:/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority
+                serial:7D:47:21:72:51:CE:22:B1:FF:50:EE:4B:4A:08:8B:F5:A8:3A:D7:10
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 CRL Distribution Points: 
+                Full Name:
+                  URI:http://www.example.org/example_ca.crl
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        55:f8:97:37:d1:72:4a:54:9c:21:4e:36:57:57:f0:1e:0e:df:
+        07:64:2a:13:c8:3c:22:ec:08:57:17:1b:5e:78:8d:91:b6:3a:
+        9d:1d:1a:9d:7d:76:51:c9:cf:6c:27:a9:06:69:07:7d:8f:6a:
+        7a:fc:17:c8:c8:20:5d:65:2a:1f:8c:9f:9f:cd:23:12:4e:63:
+        2e:46:07:23:2a:12:48:a4:4c:7c:e7:ee:d0:df:78:9c:88:c6:
+        e4:3c:0d:67:14:b1:64:1e:5f:6c:d3:1f:9c:67:e1:34:c4:dd:
+        c0:d6:85:55:4f:fa:f9:34:0f:e2:7e:20:a5:ad:89:5c:49:c9:
+        fe:45:ec:71:b5:52:74:4b:30:9a:ba:ae:1c:a8:89:12:89:10:
+        c4:34:a6:8f:4e:61:25:7c:91:92:9e:a0:18:f6:52:55:18:08:
+        09:11:32:13:27:89:50:17:0a:5d:70:b4:d3:78:9a:bf:cf:a0:
+        25:eb:6e:e8:79:50:25:f5:e6:8b:21:ff:97:b3:b6:a6:84:20:
+        bb:00:9f:1c:4a:bf:d9:97:a6:6e:9f:d7:ee:3d:7f:bd:f8:c2:
+        97:81:e9:c0:c7:c5:b9:1d:c0:f0:4b:ce:6b:c2:3f:4e:67:f4:
+        82:fc:fe:f9:b2:87:a0:b7:b7:6e:5f:ba:6b:b1:3a:21:d7:c3:
+        e2:f5:b2:d5
+
+[11:30:46.431] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=9a9b8b48ab2dd75946c2cfea9f0545a174ba6bc82984f949d8c6852dbd679650
+[11:30:46.431] OpenSSL: Certificate Policy 1.3.6.1.4.1.40808.1.3.2
+[11:30:46.431] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=bc20510f519428c6bf18855e67e601c846737917d2e5bc622e06609a8251f567 tod=2
+[11:30:46.431] TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+[11:30:46.431] wlx5ca6e63fe2da: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+[11:30:46.431] EAP: Status notification: remote certificate verification (param=self-signed certificate in certificate chain)
+[11:30:46.431] OpenSSL: TX ver=0x303 content_type=256 (TLS header info/)
+[11:30:46.431] OpenSSL: TX ver=0x303 content_type=21 (alert/)
+[11:30:46.431] SSL: (where=0x4008 ret=0x230)
+[11:30:46.431] SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+[11:30:46.431] EAP: Status notification: local TLS alert (param=unknown CA)
+[11:30:46.431] SSL: (where=0x1002 ret=0xffffffff)
+[11:30:46.431] SSL: SSL_connect:error in error
+[11:30:46.431] OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+[11:30:46.431] SSL: 7 bytes pending from ssl_out
+[11:30:46.431] SSL: Using TLS version TLSv1.2
+[11:30:46.431] SSL: Failed - tls_out available to report error (len=7)
+[11:30:46.431] SSL: 7 bytes left to be sent out (of total 7 bytes)
+[11:30:46.431] EAP-PEAP: TLS processing failed
+[11:30:46.431] EAP: method process -> ignore=FALSE methodState=DONE decision=FAIL eapRespData=0x55e2b0af8af0
+[11:30:46.431] EAP: EAP entering state SEND_RESPONSE
+[11:30:46.431] EAP: EAP entering state IDLE
+[11:30:46.431] EAPOL: SUPP_BE entering state RESPONSE
+[11:30:46.431] EAPOL: txSuppRsp
+[11:30:46.431] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:30:46.432] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:46.487] EAPOL: startWhen --> 0
+[11:30:47.412] l2_packet_receive: src=3c:a0:67:80:99:a3 len=8
+[11:30:47.412] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:30:47.412] EAPOL: Received EAP-Packet frame
+[11:30:47.412] EAPOL: SUPP_BE entering state REQUEST
+[11:30:47.412] EAPOL: getSuppRsp
+[11:30:47.412] EAP: EAP entering state RECEIVED
+[11:30:47.412] EAP: Received EAP-Failure
+[11:30:47.412] EAP: Status notification: completion (param=failure)
+[11:30:47.412] EAP: EAP entering state FAILURE
+[11:30:47.412] wlx5ca6e63fe2da: CTRL-EVENT-EAP-FAILURE EAP authentication failed
+[11:30:47.412] EAPOL: SUPP_PAE entering state HELD
+[11:30:47.412] EAPOL: SUPP_BE entering state RECEIVE
+[11:30:47.412] EAPOL: SUPP_BE entering state FAIL
+[11:30:47.412] EAPOL: SUPP_BE entering state IDLE
+[11:30:47.412] EAPOL authentication completed - result=FAILURE
+[11:30:47.412] wlx5ca6e63fe2da: Setting authentication timeout: 2 sec 0 usec
+[11:30:47.435] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x1003 ([UP])
+[11:30:47.435] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da operstate=2 linkmode=1 ifi_family=0 ifi_flags=0x1003 ([UP])
+[11:30:47.435] nl80211: Drv Event 48 (NL80211_CMD_DISCONNECT) received for wlx5ca6e63fe2da
+[11:30:47.435] nl80211: Disconnect event
+[11:30:47.435] wlx5ca6e63fe2da: Event DEAUTH (11) received
+[11:30:47.435] wlx5ca6e63fe2da: Deauthentication notification
+[11:30:47.435] wlx5ca6e63fe2da:  * reason 23 (IEEE_802_1X_AUTH_FAILED)
+[11:30:47.435] Deauthentication frame IE(s) - hexdump(len=0): [NULL]
+[11:30:47.435] wlx5ca6e63fe2da: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=23
+[11:30:47.435] wlx5ca6e63fe2da: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=1 duration=10 reason=AUTH_FAILED
+[11:30:47.435] wlx5ca6e63fe2da: Auto connect enabled: try to reconnect (wps=0/0 wpa_state=6)
+[11:30:47.435] wlx5ca6e63fe2da: Setting scan request: 0.100000 sec
+[11:30:47.435] wlx5ca6e63fe2da: Radio work 'connect'@0x55e2b0afb660 done in 4.079227 seconds
+[11:30:47.435] wlx5ca6e63fe2da: radio_work_free('connect'@0x55e2b0afb660): num_active_works --> 0
+[11:30:47.435] Added BSSID 3c:a0:67:80:99:a3 into ignore list, ignoring for 10 seconds
+[11:30:47.435] wlx5ca6e63fe2da: Consecutive connection failures: 2 --> request scan in 500 ms
+[11:30:47.435] wlx5ca6e63fe2da: Ignore new scan request for 0.500000 sec since an earlier request is scheduled to trigger sooner
+[11:30:47.435] TDLS: Remove peers on disassociation
+[11:30:47.435] wlx5ca6e63fe2da: WPA: Clear old PMK and PTK
+[11:30:47.435] wlx5ca6e63fe2da: Disconnect event - remove keys
+[11:30:47.435] nl80211: Data frame filter flags=0x0
+[11:30:47.435] wlx5ca6e63fe2da: State: ASSOCIATED -> DISCONNECTED
+[11:30:47.435] nl80211: Set wlx5ca6e63fe2da operstate 0->0 (DORMANT)
+[11:30:47.435] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+[11:30:47.435] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:47.435] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:47.435] P2P: Add operating class 81
+[11:30:47.435] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:47.435] P2P: Add operating class 115
+[11:30:47.435] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.435] P2P: Add operating class 116
+[11:30:47.435] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:47.435] P2P: Add operating class 117
+[11:30:47.435] P2P: Channels - hexdump(len=2): 28 30
+[11:30:47.435] P2P: Add operating class 128
+[11:30:47.435] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.435] P2P: Add operating class 130
+[11:30:47.435] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.435] P2P: Update channel list
+[11:30:47.435] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:47.435] P2P: cli_channels:
+[11:30:47.435] EAPOL: External notification - portEnabled=0
+[11:30:47.435] EAPOL: SUPP_PAE entering state DISCONNECTED
+[11:30:47.435] EAPOL: Supplicant port status: Unauthorized
+[11:30:47.435] nl80211: Skip set_supp_port(unauthorized) while not associated
+[11:30:47.435] EAPOL: SUPP_BE entering state INITIALIZE
+[11:30:47.435] EAP: EAP entering state DISABLED
+[11:30:47.435] EAPOL: External notification - portValid=0
+[11:30:47.435] nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlx5ca6e63fe2da
+[11:30:47.435] nl80211: Regulatory domain change
+[11:30:47.435]  * initiator=0
+[11:30:47.435]  * type=1
+[11:30:47.435] wlx5ca6e63fe2da: Event CHANNEL_LIST_CHANGED (27) received
+[11:30:47.435] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[11:30:47.435] wlx5ca6e63fe2da: Updating hw mode
+[11:30:47.436] nl80211: Regulatory information - country=IT (DFS-ETSI)
+[11:30:47.436] nl80211: 2400-2483 @ 40 MHz 20 mBm
+[11:30:47.436] nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+[11:30:47.436] nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+[11:30:47.436] nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+[11:30:47.436] nl80211: 5725-5875 @ 80 MHz 13 mBm
+[11:30:47.436] nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+[11:30:47.436] nl80211: 57000-66000 @ 2160 MHz 40 mBm
+[11:30:47.436] nl80211: Added 802.11b mode based on 802.11g information
+[11:30:47.436] nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:30:47.436] nl80211: Mode IEEE 802.11a: 5180 5200 5220 5240 5260[RADAR] 5280[RADAR] 5300[RADAR] 5320[RADAR] 5500[RADAR] 5520[RADAR] 5540[RADAR] 5560[RADAR] 5580[RADAR] 5600[RADAR] 5620[RADAR] 5640[RADAR] 5660[RADAR] 5680[RADAR]
+[11:30:47.436] nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:30:47.436] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:47.436] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:47.436] P2P: Add operating class 81
+[11:30:47.436] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:47.436] P2P: Add operating class 115
+[11:30:47.436] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.436] P2P: Add operating class 116
+[11:30:47.436] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:47.436] P2P: Add operating class 117
+[11:30:47.436] P2P: Channels - hexdump(len=2): 28 30
+[11:30:47.436] P2P: Add operating class 128
+[11:30:47.436] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.436] P2P: Add operating class 130
+[11:30:47.436] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.436] P2P: Update channel list
+[11:30:47.436] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:47.436] P2P: cli_channels:
+[11:30:47.436] nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlx5ca6e63fe2da
+[11:30:47.436] nl80211: Regulatory domain change
+[11:30:47.436]  * initiator=1
+[11:30:47.436]  * type=0
+[11:30:47.436]  * alpha2=IT
+[11:30:47.436] wlx5ca6e63fe2da: Event CHANNEL_LIST_CHANGED (27) received
+[11:30:47.436] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[11:30:47.436] wlx5ca6e63fe2da: Updating hw mode
+[11:30:47.436] nl80211: Regulatory information - country=IT (DFS-ETSI)
+[11:30:47.436] nl80211: 2400-2483 @ 40 MHz 20 mBm
+[11:30:47.436] nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+[11:30:47.436] nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+[11:30:47.436] nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+[11:30:47.436] nl80211: 5725-5875 @ 80 MHz 13 mBm
+[11:30:47.436] nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+[11:30:47.436] nl80211: 57000-66000 @ 2160 MHz 40 mBm
+[11:30:47.436] nl80211: Added 802.11b mode based on 802.11g information
+[11:30:47.436] nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:30:47.436] nl80211: Mode IEEE 802.11a: 5180 5200 5220 5240 5260[RADAR] 5280[RADAR] 5300[RADAR] 5320[RADAR] 5500[RADAR] 5520[RADAR] 5540[RADAR] 5560[RADAR] 5580[RADAR] 5600[RADAR] 5620[RADAR] 5640[RADAR] 5660[RADAR] 5680[RADAR]
+[11:30:47.436] nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:30:47.436] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:47.436] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:47.436] P2P: Add operating class 81
+[11:30:47.436] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:47.436] P2P: Add operating class 115
+[11:30:47.436] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.436] P2P: Add operating class 116
+[11:30:47.436] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:47.436] P2P: Add operating class 117
+[11:30:47.436] P2P: Channels - hexdump(len=2): 28 30
+[11:30:47.436] P2P: Add operating class 128
+[11:30:47.436] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.436] P2P: Add operating class 130
+[11:30:47.436] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.436] P2P: Update channel list
+[11:30:47.436] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:47.436] P2P: cli_channels:
+[11:30:47.493] EAPOL: disable timer tick
+[11:30:47.547] wlx5ca6e63fe2da: State: DISCONNECTED -> SCANNING
+[11:30:47.547] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:30:47.547] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:30:47.547] P2P: Add operating class 81
+[11:30:47.547] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:30:47.547] P2P: Add operating class 115
+[11:30:47.547] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.547] P2P: Add operating class 116
+[11:30:47.547] P2P: Channels - hexdump(len=2): 24 2c
+[11:30:47.547] P2P: Add operating class 117
+[11:30:47.547] P2P: Channels - hexdump(len=2): 28 30
+[11:30:47.547] P2P: Add operating class 128
+[11:30:47.547] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.547] P2P: Add operating class 130
+[11:30:47.547] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:30:47.547] P2P: Update channel list
+[11:30:47.547] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:30:47.547] P2P: cli_channels:
+[11:30:47.547] wlx5ca6e63fe2da: Starting AP scan for wildcard SSID
+[11:30:47.547] WPS: Building WPS IE for Probe Request
+[11:30:47.547] WPS:  * Version (hardcoded 0x10)
+[11:30:47.547] WPS:  * Request Type
+[11:30:47.547] WPS:  * Config Methods (3108)
+[11:30:47.547] WPS:  * UUID-E
+[11:30:47.547] WPS:  * Primary Device Type
+[11:30:47.547] WPS:  * RF Bands (3)
+[11:30:47.547] WPS:  * Association State
+[11:30:47.547] WPS:  * Configuration Error (0)
+[11:30:47.547] WPS:  * Device Password ID (0)
+[11:30:47.547] WPS:  * Manufacturer
+[11:30:47.547] WPS:  * Model Name
+[11:30:47.547] WPS:  * Model Number
+[11:30:47.547] WPS:  * Device Name
+[11:30:47.547] WPS:  * Version2 (0x20)
+[11:30:47.547] P2P: * P2P IE header
+[11:30:47.547] P2P: * Capability dev=21 group=00
+[11:30:47.547] P2P: * Listen Channel: Regulatory Class 81 Channel 6
+[11:30:47.547] wlx5ca6e63fe2da: Add radio work 'scan'@0x55e2b0b186e0
+[11:30:47.547] wlx5ca6e63fe2da: First radio work item in the queue - schedule start immediately
+[11:30:47.547] wlx5ca6e63fe2da: Starting radio work 'scan'@0x55e2b0b186e0 after 0.000008 second wait
+[11:30:47.547] wlx5ca6e63fe2da: nl80211: scan request
+[11:30:47.547] Scan requested (ret=0) - scan timeout 30 seconds
+[11:30:47.547] nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlx5ca6e63fe2da
+[11:30:47.547] wlx5ca6e63fe2da: nl80211: Scan trigger
+[11:30:47.547] wlx5ca6e63fe2da: Event SCAN_STARTED (47) received
+[11:30:47.547] wlx5ca6e63fe2da: Own scan request started a scan in 0.000019 seconds
+[11:30:51.734] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x1003 ([UP])
+[11:30:51.734] nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlx5ca6e63fe2da
+[11:30:51.734] wlx5ca6e63fe2da: nl80211: New scan results available
+[11:30:51.734] nl80211: Scan probed for SSID ''
+[11:30:51.734] nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700
+[11:30:51.734] wlx5ca6e63fe2da: Event SCAN_RESULTS (3) received
+[11:30:51.734] wlx5ca6e63fe2da: Scan completed in 4.186709 seconds
+[11:30:51.734] nl80211: Received scan results (7 BSSes)
+[11:30:51.734] wlx5ca6e63fe2da: BSS: Start scan result update 3
+[11:30:51.734] wlx5ca6e63fe2da: BSS: Remove id 6 BSSID b2:95:7f:82:57:d7 SSID '' due to no match in scan
+[11:30:51.734] wlx5ca6e63fe2da: BSS: Remove id 8 BSSID dc:15:c8:03:a4:17 SSID 'INTRED-56875' due to no match in scan
+[11:30:51.734] BSS: last_scan_res_used=7/32
+[11:30:51.734] wlx5ca6e63fe2da: New scan results available (own=1 ext=0)
+[11:30:51.734] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:51.734] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:51.734] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:51.734] WPS: AP f0:b0:14:cf:72:e2 type 0 added
+[11:30:51.734] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:51.734] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:51.734] WPS: Unsupported attribute type 0x1058 len=34
+[11:30:51.734] WPS: AP b0:45:30:aa:b4:a4 type 0 added
+[11:30:51.734] WPS: AP dc:15:c8:03:a4:16 type 0 added
+[11:30:51.734] WPS: AP[0] f0:b0:14:cf:72:e2 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:30:51.734] WPS: AP[1] b0:45:30:aa:b4:a4 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:30:51.734] WPS: AP[2] dc:15:c8:03:a4:16 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:30:51.734] wlx5ca6e63fe2da: Radio work 'scan'@0x55e2b0b186e0 done in 4.186944 seconds
+[11:30:51.734] wlx5ca6e63fe2da: radio_work_free('scan'@0x55e2b0b186e0): num_active_works --> 0
+[11:30:51.734] wlx5ca6e63fe2da: Postpone network selection by 6 seconds since all networks are disabled
+[11:30:57.736] wlx5ca6e63fe2da: Try to associate due to network getting re-enabled
+[11:30:57.736] Fast associate: Old scan results
+[11:30:57.736] wlx5ca6e63fe2da: Setting scan request: 0.000000 sec
+[11:30:57.736] wlx5ca6e63fe2da: Starting AP scan for wildcard SSID
+[11:30:57.736] WPS: Building WPS IE for Probe Request
+[11:30:57.736] WPS:  * Version (hardcoded 0x10)
+[11:30:57.736] WPS:  * Request Type
+[11:30:57.736] WPS:  * Config Methods (3108)
+[11:30:57.736] WPS:  * UUID-E
+[11:30:57.736] WPS:  * Primary Device Type
+[11:30:57.736] WPS:  * RF Bands (3)
+[11:30:57.736] WPS:  * Association State
+[11:30:57.736] WPS:  * Configuration Error (0)
+[11:30:57.736] WPS:  * Device Password ID (0)
+[11:30:57.736] WPS:  * Manufacturer
+[11:30:57.736] WPS:  * Model Name
+[11:30:57.736] WPS:  * Model Number
+[11:30:57.736] WPS:  * Device Name
+[11:30:57.736] WPS:  * Version2 (0x20)
+[11:30:57.736] P2P: * P2P IE header
+[11:30:57.736] P2P: * Capability dev=21 group=00
+[11:30:57.736] P2P: * Listen Channel: Regulatory Class 81 Channel 6
+[11:30:57.736] wlx5ca6e63fe2da: Add radio work 'scan'@0x55e2b0af8c80
+[11:30:57.736] wlx5ca6e63fe2da: First radio work item in the queue - schedule start immediately
+[11:30:57.736] wlx5ca6e63fe2da: Starting radio work 'scan'@0x55e2b0af8c80 after 0.000008 second wait
+[11:30:57.736] wlx5ca6e63fe2da: nl80211: scan request
+[11:30:58.340] Scan requested (ret=0) - scan timeout 30 seconds
+[11:30:58.340] nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlx5ca6e63fe2da
+[11:30:58.340] wlx5ca6e63fe2da: nl80211: Scan trigger
+[11:30:58.341] wlx5ca6e63fe2da: Event SCAN_STARTED (47) received
+[11:30:58.341] wlx5ca6e63fe2da: Own scan request started a scan in 0.000168 seconds
+[11:31:02.331] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x1003 ([UP])
+[11:31:02.331] nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlx5ca6e63fe2da
+[11:31:02.331] wlx5ca6e63fe2da: nl80211: New scan results available
+[11:31:02.331] nl80211: Scan probed for SSID ''
+[11:31:02.331] nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700
+[11:31:02.331] wlx5ca6e63fe2da: Event SCAN_RESULTS (3) received
+[11:31:02.331] wlx5ca6e63fe2da: Scan completed in 3.990429 seconds
+[11:31:02.332] nl80211: Received scan results (8 BSSes)
+[11:31:02.332] wlx5ca6e63fe2da: BSS: Start scan result update 4
+[11:31:02.332] wlx5ca6e63fe2da: BSS: Add new id 9 BSSID dc:15:c8:03:a4:17 SSID 'INTRED-56875' freq 5260
+[11:31:02.332] BSS: last_scan_res_used=8/32
+[11:31:02.332] wlx5ca6e63fe2da: New scan results available (own=1 ext=0)
+[11:31:02.332] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:02.332] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:02.332] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:02.332] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:02.332] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:02.332] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:02.332] WPS: AP dc:15:c8:03:a4:17 type 0 added
+[11:31:02.332] WPS: AP[0] f0:b0:14:cf:72:e2 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:31:02.332] WPS: AP[1] b0:45:30:aa:b4:a4 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:31:02.332] WPS: AP[2] dc:15:c8:03:a4:16 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:31:02.332] WPS: AP[3] dc:15:c8:03:a4:17 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:31:02.332] wlx5ca6e63fe2da: Radio work 'scan'@0x55e2b0af8c80 done in 4.595857 seconds
+[11:31:02.332] wlx5ca6e63fe2da: radio_work_free('scan'@0x55e2b0af8c80): num_active_works --> 0
+[11:31:02.333] wlx5ca6e63fe2da: CTRL-EVENT-SSID-REENABLED id=0 ssid="Hostapd-AP-E"
+[11:31:02.333] wlx5ca6e63fe2da: Selecting BSS from priority group 0
+[11:31:02.333] wlx5ca6e63fe2da: 0: b0:ea:bc:3f:32:26 ssid='Casa-A-gbtyTYgnGTBYjf' wpa_ie_len=0 rsn_ie_len=20 caps=0x111 level=-54 freq=5260 
+[11:31:02.333] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:31:02.333] wlx5ca6e63fe2da: 1: b0:ea:bc:3f:32:27 ssid='Casa-A-gbtyTYgnGTBYjf' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-53 freq=2412 
+[11:31:02.333] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:31:02.333] wlx5ca6e63fe2da: 2: 62:ea:bc:3f:32:24 ssid='WOW FI - FASTWEB' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-53 freq=2412 
+[11:31:02.333] wlx5ca6e63fe2da:    skip - SSID mismatch
+[11:31:02.333] wlx5ca6e63fe2da: 3: 3c:a0:67:80:99:a3 ssid='Hostapd-AP-E' wpa_ie_len=0 rsn_ie_len=20 caps=0x411 level=-34 freq=2412 
+[11:31:02.333] wlx5ca6e63fe2da:    selected based on RSN IE
+[11:31:02.333] wlx5ca6e63fe2da:    selected BSS 3c:a0:67:80:99:a3 ssid='Hostapd-AP-E'
+[11:31:02.333] wlx5ca6e63fe2da: Considering connect request: reassociate: 0  selected: 3c:a0:67:80:99:a3  bssid: 00:00:00:00:00:00  pending: 00:00:00:00:00:00  wpa_state: SCANNING  ssid=0x55e2b0a671e0  current_ssid=(nil)
+[11:31:02.333] wlx5ca6e63fe2da: Request association with 3c:a0:67:80:99:a3
+[11:31:02.333] wlx5ca6e63fe2da: Re-association to the same ESS
+[11:31:02.333] TDLS: TDLS is allowed in the target BSS
+[11:31:02.333] TDLS: TDLS channel switch allowed in the target BSS
+[11:31:02.333] wlx5ca6e63fe2da: No ongoing scan/p2p-scan found to abort
+[11:31:02.333] wlx5ca6e63fe2da: Add radio work 'connect'@0x55e2b0af8c80
+[11:31:02.333] wlx5ca6e63fe2da: First radio work item in the queue - schedule start immediately
+[11:31:02.333] wlx5ca6e63fe2da: Starting radio work 'connect'@0x55e2b0af8c80 after 0.000013 second wait
+[11:31:02.333] wlx5ca6e63fe2da: WPA: clearing own WPA/RSN IE
+[11:31:02.333] wlx5ca6e63fe2da: RSN: clearing own RSNXE
+[11:31:02.333] RSN: PMKSA cache search - network_ctx=0x55e2b0a671e0 try_opportunistic=0 akmp=0x0
+[11:31:02.333] RSN: Search for BSSID 3c:a0:67:80:99:a3
+[11:31:02.333] RSN: PMKSA cache entry found - PMKID - hexdump(len=16): 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64
+[11:31:02.333] RSN: Trying to use cached PMKSA
+[11:31:02.333] wlx5ca6e63fe2da: RSN: using IEEE 802.11i/D9.0
+[11:31:02.333] wlx5ca6e63fe2da: WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 1 proto 2
+[11:31:02.333] wlx5ca6e63fe2da: WPA: Selected mgmt group cipher 32
+[11:31:02.333] wlx5ca6e63fe2da: WPA: clearing AP WPA IE
+[11:31:02.333] WPA: set AP RSN IE - hexdump(len=22): 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00
+[11:31:02.333] wlx5ca6e63fe2da: WPA: clearing AP RSNXE
+[11:31:02.333] wlx5ca6e63fe2da: WPA: AP group 0x10 network profile group 0x18; available group 0x10
+[11:31:02.333] wlx5ca6e63fe2da: WPA: using GTK CCMP
+[11:31:02.333] wlx5ca6e63fe2da: WPA: AP pairwise 0x10 network profile pairwise 0x18; available pairwise 0x10
+[11:31:02.333] wlx5ca6e63fe2da: WPA: using PTK CCMP
+[11:31:02.333] wlx5ca6e63fe2da: WPA: AP key_mgmt 0x1 network profile key_mgmt 0x1; available key_mgmt 0x1
+[11:31:02.333] wlx5ca6e63fe2da: WPA: using KEY_MGMT 802.1X
+[11:31:02.333] wlx5ca6e63fe2da: WPA: AP mgmt_group_cipher 0x20 network profile mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+[11:31:02.333] wlx5ca6e63fe2da: WPA: using MGMT group cipher AES-128-CMAC
+[11:31:02.333] WPA: Set own WPA IE default - hexdump(len=44): 30 2a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 01 00 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64 00 0f ac 06
+[11:31:02.333] RSN: Set own RSNXE default - hexdump(len=0):
+[11:31:02.333] WPA: Set PMK based on current PMKSA - hexdump(len=32): [REMOVED]
+[11:31:02.333] wlx5ca6e63fe2da: Automatic auth_alg selection: 0x1
+[11:31:02.334] Added supported operating classes IE - hexdump(len=18): 3b 10 51 51 53 54 73 74 75 76 77 78 79 7a 7b 80 81 82
+[11:31:02.334] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-E' freq=2412 MHz)
+[11:31:02.334] wlx5ca6e63fe2da: Cancelling scan request
+[11:31:02.334] wlx5ca6e63fe2da: State: SCANNING -> ASSOCIATING
+[11:31:02.334] nl80211: Set wlx5ca6e63fe2da operstate 0->0 (DORMANT)
+[11:31:02.334] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+[11:31:02.334] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:31:02.334] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:31:02.334] P2P: Add operating class 81
+[11:31:02.334] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:31:02.334] P2P: Add operating class 115
+[11:31:02.334] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:02.334] P2P: Add operating class 116
+[11:31:02.334] P2P: Channels - hexdump(len=2): 24 2c
+[11:31:02.334] P2P: Add operating class 117
+[11:31:02.334] P2P: Channels - hexdump(len=2): 28 30
+[11:31:02.334] P2P: Add operating class 128
+[11:31:02.334] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:02.334] P2P: Add operating class 130
+[11:31:02.334] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:02.334] P2P: Update channel list
+[11:31:02.334] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:31:02.334] P2P: cli_channels:
+[11:31:02.334] Limit connection to BSSID 3c:a0:67:80:99:a3 freq=2412 MHz based on scan results (bssid_set=0 wps=0)
+[11:31:02.334] wlx5ca6e63fe2da: WPA: Selected AP supports MFP: require MFP
+[11:31:02.334] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:31:02.334] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:31:02.334] nl80211: Set mode ifindex 3 iftype 2 (STATION)
+[11:31:02.334] nl80211: Unsubscribe mgmt frames handle 0x8888dd6a382eeae9 (mode change)
+[11:31:02.334] nl80211: Subscribe to mgmt frames with non-AP handle 0x55e2b0a66260
+[11:31:02.334] nl80211: Register frame type=0xb0 (WLAN_FC_STYPE_AUTH) nl_handle=0x55e2b0a66260 match=0300 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0104 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040a multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040b multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040c multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040d multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090a multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090b multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090c multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=090d multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0409506f9a09 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=7f506f9a09 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0409506f9a1a multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0801 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=040e multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=06 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a07 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a11 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0a1a multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1101 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1102 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0505 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=0500 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1301 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=1305 multicast=0
+[11:31:02.334] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x55e2b0a66260 match=7e506f9a1a multicast=0
+[11:31:02.334] nl80211: Connect (ifindex=3)
+[11:31:02.334]   * bssid=3c:a0:67:80:99:a3
+[11:31:02.334]   * bssid_hint=3c:a0:67:80:99:a3
+[11:31:02.334]   * freq=2412
+[11:31:02.334]   * freq_hint=2412
+[11:31:02.334]   * SSID=Hostapd-AP-E
+[11:31:02.334]   * IEs - hexdump(len=75): 30 2a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 01 00 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64 00 0f ac 06 7f 0b 00 00 00 00 00 00 40 00 00 00 20 3b 10 51 51 53 54 73 74 75 76 77 78 79 7a 7b 80 81 82
+[11:31:02.334]   * WPA Versions 0x2
+[11:31:02.334]   * pairwise=0xfac04
+[11:31:02.334]   * group=0xfac04
+[11:31:02.334]   * akm=0xfac01
+[11:31:02.334]   * Auth Type 0
+[11:31:02.336] nl80211: Connect request send successfully
+[11:31:02.336] wlx5ca6e63fe2da: Setting authentication timeout: 10 sec 0 usec
+[11:31:02.336] Not configuring frame filtering - BSS 00:00:00:00:00:00 is not a Hotspot 2.0 network
+[11:31:02.336] EAPOL: External notification - EAP success=0
+[11:31:02.337] EAPOL: External notification - EAP fail=0
+[11:31:02.337] EAPOL: External notification - portControl=Auto
+[11:31:02.347] nl80211: Drv Event 110 (NL80211_CMD_CH_SWITCH_STARTED_NOTIFY) received for wlx5ca6e63fe2da
+[11:31:02.347] nl80211: Channel switch started event
+[11:31:02.347] nl80211: Channel type: 0
+[11:31:02.347] wlx5ca6e63fe2da: Event CH_SWITCH_STARTED (39) received
+[11:31:02.347] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[11:31:02.471] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:31:02.472] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:31:02.472] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:31:02.472] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da operstate=5 linkmode=1 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+[11:31:02.472] nl80211: Drv Event 46 (NL80211_CMD_CONNECT) received for wlx5ca6e63fe2da
+[11:31:02.472] nl80211: Connect event (status=0 ignore_next_local_disconnect=0)
+[11:31:02.472] nl80211: Associated on 2412 MHz
+[11:31:02.472] nl80211: Associated with 3c:a0:67:80:99:a3
+[11:31:02.472] nl80211: Operating frequency for the associated BSS from scan results: 2412 MHz
+[11:31:02.472] nl80211: Associated on 2412 MHz
+[11:31:02.472] nl80211: Associated with 3c:a0:67:80:99:a3
+[11:31:02.472] nl80211: Set drv->ssid based on scan res info to 'Hostapd-AP-E'
+[11:31:02.472] wlx5ca6e63fe2da: Event ASSOC (0) received
+[11:31:02.472] wlx5ca6e63fe2da: Association info event
+[11:31:02.472] req_ies - hexdump(len=76): 03 00 00 0c 48 6f 73 74 61 70 64 2d 41 50 2d 45 01 08 82 84 8b 96 0c 12 18 24 32 04 30 48 60 6c 30 2a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 01 00 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64 00 0f ac 06
+[11:31:02.472] resp_ies - hexdump(len=26): 01 08 82 84 8b 96 0c 12 18 24 32 04 30 48 60 6c 7f 08 04 00 00 00 00 00 00 40
+[11:31:02.473] wlx5ca6e63fe2da: freq=2412 MHz
+[11:31:02.473] WPA: set own WPA/RSN IE - hexdump(len=44): 30 2a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 01 00 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64 00 0f ac 06
+[11:31:02.473] RSN: Clear current PMKSA entry selection
+[11:31:02.473] RSN: PMKSA cache search - network_ctx=(nil) try_opportunistic=0 akmp=0x0
+[11:31:02.473] RSN: Search for PMKID - hexdump(len=16): 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64
+[11:31:02.473] RSN: PMKSA cache entry found - PMKID - hexdump(len=16): 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64
+[11:31:02.473] RSN: Trying to use cached PMKSA
+[11:31:02.473] wlx5ca6e63fe2da: RSN: PMKID from assoc IE found from PMKSA cache
+[11:31:02.473] wlx5ca6e63fe2da: RSN: clearing own RSNXE
+[11:31:02.473] wlx5ca6e63fe2da: State: ASSOCIATING -> ASSOCIATED
+[11:31:02.473] nl80211: Set wlx5ca6e63fe2da operstate 0->0 (DORMANT)
+[11:31:02.473] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+[11:31:02.473] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:31:02.473] wlx5ca6e63fe2da: Shared frequencies (len=1): completed iteration
+[11:31:02.473] wlx5ca6e63fe2da: freq[0]: 2412, flags=0x1
+[11:31:02.473] P2P: Add operating class 81
+[11:31:02.473] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:31:02.473] P2P: Add operating class 115
+[11:31:02.473] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:02.473] P2P: Add operating class 116
+[11:31:02.473] P2P: Channels - hexdump(len=2): 24 2c
+[11:31:02.473] P2P: Add operating class 117
+[11:31:02.473] P2P: Channels - hexdump(len=2): 28 30
+[11:31:02.473] P2P: Add operating class 128
+[11:31:02.473] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:02.473] P2P: Add operating class 130
+[11:31:02.474] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:02.474] P2P: Update channel list
+[11:31:02.474] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:31:02.474] P2P: cli_channels:
+[11:31:02.474] wlx5ca6e63fe2da: Associated to a new BSS: BSSID=3c:a0:67:80:99:a3
+[11:31:02.474] WPA: Update cipher suite selection based on IEs in driver-generated WPA/RSNE in AssocReq - hexdump(len=44): 30 2a 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 01 c0 00 01 00 72 c8 68 65 02 85 04 5d 21 0e dc 74 8d d2 bb 64 00 0f ac 06
+[11:31:02.474] wlx5ca6e63fe2da: WPA: AP key_mgmt 0x1 network key_mgmt 0x1; available key_mgmt 0x1
+[11:31:02.474] wlx5ca6e63fe2da: WPA: using KEY_MGMT WPA2/IEEE 802.1X/EAP and proto 2
+[11:31:02.474] wlx5ca6e63fe2da: WPA: AP pairwise cipher 0x10 network pairwise cipher 0x18; available pairwise cipher 0x10
+[11:31:02.474] wlx5ca6e63fe2da: WPA: using PTK CCMP
+[11:31:02.474] wlx5ca6e63fe2da: WPA: AP group cipher 0x10 network group cipher 0x18; available group cipher 0x10
+[11:31:02.474] wlx5ca6e63fe2da: WPA: using GTK CCMP
+[11:31:02.474] wlx5ca6e63fe2da: WPA: AP mgmt_group_cipher 0x20 network mgmt_group_cipher 0x0; available mgmt_group_cipher 0x20
+[11:31:02.474] wlx5ca6e63fe2da: WPA: using MGMT group cipher BIP
+[11:31:02.474] wlx5ca6e63fe2da: Associated with 3c:a0:67:80:99:a3
+[11:31:02.474] wlx5ca6e63fe2da: WPA: Association event - clear replay counter
+[11:31:02.474] wlx5ca6e63fe2da: WPA: Clear old PTK
+[11:31:02.474] TDLS: Remove peers on association
+[11:31:02.474] EAPOL: External notification - portEnabled=0
+[11:31:02.474] EAPOL: External notification - portValid=0
+[11:31:02.474] EAPOL: External notification - portEnabled=1
+[11:31:02.474] EAPOL: SUPP_PAE entering state CONNECTING
+[11:31:02.474] EAPOL: enable timer tick
+[11:31:02.474] EAPOL: SUPP_BE entering state IDLE
+[11:31:02.474] EAP: EAP entering state INITIALIZE
+[11:31:02.474] EAP: deinitialize previously used EAP method (25, PEAP) at INITIALIZE
+[11:31:02.474] ENGINE: engine deinit
+[11:31:02.474] EAP: EAP entering state IDLE
+[11:31:02.474] wlx5ca6e63fe2da: Setting authentication timeout: 10 sec 0 usec
+[11:31:02.474] wlx5ca6e63fe2da: Cancelling scan request
+[11:31:02.474] wlx5ca6e63fe2da: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[11:31:02.475] l2_packet_receive: src=3c:a0:67:80:99:a3 len=9
+[11:31:02.475] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:31:02.475] wlx5ca6e63fe2da: Setting authentication timeout: 70 sec 0 usec
+[11:31:02.475] RSN: Authenticator did not accept PMKID, doing full EAP authentication
+[11:31:02.475] EAPOL: Supplicant port status: Unauthorized
+[11:31:02.475] nl80211: Set supplicant port unauthorized for 3c:a0:67:80:99:a3
+[11:31:02.475] wlx5ca6e63fe2da: RSN: Cancelling PMKSA caching attempt
+[11:31:02.475] EAPOL: Received EAP-Packet frame
+[11:31:02.475] EAPOL: SUPP_PAE entering state RESTART
+[11:31:02.475] EAP: EAP entering state INITIALIZE
+[11:31:02.475] EAP: EAP entering state IDLE
+[11:31:02.475] EAPOL: SUPP_PAE entering state AUTHENTICATING
+[11:31:02.475] EAPOL: SUPP_BE entering state REQUEST
+[11:31:02.475] EAPOL: getSuppRsp
+[11:31:02.475] EAP: EAP entering state RECEIVED
+[11:31:02.475] EAP: Received EAP-Request id=233 method=1 vendor=0 vendorMethod=0
+[11:31:02.475] EAP: EAP entering state IDENTITY
+[11:31:02.475] wlx5ca6e63fe2da: CTRL-EVENT-EAP-STARTED EAP authentication started
+[11:31:02.475] EAP: Status notification: started (param=)
+[11:31:02.475] EAP: EAP-Request Identity data - hexdump_ascii(len=0):
+[11:31:02.475] EAP: using anonymous identity - hexdump_ascii(len=9):
+     61 6e 6f 6e 79 6d 6f 75 73                        anonymous       
+[11:31:02.475] EAP: EAP entering state SEND_RESPONSE
+[11:31:02.475] EAP: EAP entering state IDLE
+[11:31:02.475] EAPOL: SUPP_BE entering state RESPONSE
+[11:31:02.475] EAPOL: txSuppRsp
+[11:31:02.475] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:31:02.475] EAPOL: SUPP_BE entering state RECEIVE
+[11:31:02.486] l2_packet_receive: src=3c:a0:67:80:99:a3 len=26
+[11:31:02.486] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:31:02.486] EAPOL: Received EAP-Packet frame
+[11:31:02.486] EAPOL: SUPP_BE entering state REQUEST
+[11:31:02.486] EAPOL: getSuppRsp
+[11:31:02.486] EAP: EAP entering state RECEIVED
+[11:31:02.486] EAP: Received EAP-Request id=234 method=4 vendor=0 vendorMethod=0
+[11:31:02.486] EAP: EAP entering state GET_METHOD
+[11:31:02.486] EAP: configuration does not allow: vendor 0 method 4
+[11:31:02.486] EAP: vendor 0 method 4 not allowed
+[11:31:02.486] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[11:31:02.486] EAP: Status notification: refuse proposed method (param=MD5)
+[11:31:02.486] EAP: Building EAP-Nak (requested type 4 vendor=0 method=0 not allowed)
+[11:31:02.486] EAP: allowed methods - hexdump(len=1): 19
+[11:31:02.486] EAP: EAP entering state SEND_RESPONSE
+[11:31:02.486] EAP: EAP entering state IDLE
+[11:31:02.486] EAPOL: SUPP_BE entering state RESPONSE
+[11:31:02.486] EAPOL: txSuppRsp
+[11:31:02.486] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:31:02.486] EAPOL: SUPP_BE entering state RECEIVE
+[11:31:02.492] l2_packet_receive: src=3c:a0:67:80:99:a3 len=10
+[11:31:02.492] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:31:02.492] EAPOL: Received EAP-Packet frame
+[11:31:02.492] EAPOL: SUPP_BE entering state REQUEST
+[11:31:02.492] EAPOL: getSuppRsp
+[11:31:02.492] EAP: EAP entering state RECEIVED
+[11:31:02.492] EAP: Received EAP-Request id=235 method=25 vendor=0 vendorMethod=0
+[11:31:02.492] EAP: EAP entering state GET_METHOD
+[11:31:02.492] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[11:31:02.492] EAP: Status notification: accept proposed method (param=PEAP)
+[11:31:02.492] EAP: Initialize selected EAP method: vendor 0 method 25 (PEAP)
+[11:31:02.492] TLS: Phase2 EAP types - hexdump(len=8): 00 00 00 00 1a 00 00 00
+[11:31:02.492] TLS: using phase1 config options
+[11:31:02.494] TLS: Trusted root certificate(s) loaded
+[11:31:02.494] wlx5ca6e63fe2da: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[11:31:02.494] EAP: EAP entering state METHOD
+[11:31:02.494] SSL: Received packet(len=6) - Flags 0x20
+[11:31:02.494] EAP-PEAP: Start (server ver=0, own ver=1)
+[11:31:02.494] EAP-PEAP: Using PEAP version 0
+[11:31:02.494] SSL: (where=0x10 ret=0x1)
+[11:31:02.495] SSL: (where=0x1001 ret=0x1)
+[11:31:02.495] SSL: SSL_connect:before SSL initialization
+[11:31:02.495] OpenSSL: TX ver=0x301 content_type=256 (TLS header info/)
+[11:31:02.495] OpenSSL: TX ver=0x303 content_type=22 (handshake/client hello)
+[11:31:02.495] SSL: (where=0x1001 ret=0x1)
+[11:31:02.495] SSL: SSL_connect:SSLv3/TLS write client hello
+[11:31:02.495] SSL: (where=0x1002 ret=0xffffffff)
+[11:31:02.495] SSL: SSL_connect:error in SSLv3/TLS write client hello
+[11:31:02.495] SSL: SSL_connect - want more data
+[11:31:02.495] SSL: 184 bytes pending from ssl_out
+[11:31:02.495] SSL: Using TLS version TLSv1.2
+[11:31:02.495] SSL: 184 bytes left to be sent out (of total 184 bytes)
+[11:31:02.495] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0afc9e0
+[11:31:02.495] EAP: EAP entering state SEND_RESPONSE
+[11:31:02.495] EAP: EAP entering state IDLE
+[11:31:02.495] EAPOL: SUPP_BE entering state RESPONSE
+[11:31:02.495] EAPOL: txSuppRsp
+[11:31:02.495] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:31:02.495] EAPOL: SUPP_BE entering state RECEIVE
+[11:31:02.510] l2_packet_receive: src=3c:a0:67:80:99:a3 len=1008
+[11:31:02.510] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:31:02.510] EAPOL: Received EAP-Packet frame
+[11:31:02.510] EAPOL: SUPP_BE entering state REQUEST
+[11:31:02.510] EAPOL: getSuppRsp
+[11:31:02.510] EAP: EAP entering state RECEIVED
+[11:31:02.510] EAP: Received EAP-Request id=236 method=25 vendor=0 vendorMethod=0
+[11:31:02.510] EAP: EAP entering state METHOD
+[11:31:02.510] SSL: Received packet(len=1004) - Flags 0xc0
+[11:31:02.510] SSL: TLS Message Length: 2758
+[11:31:02.510] SSL: Need 1764 bytes more input data
+[11:31:02.510] SSL: Building ACK (type=25 id=236 ver=0)
+[11:31:02.510] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0ad2b00
+[11:31:02.510] EAP: EAP entering state SEND_RESPONSE
+[11:31:02.510] EAP: EAP entering state IDLE
+[11:31:02.510] EAPOL: SUPP_BE entering state RESPONSE
+[11:31:02.510] EAPOL: txSuppRsp
+[11:31:02.510] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:31:02.510] EAPOL: SUPP_BE entering state RECEIVE
+[11:31:02.522] l2_packet_receive: src=3c:a0:67:80:99:a3 len=1004
+[11:31:02.522] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:31:02.522] EAPOL: Received EAP-Packet frame
+[11:31:02.522] EAPOL: SUPP_BE entering state REQUEST
+[11:31:02.522] EAPOL: getSuppRsp
+[11:31:02.522] EAP: EAP entering state RECEIVED
+[11:31:02.522] EAP: Received EAP-Request id=237 method=25 vendor=0 vendorMethod=0
+[11:31:02.522] EAP: EAP entering state METHOD
+[11:31:02.522] SSL: Received packet(len=1000) - Flags 0x40
+[11:31:02.522] SSL: Need 770 bytes more input data
+[11:31:02.522] SSL: Building ACK (type=25 id=237 ver=0)
+[11:31:02.522] EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55e2b0ada330
+[11:31:02.522] EAP: EAP entering state SEND_RESPONSE
+[11:31:02.522] EAP: EAP entering state IDLE
+[11:31:02.522] EAPOL: SUPP_BE entering state RESPONSE
+[11:31:02.522] EAPOL: txSuppRsp
+[11:31:02.522] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:31:02.522] EAPOL: SUPP_BE entering state RECEIVE
+[11:31:02.532] l2_packet_receive: src=3c:a0:67:80:99:a3 len=780
+[11:31:02.532] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:31:02.532] EAPOL: Received EAP-Packet frame
+[11:31:02.532] EAPOL: SUPP_BE entering state REQUEST
+[11:31:02.532] EAPOL: getSuppRsp
+[11:31:02.532] EAP: EAP entering state RECEIVED
+[11:31:02.532] EAP: Received EAP-Request id=238 method=25 vendor=0 vendorMethod=0
+[11:31:02.532] EAP: EAP entering state METHOD
+[11:31:02.532] SSL: Received packet(len=776) - Flags 0x00
+[11:31:02.532] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:31:02.532] SSL: (where=0x1001 ret=0x1)
+[11:31:02.532] SSL: SSL_connect:SSLv3/TLS write client hello
+[11:31:02.532] OpenSSL: RX ver=0x303 content_type=22 (handshake/server hello)
+[11:31:02.532] OpenSSL: RX ver=0x303 content_type=256 (TLS header info/)
+[11:31:02.532] SSL: (where=0x1001 ret=0x1)
+[11:31:02.532] SSL: SSL_connect:SSLv3/TLS read server hello
+[11:31:02.533] OpenSSL: RX ver=0x303 content_type=22 (handshake/certificate)
+[11:31:02.535] OpenSSL: Peer certificate - depth 1
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            7d:47:21:72:51:ce:22:b1:ff:50:ee:4b:4a:08:8b:f5:a8:3a:d7:10
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=FR, ST=Radius, L=Somewhere, O=Example Inc./emailAddress=admin@example.org, CN=Example Certificate Authority
+        Validity
+            Not Before: Dec 20 14:40:52 2023 GMT
+            Not After : Feb 18 14:40:52 2024 GMT
+        Subject: C=FR, ST=Radius, L=Somewhere, O=Example Inc./emailAddress=admin@example.org, CN=Example Certificate Authority
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a5:07:47:a7:9d:ed:d5:8d:36:5b:0a:b1:7b:b5:
+                    02:50:82:ae:01:3e:00:25:13:10:7a:9d:ac:6f:80:
+                    56:2e:88:e7:33:6f:ba:6f:e5:df:03:04:e0:da:6d:
+                    85:9b:3e:59:23:76:4e:44:2b:45:03:ed:77:98:29:
+                    11:4a:5d:66:0b:14:b0:11:5a:f9:e1:65:9c:1c:6e:
+                    f9:dc:f3:8f:31:bd:51:36:05:1b:c2:9f:e7:16:84:
+                    25:be:65:f3:db:5b:7a:b4:df:66:3f:a1:07:53:61:
+                    4b:12:3c:26:8f:eb:93:d4:76:ce:82:31:37:a2:50:
+                    23:f9:c6:b4:a0:6e:a8:de:61:2a:4a:5c:c7:5d:e5:
+                    09:55:3e:d6:f6:13:e3:f1:d1:a0:5d:59:11:c5:6f:
+                    33:e0:30:60:fd:e9:53:e3:e1:0c:2a:2f:57:97:96:
+                    24:30:60:da:69:a4:bf:37:f0:64:7b:73:38:e9:9a:
+                    61:d1:36:4f:fa:07:4e:ba:c1:c8:b2:a7:ff:6f:b1:
+                    ee:fd:ac:67:68:85:c8:d6:f2:af:10:c2:d8:83:46:
+                    be:42:8d:f9:c8:28:86:41:eb:c3:31:0e:f2:82:30:
+                    20:78:5b:80:b4:09:dc:be:38:3a:43:61:6b:04:68:
+                    9a:2a:96:ac:1d:53:b2:99:5e:d1:e3:bc:a3:9e:e1:
+                    6c:49
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                54:7E:9E:86:EA:DB:16:E9:5A:57:69:B5:60:48:BB:F6:39:8F:33:04
+            X509v3 Authority Key Identifier: 
+                keyid:54:7E:9E:86:EA:DB:16:E9:5A:57:69:B5:60:48:BB:F6:39:8F:33:04
+                DirName:/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority
+                serial:7D:47:21:72:51:CE:22:B1:FF:50:EE:4B:4A:08:8B:F5:A8:3A:D7:10
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 CRL Distribution Points: 
+                Full Name:
+                  URI:http://www.example.org/example_ca.crl
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        55:f8:97:37:d1:72:4a:54:9c:21:4e:36:57:57:f0:1e:0e:df:
+        07:64:2a:13:c8:3c:22:ec:08:57:17:1b:5e:78:8d:91:b6:3a:
+        9d:1d:1a:9d:7d:76:51:c9:cf:6c:27:a9:06:69:07:7d:8f:6a:
+        7a:fc:17:c8:c8:20:5d:65:2a:1f:8c:9f:9f:cd:23:12:4e:63:
+        2e:46:07:23:2a:12:48:a4:4c:7c:e7:ee:d0:df:78:9c:88:c6:
+        e4:3c:0d:67:14:b1:64:1e:5f:6c:d3:1f:9c:67:e1:34:c4:dd:
+        c0:d6:85:55:4f:fa:f9:34:0f:e2:7e:20:a5:ad:89:5c:49:c9:
+        fe:45:ec:71:b5:52:74:4b:30:9a:ba:ae:1c:a8:89:12:89:10:
+        c4:34:a6:8f:4e:61:25:7c:91:92:9e:a0:18:f6:52:55:18:08:
+        09:11:32:13:27:89:50:17:0a:5d:70:b4:d3:78:9a:bf:cf:a0:
+        25:eb:6e:e8:79:50:25:f5:e6:8b:21:ff:97:b3:b6:a6:84:20:
+        bb:00:9f:1c:4a:bf:d9:97:a6:6e:9f:d7:ee:3d:7f:bd:f8:c2:
+        97:81:e9:c0:c7:c5:b9:1d:c0:f0:4b:ce:6b:c2:3f:4e:67:f4:
+        82:fc:fe:f9:b2:87:a0:b7:b7:6e:5f:ba:6b:b1:3a:21:d7:c3:
+        e2:f5:b2:d5
+
+[11:31:02.535] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=9a9b8b48ab2dd75946c2cfea9f0545a174ba6bc82984f949d8c6852dbd679650
+[11:31:02.536] OpenSSL: Certificate Policy 1.3.6.1.4.1.40808.1.3.2
+[11:31:02.536] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=bc20510f519428c6bf18855e67e601c846737917d2e5bc622e06609a8251f567 tod=2
+[11:31:02.537] TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+[11:31:02.537] wlx5ca6e63fe2da: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+[11:31:02.537] EAP: Status notification: remote certificate verification (param=self-signed certificate in certificate chain)
+[11:31:02.537] OpenSSL: TX ver=0x303 content_type=256 (TLS header info/)
+[11:31:02.537] OpenSSL: TX ver=0x303 content_type=21 (alert/)
+[11:31:02.537] SSL: (where=0x4008 ret=0x230)
+[11:31:02.537] SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+[11:31:02.537] EAP: Status notification: local TLS alert (param=unknown CA)
+[11:31:02.537] SSL: (where=0x1002 ret=0xffffffff)
+[11:31:02.537] SSL: SSL_connect:error in error
+[11:31:02.537] OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+[11:31:02.537] SSL: 7 bytes pending from ssl_out
+[11:31:02.537] SSL: Using TLS version TLSv1.2
+[11:31:02.537] SSL: Failed - tls_out available to report error (len=7)
+[11:31:02.537] SSL: 7 bytes left to be sent out (of total 7 bytes)
+[11:31:02.537] EAP-PEAP: TLS processing failed
+[11:31:02.537] EAP: method process -> ignore=FALSE methodState=DONE decision=FAIL eapRespData=0x55e2b0b15340
+[11:31:02.537] EAP: EAP entering state SEND_RESPONSE
+[11:31:02.537] EAP: EAP entering state IDLE
+[11:31:02.537] EAPOL: SUPP_BE entering state RESPONSE
+[11:31:02.537] EAPOL: txSuppRsp
+[11:31:02.537] TX EAPOL: dst=3c:a0:67:80:99:a3
+[11:31:02.537] EAPOL: SUPP_BE entering state RECEIVE
+[11:31:03.511] l2_packet_receive: src=3c:a0:67:80:99:a3 len=8
+[11:31:03.511] wlx5ca6e63fe2da: RX EAPOL from 3c:a0:67:80:99:a3
+[11:31:03.511] EAPOL: Received EAP-Packet frame
+[11:31:03.511] EAPOL: SUPP_BE entering state REQUEST
+[11:31:03.511] EAPOL: getSuppRsp
+[11:31:03.511] EAP: EAP entering state RECEIVED
+[11:31:03.511] EAP: Received EAP-Failure
+[11:31:03.511] EAP: Status notification: completion (param=failure)
+[11:31:03.511] EAP: EAP entering state FAILURE
+[11:31:03.511] wlx5ca6e63fe2da: CTRL-EVENT-EAP-FAILURE EAP authentication failed
+[11:31:03.511] EAPOL: SUPP_PAE entering state HELD
+[11:31:03.511] EAPOL: SUPP_BE entering state RECEIVE
+[11:31:03.511] EAPOL: SUPP_BE entering state FAIL
+[11:31:03.511] EAPOL: SUPP_BE entering state IDLE
+[11:31:03.511] EAPOL authentication completed - result=FAILURE
+[11:31:03.511] wlx5ca6e63fe2da: Setting authentication timeout: 2 sec 0 usec
+[11:31:03.528] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x1003 ([UP])
+[11:31:03.528] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da operstate=2 linkmode=1 ifi_family=0 ifi_flags=0x1003 ([UP])
+[11:31:03.528] nl80211: Drv Event 48 (NL80211_CMD_DISCONNECT) received for wlx5ca6e63fe2da
+[11:31:03.528] nl80211: Disconnect event
+[11:31:03.528] wlx5ca6e63fe2da: Event DEAUTH (11) received
+[11:31:03.528] wlx5ca6e63fe2da: Deauthentication notification
+[11:31:03.528] wlx5ca6e63fe2da:  * reason 23 (IEEE_802_1X_AUTH_FAILED)
+[11:31:03.528] Deauthentication frame IE(s) - hexdump(len=0): [NULL]
+[11:31:03.528] wlx5ca6e63fe2da: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=23
+[11:31:03.528] wlx5ca6e63fe2da: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=2 duration=23 reason=AUTH_FAILED
+[11:31:03.528] wlx5ca6e63fe2da: Auto connect enabled: try to reconnect (wps=0/0 wpa_state=6)
+[11:31:03.528] wlx5ca6e63fe2da: Setting scan request: 0.100000 sec
+[11:31:03.528] wlx5ca6e63fe2da: Radio work 'connect'@0x55e2b0af8c80 done in 1.195052 seconds
+[11:31:03.528] wlx5ca6e63fe2da: radio_work_free('connect'@0x55e2b0af8c80): num_active_works --> 0
+[11:31:03.528] BSSID 3c:a0:67:80:99:a3 ignore list count incremented to 2, ignoring for 10 seconds
+[11:31:03.528] wlx5ca6e63fe2da: Consecutive connection failures: 3 --> request scan in 1000 ms
+[11:31:03.528] wlx5ca6e63fe2da: Ignore new scan request for 1.000000 sec since an earlier request is scheduled to trigger sooner
+[11:31:03.528] TDLS: Remove peers on disassociation
+[11:31:03.528] wlx5ca6e63fe2da: WPA: Clear old PMK and PTK
+[11:31:03.529] wlx5ca6e63fe2da: Disconnect event - remove keys
+[11:31:03.529] nl80211: Data frame filter flags=0x0
+[11:31:03.529] wlx5ca6e63fe2da: State: ASSOCIATED -> DISCONNECTED
+[11:31:03.529] nl80211: Set wlx5ca6e63fe2da operstate 0->0 (DORMANT)
+[11:31:03.529] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+[11:31:03.529] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:31:03.529] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:31:03.529] P2P: Add operating class 81
+[11:31:03.529] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:31:03.530] P2P: Add operating class 115
+[11:31:03.530] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.530] P2P: Add operating class 116
+[11:31:03.530] P2P: Channels - hexdump(len=2): 24 2c
+[11:31:03.530] P2P: Add operating class 117
+[11:31:03.530] P2P: Channels - hexdump(len=2): 28 30
+[11:31:03.530] P2P: Add operating class 128
+[11:31:03.530] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.530] P2P: Add operating class 130
+[11:31:03.530] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.530] P2P: Update channel list
+[11:31:03.530] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:31:03.530] P2P: cli_channels:
+[11:31:03.530] EAPOL: External notification - portEnabled=0
+[11:31:03.530] EAPOL: SUPP_PAE entering state DISCONNECTED
+[11:31:03.530] EAPOL: Supplicant port status: Unauthorized
+[11:31:03.530] nl80211: Skip set_supp_port(unauthorized) while not associated
+[11:31:03.530] EAPOL: SUPP_BE entering state INITIALIZE
+[11:31:03.530] EAP: EAP entering state DISABLED
+[11:31:03.530] EAPOL: External notification - portValid=0
+[11:31:03.531] nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlx5ca6e63fe2da
+[11:31:03.531] nl80211: Regulatory domain change
+[11:31:03.531]  * initiator=0
+[11:31:03.531]  * type=1
+[11:31:03.531] wlx5ca6e63fe2da: Event CHANNEL_LIST_CHANGED (27) received
+[11:31:03.531] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[11:31:03.531] wlx5ca6e63fe2da: Updating hw mode
+[11:31:03.531] nl80211: Regulatory information - country=IT (DFS-ETSI)
+[11:31:03.531] nl80211: 2400-2483 @ 40 MHz 20 mBm
+[11:31:03.531] nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+[11:31:03.531] nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+[11:31:03.531] nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+[11:31:03.531] nl80211: 5725-5875 @ 80 MHz 13 mBm
+[11:31:03.531] nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+[11:31:03.531] nl80211: 57000-66000 @ 2160 MHz 40 mBm
+[11:31:03.531] nl80211: Added 802.11b mode based on 802.11g information
+[11:31:03.531] nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:31:03.531] nl80211: Mode IEEE 802.11a: 5180 5200 5220 5240 5260[RADAR] 5280[RADAR] 5300[RADAR] 5320[RADAR] 5500[RADAR] 5520[RADAR] 5540[RADAR] 5560[RADAR] 5580[RADAR] 5600[RADAR] 5620[RADAR] 5640[RADAR] 5660[RADAR] 5680[RADAR]
+[11:31:03.531] nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:31:03.531] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:31:03.531] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:31:03.531] P2P: Add operating class 81
+[11:31:03.531] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:31:03.531] P2P: Add operating class 115
+[11:31:03.531] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.531] P2P: Add operating class 116
+[11:31:03.531] P2P: Channels - hexdump(len=2): 24 2c
+[11:31:03.531] P2P: Add operating class 117
+[11:31:03.531] P2P: Channels - hexdump(len=2): 28 30
+[11:31:03.531] P2P: Add operating class 128
+[11:31:03.531] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.531] P2P: Add operating class 130
+[11:31:03.531] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.531] P2P: Update channel list
+[11:31:03.531] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:31:03.531] P2P: cli_channels:
+[11:31:03.531] nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlx5ca6e63fe2da
+[11:31:03.531] nl80211: Regulatory domain change
+[11:31:03.531]  * initiator=1
+[11:31:03.531]  * type=0
+[11:31:03.531]  * alpha2=IT
+[11:31:03.531] wlx5ca6e63fe2da: Event CHANNEL_LIST_CHANGED (27) received
+[11:31:03.531] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[11:31:03.531] wlx5ca6e63fe2da: Updating hw mode
+[11:31:03.532] nl80211: Regulatory information - country=IT (DFS-ETSI)
+[11:31:03.532] nl80211: 2400-2483 @ 40 MHz 20 mBm
+[11:31:03.532] nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+[11:31:03.532] nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+[11:31:03.532] nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+[11:31:03.532] nl80211: 5725-5875 @ 80 MHz 13 mBm
+[11:31:03.532] nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+[11:31:03.532] nl80211: 57000-66000 @ 2160 MHz 40 mBm
+[11:31:03.532] nl80211: Added 802.11b mode based on 802.11g information
+[11:31:03.532] nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:31:03.532] nl80211: Mode IEEE 802.11a: 5180 5200 5220 5240 5260[RADAR] 5280[RADAR] 5300[RADAR] 5320[RADAR] 5500[RADAR] 5520[RADAR] 5540[RADAR] 5560[RADAR] 5580[RADAR] 5600[RADAR] 5620[RADAR] 5640[RADAR] 5660[RADAR] 5680[RADAR]
+[11:31:03.532] nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+[11:31:03.532] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:31:03.532] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:31:03.532] P2P: Add operating class 81
+[11:31:03.532] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:31:03.532] P2P: Add operating class 115
+[11:31:03.532] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.532] P2P: Add operating class 116
+[11:31:03.532] P2P: Channels - hexdump(len=2): 24 2c
+[11:31:03.532] P2P: Add operating class 117
+[11:31:03.532] P2P: Channels - hexdump(len=2): 28 30
+[11:31:03.532] P2P: Add operating class 128
+[11:31:03.532] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.532] P2P: Add operating class 130
+[11:31:03.532] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.532] P2P: Update channel list
+[11:31:03.532] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:31:03.532] P2P: cli_channels:
+[11:31:03.629] wlx5ca6e63fe2da: State: DISCONNECTED -> SCANNING
+[11:31:03.629] wlx5ca6e63fe2da: Determining shared radio frequencies (max len 1)
+[11:31:03.629] wlx5ca6e63fe2da: Shared frequencies (len=0): completed iteration
+[11:31:03.629] P2P: Add operating class 81
+[11:31:03.629] P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+[11:31:03.629] P2P: Add operating class 115
+[11:31:03.629] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.629] P2P: Add operating class 116
+[11:31:03.629] P2P: Channels - hexdump(len=2): 24 2c
+[11:31:03.629] P2P: Add operating class 117
+[11:31:03.629] P2P: Channels - hexdump(len=2): 28 30
+[11:31:03.629] P2P: Add operating class 128
+[11:31:03.629] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.629] P2P: Add operating class 130
+[11:31:03.629] P2P: Channels - hexdump(len=4): 24 28 2c 30
+[11:31:03.629] P2P: Update channel list
+[11:31:03.629] P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 128:36,40,44,48 130:36,40,44,48
+[11:31:03.629] P2P: cli_channels:
+[11:31:03.629] wlx5ca6e63fe2da: Starting AP scan for wildcard SSID
+[11:31:03.629] WPS: Building WPS IE for Probe Request
+[11:31:03.629] WPS:  * Version (hardcoded 0x10)
+[11:31:03.629] WPS:  * Request Type
+[11:31:03.629] WPS:  * Config Methods (3108)
+[11:31:03.629] WPS:  * UUID-E
+[11:31:03.629] WPS:  * Primary Device Type
+[11:31:03.629] WPS:  * RF Bands (3)
+[11:31:03.629] WPS:  * Association State
+[11:31:03.629] WPS:  * Configuration Error (0)
+[11:31:03.629] WPS:  * Device Password ID (0)
+[11:31:03.629] WPS:  * Manufacturer
+[11:31:03.629] WPS:  * Model Name
+[11:31:03.629] WPS:  * Model Number
+[11:31:03.629] WPS:  * Device Name
+[11:31:03.629] WPS:  * Version2 (0x20)
+[11:31:03.629] P2P: * P2P IE header
+[11:31:03.629] P2P: * Capability dev=21 group=00
+[11:31:03.629] P2P: * Listen Channel: Regulatory Class 81 Channel 6
+[11:31:03.629] wlx5ca6e63fe2da: Add radio work 'scan'@0x55e2b0adf810
+[11:31:03.629] wlx5ca6e63fe2da: First radio work item in the queue - schedule start immediately
+[11:31:03.629] wlx5ca6e63fe2da: Starting radio work 'scan'@0x55e2b0adf810 after 0.000008 second wait
+[11:31:03.629] wlx5ca6e63fe2da: nl80211: scan request
+[11:31:03.629] Scan requested (ret=0) - scan timeout 30 seconds
+[11:31:03.629] nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlx5ca6e63fe2da
+[11:31:03.629] wlx5ca6e63fe2da: nl80211: Scan trigger
+[11:31:03.629] wlx5ca6e63fe2da: Event SCAN_STARTED (47) received
+[11:31:03.629] wlx5ca6e63fe2da: Own scan request started a scan in 0.000019 seconds
+[11:31:05.516] EAPOL: startWhen --> 0
+[11:31:05.516] EAPOL: disable timer tick
+[11:31:07.691] RTM_NEWLINK: ifi_index=3 ifname=wlx5ca6e63fe2da wext ifi_family=0 ifi_flags=0x1003 ([UP])
+[11:31:07.691] nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlx5ca6e63fe2da
+[11:31:07.691] wlx5ca6e63fe2da: nl80211: New scan results available
+[11:31:07.691] nl80211: Scan probed for SSID ''
+[11:31:07.691] nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680 5700
+[11:31:07.691] wlx5ca6e63fe2da: Event SCAN_RESULTS (3) received
+[11:31:07.691] wlx5ca6e63fe2da: Scan completed in 4.062538 seconds
+[11:31:07.691] nl80211: Received scan results (8 BSSes)
+[11:31:07.691] wlx5ca6e63fe2da: BSS: Start scan result update 5
+[11:31:07.691] BSS: last_scan_res_used=8/32
+[11:31:07.691] wlx5ca6e63fe2da: New scan results available (own=1 ext=0)
+[11:31:07.691] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:07.691] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:07.691] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:07.691] WPS: AP f0:b0:14:cf:72:e2 type 0 added
+[11:31:07.691] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:07.691] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:07.691] WPS: Unsupported attribute type 0x1058 len=34
+[11:31:07.691] WPS: AP b0:45:30:aa:b4:a4 type 0 added
+[11:31:07.691] WPS: AP dc:15:c8:03:a4:16 type 0 added
+[11:31:07.691] WPS: AP dc:15:c8:03:a4:17 type 0 added
+[11:31:07.691] WPS: AP[0] f0:b0:14:cf:72:e2 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:31:07.691] WPS: AP[1] b0:45:30:aa:b4:a4 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:31:07.691] WPS: AP[2] dc:15:c8:03:a4:16 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:31:07.691] WPS: AP[3] dc:15:c8:03:a4:17 type=0 tries=0 last_attempt=-1 sec ago bssid_ignore=0
+[11:31:07.691] wlx5ca6e63fe2da: Radio work 'scan'@0x55e2b0adf810 done in 4.062767 seconds
+[11:31:07.692] wlx5ca6e63fe2da: radio_work_free('scan'@0x55e2b0adf810): num_active_works --> 0
+[11:31:07.692] wlx5ca6e63fe2da: Postpone network selection by 19 seconds since all networks are disabled
+[11:31:26.696] wlx5ca6e63fe2da: Try to associate due to network getting re-enabled
+[11:31:26.696] Fast associate: Old scan results
+[11:31:26.696] wlx5ca6e63fe2da: Setting scan request: 0.000000 sec
+[11:31:26.696] wlx5ca6e63fe2da: Starting AP scan for wildcard SSID
+[11:31:26.696] WPS: Building WPS IE for Probe Request
+[11:31:26.696] WPS:  * Version (hardcoded 0x10)
+[11:31:26.696] WPS:  * Request Type
+[11:31:26.696] WPS:  * Config Methods (3108)
+[11:31:26.696] WPS:  * UUID-E
+[11:31:26.696] WPS:  * Primary Device Type
+[11:31:26.696] WPS:  * RF Bands (3)
+[11:31:26.696] WPS:  * Association State
+[11:31:26.696] WPS:  * Configuration Error (0)
+[11:31:26.696] WPS:  * Device Password ID (0)
+[11:31:26.696] WPS:  * Manufacturer
+[11:31:26.696] WPS:  * Model Name
+[11:31:26.696] WPS:  * Model Number
+[11:31:26.696] WPS:  * Device Name
+[11:31:26.696] WPS:  * Version2 (0x20)
+[11:31:26.696] P2P: * P2P IE header
+[11:31:26.696] P2P: * Capability dev=21 group=00
+[11:31:26.696] P2P: * Listen Channel: Regulatory Class 81 Channel 6
+[11:31:26.696] wlx5ca6e63fe2da: Add radio work 'scan'@0x55e2b0adf810
+[11:31:26.696] wlx5ca6e63fe2da: First radio work item in the queue - schedule start immediately
+[11:31:26.696] wlx5ca6e63fe2da: Starting radio work 'scan'@0x55e2b0adf810 after 0.000008 second wait
+
+[0;36mWpa_supplicant is stopped.[0m
+
+[11:31:27.397] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

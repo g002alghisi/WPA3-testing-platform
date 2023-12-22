@@ -378,35 +378,3 @@ exec_and_convert_timestamp() {
             print
         }'
 }
-
-# Function to convert Hostapd timestamp
-___exec_and_convert_timestamp() {
-    # Run Hostapd and filter the output
-    local line
-    $@ | while IFS= read -r line; do
-        line=$(echo $line | sed 's/ [0-9]*\.[0-9]*://g')
-        # Find the timestamp pattern in Hostapd messages
-        if [[ $line =~ (^[0-9]+\.[0-9]+:) ]]; then
-            local timestamp=${BASH_REMATCH[1]}
-
-            # Split seconds and microseconds
-            local seconds=$(echo "$timestamp" | cut -d'.' -f 1)
-            # Remove leading zeros (can cause errors)
-            seconds=$(echo "$seconds" | sed 's/^0*//')
-            local microseconds=$(echo "$timestamp" | cut -d'.' -f 2 | tr -d ":")
-            # Remove leading zeros (can cause errors)
-            microseconds=$(echo "$microseconds" | sed 's/^0*//')
-
-            # Calculate hours, minutes, and seconds
-            local formatted_output=$(date -d "@$seconds" "+%T")
-            local milliseconds=$(printf "%03d" "$((microseconds / 1000))")
-            formatted_output="[$formatted_output.$milliseconds]"
-
-            # Replace the original timestamp with the converted one
-            line=${line//$timestamp/$formatted_output}
-        fi
-
-        # Process the line or do something else with the output
-        echo "$line"
-    done
-}
