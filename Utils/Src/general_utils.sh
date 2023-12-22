@@ -350,8 +350,37 @@ exec_new_term() {
 
 ### *** Handle Hostapd and Wpa_supplicant timestamps *** ###
 
-# Function to convert Hostapd timestamp
 exec_and_convert_timestamp() {
+    # Run Hostapd and filter the output
+    "$@" | awk '
+        {            
+            if ($0 ~ /^[0-9]+\.[0-9]+:/) {
+                if ($0 ~ /^[0-9]+\.[0-9]+: [0-9]+\.[0-9]+:/) {
+                    # Remove the second timestamp if two consecutive timestamps are found
+                    sub(/ [0-9]+\.[0-9]+:/, "")
+                } 
+                # Extract seconds and milliseconds
+                split($1, a, "\\.")
+                seconds = a[1]
+                milliseconds = substr(a[2] "000", 1, 3)
+
+                # Format the timestamp with milliseconds
+                formatted_output = "[" strftime("%H:%M:%S.", seconds) milliseconds "]"
+
+                # Replace the original timestamp with the converted one
+                sub(/^[0-9]+\.[0-9]+:/, formatted_output)
+
+                # Flush the output buffer
+                fflush()
+            }
+
+            # Process the line or do something else with the output
+            print
+        }'
+}
+
+# Function to convert Hostapd timestamp
+___exec_and_convert_timestamp() {
     # Run Hostapd and filter the output
     local line
     $@ | while IFS= read -r line; do
@@ -380,16 +409,4 @@ exec_and_convert_timestamp() {
         # Process the line or do something else with the output
         echo "$line"
     done
-}
-
-
-
-### *** Kill AS *** ###
-
-kill_as() {
-
-    sudo pkill freeradius &> /dev/null ||
-        sudo pkill as.ui &> /dev/null ||
-        sudo pkill as_ui.sh &> /dev/null
-    
 }

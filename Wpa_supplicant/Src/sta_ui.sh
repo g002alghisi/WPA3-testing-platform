@@ -26,7 +26,7 @@ source Utils/Src/general_utils.sh
 STA_PATH="Wpa_supplicant/Src/sta.sh"
 
 # Interfaces
-WIFI_IF_DEFAULT="wlx5ca6e63fe2da"
+STA_UI_WIFI_IF_DEFAULT="wlx5ca6e63fe2da"
 
 # Configuration files list
 STA_UI_CONF_LIST_PATH="Wpa_supplicant/Conf/conf_list.txt"
@@ -36,7 +36,7 @@ STA_UI_CONF_LIST_PATH="Wpa_supplicant/Conf/conf_list.txt"
 ### *** STA UI *** ###
 
 sta_ui_handle_input() {
-    sta_ui_wifi="$WIFI_IF_DEFAULT"
+    sta_ui_wifi="$STA_UI_WIFI_IF_DEFAULT"
     sta_ui_conf_file=""
     sta_ui_conf_string=""
     sta_ui_verbose_mode=0
@@ -125,7 +125,7 @@ sta_ui_setup() {
 
     if [ "$sta_ui_gui_mode" -eq 1 ]; then
         print_info "Launching GUI..."
-        exec_new_term -w "wpa_supplicant" -c "wpa_gui -i $sta_ui_wifi;" &
+        exec_new_term -w "wpa_supplicant" -c "wpa_gui -i $sta_ui_wifi" &
         if [ "$?" -eq 0 ]; then
             print_success
         else
@@ -136,7 +136,7 @@ sta_ui_setup() {
     
     if [ "$sta_ui_cli_mode" -eq 1 ]; then
         print_info "Launching CLI..."
-        exec_new_term -w "wpa_supplicant" -c "wpa_cli -i $sta_ui_wifi;" &
+        exec_new_term -w "wpa_supplicant" -c "wpa_cli -i $sta_ui_wifi" &
         if [ "$?" -eq 0 ]; then
             print_success
         else
