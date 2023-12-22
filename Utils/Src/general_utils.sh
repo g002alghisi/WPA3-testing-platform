@@ -381,3 +381,15 @@ exec_and_convert_timestamp() {
         echo "$line"
     done
 }
+
+
+
+### *** Kill AS *** ###
+
+kill_as() {
+
+    sudo pkill freeradius &> /dev/null ||
+        sudo pkill as.ui &> /dev/null ||
+        sudo pkill as_ui.sh &> /dev/null
+    
+}
