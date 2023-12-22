@@ -157,32 +157,6 @@ get_terminal_exec_cmd() {
 
 
 
-### *** Wait *** ###
-
-sleep_with_dots() {
-    if [ "$#" -ne 1 ]; then
-        echo "Error in $FUNCNAME(). Usage: $FUNCNAME sec."
-        return $CODE_ERROR
-    fi
-
-    # Check if the input is a number
-    if [ -n "$1" ] || [ "$1" -eq "$1" ] &>/dev/null; then
-        local _sec="$1"
-    else
-        echo "Error in $FUNCNAME(). Input parameter is not a number."
-        return $CODE_ERROR
-    fi
-
-    echo "Wait $_sec s."
-    for ((i=1; i<=$_sec; i++)); do
-        sleep 1
-        echo -n "."
-    done
-    echo ""
-}
-
-
-
 ### *** Handle Logs *** ###
 
 # Log hieracy:
@@ -247,23 +221,6 @@ log_output() {
 
     # Create it if it does not exist
     mkdir -p "$_log_dir"
-
-    # Check the last numbered subfolder
-    # local _log_progr_num=0
-    # local _log_last_progr_num=$(ls $_log_file | grep -Eo '^[0-9]+' | sort -n | tail -n 1 2>/dev/null)
-    # if [ -z "$_log_last_progr_num" ]; then
-    #     _log_last_progr_num=0
-    # fi
-
-    # # Calculate the next _log_progr_num
-    # if [ "$_log_mode" == "new" ]; then
-    #     _log_progr_num=$((_log_last_progr_num + 1))
-    # elif [ "$_log_mode" == "app" ] && [ "$_log_last_progr_num" -ne 0 ]; then
-    #     _log_progr_num=$_log_last_progr_num
-    # elif [ "$_log_mode" == "app" ] && [ "$_log_last_progr_num" -eq 0 ]; then
-    #     echo "Error in $FUNCNAME(). Not initializing new log session, but cannot find an old one."
-    #     return $CODE_KO
-    # fi
 
     # Get log dates
     local _log_date=""

@@ -125,7 +125,12 @@ sta_ui_setup() {
 
     if [ "$sta_ui_gui_mode" -eq 1 ]; then
         print_info "Launching GUI..."
-        exec_new_term -w "wpa_supplicant" -c "wpa_gui -i $sta_ui_wifi" &
+        if [ "$sta_ui_log_mode" == "" ]; then
+            exec_new_term -w "wpa_supplicant" -c "wpa_gui -i $sta_ui_wifi" &
+        else
+            exec_new_term -w "wpa_supplicant" -c "source Utils/Src/general_utils.sh; log_output -d $sta_ui_log_dir -t "sta_gui.log" && wpa_gui -i $sta_ui_wifi" &
+        fi
+
         if [ "$?" -eq 0 ]; then
             print_success
         else
@@ -136,7 +141,12 @@ sta_ui_setup() {
     
     if [ "$sta_ui_cli_mode" -eq 1 ]; then
         print_info "Launching CLI..."
-        exec_new_term -w "wpa_supplicant" -c "wpa_cli -i $sta_ui_wifi" &
+        if [ "$sta_ui_log_mode" == "" ]; then
+            exec_new_term -w "wpa_supplicant" -c "wpa_cli -i $sta_ui_wifi" &
+        else
+            exec_new_term -w "wpa_supplicant" -c "source Utils/Src/general_utils.sh; log_output -d $sta_ui_log_dir -t "sta_cli.log" && wpa_cli -i $sta_ui_wifi" &
+        fi
+        
         if [ "$?" -eq 0 ]; then
             print_success
         else

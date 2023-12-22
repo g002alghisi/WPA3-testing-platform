@@ -82,9 +82,29 @@
 
 - Enterprise
 
-  - [ ] Test WPA2-Enterprise
-  - [ ] Test WPA3-Enterprise UOSC
-  - [ ] Test WPA3-Enterprise TOD Mechanism
+    - [ ] Test WPA2-Enterprise
+    - [ ] Test WPA3-Enterprise UOSC
+    - [ ] Test WPA3-Enterprise TOD Mechanism
+
+### Wpa_supplicant
+
+- Personal
+
+    - [x] Test WPA3-Personal: ___OK___
+    - [x] Test WPA3-Personal SAE-PK: ___OK___
+    - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___OK___
+        - By selecting `update=1` in the configuration, the supplicant resists the attack even after its reboot.
+    - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___OK___
+        - By selecting `update=1` in the configuration, the supplicant resists the attack even after its reboot.
+            In particular, the resulting configuration presents `sae_pk=1` (SAE-PK only mode) from `sae_pk=0` (SAE-PK in automatic mode)
+
+- Enterprise
+
+    - [x] Test WPA2-Enterprise: ___OK___
+    - [x] Test WPA3-Enterprise UOSC: ___??___
+        - Cannot be tested: it requires interaction with the user.
+    - [x] Test WPA3-Enterprise TOD Mechanism: ___??___
+        - Cannot be tested: it requires interaction with the user.
 
 ### Cypress Board CYW954907AEVAL1F
 

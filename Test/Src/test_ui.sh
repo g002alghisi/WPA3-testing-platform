@@ -91,7 +91,18 @@ test_ui_setup() {
     print_info "Fetching test script associated to $test_ui_script_string..."
     test_ui_script="$(get_from_list -f "$TEST_UI_SCRIPT_LIST_PATH" -s "$test_ui_script_string")" &&
         print_success || { echo "$test_ui_script"; print_error; echo ""; return 1; }
+### *** Handle Logs *** ###
 
+# Log hieracy:
+#
+#   - log_dir (es. Test/Tmp/iPad/test_e_wpa2)
+#   |
+#   ----- progressive number (es. 1)
+#   |   |
+#   |   ----- log_target.log (es. ap.log)
+#   |   |
+#   |   ----- another log_target.log (es. as.log)
+#   
     # Get device from conf_list
     print_info "Fetching device name associated to $test_ui_device_string..."
     test_ui_device="$(get_from_list -f "$TEST_UI_DEVICE_LIST_PATH" -s "$test_ui_device_string")" &&
@@ -117,7 +128,18 @@ test_ui_handle_comment() {
         # Create a new subshell. If a cmd fails, then the subshell is stopped.
         (
             sed -i "s|@test_ui_date_string|$test_ui_date_string|g" "$TEST_UI_COMMENT_TMP_PATH"
-            sed -i "s|@test_ui_device|$test_ui_device|g" "$TEST_UI_COMMENT_TMP_PATH"
+            sed -i "s|@test_ui_devi### *** Handle Logs *** ###
+
+# Log hieracy:
+#
+#   - log_dir (es. Test/Tmp/iPad/test_e_wpa2)
+#   |
+#   ----- progressive number (es. 1)
+#   |   |
+#   |   ----- log_target.log (es. ap.log)
+#   |   |
+#   |   ----- another log_target.log (es. as.log)
+#   ce|$test_ui_device|g" "$TEST_UI_COMMENT_TMP_PATH"
             sed -i "/@test_ui_script_content/ r $test_ui_script" "$TEST_UI_COMMENT_TMP_PATH"
             sed -i "/@test_ui_script_content/ d" "$TEST_UI_COMMENT_TMP_PATH"
             sed -i "s|@test_ui_script|$test_ui_script|g" "$TEST_UI_COMMENT_TMP_PATH"
@@ -165,7 +187,18 @@ test_ui_save_log() {
 test_ui_main() {
     test_ui_handle_input $@
 
-    # Update the cached credentials (this avoid the insertion of the sudo password
+    # Update the cached credentials### *** Handle Logs *** ###
+
+# Log hieracy:
+#
+#   - log_dir (es. Test/Tmp/iPad/test_e_wpa2)
+#   |
+#   ----- progressive number (es. 1)
+#   |   |
+#   |   ----- log_target.log (es. ap.log)
+#   |   |
+#   |   ----- another log_target.log (es. as.log)
+#    (this avoid the insertion of the sudo password
     # during the execution of the successive commands).
     sudo -v
 
