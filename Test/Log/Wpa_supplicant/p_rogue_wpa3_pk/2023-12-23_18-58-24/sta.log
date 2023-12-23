@@ -1,0 +1,79 @@
+[18:58:18.892] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/p_rogue_wpa3_pk...
+[0;32mSuccess.[0m
+
+[18:58:18.894] Fetching configuration file associated to p_wpa3_pk...
+[0;32mSuccess.[0m
+
+[18:58:18.970] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[18:58:18.981] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[18:58:19.016] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[18:58:19.129] Looking for Wpa_supplicant/Conf/Personal/p_wpa3_pk.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Wpa-supplicant. Press Ctrl-C to stop.[0m
+
+STA settings:
+
+update_config=0
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=sudo
+ap_scan=1
+country=IT
+sae_groups=19
+sae_pwe=2
+ 
+network={
+  ssid="Hostapd-AP-P"
+  proto=RSN
+  key_mgmt=SAE
+  #auth_alg=OPEN
+  pairwise=CCMP
+  group=CCMP
+  group_mgmt=AES-128-CMAC
+  ieee80211w=2
+  sae_password="vh7e-76e2-utg2"
+  sae_pk=0
+  wps_disabled=1
+}
+
+
+[18:58:19.179] Successfully initialized wpa_supplicant
+[18:58:23.343] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-P' freq=2412 MHz)
+[18:58:23.363] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[18:58:23.648] wlx5ca6e63fe2da: PMKSA-CACHE-ADDED 3c:a0:67:80:99:a3 0
+[18:58:23.653] wlx5ca6e63fe2da: Associated with 3c:a0:67:80:99:a3
+[18:58:23.653] wlx5ca6e63fe2da: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[18:58:23.693] wlx5ca6e63fe2da: WPA: Key negotiation completed with 3c:a0:67:80:99:a3 [PTK=CCMP GTK=CCMP]
+[18:58:23.693] wlx5ca6e63fe2da: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+[18:58:23.694] wlx5ca6e63fe2da: TRANSITION-DISABLE 02
+[18:58:34.863] wlx5ca6e63fe2da: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=3
+[18:58:34.867] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[18:58:34.868] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[18:58:47.664] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-P' freq=2412 MHz)
+[18:58:47.664] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[18:58:47.894] wlx5ca6e63fe2da: CTRL-EVENT-ASSOC-REJECT status_code=53
+[18:58:47.894] wlx5ca6e63fe2da: PMKSA-CACHE-REMOVED 3c:a0:67:80:99:a3 0
+[18:58:47.894] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[18:58:47.894] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[18:58:51.963] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-P' freq=2412 MHz)
+[18:58:51.976] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[18:59:00.598] wlx5ca6e63fe2da: CTRL-EVENT-ASSOC-REJECT status_code=1
+[18:59:00.598] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[18:59:00.598] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[18:59:05.149] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-P' freq=2412 MHz)
+[18:59:05.149] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[18:59:13.654] wlx5ca6e63fe2da: CTRL-EVENT-ASSOC-REJECT status_code=1
+[18:59:13.654] wlx5ca6e63fe2da: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-P" auth_failures=1 duration=10 reason=CONN_FAILED
+[18:59:13.654] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[18:59:13.654] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[18:59:23.759] wlx5ca6e63fe2da: CTRL-EVENT-SSID-REENABLED id=0 ssid="Hostapd-AP-P"
+[18:59:23.760] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-P' freq=2412 MHz)
+
+[0;36mWpa_supplicant is stopped.[0m
+
+[18:59:26.028] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

@@ -22,6 +22,7 @@ e_tofu_wpa2=Test/Src/test_e_tofu_wpa2.sh
 
 e_wpa3=Test/Src/test_e_wpa3.sh
 e_rogue_wpa3=Test/Src/test_e_rogue_wpa3.sh
+e_uosc_wpa3=Test/Src/test_e_uosc_wpa3.sh
 e_tofu_wpa3=Test/Src/test_e_tofu_wpa3.sh
 
 e_wpa2_wpa3=Test/Src/test_e_wpa2_wpa3.sh
