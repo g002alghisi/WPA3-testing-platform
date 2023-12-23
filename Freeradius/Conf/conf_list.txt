@@ -5,3 +5,4 @@ e_rogue_wpa2=Freeradius/Conf/E_rogue_wpa2
 
 e_wpa3=Freeradius/Conf/E_wpa3
 e_rogue_wpa3=Freeradius/Conf/E_rogue_wpa3
+e_tofu_wpa3=Freeradius/Conf/E_tofu_wpa3

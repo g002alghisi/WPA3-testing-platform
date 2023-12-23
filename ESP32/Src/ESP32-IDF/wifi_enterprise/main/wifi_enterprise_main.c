@@ -80,9 +80,19 @@ extern uint8_t client_key_start[] asm("_binary_client_key_start");
 extern uint8_t client_key_end[]   asm("_binary_client_key_end");
 #endif /* CONFIG_EXAMPLE_EAP_METHOD_TLS */
 
-#if defined CONFIG_EXAMPLE_EAP_METHOD_TTLS
+#ifdef CONFIG_EXAMPLE_EAP_METHOD_TTLS
 esp_eap_ttls_phase2_types TTLS_PHASE2_METHOD = CONFIG_EXAMPLE_EAP_METHOD_TTLS_PHASE_2;
 #endif /* CONFIG_EXAMPLE_EAP_METHOD_TTLS */
+
+/* My additions to better handle PMF */
+#if CONFIG_EXAMPLE_WPA3_192BIT_ENTERPRISE
+#define EXAMPLE_ESP_WIFI_PMF_CFG_REQ 1
+#elif CONFIG_EXAMPLE_WPA3_ENTERPRISE
+#define EXAMPLE_ESP_WIFI_PMF_CFG_REQ 1
+#else
+#define EXAMPLE_ESP_WIFI_PMF_CFG_REQ 0
+#endif
+
 
 static void event_handler(void* arg, esp_event_base_t event_base,
                                 int32_t event_id, void* event_data)
@@ -122,11 +132,10 @@ static void initialise_wifi(void)
     wifi_config_t wifi_config = {
         .sta = {
             .ssid = EXAMPLE_WIFI_SSID,
-#if defined (CONFIG_EXAMPLE_WPA3_192BIT_ENTERPRISE)
+            /* My changing */
             .pmf_cfg = {
-                .required = true
+                .required = EXAMPLE_ESP_WIFI_PMF_CFG_REQ
             },
-#endif
         },
     };
     ESP_LOGI(TAG, "Setting WiFi configuration SSID %s...", wifi_config.sta.ssid);
@@ -134,11 +143,7 @@ static void initialise_wifi(void)
     ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
     ESP_ERROR_CHECK( esp_wifi_sta_wpa2_ent_set_identity((uint8_t *)EXAMPLE_EAP_ID, strlen(EXAMPLE_EAP_ID)) );
 
-#if defined(CONFIG_EXAMPLE_VALIDATE_SERVER_CERT) || \
-    defined(CONFIG_EXAMPLE_WPA3_ENTERPRISE) || \
-    defined(CONFIG_EXAMPLE_WPA3_192BIT_ENTERPRISE)
-    ESP_ERROR_CHECK( esp_wifi_sta_wpa2_ent_set_ca_cert(ca_pem_start, ca_pem_bytes) );
-#endif /* CONFIG_EXAMPLE_VALIDATE_SERVER_CERT */ /* EXAMPLE_WPA3_ENTERPRISE */
+    // esp_wifi_sta_wpa2_ent_set_ca_cert(ca_pem_start, ca_pem_bytes);
 
 #ifdef CONFIG_EXAMPLE_EAP_METHOD_TLS
     ESP_ERROR_CHECK( esp_wifi_sta_wpa2_ent_set_cert_key(client_crt_start, client_crt_bytes,\

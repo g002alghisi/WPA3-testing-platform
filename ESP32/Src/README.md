@@ -24,23 +24,26 @@ All these examples are also available on [GitHub](https://github.com/espressif/a
 Also in this case, a lot of use examples for each library come with the ESP32-IDF module when installed.
 In prticular, two programs have been harnessed:
 
-- `station`, which enables the ESP32 to join a desired network protected with WPA-Personal.
-- `wifi_enterprise`, that carries out a similar function of `station`, but this time with focus on WPA-Enterprise.
+- `station_orignal`, which enables the ESP32 to join a desired network protected with WPA-Personal.
+- `wifi_enterprise_original`, that carries out a similar function of `station`, but this time with focus on WPA-Enterprise.
 
 All these examples are also available on [GitHub](https://github.com/espressif/esp-idf/tree/master/examples).
+
+> If you want to debug properly, remember to set:
+> 	- [ ] Print debug messages from WPA Supplicant inside the Project Menu Build.
+>	- Select `Debug` as Log Level
+>	- Each time it is desired to change the Project Buold Menu, please delete the `sdkconfig` files from the left tree and create a new one by clicking the cog icon in the lower bar.
+
 
 ### `station`
 
 The code is not as simple to understand as the `join_network` Arduino counterpart, but in this case it is possible to easily select the security protocol, set the ssid and password, and enable SAE-PK by means of the project menuconfig.
-However, if SAE-PK is used with the original code, it is enabled in automatic mode.
-The ESP32 is thus able to use SAE-PK, but if such a network is not available, it joins networks with bare SAE. This exposes the board to evil-twin attacks.
 
-To avoid this problem, the `station` source code has been slightly modified with respect the original one provided by Espressif:
+The `station_original` source code has been slightly modified with respect the original one provided by Espressif:
 
-- Now it is possible to select the SAE-PK mode between `Automatic`, `Disabled` and `Only` (default) directly from the project menuconfig.
-- A new checkbox is available to activate or deactivate the Transition Disable mechanism (that seems to be deactivate by default).
- This should prevent (after the first connection to the real AP, thus based on a Trust On First Use policy) downgrades attacks.
- However, a better analysis of this feature implementation in the ESP32-IDF firmware will be provided in [ESP32-IDF Transition Disable mechanism](#ESP32-IDF Transition Disable mechanism) section.
+- If SAE-PK is used with the original code, it is enabled in automatic mode. This means that the ESP32 is able to use SAE-PK, but if such a network is not available, then it joins networks with bare SAE. This exposes the board to evil-twin attacks. With the new version it is possible to select the SAE-PK mode between `Automatic`, `Disabled` and `Only` (default) directly from the project menuconfig.
+- A new checkbox is available to activate or deactivate the Transition Disable mechanism (not active by default, see [https://docs.espressif.com/projects/esp-idf/en/v5.1.2/esp32/api-guides/wifi-security.html]).
+ This should prevent (after the first connection to the real AP, thus based on a Trust On First Use policy) downgrades attacks. However, a better analysis of this feature implementation in the ESP32-IDF firmware will be provided in [ESP32-IDF Transition Disable mechanism](#ESP32-IDF Transition Disable mechanism) section.
 
 ### `wifi_enterprise`
 
@@ -52,6 +55,11 @@ To use it, the following certificates are required inside the main folder:
 - `client.pem`, that is the client certificate sent to the server when performing EAP-TLS or when required by the server itself;
 - `client.crt`, same as above, but a different format;
 - `client.key`, which contains the private key of the client associated to `client.pem`.
+
+Also this time, the original code has been modified:
+
+- The original program has a bug: PMF is set as required just for WPA3-Enterprise 192bit, not for bare WPA3-Enterprise.
+- In order to test if TOD policies are enforced for WPA3, now the compiler does not give error if no certificates are provided.
 
 ### ESP32-IDF Transition Disable mechanism
 
@@ -163,7 +171,5 @@ static void wpa_supplicant_transition_disable(void *_wpa_s, u8 bitmap)
 ```
 
 The difference is quite suspicious... It seems like the EPS32 version does not implement anything more thant the WPA2/WPA3 Transition Disable feature, but not all the others related to SAE/SAE-PK, WPA3-Enterprise and OWE.
-
-#### Waiting for updates from Espressif
 
 All the files related to this claim are stored in [`Other/`](../Other/).

@@ -57,6 +57,7 @@ However, the default behaviour of Ubuntu is to change the interface name assigne
     ```
     sudo udevadm info /sys/class/net/temp_eth_if
     ```
+    The resulting string has a structure described [at this page](https://github.com/systemd/systemd/blob/ccddd104fc95e0e769142af6e1fe1edec5be70a6/src/udev/udev-builtin-net_id.c#L29)
 
 3. Edit `/etc/udev/rules.d/76-network.rules` file
    
@@ -68,6 +69,9 @@ However, the default behaviour of Ubuntu is to change the interface name assigne
 
     ```
     SUBSYSTEM=="net", ENV{ID_NET_NAME}="your_id_net_name", ACTION=="add", NAME="your_id_net_name"
+    
+    # Example
+    # SUBSYSTEM=="net", ACTION=="add", ENV{ID_NET_NAME_PATH}=="enp0s20f0u1", NAME="enp0s20f0u1"
     ```
 
 4. Reload the `udev` rules
@@ -78,7 +82,10 @@ However, the default behaviour of Ubuntu is to change the interface name assigne
 
 5. Unplug and replug the USB cable, enable the USB-Tethering mode and finally check if the interface name is now correct.
 
-This solution is derived from [this forum](https://unix.stackexchange.com/questions/388300/udev-does-not-renawlp3s0: STA f2:e3:2e:b3:5b:7c IEEE
+This solution is derived from [this forum](https://unix.stackexchange.com/questions/388300/udev-does-not-renawlp3s0: STA f2:e3:2e:b3:5b:7c IEEE)
+
+Remember that the name `ID_NET_NAME` depends on the USB assigned to the phone. For this reason, if suddenly the static name of the interface, es `enp0s20f0u1`, changes to the random one, es enxd626b3450fb5`, maybe it is beacuse another USB device is used (maybe the ESP32 or the Cypress board)enxd626b3450fb5.
+Please unplug both of them, reconnect the phone and check via `ifconfig` that everything is okay again. Then connect the other device.
 
 ## Workflow
 

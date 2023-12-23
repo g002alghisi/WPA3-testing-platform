@@ -1,18 +1,27 @@
 ### ### ### Test Script list ### ### ###
 
 # Personal
+
 p_wpa2=Test/Src/test_p_wpa2.sh
+
 p_wpa3=Test/Src/test_p_wpa3.sh
+
 p_wpa2_wpa3=Test/Src/test_p_wpa2_wpa3.sh
 p_downgrade_wpa2_wpa3=Test/Src/test_p_downgrade_wpa2_wpa3.sh
+
 p_wpa3_pk=Test/Src/test_p_wpa3_pk.sh
 p_downgrade_wpa3_pk=Test/Src/test_p_downgrade_wpa3_pk.sh
 p_fake_wpa3_pk=Test/Src/test_p_fake_wpa3_pk.sh
 p_rogue_wpa3_pk=Test/Src/test_p_rogue_wpa3_pk.sh
 
 # Enterprise
+
 e_wpa2=Test/Src/test_e_wpa2.sh
-e_wpa3=Test/Src/test_e_wpa3.sh
-e_wpa2_wpa3=Test/Src/test_e_wpa2_wpa3.sh
 e_rogue_wpa2=Test/Src/test_e_rogue_wpa2.sh
+e_tofu_wpa2=Test/Src/test_e_tofu_wpa2.sh
+
+e_wpa3=Test/Src/test_e_wpa3.sh
 e_rogue_wpa3=Test/Src/test_e_rogue_wpa3.sh
+e_tofu_wpa3=Test/Src/test_e_tofu_wpa3.sh
+
+e_wpa2_wpa3=Test/Src/test_e_wpa2_wpa3.sh

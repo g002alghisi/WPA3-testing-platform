@@ -1,0 +1,152 @@
+[17:04:37.531] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/ESP32/p_rogue_wpa3_pk...
+[0;32mSuccess.[0m
+
+[17:04:37.533] Fetching configuration file associated to p_wpa3_pk...
+[0;32mSuccess.[0m
+[17:04:37.537] Changing interface and bridge name inside Hostapd/Conf/Personal/p_wpa3_pk.conf...
+[0;32mSuccess.[0m
+
+[17:04:37.575] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[17:04:37.581] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[17:04:37.597] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[17:04:37.636] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[17:04:37.642] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[17:04:37.659] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[17:04:37.902] Creating the bridge... 
+[0;32mSuccess.[0m
+[17:04:38.007] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[17:04:38.025] Looking for Hostapd/Conf/Personal/p_wpa3_pk.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=11
+logger_syslog_level=0
+logger_stdout=11
+logger_stdout_level=0
+ssid=Hostapd-AP-P
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+wpa=2
+wpa_key_mgmt=SAE
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=2
+sae_password=vh7e-76e2-utg2|pk=e8acc1052fc261b5dca9390e845c24f6:MHcCAQEEIGCBgLFq8Jh3uYoyDcUG27ZabaO3ZG7qDj24fmdT98nsoAoGCCqGSM49AwEHoUQDQgAEZh3reGqgiukUfWmCv9Ycy3MjWkGNiWvBlmPkF34GhbjBmErjgbWDcAD73Nb0vPoUoQdIG/vkfXuRq4LL3M5SKw==
+sae_groups=19
+sae_pwe=2
+transition_disable=0x02
+
+
+[17:04:38.318] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[17:04:38.520] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[17:04:38.520] wlp3s0: AP-ENABLED 
+[17:04:44.997] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: start SAE authentication (RX commit, status=127 (SAE_PK))
+[17:04:45.597] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: SAE authentication (RX confirm, status=0 (SUCCESS))
+[17:04:46.314] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: association OK (aid 1)
+[17:04:46.315] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: associated (aid 1)
+[17:04:46.316] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: binding station to interface 'wlp3s0'
+[17:04:46.316] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 1 notification
+[17:04:46.316] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: start authentication
+[17:04:46.316] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[17:04:46.372] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: sending 1/4 msg of 4-Way Handshake
+[17:04:46.661] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: received EAPOL-Key frame (2/4 Pairwise)
+[17:04:46.661] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: sending 3/4 msg of 4-Way Handshake
+[17:04:46.762] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: EAPOL-Key timeout
+[17:04:46.762] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: sending 3/4 msg of 4-Way Handshake
+[17:04:47.427] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: received EAPOL-Key frame (4/4 Pairwise)
+[17:04:47.427] wlp3s0: AP-STA-CONNECTED 94:b5:55:19:1c:e8
+[17:04:47.427] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: authorizing port
+[17:04:47.427] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: pairwise key handshake completed (RSN)
+
+[0;36mHostapd is stopped.[0m
+
+[17:05:06.713] Deleting the bridge... 
+[0;32mSuccess.[0m
+[17:05:06.844] Starting NetworkManager... 
+[0;32mSuccess.[0m
+
+[17:05:07.938] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/ESP32/p_rogue_wpa3_pk...
+[0;32mSuccess.[0m
+
+[17:05:07.939] Fetching configuration file associated to p_rogue_wpa3_pk...
+[0;32mSuccess.[0m
+[17:05:07.944] Changing interface and bridge name inside Hostapd/Conf/Personal/p_rogue_wpa3_pk.conf...
+[0;32mSuccess.[0m
+
+[17:05:07.983] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[17:05:07.988] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[17:05:08.012] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[17:05:08.052] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[17:05:08.057] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[17:05:08.075] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[17:05:08.198] Creating the bridge... 
+[0;32mSuccess.[0m
+[17:05:08.313] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[17:05:08.329] Looking for Hostapd/Conf/Personal/p_rogue_wpa3_pk.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=11
+logger_syslog_level=0
+logger_stdout=11
+logger_stdout_level=0
+ssid=Hostapd-AP-P
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+wpa=2
+wpa_key_mgmt=SAE
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=2
+sae_password=vh7e-76e2-utg2|pk=e8acc1052fc261b5dca9390e845c24f6:MHcCAQEEIGKu4fZspXCy/2cAWIjleBjxVcTT8z4x+ZNlAxyie8v0oAoGCCqGSM49AwEHoUQDQgAEtF8/KHR0SC9Z/V6G1qbHKJvnuWMheMRF5fDihqkxy7bSMUxbCK+W3rDEyB6OJO56kGv+1g1WNrgppOm4Q2xgcA==
+sae_groups=19
+sae_pwe=2
+transition_disable=0x02
+
+
+[17:05:08.618] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[17:05:08.812] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[17:05:08.812] wlp3s0: AP-ENABLED 
+[17:05:10.160] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authentication OK (open system)
+[17:05:10.161] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authenticated
+[17:05:10.171] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: No PMKSA cache entry found for SAE
+[17:05:14.384] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: start SAE authentication (RX commit, status=127 (SAE_PK))
+[17:05:14.985] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: SAE authentication (RX confirm, status=0 (SUCCESS))
+
+[0;36mHostapd is stopped.[0m
+
+[17:06:24.279] Deleting the bridge... 
+[0;32mSuccess.[0m
+[17:06:24.394] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

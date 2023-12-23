@@ -1,0 +1,97 @@
+[17:46:53.107] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/e_rogue_wpa2...
+[0;32mSuccess.[0m
+
+[17:46:53.111] Fetching configuration file associated to e_wpa2...
+[0;32mSuccess.[0m
+
+[17:46:53.359] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[17:46:53.387] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[17:46:53.409] Stopping NetworkManager... 
+[17:48:17.443] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Wpa_supplicant/e_rogue_wpa2...
+[0;32mSuccess.[0m
+
+[17:48:17.446] Fetching configuration file associated to e_wpa2...
+[0;32mSuccess.[0m
+
+[17:48:17.503] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[17:48:17.520] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[17:48:17.544] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[17:48:17.787] Looking for Wpa_supplicant/Conf/Enterprise/e_wpa2.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Wpa-supplicant. Press Ctrl-C to stop.[0m
+
+STA settings:
+
+update_config=0
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=sudo
+eapol_version=2
+ap_scan=1
+country=IT
+ 
+network={
+  ssid="Hostapd-AP-E"
+  key_mgmt=WPA-EAP
+  eap=PEAP
+  ieee80211w=1
+  identity="bob@example.org"
+  anonymous_identity="anonymous"
+  password="argoargoargo"
+  ca_cert="Freeradius/Conf/E_wpa2/certs/ca.pem"
+  subject_match="/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org"
+  phase2="auth=MSCHAPV2"
+  wps_disabled=1
+}
+
+
+[17:48:17.866] Successfully initialized wpa_supplicant
+[17:48:17.926] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[17:48:22.061] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-E' freq=2412 MHz)
+[17:48:22.067] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[17:48:22.227] wlx5ca6e63fe2da: Associated with 3c:a0:67:80:99:a3
+[17:48:22.230] wlx5ca6e63fe2da: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[17:48:22.264] wlx5ca6e63fe2da: CTRL-EVENT-EAP-STARTED EAP authentication started
+[17:48:22.268] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[17:48:22.272] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[17:48:22.277] wlx5ca6e63fe2da: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[17:48:22.319] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=3b83b181813b13e1674bc3383411cecd5dfc1a2071485a8320fed195637d856a
+[17:48:22.319] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=458efce2f9c7df6164dd7500a8cfa41f5f367136505dc1640e7c96eaf6cd8a3b
+[17:48:22.343] EAP-MSCHAPV2: Authentication succeeded
+[17:48:22.349] EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
+[17:48:22.354] wlx5ca6e63fe2da: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+[17:48:22.360] wlx5ca6e63fe2da: PMKSA-CACHE-ADDED 3c:a0:67:80:99:a3 0
+[17:48:22.370] wlx5ca6e63fe2da: WPA: Key negotiation completed with 3c:a0:67:80:99:a3 [PTK=CCMP GTK=CCMP]
+[17:48:22.370] wlx5ca6e63fe2da: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+[17:48:34.981] wlx5ca6e63fe2da: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=3
+[17:48:34.983] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[17:48:34.983] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[17:48:48.197] wlx5ca6e63fe2da: Trying to associate with 3c:a0:67:80:99:a3 (SSID='Hostapd-AP-E' freq=2412 MHz)
+[17:48:48.218] wlx5ca6e63fe2da: CTRL-EVENT-STARTED-CHANNEL-SWITCH freq=2412 ht_enabled=0 ch_offset=0 ch_width=20 MHz (no HT) cf1=2412 cf2=0
+[17:48:48.303] wlx5ca6e63fe2da: Associated with 3c:a0:67:80:99:a3
+[17:48:48.303] wlx5ca6e63fe2da: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[17:48:48.345] wlx5ca6e63fe2da: CTRL-EVENT-EAP-STARTED EAP authentication started
+[17:48:48.349] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[17:48:48.354] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[17:48:48.354] wlx5ca6e63fe2da: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[17:48:48.403] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=d25632e3579818f5fc4f19cc8b6ba2813e49614412021b02c66b2f51ac14c1ce
+[17:48:48.403] wlx5ca6e63fe2da: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=1c5158a135e159eaead535323f3855c526bd68b98ba0f7f17ed3c7de81890351
+[17:48:48.404] TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+[17:48:48.404] wlx5ca6e63fe2da: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+[17:48:48.404] SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+[17:48:48.404] OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+[17:48:49.385] wlx5ca6e63fe2da: CTRL-EVENT-EAP-FAILURE EAP authentication failed
+[17:48:49.406] wlx5ca6e63fe2da: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=23
+[17:48:49.407] wlx5ca6e63fe2da: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=1 duration=10 reason=AUTH_FAILED
+[17:48:49.407] wlx5ca6e63fe2da: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+
+[0;36mWpa_supplicant is stopped.[0m
+
+[17:49:02.524] Starting NetworkManager... 
+[0;32mSuccess.[0m
+
