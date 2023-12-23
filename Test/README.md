@@ -25,13 +25,15 @@
 
 - Test WPA2/3-Personal and transition disable WPA3 -> WPA2 by means of [`test_p_downgrade_wpa2_wpa3.sh`](Src/test_p_downgrade_wpa2_wpa3.sh).
 
-    1. Set up the real AP with WPA2/3 and Transition Disable WPA3 -> WPA2 enabled.
-    2. The device joins the network with a WPA2/3 profile.
-    3. The real AP is setdown and a rogue AP with just WPA2 is created.
-    4. Check if the device connects to the rogue network.
-    5. If not, turn off the device.
-    6. Set up the rogue AP with just WPA2.
-    7. Turn on the device and try to join the network.
+    1. Set up a fake WPA3 AP that does not use PMF.
+    2. Turn on the device
+    3. Set up the real AP with WPA2/3 and Transition Disable WPA3 -> WPA2 enabled.
+    4. The device joins the network with a WPA2/3 profile.
+    5. The real AP is setdown and a rogue AP with just WPA2 is created.
+    6. Check if the device connects to the rogue network.
+    7. If not, turn off the device.
+    8. Set up the rogue AP with just WPA2.
+    9. Turn on the device and try to join the network.
 
 - Test WPA3-Personal SAE-PK and Transition disable SAE-PK -> SAE by means of [`test_p_downgrade_wpa3_pk.sh`](Src/test_p_downgrade_wpa3_pk.sh).
 
@@ -91,9 +93,12 @@
 - Personal
 
     - [x] Test WPA3-Personal: ___OK___
+    
     - [x] Test WPA3-Personal SAE-PK: ___OK___
-    - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___OK___
+    
+    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___OK___
         - By selecting `update=1` in the configuration, the supplicant resists the attack even after its reboot.
+        
     - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___OK___
         - By selecting `update=1` in the configuration, the supplicant resists the attack even after its reboot.
             In particular, the resulting configuration presents `sae_pk=1` (SAE-PK only mode) from `sae_pk=0` (SAE-PK in automatic mode)
@@ -101,17 +106,19 @@
 - Enterprise
 
     - [x] Test WPA2-Enterprise: ___OK___
-    - [x] Test WPA3-Enterprise UOSC: ___??___
-        - Cannot be tested: it requires interaction with the user.
-    - [x] Test WPA3-Enterprise TOD Mechanism: ___??___
-        - Cannot be tested: it requires interaction with the user.
+    
+    - [x] Test WPA3-Enterprise UOSC: ___!!___
+        - Neither `wpa_cli` nor `wpa_gui` implement UOSC. If a root certificate is specified, they just trust the one recieved from the server without asking anything to the user.
+        	And what if `update=1` and a root ca cert is defined?
+            
+    - [ ] Test WPA3-Enterprise TOD Mechanism
 
 ### Cypress Board CYW954907AEVAL1F
 
 - Personal
 
     - [ ] Test WPA3-Personal
-    - [ ] Test WPA3-Personal SAE-PK
+    - [x] Test WPA3-Personal SAE-PK: ___oo___
     - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
     - [ ] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE
 
@@ -125,10 +132,35 @@
 
 - Personal
 
-    - [ ] Test WPA3-Personal
-    - [ ] Test WPA3-Personal SAE-PK
-    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
-    - [ ] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE
+    - [x] Test WPA3-Personal: ___OK___
+
+    - [x] Test WPA3-Personal SAE-PK: ___OK___
+
+    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___~~___
+        - The `station` example program comes without transition disable checkbox. This has been added personally, because by default this feature is not active (see [https://docs.espressif.com/projects/esp-idf/en/v5.1.2/esp32/api-guides/wifi-security.html]). By selecting `[x] Transition disable` via `menuconfig`, the supplicant resists the attack. However, after the reboot it forgets about the recieved Transition disable information and joins the rogue network.
+
+    - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___!!___
+        - If the device is configured with SAE-PK Automatic mode, then it joins the rogue AP also after having recieved the Transition disable for SAE-PK -> SAE. Moreover, Automatic mode is the default behaviour for the example `station` provided by Espressif. The menuconfig does indeed allow to enable SAE-PK, but not to select the mode (and the default one is Automatic mode).
+
+- Enterprise
+
+    - [x] Test WPA2-Enterprise: ___OK___
+    - [x] Test WPA3-Enterprise UOSC: ___oo___
+        - There is no user interaction for the default program. However, The `wifi_enterprise` example is quite coherent to the WPA3 Standard. Indeed, if WPA2 is selected, the user is free to skip the server certificate validation by means of a checkbox; if WPA3 is selected, this option is not available anymore.
+
+        Another interesting feature is that it is not allowed to select weak EAP methods for the external authentication (just TLS, TTLS and PEAP). However, the inner protocol cannot be choosen.
+
+    - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___.
+        - Cannot be tested: it requires UOSC to be implemented.
+
+### Raspberry Pi 4
+
+- Personal
+
+    - [x] Test WPA3-Personal: ___!!___
+    - [x] Test WPA3-Personal SAE-PK: ___oo___
+    - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___oo___
+    - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___oo___
 
 - Enterprise
 
@@ -136,7 +168,7 @@
     - [ ] Test WPA3-Enterprise UOSC
     - [ ] Test WPA3-Enterprise TOD Mechanism
 
-### Raspberry Pi 4
+### Raspberry Pi Pico W
 
 - Personal
 
