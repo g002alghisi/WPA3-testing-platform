@@ -1,0 +1,316 @@
+[10:37:52.650] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Raspberry_Pi_4/p_wpa3...
+[0;32mSuccess.[0m
+
+[10:37:52.651] Fetching configuration file associated to p_wpa3...
+[0;32mSuccess.[0m
+[10:37:52.655] Changing interface and bridge name inside Hostapd/Conf/Personal/p_wpa3.conf...
+[0;32mSuccess.[0m
+
+[10:37:52.694] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[10:37:52.699] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[10:37:52.715] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[10:37:52.748] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[10:37:52.754] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[10:37:52.771] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[10:37:52.935] Creating the bridge... 
+[0;32mSuccess.[0m
+[10:37:53.044] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[10:37:53.060] Looking for Hostapd/Conf/Personal/p_wpa3.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=11
+logger_syslog_level=0
+logger_stdout=11
+logger_stdout_level=0
+ssid=Hostapd-AP-P
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+wpa=2
+wpa_key_mgmt=SAE
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=2
+sae_password=argoargoargo
+sae_groups=19
+sae_pwe=2
+
+
+[10:37:53.088] random: Trying to read entropy from /dev/random
+[10:37:53.088] Configuration file: Hostapd/Conf/Personal/p_wpa3.conf
+[10:37:53.089] nl80211: TDLS supported
+[10:37:53.089] nl80211: TDLS external setup
+[10:37:53.089] nl80211: Supported cipher 00-0f-ac:1
+[10:37:53.089] nl80211: Supported cipher 00-0f-ac:5
+[10:37:53.089] nl80211: Supported cipher 00-0f-ac:2
+[10:37:53.089] nl80211: Supported cipher 00-0f-ac:4
+[10:37:53.089] nl80211: Supported cipher 00-0f-ac:6
+[10:37:53.089] nl80211: Supported cipher 00-0f-ac:13
+[10:37:53.089] nl80211: Supported cipher 00-0f-ac:11
+[10:37:53.089] nl80211: Supported cipher 00-0f-ac:12
+[10:37:53.089] nl80211: Supports Probe Response offload in AP mode
+[10:37:53.089] nl80211: Using driver-based off-channel TX
+[10:37:53.089] nl80211: Driver-advertised extended capabilities (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+[10:37:53.089] nl80211: Driver-advertised extended capabilities mask (default) - hexdump(len=8): 04 00 00 00 00 00 00 40
+[10:37:53.089] nl80211: Use separate P2P group interface (driver advertised support)
+[10:37:53.089] nl80211: Enable multi-channel concurrent (driver advertised support)
+[10:37:53.089] nl80211: use P2P_DEVICE support
+[10:37:53.089] nl80211: key_mgmt=0x1fd0f enc=0xf0f auth=0x7 flags=0x4000531fb7bfbe0 rrm_flags=0x30 probe_resp_offloads=0x7 max_stations=32 max_remain_on_chan=5000 max_scan_ssids=16
+[10:37:53.089] nl80211: interface wlp3s0 in phy phy0
+[10:37:53.089] nl80211: Set mode ifindex 3 iftype 3 (AP)
+[10:37:53.089] nl80211: Setup AP(wlp3s0) - device_ap_sme=0 use_monitor=0
+[10:37:53.089] nl80211: Subscribe to mgmt frames with AP handle 0x5e26ff57eb10
+[10:37:53.089] nl80211: Register frame type=0xb0 (WLAN_FC_STYPE_AUTH) nl_handle=0x5e26ff57eb10 match= multicast=0
+[10:37:53.089] nl80211: Register frame type=0x0 (WLAN_FC_STYPE_ASSOC_REQ) nl_handle=0x5e26ff57eb10 match= multicast=0
+[10:37:53.089] nl80211: Register frame type=0x20 (WLAN_FC_STYPE_REASSOC_REQ) nl_handle=0x5e26ff57eb10 match= multicast=0
+[10:37:53.089] nl80211: Register frame type=0xa0 (WLAN_FC_STYPE_DISASSOC) nl_handle=0x5e26ff57eb10 match= multicast=0
+[10:37:53.089] nl80211: Register frame type=0xc0 (WLAN_FC_STYPE_DEAUTH) nl_handle=0x5e26ff57eb10 match= multicast=0
+[10:37:53.089] nl80211: Register frame type=0x40 (WLAN_FC_STYPE_PROBE_REQ) nl_handle=0x5e26ff57eb10 match= multicast=0
+[10:37:53.089] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x5e26ff57eb10 match=04 multicast=0
+[10:37:53.089] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x5e26ff57eb10 match=0501 multicast=0
+[10:37:53.089] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x5e26ff57eb10 match=0503 multicast=0
+[10:37:53.089] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x5e26ff57eb10 match=0504 multicast=0
+[10:37:53.089] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x5e26ff57eb10 match=06 multicast=0
+[10:37:53.089] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x5e26ff57eb10 match=08 multicast=0
+[10:37:53.089] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x5e26ff57eb10 match=09 multicast=0
+[10:37:53.089] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x5e26ff57eb10 match=0a multicast=0
+[10:37:53.089] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x5e26ff57eb10 match=11 multicast=0
+[10:37:53.089] nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x5e26ff57eb10 match=7f multicast=0
+[10:37:53.089] rfkill: initial event: idx=3 type=1 op=0 soft=0 hard=0
+[10:37:53.345] nl80211: Add own interface ifindex 9 (ifidx_reason 3)
+[10:37:53.345] nl80211: if_indices[16]: 9(3)
+[10:37:53.345] nl80211: Add own interface ifindex 3 (ifidx_reason -1)
+[10:37:53.345] nl80211: if_indices[16]: 9(3) 3(-1)
+[10:37:53.345] nl80211: Adding interface wlp3s0 into bridge br0
+[10:37:53.345] nl80211: Do not open EAPOL RX socket - using control port for RX
+[10:37:53.345] phy: phy0
+[10:37:53.345] BSS count 1, BSSID mask 00:00:00:00:00:00 (0 bits)
+[10:37:53.345] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[10:37:53.345] Previous country code IT, new country code IT 
+[10:37:53.345] nl80211: Regulatory information - country=IT (DFS-ETSI)
+[10:37:53.345] nl80211: 2400-2483 @ 40 MHz 20 mBm
+[10:37:53.345] nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+[10:37:53.345] nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+[10:37:53.345] nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+[10:37:53.345] nl80211: 5725-5875 @ 80 MHz 13 mBm
+[10:37:53.345] nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+[10:37:53.345] nl80211: 57000-66000 @ 2160 MHz 40 mBm
+[10:37:53.345] nl80211: Added 802.11b mode based on 802.11g information
+[10:37:53.345] nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+[10:37:53.345] nl80211: Mode IEEE 802.11a: 5180[NO_IR] 5200[NO_IR] 5220[NO_IR] 5240[NO_IR] 5260[NO_IR][RADAR] 5280[NO_IR][RADAR] 5300[NO_IR][RADAR] 5320[NO_IR][RADAR] 5500[NO_IR][RADAR] 5520[NO_IR][RADAR] 5540[NO_IR][RADAR]
+[10:37:53.345] nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467[DISABLED] 2472[DISABLED] 2484[DISABLED]
+[10:37:53.345] Completing interface initialization
+[10:37:53.345] Mode: IEEE 802.11g  Channel: 1  Frequency: 2412 MHz
+[10:37:53.345] DFS 0 channels required radar detection
+[10:37:53.345] nl80211: Set freq 2412 (ht_enabled=0, vht_enabled=0, he_enabled=0, bandwidth=20 MHz, cf1=2412 MHz, cf2=0 MHz)
+[10:37:53.345]   * freq=2412
+[10:37:53.345]   * he_enabled=0
+[10:37:53.345]   * vht_enabled=0
+[10:37:53.345]   * ht_enabled=0
+[10:37:53.345]   * channel_type=0
+[10:37:53.345] RATE[0] rate=10 flags=0x1
+[10:37:53.345] RATE[1] rate=20 flags=0x1
+[10:37:53.345] RATE[2] rate=55 flags=0x1
+[10:37:53.345] RATE[3] rate=110 flags=0x1
+[10:37:53.345] RATE[4] rate=60 flags=0x0
+[10:37:53.345] RATE[5] rate=90 flags=0x0
+[10:37:53.345] RATE[6] rate=120 flags=0x0
+[10:37:53.345] RATE[7] rate=180 flags=0x0
+[10:37:53.345] RATE[8] rate=240 flags=0x0
+[10:37:53.345] RATE[9] rate=360 flags=0x0
+[10:37:53.345] RATE[10] rate=480 flags=0x0
+[10:37:53.345] RATE[11] rate=540 flags=0x0
+[10:37:53.345] hostapd_setup_bss(hapd=0x5e26ff57dc30 (wlp3s0), first=1)
+[10:37:53.345] nl80211: flush -> DEL_STATION wlp3s0 (all)
+[10:37:53.345] Using interface wlp3s0 with hwaddr 3c:a0:67:80:99:a3 and ssid "Hostapd-AP-P"
+[10:37:53.345] SAE: Derive PT - group 19
+[10:37:53.346] SAE: SSID - hexdump_ascii(len=12):
+     48 6f 73 74 61 70 64 2d 41 50 2d 50               Hostapd-AP-P    
+[10:37:53.346] SAE: password - hexdump_ascii(len=12):
+     61 72 67 6f 61 72 67 6f 61 72 67 6f               argoargoargo    
+[10:37:53.347] SAE: pwd-seed - hexdump(len=32): a0 70 29 2e 60 ec 7e 66 88 86 64 3d 90 26 5e fc e1 63 51 02 25 6c 03 4c 46 c4 b3 2f a7 78 a7 c6
+[10:37:53.347] SAE: pwd-value (u1 P1) - hexdump(len=48): 9b ce ad 38 ec 17 29 ca 7a 6b b8 b7 d2 5d 7f 6f b2 9c d3 7e 0a 60 4f b7 2b a8 33 5b ad a8 b7 8f e8 b2 56 26 43 77 aa 5e 3a 38 d9 9d d7 2e c6 3e
+[10:37:53.347] SAE: u1 - hexdump(len=32): fd 14 7b e8 bd 97 17 90 a3 c2 5c 58 47 25 d5 0e d3 86 78 72 cb 5d 81 61 a0 bb bc 1f 88 29 51 2b
+[10:37:53.347] SSWU: m - hexdump(len=32): 9d 9d e1 10 4e cf 8a 02 3d ac 72 92 b6 fa 5e e2 f3 a0 29 da 4b 76 c3 54 d7 09 65 c0 03 65 b3 a3
+[10:37:53.347] SSWU: t - hexdump(len=32): 86 01 38 1c 78 e4 91 d2 2c 50 e3 ff d3 44 69 5f c6 43 a9 5b 16 db 75 da c4 12 f9 3d 77 59 59 f5
+[10:37:53.347] SSWU: x1a = b / (z * a) - hexdump(len=32): a5 28 bd 86 96 bd af 99 6c 65 b9 82 d9 49 59 d3 14 6f e6 a0 20 69 30 90 bd ba 13 13 23 75 f2 24
+[10:37:53.347] SSWU: x1b = (-b/a) * (1 + t) - hexdump(len=32): 4b 35 46 85 dc 35 7d 73 b2 40 7e 01 ca 7d 55 22 0d 54 ee 80 cf 15 48 31 f1 90 a9 d4 47 7c 27 9d
+[10:37:53.347] SSWU: x1 = CSEL(l, x1a, x1b) - hexdump(len=32): 4b 35 46 85 dc 35 7d 73 b2 40 7e 01 ca 7d 55 22 0d 54 ee 80 cf 15 48 31 f1 90 a9 d4 47 7c 27 9d
+[10:37:53.347] SSWU: gx1 = x1^3 + a * x1 + b - hexdump(len=32): f7 26 04 4f 8e 83 9b 03 9f 63 f3 b9 61 48 7d 32 23 ca 1e 6f 8e ae e7 e4 d4 17 8b 27 d5 23 6e 4c
+[10:37:53.347] SSWU: x2 = z * u^2 * x1 - hexdump(len=32): e7 dc 56 71 30 fe 4a 2f 6c 88 3d 9f ce a6 ff 07 d3 a1 77 ee 64 6d a9 b8 83 5f 49 69 06 dc 8b bb
+[10:37:53.347] SSWU: gx2 = x2^3 + a * x2 + b - hexdump(len=32): 4a b8 09 74 47 08 e5 74 81 32 5e 07 81 2c 71 c2 bb a7 7d 03 40 ac 10 18 ee a6 26 c6 17 16 dc a3
+[10:37:53.347] SSWU: gx1^((p-1)/2) modulo p - hexdump(len=32): ff ff ff ff 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff ff ff ff ff fe
+[10:37:53.347] SSWU: v = CSEL(l, gx1, gx2) - hexdump(len=32): 4a b8 09 74 47 08 e5 74 81 32 5e 07 81 2c 71 c2 bb a7 7d 03 40 ac 10 18 ee a6 26 c6 17 16 dc a3
+[10:37:53.347] SSWU: x = CSEL(l, x1, x2) - hexdump(len=32): e7 dc 56 71 30 fe 4a 2f 6c 88 3d 9f ce a6 ff 07 d3 a1 77 ee 64 6d a9 b8 83 5f 49 69 06 dc 8b bb
+[10:37:53.347] SSWU: y = sqrt(v) - hexdump(len=32): 43 53 4e 7f ae 49 4e 82 57 ab a5 c9 23 a3 9b 8b e6 34 27 14 74 ef 62 1d 55 9c 0c 0b 8f 22 5f 64
+[10:37:53.347] SSWU: p - y - hexdump(len=32): bc ac b1 7f 51 b6 b1 7e a8 54 5a 36 dc 5c 64 74 19 cb d8 ec 8b 10 9d e2 aa 63 f3 f4 70 dd a0 9b
+[10:37:53.347] SSWU: P.x - hexdump(len=32): e7 dc 56 71 30 fe 4a 2f 6c 88 3d 9f ce a6 ff 07 d3 a1 77 ee 64 6d a9 b8 83 5f 49 69 06 dc 8b bb
+[10:37:53.347] SSWU: P.y - hexdump(len=32): bc ac b1 7f 51 b6 b1 7e a8 54 5a 36 dc 5c 64 74 19 cb d8 ec 8b 10 9d e2 aa 63 f3 f4 70 dd a0 9b
+[10:37:53.347] SAE: pwd-value (u2 P2) - hexdump(len=48): 4a f7 05 c3 0b 99 b7 63 e0 df be 0f 6f 68 61 f7 ff 04 6f 05 c6 33 3f 75 dc 85 a8 ef 55 ca 88 4a aa 64 c4 df 31 93 f7 dd 7f e2 4c 38 65 c4 f6 83
+[10:37:53.347] SAE: u2 - hexdump(len=32): 17 dc 13 d6 75 eb 1f 6e 85 f4 eb c8 69 51 12 d7 f0 0a b0 5e 88 24 b5 04 6c 5b c1 ab 6b 16 10 c7
+[10:37:53.347] SSWU: m - hexdump(len=32): 31 67 5c 48 22 2e 1a 7d d0 92 65 e3 25 51 65 b8 ec c1 67 72 81 95 36 f8 61 e8 69 cc 28 35 79 5a
+[10:37:53.347] SSWU: t - hexdump(len=32): 93 2c 18 4a f0 8f 1d 70 18 a4 10 12 6c 1e 97 1b 81 6f 47 ab d8 4c e8 f6 36 29 f7 f7 70 5b 1d e6
+[10:37:53.347] SSWU: x1a = b / (z * a) - hexdump(len=32): a5 28 bd 86 96 bd af 99 6c 65 b9 82 d9 49 59 d3 14 6f e6 a0 20 69 30 90 bd ba 13 13 23 75 f2 24
+[10:37:53.347] SSWU: x1b = (-b/a) * (1 + t) - hexdump(len=32): 16 c9 7f cc 4b 65 4c 87 88 72 e0 e7 9a 7e fb 8b 4f 60 66 24 bc 48 ce 36 1f 4f 3b c1 86 cf 78 d2
+[10:37:53.347] SSWU: x1 = CSEL(l, x1a, x1b) - hexdump(len=32): 16 c9 7f cc 4b 65 4c 87 88 72 e0 e7 9a 7e fb 8b 4f 60 66 24 bc 48 ce 36 1f 4f 3b c1 86 cf 78 d2
+[10:37:53.347] SSWU: gx1 = x1^3 + a * x1 + b - hexdump(len=32): fa be ff 84 39 20 8b 58 59 41 0a 90 46 f1 20 a9 2d 78 9e f6 9f a5 41 80 23 f8 93 1a 49 d2 da c6
+[10:37:53.347] SSWU: x2 = z * u^2 * x1 - hexdump(len=32): 3c c4 14 80 4a 54 08 d3 f0 7e 67 90 2a 81 98 80 db 38 a7 fc 56 e7 0b df a9 3c 13 4f 38 54 18 0a
+[10:37:53.347] SSWU: gx2 = x2^3 + a * x2 + b - hexdump(len=32): 51 dc eb d0 d4 84 03 49 3c 4c 8a 8b 47 43 84 58 1f fc eb ce 5a f2 45 4b 26 e1 35 49 c4 20 71 27
+[10:37:53.347] SSWU: gx1^((p-1)/2) modulo p - hexdump(len=32): ff ff ff ff 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff ff ff ff ff fe
+[10:37:53.348] SSWU: v = CSEL(l, gx1, gx2) - hexdump(len=32): 51 dc eb d0 d4 84 03 49 3c 4c 8a 8b 47 43 84 58 1f fc eb ce 5a f2 45 4b 26 e1 35 49 c4 20 71 27
+[10:37:53.348] SSWU: x = CSEL(l, x1, x2) - hexdump(len=32): 3c c4 14 80 4a 54 08 d3 f0 7e 67 90 2a 81 98 80 db 38 a7 fc 56 e7 0b df a9 3c 13 4f 38 54 18 0a
+[10:37:53.348] SSWU: y = sqrt(v) - hexdump(len=32): 15 8b 29 65 65 ec 15 63 86 82 3a 98 e4 ba 95 a8 3d f2 68 e4 db 0a e3 4e 63 b9 24 ec d2 52 5d 5d
+[10:37:53.348] SSWU: p - y - hexdump(len=32): ea 74 d6 99 9a 13 ea 9d 79 7d c5 67 1b 45 6a 57 c2 0d 97 1c 24 f5 1c b1 9c 46 db 13 2d ad a2 a2
+[10:37:53.348] SSWU: P.x - hexdump(len=32): 3c c4 14 80 4a 54 08 d3 f0 7e 67 90 2a 81 98 80 db 38 a7 fc 56 e7 0b df a9 3c 13 4f 38 54 18 0a
+[10:37:53.348] SSWU: P.y - hexdump(len=32): 15 8b 29 65 65 ec 15 63 86 82 3a 98 e4 ba 95 a8 3d f2 68 e4 db 0a e3 4e 63 b9 24 ec d2 52 5d 5d
+[10:37:53.348] random: Got 20/20 random bytes
+[10:37:53.348] GMK - hexdump(len=32): 21 99 78 73 bb 9c 59 86 be f6 4b a7 60 8c 1d c4 a4 60 c2 d4 f0 4c 47 46 62 32 67 73 09 82 dd de
+[10:37:53.348] Key Counter - hexdump(len=32): 40 15 7b e1 1c 6b 67 45 36 d9 ae a3 26 2f 81 0b f9 04 3d b1 44 af 03 35 8f 79 57 8b 34 46 22 ec
+[10:37:53.348] WPA: Delay group state machine start until Beacon frames have been configured
+[10:37:53.348] nl80211: Set beacon (beacon_set=0)
+[10:37:53.348] nl80211: Beacon head - hexdump(len=63): 80 00 00 00 ff ff ff ff ff ff 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0c 48 6f 73 74 61 70 64 2d 41 50 2d 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01
+[10:37:53.348] nl80211: Beacon tail - hexdump(len=48): 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40 f4 01 20
+[10:37:53.348] nl80211: ifindex=3
+[10:37:53.348] nl80211: beacon_int=100
+[10:37:53.348] nl80211: beacon_rate=0
+[10:37:53.348] nl80211: rate_type=0
+[10:37:53.348] nl80211: dtim_period=2
+[10:37:53.348] nl80211: ssid=Hostapd-AP-P
+[10:37:53.348]   * beacon_int=100
+[10:37:53.348]   * dtim_period=2
+[10:37:53.348] nl80211: proberesp (offload) - hexdump(len=111): 50 00 00 00 00 00 00 00 00 00 3c a0 67 80 99 a3 3c a0 67 80 99 a3 00 00 00 00 00 00 00 00 00 00 64 00 11 04 00 0c 48 6f 73 74 61 70 64 2d 41 50 2d 50 01 08 82 84 8b 96 0c 12 18 24 03 01 01 2a 01 04 32 04 30 48 60 6c 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 00 0f ac 08 c0 00 3b 02 51 00 7f 08 04 00 00 00 00 00 00 40 f4 01 20
+[10:37:53.348] nl80211: hidden SSID not in use
+[10:37:53.348] nl80211: privacy=2
+[10:37:53.348] nl80211: auth_algs=0x1
+[10:37:53.348] nl80211: wpa_version=0x2
+[10:37:53.348] nl80211: key_mgmt_suites=0x400
+[10:37:53.348] nl80211: pairwise_ciphers=0x10
+[10:37:53.348] nl80211: group_cipher=0x10
+[10:37:53.348] nl80211: beacon_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+[10:37:53.348] nl80211: proberesp_ies - hexdump(len=10): 7f 08 04 00 00 00 00 00 00 40
+[10:37:53.348] nl80211: assocresp_ies - hexdump(len=13): 7f 08 04 00 00 00 00 00 00 40 f4 01 20
+[10:37:53.348] nl802111: sae_pwe=2
+[10:37:53.505] nl80211: multicast to unicast disabled on interface wlp3s0
+[10:37:53.505] wlp3s0: Deauthenticate all stations at BSS start
+[10:37:53.505] nl80211: send_mlme - da=ff:ff:ff:ff:ff:ff noack=0 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0xc0 (WLAN_FC_STYPE_DEAUTH) nlmode=3
+[10:37:53.505] nl80211: send_mlme - Use bss->freq=2412
+[10:37:53.505] nl80211: send_mlme -> send_frame_cmd
+[10:37:53.505] WPA: Start group state machine to set initial keys
+[10:37:53.505] WPA: group state machine entering state GTK_INIT (VLAN-ID 0)
+[10:37:53.505] GTK - hexdump(len=16): a4 c6 8b 3c a2 f7 48 69 84 58 b2 ca d3 ca a6 02
+[10:37:53.505] IGTK - hexdump(len=16): a1 1d 41 28 1c 42 4f 92 00 31 78 08 86 69 c7 f0
+[10:37:53.505] WPA: group state machine entering state SETKEYSDONE (VLAN-ID 0)
+[10:37:53.505] wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=3 addr=0x5e26fd812652 key_idx=1 set_tx=1 seq_len=0 key_len=16 key_flag=0x1a
+[10:37:53.505] nl80211: NEW_KEY
+[10:37:53.505] nl80211: KEY_DATA - hexdump(len=16): a4 c6 8b 3c a2 f7 48 69 84 58 b2 ca d3 ca a6 02
+[10:37:53.505]    broadcast key
+[10:37:53.523] nl80211: NL80211_CMD_SET_KEY - default key
+[10:37:53.524] wpa_driver_nl80211_set_key: ifindex=3 (wlp3s0) alg=4 addr=0x5e26fd812652 key_idx=4 set_tx=1 seq_len=0 key_len=16 key_flag=0x1a
+[10:37:53.524] nl80211: NEW_KEY
+[10:37:53.524] nl80211: KEY_DATA - hexdump(len=16): a1 1d 41 28 1c 42 4f 92 00 31 78 08 86 69 c7 f0
+[10:37:53.524]    broadcast key
+[10:37:53.551] nl80211: NL80211_CMD_SET_KEY - default key
+[10:37:53.551] nl80211: Set wlp3s0 operstate 0->1 (UP)
+[10:37:53.551] netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=6 (IF_OPER_UP)
+[10:37:53.551] nl80211: TX queue param set: queue=0 aifs=1 cw_min=3 cw_max=7 burst_time=15 --> res=0
+[10:37:53.551] nl80211: TX queue param set: queue=1 aifs=1 cw_min=7 cw_max=15 burst_time=30 --> res=0
+[10:37:53.551] nl80211: TX queue param set: queue=2 aifs=3 cw_min=15 cw_max=63 burst_time=0 --> res=0
+[10:37:53.551] nl80211: TX queue param set: queue=3 aifs=7 cw_min=15 cw_max=1023 burst_time=0 --> res=0
+[10:37:53.551] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[10:37:53.551] wlp3s0: AP-ENABLED 
+[10:37:53.551] wlp3s0: Setup of interface done.
+[10:37:53.551] ctrl_iface not configured!
+[10:37:53.552] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=0 ifi_family=0 ifi_flags=0x1003 ([UP])
+[10:37:53.552] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=0 master=9 ifi_family=0 ifi_flags=0x1003 ([UP])
+[10:37:53.552] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=2 linkmode=0 master=9 ifi_family=0 ifi_flags=0x1003 ([UP])
+[10:37:53.552] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=9 operstate=2 ifi_family=7 ifi_flags=0x1003 ([UP])
+[10:37:53.552] nl80211: Add ifindex 9 for bridge br0
+[10:37:53.552] nl80211: Add own interface ifindex 9 (ifidx_reason 3)
+[10:37:53.552] nl80211: ifindex 9 already in the list
+[10:37:53.552] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=9 operstate=6 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[10:37:53.552] nl80211: Add ifindex 9 for bridge br0
+[10:37:53.552] nl80211: Add own interface ifindex 9 (ifidx_reason 3)
+[10:37:53.552] nl80211: ifindex 9 already in the list
+[10:37:53.552] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=9 operstate=6 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[10:37:53.552] nl80211: Add ifindex 9 for bridge br0
+[10:37:53.552] nl80211: Add own interface ifindex 9 (ifidx_reason 3)
+[10:37:53.552] nl80211: ifindex 9 already in the list
+[10:37:53.552] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 operstate=6 linkmode=0 master=9 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[10:37:53.552] nl80211: Drv Event 15 (NL80211_CMD_START_AP) received for wlp3s0
+[10:37:53.552] wlp3s0: nl80211: Ignored unknown event (cmd=15)
+[10:37:53.552] nl80211: Drv Event 60 (NL80211_CMD_FRAME_TX_STATUS) received for wlp3s0
+[10:37:53.552] nl80211: Frame TX status event A1=ff:ff:ff:ff:ff:ff stype=12 cookie=0x12 ack=0
+[10:37:53.552] wlp3s0: Event TX_STATUS (16) received
+[10:37:53.552] mgmt::deauth cb
+[10:38:08.123] RTM_NEWLINK: ifi_index=5 ifname=enp0s20f0u1 master=9 operstate=0 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[10:38:08.410] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[10:38:08.410] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=7c:1c:4e:ed:8a:d4 bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-77 fc=0x40 seq_ctrl=0x60 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=240
+[10:38:08.410] nl80211: send_mlme - da=7c:1c:4e:ed:8a:d4 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[10:38:08.410] nl80211: send_mlme - Use bss->freq=2412
+[10:38:08.410] nl80211: send_mlme -> send_frame_cmd
+[10:38:08.415] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[10:38:08.415] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=7c:1c:4e:ed:8a:d4 bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-77 fc=0x40 seq_ctrl=0x70 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=240
+[10:38:08.415] nl80211: send_mlme - da=7c:1c:4e:ed:8a:d4 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[10:38:08.415] nl80211: send_mlme - Use bss->freq=2412
+[10:38:08.415] nl80211: send_mlme -> send_frame_cmd
+[10:38:08.460] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[10:38:08.460] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=7c:1c:4e:ed:8a:d4 bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-78 fc=0x40 seq_ctrl=0x90 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=240
+[10:38:08.460] nl80211: send_mlme - da=7c:1c:4e:ed:8a:d4 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[10:38:08.460] nl80211: send_mlme - Use bss->freq=2412
+[10:38:08.460] nl80211: send_mlme -> send_frame_cmd
+[10:38:08.635] RTM_NEWLINK: ifi_index=3 ifname=wlp3s0 master=9 operstate=6 ifi_family=7 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+[10:38:08.635] nl80211: Add ifindex 9 for bridge br0
+[10:38:08.635] nl80211: Add own interface ifindex 9 (ifidx_reason 3)
+[10:38:08.635] nl80211: ifindex 9 already in the list
+[10:38:35.421] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[10:38:35.421] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=7c:1c:4e:ed:8a:d4 bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-72 fc=0x40 seq_ctrl=0x660 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=240
+[10:38:35.421] nl80211: send_mlme - da=7c:1c:4e:ed:8a:d4 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[10:38:35.421] nl80211: send_mlme - Use bss->freq=2412
+[10:38:35.421] nl80211: send_mlme -> send_frame_cmd
+[10:38:35.424] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[10:38:35.424] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=7c:1c:4e:ed:8a:d4 bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-71 fc=0x40 seq_ctrl=0x670 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=240
+[10:38:35.424] nl80211: send_mlme - da=7c:1c:4e:ed:8a:d4 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[10:38:35.424] nl80211: send_mlme - Use bss->freq=2412
+[10:38:35.424] nl80211: send_mlme -> send_frame_cmd
+[10:38:35.429] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[10:38:35.429] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=7c:1c:4e:ed:8a:d4 bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-73 fc=0x40 seq_ctrl=0x680 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=240
+[10:38:35.429] nl80211: send_mlme - da=7c:1c:4e:ed:8a:d4 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[10:38:35.429] nl80211: send_mlme - Use bss->freq=2412
+[10:38:35.429] nl80211: send_mlme -> send_frame_cmd
+[10:38:35.470] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[10:38:35.470] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=7c:1c:4e:ed:8a:d4 bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-74 fc=0x40 seq_ctrl=0x690 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=240
+[10:38:35.470] nl80211: send_mlme - da=7c:1c:4e:ed:8a:d4 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[10:38:35.470] nl80211: send_mlme - Use bss->freq=2412
+[10:38:35.470] nl80211: send_mlme -> send_frame_cmd
+[10:38:35.475] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[10:38:35.475] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=7c:1c:4e:ed:8a:d4 bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-75 fc=0x40 seq_ctrl=0x6a0 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=240
+[10:38:35.475] nl80211: send_mlme - da=7c:1c:4e:ed:8a:d4 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[10:38:35.475] nl80211: send_mlme - Use bss->freq=2412
+[10:38:35.475] nl80211: send_mlme -> send_frame_cmd
+[10:38:35.476] nl80211: BSS Event 59 (NL80211_CMD_FRAME) received for wlp3s0
+[10:38:35.476] nl80211: RX frame da=ff:ff:ff:ff:ff:ff sa=7c:1c:4e:ed:8a:d4 bssid=ff:ff:ff:ff:ff:ff freq=2412 ssi_signal=-74 fc=0x40 seq_ctrl=0x6b0 stype=4 (WLAN_FC_STYPE_PROBE_REQ) len=240
+[10:38:35.476] nl80211: send_mlme - da=7c:1c:4e:ed:8a:d4 noack=1 freq=0 no_cck=0 offchanok=0 wait_time=0 no_encrypt=0 fc=0x50 (WLAN_FC_STYPE_PROBE_RESP) nlmode=3
+[10:38:35.476] nl80211: send_mlme - Use bss->freq=2412
+
+[0;36mHostapd is stopped.[0m
+
+[10:39:48.586] Deleting the bridge... 
+[0;32mSuccess.[0m
+[10:39:48.707] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

@@ -1,0 +1,29 @@
+Dec 25 10:47:59 raspberrypi systemd[1]: Starting wpa_supplicant.service - WPA supplicant...
+Dec 25 10:48:00 raspberrypi wpa_supplicant[615]: Successfully initialized wpa_supplicant
+Dec 25 10:48:00 raspberrypi systemd[1]: Started wpa_supplicant.service - WPA supplicant.
+Dec 25 10:51:49 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to select authenticated key management type
+Dec 25 10:51:49 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to set WPA key management and encryption suites
+Dec 25 10:52:12 raspberrypi wpa_supplicant[615]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Dec 25 10:52:14 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to select authenticated key management type
+Dec 25 10:52:14 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to set WPA key management and encryption suites
+Dec 25 10:52:40 raspberrypi wpa_supplicant[615]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Dec 25 10:52:42 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to select authenticated key management type
+Dec 25 10:52:42 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to set WPA key management and encryption suites
+Dec 25 10:53:08 raspberrypi wpa_supplicant[615]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Dec 25 10:53:10 raspberrypi wpa_supplicant[615]: wlan0: Failed to initiate sched scan
+Dec 25 10:53:28 raspberrypi wpa_supplicant[615]: wlan0: Failed to initiate sched scan
+Dec 25 10:53:36 raspberrypi wpa_supplicant[615]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Dec 25 10:53:36 raspberrypi wpa_supplicant[615]: wlan0: Reject scan trigger since one is already pending
+Dec 25 10:57:30 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to select authenticated key management type
+Dec 25 10:57:30 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to set WPA key management and encryption suites
+Dec 25 10:57:55 raspberrypi wpa_supplicant[615]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Dec 25 10:58:30 raspberrypi wpa_supplicant[615]: wlan0: Reject scan trigger since one is already pending
+Dec 25 10:58:45 raspberrypi wpa_supplicant[615]: wlan0: Reject scan trigger since one is already pending
+Dec 25 10:58:59 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to select authenticated key management type
+Dec 25 10:58:59 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to set WPA key management and encryption suites
+Dec 25 10:59:22 raspberrypi wpa_supplicant[615]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Dec 25 10:59:41 raspberrypi wpa_supplicant[615]: wlan0: Reject scan trigger since one is already pending
+Dec 25 10:59:42 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to select authenticated key management type
+Dec 25 10:59:42 raspberrypi wpa_supplicant[615]: wlan0: WPA: Failed to set WPA key management and encryption suites
+Dec 25 11:00:07 raspberrypi wpa_supplicant[615]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+

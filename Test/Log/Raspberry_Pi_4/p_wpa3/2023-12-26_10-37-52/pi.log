@@ -1,0 +1,12 @@
+Dec 26 10:37:23 raspberrypi wpa_supplicant[692]: wlan0: WPA: Failed to select authenticated key management type
+Dec 26 10:37:23 raspberrypi wpa_supplicant[692]: wlan0: WPA: Failed to set WPA key management and encryption suites
+Dec 26 10:37:46 raspberrypi wpa_supplicant[692]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Dec 26 10:37:49 raspberrypi wpa_supplicant[692]: wlan0: WPA: Failed to select authenticated key management type
+Dec 26 10:37:49 raspberrypi wpa_supplicant[692]: wlan0: WPA: Failed to set WPA key management and encryption suites
+Dec 26 10:38:14 raspberrypi wpa_supplicant[692]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Dec 26 10:38:17 raspberrypi wpa_supplicant[692]: wlan0: WPA: Failed to select authenticated key management type
+Dec 26 10:38:17 raspberrypi wpa_supplicant[692]: wlan0: WPA: Failed to set WPA key management and encryption suites
+Dec 26 10:38:42 raspberrypi wpa_supplicant[692]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Dec 26 10:38:45 raspberrypi wpa_supplicant[692]: wlan0: WPA: Failed to select authenticated key management type
+Dec 26 10:38:45 raspberrypi wpa_supplicant[692]: wlan0: WPA: Failed to set WPA key management and encryption suites
+

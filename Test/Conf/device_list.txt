@@ -2,10 +2,12 @@
 
 # Basic
 wpa_supplicant=Wpa_supplicant
+iwd=Iwd
 
 # IoT
 cypress_board=Cypress_board
 pi_4=Raspberry_Pi_4
+pi_4_iwd=Raspberry_Pi_4_iwd
 pi_pico_w=Raspberry_Pi_Pico_W
 esp32=ESP32
 

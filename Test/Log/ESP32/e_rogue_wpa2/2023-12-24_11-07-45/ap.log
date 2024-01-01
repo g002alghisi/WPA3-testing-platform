@@ -1,0 +1,604 @@
+[11:07:45.589] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/ESP32/e_rogue_wpa2...
+[0;32mSuccess.[0m
+
+[11:07:45.591] Fetching configuration file associated to e_wpa2...
+[0;32mSuccess.[0m
+[11:07:45.597] Changing interface and bridge name inside Hostapd/Conf/Enterprise/e_wpa2.conf...
+[0;32mSuccess.[0m
+
+[11:07:45.649] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[11:07:45.656] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[11:07:45.676] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[11:07:45.721] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[11:07:45.727] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[11:07:45.752] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[11:07:45.877] Creating the bridge... 
+[0;32mSuccess.[0m
+[11:07:46.017] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[11:07:46.035] Looking for Hostapd/Conf/Enterprise/e_wpa2.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=15
+logger_syslog_level=0
+logger_stdout=15
+logger_stdout_level=0
+ssid=Hostapd-AP-E
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+ieee8021x=1
+own_ip_addr=127.0.0.1
+auth_server_addr=127.0.0.1
+auth_server_port=1812
+auth_server_shared_secret=luckyluckylucky
+wpa=2
+wpa_key_mgmt=WPA-EAP
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=1
+
+
+[11:07:46.329] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[11:07:46.329] wlp3s0: RADIUS Authentication server 127.0.0.1:1812
+[11:07:46.522] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[11:07:46.522] wlp3s0: AP-ENABLED 
+[11:07:58.261] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authentication OK (open system)
+[11:07:58.262] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authenticated
+[11:07:58.272] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: association OK (aid 1)
+[11:07:58.274] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: associated (aid 1)
+[11:07:58.274] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: binding station to interface 'wlp3s0'
+[11:07:58.274] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 1 notification
+[11:07:58.274] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: start authentication
+[11:07:58.274] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: start authentication
+[11:07:58.321] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:07:58.322] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:07:58.322] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:07:58.322] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 20)
+[11:07:58.322] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAPOL-Start from STA
+[11:07:58.322] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 5 notification
+[11:07:58.322] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: aborting authentication
+[11:07:58.322] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:07:58.322] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:07:58.322] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 213)
+[11:07:58.343] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=20 len=14) from STA: EAP Response-Identity (1)
+[11:07:58.344] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=213 len=14) from STA: EAP Response-Identity (1)
+[11:07:58.344] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: STA identity 'anonymous'
+[11:07:58.344] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:58.344] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:58.345] wlp3s0: RADIUS Received 80 bytes from RADIUS server
+[11:07:58.345] wlp3s0: RADIUS Received RADIUS message
+[11:07:58.345] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:58.345] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=214 len=22) from RADIUS server: EAP-Request-MD5 (4)
+[11:07:58.345] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 214)
+[11:07:58.359] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=214 len=7) from STA: EAP Response-unknown (3)
+[11:07:58.359] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:58.359] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:58.360] wlp3s0: RADIUS Received 64 bytes from RADIUS server
+[11:07:58.360] wlp3s0: RADIUS Received RADIUS message
+[11:07:58.360] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:58.360] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=215 len=6) from RADIUS server: EAP-Request-PEAP (25)
+[11:07:58.360] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 215)
+[11:07:58.415] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=215 len=242) from STA: EAP Response-PEAP (25)
+[11:07:58.415] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:58.415] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:58.418] wlp3s0: RADIUS Received 1068 bytes from RADIUS server
+[11:07:58.418] wlp3s0: RADIUS Received RADIUS message
+[11:07:58.418] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:58.418] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=216 len=1004) from RADIUS server: EAP-Request-PEAP (25)
+[11:07:58.418] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 216)
+[11:07:58.455] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=216 len=6) from STA: EAP Response-PEAP (25)
+[11:07:58.455] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:58.455] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:58.456] wlp3s0: RADIUS Received 1064 bytes from RADIUS server
+[11:07:58.456] wlp3s0: RADIUS Received RADIUS message
+[11:07:58.456] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:58.456] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=217 len=1000) from RADIUS server: EAP-Request-PEAP (25)
+[11:07:58.456] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 217)
+[11:07:58.489] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=217 len=6) from STA: EAP Response-PEAP (25)
+[11:07:58.489] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:58.489] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:58.490] wlp3s0: RADIUS Received 812 bytes from RADIUS server
+[11:07:58.490] wlp3s0: RADIUS Received RADIUS message
+[11:07:58.490] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:58.490] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=218 len=750) from RADIUS server: EAP-Request-PEAP (25)
+[11:07:58.490] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 218)
+[11:07:58.952] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=218 len=103) from STA: EAP Response-PEAP (25)
+[11:07:58.952] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:58.952] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:58.953] wlp3s0: RADIUS Received 115 bytes from RADIUS server
+[11:07:58.953] wlp3s0: RADIUS Received RADIUS message
+[11:07:58.953] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:58.953] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=219 len=57) from RADIUS server: EAP-Request-PEAP (25)
+[11:07:58.954] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 219)
+[11:07:59.061] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=219 len=6) from STA: EAP Response-PEAP (25)
+[11:07:59.061] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:59.061] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:59.062] wlp3s0: RADIUS Received 98 bytes from RADIUS server
+[11:07:59.062] wlp3s0: RADIUS Received RADIUS message
+[11:07:59.062] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:59.062] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=220 len=40) from RADIUS server: EAP-Request-PEAP (25)
+[11:07:59.062] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 220)
+[11:07:59.130] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=220 len=51) from STA: EAP Response-PEAP (25)
+[11:07:59.130] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:59.130] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:59.131] wlp3s0: RADIUS Received 132 bytes from RADIUS server
+[11:07:59.131] wlp3s0: RADIUS Received RADIUS message
+[11:07:59.131] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:59.131] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=221 len=74) from RADIUS server: EAP-Request-PEAP (25)
+[11:07:59.132] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 221)
+[11:07:59.379] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=221 len=105) from STA: EAP Response-PEAP (25)
+[11:07:59.379] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:59.379] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:59.381] wlp3s0: RADIUS Received 140 bytes from RADIUS server
+[11:07:59.381] wlp3s0: RADIUS Received RADIUS message
+[11:07:59.381] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:59.381] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=222 len=82) from RADIUS server: EAP-Request-PEAP (25)
+[11:07:59.381] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 222)
+[11:07:59.478] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=222 len=37) from STA: EAP Response-PEAP (25)
+[11:07:59.479] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:59.479] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:59.480] wlp3s0: RADIUS Received 104 bytes from RADIUS server
+[11:07:59.480] wlp3s0: RADIUS Received RADIUS message
+[11:07:59.480] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:59.480] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=223 len=46) from RADIUS server: EAP-Request-PEAP (25)
+[11:07:59.480] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 223)
+[11:07:59.568] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=223 len=46) from STA: EAP Response-PEAP (25)
+[11:07:59.568] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:07:59.568] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:07:59.569] wlp3s0: RADIUS Received 177 bytes from RADIUS server
+[11:07:59.569] wlp3s0: RADIUS Received RADIUS message
+[11:07:59.569] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:07:59.569] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: binding station to interface 'wlp3s0'
+[11:07:59.569] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: old identity 'anonymous' updated with User-Name from Access-Accept 'anonymous'
+[11:07:59.569] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=3 id=223 len=4) from RADIUS server: EAP Success
+[11:07:59.569] wlp3s0: CTRL-EVENT-EAP-SUCCESS2 94:b5:55:19:1c:e8
+[11:07:59.569] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 223)
+[11:07:59.569] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: sending 1/4 msg of 4-Way Handshake
+[11:07:59.898] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: received EAPOL-Key frame (2/4 Pairwise)
+[11:07:59.899] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: sending 3/4 msg of 4-Way Handshake
+[11:07:59.999] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: EAPOL-Key timeout
+[11:07:59.999] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: sending 3/4 msg of 4-Way Handshake
+[11:08:00.510] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: received EAPOL-Key frame (4/4 Pairwise)
+[11:08:00.510] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: pairwise key handshake completed (RSN)
+[11:08:00.510] wlp3s0: EAPOL-4WAY-HS-COMPLETED 94:b5:55:19:1c:e8
+[11:08:00.510] wlp3s0: AP-STA-CONNECTED 94:b5:55:19:1c:e8
+[11:08:00.510] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: authorizing port
+[11:08:00.510] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: starting accounting session C76392DC603E39B0
+[11:08:00.510] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: authenticated - EAP type: 25 (PEAP)
+
+[0;36mHostapd is stopped.[0m
+
+[11:08:05.939] Deleting the bridge... 
+[0;32mSuccess.[0m
+[11:08:06.097] Starting NetworkManager... 
+[0;32mSuccess.[0m
+
+[11:08:07.509] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/ESP32/e_rogue_wpa2...
+[0;32mSuccess.[0m
+
+[11:08:07.512] Fetching configuration file associated to e_rogue_wpa2...
+[0;32mSuccess.[0m
+[11:08:07.519] Changing interface and bridge name inside Hostapd/Conf/Enterprise/e_rogue_wpa2.conf...
+[0;32mSuccess.[0m
+
+[11:08:07.571] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[11:08:07.577] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[11:08:07.600] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[11:08:07.652] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[11:08:07.658] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[11:08:07.680] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[11:08:07.831] Creating the bridge... 
+[0;32mSuccess.[0m
+[11:08:07.944] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[11:08:07.963] Looking for Hostapd/Conf/Enterprise/e_rogue_wpa2.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=15
+logger_syslog_level=0
+logger_stdout=15
+logger_stdout_level=0
+ssid=Hostapd-AP-E
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+ieee8021x=1
+own_ip_addr=127.0.0.1
+auth_server_addr=127.0.0.1
+auth_server_port=1812
+auth_server_shared_secret=luckyluckylucky
+wpa=2
+wpa_key_mgmt=WPA-EAP
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=2
+
+
+[11:08:08.257] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[11:08:08.257] wlp3s0: RADIUS Authentication server 127.0.0.1:1812
+[11:08:08.450] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[11:08:08.450] wlp3s0: AP-ENABLED 
+[11:08:09.919] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authentication OK (open system)
+[11:08:09.920] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authenticated
+[11:08:09.931] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: association OK (aid 1)
+[11:08:09.933] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: associated (aid 1)
+[11:08:09.933] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: binding station to interface 'wlp3s0'
+[11:08:09.933] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 1 notification
+[11:08:09.933] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: start authentication
+[11:08:09.933] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: start authentication
+[11:08:09.981] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:08:09.982] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:08:09.982] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:08:09.982] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 207)
+[11:08:09.991] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=207 len=14) from STA: EAP Response-Identity (1)
+[11:08:09.992] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: STA identity 'anonymous'
+[11:08:09.992] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:09.992] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:09.992] recvmsg[RADIUS]: Connection refused
+[11:08:12.992] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Resending RADIUS message (id=0)
+[11:08:12.992] wlp3s0: RADIUS Next RADIUS client retransmit in 6 seconds
+[11:08:12.993] wlp3s0: RADIUS Received 80 bytes from RADIUS server
+[11:08:12.993] wlp3s0: RADIUS Received RADIUS message
+[11:08:12.993] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:12.993] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=208 len=22) from RADIUS server: EAP-Request-MD5 (4)
+[11:08:12.993] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 208)
+[11:08:13.000] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=208 len=7) from STA: EAP Response-unknown (3)
+[11:08:13.000] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:13.000] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:13.001] wlp3s0: RADIUS Received 64 bytes from RADIUS server
+[11:08:13.001] wlp3s0: RADIUS Received RADIUS message
+[11:08:13.001] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:13.001] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=209 len=6) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:13.001] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 209)
+[11:08:13.056] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=209 len=242) from STA: EAP Response-PEAP (25)
+[11:08:13.056] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:13.056] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:13.059] wlp3s0: RADIUS Received 1068 bytes from RADIUS server
+[11:08:13.059] wlp3s0: RADIUS Received RADIUS message
+[11:08:13.059] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:13.059] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=210 len=1004) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:13.059] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 210)
+[11:08:13.097] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=210 len=6) from STA: EAP Response-PEAP (25)
+[11:08:13.097] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:13.097] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:13.098] wlp3s0: RADIUS Received 1064 bytes from RADIUS server
+[11:08:13.098] wlp3s0: RADIUS Received RADIUS message
+[11:08:13.098] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:13.098] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=211 len=1000) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:13.098] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 211)
+[11:08:13.131] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=211 len=6) from STA: EAP Response-PEAP (25)
+[11:08:13.132] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:13.132] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:13.133] wlp3s0: RADIUS Received 812 bytes from RADIUS server
+[11:08:13.133] wlp3s0: RADIUS Received RADIUS message
+[11:08:13.133] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:13.133] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=212 len=750) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:13.133] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 212)
+[11:08:13.224] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=212 len=17) from STA: EAP Response-PEAP (25)
+[11:08:13.224] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:13.224] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:14.225] wlp3s0: RADIUS Received 44 bytes from RADIUS server
+[11:08:14.225] wlp3s0: RADIUS Received RADIUS message
+[11:08:14.225] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 1.00 sec
+[11:08:14.225] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=4 id=212 len=4) from RADIUS server: EAP Failure
+[11:08:14.225] wlp3s0: CTRL-EVENT-EAP-FAILURE2 94:b5:55:19:1c:e8
+[11:08:14.225] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 212)
+[11:08:14.226] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:08:14.226] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: authentication failed - EAP type: 25 (PEAP)
+[11:08:14.236] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 3 notification
+[11:08:17.114] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authentication OK (open system)
+[11:08:17.114] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 0 notification
+[11:08:17.115] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authenticated
+[11:08:17.126] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: association OK (aid 1)
+[11:08:17.128] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: associated (aid 1)
+[11:08:17.128] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 1 notification
+[11:08:17.128] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:08:17.128] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:08:17.128] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:08:17.128] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 74)
+[11:08:17.181] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAPOL-Start from STA
+[11:08:17.181] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 5 notification
+[11:08:17.181] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: aborting authentication
+[11:08:17.181] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:08:17.181] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:08:17.181] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 233)
+[11:08:17.181] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=74 len=14) from STA: EAP Response-Identity (1)
+[11:08:17.196] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=233 len=14) from STA: EAP Response-Identity (1)
+[11:08:17.196] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: STA identity 'anonymous'
+[11:08:17.197] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:17.197] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:17.197] wlp3s0: RADIUS Received 80 bytes from RADIUS server
+[11:08:17.197] wlp3s0: RADIUS Received RADIUS message
+[11:08:17.197] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:17.197] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=234 len=22) from RADIUS server: EAP-Request-MD5 (4)
+[11:08:17.197] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 234)
+[11:08:17.212] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=234 len=7) from STA: EAP Response-unknown (3)
+[11:08:17.212] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:17.212] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:17.214] wlp3s0: RADIUS Received 64 bytes from RADIUS server
+[11:08:17.214] wlp3s0: RADIUS Received RADIUS message
+[11:08:17.214] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:17.214] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=235 len=6) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:17.214] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 235)
+[11:08:17.268] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=235 len=242) from STA: EAP Response-PEAP (25)
+[11:08:17.269] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:17.269] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:17.271] wlp3s0: RADIUS Received 1068 bytes from RADIUS server
+[11:08:17.271] wlp3s0: RADIUS Received RADIUS message
+[11:08:17.271] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:17.271] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=236 len=1004) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:17.271] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 236)
+[11:08:17.309] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=236 len=6) from STA: EAP Response-PEAP (25)
+[11:08:17.309] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:17.309] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:17.310] wlp3s0: RADIUS Received 1064 bytes from RADIUS server
+[11:08:17.310] wlp3s0: RADIUS Received RADIUS message
+[11:08:17.310] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:17.310] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=237 len=1000) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:17.310] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 237)
+[11:08:17.343] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=237 len=6) from STA: EAP Response-PEAP (25)
+[11:08:17.344] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:17.344] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:17.345] wlp3s0: RADIUS Received 812 bytes from RADIUS server
+[11:08:17.345] wlp3s0: RADIUS Received RADIUS message
+[11:08:17.345] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:17.345] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=238 len=750) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:17.345] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 238)
+[11:08:17.436] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=238 len=17) from STA: EAP Response-PEAP (25)
+[11:08:17.436] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:17.436] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:18.441] wlp3s0: RADIUS Received 44 bytes from RADIUS server
+[11:08:18.441] wlp3s0: RADIUS Received RADIUS message
+[11:08:18.441] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 1.00 sec
+[11:08:18.441] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=4 id=238 len=4) from RADIUS server: EAP Failure
+[11:08:18.441] wlp3s0: CTRL-EVENT-EAP-FAILURE2 94:b5:55:19:1c:e8
+[11:08:18.441] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 238)
+[11:08:18.442] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:08:18.442] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: authentication failed - EAP type: 25 (PEAP)
+[11:08:18.452] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 3 notification
+[11:08:21.313] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authentication OK (open system)
+[11:08:21.313] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 0 notification
+[11:08:21.314] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authenticated
+[11:08:21.329] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: association OK (aid 1)
+[11:08:21.331] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: associated (aid 1)
+[11:08:21.331] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 1 notification
+[11:08:21.331] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:08:21.331] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:08:21.331] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:08:21.331] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 212)
+[11:08:21.380] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAPOL-Start from STA
+[11:08:21.380] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 5 notification
+[11:08:21.380] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: aborting authentication
+[11:08:21.380] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:08:21.380] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:08:21.380] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 3)
+[11:08:21.380] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=212 len=14) from STA: EAP Response-Identity (1)
+[11:08:21.395] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=3 len=14) from STA: EAP Response-Identity (1)
+[11:08:21.395] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: STA identity 'anonymous'
+[11:08:21.395] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:21.395] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:21.395] wlp3s0: RADIUS Received 80 bytes from RADIUS server
+[11:08:21.395] wlp3s0: RADIUS Received RADIUS message
+[11:08:21.396] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:21.396] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=4 len=22) from RADIUS server: EAP-Request-MD5 (4)
+[11:08:21.396] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 4)
+[11:08:21.411] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=4 len=7) from STA: EAP Response-unknown (3)
+[11:08:21.411] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:21.411] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:21.413] wlp3s0: RADIUS Received 64 bytes from RADIUS server
+[11:08:21.413] wlp3s0: RADIUS Received RADIUS message
+[11:08:21.413] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:21.413] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=5 len=6) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:21.413] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 5)
+[11:08:21.467] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=5 len=242) from STA: EAP Response-PEAP (25)
+[11:08:21.467] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:21.467] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:21.469] wlp3s0: RADIUS Received 1068 bytes from RADIUS server
+[11:08:21.469] wlp3s0: RADIUS Received RADIUS message
+[11:08:21.469] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:21.469] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=6 len=1004) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:21.469] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 6)
+[11:08:21.508] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=6 len=6) from STA: EAP Response-PEAP (25)
+[11:08:21.508] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:21.508] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:21.509] wlp3s0: RADIUS Received 1064 bytes from RADIUS server
+[11:08:21.509] wlp3s0: RADIUS Received RADIUS message
+[11:08:21.509] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:21.509] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=7 len=1000) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:21.509] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 7)
+[11:08:21.542] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=7 len=6) from STA: EAP Response-PEAP (25)
+[11:08:21.542] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:21.542] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:21.543] wlp3s0: RADIUS Received 812 bytes from RADIUS server
+[11:08:21.543] wlp3s0: RADIUS Received RADIUS message
+[11:08:21.543] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:21.544] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=8 len=750) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:21.544] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 8)
+[11:08:21.634] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=8 len=17) from STA: EAP Response-PEAP (25)
+[11:08:21.634] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:21.635] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:22.636] wlp3s0: RADIUS Received 44 bytes from RADIUS server
+[11:08:22.636] wlp3s0: RADIUS Received RADIUS message
+[11:08:22.636] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 1.00 sec
+[11:08:22.636] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=4 id=8 len=4) from RADIUS server: EAP Failure
+[11:08:22.636] wlp3s0: CTRL-EVENT-EAP-FAILURE2 94:b5:55:19:1c:e8
+[11:08:22.636] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 8)
+[11:08:22.636] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:08:22.636] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: authentication failed - EAP type: 25 (PEAP)
+[11:08:22.647] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 3 notification
+[11:08:25.507] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authentication OK (open system)
+[11:08:25.507] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 0 notification
+[11:08:25.508] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authenticated
+[11:08:25.519] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: association OK (aid 1)
+[11:08:25.522] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: associated (aid 1)
+[11:08:25.522] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 1 notification
+[11:08:25.522] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:08:25.522] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:08:25.522] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:08:25.522] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 57)
+[11:08:25.574] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAPOL-Start from STA
+[11:08:25.574] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 5 notification
+[11:08:25.574] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: aborting authentication
+[11:08:25.574] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:08:25.574] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:08:25.574] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 193)
+[11:08:25.575] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=57 len=14) from STA: EAP Response-Identity (1)
+[11:08:25.589] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=193 len=14) from STA: EAP Response-Identity (1)
+[11:08:25.590] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: STA identity 'anonymous'
+[11:08:25.590] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:25.590] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:25.591] wlp3s0: RADIUS Received 80 bytes from RADIUS server
+[11:08:25.591] wlp3s0: RADIUS Received RADIUS message
+[11:08:25.591] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:25.591] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=194 len=22) from RADIUS server: EAP-Request-MD5 (4)
+[11:08:25.591] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 194)
+[11:08:25.605] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=194 len=7) from STA: EAP Response-unknown (3)
+[11:08:25.605] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:25.605] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:25.607] wlp3s0: RADIUS Received 64 bytes from RADIUS server
+[11:08:25.607] wlp3s0: RADIUS Received RADIUS message
+[11:08:25.607] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:25.607] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=195 len=6) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:25.607] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 195)
+[11:08:25.662] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=195 len=242) from STA: EAP Response-PEAP (25)
+[11:08:25.662] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:25.662] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:25.664] wlp3s0: RADIUS Received 1068 bytes from RADIUS server
+[11:08:25.664] wlp3s0: RADIUS Received RADIUS message
+[11:08:25.664] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:25.664] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=196 len=1004) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:25.664] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 196)
+[11:08:25.702] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=196 len=6) from STA: EAP Response-PEAP (25)
+[11:08:25.703] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:25.703] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:25.703] wlp3s0: RADIUS Received 1064 bytes from RADIUS server
+[11:08:25.703] wlp3s0: RADIUS Received RADIUS message
+[11:08:25.703] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:25.703] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=197 len=1000) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:25.703] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 197)
+[11:08:25.737] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=197 len=6) from STA: EAP Response-PEAP (25)
+[11:08:25.737] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:25.737] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:25.738] wlp3s0: RADIUS Received 812 bytes from RADIUS server
+[11:08:25.738] wlp3s0: RADIUS Received RADIUS message
+[11:08:25.738] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:25.738] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=198 len=750) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:25.738] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 198)
+[11:08:25.829] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=198 len=17) from STA: EAP Response-PEAP (25)
+[11:08:25.829] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:25.829] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:26.831] wlp3s0: RADIUS Received 44 bytes from RADIUS server
+[11:08:26.831] wlp3s0: RADIUS Received RADIUS message
+[11:08:26.831] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 1.00 sec
+[11:08:26.831] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=4 id=198 len=4) from RADIUS server: EAP Failure
+[11:08:26.831] wlp3s0: CTRL-EVENT-EAP-FAILURE2 94:b5:55:19:1c:e8
+[11:08:26.831] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 198)
+[11:08:26.831] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:08:26.831] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: authentication failed - EAP type: 25 (PEAP)
+[11:08:26.841] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 3 notification
+[11:08:29.702] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authentication OK (open system)
+[11:08:29.702] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 0 notification
+[11:08:29.703] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: authenticated
+[11:08:29.714] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: association OK (aid 1)
+[11:08:29.716] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.11: associated (aid 1)
+[11:08:29.716] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 1 notification
+[11:08:29.716] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:08:29.716] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:08:29.716] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:08:29.716] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 4)
+[11:08:29.769] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAPOL-Start from STA
+[11:08:29.769] wlp3s0: STA 94:b5:55:19:1c:e8 WPA: event 5 notification
+[11:08:29.769] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: aborting authentication
+[11:08:29.770] wlp3s0: CTRL-EVENT-EAP-STARTED 94:b5:55:19:1c:e8
+[11:08:29.770] wlp3s0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+[11:08:29.770] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 129)
+[11:08:29.770] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=4 len=14) from STA: EAP Response-Identity (1)
+[11:08:29.784] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=129 len=14) from STA: EAP Response-Identity (1)
+[11:08:29.784] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: STA identity 'anonymous'
+[11:08:29.785] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:29.785] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:29.785] wlp3s0: RADIUS Received 80 bytes from RADIUS server
+[11:08:29.785] wlp3s0: RADIUS Received RADIUS message
+[11:08:29.785] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:29.785] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=130 len=22) from RADIUS server: EAP-Request-MD5 (4)
+[11:08:29.785] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 130)
+[11:08:29.801] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=130 len=7) from STA: EAP Response-unknown (3)
+[11:08:29.801] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:29.802] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:29.804] wlp3s0: RADIUS Received 64 bytes from RADIUS server
+[11:08:29.804] wlp3s0: RADIUS Received RADIUS message
+[11:08:29.804] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:29.804] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=131 len=6) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:29.804] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 131)
+[11:08:29.857] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=131 len=242) from STA: EAP Response-PEAP (25)
+[11:08:29.857] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:29.857] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:29.859] wlp3s0: RADIUS Received 1068 bytes from RADIUS server
+[11:08:29.859] wlp3s0: RADIUS Received RADIUS message
+[11:08:29.859] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:29.859] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=132 len=1004) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:29.859] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 132)
+[11:08:29.897] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=132 len=6) from STA: EAP Response-PEAP (25)
+[11:08:29.897] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:29.897] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:29.898] wlp3s0: RADIUS Received 1064 bytes from RADIUS server
+[11:08:29.898] wlp3s0: RADIUS Received RADIUS message
+[11:08:29.898] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:29.898] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=133 len=1000) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:29.898] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 133)
+[11:08:29.932] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=133 len=6) from STA: EAP Response-PEAP (25)
+[11:08:29.932] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:29.932] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:29.933] wlp3s0: RADIUS Received 812 bytes from RADIUS server
+[11:08:29.933] wlp3s0: RADIUS Received RADIUS message
+[11:08:29.933] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+[11:08:29.933] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=1 id=134 len=750) from RADIUS server: EAP-Request-PEAP (25)
+[11:08:29.933] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 134)
+[11:08:30.024] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: received EAP packet (code=2 id=134 len=17) from STA: EAP Response-PEAP (25)
+[11:08:30.024] wlp3s0: RADIUS Sending RADIUS message to authentication server
+[11:08:30.024] wlp3s0: RADIUS Next RADIUS client retransmit in 3 seconds
+[11:08:31.025] wlp3s0: RADIUS Received 44 bytes from RADIUS server
+[11:08:31.025] wlp3s0: RADIUS Received RADIUS message
+[11:08:31.025] wlp3s0: STA 94:b5:55:19:1c:e8 RADIUS: Received RADIUS packet matched with a pending request, round trip time 1.00 sec
+[11:08:31.025] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: decapsulated EAP packet (code=4 id=134 len=4) from RADIUS server: EAP Failure
+[11:08:31.025] wlp3s0: CTRL-EVENT-EAP-FAILURE2 94:b5:55:19:1c:e8
+[11:08:31.025] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: Sending EAP Packet (identifier 134)
+[11:08:31.026] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: unauthorizing port
+[11:08:31.026] wlp3s0: STA 94:b5:55:19:1c:e8 IEEE 802.1X: authentication failed - EAP type: 25 (PEAP)
+
+[0;36mHostapd is stopped.[0m
+
+[11:08:33.908] Deleting the bridge... 
+[0;32mSuccess.[0m
+[11:08:34.033] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

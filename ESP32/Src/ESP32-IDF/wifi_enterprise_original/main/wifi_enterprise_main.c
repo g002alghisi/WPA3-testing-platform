@@ -129,6 +129,7 @@ static void initialise_wifi(void)
 #endif
         },
     };
+    printf("pmf_required è: %d\n", wifi_config.sta.pmf_cfg.required);
     ESP_LOGI(TAG, "Setting WiFi configuration SSID %s...", wifi_config.sta.ssid);
     ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
     ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );

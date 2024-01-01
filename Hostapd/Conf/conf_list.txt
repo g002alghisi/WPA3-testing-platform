@@ -20,5 +20,6 @@ e_rogue_wpa2=Hostapd/Conf/Enterprise/e_rogue_wpa2.conf
 
 e_wpa3=Hostapd/Conf/Enterprise/e_wpa3.conf
 e_rogue_wpa3=Hostapd/Conf/Enterprise/e_rogue_wpa3.conf
+e_fake_wpa3=Hostapd/Conf/Enterprise/e_fake_wpa3.conf
 
 e_wpa2_wpa3=Hostapd/Conf/Enterprise/e_wpa2_wpa3.conf

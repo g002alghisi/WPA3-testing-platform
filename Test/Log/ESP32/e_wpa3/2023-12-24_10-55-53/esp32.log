@@ -1,0 +1,1208 @@
+alghisi@pop-os:~/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed$ export IDF_PATH=/home/alghisi/esp/esp-idf
+/home/alghisi/esp/.Espressif/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/alghisi/esp/esalghisi@pop-os:~/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed$ /home/alghisi/esp/.Espressif/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/alghisi/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/build/wifi_enterprise.elf
+--- esp-idf-monitor 1.3.4 on /dev/ttyUSB0 115200 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7084
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+0x40080400: _init at ??:?
+
+load:0x40080404,len:3876
+entry 0x4008064c
+I (30) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader
+I (30) boot: compile time Dec 24 2023 10:54:06
+I (30) boot: Multicore bootloader
+I (35) boot: chip revision: v1.0
+I (39) boot.esp32: SPI Speed      : 40MHz
+I (43) boot.esp32: SPI Mode       : DIO
+I (48) boot.esp32: SPI Flash Size : 2MB
+I (53) boot: Enabling RNG early entropy source...
+I (58) boot: Partition Table:
+I (62) boot: ## Label            Usage          Type ST Offset   Length
+I (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (84) boot:  2 factory          factory app      00 00 00010000 00100000
+I (91) boot: End of partition table
+I (95) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=316ach (202412) map
+I (177) esp_image: segment 1: paddr=000416d4 vaddr=3ffb0000 size=03b60h ( 15200) load
+I (183) esp_image: segment 2: paddr=0004523c vaddr=40080000 size=0addch ( 44508) load
+I (202) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=9b784h (636804) map
+I (432) esp_image: segment 4: paddr=000eb7ac vaddr=4008addc size=0aec8h ( 44744) load
+I (462) boot: Loaded app from partition at offset 0x10000
+I (462) boot: Disabling RNG early entropy source...
+I (473) cpu_start: Multicore app
+I (474) cpu_start: Pro cpu up.
+I (474) cpu_start: Starting app cpu, entry point is 0x4008139c
+0x4008139c: call_start_cpu1 at /home/alghisi/esp/esp-idf/components/esp_system/port/cpu_start.c:157
+
+I (0) cpu_start: App cpu up.
+D (484) clk: RTC_SLOW_CLK calibration value: 3322419
+I (497) cpu_start: Pro cpu start user code
+I (497) cpu_start: cpu freq: 160000000 Hz
+I (497) cpu_start: Application information:
+I (502) cpu_start: Project name:     wifi_enterprise
+I (507) cpu_start: App version:      1b02be7-dirty
+I (513) cpu_start: Compile time:     Dec 24 2023 10:53:49
+I (519) cpu_start: ELF file SHA256:  0ae9ab410cf27312...
+I (525) cpu_start: ESP-IDF:          v5.1.2-dirty
+I (530) cpu_start: Min chip rev:     v0.0
+I (535) cpu_start: Max chip rev:     v3.99 
+I (540) cpu_start: Chip rev:         v1.0
+D (545) memory_layout: Checking 9 reserved memory ranges:
+D (550) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000
+D (556) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0
+D (563) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffb7df8
+D (569) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440
+D (576) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350
+D (582) memory_layout: Reserved memory range 0x40070000 - 0x40078000
+D (588) memory_layout: Reserved memory range 0x40078000 - 0x40080000
+0x40080000: _WindowOverflow4 at /home/alghisi/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:2027
+
+D (595) memory_layout: Reserved memory range 0x40080000 - 0x40095ca4
+0x40080000: _WindowOverflow4 at /home/alghisi/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:2027
+
+D (601) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000
+D (608) memory_layout: Building list of available memory regions:
+D (614) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000
+D (620) memory_layout: Available memory region 0x3ffb7df8 - 0x3ffb8000
+D (627) memory_layout: Available memory region 0x3ffb8000 - 0x3ffc0000
+D (634) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000
+D (640) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000
+D (647) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000
+D (653) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000
+D (660) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000
+D (667) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000
+D (673) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000
+D (680) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000
+D (686) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000
+D (693) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000
+D (700) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000
+D (706) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000
+D (713) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000
+D (719) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000
+D (726) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000
+D (733) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000
+D (739) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20
+D (746) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000
+D (752) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000
+D (759) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000
+D (766) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000
+D (772) memory_layout: Available memory region 0x3fffc000 - 0x40000000
+0x40000000: _WindowOverflow4 in ROM
+
+D (779) memory_layout: Available memory region 0x40095ca4 - 0x40096000
+D (785) memory_layout: Available memory region 0x40096000 - 0x40098000
+D (792) memory_layout: Available memory region 0x40098000 - 0x4009a000
+D (799) memory_layout: Available memory region 0x4009a000 - 0x4009c000
+D (805) memory_layout: Available memory region 0x4009c000 - 0x4009e000
+D (812) memory_layout: Available memory region 0x4009e000 - 0x400a0000
+I (818) heap_init: Initializing. RAM available for dynamic allocation:
+D (826) heap_init: New heap initialised at 0x3ffae6e0
+I (831) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+D (837) heap_init: New heap initialised at 0x3ffb7df8
+I (842) heap_init: At 3FFB7DF8 len 00028208 (160 KiB): DRAM
+I (848) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (854) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+D (861) heap_init: New heap initialised at 0x40095ca4
+I (866) heap_init: At 40095CA4 len 0000A35C (40 KiB): IRAM
+D (873) intr_alloc: Connected src 46 to int 2 (cpu 0)
+D (878) spi_flash: trying chip: issi
+D (881) spi_flash: trying chip: gd
+D (884) spi_flash: trying chip: mxic
+D (888) spi_flash: trying chip: winbond
+D (892) spi_flash: trying chip: generic
+I (896) spi_flash: detected chip: generic
+I (901) spi_flash: flash io: dio
+W (905) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+D (918) cpu_start: calling init function: 0x4014d5a4
+0x4014d5a4: _GLOBAL__sub_I__ZN9__gnu_cxx9__freeresEv at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/gcc/libstdc++-v3/libsupc++/eh_alloc.cc:342
+
+D (923) cpu_start: calling init function: 0x4014d084
+0x4014d084: _GLOBAL__sub_I__ZN17__eh_globals_init7_S_initE at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/gcc/libstdc++-v3/libsupc++/eh_globals.cc:168
+
+D (928) cpu_start: calling init function: 0x400f8f40
+0x400f8f40: s_set_default_wifi_log_level at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_init.c:88
+
+D (933) cpu_start: calling init function: 0x400d9818
+0x400d9818: esp_ipc_init at /home/alghisi/esp/esp-idf/components/esp_system/esp_ipc.c:114
+
+D (938) cpu_start: calling init function: 0x400d2cf8
+0x400d2cf8: esp_init_app_elf_sha256 at /home/alghisi/esp/esp-idf/components/esp_app_format/esp_app_desc.c:69
+
+D (943) cpu_start: calling init function: 0x400d5dcc on core: 0
+0x400d5dcc: __esp_system_init_fn_esp_timer_startup_init at /home/alghisi/esp/esp-idf/components/esp_timer/src/esp_timer.c:576
+
+D (949) intr_alloc: Connected src 17 to int 3 (cpu 0)
+D (954) cpu_start: calling init function: 0x4016246c on core: 0
+0x4016246c: __esp_system_init_fn_init_components0 at /home/alghisi/esp/esp-idf/components/esp_system/startup.c:486
+
+D (960) intr_alloc: Connected src 24 to int 9 (cpu 0)
+I (965) app_start: Starting scheduler on CPU0
+ (970) intr_alloc: Connected src 25 to int 2 (cpu 1)
+I (970) app_start: Starting scheduler on CPU1
+2mI (970) main_task: Started on CPU0
+D (990) heap_init: New heap initialised at 0x3ffe0440
+D (990) heap_init: New heap initialised at 0x3ffe4350
+D (990) intr_alloc: Connected src 16 to int 12 (cpu 0)
+I (990) main_task: Calling app_main()
+EXAMPLE_ESP_WIFI_PMF_CFG_REQ: 1D (1030) esp_netif_lwip: LwIP stack has been initialized
+D (1030) esp_netif_lwip: esp-netif has been successfully initialized
+D (1040) event: running task for loop 0x3ffbc870
+D (1040) event: created task for loop 0x3ffbc870
+D (1040) event: created event loop 0x3ffbc870
+D (1050) esp_netif_objects: esp_netif_add_to_list 0x3ffbd798
+D (1050) esp_netif_objects: esp_netif_add_to_list netif added successfully (total netifs: 1)
+D (1060) esp_netif_lwip: check: remote, if=0x0 fn=0x400dd9d0
+0x400dd9d0: set_lwip_netif_callback at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:174
+
+
+D (1070) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (1080) nvs: nvs_open_from_partition misc 1
+I (1090) wifi:wifi driver task: 3ffbfdf0, prio:23, stack:6656, core=0
+D (1090) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit
+D (1090) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit
+D (1100) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit
+D (1110) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit
+D (1110) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit
+D (1120) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit
+D (1130) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit
+D (1140) nvs: nvs_open_from_partition nvs.net80211 1
+D (1140) nvs: nvs_get opmode 1
+D (1140) nvs: nvs_get_str_or_blob sta.ssid
+D (1150) nvs: nvs_get sta.authmode 1
+D (1150) nvs: nvs_get_str_or_blob sta.pswd
+D (1160) nvs: nvs_get_str_or_blob sta.pmk
+D (1160) nvs: nvs_get sta.chan 1
+D (1160) nvs: nvs_get auto.conn 1
+D (1170) nvs: nvs_get bssid.set 1
+D (1170) nvs: nvs_get_str_or_blob sta.bssid
+D (1170) nvs: nvs_get sta.lis_intval 2
+D (1180) nvs: nvs_get sta.phym 1
+D (1180) nvs: nvs_get sta.phybw 1
+D (1180) nvs: nvs_get_str_or_blob sta.apsw
+D (1190) nvs: nvs_get_str_or_blob sta.apinfo
+D (1200) nvs: nvs_get sta.scan_method 1
+D (1200) nvs: nvs_get sta.sort_method 1
+D (1200) nvs: nvs_get sta.minrssi 1
+D (1200) nvs: nvs_get sta.minauth 1
+D (1210) nvs: nvs_get sta.pmf_e 1
+D (1210) nvs: nvs_get sta.pmf_r 1
+D (1210) nvs: nvs_get sta.btm_e 1
+D (1220) nvs: nvs_get sta.rrm_e 1
+D (1220) nvs: nvs_get sta.mbo_e 1
+D (1220) nvs: nvs_get_str_or_blob ap.ssid
+D (1230) nvs: nvs_get_str_or_blob ap.passwd
+D (1230) nvs: nvs_get_str_or_blob ap.pmk
+D (1240) nvs: nvs_get ap.chan 1
+D (1240) nvs: nvs_get ap.authmode 1
+D (1240) nvs: nvs_get ap.hidden 1
+D (1250) nvs: nvs_get ap.max.conn 1
+D (1250) nvs: nvs_get bcn.interval 2
+D (1250) nvs: nvs_get ap.phym 1
+D (1260) nvs: nvs_get ap.phybw 1
+D (1260) nvs: nvs_get ap.sndchan 1
+D (1260) nvs: nvs_get ap.pmf_e 1
+D (1270) nvs: nvs_get ap.pmf_r 1
+D (1270) nvs: nvs_get ap.p_cipher 1
+D (1270) nvs: nvs_get lorate 1
+D (1280) nvs: nvs_get_str_or_blob country
+D (1280) nvs: nvs_get ap.ftm_r 1
+D (1280) nvs: nvs_get sta.ft 1
+D (1290) nvs: nvs_get sta.owe 1
+D (1290) nvs: nvs_get sta.trans_d 1
+D (1300) nvs: nvs_get sta.sae_h2e 1
+D (1300) nvs: nvs_get sta.sae_pk_mode 1
+D (1300) nvs: nvs_get sta.bss_retry 1
+D (1310) nvs: nvs_get_str_or_blob sta.owe_data
+D (1310) nvs: nvs_get sta.he_dcm 1
+D (1310) nvs: nvs_get sta.he_dcm_c_tx 1
+D (1320) nvs: nvs_get sta.he_dcm_c_rx 1
+D (1320) nvs: nvs_get sta.he_mcs9_d 1
+D (1330) nvs: nvs_get sta.he_su_b_d 1
+D (1330) nvs: nvs_get sta.he_su_b_f_d 1
+D (1330) nvs: nvs_get sta.he_mu_b_f_d 1
+D (1340) nvs: nvs_get sta.he_cqi_f_d 1
+D (1340) nvs: nvs_get_str_or_blob sta.sae_h2e_id
+D (1350) nvs: nvs_get ap.sae_h2e 1
+D (1350) nvs: nvs_get_str_or_blob ap.pmk_info
+D (1350) nvs: nvs_get nan.phym 1
+D (1360) nvs: nvs_set ap.sndchan 1 1
+I (1360) wifi:wifi firmware version: 91b9630
+I (1360) wifi:wifi certification version: v7.0
+I (1370) wifi:config NVS flash: enabled
+I (1370) wifi:config nano formating: disabled
+I (1380) wifi:Init data frame dynamic rx buffer num: 32
+I (1380) wifi:Init static rx mgmt buffer num: 5
+I (1390) wifi:Init management short buffer num: 32
+I (1390) wifi:Init dynamic tx buffer num: 32
+I (1390) wifi:Init static rx buffer size: 1600
+I (1400) wifi:Init static rx buffer num: 10
+I (1400) wifi:Init dynamic rx buffer num: 32
+I (1410) wifi_init: rx ba win: 6
+I (1410) wifi_init: tcpip mbox: 32
+I (1410) wifi_init: udp mbox: 6
+I (1420) wifi_init: tcp mbox: 6
+I (1420) wifi_init: tcp tx win: 5744
+I (1430) wifi_init: tcp rx win: 5744
+I (1430) wifi_init: tcp mss: 1440
+I (1430) wifi_init: WiFi IRAM OP enabled
+I (1440) wifi_init: WiFi RX IRAM OP enabled
+I (1440) example: Setting WiFi configuration SSID Hostapd-AP-E...
+D (1450) wifi:clear blacklist
+I (1450) wpa: WiFi Enterprise enable
+D (1460) wpa: WiFi Enterprise crypto init.
+I (1460) phy_init: phy_version 4780,16b31a7,Sep 22 2023,20:42:16
+D (1470) phy_init: loading PHY init data from application binary
+D (1470) nvs: nvs_open_from_partition phy 0
+D (1480) nvs: nvs_get cal_version 4
+D (1480) nvs: nvs_get_str_or_blob cal_mac
+D (1490) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit
+D (1490) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit
+D (1500) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit
+D (1510) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit
+D (1510) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit
+D (1520) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit
+D (1530) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit
+D (1540) nvs: nvs_get_str_or_blob cal_data
+D (1550) nvs: nvs_close 3
+D (1550) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit
+D (1550) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit
+D (1560) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit
+D (1560) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit
+D (1570) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit
+D (1580) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit
+D (1580) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit
+D (1660) wifi:filter: set rx policy=0
+I (1660) wifi:mode : sta (94:b5:55:19:1c:e8)
+I (1660) wifi:enable tsf
+D (1660) wifi:filter: set rx policy=1
+D (1660) wifi:connect status 0 -> 0
+D (1660) event: running post WIFI_EVENT:2 with handler 0x400f9228 and context 0x3ffbd9ec on loop 0x3ffbc870
+0x400f9228: wifi_default_action_sta_start at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:71
+
+D (1670) wifi_init_default: wifi_start esp-netif:0x3ffbd798 event-id2
+D (1680) wifi_init_default: WIFI mac address: 94 b5 55 19 1c e8
+D (1690) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400dd9e0
+0x400dd9e0: esp_netif_set_mac_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:957
+
+
+I (1690) main_task: Returned from app_main()
+D (1690) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (1700) esp_netif_handlers: esp_netif action has started with netif0x3ffbd798 from event_id=2
+D (1710) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de000
+0x400de000: esp_netif_start_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1032
+
+
+D (1720) esp_netif_lwip: esp_netif_start_api 0x3ffbd798
+D (1720) esp_netif_lwip: esp_netif_get_hostname esp_netif:0x3ffbd798
+D (1730) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (1730) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (1740) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (1750) event: running post WIFI_EVENT:2 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (1760) wifi:Start wifi connect
+D (1760) wifi:connect status 0 -> 0
+D (1760) wifi:connect chan=0
+D (1770) wifi:first chan=1
+D (1770) wifi:connect status 0 -> 1
+D (1770) wifi:filter: set rx policy=3
+D (1770) wifi:clear scan ap list
+D (1780) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=122795, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (1790) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (1790) wifi:AP not PMF Capable when STA requires, reject profile
+I (1800) wifi:AP not PMF Capable when STA requires, reject profile
+I (1880) wifi:AP not PMF Capable when STA requires, reject profile
+D (1910) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (1910) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (2040) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (2040) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (2160) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (2160) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (2280) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (2280) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (2400) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (2400) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (2520) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (2520) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (2640) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (2640) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (2760) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (2770) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (2890) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (2890) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (3010) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (3010) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (3130) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (3130) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (3490) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (3490) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (3850) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (3850) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (4210) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4210) wifi:filter: set rx policy=4
+D (4210) wifi:first chan=1
+D (4210) wifi:handoff_cb: status=0
+D (4220) wifi:clear rc list
+D (4220) wifi:clear blacklist
+D (4220) wifi:Send disconnect event, reason=201
+D (4230) wifi:connect status 1 -> 3
+D (4230) wifi:disable connect timer
+D (4230) wifi:clear scan ap list
+D (4240) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (4240) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+D (4250) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (4260) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (4270) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+D (4270) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+D (4280) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (4290) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (4300) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (4300) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (4310) wifi:Start wifi connect
+D (4310) wifi:connect status 3 -> 0
+D (4320) wifi:connect chan=0
+D (4320) wifi:first chan=1
+D (4320) wifi:connect status 0 -> 1
+D (4330) wifi:filter: set rx policy=3
+D (4330) wifi:clear scan ap list
+D (4330) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=2677726, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (4340) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (4350) wifi:AP not PMF Capable when STA requires, reject profile
+I (4350) wifi:AP not PMF Capable when STA requires, reject profile
+I (4440) wifi:AP not PMF Capable when STA requires, reject profile
+D (4470) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4470) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (4590) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4590) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (4710) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4710) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (4830) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4830) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (4950) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4960) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (5080) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (5080) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (5200) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (5200) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (5320) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (5320) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (5440) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (5440) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (5560) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (5560) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (5680) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (5680) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (5690) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (5690) example: ~~~~~~~~~~~
+I (5690) example: IP:0.0.0.0
+I (5700) example: MASK:0.0.0.0
+I (5700) example: GW:0.0.0.0
+I (5700) example: ~~~~~~~~~~~
+D (6050) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (6050) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (6410) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (6410) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (6770) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (6770) wifi:filter: set rx policy=4
+D (6770) wifi:first chan=1
+D (6770) wifi:handoff_cb: status=0
+D (6770) wifi:clear rc list
+D (6770) wifi:clear blacklist
+D (6780) wifi:Send disconnect event, reason=201
+D (6780) wifi:connect status 1 -> 3
+D (6780) wifi:disable connect timer
+D (6790) wifi:clear scan ap list
+D (6790) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (6800) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+D (6810) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (6810) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (6820) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+D (6830) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+D (6840) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (6840) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (6850) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (6860) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (6870) wifi:Start wifi connect
+D (6870) wifi:connect status 3 -> 0
+D (6870) wifi:connect chan=0
+D (6880) wifi:first chan=1
+D (6880) wifi:connect status 0 -> 1
+D (6880) wifi:filter: set rx policy=3
+D (6880) wifi:clear scan ap list
+D (6890) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=5232443, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (6900) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (6900) wifi:AP not PMF Capable when STA requires, reject profile
+I (6910) wifi:AP not PMF Capable when STA requires, reject profile
+I (7000) wifi:AP not PMF Capable when STA requires, reject profile
+D (7020) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (7020) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (7140) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (7150) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (7270) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (7270) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (7390) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (7390) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (7510) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (7510) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (7630) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (7630) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (7710) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (7710) example: ~~~~~~~~~~~
+I (7710) example: IP:0.0.0.0
+I (7710) example: MASK:0.0.0.0
+I (7710) example: GW:0.0.0.0
+I (7720) example: ~~~~~~~~~~~
+D (7750) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (7750) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (7870) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (7870) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (8000) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (8000) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (8120) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (8120) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (8240) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (8240) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (8600) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (8600) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (8960) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (8960) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (9320) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (9320) wifi:filter: set rx policy=4
+D (9320) wifi:first chan=1
+D (9320) wifi:handoff_cb: status=0
+D (9320) wifi:clear rc list
+D (9330) wifi:clear blacklist
+D (9330) wifi:Send disconnect event, reason=201
+D (9330) wifi:connect status 1 -> 3
+D (9340) wifi:disable connect timer
+D (9340) wifi:clear scan ap list
+D (9340) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (9350) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+D (9360) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (9370) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (9370) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+D (9380) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+D (9390) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (9400) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (9410) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (9410) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (9420) wifi:Start wifi connect
+D (9420) wifi:connect status 3 -> 0
+D (9430) wifi:connect chan=0
+D (9430) wifi:first chan=1
+D (9430) wifi:connect status 0 -> 1
+D (9440) wifi:filter: set rx policy=3
+D (9440) wifi:clear scan ap list
+D (9440) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=7786884, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (9450) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (9460) wifi:AP not PMF Capable when STA requires, reject profile
+I (9460) wifi:AP not PMF Capable when STA requires, reject profile
+I (9560) wifi:AP not PMF Capable when STA requires, reject profile
+D (9580) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (9580) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (9700) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (9700) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (9720) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (9720) example: ~~~~~~~~~~~
+I (9720) example: IP:0.0.0.0
+I (9720) example: MASK:0.0.0.0
+I (9720) example: GW:0.0.0.0
+I (9730) example: ~~~~~~~~~~~
+D (9820) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (9820) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (9940) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (9940) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (10060) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (10060) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (10190) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (10190) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (10310) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (10310) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (10430) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (10430) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (10550) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (10550) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (10670) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (10670) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (10790) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (10790) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (11150) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (11150) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (11520) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (11520) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (11730) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (11730) example: ~~~~~~~~~~~
+I (11730) example: IP:0.0.0.0
+I (11730) example: MASK:0.0.0.0
+I (11730) example: GW:0.0.0.0
+I (11740) example: ~~~~~~~~~~~
+D (11880) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (11880) wifi:filter: set rx policy=4
+D (11880) wifi:first chan=1
+D (11880) wifi:handoff_cb: status=0
+D (11880) wifi:clear rc list
+D (11880) wifi:clear blacklist
+D (11880) wifi:Send disconnect event, reason=201
+D (11890) wifi:connect status 1 -> 3
+D (11890) wifi:disable connect timer
+D (11900) wifi:clear scan ap list
+D (11900) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (11910) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+D (11920) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (11920) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (11930) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+D (11940) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+D (11950) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (11950) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (11960) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (11970) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (11980) wifi:Start wifi connect
+D (11980) wifi:connect status 3 -> 0
+D (11980) wifi:connect chan=0
+D (11990) wifi:first chan=1
+D (11990) wifi:connect status 0 -> 1
+D (11990) wifi:filter: set rx policy=3
+D (12000) wifi:clear scan ap list
+D (12000) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=10343929, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (12010) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (12020) wifi:AP not PMF Capable when STA requires, reject profile
+I (12020) wifi:AP not PMF Capable when STA requires, reject profile
+I (12120) wifi:AP not PMF Capable when STA requires, reject profile
+D (12130) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (12130) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (12260) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (12260) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (12380) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (12380) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (12500) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (12500) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (12620) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (12620) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (12740) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (12740) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (12860) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (12860) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (12990) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (12990) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (13110) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (13110) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (13230) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (13230) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (13350) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (13350) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (13710) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (13710) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (13740) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (13740) example: ~~~~~~~~~~~
+I (13740) example: IP:0.0.0.0
+I (13740) example: MASK:0.0.0.0
+I (13740) example: GW:0.0.0.0
+I (13750) example: ~~~~~~~~~~~
+D (14070) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (14070) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (14430) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (14430) wifi:filter: set rx policy=4
+D (14430) wifi:first chan=1
+D (14430) wifi:handoff_cb: status=0
+D (14440) wifi:clear rc list
+D (14440) wifi:clear blacklist
+D (14440) wifi:Send disconnect event, reason=201
+D (14450) wifi:connect status 1 -> 3
+D (14450) wifi:disable connect timer
+D (14450) wifi:clear scan ap list
+D (14460) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (14470) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+D (14470) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (14480) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (14490) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+D (14490) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+D (14510) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (14510) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (14520) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (14520) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (14540) wifi:Start wifi connect
+D (14540) wifi:connect status 3 -> 0
+D (14540) wifi:connect chan=0
+D (14540) wifi:first chan=1
+D (14550) wifi:connect status 0 -> 1
+D (14550) wifi:filter: set rx policy=3
+D (14550) wifi:clear scan ap list
+D (14560) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=12901113, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (14570) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (14570) wifi:AP not PMF Capable when STA requires, reject profile
+I (14580) wifi:AP not PMF Capable when STA requires, reject profile
+I (14680) wifi:AP not PMF Capable when STA requires, reject profile
+D (14690) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (14690) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (14810) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (14810) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (14930) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (14940) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (15060) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (15060) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (15180) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (15180) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (15300) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (15300) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (15420) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (15420) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (15540) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (15540) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (15660) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (15660) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (15750) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (15750) example: ~~~~~~~~~~~
+I (15750) example: IP:0.0.0.0
+I (15750) example: MASK:0.0.0.0
+I (15750) example: GW:0.0.0.0
+I (15760) example: ~~~~~~~~~~~
+D (15790) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (15790) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (15910) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (15910) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (16270) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (16270) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (16630) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (16630) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (16990) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (16990) wifi:filter: set rx policy=4
+D (16990) wifi:first chan=1
+D (16990) wifi:handoff_cb: status=0
+D (16990) wifi:clear rc list
+D (17000) wifi:clear blacklist
+D (17000) wifi:Send disconnect event, reason=201
+D (17000) wifi:connect status 1 -> 3
+D (17010) wifi:disable connect timer
+D (17010) wifi:clear scan ap list
+D (17010) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (17020) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+D (17030) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (17040) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (17040) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+D (17050) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+D (17060) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (17070) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (17080) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (17080) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (17090) wifi:Start wifi connect
+D (17090) wifi:connect status 3 -> 0
+D (17100) wifi:connect chan=0
+D (17100) wifi:first chan=1
+D (17100) wifi:connect status 0 -> 1
+D (17110) wifi:filter: set rx policy=3
+D (17110) wifi:clear scan ap list
+D (17110) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=15458082, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (17120) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (17130) wifi:AP not PMF Capable when STA requires, reject profile
+I (17140) wifi:AP not PMF Capable when STA requires, reject profile
+I (17240) wifi:AP not PMF Capable when STA requires, reject profile
+D (17250) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (17250) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (17370) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (17370) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (17490) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (17490) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (17610) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (17610) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (17730) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (17740) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (17760) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (17760) example: ~~~~~~~~~~~
+I (17760) example: IP:0.0.0.0
+I (17760) example: MASK:0.0.0.0
+I (17760) example: GW:0.0.0.0
+I (17770) example: ~~~~~~~~~~~
+D (17860) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (17860) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (17980) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (17980) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (18100) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (18100) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (18220) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (18220) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (18340) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (18340) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (18460) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (18460) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (18830) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (18830) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (19190) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (19190) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (19550) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (19550) wifi:filter: set rx policy=4
+D (19550) wifi:first chan=1
+D (19550) wifi:handoff_cb: status=0
+D (19550) wifi:clear rc list
+D (19550) wifi:clear blacklist
+D (19560) wifi:Send disconnect event, reason=201
+D (19560) wifi:connect status 1 -> 3
+D (19560) wifi:disable connect timer
+D (19570) wifi:clear scan ap list
+D (19570) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (19580) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+D (19590) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (19600) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (19600) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+D (19610) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+D (19620) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (19630) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (19630) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (19640) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (19650) wifi:Start wifi connect
+D (19650) wifi:connect status 3 -> 0
+D (19650) wifi:connect chan=0
+D (19660) wifi:first chan=1
+D (19660) wifi:connect status 0 -> 1
+D (19660) wifi:filter: set rx policy=3
+D (19670) wifi:clear scan ap list
+D (19670) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=18015145, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (19680) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (19690) wifi:AP not PMF Capable when STA requires, reject profile
+I (19700) wifi:AP not PMF Capable when STA requires, reject profile
+D (19770) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (19770) example: ~~~~~~~~~~~
+I (19770) example: IP:0.0.0.0
+I (19770) example: MASK:0.0.0.0
+I (19770) example: GW:0.0.0.0
+I (19780) example: ~~~~~~~~~~~
+I (19800) wifi:AP not PMF Capable when STA requires, reject profile
+D (19810) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (19810) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (19930) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (19930) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (20050) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (20050) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (20170) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (20170) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (20290) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (20290) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (20420) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (20420) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (20540) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (20540) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (20660) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (20660) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (20780) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (20780) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (20900) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (20900) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (21020) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (21020) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (21380) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (21390) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (21750) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (21750) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (21780) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (21780) example: ~~~~~~~~~~~
+I (21780) example: IP:0.0.0.0
+I (21780) example: MASK:0.0.0.0
+I (21780) example: GW:0.0.0.0
+I (21790) example: ~~~~~~~~~~~
+D (22110) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (22110) wifi:filter: set rx policy=4
+D (22110) wifi:first chan=1
+D (22110) wifi:handoff_cb: status=0
+D (22110) wifi:clear rc list
+D (22110) wifi:clear blacklist
+D (22120) wifi:Send disconnect event, reason=201
+D (22120) wifi:connect status 1 -> 3
+D (22120) wifi:disable connect timer
+D (22130) wifi:clear scan ap list
+D (22130) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (22140) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+D (22150) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (22150) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (22160) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+D (22170) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+D (22180) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (22190) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (22190) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (22200) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (22210) wifi:Start wifi connect
+D (22210) wifi:connect status 3 -> 0
+D (22210) wifi:connect chan=0
+D (22220) wifi:first chan=1
+D (22220) wifi:connect status 0 -> 1
+D (22220) wifi:filter: set rx policy=3
+D (22230) wifi:clear scan ap list
+D (22230) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=20575029, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (22240) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (22250) wifi:AP not PMF Capable when STA requires, reject profile
+I (22260) wifi:AP not PMF Capable when STA requires, reject profile
+I (22360) wifi:AP not PMF Capable when STA requires, reject profile
+D (22370) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (22370) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (22490) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (22490) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (22610) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (22610) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (22730) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (22730) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (22850) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (22850) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (22980) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (22980) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (23100) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (23100) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (23220) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (23220) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (23340) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (23340) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (23460) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (23460) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (23580) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (23580) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (23790) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (23790) example: ~~~~~~~~~~~
+I (23790) example: IP:0.0.0.0
+I (23790) example: MASK:0.0.0.0
+I (23790) example: GW:0.0.0.0
+I (23800) example: ~~~~~~~~~~~
+D (23940) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (23950) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (24310) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (24310) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (24670) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (24670) wifi:filter: set rx policy=4
+D (24670) wifi:first chan=1
+D (24670) wifi:handoff_cb: status=0
+D (24670) wifi:clear rc list
+D (24670) wifi:clear blacklist
+D (24680) wifi:Send disconnect event, reason=201
+D (24680) wifi:connect status 1 -> 3
+D (24680) wifi:disable connect timer
+D (24690) wifi:clear scan ap list
+D (24690) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (24700) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+D (24710) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (24710) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (24720) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+D (24730) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+D (24740) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (24750) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (24750) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (24760) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (24770) wifi:Start wifi connect
+D (24770) wifi:connect status 3 -> 0
+D (24770) wifi:connect chan=0
+D (24780) wifi:first chan=1
+D (24780) wifi:connect status 0 -> 1
+D (24780) wifi:filter: set rx policy=3
+D (24790) wifi:clear scan ap list
+D (24790) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=23135110, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (24800) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (24810) wifi:AP not PMF Capable when STA requires, reject profile
+I (24820) wifi:AP not PMF Capable when STA requires, reject profile
+I (24920) wifi:AP not PMF Capable when STA requires, reject profile
+D (24930) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (24930) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (25050) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (25050) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (25170) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (25170) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (25290) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (25290) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (25410) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (25410) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (25540) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (25540) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (25660) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (25660) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (25780) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (25780) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (25800) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (25800) example: ~~~~~~~~~~~
+I (25800) example: IP:0.0.0.0
+I (25800) example: MASK:0.0.0.0
+I (25800) example: GW:0.0.0.0
+I (25810) example: ~~~~~~~~~~~
+D (25900) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (25900) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (26020) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (26020) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (26140) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (26140) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (26500) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (26510) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (26870) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (26870) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (27230) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (27230) wifi:filter: set rx policy=4
+D (27230) wifi:first chan=1
+D (27230) wifi:handoff_cb: status=0
+D (27230) wifi:clear rc list
+D (27230) wifi:clear blacklist
+D (27240) wifi:Send disconnect event, reason=201
+D (27240) wifi:connect status 1 -> 3
+D (27240) wifi:disable connect timer
+D (27250) wifi:clear scan ap list
+D (27250) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (27260) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+D (27270) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (27270) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (27280) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+D (27290) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+D (27300) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (27300) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (27310) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (27320) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (27330) wifi:Start wifi connect
+D (27330) wifi:connect status 3 -> 0
+D (27330) wifi:connect chan=0
+D (27340) wifi:first chan=1
+D (27340) wifi:connect status 0 -> 1
+D (27340) wifi:filter: set rx policy=3
+D (27350) wifi:clear scan ap list
+D (27350) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=25695075, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (27360) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (27370) wifi:AP not PMF Capable when STA requires, reject profile
+I (27380) wifi:AP not PMF Capable when STA requires, reject profile
+I (27480) wifi:AP not PMF Capable when STA requires, reject profile
+D (27480) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (27490) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (27610) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (27610) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (27730) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (27730) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (27810) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (27810) example: ~~~~~~~~~~~
+I (27810) example: IP:0.0.0.0
+I (27810) example: MASK:0.0.0.0
+I (27810) example: GW:0.0.0.0
+I (27820) example: ~~~~~~~~~~~
+D (27850) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (27850) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (27970) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (27970) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (28100) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28100) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (28220) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28220) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (28340) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28340) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (28460) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28460) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (28580) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28580) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (28700) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28700) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (29060) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (29070) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (29430) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (29430) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (29790) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (29790) wifi:filter: set rx policy=4
+D (29790) wifi:first chan=1
+D (29790) wifi:handoff_cb: status=0
+D (29790) wifi:clear rc list
+D (29790) wifi:clear blacklist
+D (29800) wifi:Send disconnect event, reason=201
+D (29800) wifi:connect status 1 -> 3
+D (29800) wifi:disable connect timer
+D (29810) wifi:clear scan ap list
+D (29810) event: running post WIFI_EVENT:5 with handler 0x400f9240 and context 0x3ffbda7c on loop 0x3ffbc870
+0x400f9240: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (29820) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+D (29820) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd798 from event_id=5
+I (29830) example: ~~~~~~~~~~~
+D (29830) esp_netif_lwip: check: remote, if=0x3ffbd798 fn=0x400de3dc
+0x400de3dc: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+I (29840) example: IP:0.0.0.0
+D (29840) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd798
+D (29850) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd798
+I (29860) example: MASK:0.0.0.0
+D (29860) esp_netif_lwip: if0x3ffbd798 start ip lost tmr: no need start because netif=0x3ffbd81c interval=120 ip=0
+I (29880) example: GW:0.0.0.0
+D (29880) esp_netif_lwip: check: local, if=0x3ffbd798 fn=0x400de8e8
+0x400de8e8: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+I (29890) example: ~~~~~~~~~~~
+D (29890) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd798
+D (29900) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (29900) event: running post WIFI_EVENT:5 with handler 0x400d7d1c and context 0x3ffc5aec on loop 0x3ffbc870
+0x400d7d1c: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise_original_fixed/main/wifi_enterprise_main.c:98
+
+D (29910) wifi:Start wifi connect
+D (29920) wifi:connect status 3 -> 0
+D (29920) wifi:connect chan=0
+D (29920) wifi:first chan=1
+D (29920) wifi:connect status 0 -> 1
+D (29930) wifi:filter: set rx policy=3
+D (29930) wifi:clear scan ap list
+D (29930) wifi:start scan: type=0x50f, priority=2, cb=0x4012d7a8, arg=0x0, ss_state=0x1, time=28280242, index=0
+0x4012d7a8: cnx_start_handoff_cb at ??:?
+
+D (29940) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (29950) wifi:AP not PMF Capable when STA requires, reject profile
+I (29960) wifi:AP not PMF Capable when STA requires, reject profile
+I (30040) wifi:AP not PMF Capable when STA requires, reject profile
+D (30070) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (30070) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (30190) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (30190) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (30310) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (30310) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (30430) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (30440) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (30560) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (30560) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (30680) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (30680) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (30800) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (30800) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (30920) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (30920) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (31040) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (31040) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (31160) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (31160) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (31290) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (31290) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (31650) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (31650) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (31900) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd798
+I (31900) example: ~~~~~~~~~~~
+I (31900) example: IP:0.0.0.0
+I (31900) example: MASK:0.0.0.0
+I (31900) example: GW:0.0.0.0
+I (31910) example: ~~~~~~~~~~~
+D (32010) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (32010) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+

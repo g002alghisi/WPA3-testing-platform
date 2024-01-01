@@ -1,0 +1,130 @@
+Dec 26 17:46:36 raspberrypi systemd[1]: Starting wpa_supplicant.service - WPA supplicant...
+â��â�� Subject: A start job for unit wpa_supplicant.service has begun execution
+â��â�� Defined-By: systemd
+â��â�� Support: https://www.debian.org/support
+â��â�� 
+â��â�� A start job for unit wpa_supplicant.service has begun execution.
+â��â�� 
+â��â�� The job identifier is 136.
+Dec 26 17:46:36 raspberrypi wpa_supplicant[654]: Successfully initialized wpa_supplicant
+Dec 26 17:46:36 raspberrypi systemd[1]: Started wpa_supplicant.service - WPA supplicant.
+â��â�� Subject: A start job for unit wpa_supplicant.service has finished successfully
+â��â�� Defined-By: systemd
+â��â�� Support: https://www.debian.org/support
+â��â�� 
+â��â�� A start job for unit wpa_supplicant.service has finished successfully.
+â��â�� 
+â��â�� The job identifier is 136.
+Dec 26 17:47:37 raspberrypi wpa_supplicant[654]: wlan0: Reject scan trigger since one is already pending
+Dec 26 17:48:52 raspberrypi wpa_supplicant[654]: wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+Dec 26 17:48:54 raspberrypi wpa_supplicant[654]: wlan0: Associated with 3c:a0:67:80:99:a3
+Dec 26 17:48:54 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Dec 26 17:48:54 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+Dec 26 17:49:15 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+Dec 26 17:49:15 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+Dec 26 17:49:15 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+Dec 26 17:49:15 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=9fb53c3e5d7f2eb388732d28651605ca3013b92637f9741092ce57143039ae93
+Dec 26 17:49:15 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=cfa814066388ed3d3f9f8698d5d218079a5bfd4290602b7cccdc482548699199
+Dec 26 17:49:15 raspberrypi wpa_supplicant[654]: EAP-MSCHAPV2: Authentication succeeded
+Dec 26 17:49:15 raspberrypi wpa_supplicant[654]: EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
+Dec 26 17:49:15 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+Dec 26 17:49:15 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+Dec 26 17:49:20 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=3
+Dec 26 17:49:20 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Dec 26 17:49:20 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+Dec 26 17:49:23 raspberrypi wpa_supplicant[654]: wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+Dec 26 17:49:25 raspberrypi wpa_supplicant[654]: wlan0: Associated with 3c:a0:67:80:99:a3
+Dec 26 17:49:25 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+Dec 26 17:49:25 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Dec 26 17:49:28 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+Dec 26 17:49:28 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+Dec 26 17:49:28 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+Dec 26 17:49:28 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=d9eeda5d53948a9455f0f0272c772c5c9106c389ff2cc26bd11f1fe2383e24bd
+Dec 26 17:49:28 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=ad984eb890faa4445d5af032c265296f90627e5b04d2abe1f0eca8b1e644f236
+Dec 26 17:49:28 raspberrypi wpa_supplicant[654]: TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+Dec 26 17:49:28 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+Dec 26 17:49:28 raspberrypi wpa_supplicant[654]: SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+Dec 26 17:49:28 raspberrypi wpa_supplicant[654]: OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+Dec 26 17:49:29 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-FAILURE EAP authentication failed
+Dec 26 17:49:29 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=23
+Dec 26 17:49:29 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=1 duration=10 reason=AUTH_FAILED
+Dec 26 17:49:30 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Dec 26 17:49:30 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+Dec 26 17:49:38 raspberrypi wpa_supplicant[654]: wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: wlan0: Associated with 3c:a0:67:80:99:a3
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=d9eeda5d53948a9455f0f0272c772c5c9106c389ff2cc26bd11f1fe2383e24bd
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=ad984eb890faa4445d5af032c265296f90627e5b04d2abe1f0eca8b1e644f236
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+Dec 26 17:49:40 raspberrypi wpa_supplicant[654]: OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+Dec 26 17:49:41 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-FAILURE EAP authentication failed
+Dec 26 17:49:41 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=23
+Dec 26 17:49:41 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=1 duration=10 reason=AUTH_FAILED
+Dec 26 17:49:41 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Dec 26 17:49:41 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+Dec 26 17:49:55 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SSID-REENABLED id=0 ssid="Hostapd-AP-E"
+Dec 26 17:49:55 raspberrypi wpa_supplicant[654]: wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: wlan0: Associated with 3c:a0:67:80:99:a3
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=d9eeda5d53948a9455f0f0272c772c5c9106c389ff2cc26bd11f1fe2383e24bd
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=ad984eb890faa4445d5af032c265296f90627e5b04d2abe1f0eca8b1e644f236
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+Dec 26 17:49:57 raspberrypi wpa_supplicant[654]: OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+Dec 26 17:49:58 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-FAILURE EAP authentication failed
+Dec 26 17:49:58 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=23
+Dec 26 17:49:58 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=2 duration=39 reason=AUTH_FAILED
+Dec 26 17:49:58 raspberrypi wpa_supplicant[654]: BSSID 3c:a0:67:80:99:a3 ignore list count incremented to 2, ignoring for 10 seconds
+Dec 26 17:49:58 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=3 duration=41 reason=CONN_FAILED
+Dec 26 17:49:58 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Dec 26 17:49:58 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+Dec 26 17:50:03 raspberrypi wpa_supplicant[654]: wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: wlan0: Associated with 3c:a0:67:80:99:a3
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=d9eeda5d53948a9455f0f0272c772c5c9106c389ff2cc26bd11f1fe2383e24bd
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=ad984eb890faa4445d5af032c265296f90627e5b04d2abe1f0eca8b1e644f236
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+Dec 26 17:50:06 raspberrypi wpa_supplicant[654]: OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+Dec 26 17:50:07 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-FAILURE EAP authentication failed
+Dec 26 17:50:07 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=23
+Dec 26 17:50:07 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=1 duration=10 reason=AUTH_FAILED
+Dec 26 17:50:07 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=2 duration=37 reason=CONN_FAILED
+Dec 26 17:50:07 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Dec 26 17:50:07 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+Dec 26 17:50:31 raspberrypi wpa_supplicant[654]: wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: wlan0: Associated with 3c:a0:67:80:99:a3
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=d9eeda5d53948a9455f0f0272c772c5c9106c389ff2cc26bd11f1fe2383e24bd
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=ad984eb890faa4445d5af032c265296f90627e5b04d2abe1f0eca8b1e644f236
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+Dec 26 17:50:33 raspberrypi wpa_supplicant[654]: OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+Dec 26 17:50:34 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-EAP-FAILURE EAP authentication failed
+Dec 26 17:50:34 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=23
+Dec 26 17:50:34 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=1 duration=10 reason=AUTH_FAILED
+Dec 26 17:50:34 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=2 duration=27 reason=CONN_FAILED
+Dec 26 17:50:34 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Dec 26 17:50:34 raspberrypi wpa_supplicant[654]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+

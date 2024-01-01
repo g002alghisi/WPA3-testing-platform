@@ -6,6 +6,8 @@ p_wpa2=Test/Src/test_p_wpa2.sh
 
 p_wpa3=Test/Src/test_p_wpa3.sh
 
+p_fake_wpa3=Test/Src/test_p_fake_wpa3.sh
+
 p_wpa2_wpa3=Test/Src/test_p_wpa2_wpa3.sh
 p_downgrade_wpa2_wpa3=Test/Src/test_p_downgrade_wpa2_wpa3.sh
 

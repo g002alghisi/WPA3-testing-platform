@@ -1,9 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{c+ch}{\PYGZsh{}!/bin/bash}
-\PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}Hello, World!\PYGZdq{}}
-
-\PYG{k}{for} file \PYG{k}{in} *\PYG{p}{;} \PYG{k}{do}
-    vim \PYG{n+nv}{\PYGZdl{}file}
-    \PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}Bellissimoooo }\PYG{n+nv}{\PYGZdl{}0}\PYG{l+s+s2}{, }\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{\PYGZdq{}}
-\PYG{k}{done}
-\end{Verbatim}

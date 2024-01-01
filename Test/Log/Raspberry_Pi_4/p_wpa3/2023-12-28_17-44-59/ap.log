@@ -1,0 +1,79 @@
+[17:44:59.265] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Raspberry_Pi_4/p_wpa3...
+[0;32mSuccess.[0m
+
+[17:44:59.267] Fetching configuration file associated to p_wpa3...
+[0;32mSuccess.[0m
+[17:44:59.272] Changing interface and bridge name inside Hostapd/Conf/Personal/p_wpa3.conf...
+[0;32mSuccess.[0m
+
+[17:44:59.312] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[17:44:59.317] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[17:44:59.334] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[17:44:59.375] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[17:44:59.380] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[17:44:59.395] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[17:44:59.586] Creating the bridge... 
+[0;32mSuccess.[0m
+[17:44:59.684] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[17:44:59.700] Looking for Hostapd/Conf/Personal/p_wpa3.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=11
+logger_syslog_level=0
+logger_stdout=11
+logger_stdout_level=0
+ssid=Hostapd-AP-P
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+wpa=2
+wpa_key_mgmt=SAE
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=2
+sae_password=argoargoargo
+sae_groups=19
+sae_pwe=2
+
+
+[17:44:59.993] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[17:45:00.191] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+[17:45:00.191] wlp3s0: AP-ENABLED 
+[17:50:14.137] wlp3s0: STA dc:a6:32:df:e1:5c IEEE 802.11: start SAE authentication (RX commit, status=0 (SUCCESS))
+[17:50:14.201] wlp3s0: STA dc:a6:32:df:e1:5c IEEE 802.11: SAE authentication (RX confirm, status=0 (SUCCESS))
+[17:50:14.203] wlp3s0: STA dc:a6:32:df:e1:5c IEEE 802.11: association OK (aid 1)
+[17:50:14.205] wlp3s0: STA dc:a6:32:df:e1:5c IEEE 802.11: associated (aid 1)
+[17:50:14.205] wlp3s0: STA dc:a6:32:df:e1:5c IEEE 802.11: binding station to interface 'wlp3s0'
+[17:50:14.205] wlp3s0: STA dc:a6:32:df:e1:5c WPA: event 1 notification
+[17:50:14.205] wlp3s0: STA dc:a6:32:df:e1:5c WPA: start authentication
+[17:50:14.205] wlp3s0: STA dc:a6:32:df:e1:5c IEEE 802.1X: unauthorizing port
+[17:50:14.239] wlp3s0: STA dc:a6:32:df:e1:5c WPA: sending 1/4 msg of 4-Way Handshake
+[17:50:14.244] wlp3s0: STA dc:a6:32:df:e1:5c WPA: received EAPOL-Key frame (2/4 Pairwise)
+[17:50:14.244] wlp3s0: STA dc:a6:32:df:e1:5c WPA: sending 3/4 msg of 4-Way Handshake
+[17:50:14.248] wlp3s0: STA dc:a6:32:df:e1:5c WPA: received EAPOL-Key frame (4/4 Pairwise)
+[17:50:14.249] wlp3s0: AP-STA-CONNECTED dc:a6:32:df:e1:5c
+[17:50:14.249] wlp3s0: STA dc:a6:32:df:e1:5c IEEE 802.1X: authorizing port
+[17:50:14.249] wlp3s0: STA dc:a6:32:df:e1:5c WPA: pairwise key handshake completed (RSN)
+
+[0;36mHostapd is stopped.[0m
+
+[17:51:31.592] Deleting the bridge... 
+[0;32mSuccess.[0m
+[17:51:31.718] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

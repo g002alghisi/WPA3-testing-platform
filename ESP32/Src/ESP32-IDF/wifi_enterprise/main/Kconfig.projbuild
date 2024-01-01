@@ -44,8 +44,6 @@ menu "Example Configuration"
     choice
         prompt "EAP method for the example to use"
         default EXAMPLE_EAP_METHOD_PEAP
-        config EXAMPLE_EAP_METHOD_TLS
-            bool "TLS"
         config EXAMPLE_EAP_METHOD_PEAP
             bool "PEAP"
         config EXAMPLE_EAP_METHOD_TTLS
@@ -54,7 +52,6 @@ menu "Example Configuration"
 
     config EXAMPLE_EAP_METHOD
         int
-        default 0 if EXAMPLE_EAP_METHOD_TLS
         default 1 if EXAMPLE_EAP_METHOD_PEAP
         default 2 if EXAMPLE_EAP_METHOD_TTLS
 

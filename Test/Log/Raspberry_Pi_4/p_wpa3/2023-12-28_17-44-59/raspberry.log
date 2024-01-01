@@ -1,0 +1,55 @@
+alghisi-pi@raspberrypi:~ $ iwctl
+NetworkConfigurationEnabled: disabled
+StateDirectory: /var/lib/iwd
+Version: 2.3
+[iwd]# station wlan0 scan
+[iwd]# station wlan0 get-networks
+                               Available networks                             *
+--------------------------------------------------------------------------------
+      Network name                      Security            Signal
+--------------------------------------------------------------------------------
+  >   Hostapd-AP-P                      psk                 ****    
+      Casa-A-gbtyTYgnGTBYjf             psk                 ****    
+      WOW FI - FASTWEB                  8021x               ****    
+      EIR-96252                         psk                 ****    
+      INTRED-56875                      psk                 ****    
+      Linkem2.4GHz_A7505E               psk                 ****    
+      FASTWEB-C7XQJJ                    psk                 ****    
+
+[iwd]# station wlan0 connect Hostapd-AP-P 
+Type the network passphrase for Hostapd-AP-P psk.                               
+Passphrase: ************                                                        
+[iwd]# device list
+                                    Devices                                    
+--------------------------------------------------------------------------------
+  Name                  Address               Powered     Adapter     Mode      
+--------------------------------------------------------------------------------
+  wlan0                 dc:a6:32:df:e1:5c     on          phy0        station     
+
+[iwd]# station 
+list  wlan0                                                                     
+[iwd]# station wlan0                                                            
+connect                  connect-hidden           disconnect                    
+get-hidden-access-points get-networks             scan                          
+show                                                                            
+[iwd]# station wlan0 s                                                          
+scan show                                                                       
+[iwd]# station wlan0 show 
+                                 Station: wlan0                               *
+--------------------------------------------------------------------------------
+  Settable  Property              Value                                          
+--------------------------------------------------------------------------------
+            Scanning              no                                               
+            State                 connected                                        
+            Connected network     Hostapd-AP-P                                     
+            No IP addresses       Is DHCP client configured?                       
+            ConnectedBss          3c:a0:67:80:99:a3                                
+            Frequency             2412                                             
+            Security              WPA3-Personal                                    
+            RSSI                  -30 dBm                                          
+            TxBitrate             24000 Kbit/s                                     
+            RxBitrate             1000 Kbit/s                                      
+
+[iwd]# 
+
+

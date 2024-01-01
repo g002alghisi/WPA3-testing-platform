@@ -1,0 +1,33 @@
+Starting WICED Wiced_006.006.001.0001
+Platform CYW943907AEVAL1F initialised
+Started ThreadX v5.9
+WICED_core Initialized
+Initialising NetX_Duo v5.12
+Creating Packet pools
+WLAN MAC Address : D4:53:83:BE:23:62
+WLAN Firmware    : wl0: Jul 20 2020 00:08:56 version 7.15.168.149 (21d266a) FWID 01-d4dbc762
+WLAN CLM         : API: 12.2 Data: 9.10.74 Compiler: 1.31.3 ClmImport: 1.36.3 Creation: 2020-07-20 00:01:06
+Console app
+> join_ent
+ERROR: Insufficient Arguments
+Usage: join_ent <ssid> <eap_tls|peap|eap_ttls> [username] [password] [eap] [mschapv2] [client-cert] <wpa2|wpa2_tkip|wpa|wpa_tkip|wpa2_fbt>
+> join_ent Hostapd-AP-E peap bob@example.org argoargoargo wpa2
+Joining : Hostapd-AP-E
+Successfully joined : Hostapd-AP-E
+Obtaining IPv4 address via DHCP
+ L1434 : dhcp_client_init() : DHCP CLIENT hostname = [WICED IP]
+IPv4 network ready IP: 192.168.154.237
+Setting IPv6 link-local address
+IPv6 network ready IP: FE80:0000:0000:0000:D653:83FF:FEBE:2362
+ Successfully retrieved the session information 0
+> leave_ent
+leave test: ok
+> join_ent Hostapd-AP-E peap bob@example.org argoargoargo wpa2
+Joining : Hostapd-AP-E
+Failed to join : Hostapd-AP-E
+Joining : Hostapd-AP-E
+Failed to join : Hostapd-AP-E
+Joining : Hostapd-AP-E
+Failed to join : Hostapd-AP-E
+Join result 1007:
+>
