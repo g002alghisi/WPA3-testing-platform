@@ -18,7 +18,7 @@ _minted*/
 *.sln.docstates
 
 # Compiled LaTeX files
-*.pdf
+#*.pdf
 
 # Temporary files
 *.bbl
