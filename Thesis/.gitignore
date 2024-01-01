@@ -6,7 +6,7 @@
 *.toc
 
 # Minted
-_minted/
+_minted*/
 
 # Editor-specific files
 .vscode/
