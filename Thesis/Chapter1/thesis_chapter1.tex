@@ -1,0 +1,105 @@
+% !TEX root = ../toptesi-scudo-example.tex
+% !TEX encoding = UTF-8 Unicode
+%***********************************************************************
+%*********************************** First Chapter 
+%***********************************************************************
+
+\chapter{First Chapter Title}  %Title of the First Chapter
+\label{chapter 1}
+    \graphicspath{{Chapter1/Images/}}
+    
+    \begin{minted}{bash}
+#!/bin/bash
+echo "Hello, World!"
+
+for file in *; do
+    vim $file
+    echo "Bellissimoooo $0, $1"
+done
+    \end{minted}
+
+
+%**************************** %First Section  ****************************
+\section[Introduction to PhD thesis template]{Introduction to PhD thesis template\footnote{The greatest part of this example file was written by an unknown past ScuDo student who did not sign his/her work; s/he just put the file in Internet, and apparently the other ScuDo students highly appreciated this thesis template. As the author of the TOPtesi bundle, with approval of the ScuDo Director, I included this example into the bundle. With the first public release, the only modification I made was to use the fake logo image in order to protect the Doctoral School copyright; then I added a few modifications in order to upgrade certain links and some procedures, since the TOPtesi bundle has been upgraded after the first public release of this file.}} %Section - 1.1 
+\label{section 1.1} % here you can label the section to refer it inside the text
+
+Welcome to this \LaTeX\ Thesis Template for writing your PhD thesis using the \LaTeX{} typesetting system. If you are writing a thesis (or will be in the future) and its subject is technical or mathematical (though it doesn't have to be), then creating it in \LaTeX\ is highly recommended.
+
+\LaTeX\ is a mark up language and its associated typesetting programs such as pdfLaTeX, LuaLaTeX, or XeLaTeX professionally typeset documents of any length,  that run to hundreds or thousands of pages long. With simple mark-up commands, it automatically sets out the table of contents, margins, page headers and footers and keeps the formatting consistent and beautiful. One of its main strengths is the way it can easily typeset mathematics, even advanced mathematics. Even if those equations are the most horribly twisted and most difficult mathematical problems that can only be solved on a super-computer, you can at least count on \LaTeX\ to make them look stunning: \cite{lamport1994latex, misc:Lshort}. Please see appendix~\ref{Appendix1} for the instruction on how to install a complete \TeX\ system.
+
+Along with this document you have access to its \LaTeX\ source file (\textbf{toptesi-scudo-example.tex}) including different partitions. Inside each part there are instructive comments explaining the options for different commands. The default commands are designed and recommended by PhD school of Politecnico di Torino. In this tutorial the  essential commands to write a scientific document are listed and briefly explained.  
+
+
+
+
+%************************ Second Section  ***********************
+\section{Getting started with this template}  %Section - 1.2 
+\label{section1.2}
+If you are familiar with \LaTeX, then you should explore the directory structure of the template and then proceed to place your own information into a configuration file with extension \texttt{.cfg} and a name that matches exactly your main file name; pay attention to upper and lower case letters. You can then modify the rest of this file to your unique specifications based on your course. Chapter \ref{chapter 2} will help you do this.
+
+If you are new to \LaTeX\ it is recommended that you carry on reading through the rest of the information in this document. The style of this template is confirmed and recommended by the Doctoral School of Politecnico di Torino (ScuDo).
+
+%************************* Third Section  ***************************
+\section{What is included in this template}
+\label{section 1.3}
+
+\subsection{Folders}
+
+This template comes as a single zip file that expands out to several files and folders. The folder names are mostly self-explanatory:
+
+\textbf{Chapters}: these are the folders where you put the thesis chapters.  Each chapter should go in its own separate \textbf{.tex} file and folder. Each chapter folder might contains a \textbf{Figs} subfolder which contains all figures for the chapter. A thesis usually has about five to six chapters, though there is no strict rule on this. For example they can be split as:
+\begin{itemize}
+	\item Chapter 1: Introduction to the thesis topic
+	\item Chapter 2: Background information and theory
+	\item Chapter 3: (Laboratory) experimental setup
+	\item Chapter 4: Details of experiments
+	\item Chapter 5: Discussion of the experimental results
+	\item Chapter 6: Conclusion and future directions
+\end{itemize}
+This chapter layout is specialised for the experimental sciences.
+
+\textbf{Appendices}: these are the folders where you put the appendices. Each appendix should go into its own appendix folder with its \textbf{.tex} file and figures; should the figures be in large numbers, a subordinate folder to hold all the figure files might be created.
+
+\subsection{Files}
+
+Included are also several files, most of them are plain text and you can see their contents in a text editor. After initial compilation, you will see that more auxiliary files are created by the typesetting and \texttt{biber} programs; you don't need to delete them or worry about:
+
+\noindent\textbf{toptesi-scudo-example.pdf}: this is your beautifully typeset thesis (in PDF file format) created by the typesetting program you chose to use. It is already supplied with the source files and after you compile the example you should get an identical version.
+
+\noindent\textbf{toptesi-scudo-example.tex}: this is an important file. This is the file that you should move to your working folder and, after changing its name, you may use it as a template to create your own thesis; you compile it to produce a PDF file. It contains the framework and constructs that tell \LaTeX\ how to layout the thesis. It is heavily commented so you can read exactly what each line of code does and why it is there. 
+ For your thesis you have to duplicate the example files with a different name, and you substitute their contents by writing your thesis following the same scheme.
+
+Files that are \emph{not} included, but are created by \LaTeX\ as auxiliary files include:\textbf{.aux}, \textbf{.bbl}, \textbf{.blg}, \textbf{.lof}, \textbf{.log}, \textbf{.lot} and \textbf{.out} files: they are auxiliary files generated by \LaTeX; if they are deleted \LaTeX\ simply regenerates them when you run the main \textbf{.tex} file again. But since they contains useful information for the typesetting program, it is better that you eventually delete them only when the thesis is finished, printed, and defended. 
+
+%********************** Forth Section  ****************************
+
+\section{Filling in your information in the thesis main and subsidiary files}
+\label{section 1.4}
+
+You need to personalise the thesis template and make it your own by filling in your own information. This is done by editing the main renamed \textbf{.tex} file with your favorite \LaTeX\ friendly editor (See Appendix~\ref{Appendix1}).
+
+Open the file and scroll down to the second large block titled \emph{ThesisTitlePage} where you can see the entries for \emph{Author}, \emph{Supervisors}, etc. Fill out the information about your thesis, yourself and your school. When you have done this, save the file and recompile your main file. All the information you filled-in should now be in the PDF, complete with web links. You can now begin your thesis proper!
+Remember that sooner or later you have to come back to the first block, in order to adjust the metadata to your particular thesis.
+
+The \textbf{toptesi-scudo-example.tex} file contains the structure of the thesis. There are plenty of written comments that explain what pages, sections and formatting the \LaTeX\ code is creating. 
+
+Begin by checking that your information on the title page is correct. The next page contains a one line (or more) dedication; you may write a dedication, but in Europe this habit is not so frequent. Next come the acknowledgements. On this page acknowledge the people that gave you some support during the development of the research you made for your doctorate program. Do not acknowledge the members of your family nor the professors who supervised and advised you during your research; they did so as their duty as members of the institutions where you followed your doctorate program. Following this section  there is the abstract/summary page which describes  your work in a condensed way; it can almost be used as a standalone document to describe what you have done. 
+
+The contents pages, list of figures and tables are all taken care of for you and you do not need to manually create or edit.  Finally, there is the block where the chapters are included. Uncomment the lines (delete the \% character) as you write the chapters. Each chapter should be written in its own file and possibly put into its own chapter sub-folder. Similarly for the appendices, uncomment the lines as you need them. Each appendix should go into its own file and possibly placed in its own appendix sub-folder.
+
+After the preamble, chapters and appendices, eventually the program inserts the bibliography, possibly a nomenclature list, an index, or other similar information. The bibliography \textbf{numbered} style is used for the bibliography and is a fully featured style that will even include links to where the referenced paper can be found online; it satisfies the standard of the IEEE Transactions in the fields of interest of this Institution and it is assumed to be the style used in the PhD theses concerning these fields; of course in other scientific domains other styles may be used; see below how the default style may be overridden. 
+In any case do not underestimate how grateful your reader will be to find that a reference to a paper is just a click away. Of course, this relies on you putting the URL information into the \textbf{.bib} file. Unfortunately URLs are sort of volatile; prefer references to printed material, that can be found in (almost) any library, or links to reliable web archives. For URLs, remember to specify the date when you last visited the web site; it is useful for the reader, but is also compulsory according to some ISO regulations.
+
+Notice that the facilities necessary to produce one or more bibliographies with the numbered style are already provided by the \texttt{toptesi-scudo} option to the \texttt{toptesi} class. But even if these facilities are  hardwired into the class and its subsidiary files, it is possible to bypass them. 
+
+If you prefer a different style, you can do it the way we did it in typesetting this example document. You simply have to specify the special option \texttt{mybibliostyle} among the other class options; then you have to add to your document preamble the necessary code to include the packages you prefer, and to specify the name of the bibliographic database(s) \texttt{.bib}. You do not need to enclose this code into a conditional statement as it has been done in this example; but of course it is not forbidden.
+
+Here we specified the above option and we used the conditional statement to enclose another set of packages and settings. Try recompiling the source file of this document without editing it, and run the usual processing task  sequence: lualatex, biber, lualatex, lualatex; then examine the typeset bibliography; it will use the \textbf{author-year} style.
+Then comment out the line containing the \texttt{mybibliostyle} option and repeat the usual processing tasks: lualatex, biber, lualatex, lualatex. And there you are with the default \textbf{numbered} style, as described above.
+
+In order to change style the bundle TOPtesi does not require programming acrobatics; but before changing style inquire with your PhD supervisor or with the School Director if your preferred bibliography style may be accepted by the School. Remember, though, that if your thesis deals with the IEEE Transactions disciplines, you should use the default settings and you should refrain from using the \texttt{mybibliostyle} option.
+
+Please, take notice that the \texttt{toptesi-scudo-example.bib} file is just an example that contains some entries just to show how bibliography databases are formed and how bibliographies are typeset. The records in this file are not necessarily complete, in the sense that some of them do not contain the full and correct necessary and supplementary information required by the regulation \textsc{iso 626}. It's up to you to enter the full and correct information in your own \texttt{.bib} file.
+
+
+
