@@ -1,0 +1,79 @@
+\documentclass[tikz, border=0.5mm,xcolor=dvipsnames]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage[scaled]{beramono}
+\usetikzlibrary{positioning}
+
+
+\begin{document}
+	\begin{tikzpicture}[on grid,node distance=0.6cm]
+		
+		%\draw[help lines,step=5mm,gray!20] (-1,-1) grid (4,4);
+		
+		\definecolor{ForestGreen}{RGB}{34,139,34}
+		\definecolor{LightLightGray}{rgb}{0.9,0.9,0.9}
+		
+		\pgfmathsetmacro{\pinDist}{0.1}
+		\pgfmathsetmacro{\pinNum}{20}
+		
+		\tikzset{
+			piBigConn/.style={
+				draw,
+				thick,
+				fill=LightLightGray,
+				minimum size=0.5 cm,
+				inner sep=0pt,
+				outer sep=0pt,
+			},
+			piSmallConn/.style={
+				draw,
+				thick,
+				fill=LightLightGray,
+				minimum width=0.15 cm,
+				minimum height=0.3 cm,
+				inner sep=0pt,
+				outer sep=0pt,
+			},
+			piChip/.style={
+				draw,
+				thick,
+				fill=LightLightGray,
+				minimum size=0.6 cm,
+				inner sep=0pt,
+				outer sep=0pt,
+				path picture={
+					\node[draw,thin,minimum size=0.5cm,font=\tiny\ttfamily] {Wi-Fi};
+				};
+			},
+		}	
+	
+		
+		% Body
+		\draw[black, thick, fill=ForestGreen] (0,0) rectangle (2,3);
+		
+		% Usb and ethernet
+		\node[piBigConn] (eth) at (0.4,2.75) {};
+		\node[piBigConn, right=of eth] (usb1) {};
+		\node[piBigConn, right=of usb1] (usb2) {};
+		
+		% Connector
+		\foreach \i in {1,...,\pinNum} {
+			\filldraw ++(0.2,\i*\pinDist) circle (0.02);
+			\filldraw ++(0.1,\i*\pinDist) circle (0.02);
+		}
+		
+		% Video and power connectors
+		\node[piSmallConn] (power) at (2-0.15/2,0.5) {};
+		\node[piSmallConn,above=of power] (hdmi1) {};
+		\node[piSmallConn,above=of hdmi1] (hdmi2) {};
+		
+		% Wi-Fi
+		\node[piChip] (wifi) at (0.7,0.4) {};
+		
+		
+		% Logo
+		\node at (1,1.5) {\includegraphics[width=0.6cm]{logo_raspberry.pdf}};
+		
+		
+	\end{tikzpicture}
+\end{document}

@@ -1,0 +1,62 @@
+\documentclass[tikz, border=0.5mm]{standalone}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes}
+
+
+\begin{document}
+	\begin{tikzpicture}[on grid,node distance=0.1cm]
+		
+		\draw[help lines,step=5mm,gray!20] (-3,-3) grid (3,3);
+		
+		\definecolor{ForestGreen}{RGB}{34,139,34}
+		\definecolor{LightLightGray}{rgb}{0.9,0.9,0.9}
+		
+		\pgfmathsetmacro{\pinDist}{0.1}
+		\pgfmathsetmacro{\pinNum}{20}
+		
+		\tikzset{
+			pcFrame/.style={
+				draw,
+				thick,
+				rounded corners,
+				fill=lightgray,
+				minimum width=4 cm,
+				minimum height=3 cm,
+			},
+			pcScreen/.style={
+				draw,
+				thick,
+				rounded corners,
+				fill=white,
+				minimum width=3.4 cm,
+				minimum height=2.4 cm,
+			},
+			pcBase/.style={
+				draw,
+				thick,
+				fill=lightgray,
+				minimum width=1 cm,
+				minimum height=0.4 cm,
+				anchor=base,
+			},
+			pcCamera/.style={
+				draw,
+				circle,
+				fill=black,
+				minimum size=0.1 cm,
+				inner sep=0pt,
+				outer sep=0pt,
+			}
+		}	
+		
+		% Usb and ethernet
+		\node[pcFrame] (frame) at (0,0) {};
+		\node[pcScreen] (screen) at (0,0) {};
+		\node[pcCamera,above=of screen.north] (camera) {};
+		\node[pcBase,below=-\pgflinewidth of frame.south] (base) {};
+
+		\node at (0,0) {\includegraphics[width=0.9cm]{logo_linux.pdf}};
+		
+		
+	\end{tikzpicture}
+\end{document}
