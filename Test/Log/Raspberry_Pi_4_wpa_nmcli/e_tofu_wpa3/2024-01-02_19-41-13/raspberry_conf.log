@@ -1,0 +1,185 @@
+===============================================================================
+                      Connection profile details (wifi-E)
+===============================================================================
+connection.id:                          wifi-E
+connection.uuid:                        eafafd8e-044d-40ab-bbf5-c585d0bdd291
+connection.stable-id:                   --
+connection.type:                        802-11-wireless
+connection.interface-name:              --
+connection.autoconnect:                 no
+connection.autoconnect-priority:        0
+connection.autoconnect-retries:         -1 (default)
+connection.multi-connect:               0 (default)
+connection.auth-retries:                -1
+connection.timestamp:                   1704220853
+connection.read-only:                   no
+connection.permissions:                 --
+connection.zone:                        --
+connection.master:                      --
+connection.slave-type:                  --
+connection.autoconnect-slaves:          -1 (default)
+connection.secondaries:                 --
+connection.gateway-ping-timeout:        0
+connection.metered:                     unknown
+connection.lldp:                        default
+connection.mdns:                        -1 (default)
+connection.llmnr:                       -1 (default)
+connection.dns-over-tls:                -1 (default)
+connection.mptcp-flags:                 0x0 (default)
+connection.wait-device-timeout:         -1
+connection.wait-activation-delay:       -1
+-------------------------------------------------------------------------------
+802-1x.optional:                        no
+802-1x.eap:                             peap
+802-1x.identity:                        bob@example.org
+802-1x.anonymous-identity:              anonymous
+802-1x.pac-file:                        --
+802-1x.ca-cert:                         --
+802-1x.ca-cert-password:                <hidden>
+802-1x.ca-cert-password-flags:          0 (none)
+802-1x.ca-path:                         --
+802-1x.subject-match:                   --
+802-1x.altsubject-matches:              --
+802-1x.domain-suffix-match:             --
+802-1x.domain-match:                    --
+802-1x.client-cert:                     --
+802-1x.client-cert-password:            <hidden>
+802-1x.client-cert-password-flags:      0 (none)
+802-1x.phase1-peapver:                  --
+802-1x.phase1-peaplabel:                --
+802-1x.phase1-fast-provisioning:        --
+802-1x.phase1-auth-flags:               0x0 (none)
+802-1x.phase2-auth:                     mschapv2
+802-1x.phase2-autheap:                  --
+802-1x.phase2-ca-cert:                  --
+802-1x.phase2-ca-cert-password:         <hidden>
+802-1x.phase2-ca-cert-password-flags:   0 (none)
+802-1x.phase2-ca-path:                  --
+802-1x.phase2-subject-match:            --
+802-1x.phase2-altsubject-matches:       --
+802-1x.phase2-domain-suffix-match:      --
+802-1x.phase2-domain-match:             --
+802-1x.phase2-client-cert:              --
+802-1x.phase2-client-cert-password:     <hidden>
+802-1x.phase2-client-cert-password-flags:0 (none)
+802-1x.password:                        <hidden>
+802-1x.password-flags:                  0 (none)
+802-1x.password-raw:                    <hidden>
+802-1x.password-raw-flags:              0 (none)
+802-1x.private-key:                     --
+802-1x.private-key-password:            <hidden>
+802-1x.private-key-password-flags:      0 (none)
+802-1x.phase2-private-key:              --
+802-1x.phase2-private-key-password:     <hidden>
+802-1x.phase2-private-key-password-flags:0 (none)
+802-1x.pin:                             <hidden>
+802-1x.pin-flags:                       0 (none)
+802-1x.system-ca-certs:                 no
+802-1x.auth-timeout:                    0
+-------------------------------------------------------------------------------
+802-11-wireless.ssid:                   Hostapd-AP-E
+802-11-wireless.mode:                   infrastructure
+802-11-wireless.band:                   bg
+802-11-wireless.channel:                1
+802-11-wireless.bssid:                  --
+802-11-wireless.rate:                   0
+802-11-wireless.tx-power:               0
+802-11-wireless.mac-address:            --
+802-11-wireless.cloned-mac-address:     --
+802-11-wireless.generate-mac-address-mask:--
+802-11-wireless.mac-address-blacklist:  --
+802-11-wireless.mac-address-randomization:default
+802-11-wireless.mtu:                    auto
+802-11-wireless.seen-bssids:            3C:A0:67:80:99:A3
+802-11-wireless.hidden:                 no
+802-11-wireless.powersave:              0 (default)
+802-11-wireless.wake-on-wlan:           0x1 (default)
+802-11-wireless.ap-isolation:           -1 (default)
+-------------------------------------------------------------------------------
+802-11-wireless-security.key-mgmt:      wpa-eap
+802-11-wireless-security.wep-tx-keyidx: 0
+802-11-wireless-security.auth-alg:      --
+802-11-wireless-security.proto:         --
+802-11-wireless-security.pairwise:      --
+802-11-wireless-security.group:         --
+802-11-wireless-security.pmf:           0 (default)
+802-11-wireless-security.leap-username: --
+802-11-wireless-security.wep-key0:      <hidden>
+802-11-wireless-security.wep-key1:      <hidden>
+802-11-wireless-security.wep-key2:      <hidden>
+802-11-wireless-security.wep-key3:      <hidden>
+802-11-wireless-security.wep-key-flags: 0 (none)
+802-11-wireless-security.wep-key-type:  unknown
+802-11-wireless-security.psk:           <hidden>
+802-11-wireless-security.psk-flags:     0 (none)
+802-11-wireless-security.leap-password: <hidden>
+802-11-wireless-security.leap-password-flags:0 (none)
+802-11-wireless-security.wps-method:    0x0 (default)
+802-11-wireless-security.fils:          0 (default)
+-------------------------------------------------------------------------------
+ipv4.method:                            auto
+ipv4.dns:                               --
+ipv4.dns-search:                        --
+ipv4.dns-options:                       --
+ipv4.dns-priority:                      0
+ipv4.addresses:                         --
+ipv4.gateway:                           --
+ipv4.routes:                            --
+ipv4.route-metric:                      -1
+ipv4.route-table:                       0 (unspec)
+ipv4.routing-rules:                     --
+ipv4.replace-local-rule:                -1 (default)
+ipv4.ignore-auto-routes:                no
+ipv4.ignore-auto-dns:                   no
+ipv4.dhcp-client-id:                    --
+ipv4.dhcp-iaid:                         --
+ipv4.dhcp-timeout:                      0 (default)
+ipv4.dhcp-send-hostname:                yes
+ipv4.dhcp-hostname:                     --
+ipv4.dhcp-fqdn:                         --
+ipv4.dhcp-hostname-flags:               0x0 (none)
+ipv4.never-default:                     no
+ipv4.may-fail:                          yes
+ipv4.required-timeout:                  -1 (default)
+ipv4.dad-timeout:                       -1 (default)
+ipv4.dhcp-vendor-class-identifier:      --
+ipv4.link-local:                        0 (default)
+ipv4.dhcp-reject-servers:               --
+ipv4.auto-route-ext-gw:                 -1 (default)
+-------------------------------------------------------------------------------
+ipv6.method:                            auto
+ipv6.dns:                               --
+ipv6.dns-search:                        --
+ipv6.dns-options:                       --
+ipv6.dns-priority:                      0
+ipv6.addresses:                         --
+ipv6.gateway:                           --
+ipv6.routes:                            --
+ipv6.route-metric:                      -1
+ipv6.route-table:                       0 (unspec)
+ipv6.routing-rules:                     --
+ipv6.replace-local-rule:                -1 (default)
+ipv6.ignore-auto-routes:                no
+ipv6.ignore-auto-dns:                   no
+ipv6.never-default:                     no
+ipv6.may-fail:                          yes
+ipv6.required-timeout:                  -1 (default)
+ipv6.ip6-privacy:                       -1 (unknown)
+ipv6.addr-gen-mode:                     stable-privacy
+ipv6.ra-timeout:                        0 (default)
+ipv6.mtu:                               auto
+ipv6.dhcp-duid:                         --
+ipv6.dhcp-iaid:                         --
+ipv6.dhcp-timeout:                      0 (default)
+ipv6.dhcp-send-hostname:                yes
+ipv6.dhcp-hostname:                     --
+ipv6.dhcp-hostname-flags:               0x0 (none)
+ipv6.auto-route-ext-gw:                 -1 (default)
+ipv6.token:                             --
+-------------------------------------------------------------------------------
+proxy.method:                           none
+proxy.browser-only:                     no
+proxy.pac-url:                          --
+proxy.pac-script:                       --
+-------------------------------------------------------------------------------
+

@@ -1,0 +1,3 @@
+nmcli> activate wlan0 
+Monitoring connection activation (press any key to continue)
+Error: Connection activation failed.

@@ -1,0 +1,44 @@
+nmcli> activate wlan0 
+Monitoring connection activation (press any key to continue)
+Error: Connection activation failed.
+
+
+
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2274] device (wlan0): Activation: starting connection 'wifi-E' (eafafd8e-044d-40ab-bbf5-c585d0bdd291)
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2282] audit: op="connection-activate" uuid="eafafd8e-044d-40ab-bbf5-c585d0bdd291" name="wifi-E" pid=10994 uid=1000 result="success"
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2291] device (wlan0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2308] manager: NetworkManager state is now CONNECTING
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2338] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2374] device (wlan0): Activation: (wifi) access point 'wifi-E' has security, but secrets are required.
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2433] device (wlan0): state change: config -> need-auth (reason 'none', sys-iface-state: 'managed')
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2543] device (wlan0): state change: need-auth -> prepare (reason 'none', sys-iface-state: 'managed')
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2558] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2575] device (wlan0): Activation: (wifi) connection 'wifi-E' has security, and secrets exist.  No new secrets needed.
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2578] Config: added 'ssid' value 'Hostapd-AP-E'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2579] Config: added 'scan_ssid' value '1'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2580] Config: added 'freq_list' value '2412'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2580] Config: added 'bgscan' value 'simple:30:-65:300'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2581] Config: added 'key_mgmt' value ' WPA-EAP-SHA256 WPA-EAP-SUITE-B-192'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2583] Config: added 'ieee80211w' value '2'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2584] Config: added 'password' value '<hidden>'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2585] Config: added 'eap' value 'PEAP'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2585] Config: added 'fragment_size' value '1266'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2587] Config: added 'phase2' value 'auth=MSCHAPV2'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2588] Config: added 'ca_cert' value '/home/alghisi-pi/Desktop/E_wpa3/certs/ca.pem'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2589] Config: added 'identity' value 'bob@example.org'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2590] Config: added 'anonymous_identity' value 'anonymous'
+Jan 02 19:27:49 raspberrypi NetworkManager[9169]: <info>  [1704220069.2590] Config: added 'proactive_key_caching' value '1'
+Jan 02 19:27:50 raspberrypi NetworkManager[9169]: <info>  [1704220070.3068] device (wlan0): supplicant interface state: disconnected -> scanning
+Jan 02 19:27:50 raspberrypi NetworkManager[9169]: <info>  [1704220070.3077] device (p2p-dev-wlan0): supplicant management interface state: disconnected -> scanning
+Jan 02 19:28:07 raspberrypi wpa_supplicant[6658]: wlan0: Failed to initiate sched scan
+Jan 02 19:28:14 raspberrypi NetworkManager[9169]: <warn>  [1704220094.6025] device (wlan0): Activation: (wifi) association took too long, failing activation
+Jan 02 19:28:14 raspberrypi NetworkManager[9169]: <info>  [1704220094.6026] device (wlan0): state change: config -> failed (reason 'ssid-not-found', sys-iface-state: 'managed')
+Jan 02 19:28:14 raspberrypi NetworkManager[9169]: <info>  [1704220094.6032] manager: NetworkManager state is now CONNECTED_LOCAL
+Jan 02 19:28:14 raspberrypi NetworkManager[9169]: <warn>  [1704220094.6037] device (wlan0): Activation: failed for connection 'wifi-E'
+Jan 02 19:28:14 raspberrypi NetworkManager[9169]: <info>  [1704220094.6041] device (wlan0): state change: failed -> disconnected (reason 'none', sys-iface-state: 'managed')
+Jan 02 19:28:14 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jan 02 19:28:14 raspberrypi wpa_supplicant[6658]: wlan0: Reject scan trigger since one is already pending
+Jan 02 19:28:14 raspberrypi NetworkManager[9169]: <info>  [1704220094.6121] device (wlan0): supplicant interface state: scanning -> disconnected
+Jan 02 19:28:14 raspberrypi NetworkManager[9169]: <info>  [1704220094.6123] device (p2p-dev-wlan0): supplicant management interface state: scanning -> disconnected
+Jan 02 19:28:15 raspberrypi wpa_supplicant[6658]: wlan0: Reject scan trigger since one is already pending
+

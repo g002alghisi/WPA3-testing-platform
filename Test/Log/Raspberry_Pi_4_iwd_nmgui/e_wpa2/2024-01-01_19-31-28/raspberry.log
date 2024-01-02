@@ -1,0 +1,5 @@
+Dec 29 21:42:38 raspberrypi NetworkManager[651]: <info>  [1703882558.5128] device (wlan0): new IWD device state is disconnected
+Dec 29 21:42:38 raspberrypi NetworkManager[651]: <info>  [1703882558.5144] device (wlan0): state change: unavailable -> disconnected (reason 'supplicant-available', sys-iface-state: 'managed')
+Dec 29 21:43:30 raspberrypi NetworkManager[651]: <info>  [1703882610.4145] audit: op="connection-update" uuid="1a35501a-0dad-4773-9619-2e024246518b" name="Hostapd-AP-E" pid=1579 uid=1000 result="success"
+Dec 29 21:44:04 raspberrypi NetworkManager[651]: <info>  [1703882644.3549] audit: op="connection-add-activate" pid=1157 uid=1000 result="fail" reason="802.1x connections must have IWD provisioning files"
+Dec 29 21:48:12 raspberrypi iwd[815]: wiphy_estimate_data_rate() failed

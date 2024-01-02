@@ -1,0 +1,132 @@
+[19:24:43.900] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Raspberry_Pi_4_wpa_nmcli/e_rogue_wpa3...
+[0;32mSuccess.[0m
+
+[19:24:43.902] Fetching configuration file associated to e_wpa3...
+[0;32mSuccess.[0m
+[19:24:43.912] Changing interface and bridge name inside Hostapd/Conf/Enterprise/e_wpa3.conf...
+[0;32mSuccess.[0m
+
+[19:24:43.955] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[19:24:43.961] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[19:24:43.978] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[19:24:44.017] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[19:24:44.023] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[19:24:44.042] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[19:24:44.257] Creating the bridge... 
+[0;32mSuccess.[0m
+[19:24:44.376] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[19:24:44.395] Looking for Hostapd/Conf/Enterprise/e_wpa3.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=15
+logger_syslog_level=0
+logger_stdout=15
+logger_stdout_level=0
+ssid=Hostapd-AP-E
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+ieee8021x=1
+own_ip_addr=127.0.0.1
+auth_server_addr=127.0.0.1
+auth_server_port=1812
+auth_server_shared_secret=luckyluckylucky
+wpa=2
+wpa_key_mgmt=WPA-EAP
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=2
+
+
+[19:24:44.696] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[19:24:44.696] wlp3s0: RADIUS Authentication server 127.0.0.1:1812
+[19:24:44.896] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+
+[0;36mHostapd is stopped.[0m
+
+[19:26:22.674] Deleting the bridge... 
+[0;32mSuccess.[0m
+[19:26:22.803] Starting NetworkManager... 
+[0;32mSuccess.[0m
+
+[19:26:24.128] Initiating the saving session of stdout and stderr inside Test/Tmp/Log/Raspberry_Pi_4_wpa_nmcli/e_rogue_wpa3...
+[0;32mSuccess.[0m
+
+[19:26:24.130] Fetching configuration file associated to e_rogue_wpa3...
+[0;32mSuccess.[0m
+[19:26:24.136] Changing interface and bridge name inside Hostapd/Conf/Enterprise/e_rogue_wpa3.conf...
+[0;32mSuccess.[0m
+
+[19:26:24.183] Checking Ethernet interface... 
+[0;32mSuccess.[0m
+[19:26:24.189] Forcing Ethernet interface up... 
+[0;32mSuccess.[0m
+[19:26:24.208] Checking Ethernet connection... 
+[0;32mSuccess.[0m
+[19:26:24.245] Checking Wi-Fi interface... 
+[0;32mSuccess.[0m
+[19:26:24.250] Forcing Wi-Fi interface up... 
+[0;32mSuccess.[0m
+[19:26:24.269] Stopping NetworkManager... 
+[0;32mSuccess.[0m
+[19:26:24.412] Creating the bridge... 
+[0;32mSuccess.[0m
+[19:26:24.505] Adding enp0s20f0u1 to the bridge (wlp3s0 is added later by hostapd)... 
+[0;32mSuccess.[0m
+[19:26:24.522] Looking for Hostapd/Conf/Enterprise/e_rogue_wpa3.conf...
+[0;32mSuccess.[0m
+
+[0;36mRunning Hostapd. Press Ctrl-C to stop.[0m
+
+AP settings:
+
+interface=wlp3s0
+bridge=br0
+driver=nl80211
+logger_syslog=15
+logger_syslog_level=0
+logger_stdout=15
+logger_stdout_level=0
+ssid=Hostapd-AP-E
+country_code=IT
+hw_mode=g
+channel=1
+auth_algs=1
+ieee8021x=1
+own_ip_addr=127.0.0.1
+auth_server_addr=127.0.0.1
+auth_server_port=1812
+auth_server_shared_secret=luckyluckylucky
+wpa=2
+wpa_key_mgmt=WPA-EAP
+rsn_pairwise=CCMP
+group_cipher=CCMP
+ieee80211w=2
+
+
+[19:26:24.813] wlp3s0: interface state UNINITIALIZED->COUNTRY_UPDATE
+[19:26:24.813] wlp3s0: RADIUS Authentication server 127.0.0.1:1812
+[19:26:25.008] wlp3s0: interface state COUNTRY_UPDATE->ENABLED
+
+[0;36mHostapd is stopped.[0m
+
+[19:26:34.230] Deleting the bridge... 
+[0;32mSuccess.[0m
+[19:26:34.375] Starting NetworkManager... 
+[0;32mSuccess.[0m
+

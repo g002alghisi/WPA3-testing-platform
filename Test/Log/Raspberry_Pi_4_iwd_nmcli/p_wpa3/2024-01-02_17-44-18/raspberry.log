@@ -1,0 +1,22 @@
+Jan 02 17:45:15 raspberrypi NetworkManager[594]: <info>  [1704213915.6532] device (wlan0): Activation: starting connection 'Hostapd-AP-P' (8467ca52-7e53-4fe1-b59f-d93f7a06ca16)
+Jan 02 17:45:15 raspberrypi NetworkManager[594]: <info>  [1704213915.6541] audit: op="connection-activate" uuid="8467ca52-7e53-4fe1-b59f-d93f7a06ca16" name="Hostapd-AP-P" pid=1111 uid=1000 result="success"
+Jan 02 17:45:15 raspberrypi NetworkManager[594]: <info>  [1704213915.6545] device (wlan0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Jan 02 17:45:15 raspberrypi NetworkManager[594]: <info>  [1704213915.6553] manager: NetworkManager state is now CONNECTING
+Jan 02 17:45:15 raspberrypi NetworkManager[594]: <info>  [1704213915.6563] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jan 02 17:45:15 raspberrypi NetworkManager[594]: <info>  [1704213915.6739] device (wlan0): new IWD device state is connecting
+Jan 02 17:45:19 raspberrypi NetworkManager[594]: <info>  [1704213919.0151] device (wlan0): Activation: (wifi) Stage 2 of 5 (Device Configure) successful.  Connected to 'Hostapd-AP-P'.
+Jan 02 17:45:19 raspberrypi NetworkManager[594]: <info>  [1704213919.0161] device (wlan0): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Jan 02 17:45:19 raspberrypi NetworkManager[594]: <info>  [1704213919.1062] policy: set 'Hostapd-AP-P' (wlan0) as default for IPv4 routing and DNS
+Jan 02 17:45:19 raspberrypi NetworkManager[594]: <info>  [1704213919.1188] device (wlan0): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Jan 02 17:45:19 raspberrypi NetworkManager[594]: <info>  [1704213919.1204] device (wlan0): new IWD device state is connected
+Jan 02 17:45:19 raspberrypi NetworkManager[594]: <info>  [1704213919.1682] device (wlan0): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Jan 02 17:45:19 raspberrypi NetworkManager[594]: <info>  [1704213919.1687] device (wlan0): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Jan 02 17:45:19 raspberrypi NetworkManager[594]: <info>  [1704213919.1695] manager: NetworkManager state is now CONNECTED_SITE
+Jan 02 17:45:19 raspberrypi NetworkManager[594]: <info>  [1704213919.1702] device (wlan0): Activation: successful, device activated.
+Jan 02 17:45:19 raspberrypi NetworkManager[594]: <info>  [1704213919.1713] manager: NetworkManager state is now CONNECTED_GLOBAL
+Jan 02 17:45:25 raspberrypi NetworkManager[594]: <info>  [1704213925.1248] device (wlan0): new IWD device state is disconnected
+Jan 02 17:45:25 raspberrypi NetworkManager[594]: <info>  [1704213925.1256] device (wlan0): state change: activated -> failed (reason 'supplicant-disconnect', sys-iface-state: 'managed')
+Jan 02 17:45:25 raspberrypi NetworkManager[594]: <warn>  [1704213925.1295] device (wlan0): Activation: failed for connection 'Hostapd-AP-P'
+Jan 02 17:45:25 raspberrypi NetworkManager[594]: <info>  [1704213925.1321] manager: NetworkManager state is now CONNECTED_LOCAL
+Jan 02 17:45:25 raspberrypi NetworkManager[594]: <info>  [1704213925.1977] device (wlan0): state change: failed -> disconnected (reason 'none', sys-iface-state: 'managed')
+

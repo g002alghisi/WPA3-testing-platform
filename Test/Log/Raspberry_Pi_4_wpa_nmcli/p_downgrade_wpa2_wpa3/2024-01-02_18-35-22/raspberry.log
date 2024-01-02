@@ -1,0 +1,195 @@
+Jan 02 18:35:13 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=3
+Jan 02 18:35:13 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Jan 02 18:35:13 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+Jan 02 18:35:13 raspberrypi NetworkManager[9169]: <info>  [1704216913.7793] device (wlan0): supplicant interface state: completed -> disconnected
+Jan 02 18:35:13 raspberrypi NetworkManager[9169]: <info>  [1704216913.7794] device (p2p-dev-wlan0): supplicant management interface state: completed -> disconnected
+Jan 02 18:35:13 raspberrypi wpa_supplicant[6658]: wlan0: Reject scan trigger since one is already pending
+Jan 02 18:35:13 raspberrypi wpa_supplicant[6658]: wlan0: Failed to initiate AP scan
+Jan 02 18:35:14 raspberrypi NetworkManager[9169]: <info>  [1704216914.8958] device (wlan0): supplicant interface state: disconnected -> scanning
+Jan 02 18:35:14 raspberrypi NetworkManager[9169]: <info>  [1704216914.8959] device (p2p-dev-wlan0): supplicant management interface state: disconnected -> scanning
+Jan 02 18:35:17 raspberrypi wpa_supplicant[6658]: wlan0: Trying to associate with SSID 'Hostapd-AP-P'
+Jan 02 18:35:17 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:17 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:17 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:17 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:17 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:17 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:17 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:17 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:17 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:17 raspberrypi NetworkManager[9169]: <info>  [1704216917.4687] device (wlan0): supplicant interface state: scanning -> associating
+Jan 02 18:35:17 raspberrypi NetworkManager[9169]: <info>  [1704216917.4688] device (p2p-dev-wlan0): supplicant management interface state: scanning -> associating
+Jan 02 18:35:20 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-ASSOC-REJECT bssid=00:00:00:00:00:00 status_code=16
+Jan 02 18:35:20 raspberrypi NetworkManager[9169]: <info>  [1704216920.0287] device (wlan0): supplicant interface state: associating -> disconnected
+Jan 02 18:35:20 raspberrypi NetworkManager[9169]: <info>  [1704216920.0289] device (p2p-dev-wlan0): supplicant management interface state: associating -> disconnected
+Jan 02 18:35:20 raspberrypi NetworkManager[9169]: <info>  [1704216920.5270] device (wlan0): supplicant interface state: disconnected -> scanning
+Jan 02 18:35:20 raspberrypi NetworkManager[9169]: <info>  [1704216920.5271] device (p2p-dev-wlan0): supplicant management interface state: disconnected -> scanning
+Jan 02 18:35:23 raspberrypi wpa_supplicant[6658]: wlan0: Trying to associate with SSID 'Hostapd-AP-P'
+Jan 02 18:35:23 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:23 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:23 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:23 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:23 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:23 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:23 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:23 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:23 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:23 raspberrypi NetworkManager[9169]: <info>  [1704216923.0271] device (wlan0): supplicant interface state: scanning -> associating
+Jan 02 18:35:23 raspberrypi NetworkManager[9169]: <info>  [1704216923.0273] device (p2p-dev-wlan0): supplicant management interface state: scanning -> associating
+Jan 02 18:35:25 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-ASSOC-REJECT bssid=00:00:00:00:00:00 status_code=16
+Jan 02 18:35:25 raspberrypi NetworkManager[9169]: <info>  [1704216925.5675] device (wlan0): supplicant interface state: associating -> disconnected
+Jan 02 18:35:25 raspberrypi NetworkManager[9169]: <info>  [1704216925.5676] device (p2p-dev-wlan0): supplicant management interface state: associating -> disconnected
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.3488] device (wlan0): state change: activated -> deactivating (reason 'new-activation', sys-iface-state: 'managed')
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.3510] manager: NetworkManager state is now CONNECTED_LOCAL
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.3519] device (wlan0): disconnecting for new activation request.
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.3521] audit: op="connection-activate" uuid="178e8859-f6c2-442a-ad08-528ae4bc63a6" name="wifi" pid=1111 uid=1000 result="success"
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <warn>  [1704216927.4379] device (wlan0): Deactivation failed: GDBus.Error:fi.w1.wpa_supplicant1.NotConnected: This interface is not connected
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.4381] device (wlan0): state change: deactivating -> disconnected (reason 'new-activation', sys-iface-state: 'managed')
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.4609] dhcp4 (wlan0): canceled DHCP transaction
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.4610] dhcp4 (wlan0): activation: beginning transaction (timeout in 45 seconds)
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.4610] dhcp4 (wlan0): state changed no lease
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5180] device (wlan0): Activation: starting connection 'wifi' (178e8859-f6c2-442a-ad08-528ae4bc63a6)
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5199] device (wlan0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5205] manager: NetworkManager state is now CONNECTING
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5212] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5223] device (wlan0): Activation: (wifi) access point 'wifi' has security, but secrets are required.
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5224] device (wlan0): state change: config -> need-auth (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5250] device (wlan0): state change: need-auth -> prepare (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5259] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5281] device (wlan0): Activation: (wifi) connection 'wifi' has security, and secrets exist.  No new secrets needed.
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5282] Config: added 'ssid' value 'Hostapd-AP-P'
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5282] Config: added 'scan_ssid' value '1'
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5282] Config: added 'freq_list' value '2412'
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5283] Config: added 'bgscan' value 'simple:30:-70:86400'
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5284] Config: added 'key_mgmt' value 'WPA-PSK WPA-PSK-SHA256'
+Jan 02 18:35:27 raspberrypi NetworkManager[9169]: <info>  [1704216927.5285] Config: added 'psk' value '<hidden>'
+Jan 02 18:35:28 raspberrypi wpa_supplicant[6658]: wlan0: Trying to associate with SSID 'Hostapd-AP-P'
+Jan 02 18:35:28 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:28 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:28 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:28 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:28 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:28 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:28 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:28 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:28 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:35:28 raspberrypi NetworkManager[9169]: <info>  [1704216928.7419] device (wlan0): supplicant interface state: disconnected -> associating
+Jan 02 18:35:28 raspberrypi NetworkManager[9169]: <info>  [1704216928.7420] device (p2p-dev-wlan0): supplicant management interface state: disconnected -> associating
+Jan 02 18:35:31 raspberrypi wpa_supplicant[6658]: wlan0: Associated with 3c:a0:67:80:99:a3
+Jan 02 18:35:31 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+Jan 02 18:35:31 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4005] device (wlan0): supplicant interface state: associating -> completed
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4006] device (wlan0): Activation: (wifi) Stage 2 of 5 (Device Configure) successful. Connected to wireless network "Hostapd-AP-P"
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4006] device (p2p-dev-wlan0): supplicant management interface state: associating -> completed
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4009] device (wlan0): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4030] dhcp4 (wlan0): activation: beginning transaction (timeout in 45 seconds)
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4198] dhcp4 (wlan0): state changed new lease, address=192.168.50.209
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4208] policy: set 'wifi' (wlan0) as default for IPv4 routing and DNS
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4417] device (wlan0): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4490] device (wlan0): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4494] device (wlan0): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4504] manager: NetworkManager state is now CONNECTED_SITE
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4541] device (wlan0): Activation: successful, device activated.
+Jan 02 18:35:31 raspberrypi NetworkManager[9169]: <info>  [1704216931.4552] manager: NetworkManager state is now CONNECTED_GLOBAL
+Jan 02 18:37:52 raspberrypi NetworkManager[9169]: <info>  [1704217072.5946] device (wlan0): state change: activated -> deactivating (reason 'user-requested', sys-iface-state: 'managed')
+Jan 02 18:37:52 raspberrypi NetworkManager[9169]: <info>  [1704217072.5966] manager: NetworkManager state is now CONNECTED_LOCAL
+Jan 02 18:37:52 raspberrypi NetworkManager[9169]: <info>  [1704217072.5979] audit: op="device-disconnect" interface="wlan0" ifindex=3 pid=1111 uid=1000 result="success"
+Jan 02 18:37:52 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=3 locally_generated=1
+Jan 02 18:37:52 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jan 02 18:37:52 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Jan 02 18:37:52 raspberrypi NetworkManager[9169]: <info>  [1704217072.6861] device (wlan0): state change: deactivating -> disconnected (reason 'user-requested', sys-iface-state: 'managed')
+Jan 02 18:37:52 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+Jan 02 18:37:52 raspberrypi NetworkManager[9169]: <info>  [1704217072.7085] dhcp4 (wlan0): canceled DHCP transaction
+Jan 02 18:37:52 raspberrypi NetworkManager[9169]: <info>  [1704217072.7086] dhcp4 (wlan0): activation: beginning transaction (timeout in 45 seconds)
+Jan 02 18:37:52 raspberrypi NetworkManager[9169]: <info>  [1704217072.7086] dhcp4 (wlan0): state changed no lease
+Jan 02 18:37:52 raspberrypi NetworkManager[9169]: <info>  [1704217072.7700] device (wlan0): supplicant interface state: completed -> disconnected
+Jan 02 18:37:52 raspberrypi NetworkManager[9169]: <info>  [1704217072.7705] device (p2p-dev-wlan0): supplicant management interface state: completed -> disconnected
+Jan 02 18:37:53 raspberrypi wpa_supplicant[6658]: wlan0: Reject scan trigger since one is already pending
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0751] device (wlan0): Activation: starting connection 'wifi' (178e8859-f6c2-442a-ad08-528ae4bc63a6)
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0753] audit: op="connection-activate" uuid="178e8859-f6c2-442a-ad08-528ae4bc63a6" name="wifi" pid=1111 uid=1000 result="success"
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0755] device (wlan0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0765] manager: NetworkManager state is now CONNECTING
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0786] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0799] device (wlan0): Activation: (wifi) access point 'wifi' has security, but secrets are required.
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0800] device (wlan0): state change: config -> need-auth (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0843] device (wlan0): state change: need-auth -> prepare (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0851] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0858] device (wlan0): Activation: (wifi) connection 'wifi' has security, and secrets exist.  No new secrets needed.
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0859] Config: added 'ssid' value 'Hostapd-AP-P'
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0860] Config: added 'scan_ssid' value '1'
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0860] Config: added 'freq_list' value '2412'
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0860] Config: added 'bgscan' value 'simple:30:-70:86400'
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0861] Config: added 'key_mgmt' value 'WPA-PSK WPA-PSK-SHA256'
+Jan 02 18:37:55 raspberrypi NetworkManager[9169]: <info>  [1704217075.0862] Config: added 'psk' value '<hidden>'
+Jan 02 18:37:56 raspberrypi NetworkManager[9169]: <info>  [1704217076.1472] device (wlan0): supplicant interface state: disconnected -> scanning
+Jan 02 18:37:56 raspberrypi NetworkManager[9169]: <info>  [1704217076.1485] device (p2p-dev-wlan0): supplicant management interface state: disconnected -> scanning
+Jan 02 18:37:58 raspberrypi wpa_supplicant[6658]: wlan0: Trying to associate with SSID 'Hostapd-AP-P'
+Jan 02 18:37:58 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:37:58 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:37:58 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:37:58 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:37:58 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:37:58 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:37:58 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:37:58 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:37:58 raspberrypi wpa_supplicant[6658]: nl80211: kernel reports: Match already configured
+Jan 02 18:37:58 raspberrypi NetworkManager[9169]: <info>  [1704217078.6433] device (wlan0): supplicant interface state: scanning -> associating
+Jan 02 18:37:58 raspberrypi NetworkManager[9169]: <info>  [1704217078.6443] device (p2p-dev-wlan0): supplicant management interface state: scanning -> associating
+Jan 02 18:38:01 raspberrypi wpa_supplicant[6658]: wlan0: Associated with 3c:a0:67:80:99:a3
+Jan 02 18:38:01 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+Jan 02 18:38:01 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.2904] device (wlan0): supplicant interface state: associating -> completed
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.2905] device (wlan0): Activation: (wifi) Stage 2 of 5 (Device Configure) successful. Connected to wireless network "Hostapd-AP-P"
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.2905] device (p2p-dev-wlan0): supplicant management interface state: associating -> completed
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.2909] device (wlan0): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.2929] dhcp4 (wlan0): activation: beginning transaction (timeout in 45 seconds)
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.3135] dhcp4 (wlan0): state changed new lease, address=192.168.50.209
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.3145] policy: set 'wifi' (wlan0) as default for IPv4 routing and DNS
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.3367] device (wlan0): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.3456] device (wlan0): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.3464] device (wlan0): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.3478] manager: NetworkManager state is now CONNECTED_SITE
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.3524] device (wlan0): Activation: successful, device activated.
+Jan 02 18:38:01 raspberrypi NetworkManager[9169]: <info>  [1704217081.3536] manager: NetworkManager state is now CONNECTED_GLOBAL
+Jan 02 18:38:29 raspberrypi NetworkManager[9169]: <info>  [1704217109.0575] device (eth0): state change: activated -> unavailable (reason 'carrier-changed', sys-iface-state: 'managed')
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.3899] device (eth0): carrier: link connected
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.3912] device (eth0): state change: unavailable -> disconnected (reason 'carrier-changed', sys-iface-state: 'managed')
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.3953] policy: auto-activating connection 'Wired connection 1' (a2a33456-87f3-3e63-a028-f9afe2dc6eed)
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.3984] device (eth0): Activation: starting connection 'Wired connection 1' (a2a33456-87f3-3e63-a028-f9afe2dc6eed)
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.3990] device (eth0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.4009] device (eth0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.4052] device (eth0): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.4266] device (eth0): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.4408] device (eth0): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.4420] device (eth0): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:37 raspberrypi NetworkManager[9169]: <info>  [1704217117.4453] device (eth0): Activation: successful, device activated.
+Jan 02 18:38:50 raspberrypi NetworkManager[9169]: <info>  [1704217130.5596] device (eth0): state change: activated -> unavailable (reason 'carrier-changed', sys-iface-state: 'managed')
+Jan 02 18:38:54 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=3
+Jan 02 18:38:54 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Jan 02 18:38:54 raspberrypi wpa_supplicant[6658]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+Jan 02 18:38:54 raspberrypi NetworkManager[9169]: <info>  [1704217134.5371] device (wlan0): supplicant interface state: completed -> disconnected
+Jan 02 18:38:54 raspberrypi NetworkManager[9169]: <info>  [1704217134.5372] device (p2p-dev-wlan0): supplicant management interface state: completed -> disconnected
+Jan 02 18:38:54 raspberrypi NetworkManager[9169]: <info>  [1704217134.6345] device (wlan0): supplicant interface state: disconnected -> scanning
+Jan 02 18:38:54 raspberrypi NetworkManager[9169]: <info>  [1704217134.6346] device (p2p-dev-wlan0): supplicant management interface state: disconnected -> scanning
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.8698] device (eth0): carrier: link connected
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.8711] device (eth0): state change: unavailable -> disconnected (reason 'carrier-changed', sys-iface-state: 'managed')
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.8742] policy: auto-activating connection 'Wired connection 1' (a2a33456-87f3-3e63-a028-f9afe2dc6eed)
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.8765] device (eth0): Activation: starting connection 'Wired connection 1' (a2a33456-87f3-3e63-a028-f9afe2dc6eed)
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.8771] device (eth0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.8787] device (eth0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.8819] device (eth0): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.8950] device (eth0): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.9179] device (eth0): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.9191] device (eth0): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:38:57 raspberrypi NetworkManager[9169]: <info>  [1704217137.9231] device (eth0): Activation: successful, device activated.
+Jan 02 18:39:09 raspberrypi NetworkManager[9169]: <warn>  [1704217149.6030] device (wlan0): link timed out.
+Jan 02 18:39:09 raspberrypi NetworkManager[9169]: <info>  [1704217149.6031] device (wlan0): state change: activated -> failed (reason 'ssid-not-found', sys-iface-state: 'managed')
+Jan 02 18:39:09 raspberrypi NetworkManager[9169]: <warn>  [1704217149.6088] device (wlan0): Activation: failed for connection 'wifi'
+Jan 02 18:39:09 raspberrypi NetworkManager[9169]: <info>  [1704217149.6115] manager: NetworkManager state is now CONNECTED_LOCAL
+Jan 02 18:39:09 raspberrypi NetworkManager[9169]: <info>  [1704217149.6141] device (wlan0): state change: failed -> disconnected (reason 'none', sys-iface-state: 'managed')
+Jan 02 18:39:09 raspberrypi NetworkManager[9169]: <info>  [1704217149.6446] dhcp4 (wlan0): canceled DHCP transaction
+Jan 02 18:39:09 raspberrypi NetworkManager[9169]: <info>  [1704217149.6448] dhcp4 (wlan0): activation: beginning transaction (timeout in 45 seconds)
+Jan 02 18:39:09 raspberrypi NetworkManager[9169]: <info>  [1704217149.6448] dhcp4 (wlan0): state changed no lease
+Jan 02 18:39:15 raspberrypi NetworkManager[9169]: <info>  [1704217155.7806] device (wlan0): supplicant interface state: scanning -> inactive
+Jan 02 18:39:15 raspberrypi NetworkManager[9169]: <info>  [1704217155.7807] device (p2p-dev-wlan0): supplicant management interface state: scanning -> inactive
+

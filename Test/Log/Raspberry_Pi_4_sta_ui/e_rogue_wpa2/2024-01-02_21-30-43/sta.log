@@ -1,0 +1,128 @@
+[21:30:51.123] Initiating the saving session of stdout and stderr inside /home/alghisi-pi/Desktop...
+␛[0;32mSuccess.␛[0m
+
+[21:30:51.a131] Fetching configuration file associated to e_wpa2...
+␛[0;32mSuccess.␛[0m
+
+[21:30:51.331] Checking Wi-Fi interface... 
+␛[0;32mSuccess.␛[0m
+[21:30:51.345] Forcing Wi-Fi interface up... 
+␛[0;32mSuccess.␛[0m
+[21:30:51.390] Stopping NetworkManager... 
+␛[0;32mSuccess.␛[0m
+[21:30:52.165] Looking for Wpa_supplicant/Conf/Enterprise/e_wpa2.conf...
+␛[0;32mSuccess.␛[0m
+
+␛[0;36mRunning Wpa-supplicant. Press Ctrl-C to stop.␛[0m
+
+STA settings:
+
+update_config=0
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=sudo
+eapol_version=2
+ap_scan=1
+country=IT
+ 
+network={
+  ssid="Hostapd-AP-E"
+  key_mgmt=WPA-EAP
+  eap=PEAP
+  ieee80211w=1
+  identity="bob@example.org"
+  anonymous_identity="anonymous"
+  password="argoargoargo"
+  ca_cert="Freeradius/Conf/E_wpa2/certs/ca.pem"
+  subject_match="/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org"
+  phase2="auth=MSCHAPV2"
+  wps_disabled=1
+}
+
+
+[21:30:52.238] Successfully initialized wpa_supplicant
+[21:30:52.246] nl80211: kernel reports: Match already configured
+[21:30:52.246] nl80211: kernel reports: Match already configured
+[21:30:52.246] nl80211: kernel reports: Match already configured
+[21:30:52.246] nl80211: kernel reports: Match already configured
+[21:30:52.247] nl80211: kernel reports: Match already configured
+[21:30:52.247] nl80211: kernel reports: Match already configured
+[21:30:52.247] nl80211: kernel reports: Match already configured
+[21:30:52.247] nl80211: kernel reports: Match already configured
+[21:30:52.247] nl80211: kernel reports: Match already configured
+[21:31:02.406] wlan0: CTRL-EVENT-SCAN-FAILED ret=-16 retry=1
+[21:31:08.889] wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+[21:31:08.889] nl80211: kernel reports: Match already configured
+[21:31:08.889] nl80211: kernel reports: Match already configured
+[21:31:08.889] nl80211: kernel reports: Match already configured
+[21:31:08.889] nl80211: kernel reports: Match already configured
+[21:31:08.889] nl80211: kernel reports: Match already configured
+[21:31:08.889] nl80211: kernel reports: Match already configured
+[21:31:08.889] nl80211: kernel reports: Match already configured
+[21:31:08.890] nl80211: kernel reports: Match already configured
+[21:31:08.890] nl80211: kernel reports: Match already configured
+[21:31:11.478] wlan0: Associated with 3c:a0:67:80:99:a3
+[21:31:11.479] wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+[21:31:11.479] wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[21:31:11.483] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[21:31:11.488] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[21:31:11.490] wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[21:31:11.535] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=3b83b181813b13e1674bc3383411cecd5dfc1a2071485a8320fed195637d856a
+[21:31:11.536] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=458efce2f9c7df6164dd7500a8cfa41f5f367136505dc1640e7c96eaf6cd8a3b
+[21:31:11.556] EAP-MSCHAPV2: Authentication succeeded
+[21:31:11.560] EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
+[21:31:11.564] wlan0: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+[21:31:11.565] wlan0: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+[21:32:51.523] wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=3
+[21:32:51.527] wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[21:32:51.529] wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[21:32:54.173] wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+[21:32:54.174] nl80211: kernel reports: Match already configured
+[21:32:54.174] nl80211: kernel reports: Match already configured
+[21:32:54.175] nl80211: kernel reports: Match already configured
+[21:32:54.175] nl80211: kernel reports: Match already configured
+[21:32:54.175] nl80211: kernel reports: Match already configured
+[21:32:54.175] nl80211: kernel reports: Match already configured
+[21:32:54.176] nl80211: kernel reports: Match already configured
+[21:32:54.176] nl80211: kernel reports: Match already configured
+[21:32:54.176] nl80211: kernel reports: Match already configured
+[21:32:56.812] wlan0: Associated with 3c:a0:67:80:99:a3
+[21:32:56.812] wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[21:32:56.813] wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+[21:32:59.822] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[21:32:59.830] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[21:32:59.830] wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[21:32:59.884] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=d25632e3579818f5fc4f19cc8b6ba2813e49614412021b02c66b2f51ac14c1ce
+[21:32:59.886] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=1c5158a135e159eaead535323f3855c526bd68b98ba0f7f17ed3c7de81890351
+[21:32:59.886] TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+[21:32:59.886] wlan0: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+[21:32:59.887] SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+[21:32:59.887] OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+[21:33:00.900] wlan0: CTRL-EVENT-EAP-FAILURE EAP authentication failed
+[21:33:00.909] wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=23
+[21:33:00.909] wlan0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=1 duration=10 reason=AUTH_FAILED
+[21:33:00.911] wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[21:33:00.912] wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[21:33:14.036] wlan0: CTRL-EVENT-SSID-REENABLED id=0 ssid="Hostapd-AP-E"
+[21:33:14.037] wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+[21:33:14.037] nl80211: kernel reports: Match already configured
+[21:33:14.037] nl80211: kernel reports: Match already configured
+[21:33:14.037] nl80211: kernel reports: Match already configured
+[21:33:14.037] nl80211: kernel reports: Match already configured
+[21:33:14.037] nl80211: kernel reports: Match already configured
+[21:33:14.037] nl80211: kernel reports: Match already configured
+[21:33:14.037] nl80211: kernel reports: Match already configured
+[21:33:14.038] nl80211: kernel reports: Match already configured
+[21:33:14.038] nl80211: kernel reports: Match already configured
+[21:33:16.669] wlan0: Associated with 3c:a0:67:80:99:a3
+[21:33:16.669] wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+[21:33:16.669] wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[21:33:16.674] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[21:33:16.680] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[21:33:16.681] wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[21:33:16.726] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=d25632e3579818f5fc4f19cc8b6ba2813e49614412021b02c66b2f51ac14c1ce
+[21:33:16.726] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=1c5158a135e159eaead535323f3855c526bd68b98ba0f7f17ed3c7de81890351
+[21:33:16.727] TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+[21:33:16.727] wlan0: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+[21:33:16.727] SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+[21:33:16.727] OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+

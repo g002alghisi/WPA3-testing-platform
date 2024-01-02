@@ -1,0 +1,92 @@
+[21:36:04.973] Initiating the saving session of stdout and stderr inside /home/alghisi-pi/Desktop...
+␛[0;32mSuccess.␛[0m
+
+[21:36:04.984] Fetching configuration file associated to e_wpa3...
+␛[0;32mSuccess.␛[0m
+
+[21:36:05.172] Checking Wi-Fi interface... 
+␛[0;32mSuccess.␛[0m
+[21:36:05.184] Forcing Wi-Fi interface up... 
+␛[0;32mSuccess.␛[0m
+[21:36:05.229] Stopping NetworkManager... 
+␛[0;32mSuccess.␛[0m
+[21:36:06.034] Looking for Wpa_supplicant/Conf/Enterprise/e_wpa3.conf...
+␛[0;32mSuccess.␛[0m
+
+␛[0;36mRunning Wpa-supplicant. Press Ctrl-C to stop.␛[0m
+
+STA settings:
+
+update_config=0
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=sudo
+eapol_version=2
+ap_scan=1
+country=IT
+network={
+  ssid="Hostapd-AP-E"
+  key_mgmt=WPA-EAP
+  eap=PEAP
+  ieee80211w=2
+  identity="bob@example.org"
+  anonymous_identity="anonymous"
+  password="argoargoargo"
+  ca_cert="Freeradius/Conf/E_wpa3/certs/ca.pem"
+  subject_match="/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org"
+  phase2="auth=MSCHAPV2"
+  wps_disabled=1
+}
+
+
+[21:36:06.149] Successfully initialized wpa_supplicant
+[21:36:06.155] nl80211: kernel reports: Match already configured
+[21:36:06.156] nl80211: kernel reports: Match already configured
+[21:36:06.156] nl80211: kernel reports: Match already configured
+[21:36:06.156] nl80211: kernel reports: Match already configured
+[21:36:06.156] nl80211: kernel reports: Match already configured
+[21:36:06.156] nl80211: kernel reports: Match already configured
+[21:36:06.156] nl80211: kernel reports: Match already configured
+[21:36:06.156] nl80211: kernel reports: Match already configured
+[21:36:06.156] nl80211: kernel reports: Match already configured
+[21:36:16.261] wlan0: CTRL-EVENT-SCAN-FAILED ret=-16 retry=1
+[21:36:22.748] wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+[21:36:22.748] nl80211: kernel reports: Match already configured
+[21:36:22.748] nl80211: kernel reports: Match already configured
+[21:36:22.749] nl80211: kernel reports: Match already configured
+[21:36:22.749] nl80211: kernel reports: Match already configured
+[21:36:22.749] nl80211: kernel reports: Match already configured
+[21:36:22.749] nl80211: kernel reports: Match already configured
+[21:36:22.749] nl80211: kernel reports: Match already configured
+[21:36:22.749] nl80211: kernel reports: Match already configured
+[21:36:22.749] nl80211: kernel reports: Match already configured
+[21:36:25.363] wlan0: Associated with 3c:a0:67:80:99:a3
+[21:36:25.363] wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[21:36:25.406] wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+[21:36:25.411] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[21:36:25.417] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[21:36:25.419] wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[21:36:25.461] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=9fb53c3e5d7f2eb388732d28651605ca3013b92637f9741092ce57143039ae93
+[21:36:25.462] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=cfa814066388ed3d3f9f8698d5d218079a5bfd4290602b7cccdc482548699199
+[21:36:25.486] EAP-MSCHAPV2: Authentication succeeded
+[21:36:25.492] EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
+[21:36:25.496] wlan0: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+[21:36:25.497] wlan0: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+[21:36:44.088] wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=3
+[21:36:44.092] wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[21:36:44.094] wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[21:36:46.724] wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+[21:36:46.725] nl80211: kernel reports: Match already configured
+[21:36:46.725] nl80211: kernel reports: Match already configured
+[21:36:46.726] nl80211: kernel reports: Match already configured
+[21:36:46.726] nl80211: kernel reports: Match already configured
+[21:36:46.726] nl80211: kernel reports: Match already configured
+[21:36:46.726] nl80211: kernel reports: Match already configured
+[21:36:46.726] nl80211: kernel reports: Match already configured
+[21:36:46.727] nl80211: kernel reports: Match already configured
+[21:36:46.727] nl80211: kernel reports: Match already configured
+[21:36:49.335] wlan0: Associated with 3c:a0:67:80:99:a3
+[21:36:49.335] wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[21:36:49.362] wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+[21:37:10.370] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[21:37:10.373] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+

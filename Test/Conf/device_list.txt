@@ -6,8 +6,11 @@ iwd=Iwd
 
 # IoT
 cypress_board=Cypress_board
-pi_4=Raspberry_Pi_4
-pi_4_iwd=Raspberry_Pi_4_iwd
+pi_4_wpa_nmcli=Raspberry_Pi_4_wpa_nmcli
+pi_4_wpa_nmgui=Raspberry_Pi_4_wpa_nmgui
+pi_4_iwd_nmcli=Raspberry_Pi_4_iwd_nmcli
+pi_4_iwd_nmgui=Raspberry_Pi_4_iwd_nmgui
+pi_4_sta_ui=Raspberry_Pi_4_sta_ui
 pi_pico_w=Raspberry_Pi_Pico_W
 esp32=ESP32
 

@@ -179,3 +179,37 @@ The following instructions come from [this discussion](https://github.com/raspbe
 
 - [This web page](https://wiki.archlinux.org/title/iwd) deeply explains how to use iwd.
 - [This other one](https://wiki.debian.org/NetworkManager/iwd) is tailored for Debian (thus Ubuntu). Moreover, it shows how to enable `iwd` as a backend for NetworkManager; this solution is quite interesting because it allows to hide to the user the differences between `iwd` and `wpa_supplicant` if the NetworkManager GUI Applet is used (but also `nmcli`).
+
+#### Steps to use nmcli
+
+1. Remove all the saved network profiles from the NM GUI.
+
+2. Create a new network profile with the GUI, setting all the possible parameters (eq, no PMF).
+
+3. Open the CLI interactive tool:
+    ```
+    nmcli connection edit type name_of_the_network_profile
+    ```
+
+3. Get a list of all the possible parameters:
+    ```
+    print
+    ```
+
+4. Disable autoconnection feature:
+    ```
+    set wifi.autoconnect no
+    ```
+
+5. Set the remaining ones, like PMF:
+
+6. Save the profile:
+    ```
+    save
+    ```
+
+7. Test the connection:
+    ```
+    activate wlan0
+    ```
+

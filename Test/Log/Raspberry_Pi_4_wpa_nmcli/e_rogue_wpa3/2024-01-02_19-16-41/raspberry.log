@@ -1,0 +1,11 @@
+nmcli> activate wlan0 
+Monitoring connection activation (press any key to continue)
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/27)
+
+nmcli> activate wlan0
+Monitoring connection activation (press any key to continue)
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/27)
+nmcli> activate wlan0
+Monitoring connection activation (press any key to continue)
+Error: Connection activation failed.
+                                      
