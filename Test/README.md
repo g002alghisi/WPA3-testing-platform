@@ -125,12 +125,12 @@
 - Personal
 
     - [x] Test WPA3-Personal: ___OK___
-    
+
     - [x] Test WPA3-Personal SAE-PK: ___OK___
-    
+
     - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___OK___
         - By selecting `update=1` in the configuration, the supplicant resists the attack even after its reboot.
-        
+
     - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___OK___
         - By selecting `update=1` in the configuration, the supplicant resists the attack even after its reboot.
             In particular, the resulting configuration presents `sae_pk=1` (SAE-PK only mode) from `sae_pk=0` (SAE-PK in automatic mode)
@@ -143,11 +143,11 @@
     - [x] Test WPA2-Enterprise TOFU: ___oo___
 
     - [x] Test WPA3-Enterprise: ___OK___
-    
+
     - [x] Test WPA3-Enterprise UOSC: ___oo___
         - Neither `wpa_cli` nor `wpa_gui` implement UOSC. If a root certificate is specified, they just trust the one recieved from the server without asking anything to the user.
         	And what if `update=1` and a root ca cert is defined?
-            
+
     - [x] Test WPA3-Enterprise TOFU: ___OK___
         - The supplicant prints that it gots a certificate with TOD=2 Policy, but still connects to the rogue AP.
 
@@ -162,11 +162,11 @@
 
 - Enterprise
 
-    - [ ] Test WPA2-Enterprise
-    - [ ] Test WPA2-Enterprise TOFU
-    - [x] Test WPA3-Enterprise
-    - [x] Test WPA3-Enterprise UOSC
-    - [x] Test WPA3-Enterprise TOD Mechanism
+    - [x] Test WPA2-Enterprise: ___OK___
+    - [x] Test WPA2-Enterprise TOFU: ___??___
+    - [x] Test WPA3-Enterprise: ___oo___
+    - [x] Test WPA3-Enterprise UOSC: ___oo___
+    - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
 
 ### Keystudio ESP32 Core Board
 
@@ -238,7 +238,7 @@
 
     - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
         - Set WPA2 enetrprise in the Network profile.
-        
+
 ### Raspberry Pi 4 wpa_supplicant and NM CLI
 
 - Personal
@@ -328,7 +328,7 @@
     - [x] Test WPA3-Enterprise UOSC: ___oo___
 
     - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
-        
+
 ### Raspberry Pi 4 iwd and NM CLI
 
 - Personal
@@ -355,7 +355,7 @@
 
     - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
         - Set WPA2 enetrprise in the Network profile.
-        
+
 ### Raspberry Pi 4 sta_ui
 
 - Personal
