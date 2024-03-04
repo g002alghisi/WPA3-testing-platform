@@ -1,0 +1,1448 @@
+alghisi@pop-os:~/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise$ export IDF_PATH=/home/alghisi/esp/esp-idf
+/home/alghisi/esp/.Espressif/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/alghisi/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 1152alghisi@pop-os:~/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise$ /home/alghisi/esp/.Espressif/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/alghisi/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise/build/wifi_enterprise.elf
+--- esp-idf-monitor 1.3.4 on /dev/ttyUSB0 115200 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7084
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+0x40080400: _init at ??:?
+
+load:0x40080404,len:3876
+entry 0x4008064c
+I (30) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader
+I (30) boot: compile time Jan 18 2024 21:45:41
+I (30) boot: Multicore bootloader
+I (35) boot: chip revision: v1.0
+I (39) boot.esp32: SPI Speed      : 40MHz
+I (44) boot.esp32: SPI Mode       : DIO
+I (48) boot.esp32: SPI Flash Size : 2MB
+I (53) boot: Enabling RNG early entropy source...
+I (58) boot: Partition Table:
+I (62) boot: ## Label            Usage          Type ST Offset   Length
+I (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (84) boot:  2 factory          factory app      00 00 00010000 00100000
+I (91) boot: End of partition table
+I (95) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=30f4ch (200524) map
+I (176) esp_image: segment 1: paddr=00040f74 vaddr=3ffb0000 size=03b60h ( 15200) load
+I (183) esp_image: segment 2: paddr=00044adc vaddr=40080000 size=0b53ch ( 46396) load
+I (202) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=9b700h (636672) map
+I (432) esp_image: segment 4: paddr=000eb728 vaddr=4008b53c size=0a768h ( 42856) load
+I (461) boot: Loaded app from partition at offset 0x10000
+I (461) boot: Disabling RNG early entropy source...
+I (473) cpu_start: Multicore app
+I (473) cpu_start: Pro cpu up.
+I (473) cpu_start: Starting app cpu, entry point is 0x4008139c
+0x4008139c: call_start_cpu1 at /home/alghisi/esp/esp-idf/components/esp_system/port/cpu_start.c:157
+
+I (0) cpu_start: App cpu up.
+D (484) clk: RTC_SLOW_CLK calibration value: 3330624
+I (496) cpu_start: Pro cpu start user code
+I (496) cpu_start: cpu freq: 160000000 Hz
+I (496) cpu_start: Application information:
+I (501) cpu_start: Project name:     wifi_enterprise
+I (507) cpu_start: App version:      d886b13-dirty
+I (512) cpu_start: Compile time:     Jan 18 2024 21:45:30
+I (518) cpu_start: ELF file SHA256:  f661c45dcae0e3ab...
+I (524) cpu_start: ESP-IDF:          v5.1.2-dirty
+I (530) cpu_start: Min chip rev:     v0.0
+I (534) cpu_start: Max chip rev:     v3.99 
+I (539) cpu_start: Chip rev:         v1.0
+D (544) memory_layout: Checking 9 reserved memory ranges:
+D (549) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000
+D (556) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0
+D (562) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffb7df8
+D (568) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440
+D (575) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350
+D (581) memory_layout: Reserved memory range 0x40070000 - 0x40078000
+D (588) memory_layout: Reserved memory range 0x40078000 - 0x40080000
+0x40080000: _WindowOverflow4 at /home/alghisi/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:2027
+
+D (594) memory_layout: Reserved memory range 0x40080000 - 0x40095ca4
+0x40080000: _WindowOverflow4 at /home/alghisi/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:2027
+
+D (601) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000
+D (607) memory_layout: Building list of available memory regions:
+D (613) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000
+D (620) memory_layout: Available memory region 0x3ffb7df8 - 0x3ffb8000
+D (626) memory_layout: Available memory region 0x3ffb8000 - 0x3ffc0000
+D (633) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000
+D (640) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000
+D (646) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000
+D (653) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000
+D (659) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000
+D (666) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000
+D (673) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000
+D (679) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000
+D (686) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000
+D (692) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000
+D (699) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000
+D (706) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000
+D (712) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000
+D (719) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000
+D (725) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000
+D (732) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000
+D (739) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20
+D (745) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000
+D (752) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000
+D (758) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000
+D (765) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000
+D (772) memory_layout: Available memory region 0x3fffc000 - 0x40000000
+0x40000000: _WindowOverflow4 in ROM
+
+D (778) memory_layout: Available memory region 0x40095ca4 - 0x40096000
+D (785) memory_layout: Available memory region 0x40096000 - 0x40098000
+D (791) memory_layout: Available memory region 0x40098000 - 0x4009a000
+D (798) memory_layout: Available memory region 0x4009a000 - 0x4009c000
+D (805) memory_layout: Available memory region 0x4009c000 - 0x4009e000
+D (811) memory_layout: Available memory region 0x4009e000 - 0x400a0000
+I (818) heap_init: Initializing. RAM available for dynamic allocation:
+D (825) heap_init: New heap initialised at 0x3ffae6e0
+I (830) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+D (836) heap_init: New heap initialised at 0x3ffb7df8
+I (841) heap_init: At 3FFB7DF8 len 00028208 (160 KiB): DRAM
+I (847) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (854) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+D (860) heap_init: New heap initialised at 0x40095ca4
+I (865) heap_init: At 40095CA4 len 0000A35C (40 KiB): IRAM
+D (872) intr_alloc: Connected src 46 to int 2 (cpu 0)
+D (878) spi_flash: trying chip: issi
+D (880) spi_flash: trying chip: gd
+D (884) spi_flash: trying chip: mxic
+D (887) spi_flash: trying chip: winbond
+D (891) spi_flash: trying chip: generic
+I (895) spi_flash: detected chip: generic
+I (900) spi_flash: flash io: dio
+W (904) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+D (917) cpu_start: calling init function: 0x4014d520
+0x4014d520: _GLOBAL__sub_I__ZN9__gnu_cxx9__freeresEv at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/gcc/libstdc++-v3/libsupc++/eh_alloc.cc:342
+
+D (922) cpu_start: calling init function: 0x4014d000
+0x4014d000: _GLOBAL__sub_I__ZN17__eh_globals_init7_S_initE at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/gcc/libstdc++-v3/libsupc++/eh_globals.cc:168
+
+D (927) cpu_start: calling init function: 0x400f8ebc
+0x400f8ebc: s_set_default_wifi_log_level at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_init.c:88
+
+D (932) cpu_start: calling init function: 0x400d97d4
+0x400d97d4: esp_ipc_init at /home/alghisi/esp/esp-idf/components/esp_system/esp_ipc.c:114
+
+D (937) cpu_start: calling init function: 0x400d2ce4
+0x400d2ce4: esp_init_app_elf_sha256 at /home/alghisi/esp/esp-idf/components/esp_app_format/esp_app_desc.c:69
+
+D (942) cpu_start: calling init function: 0x400d5db8 on core: 0
+0x400d5db8: __esp_system_init_fn_esp_timer_startup_init at /home/alghisi/esp/esp-idf/components/esp_timer/src/esp_timer.c:576
+
+D (948) intr_alloc: Connected src 17 to int 3 (cpu 0)
+D (953) cpu_start: calling init function: 0x401623e8 on core: 0
+0x401623e8: __esp_system_init_fn_init_components0 at /home/alghisi/esp/esp-idf/components/esp_system/startup.c:486
+
+D (960) intr_alloc: Connected src 24 to int 9 (cpu 0)
+I (964) app_start: Starting scheduler on CPU0
+ (970) intr_alloc: Connected src 25 to int 2 (cpu 1)
+I (970) app_start: Starting scheduler on CPU1
+2mI (970) main_task: Started on CPU0
+D (990) heap_init: New heap initialised at 0x3ffe0440
+D (990) heap_init: New heap initialised at 0x3ffe4350
+D (990) intr_alloc: Connected src 16 to int 12 (cpu 0)
+I (990) main_task: Calling app_main()
+D (1030) esp_netif_lwip: LwIP stack has been initialized
+D (1030) esp_netif_lwip: esp-netif has been successfully initialized
+D (1030) event: running task for loop 0x3ffbc8f4
+D (1030) event: created task for loop 0x3ffbc8f4
+D (1040) event: created event loop 0x3ffbc8f4
+D (1040) esp_netif_objects: esp_netif_add_to_list 0x3ffbd81c
+D (1050) esp_netif_objects: esp_netif_add_to_list netif added successfully (total netifs: 1)
+D (1060) esp_netif_lwip: check: remote, if=0x0 fn=0x400dd98c
+0x400dd98c: set_lwip_netif_callback at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:174
+
+
+D (1060) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (1070) nvs: nvs_open_from_partition misc 1
+I (1080) wifi:wifi driver task: 3ffbfe74, prio:23, stack:6656, core=0
+D (1080) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit
+D (1090) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit
+D (1090) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit
+D (1100) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit
+D (1110) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit
+D (1110) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit
+D (1120) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit
+D (1130) nvs: nvs_open_from_partition nvs.net80211 1
+D (1130) nvs: nvs_get opmode 1
+D (1140) nvs: nvs_get_str_or_blob sta.ssid
+D (1140) nvs: nvs_get sta.authmode 1
+D (1140) nvs: nvs_get_str_or_blob sta.pswd
+D (1150) nvs: nvs_get_str_or_blob sta.pmk
+D (1150) nvs: nvs_get sta.chan 1
+D (1160) nvs: nvs_get auto.conn 1
+D (1160) nvs: nvs_get bssid.set 1
+D (1160) nvs: nvs_get_str_or_blob sta.bssid
+D (1170) nvs: nvs_get sta.lis_intval 2
+D (1170) nvs: nvs_get sta.phym 1
+D (1170) nvs: nvs_get sta.phybw 1
+D (1180) nvs: nvs_get_str_or_blob sta.apsw
+D (1180) nvs: nvs_get_str_or_blob sta.apinfo
+D (1190) nvs: nvs_get sta.scan_method 1
+D (1190) nvs: nvs_get sta.sort_method 1
+D (1190) nvs: nvs_get sta.minrssi 1
+D (1200) nvs: nvs_get sta.minauth 1
+D (1200) nvs: nvs_get sta.pmf_e 1
+D (1210) nvs: nvs_get sta.pmf_r 1
+D (1210) nvs: nvs_get sta.btm_e 1
+D (1210) nvs: nvs_get sta.rrm_e 1
+D (1220) nvs: nvs_get sta.mbo_e 1
+D (1220) nvs: nvs_get_str_or_blob ap.ssid
+D (1220) nvs: nvs_get_str_or_blob ap.passwd
+D (1230) nvs: nvs_get_str_or_blob ap.pmk
+D (1230) nvs: nvs_get ap.chan 1
+D (1230) nvs: nvs_get ap.authmode 1
+D (1240) nvs: nvs_get ap.hidden 1
+D (1240) nvs: nvs_get ap.max.conn 1
+D (1240) nvs: nvs_get bcn.interval 2
+D (1250) nvs: nvs_get ap.phym 1
+D (1250) nvs: nvs_get ap.phybw 1
+D (1250) nvs: nvs_get ap.sndchan 1
+D (1260) nvs: nvs_get ap.pmf_e 1
+D (1260) nvs: nvs_get ap.pmf_r 1
+D (1260) nvs: nvs_get ap.p_cipher 1
+D (1270) nvs: nvs_get lorate 1
+D (1270) nvs: nvs_get_str_or_blob country
+D (1280) nvs: nvs_get ap.ftm_r 1
+D (1280) nvs: nvs_get sta.ft 1
+D (1280) nvs: nvs_get sta.owe 1
+D (1290) nvs: nvs_get sta.trans_d 1
+D (1290) nvs: nvs_get sta.sae_h2e 1
+D (1290) nvs: nvs_get sta.sae_pk_mode 1
+D (1300) nvs: nvs_get sta.bss_retry 1
+D (1300) nvs: nvs_get_str_or_blob sta.owe_data
+D (1300) nvs: nvs_get sta.he_dcm 1
+D (1310) nvs: nvs_get sta.he_dcm_c_tx 1
+D (1310) nvs: nvs_get sta.he_dcm_c_rx 1
+D (1320) nvs: nvs_get sta.he_mcs9_d 1
+D (1320) nvs: nvs_get sta.he_su_b_d 1
+D (1320) nvs: nvs_get sta.he_su_b_f_d 1
+D (1330) nvs: nvs_get sta.he_mu_b_f_d 1
+D (1330) nvs: nvs_get sta.he_cqi_f_d 1
+D (1330) nvs: nvs_get_str_or_blob sta.sae_h2e_id
+D (1340) nvs: nvs_get ap.sae_h2e 1
+D (1340) nvs: nvs_get_str_or_blob ap.pmk_info
+D (1350) nvs: nvs_get nan.phym 1
+D (1350) nvs: nvs_set ap.sndchan 1 1
+I (1350) wifi:wifi firmware version: 91b9630
+I (1360) wifi:wifi certification version: v7.0
+I (1360) wifi:config NVS flash: enabled
+I (1370) wifi:config nano formating: disabled
+I (1370) wifi:Init data frame dynamic rx buffer num: 32
+I (1380) wifi:Init static rx mgmt buffer num: 5
+I (1380) wifi:Init management short buffer num: 32
+I (1380) wifi:Init dynamic tx buffer num: 32
+I (1390) wifi:Init static rx buffer size: 1600
+I (1390) wifi:Init static rx buffer num: 10
+I (1400) wifi:Init dynamic rx buffer num: 32
+I (1400) wifi_init: rx ba win: 6
+I (1400) wifi_init: tcpip mbox: 32
+I (1410) wifi_init: udp mbox: 6
+I (1410) wifi_init: tcp mbox: 6
+I (1420) wifi_init: tcp tx win: 5744
+I (1420) wifi_init: tcp rx win: 5744
+I (1420) wifi_init: tcp mss: 1440
+I (1430) wifi_init: WiFi IRAM OP enabled
+I (1430) wifi_init: WiFi RX IRAM OP enabled
+I (1440) example: Setting WiFi configuration SSID Hostapd-AP-E...
+D (1440) wifi:clear blacklist
+I (1450) wpa: WiFi Enterprise enable
+D (1450) wpa: WiFi Enterprise crypto init.
+I (1460) phy_init: phy_version 4780,16b31a7,Sep 22 2023,20:42:16
+D (1460) phy_init: loading PHY init data from application binary
+D (1470) nvs: nvs_open_from_partition phy 0
+D (1470) nvs: nvs_get cal_version 4
+D (1480) nvs: nvs_get_str_or_blob cal_mac
+D (1480) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit
+D (1490) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit
+D (1490) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit
+D (1500) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit
+D (1510) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit
+D (1520) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit
+D (1520) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit
+D (1530) nvs: nvs_get_str_or_blob cal_data
+D (1540) nvs: nvs_close 3
+D (1540) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit
+D (1540) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit
+D (1550) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit
+D (1560) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit
+D (1560) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit
+D (1570) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit
+D (1580) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit
+D (1650) wifi:filter: set rx policy=0
+I (1650) wifi:mode : sta (94:b5:55:19:1c:e8)
+I (1650) wifi:enable tsf
+D (1650) wifi:filter: set rx policy=1
+D (1650) wifi:connect status 0 -> 0
+D (1660) event: running post WIFI_EVENT:2 with handler 0x400f91a4 and context 0x3ffbda70 on loop 0x3ffbc8f4
+0x400f91a4: wifi_default_action_sta_start at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:71
+
+D (1670) wifi_init_default: wifi_start esp-netif:0x3ffbd81c event-id2
+D (1670) wifi_init_default: WIFI mac address: 94 b5 55 19 1c e8
+D (1680) esp_netif_lwip: check: remote, if=0x3ffbd81c fn=0x400dd99c
+0x400dd99c: esp_netif_set_mac_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:957
+
+
+I (1680) main_task: Returned from app_main()
+D (1680) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (1700) esp_netif_handlers: esp_netif action has started with netif0x3ffbd81c from event_id=2
+D (1700) esp_netif_lwip: check: remote, if=0x3ffbd81c fn=0x400ddfbc
+0x400ddfbc: esp_netif_start_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1032
+
+
+D (1710) esp_netif_lwip: esp_netif_start_api 0x3ffbd81c
+D (1720) esp_netif_lwip: esp_netif_get_hostname esp_netif:0x3ffbd81c
+D (1720) esp_netif_lwip: check: local, if=0x3ffbd81c fn=0x400de8a4
+0x400de8a4: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (1730) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd81c
+D (1740) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (1740) event: running post WIFI_EVENT:2 with handler 0x400d7ce4 and context 0x3ffc5b70 on loop 0x3ffbc8f4
+0x400d7ce4: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise/main/wifi_enterprise_main.c:92
+
+D (1750) wifi:Start wifi connect
+D (1750) wifi:connect status 0 -> 0
+D (1760) wifi:connect chan=0
+D (1760) wifi:first chan=1
+D (1760) wifi:connect status 0 -> 1
+D (1770) wifi:filter: set rx policy=3
+D (1770) wifi:clear scan ap list
+D (1770) wifi:start scan: type=0x50f, priority=2, cb=0x4012d724, arg=0x0, ss_state=0x1, time=122838, index=0
+0x4012d724: cnx_start_handoff_cb at ??:?
+
+D (1780) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+D (1790) wifi:rsn valid: gcipher=3 ucipher=3 akm=10
+
+D (1790) wpa: rsn_ie - hexdump(len=22):
+D (1800) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (1800) wpa: 00 0f ac 05 c0 00 
+I (1810) wpa: BSS: Add new id 0 BSSID 3c:a0:67:80:99:a3 SSID 'Hostapd-AP-E' chan 1
+D (1810) wifi:profile match: ss_state=0x7
+D (1820) wifi:rsn valid: gcipher=3 ucipher=3 akm=10
+
+D (1820) wifi:profile match: ss_state=0x7
+D (1830) wifi:scan end: arg=0x0, status=0, ss_state=0x7
+D (1830) wifi:find first mathched ssid, scan done
+D (1830) wifi:filter: set rx policy=4
+D (1840) wifi:first chan=1
+D (1840) wifi:handoff_cb: status=0
+D (1840) wifi:ap found, mac=3c:a0:67:80:99:a3
+D (1850) wifi:new_bss=0x3ffb6968, cur_bss=0x0, new_chan=<1,0>, cur_chan=1
+D (1850) wifi:filter: set rx policy=5
+D (1860) wpa: WPA: set AP RSNXE - hexdump(len=0):
+D (1860) wpa: SAE-PK: Not a valid password (length)
+I (1870) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+D (1870) wifi:connect_op: status=0, auth=10, cipher=3 
+D (1880) wpa: RSN: PMKSA cache search - network_ctx=0x0 try_opportunistic=0
+D (1890) wpa: RSN: Search for BSSID 3c:a0:67:80:99:a3
+D (1890) wpa: RSN: No PMKSA cache entry found
+D (2140) wifi:auth mode is not none
+D (2140) wifi:connect_bss: auth=1, reconnect=0
+I (2140) wifi:state: init -> auth (b0)
+D (2140) wifi:start 1s AUTH timer
+D (2140) wifi:clear scan ap list
+D (2150) wifi:recv auth: seq=2, status=0
+I (2150) wifi:state: auth -> assoc (0)
+D (2150) wifi:restart connect 1s timer for assoc
+D (2160) wifi:recv assoc: type=0x10
+D (2160) wifi:filter: set rx policy=6
+I (2160) wifi:state: assoc -> run (10)
+I (2170) wpa: wifi_task prio:7, stack:6656
+D (2170) wifi:start 30s connect timer for 4 way handshake
+D (2180) wpa: EAP: wifi->EAP api completed sig(1073446412)
+D (2180) wpa: EAP: EAP api return, sm->state(1)
+D (2190) wpa: WPA: Association event - clear replay counter
+D (2190) wpa: WPA: Clear old PTK
+D (2220) wpa: IEEE 802.1X RX: version=2 type=0 length=5
+D (2220) wpa: EAP: wifi->EAP api completed sig(1)
+D (2220) wpa: EAP: EAP api return, sm->state(1)
+D (2230) wpa: IEEE 802.1X RX: version=2 type=0 length=5
+D (2230) wpa: EAP: wifi->EAP api completed sig(1)
+D (2230) wpa: EAP: EAP api return, sm->state(1)
+D (2240) wpa: IEEE 802.1X RX: version=2 type=0 length=22
+D (2250) wpa: EAP: wifi->EAP api completed sig(1073446412)
+D (2250) wpa: EAP: EAP api return, sm->state(1)
+D (2260) wpa: IEEE 802.1X RX: version=2 type=0 length=6
+D (2260) wpa: TLS: Phase2 EAP types - hexdump(len=8):
+D (2270) wpa: 00 00 00 00 1a 00 00 00 
+D (2270) wpa: TLS: using phase1 config options
+D (2280) wpa: SSL: Received packet(len=6) - Flags 0x20
+D (2280) wpa: EAP-PEAP: Start (server ver=0, own ver=1)
+D (2280) wpa: EAP-PEAP: Using PEAP version 0
+I (2290) wpa: len=5 not available in input
+D (2290) wpa: SSL: 232 bytes left to be sent out (of total 232 bytes)
+D (2300) wpa: EAP: wifi->EAP api completed sig(1)
+D (2300) wpa: EAP: EAP api return, sm->state(1)
+D (2320) wpa: IEEE 802.1X RX: version=2 type=0 length=1004
+D (2330) wpa: SSL: Received packet(len=1004) - Flags 0xc0
+D (2330) wpa: SSL: TLS Message Length: 2758
+I (2330) wpa: SSL: Need 1764 bytes more input data
+D (2340) wpa: SSL: Building ACK (type=25 id=181 ver=0)
+D (2340) wpa: EAP: wifi->EAP api completed sig(1073446412)
+D (2350) wpa: EAP: EAP api return, sm->state(1)
+D (2360) wpa: IEEE 802.1X RX: version=2 type=0 length=1000
+D (2370) wpa: SSL: Received packet(len=1000) - Flags 0x40
+I (2370) wpa: SSL: Need 770 bytes more input data
+D (2370) wpa: SSL: Building ACK (type=25 id=182 ver=0)
+D (2370) wpa: EAP: wifi->EAP api completed sig(1073446412)
+D (2380) wpa: EAP: EAP api return, sm->state(1)
+D (2390) wpa: IEEE 802.1X RX: version=2 type=0 length=776
+D (2400) wpa: SSL: Received packet(len=776) - Flags 0x00
+I (2830) wpa: len=5 not available in input
+D (2830) wpa: SSL: 93 bytes left to be sent out (of total 93 bytes)
+D (2830) wpa: EAP: wifi->EAP api completed sig(1)
+D (2830) wpa: EAP: EAP api return, sm->state(1)
+D (2840) wpa: IEEE 802.1X RX: version=2 type=0 length=57
+D (2840) wpa: SSL: Received packet(len=57) - Flags 0x00
+I (2850) wpa: application data is null, adding one byte for ack
+D (2850) wpa: SSL: No data to be sent out
+D (2860) wpa: EAP-PEAP: TLS done, proceed to Phase 2
+D (2860) wpa: EAP-PEAP: using label 'client EAP encryption' in key derivation
+D (2870) wpa: EAP-PEAP: Derived key - hexdump(len=64):
+D (2880) wpa: 84 62 cc 78 e5 1a fd c2 7f 85 e5 7e 05 ad e0 d8 
+D (2880) wpa: 69 a4 31 fb d7 0b b3 e9 96 52 c5 4b 18 4c 92 ea 
+D (2890) wpa: ce c2 f8 8b 3c d0 4b 4a 8e a8 d4 62 d3 2c af 82 
+D (2890) wpa: 2e a5 24 7e 47 18 75 e6 3c 1e b6 7a 25 8f fb 32 
+D (2900) wpa: EAP-PEAP: Derived Session-Id - hexdump(len=65):
+D (2910) wpa: 19 00 00 00 01 02 e0 d5 b0 45 5c b3 33 85 fa d9 
+D (2910) wpa: 0b 04 f1 dd b8 5b 4e 24 e9 48 fb 01 04 38 b9 b5 
+D (2920) wpa: 0e 0b d3 ce 19 a8 9b f6 be a2 5e fa 57 7c 36 5d 
+D (2920) wpa: d0 cf 22 c7 a0 80 51 36 35 a9 32 0a e5 99 8f 4c 
+D (2930) wpa: f8 
+D (2930) wpa: SSL: Building ACK (type=25 id=184 ver=0)
+D (2940) wpa: EAP: wifi->EAP api completed sig(1073446412)
+D (2940) wpa: EAP: EAP api return, sm->state(1)
+D (2950) wpa: IEEE 802.1X RX: version=2 type=0 length=40
+D (2950) wpa: SSL: Received packet(len=40) - Flags 0x00
+D (2960) wpa: EAP-PEAP: received 34 bytes encrypted data for Phase 2
+D (2960) wpa: EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=5):
+D (2970) wpa: 01 b9 00 05 01 
+D (2970) wpa: EAP-PEAP: received Phase 2: code=1 identifier=185 length=5
+
+D (2980) wpa: EAP-PEAP: Phase 2 Request: type=1
+D (2980) wpa: EAP-PEAP: Encrypting Phase 2 data - hexdump(len=20):
+D (2990) wpa: 02 b9 00 14 01 62 6f 62 40 65 78 61 6d 70 6c 65 
+D (3000) wpa: 2e 6f 72 67 
+D (3000) wpa: SSL: 45 bytes left to be sent out (of total 45 bytes)
+D (3010) wpa: EAP: wifi->EAP api completed sig(1)
+D (3010) wpa: EAP: EAP api return, sm->state(1)
+D (3020) wpa: IEEE 802.1X RX: version=2 type=0 length=74
+D (3020) wpa: SSL: Received packet(len=74) - Flags 0x00
+D (3030) wpa: EAP-PEAP: received 68 bytes encrypted data for Phase 2
+D (3030) wpa: EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=39):
+D (3040) wpa: 1a 01 ba 00 26 10 5f 9d 64 ca 90 38 b9 0e d4 51 
+D (3040) wpa: 05 b6 3b a6 9a 32 66 72 65 65 72 61 64 69 75 73 
+D (3050) wpa: 2d 33 2e 30 2e 32 36 
+D (3050) wpa: EAP-PEAP: received Phase 2: code=1 identifier=186 length=43
+
+D (3060) wpa: EAP-PEAP: Phase 2 Request: type=26
+D (3070) wpa: EAP-PEAP: Selected Phase 2 EAP vendor 0 method 26
+D (3070) wpa: EAP-MSCHAPV2: RX identifier 186 mschapv2_id 186
+D (3080) wpa: EAP-MSCHAPV2: Received challenge
+D (3080) wpa: EAP-MSCHAPV2: Authentication Servername - hexdump(len=17):
+D (3090) wpa: 66 72 65 65 72 61 64 69 75 73 2d 33 2e 30 2e 32 
+D (3090) wpa: 36 
+D (3100) wpa: EAP-MSCHAPV2: Generate Challenge Response
+D (3100) wpa: MSCHAPV2: Identity - hexdump(len=15):
+D (3110) wpa: 62 6f 62 40 65 78 61 6d 70 6c 65 2e 6f 72 67 
+D (3110) wpa: MSCHAPV2: Username - hexdump(len=15):
+D (3120) wpa: 62 6f 62 40 65 78 61 6d 70 6c 65 2e 6f 72 67 
+D (3120) wpa: MSCHAPV2: auth_challenge - hexdump(len=16):
+D (3130) wpa: 5f 9d 64 ca 90 38 b9 0e d4 51 05 b6 3b a6 9a 32 
+D (3130) wpa: MSCHAPV2: peer_challenge - hexdump(len=16):
+D (3140) wpa: 97 83 5f 47 82 b5 45 16 ee eb f2 50 0c 12 f0 8d 
+D (3150) wpa: MSCHAPV2: username - hexdump(len=15):
+D (3150) wpa: 62 6f 62 40 65 78 61 6d 70 6c 65 2e 6f 72 67 
+D (3160) wpa: MSCHAPV2: password - hexdump(len=12):
+D (3160) wpa: 61 72 67 6f 61 72 67 6f 61 72 67 6f 
+D (3170) wpa: MSCHAPV2: NT Response - hexdump(len=24):
+D (3170) wpa: cf 4c fb d1 ef 90 44 46 31 58 b8 87 76 cf 17 56 
+D (3180) wpa: 81 76 53 13 8a 7a d5 c9 
+D (3180) wpa: MSCHAPV2: Auth Response - hexdump(len=20):
+D (3190) wpa: 6d a2 41 4d 87 70 0f a2 46 8e 9d af 74 db 1c 80 
+D (3190) wpa: 0a b4 d8 e6 
+D (3200) wpa: MSCHAPV2: Master Key - hexdump(len=16):
+D (3200) wpa: a9 38 1e 48 76 78 6c 28 8e 42 bc 91 9d 64 04 a7 
+D (3210) wpa: EAP-MSCHAPV2: TX identifier 186 mschapv2_id 186 (response)
+D (3210) wpa: EAP-PEAP: Encrypting Phase 2 data - hexdump(len=74):
+D (3220) wpa: 02 ba 00 4a 1a 02 ba 00 45 31 97 83 5f 47 82 b5 
+D (3220) wpa: 45 16 ee eb f2 50 0c 12 f0 8d 00 00 00 00 00 00 
+D (3230) wpa: 00 00 cf 4c fb d1 ef 90 44 46 31 58 b8 87 76 cf 
+D (3240) wpa: 17 56 81 76 53 13 8a 7a d5 c9 00 62 6f 62 40 65 
+D (3240) wpa: 78 61 6d 70 6c 65 2e 6f 72 67 
+D (3250) wpa: SSL: 99 bytes left to be sent out (of total 99 bytes)
+D (3250) wpa: EAP: wifi->EAP api completed sig(1)
+D (3260) wpa: EAP: EAP api return, sm->state(1)
+D (3270) wpa: IEEE 802.1X RX: version=2 type=0 length=82
+D (3270) wpa: SSL: Received packet(len=82) - Flags 0x00
+D (3270) wpa: EAP-PEAP: received 76 bytes encrypted data for Phase 2
+D (3280) wpa: EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=47):
+D (3290) wpa: 1a 03 ba 00 2e 53 3d 36 44 41 32 34 31 34 44 38 
+D (3290) wpa: 37 37 30 30 46 41 32 34 36 38 45 39 44 41 46 37 
+D (3300) wpa: 34 44 42 31 43 38 30 30 41 42 34 44 38 45 36 
+D (3300) wpa: EAP-PEAP: received Phase 2: code=1 identifier=187 length=51
+
+D (3310) wpa: EAP-PEAP: Phase 2 Request: type=26
+D (3310) wpa: EAP-MSCHAPV2: RX identifier 187 mschapv2_id 186
+D (3320) wpa: EAP-MSCHAPV2: Received success
+D (3320) wpa: EAP-MSCHAPV2: Success message - hexdump(len=0):
+I (3330) wpa: EAP-MSCHAPV2: Authentication succeeded
+D (3340) wpa: EAP-PEAP: Encrypting Phase 2 data - hexdump(len=6):
+D (3340) wpa: 02 bb 00 06 1a 03 
+D (3350) wpa: SSL: 31 bytes left to be sent out (of total 31 bytes)
+D (3350) wpa: EAP: wifi->EAP api completed sig(1073543752)
+D (3360) wpa: EAP: EAP api return, sm->state(1)
+D (3370) wpa: IEEE 802.1X RX: version=2 type=0 length=46
+D (3370) wpa: SSL: Received packet(len=46) - Flags 0x00
+D (3370) wpa: EAP-PEAP: received 40 bytes encrypted data for Phase 2
+D (3380) wpa: EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=11):
+D (3390) wpa: 01 bc 00 0b 21 80 03 00 02 00 01 
+D (3390) wpa: EAP-PEAP: received Phase 2: code=1 identifier=188 length=11
+
+D (3400) wpa: EAP-PEAP: Phase 2 Request: type=33
+D (3400) wpa: EAP-TLV: Received TLVs - hexdump(len=6):
+D (3410) wpa: 80 03 00 02 00 01 
+D (3410) wpa: EAP-TLV: Result TLV - hexdump(len=2):
+D (3420) wpa: 00 01 
+I (3420) wpa: EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
+D (3420) wpa: EAP-PEAP: Encrypting Phase 2 data - hexdump(len=11):
+D (3430) wpa: 02 bc 00 0b 21 80 03 00 02 00 01 
+D (3440) wpa: SSL: 40 bytes left to be sent out (of total 40 bytes)
+D (3440) wpa: EAP: wifi->EAP api completed sig(1073543752)
+D (3450) wpa: EAP: EAP api return, sm->state(1)
+D (3460) wpa: IEEE 802.1X RX: version=2 type=0 length=4
+I (3460) wpa: >>>>>EAP FINISH
+D (3460) wpa: EAP: wifi->EAP api completed sig(1)
+D (3470) wpa: EAP: EAP api return, sm->state(2)
+D (3470) wpa: IEEE 802.1X RX: version=2 type=3 length=117
+D (3480) wpa:   EAPOL-Key type=2
+D (3480) wpa:   key_info 0x8b (ver=3 keyidx=0 rsvd=0 Pairwise Ack)
+D (3490) wpa:   key_length=16 key_data_length=22
+D (3490) wpa:   replay_counter - hexdump(len=8):
+D (3490) wpa: 00 00 00 00 00 00 00 01 
+D (3500) wpa:   key_nonce - hexdump(len=32):
+D (3500) wpa: 28 e6 60 b8 0d 19 ca 37 b9 e1 74 45 7d 98 85 ba 
+D (3510) wpa: 44 cd d4 0f b7 b4 11 52 01 9a 76 2c f2 a8 b0 5c 
+D (3510) wpa:   key_iv - hexdump(len=16):
+D (3520) wpa: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+D (3520) wpa:   key_rsc - hexdump(len=8):
+D (3530) wpa: 00 00 00 00 00 00 00 00 
+D (3530) wpa:   key_id (reserved) - hexdump(len=8):
+D (3540) wpa: 00 00 00 00 00 00 00 00 
+D (3540) wpa:   key_mic - hexdump(len=16):
+D (3550) wpa: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+D (3550) wpa: WPA 1/4-Way Handshake
+D (3550) wpa: RSN: msg 1/4 key data - hexdump(len=22):
+D (3560) wpa: dd 14 00 0f ac 04 5b 7e 40 db 68 4d 92 be ca 8b 
+D (3570) wpa: f7 e2 85 15 7e 12 
+D (3570) wpa: WPA: PMKID in EAPOL-Key - hexdump(len=22):
+D (3570) wpa: dd 14 00 0f ac 04 5b 7e 40 db 68 4d 92 be ca 8b 
+D (3580) wpa: f7 e2 85 15 7e 12 
+D (3580) wpa: RSN: PMKID from Authenticator - hexdump(len=16):
+D (3590) wpa: 5b 7e 40 db 68 4d 92 be ca 8b f7 e2 85 15 7e 12 
+D (3600) wpa: RSN: no matching PMKID found
+D (3600) wpa: WPA: PMK from EAPOL state machines - hexdump(len=32):
+D (3610) wpa: 84 62 cc 78 e5 1a fd c2 7f 85 e5 7e 05 ad e0 d8 
+D (3610) wpa: 69 a4 31 fb d7 0b b3 e9 96 52 c5 4b 18 4c 92 ea 
+D (3620) wpa: RSN: Derive PMKID using HMAC-SHA-256
+D (3620) wpa: ELOOP: pmksa_cache_set_expiration:76 called to remove timer handler=0x400f21f8, removed count=0
+0x400f21f8: pmksa_cache_expire at /home/alghisi/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/pmksa_cache.c:55
+
+D (3630) wpa: ELOOP: Added one timer from pmksa_cache_set_expiration:85 to call 0x400f21f8, current order=0
+0x400f21f8: pmksa_cache_expire at /home/alghisi/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/pmksa_cache.c:55
+
+D (3640) wpa: RSN: Added PMKSA cache entry for 3c:a0:67:80:99:a3 network_ctx=0x0
+D (3650) wpa: RSN: the new PMK matches with the PMKID
+D (3660) wpa: RSN: PMKSA cache search - network_ctx=0x0 try_opportunistic=0
+D (3660) wpa: RSN: Search for BSSID 3c:a0:67:80:99:a3
+D (3670) wpa: RSN: PMKSA cache entry found - PMKID - hexdump(len=16):
+D (3670) wpa: 5b 7e 40 db 68 4d 92 be ca 8b f7 e2 85 15 7e 12 
+D (3680) wpa: WPA: Renewed SNonce - hexdump(len=32):
+D (3690) wpa: cb a9 1d f6 4c 64 80 ed 58 f5 6a 94 37 fb 45 41 
+D (3690) wpa: 0d 61 77 f0 63 e7 fe 90 75 9e ab df 93 6e 52 1b 
+D (3700) wpa: WPA: PTK derivation - A1=94:b5:55:19:1c:e8 A2=3c:a0:67:80:99:a3
+
+D (3700) wpa: WPA: PTK - hexdump(len=48):
+D (3710) wpa: ed ba 51 ca a4 8c 0e 20 29 60 05 c5 48 32 cf 6c 
+D (3710) wpa: 23 1a da bf 0e 93 90 c7 92 da 17 11 1a 6c 41 f4 
+D (3720) wpa: 4d 71 51 2d 5d 29 21 71 b3 41 00 68 93 9b 26 3c 
+D (3730) wpa: WPA: KCK - hexdump(len=16):
+D (3730) wpa: ed ba 51 ca a4 8c 0e 20 29 60 05 c5 48 32 cf 6c 
+D (3740) wpa: WPA: KEK - hexdump(len=16):
+D (3740) wpa: 23 1a da bf 0e 93 90 c7 92 da 17 11 1a 6c 41 f4 
+D (3750) wpa: WPA: TK - hexdump(len=16):
+D (3750) wpa: 4d 71 51 2d 5d 29 21 71 b3 41 00 68 93 9b 26 3c 
+D (3760) wpa: WPA Send EAPOL-Key 2/4
+D (3760) wpa: WPA: KCK - hexdump(len=16):
+D (3760) wpa: ed ba 51 ca a4 8c 0e 20 29 60 05 c5 48 32 cf 6c 
+D (3770) wpa: WPA: Derived Key MIC - hexdump(len=16):
+D (3770) wpa: 71 cd 99 0f 6a 31 a5 b4 4a fe 32 58 aa 53 b0 50 
+D (3780) wpa: 2/4 txcb, flags=0, txfail 0
+D (3790) wpa: IEEE 802.1X RX: version=2 type=3 length=183
+D (3790) wpa:   EAPOL-Key type=2
+D (3790) wpa:   key_info 0x13cb (ver=3 keyidx=0 rsvd=0 Pairwise Install Ack MIC Secure Encr)
+D (3800) wpa:   key_length=16 key_data_length=88
+D (3810) wpa:   replay_counter - hexdump(len=8):
+D (3810) wpa: 00 00 00 00 00 00 00 02 
+D (3810) wpa:   key_nonce - hexdump(len=32):
+D (3820) wpa: 28 e6 60 b8 0d 19 ca 37 b9 e1 74 45 7d 98 85 ba 
+D (3830) wpa: 44 cd d4 0f b7 b4 11 52 01 9a 76 2c f2 a8 b0 5c 
+D (3830) wpa:   key_iv - hexdump(len=16):
+D (3840) wpa: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+D (3840) wpa:   key_rsc - hexdump(len=8):
+D (3850) wpa: 00 00 00 00 00 00 00 00 
+D (3850) wpa:   key_id (reserved) - hexdump(len=8):
+D (3850) wpa: 00 00 00 00 00 00 00 00 
+D (3860) wpa:   key_mic - hexdump(len=16):
+D (3860) wpa: d0 32 91 a3 ed 28 2f ba 90 22 29 87 9e 03 63 ee 
+D (3870) wpa: RSN: encrypted key data - hexdump(len=88):
+D (3870) wpa: 10 cf cc 10 4d fb af ca dc e5 ac a3 a3 48 d1 2c 
+D (3880) wpa: 18 59 85 03 4d ea 1c 71 eb 59 34 23 12 48 1c 27 
+D (3890) wpa: 44 5b 3c f7 8c 27 c0 9c 04 95 aa e7 df 2d 30 ca 
+D (3890) wpa: b3 9b c9 4b c0 a7 95 bc a7 ba 0c 36 3c 73 c1 fe 
+D (3900) wpa: f9 38 e7 af 09 43 6c de 41 20 79 fc 9f a2 1a ab 
+D (3900) wpa: 47 df 4f 30 58 6f bc db 
+D (3910) wpa: WPA: decrypted EAPOL-Key key data - hexdump(len=80):
+D (3910) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (3920) wpa: 00 0f ac 05 c0 00 dd 16 00 0f ac 01 01 00 6f 9f 
+D (3920) wpa: ef b2 a7 b0 f4 c5 6b fe 66 60 dc bd e5 7b dd 1c 
+D (3930) wpa: 00 0f ac 09 04 00 00 00 00 00 00 00 50 d6 3e 88 
+D (3940) wpa: f3 f3 67 e0 26 2b 6b f4 48 de 2c f5 dd 00 00 00 
+D (3940) wpa: WPA 3/4-Way Handshake
+D (3950) wpa: WPA: RSN IE in EAPOL-Key - hexdump(len=22):
+D (3950) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (3960) wpa: 00 0f ac 05 c0 00 
+D (3960) wpa: WPA: GTK in EAPOL-Key - hexdump(len=24):
+D (3970) wpa: dd 16 00 0f ac 01 01 00 6f 9f ef b2 a7 b0 f4 c5 
+D (3970) wpa: 6b fe 66 60 dc bd e5 7b 
+D (3980) wpa: WPA: IGTK in EAPOL-Key - hexdump(len=30):
+D (3980) wpa: dd 1c 00 0f ac 09 04 00 00 00 00 00 00 00 50 d6 
+D (3990) wpa: 3e 88 f3 f3 67 e0 26 2b 6b f4 48 de 2c f5 
+D (3990) wpa: WPA: IE KeyData - hexdump(len=80):
+D (4000) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (4000) wpa: 00 0f ac 05 c0 00 dd 16 00 0f ac 01 01 00 6f 9f 
+D (4010) wpa: ef b2 a7 b0 f4 c5 6b fe 66 60 dc bd e5 7b dd 1c 
+D (4010) wpa: 00 0f ac 09 04 00 00 00 00 00 00 00 50 d6 3e 88 
+D (4020) wpa: f3 f3 67 e0 26 2b 6b f4 48 de 2c f5 dd 00 00 00 
+D (4030) wpa: WPA: RSC - hexdump(len=8):
+D (4030) wpa: 00 00 00 00 00 00 00 00 
+D (4030) wpa: RSN: received GTK in pairwise handshake - hexdump(len=18):
+D (4040) wpa: 01 00 6f 9f ef b2 a7 b0 f4 c5 6b fe 66 60 dc bd 
+D (4050) wpa: e5 7b 
+D (4050) wpa: WPA: IGTK keyid 4 pn 000000000000
+D (4050) wpa: WPA: IGTK - hexdump(len=16):
+D (4060) wpa: 50 d6 3e 88 f3 f3 67 e0 26 2b 6b f4 48 de 2c f5 
+D (4060) wpa: tx 4/4 txcb_flags=8192
+D (4070) wpa: WPA Send EAPOL-Key 4/4
+D (4070) wpa: WPA: KCK - hexdump(len=16):
+D (4080) wpa: ed ba 51 ca a4 8c 0e 20 29 60 05 c5 48 32 cf 6c 
+D (4080) wpa: WPA: Derived Key MIC - hexdump(len=16):
+D (4090) wpa: f0 5f 1a 2c fb 3a d7 f8 64 1f 34 cc c0 09 48 38 
+D (4090) wpa: IEEE 802.1X RX: version=2 type=3 length=183
+D (4100) wpa:   EAPOL-Key type=2
+D (4100) wpa:   key_info 0x13cb (ver=3 keyidx=0 rsvd=0 Pairwise Install Ack MIC Secure Encr)
+D (4110) wpa:   key_length=16 key_data_length=88
+D (4110) wpa:   replay_counter - hexdump(len=8):
+D (4120) wpa: 00 00 00 00 00 00 00 03 
+D (4120) wpa:   key_nonce - hexdump(len=32):
+D (4130) wpa: 28 e6 60 b8 0d 19 ca 37 b9 e1 74 45 7d 98 85 ba 
+D (4130) wpa: 44 cd d4 0f b7 b4 11 52 01 9a 76 2c f2 a8 b0 5c 
+D (4140) wpa:   key_iv - hexdump(len=16):
+D (4140) wpa: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+D (4150) wpa:   key_rsc - hexdump(len=8):
+D (4150) wpa: 00 00 00 00 00 00 00 00 
+D (4160) wpa:   key_id (reserved) - hexdump(len=8):
+D (4160) wpa: 00 00 00 00 00 00 00 00 
+D (4170) wpa:   key_mic - hexdump(len=16):
+D (4170) wpa: 62 7f 11 c4 09 5f 8c 62 73 24 0d da 74 ef 2f 5c 
+D (4180) wpa: RSN: encrypted key data - hexdump(len=88):
+D (4180) wpa: 10 cf cc 10 4d fb af ca dc e5 ac a3 a3 48 d1 2c 
+D (4190) wpa: 18 59 85 03 4d ea 1c 71 eb 59 34 23 12 48 1c 27 
+D (4190) wpa: 44 5b 3c f7 8c 27 c0 9c 04 95 aa e7 df 2d 30 ca 
+D (4200) wpa: b3 9b c9 4b c0 a7 95 bc a7 ba 0c 36 3c 73 c1 fe 
+D (4200) wpa: f9 38 e7 af 09 43 6c de 41 20 79 fc 9f a2 1a ab 
+D (4210) wpa: 47 df 4f 30 58 6f bc db 
+D (4210) wpa: WPA: decrypted EAPOL-Key key data - hexdump(len=80):
+D (4220) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (4230) wpa: 00 0f ac 05 c0 00 dd 16 00 0f ac 01 01 00 6f 9f 
+D (4230) wpa: ef b2 a7 b0 f4 c5 6b fe 66 60 dc bd e5 7b dd 1c 
+D (4240) wpa: 00 0f ac 09 04 00 00 00 00 00 00 00 50 d6 3e 88 
+D (4240) wpa: f3 f3 67 e0 26 2b 6b f4 48 de 2c f5 dd 00 00 00 
+D (4250) wpa: WPA 3/4-Way Handshake
+D (4250) wpa: WPA: RSN IE in EAPOL-Key - hexdump(len=22):
+D (4260) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (4260) wpa: 00 0f ac 05 c0 00 
+D (4270) wpa: WPA: GTK in EAPOL-Key - hexdump(len=24):
+D (4270) wpa: dd 16 00 0f ac 01 01 00 6f 9f ef b2 a7 b0 f4 c5 
+D (4280) wpa: 6b fe 66 60 dc bd e5 7b 
+D (4280) wpa: WPA: IGTK in EAPOL-Key - hexdump(len=30):
+D (4290) wpa: dd 1c 00 0f ac 09 04 00 00 00 00 00 00 00 50 d6 
+D (4290) wpa: 3e 88 f3 f3 67 e0 26 2b 6b f4 48 de 2c f5 
+D (4300) wpa: WPA: IE KeyData - hexdump(len=80):
+D (4300) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (4310) wpa: 00 0f ac 05 c0 00 dd 16 00 0f ac 01 01 00 6f 9f 
+D (4320) wpa: ef b2 a7 b0 f4 c5 6b fe 66 60 dc bd e5 7b dd 1c 
+D (4320) wpa: 00 0f ac 09 04 00 00 00 00 00 00 00 50 d6 3e 88 
+D (4330) wpa: f3 f3 67 e0 26 2b 6b f4 48 de 2c f5 dd 00 00 00 
+D (4330) wpa: WPA: RSC - hexdump(len=8):
+D (4340) wpa: 00 00 00 00 00 00 00 00 
+D (4340) wpa: RSN: received GTK in pairwise handshake - hexdump(len=18):
+D (4350) wpa: 01 00 6f 9f ef b2 a7 b0 f4 c5 6b fe 66 60 dc bd 
+D (4350) wpa: e5 7b 
+D (4360) wpa: WPA: Not reinstalling already in-use IGTK to the driver (keyidx=4)
+D (4360) wpa: tx 4/4 txcb_flags=8192
+D (4370) wpa: WPA Send EAPOL-Key 4/4
+D (4370) wpa: WPA: KCK - hexdump(len=16):
+D (4380) wpa: ed ba 51 ca a4 8c 0e 20 29 60 05 c5 48 32 cf 6c 
+D (4380) wpa: WPA: Derived Key MIC - hexdump(len=16):
+D (4390) wpa: 9d 5b 63 bf ad 56 66 6b ef 2d 60 e2 89 96 e3 70 
+D (4390) wpa: WPA: Installing PTK to the driver.
+D (4400) wpa: WPA: Group Key - hexdump(len=16):
+D (4400) wpa: 6f 9f ef b2 a7 b0 f4 c5 6b fe 66 60 dc bd e5 7b 
+D (4410) wpa: WPA: Judge GTK: (keyidx=1 len=16).
+D (4410) wpa: WPA: Installing GTK to the driver (keyidx=1 tx=0 len=16).
+D (4420) wpa: WPA: RSC - hexdump(len=6):
+D (4420) wpa: 00 00 00 00 00 00 
+D (4430) wpa: WPA: Key negotiation completed with 3c:a0:67:80:99:a3 [PTK=CCMP GTK=CCMP]
+
+I (4430) wifi:connected with Hostapd-AP-E, aid = 1, channel 1, BW20, bssid = 3c:a0:67:80:99:a3
+I (4440) wifi:security: WPA2-ENT, phy: bg, rssi: -49
+D (4450) wifi:remove all except 3c:a0:67:80:99:a3 from rc list
+D (4450) wifi:clear blacklist
+D (4460) wifi:filter: set rx policy=7
+I (4460) wifi:pm start, type: 1
+
+D (4460) wifi:Send sta connected event
+D (4470) wifi:connect status 1 -> 5
+D (4470) wifi:obss scan is disabled
+D (4470) wifi:start obss scan: obss scan is stopped
+I (4480) wifi:AP's beacon interval = 102400 us, DTIM period = 2
+D (4480) event: running post WIFI_EVENT:4 with handler 0x400f91d4 and context 0x3ffbdad0 on loop 0x3ffbc8f4
+0x400f91d4: wifi_default_action_sta_connected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:85
+
+D (4490) esp_netif_handlers: esp_netif action connected with netif0x3ffbd81c from event_id=4
+D (4500) esp_netif_lwip: check: remote, if=0x3ffbd81c fn=0x400de350
+0x400de350: esp_netif_up_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1612
+
+
+D (4510) esp_netif_lwip: esp_netif_up_api esp_netif:0x3ffbd81c
+D (4510) esp_netif_lwip: check: local, if=0x3ffbd81c fn=0x400de8a4
+0x400de8a4: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (4520) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd81c
+D (4530) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (4530) esp_netif_lwip: check: remote, if=0x3ffbd81c fn=0x400de22c
+0x400de22c: esp_netif_dhcpc_start_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1404
+
+
+D (4540) esp_netif_lwip: esp_netif_dhcpc_start_api esp_netif:0x3ffbd81c
+D (4540) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd81c
+D (4550) esp_netif_lwip: if0x3ffbd81c start ip lost tmr: no need start because netif=0x3ffbd8a0 interval=120 ip=0
+D (4560) esp_netif_lwip: starting dhcp client
+D (4570) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (4570) event: running post WIFI_EVENT:4 with handler 0x400d7ce4 and context 0x3ffc5b70 on loop 0x3ffbc8f4
+0x400d7ce4: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise/main/wifi_enterprise_main.c:92
+
+D (5570) esp_netif_lwip: esp_netif_internal_dhcpc_cb lwip-netif:0x3ffbd8a0
+D (5570) esp_netif_lwip: if0x3ffbd81c ip changed=1
+D (5570) event: running post IP_EVENT:0 with handler 0x400f9000 and context 0x3ffbdba4 on loop 0x3ffbc8f4
+0x400f9000: wifi_default_action_sta_got_ip at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:127
+
+D (5580) wifi_init_default: Got IP wifi default handler entered
+D (5580) esp_netif_handlers: esp_netif action got_ip with netif0x3ffbd81c from event_id=0
+I (5590) esp_netif_handlers: sta ip: 192.168.104.187, mask: 255.255.255.0, gw: 192.168.104.247
+D (5600) event: running post IP_EVENT:0 with handler 0x400d7ce4 and context 0x3ffc5b90 on loop 0x3ffbc8f4
+0x400d7ce4: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise/main/wifi_enterprise_main.c:92
+
+D (5680) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (5680) example: ~~~~~~~~~~~
+I (5680) example: IP:192.168.104.187
+I (5680) example: MASK:255.255.255.0
+I (5680) example: GW:192.168.104.247
+I (5690) example: ~~~~~~~~~~~
+D (7690) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (7690) example: ~~~~~~~~~~~
+I (7690) example: IP:192.168.104.187
+I (7690) example: MASK:255.255.255.0
+I (7690) example: GW:192.168.104.247
+I (7700) example: ~~~~~~~~~~~
+D (9700) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (9700) example: ~~~~~~~~~~~
+I (9700) example: IP:192.168.104.187
+I (9700) example: MASK:255.255.255.0
+I (9700) example: GW:192.168.104.247
+I (9710) example: ~~~~~~~~~~~
+D (11710) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (11710) example: ~~~~~~~~~~~
+I (11710) example: IP:192.168.104.187
+I (11710) example: MASK:255.255.255.0
+I (11710) example: GW:192.168.104.247
+I (11720) example: ~~~~~~~~~~~
+D (13720) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (13720) example: ~~~~~~~~~~~
+I (13720) example: IP:192.168.104.187
+I (13720) example: MASK:255.255.255.0
+I (13720) example: GW:192.168.104.247
+I (13730) example: ~~~~~~~~~~~
+D (15730) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (15730) example: ~~~~~~~~~~~
+I (15730) example: IP:192.168.104.187
+I (15730) example: MASK:255.255.255.0
+I (15730) example: GW:192.168.104.247
+I (15740) example: ~~~~~~~~~~~
+D (17740) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (17740) example: ~~~~~~~~~~~
+I (17740) example: IP:192.168.104.187
+I (17740) example: MASK:255.255.255.0
+I (17740) example: GW:192.168.104.247
+I (17750) example: ~~~~~~~~~~~
+D (19750) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (19750) example: ~~~~~~~~~~~
+I (19750) example: IP:192.168.104.187
+I (19750) example: MASK:255.255.255.0
+I (19750) example: GW:192.168.104.247
+I (19760) example: ~~~~~~~~~~~
+D (21760) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (21760) example: ~~~~~~~~~~~
+I (21760) example: IP:192.168.104.187
+I (21760) example: MASK:255.255.255.0
+I (21760) example: GW:192.168.104.247
+I (21770) example: ~~~~~~~~~~~
+D (23770) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (23770) example: ~~~~~~~~~~~
+I (23770) example: IP:192.168.104.187
+I (23770) example: MASK:255.255.255.0
+I (23770) example: GW:192.168.104.247
+I (23780) example: ~~~~~~~~~~~
+D (25780) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (25780) example: ~~~~~~~~~~~
+I (25780) example: IP:192.168.104.187
+I (25780) example: MASK:255.255.255.0
+I (25780) example: GW:192.168.104.247
+I (25790) example: ~~~~~~~~~~~
+D (27790) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (27790) example: ~~~~~~~~~~~
+I (27790) example: IP:192.168.104.187
+I (27790) example: MASK:255.255.255.0
+I (27790) example: GW:192.168.104.247
+I (27800) example: ~~~~~~~~~~~
+D (27880) wifi:recv deauth, reason=0x3
+I (27890) wifi:state: run -> init (3c0)
+D (27890) wifi:recv deauth/disassoc, stop beacon/connect timer
+D (27890) wifi:connect status 5 -> 4
+D (27890) wifi:sta leave
+I (27890) wifi:pm stop, total sleep time: 22287870 us / 23430154 us
+
+D (27900) wifi:stop CSA timer
+D (27900) wpa: EAP: queue deleted
+D (27900) wpa: EAP: task deleted
+D (27910) wpa: EAP: wifi->EAP api completed sig(1073407494)
+D (27910) wpa: EAP: EAP api return, sm->state(2)
+D (27920) wpa: EAP: eap_peer_sm_deinit: free data lock
+D (27920) wifi:remove 3c:a0:67:80:99:a3 from rc list
+I (27930) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+D (27930) wifi:filter: set rx policy=8
+D (27940) wifi:Send disconnect event, reason=3, AP number=0
+D (27940) event: running post WIFI_EVENT:5 with handler 0x400f91bc and context 0x3ffbdb00 on loop 0x3ffbc8f4
+0x400f91bc: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (27950) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd81c from event_id=5
+D (27960) esp_netif_lwip: check: remote, if=0x3ffbd81c fn=0x400de398
+0x400de398: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (27970) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd81c
+D (27970) esp_netif_lwip: esp_netif_internal_dhcpc_cb lwip-netif:0x3ffbd8a0
+D (27980) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd81c
+D (27990) esp_netif_lwip: if0x3ffbd81c start ip lost tmr: interval=120
+D (28000) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd81c
+D (28000) esp_netif_lwip: if0x3ffbd81c start ip lost tmr: already started
+D (28010) esp_netif_lwip: check: local, if=0x3ffbd81c fn=0x400de8a4
+0x400de8a4: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (28020) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd81c
+D (28020) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (28030) event: running post WIFI_EVENT:5 with handler 0x400d7ce4 and context 0x3ffc5b70 on loop 0x3ffbc8f4
+0x400d7ce4: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise/main/wifi_enterprise_main.c:92
+
+D (28040) wifi:Start wifi connect
+D (28040) wifi:connect status 4 -> 0
+D (28040) wifi:connect chan=0
+D (28050) wifi:first chan=1
+D (28050) wifi:connect status 0 -> 1
+D (28050) wifi:filter: set rx policy=3
+D (28060) wifi:clear scan ap list
+D (28060) wifi:start scan: type=0x50f, priority=2, cb=0x4012d724, arg=0x0, ss_state=0x1, time=26442957, index=0
+0x4012d724: cnx_start_handoff_cb at ??:?
+
+D (28070) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+D (28200) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28200) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (28320) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28320) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (28440) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28440) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (28560) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28560) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (28680) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28680) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (28800) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28800) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (28920) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (28920) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (29050) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (29050) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (29170) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (29170) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (29290) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (29290) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (29410) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (29410) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (29770) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (29770) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (29800) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (29800) example: ~~~~~~~~~~~
+I (29800) example: IP:0.0.0.0
+I (29800) example: MASK:0.0.0.0
+I (29800) example: GW:0.0.0.0
+I (29810) example: ~~~~~~~~~~~
+D (30130) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (30130) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+D (30490) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (30490) wifi:filter: set rx policy=4
+D (30490) wifi:first chan=1
+D (30490) wifi:handoff_cb: status=0
+D (30500) wifi:clear rc list
+D (30500) wifi:clear blacklist
+D (30500) wifi:Send disconnect event, reason=201
+D (30510) wifi:connect status 1 -> 3
+D (30510) wifi:disable connect timer
+D (30510) wifi:clear scan ap list
+D (30520) event: running post WIFI_EVENT:5 with handler 0x400f91bc and context 0x3ffbdb00 on loop 0x3ffbc8f4
+0x400f91bc: wifi_default_action_sta_disconnected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:104
+
+D (30530) esp_netif_handlers: esp_netif action disconnected with netif0x3ffbd81c from event_id=5
+D (30530) esp_netif_lwip: check: remote, if=0x3ffbd81c fn=0x400de398
+0x400de398: esp_netif_down_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (30540) esp_netif_lwip: esp_netif_down_api esp_netif:0x3ffbd81c
+D (30550) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd81c
+D (30550) esp_netif_lwip: if0x3ffbd81c start ip lost tmr: already started
+D (30560) esp_netif_lwip: check: local, if=0x3ffbd81c fn=0x400de8a4
+0x400de8a4: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (30570) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd81c
+D (30570) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (30580) event: running post WIFI_EVENT:5 with handler 0x400d7ce4 and context 0x3ffc5b70 on loop 0x3ffbc8f4
+0x400d7ce4: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise/main/wifi_enterprise_main.c:92
+
+D (30590) wifi:Start wifi connect
+D (30590) wifi:connect status 3 -> 0
+D (30600) wifi:connect chan=0
+D (30600) wifi:first chan=1
+D (30600) wifi:connect status 0 -> 1
+D (30610) wifi:filter: set rx policy=3
+D (30610) wifi:clear scan ap list
+D (30610) wifi:start scan: type=0x50f, priority=2, cb=0x4012d724, arg=0x0, ss_state=0x1, time=28995672, index=0
+0x4012d724: cnx_start_handoff_cb at ??:?
+
+D (30620) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+D (30630) wifi:rsn valid: gcipher=3 ucipher=3 akm=10
+
+D (30630) wpa: rsn_ie - hexdump(len=22):
+D (30640) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (30640) wpa: 00 0f ac 05 c0 00 
+D (30650) wifi:profile match: ss_state=0x7
+D (30650) wifi:scan end: arg=0x0, status=0, ss_state=0x7
+D (30650) wifi:find first mathched ssid, scan done
+D (30660) wifi:filter: set rx policy=4
+D (30660) wifi:first chan=1
+D (30660) wifi:handoff_cb: status=0
+D (30670) wifi:ap found, mac=3c:a0:67:80:99:a3
+D (30670) wifi:new_bss=0x3ffb6968, cur_bss=0x0, new_chan=<1,0>, cur_chan=1
+D (30680) wifi:filter: set rx policy=5
+D (30680) wpa: WPA: set AP RSNXE - hexdump(len=0):
+D (30690) wpa: SAE-PK: Not a valid password (length)
+I (30690) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+D (30700) wifi:connect_op: status=0, auth=10, cipher=3 
+D (30700) wpa: RSN: PMKSA cache search - network_ctx=0x0 try_opportunistic=0
+D (30710) wpa: RSN: Search for BSSID 3c:a0:67:80:99:a3
+D (30720) wpa: RSN: PMKSA cache entry found - PMKID - hexdump(len=16):
+D (30720) wpa: 5b 7e 40 db 68 4d 92 be ca 8b f7 e2 85 15 7e 12 
+D (30730) wifi:auth mode is not none
+D (30730) wifi:connect_bss: auth=1, reconnect=0
+I (30740) wifi:state: init -> auth (b0)
+D (30740) wifi:start 1s AUTH timer
+D (30740) wifi:clear scan ap list
+D (30750) wifi:recv auth: seq=2, status=0
+I (30750) wifi:state: auth -> assoc (0)
+D (30750) wifi:restart connect 1s timer for assoc
+D (30760) wifi:recv assoc: type=0x10
+D (30760) wifi:filter: set rx policy=6
+I (30760) wifi:state: assoc -> run (10)
+I (30770) wpa: wifi_task prio:7, stack:6656
+D (30770) wifi:start 30s connect timer for 4 way handshake
+D (30780) wpa: RSN: PMKSA caching - do not send EAPOL-Start
+D (30780) wpa: EAP: wifi->EAP api completed sig(1073446412)
+D (30790) wpa: EAP: EAP api return, sm->state(0)
+D (30790) wpa: WPA: Association event - clear replay counter
+D (30800) wpa: WPA: Clear old PTK
+D (30820) wpa: IEEE 802.1X RX: version=2 type=0 length=5
+D (30820) wpa: EAP: wifi->EAP api completed sig(1)
+D (30830) wpa: EAP: EAP api return, sm->state(0)
+D (31810) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (31810) example: ~~~~~~~~~~~
+I (31810) example: IP:0.0.0.0
+I (31810) example: MASK:0.0.0.0
+I (31810) example: GW:0.0.0.0
+I (31820) example: ~~~~~~~~~~~
+D (33820) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (33820) example: ~~~~~~~~~~~
+I (33820) example: IP:0.0.0.0
+I (33820) example: MASK:0.0.0.0
+I (33820) example: GW:0.0.0.0
+I (33830) example: ~~~~~~~~~~~
+D (33830) wpa: IEEE 802.1X RX: version=2 type=0 length=22
+D (33840) wpa: EAP: wifi->EAP api completed sig(1073455076)
+D (33840) wpa: EAP: EAP api return, sm->state(0)
+D (33850) wpa: IEEE 802.1X RX: version=2 type=0 length=6
+D (33850) wpa: TLS: Phase2 EAP types - hexdump(len=8):
+D (33860) wpa: 00 00 00 00 1a 00 00 00 
+D (33860) wpa: TLS: using phase1 config options
+D (33870) wpa: SSL: Received packet(len=6) - Flags 0x20
+D (33870) wpa: EAP-PEAP: Start (server ver=0, own ver=1)
+D (33870) wpa: EAP-PEAP: Using PEAP version 0
+I (33880) wpa: len=5 not available in input
+D (33880) wpa: SSL: 232 bytes left to be sent out (of total 232 bytes)
+D (33890) wpa: EAP: wifi->EAP api completed sig(1)
+D (33900) wpa: EAP: EAP api return, sm->state(0)
+D (33910) wpa: IEEE 802.1X RX: version=2 type=0 length=1004
+D (33920) wpa: SSL: Received packet(len=1004) - Flags 0xc0
+D (33920) wpa: SSL: TLS Message Length: 2732
+I (33920) wpa: SSL: Need 1738 bytes more input data
+D (33930) wpa: SSL: Building ACK (type=25 id=61 ver=0)
+D (33930) wpa: EAP: wifi->EAP api completed sig(1073505412)
+D (33940) wpa: EAP: EAP api return, sm->state(0)
+D (33950) wpa: IEEE 802.1X RX: version=2 type=0 length=1000
+D (33960) wpa: SSL: Received packet(len=1000) - Flags 0x40
+I (33960) wpa: SSL: Need 744 bytes more input data
+D (33960) wpa: SSL: Building ACK (type=25 id=62 ver=0)
+D (33970) wpa: EAP: wifi->EAP api completed sig(1073472572)
+D (33970) wpa: EAP: EAP api return, sm->state(0)
+D (33980) wpa: IEEE 802.1X RX: version=2 type=0 length=750
+D (33990) wpa: SSL: Received packet(len=750) - Flags 0x00
+I (34420) wpa: len=5 not available in input
+D (34420) wpa: SSL: 93 bytes left to be sent out (of total 93 bytes)
+D (34420) wpa: EAP: wifi->EAP api completed sig(1073505412)
+D (34430) wpa: EAP: EAP api return, sm->state(0)
+D (34440) wpa: IEEE 802.1X RX: version=2 type=0 length=57
+D (34440) wpa: SSL: Received packet(len=57) - Flags 0x00
+I (34450) wpa: application data is null, adding one byte for ack
+D (34450) wpa: SSL: No data to be sent out
+D (34450) wpa: EAP-PEAP: TLS done, proceed to Phase 2
+D (34460) wpa: EAP-PEAP: using label 'client EAP encryption' in key derivation
+D (34470) wpa: EAP-PEAP: Derived key - hexdump(len=64):
+D (34470) wpa: 6d b4 ea 62 90 d7 6b cc 32 94 0e c1 ca 28 b0 17 
+D (34480) wpa: ae 7c 1b 76 f2 81 dd ea 1e 59 0c e2 9e 72 08 f4 
+D (34480) wpa: a6 49 ad 86 92 07 b3 e3 60 94 5c 52 c1 de a2 f0 
+D (34490) wpa: 27 ac f0 13 b5 de 66 57 20 51 02 29 64 4d 17 17 
+D (34490) wpa: EAP-PEAP: Derived Session-Id - hexdump(len=65):
+D (34500) wpa: 19 00 00 00 21 21 88 00 dc bc 97 ad b2 03 44 d9 
+D (34510) wpa: a4 07 96 ba 31 bc 57 30 06 54 f4 8d 31 fa 30 23 
+D (34510) wpa: 88 7f 5f 2f 63 1b a8 7b c7 1c e1 61 f6 f6 34 cd 
+D (34520) wpa: 38 9d 14 3a 2c ea ba 37 98 bb e1 8d 46 7d f9 fe 
+D (34520) wpa: a5 
+D (34530) wpa: SSL: Building ACK (type=25 id=64 ver=0)
+D (34530) wpa: EAP: wifi->EAP api completed sig(1073472572)
+D (34540) wpa: EAP: EAP api return, sm->state(0)
+D (34550) wpa: IEEE 802.1X RX: version=2 type=0 length=40
+D (34550) wpa: SSL: Received packet(len=40) - Flags 0x00
+D (34550) wpa: EAP-PEAP: received 34 bytes encrypted data for Phase 2
+D (34560) wpa: EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=5):
+D (34570) wpa: 01 41 00 05 01 
+D (34570) wpa: EAP-PEAP: received Phase 2: code=1 identifier=65 length=5
+
+D (34580) wpa: EAP-PEAP: Phase 2 Request: type=1
+D (34580) wpa: EAP-PEAP: Encrypting Phase 2 data - hexdump(len=20):
+D (34590) wpa: 02 41 00 14 01 62 6f 62 40 65 78 61 6d 70 6c 65 
+D (34590) wpa: 2e 6f 72 67 
+D (34600) wpa: SSL: 45 bytes left to be sent out (of total 45 bytes)
+D (34600) wpa: EAP: wifi->EAP api completed sig(1073505412)
+D (34610) wpa: EAP: EAP api return, sm->state(0)
+D (34620) wpa: IEEE 802.1X RX: version=2 type=0 length=74
+D (34620) wpa: SSL: Received packet(len=74) - Flags 0x00
+D (34620) wpa: EAP-PEAP: received 68 bytes encrypted data for Phase 2
+D (34630) wpa: EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=39):
+D (34640) wpa: 1a 01 42 00 26 10 4d 8e 80 88 c1 d3 6d 75 b0 65 
+D (34640) wpa: f1 76 e8 ce fb 8b 66 72 65 65 72 61 64 69 75 73 
+D (34650) wpa: 2d 33 2e 30 2e 32 36 
+D (34650) wpa: EAP-PEAP: received Phase 2: code=1 identifier=66 length=43
+
+D (34660) wpa: EAP-PEAP: Phase 2 Request: type=26
+D (34660) wpa: EAP-PEAP: Selected Phase 2 EAP vendor 0 method 26
+D (34670) wpa: EAP-MSCHAPV2: RX identifier 66 mschapv2_id 66
+D (34680) wpa: EAP-MSCHAPV2: Received challenge
+D (34680) wpa: EAP-MSCHAPV2: Authentication Servername - hexdump(len=17):
+D (34690) wpa: 66 72 65 65 72 61 64 69 75 73 2d 33 2e 30 2e 32 
+D (34690) wpa: 36 
+D (34690) wpa: EAP-MSCHAPV2: Generate Challenge Response
+D (34700) wpa: MSCHAPV2: Identity - hexdump(len=15):
+D (34710) wpa: 62 6f 62 40 65 78 61 6d 70 6c 65 2e 6f 72 67 
+D (34710) wpa: MSCHAPV2: Username - hexdump(len=15):
+D (34720) wpa: 62 6f 62 40 65 78 61 6d 70 6c 65 2e 6f 72 67 
+D (34720) wpa: MSCHAPV2: auth_challenge - hexdump(len=16):
+D (34730) wpa: 4d 8e 80 88 c1 d3 6d 75 b0 65 f1 76 e8 ce fb 8b 
+D (34730) wpa: MSCHAPV2: peer_challenge - hexdump(len=16):
+D (34740) wpa: cc 99 70 24 13 70 3c ab 9b 88 f6 cd 0a 48 8a 6a 
+D (34740) wpa: MSCHAPV2: username - hexdump(len=15):
+D (34750) wpa: 62 6f 62 40 65 78 61 6d 70 6c 65 2e 6f 72 67 
+D (34760) wpa: MSCHAPV2: password - hexdump(len=12):
+D (34760) wpa: 61 72 67 6f 61 72 67 6f 61 72 67 6f 
+D (34770) wpa: MSCHAPV2: NT Response - hexdump(len=24):
+D (34770) wpa: 3e 41 87 92 38 a6 ce 11 77 2b 96 cb 35 59 12 8b 
+D (34780) wpa: 4b f3 3b 76 66 bd 97 1e 
+D (34780) wpa: MSCHAPV2: Auth Response - hexdump(len=20):
+D (34790) wpa: 0b 94 1f dc 4a 49 d8 9e 7f 90 44 12 8c 5b 38 df 
+D (34790) wpa: 71 4f 4f 14 
+D (34800) wpa: MSCHAPV2: Master Key - hexdump(len=16):
+D (34800) wpa: ad 7d 21 7d 61 eb 36 7f 54 38 b4 cb e1 28 ee 2e 
+D (34810) wpa: EAP-MSCHAPV2: TX identifier 66 mschapv2_id 66 (response)
+D (34810) wpa: EAP-PEAP: Encrypting Phase 2 data - hexdump(len=74):
+D (34820) wpa: 02 42 00 4a 1a 02 42 00 45 31 cc 99 70 24 13 70 
+D (34830) wpa: 3c ab 9b 88 f6 cd 0a 48 8a 6a 00 00 00 00 00 00 
+D (34830) wpa: 00 00 3e 41 87 92 38 a6 ce 11 77 2b 96 cb 35 59 
+D (34840) wpa: 12 8b 4b f3 3b 76 66 bd 97 1e 00 62 6f 62 40 65 
+D (34840) wpa: 78 61 6d 70 6c 65 2e 6f 72 67 
+D (34850) wpa: SSL: 99 bytes left to be sent out (of total 99 bytes)
+D (34850) wpa: EAP: wifi->EAP api completed sig(1073472572)
+D (34860) wpa: EAP: EAP api return, sm->state(0)
+D (34870) wpa: IEEE 802.1X RX: version=2 type=0 length=82
+D (34870) wpa: SSL: Received packet(len=82) - Flags 0x00
+D (34880) wpa: EAP-PEAP: received 76 bytes encrypted data for Phase 2
+D (34880) wpa: EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=47):
+D (34890) wpa: 1a 03 42 00 2e 53 3d 30 42 39 34 31 46 44 43 34 
+D (34890) wpa: 41 34 39 44 38 39 45 37 46 39 30 34 34 31 32 38 
+D (34900) wpa: 43 35 42 33 38 44 46 37 31 34 46 34 46 31 34 
+D (34910) wpa: EAP-PEAP: received Phase 2: code=1 identifier=67 length=51
+
+D (34910) wpa: EAP-PEAP: Phase 2 Request: type=26
+D (34920) wpa: EAP-MSCHAPV2: RX identifier 67 mschapv2_id 66
+D (34920) wpa: EAP-MSCHAPV2: Received success
+D (34930) wpa: EAP-MSCHAPV2: Success message - hexdump(len=0):
+I (34930) wpa: EAP-MSCHAPV2: Authentication succeeded
+D (34940) wpa: EAP-PEAP: Encrypting Phase 2 data - hexdump(len=6):
+D (34950) wpa: 02 43 00 06 1a 03 
+D (34950) wpa: SSL: 31 bytes left to be sent out (of total 31 bytes)
+D (34960) wpa: EAP: wifi->EAP api completed sig(1073505412)
+D (34960) wpa: EAP: EAP api return, sm->state(0)
+D (34970) wpa: IEEE 802.1X RX: version=2 type=0 length=46
+D (34970) wpa: SSL: Received packet(len=46) - Flags 0x00
+D (34980) wpa: EAP-PEAP: received 40 bytes encrypted data for Phase 2
+D (34980) wpa: EAP-PEAP: Decrypted Phase 2 EAP - hexdump(len=11):
+D (34990) wpa: 01 44 00 0b 21 80 03 00 02 00 01 
+D (34990) wpa: EAP-PEAP: received Phase 2: code=1 identifier=68 length=11
+
+D (35000) wpa: EAP-PEAP: Phase 2 Request: type=33
+D (35010) wpa: EAP-TLV: Received TLVs - hexdump(len=6):
+D (35010) wpa: 80 03 00 02 00 01 
+D (35010) wpa: EAP-TLV: Result TLV - hexdump(len=2):
+D (35020) wpa: 00 01 
+I (35020) wpa: EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
+D (35030) wpa: EAP-PEAP: Encrypting Phase 2 data - hexdump(len=11):
+D (35040) wpa: 02 44 00 0b 21 80 03 00 02 00 01 
+D (35040) wpa: SSL: 40 bytes left to be sent out (of total 40 bytes)
+D (35050) wpa: EAP: wifi->EAP api completed sig(1073472572)
+D (35050) wpa: EAP: EAP api return, sm->state(0)
+D (35060) wpa: IEEE 802.1X RX: version=2 type=0 length=4
+I (35060) wpa: >>>>>EAP FINISH
+D (35070) wpa: EAP: wifi->EAP api completed sig(1)
+D (35070) wpa: EAP: EAP api return, sm->state(2)
+D (35080) wpa: IEEE 802.1X RX: version=2 type=3 length=117
+D (35080) wpa:   EAPOL-Key type=2
+D (35080) wpa:   key_info 0x8b (ver=3 keyidx=0 rsvd=0 Pairwise Ack)
+D (35090) wpa:   key_length=16 key_data_length=22
+D (35100) wpa:   replay_counter - hexdump(len=8):
+D (35100) wpa: 00 00 00 00 00 00 00 01 
+D (35100) wpa:   key_nonce - hexdump(len=32):
+D (35110) wpa: 91 da 88 63 ab b4 e8 c6 3d bf 62 47 d0 c6 46 6e 
+D (35110) wpa: 57 05 67 3e 63 61 7c a5 3c 96 cf 1e 61 70 1b 42 
+D (35120) wpa:   key_iv - hexdump(len=16):
+D (35120) wpa: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+D (35130) wpa:   key_rsc - hexdump(len=8):
+D (35130) wpa: 00 00 00 00 00 00 00 00 
+D (35140) wpa:   key_id (reserved) - hexdump(len=8):
+D (35140) wpa: 00 00 00 00 00 00 00 00 
+D (35150) wpa:   key_mic - hexdump(len=16):
+D (35150) wpa: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+D (35160) wpa: WPA 1/4-Way Handshake
+D (35160) wpa: RSN: msg 1/4 key data - hexdump(len=22):
+D (35170) wpa: dd 14 00 0f ac 04 c3 e0 ec 38 71 96 26 8c 5c d0 
+D (35170) wpa: 1c 70 da 7e ce b1 
+D (35180) wpa: WPA: PMKID in EAPOL-Key - hexdump(len=22):
+D (35180) wpa: dd 14 00 0f ac 04 c3 e0 ec 38 71 96 26 8c 5c d0 
+D (35190) wpa: 1c 70 da 7e ce b1 
+D (35190) wpa: RSN: PMKID from Authenticator - hexdump(len=16):
+D (35200) wpa: c3 e0 ec 38 71 96 26 8c 5c d0 1c 70 da 7e ce b1 
+D (35200) wpa: WPA: PMK from EAPOL state machines - hexdump(len=32):
+D (35210) wpa: 6d b4 ea 62 90 d7 6b cc 32 94 0e c1 ca 28 b0 17 
+D (35220) wpa: ae 7c 1b 76 f2 81 dd ea 1e 59 0c e2 9e 72 08 f4 
+D (35220) wpa: RSN: Derive PMKID using HMAC-SHA-256
+D (35230) wpa: RSN: Replace PMKSA entry for the current AP and any PMKSA cache entry that was based on the old PMK
+D (35240) wpa: RSN: PMKSA cache entry free_cb: 3c:a0:67:80:99:a3 reason=1
+D (35240) wpa: RSN: replaced current PMKSA entry
+D (35250) wpa: ELOOP: pmksa_cache_set_expiration:76 called to remove timer handler=0x400f21f8, removed count=1
+0x400f21f8: pmksa_cache_expire at /home/alghisi/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/pmksa_cache.c:55
+
+D (35260) wpa: ELOOP: Added one timer from pmksa_cache_set_expiration:85 to call 0x400f21f8, current order=0
+0x400f21f8: pmksa_cache_expire at /home/alghisi/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/pmksa_cache.c:55
+
+D (35270) wpa: RSN: Added PMKSA cache entry for 3c:a0:67:80:99:a3 network_ctx=0x0
+D (35280) wpa: RSN: the new PMK matches with the PMKID
+D (35280) wpa: RSN: PMKSA cache search - network_ctx=0x0 try_opportunistic=0
+D (35290) wpa: RSN: Search for BSSID 3c:a0:67:80:99:a3
+D (35290) wpa: RSN: PMKSA cache entry found - PMKID - hexdump(len=16):
+D (35300) wpa: c3 e0 ec 38 71 96 26 8c 5c d0 1c 70 da 7e ce b1 
+D (35310) wpa: WPA: Renewed SNonce - hexdump(len=32):
+D (35310) wpa: ba a3 40 e7 ae 5e de bb ba d7 a6 ac 6e bd 50 c1 
+D (35320) wpa: 59 66 59 c5 3c 95 ac 6a 5a f7 16 f6 43 96 71 99 
+D (35320) wpa: WPA: PTK derivation - A1=94:b5:55:19:1c:e8 A2=3c:a0:67:80:99:a3
+
+D (35330) wpa: WPA: PTK - hexdump(len=48):
+D (35330) wpa: aa 23 b9 37 50 b7 39 c1 e9 87 be ec 61 94 39 d5 
+D (35340) wpa: 6a 06 65 d5 91 e6 71 db c8 2a 05 3d ce 12 c0 0e 
+D (35350) wpa: 86 87 73 06 18 e8 53 5b ff 00 49 59 a8 d3 74 2a 
+D (35350) wpa: WPA: KCK - hexdump(len=16):
+D (35360) wpa: aa 23 b9 37 50 b7 39 c1 e9 87 be ec 61 94 39 d5 
+D (35360) wpa: WPA: KEK - hexdump(len=16):
+D (35370) wpa: 6a 06 65 d5 91 e6 71 db c8 2a 05 3d ce 12 c0 0e 
+D (35370) wpa: WPA: TK - hexdump(len=16):
+D (35380) wpa: 86 87 73 06 18 e8 53 5b ff 00 49 59 a8 d3 74 2a 
+D (35380) wpa: WPA Send EAPOL-Key 2/4
+D (35390) wpa: WPA: KCK - hexdump(len=16):
+D (35390) wpa: aa 23 b9 37 50 b7 39 c1 e9 87 be ec 61 94 39 d5 
+D (35400) wpa: WPA: Derived Key MIC - hexdump(len=16):
+D (35400) wpa: b8 d0 87 a6 b5 05 33 8c 85 de bf 9d bc 27 76 42 
+D (35410) wpa: 2/4 txcb, flags=0, txfail 0
+D (35410) wpa: IEEE 802.1X RX: version=2 type=3 length=183
+D (35420) wpa:   EAPOL-Key type=2
+D (35420) wpa:   key_info 0x13cb (ver=3 keyidx=0 rsvd=0 Pairwise Install Ack MIC Secure Encr)
+D (35430) wpa:   key_length=16 key_data_length=88
+D (35430) wpa:   replay_counter - hexdump(len=8):
+D (35440) wpa: 00 00 00 00 00 00 00 02 
+D (35440) wpa:   key_nonce - hexdump(len=32):
+D (35450) wpa: 91 da 88 63 ab b4 e8 c6 3d bf 62 47 d0 c6 46 6e 
+D (35450) wpa: 57 05 67 3e 63 61 7c a5 3c 96 cf 1e 61 70 1b 42 
+D (35460) wpa:   key_iv - hexdump(len=16):
+D (35460) wpa: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+D (35470) wpa:   key_rsc - hexdump(len=8):
+D (35470) wpa: 00 00 00 00 00 00 00 00 
+D (35480) wpa:   key_id (reserved) - hexdump(len=8):
+D (35480) wpa: 00 00 00 00 00 00 00 00 
+D (35490) wpa:   key_mic - hexdump(len=16):
+D (35490) wpa: 43 f0 db ee 1f 6c 9f c7 ac 97 9e d4 34 77 76 7c 
+D (35500) wpa: RSN: encrypted key data - hexdump(len=88):
+D (35500) wpa: bf b5 83 0e f4 df 12 a0 cb 90 2d 7d de 5e 2a be 
+D (35510) wpa: 14 8b 65 32 a0 1e d2 06 35 f9 fb fb 81 3b cd dd 
+D (35510) wpa: 30 2a 17 5f b4 54 6b 77 7c 30 1f b3 c2 90 69 c6 
+D (35520) wpa: 1b 7f ac 97 b5 7a 2c e9 cf c6 8a 40 5d 41 61 7f 
+D (35530) wpa: 17 93 e4 8b e7 12 ef 24 03 86 ed fd 7b 3d 36 56 
+D (35530) wpa: d6 36 65 14 80 43 1c 47 
+D (35540) wpa: WPA: decrypted EAPOL-Key key data - hexdump(len=80):
+D (35540) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (35550) wpa: 00 0f ac 05 c0 00 dd 16 00 0f ac 01 01 00 69 24 
+D (35550) wpa: 3c a9 9e 97 5a f9 41 64 1b fa 58 89 ad 76 dd 1c 
+D (35560) wpa: 00 0f ac 09 04 00 00 00 00 00 00 00 dc 7a ef a0 
+D (35570) wpa: b0 fd ae 41 fd 83 d3 82 30 e4 6a ba dd 00 00 00 
+D (35570) wpa: WPA 3/4-Way Handshake
+D (35580) wpa: WPA: RSN IE in EAPOL-Key - hexdump(len=22):
+D (35580) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (35590) wpa: 00 0f ac 05 c0 00 
+D (35590) wpa: WPA: GTK in EAPOL-Key - hexdump(len=24):
+D (35600) wpa: dd 16 00 0f ac 01 01 00 69 24 3c a9 9e 97 5a f9 
+D (35600) wpa: 41 64 1b fa 58 89 ad 76 
+D (35610) wpa: WPA: IGTK in EAPOL-Key - hexdump(len=30):
+D (35610) wpa: dd 1c 00 0f ac 09 04 00 00 00 00 00 00 00 dc 7a 
+D (35620) wpa: ef a0 b0 fd ae 41 fd 83 d3 82 30 e4 6a ba 
+D (35620) wpa: WPA: IE KeyData - hexdump(len=80):
+D (35630) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (35630) wpa: 00 0f ac 05 c0 00 dd 16 00 0f ac 01 01 00 69 24 
+D (35640) wpa: 3c a9 9e 97 5a f9 41 64 1b fa 58 89 ad 76 dd 1c 
+D (35650) wpa: 00 0f ac 09 04 00 00 00 00 00 00 00 dc 7a ef a0 
+D (35650) wpa: b0 fd ae 41 fd 83 d3 82 30 e4 6a ba dd 00 00 00 
+D (35660) wpa: WPA: RSC - hexdump(len=8):
+D (35660) wpa: 00 00 00 00 00 00 00 00 
+D (35670) wpa: RSN: received GTK in pairwise handshake - hexdump(len=18):
+D (35670) wpa: 01 00 69 24 3c a9 9e 97 5a f9 41 64 1b fa 58 89 
+D (35680) wpa: ad 76 
+D (35680) wpa: WPA: IGTK keyid 4 pn 000000000000
+D (35690) wpa: WPA: IGTK - hexdump(len=16):
+D (35690) wpa: dc 7a ef a0 b0 fd ae 41 fd 83 d3 82 30 e4 6a ba 
+D (35700) wpa: tx 4/4 txcb_flags=8192
+D (35700) wpa: WPA Send EAPOL-Key 4/4
+D (35700) wpa: WPA: KCK - hexdump(len=16):
+D (35710) wpa: aa 23 b9 37 50 b7 39 c1 e9 87 be ec 61 94 39 d5 
+D (35710) wpa: WPA: Derived Key MIC - hexdump(len=16):
+D (35720) wpa: f4 d1 f5 ce 77 61 38 40 af 38 1e 84 7d b4 c3 42 
+D (35730) wpa: IEEE 802.1X RX: version=2 type=3 length=183
+D (35730) wpa:   EAPOL-Key type=2
+D (35730) wpa:   key_info 0x13cb (ver=3 keyidx=0 rsvd=0 Pairwise Install Ack MIC Secure Encr)
+D (35740) wpa:   key_length=16 key_data_length=88
+D (35750) wpa:   replay_counter - hexdump(len=8):
+D (35750) wpa: 00 00 00 00 00 00 00 03 
+D (35760) wpa:   key_nonce - hexdump(len=32):
+D (35760) wpa: 91 da 88 63 ab b4 e8 c6 3d bf 62 47 d0 c6 46 6e 
+D (35770) wpa: 57 05 67 3e 63 61 7c a5 3c 96 cf 1e 61 70 1b 42 
+D (35770) wpa:   key_iv - hexdump(len=16):
+D (35780) wpa: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+D (35780) wpa:   key_rsc - hexdump(len=8):
+D (35790) wpa: 00 00 00 00 00 00 00 00 
+D (35790) wpa:   key_id (reserved) - hexdump(len=8):
+D (35800) wpa: 00 00 00 00 00 00 00 00 
+D (35800) wpa:   key_mic - hexdump(len=16):
+D (35800) wpa: 3c 83 5c c3 79 b3 b9 af 0c 78 8e d5 e4 6f ef 67 
+D (35810) wpa: RSN: encrypted key data - hexdump(len=88):
+D (35820) wpa: bf b5 83 0e f4 df 12 a0 cb 90 2d 7d de 5e 2a be 
+D (35820) wpa: 14 8b 65 32 a0 1e d2 06 35 f9 fb fb 81 3b cd dd 
+D (35830) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+D (35830) wpa: 30 2a 17 5f b4 54 6b 77 7c 30 1f b3 c2 90 69 c6 
+I (35830) example: ~~~~~~~~~~~
+D (35840) wpa: 1b 7f ac 97 b5 7a 2c e9 cf c6 8a 40 5d 41 61 7f 
+I (35840) example: IP:0.0.0.0
+D (35850) wpa: 17 93 e4 8b e7 12 ef 24 03 86 ed fd 7b 3d 36 56 
+I (35850) example: MASK:0.0.0.0
+D (35860) wpa: d6 36 65 14 80 43 1c 47 
+I (35860) example: GW:0.0.0.0
+D (35870) wpa: WPA: decrypted EAPOL-Key key data - hexdump(len=80):
+I (35870) example: ~~~~~~~~~~~
+D (35880) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (35890) wpa: 00 0f ac 05 c0 00 dd 16 00 0f ac 01 01 00 69 24 
+D (35890) wpa: 3c a9 9e 97 5a f9 41 64 1b fa 58 89 ad 76 dd 1c 
+D (35900) wpa: 00 0f ac 09 04 00 00 00 00 00 00 00 dc 7a ef a0 
+D (35900) wpa: b0 fd ae 41 fd 83 d3 82 30 e4 6a ba dd 00 00 00 
+D (35910) wpa: WPA 3/4-Way Handshake
+D (35910) wpa: WPA: RSN IE in EAPOL-Key - hexdump(len=22):
+D (35920) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (35930) wpa: 00 0f ac 05 c0 00 
+D (35930) wpa: WPA: GTK in EAPOL-Key - hexdump(len=24):
+D (35930) wpa: dd 16 00 0f ac 01 01 00 69 24 3c a9 9e 97 5a f9 
+D (35940) wpa: 41 64 1b fa 58 89 ad 76 
+D (35940) wpa: WPA: IGTK in EAPOL-Key - hexdump(len=30):
+D (35950) wpa: dd 1c 00 0f ac 09 04 00 00 00 00 00 00 00 dc 7a 
+D (35960) wpa: ef a0 b0 fd ae 41 fd 83 d3 82 30 e4 6a ba 
+D (35960) wpa: WPA: IE KeyData - hexdump(len=80):
+D (35970) wpa: 30 14 01 00 00 0f ac 04 01 00 00 0f ac 04 01 00 
+D (35970) wpa: 00 0f ac 05 c0 00 dd 16 00 0f ac 01 01 00 69 24 
+D (35980) wpa: 3c a9 9e 97 5a f9 41 64 1b fa 58 89 ad 76 dd 1c 
+D (35980) wpa: 00 0f ac 09 04 00 00 00 00 00 00 00 dc 7a ef a0 
+D (35990) wpa: b0 fd ae 41 fd 83 d3 82 30 e4 6a ba dd 00 00 00 
+D (36000) wpa: WPA: RSC - hexdump(len=8):
+D (36000) wpa: 00 00 00 00 00 00 00 00 
+D (36000) wpa: RSN: received GTK in pairwise handshake - hexdump(len=18):
+D (36010) wpa: 01 00 69 24 3c a9 9e 97 5a f9 41 64 1b fa 58 89 
+D (36020) wpa: ad 76 
+D (36020) wpa: WPA: Not reinstalling already in-use IGTK to the driver (keyidx=4)
+D (36030) wpa: tx 4/4 txcb_flags=8192
+D (36030) wpa: WPA Send EAPOL-Key 4/4
+D (36030) wpa: WPA: KCK - hexdump(len=16):
+D (36040) wpa: aa 23 b9 37 50 b7 39 c1 e9 87 be ec 61 94 39 d5 
+D (36040) wpa: WPA: Derived Key MIC - hexdump(len=16):
+D (36050) wpa: bd b0 b2 dc 9a 4a d6 01 fd 1f 06 0a b2 a6 c5 05 
+D (36060) wpa: WPA: Installing PTK to the driver.
+D (36060) wpa: WPA: Group Key - hexdump(len=16):
+D (36060) wpa: 69 24 3c a9 9e 97 5a f9 41 64 1b fa 58 89 ad 76 
+D (36070) wpa: WPA: Judge GTK: (keyidx=1 len=16).
+D (36080) wpa: WPA: Installing GTK to the driver (keyidx=1 tx=0 len=16).
+D (36080) wpa: WPA: RSC - hexdump(len=6):
+D (36090) wpa: 00 00 00 00 00 00 
+D (36090) wpa: WPA: Key negotiation completed with 3c:a0:67:80:99:a3 [PTK=CCMP GTK=CCMP]
+
+I (36100) wifi:connected with Hostapd-AP-E, aid = 1, channel 1, BW20, bssid = 3c:a0:67:80:99:a3
+I (36110) wifi:security: WPA2-ENT, phy: bg, rssi: -42
+D (36110) wifi:remove all except 3c:a0:67:80:99:a3 from rc list
+D (36120) wifi:clear blacklist
+D (36120) wifi:filter: set rx policy=7
+I (36120) wifi:pm start, type: 1
+
+D (36130) wifi:Send sta connected event
+D (36130) wifi:connect status 1 -> 5
+D (36130) wifi:obss scan is disabled
+D (36140) wifi:start obss scan: obss scan is stopped
+I (36140) wifi:AP's beacon interval = 102400 us, DTIM period = 2
+D (36150) event: running post WIFI_EVENT:4 with handler 0x400f91d4 and context 0x3ffbdad0 on loop 0x3ffbc8f4
+0x400f91d4: wifi_default_action_sta_connected at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:85
+
+D (36160) esp_netif_handlers: esp_netif action connected with netif0x3ffbd81c from event_id=4
+D (36170) esp_netif_lwip: check: remote, if=0x3ffbd81c fn=0x400de350
+0x400de350: esp_netif_up_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1612
+
+
+D (36170) esp_netif_lwip: esp_netif_up_api esp_netif:0x3ffbd81c
+D (36180) esp_netif_lwip: check: local, if=0x3ffbd81c fn=0x400de8a4
+0x400de8a4: esp_netif_update_default_netif_lwip at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:327
+
+
+D (36180) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffbd81c
+D (36190) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (36200) esp_netif_lwip: check: remote, if=0x3ffbd81c fn=0x400de22c
+0x400de22c: esp_netif_dhcpc_start_api at /home/alghisi/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1404
+
+
+D (36200) esp_netif_lwip: esp_netif_dhcpc_start_api esp_netif:0x3ffbd81c
+D (36210) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffbd81c
+D (36220) esp_netif_lwip: if0x3ffbd81c start ip lost tmr: already started
+D (36220) esp_netif_lwip: starting dhcp client
+D (36230) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+D (36230) event: running post WIFI_EVENT:4 with handler 0x400d7ce4 and context 0x3ffc5b70 on loop 0x3ffbc8f4
+0x400d7ce4: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise/main/wifi_enterprise_main.c:92
+
+D (37230) esp_netif_lwip: esp_netif_internal_dhcpc_cb lwip-netif:0x3ffbd8a0
+D (37230) esp_netif_lwip: if0x3ffbd81c ip changed=0
+D (37230) event: running post IP_EVENT:0 with handler 0x400f9000 and context 0x3ffbdba4 on loop 0x3ffbc8f4
+0x400f9000: wifi_default_action_sta_got_ip at /home/alghisi/esp/esp-idf/components/esp_wifi/src/wifi_default.c:127
+
+D (37240) wifi_init_default: Got IP wifi default handler entered
+D (37240) esp_netif_handlers: esp_netif action got_ip with netif0x3ffbd81c from event_id=0
+I (37250) esp_netif_handlers: sta ip: 192.168.104.187, mask: 255.255.255.0, gw: 192.168.104.247
+D (37260) event: running post IP_EVENT:0 with handler 0x400d7ce4 and context 0x3ffc5b90 on loop 0x3ffbc8f4
+0x400d7ce4: event_handler at /home/alghisi/GitHub/Hostapd-test/ESP32/Src/ESP32-IDF/wifi_enterprise/main/wifi_enterprise_main.c:92
+
+D (37880) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (37880) example: ~~~~~~~~~~~
+I (37880) example: IP:192.168.104.187
+I (37880) example: MASK:255.255.255.0
+I (37880) example: GW:192.168.104.247
+I (37890) example: ~~~~~~~~~~~
+D (39890) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (39890) example: ~~~~~~~~~~~
+I (39890) example: IP:192.168.104.187
+I (39890) example: MASK:255.255.255.0
+I (39890) example: GW:192.168.104.247
+I (39900) example: ~~~~~~~~~~~
+D (41900) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (41900) example: ~~~~~~~~~~~
+I (41900) example: IP:192.168.104.187
+I (41900) example: MASK:255.255.255.0
+I (41900) example: GW:192.168.104.247
+I (41910) example: ~~~~~~~~~~~
+D (43910) esp_netif_lwip: esp_netif_get_ip_info esp_netif:0x3ffbd81c
+I (43910) example: ~~~~~~~~~~~
+I (43910) example: IP:192.168.104.187
+I (43910) example: MASK:255.255.255.0
+I (43910) example: GW:192.168.104.247
+I (43920) example: ~~~~~~~~~~~
+

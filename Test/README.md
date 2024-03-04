@@ -125,12 +125,9 @@
 - Personal
 
     - [x] Test WPA3-Personal: ___OK___
-
     - [x] Test WPA3-Personal SAE-PK: ___OK___
-
     - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___OK___
         - By selecting `update=1` in the configuration, the supplicant resists the attack even after its reboot.
-
     - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___OK___
         - By selecting `update=1` in the configuration, the supplicant resists the attack even after its reboot.
             In particular, the resulting configuration presents `sae_pk=1` (SAE-PK only mode) from `sae_pk=0` (SAE-PK in automatic mode)
@@ -139,16 +136,12 @@
 - Enterprise
 
     - [x] Test WPA2-Enterprise: ___OK___
-
     - [x] Test WPA2-Enterprise TOFU: ___oo___
-
     - [x] Test WPA3-Enterprise: ___OK___
-
     - [x] Test WPA3-Enterprise UOSC: ___oo___
         - Neither `wpa_cli` nor `wpa_gui` implement UOSC. If a root certificate is specified, they just trust the one recieved from the server without asking anything to the user.
         	And what if `update=1` and a root ca cert is defined?
-
-    - [x] Test WPA3-Enterprise TOFU: ___OK___
+    - [x] Test WPA3-Enterprise TOFU: ___oo___
         - The supplicant prints that it gots a certificate with TOD=2 Policy, but still connects to the rogue AP.
 
 ### Cypress Board CYW954907AEVAL1F
@@ -157,29 +150,30 @@
 
     - [x] Test WPA3-Personal: ___OK___
     - [x] Test WPA3-Personal SAE-PK: ___oo___
-    - [ ] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2
+    - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___oo___
     - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___oo___
 
 - Enterprise
 
     - [x] Test WPA2-Enterprise: ___OK___
     - [x] Test WPA2-Enterprise TOFU: ___??___
-    - [x] Test WPA3-Enterprise: ___oo___
-    - [x] Test WPA3-Enterprise UOSC: ___oo___
-    - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
+        - Cannot remove certificate. Even though `test.console` should allow not to use it.
+    - [x] Test WPA3-Enterprise: ___~~___
+        - Cannot select WPA3 from `test.console`. This is because WPA3 is not supported by WDD. However, by selecting WPA2-Enterprise, the board connects with MFP set as required and EAP-SHA256.
+    - [x] Test WPA3-Enterprise UOSC: ___??___
+        - Cannot remove certificate. Even though `test.console` should allow not to use it.
+    - [x] Test WPA3-Enterprise TOD Mechanism: ___??___
+        - Cannot remove certificate. Even though `test.console` should allow not to use it.
 
 ### Keystudio ESP32 Core Board
 
 - Personal
 
     - [x] Test WPA3-Personal: ___OK___
-
     - [x] Test WPA3-Personal SAE-PK: ___OK___
-
-    - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___~~___
+    - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___!!___
         - By selecting `[x] Transition disable` via `menuconfig`, the supplicant resists the attack.
             However, after the reboot it forgets about the recieved Transition disable information and joins the rogue network.
-
     - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___!!___
         - If the device is configured with SAE-PK Automatic mode, then it joins the rogue AP also after having recieved the Transition disable for SAE-PK -> SAE.
             Moreover, Automatic mode is the default behaviour for the example `station` provided by Espressif.
@@ -188,27 +182,23 @@
 - Enterprise
 
     - [x] Test WPA2-Enterprise: ___OK___
-
     - [x] Test WPA2-Enterprise TOFU: ___oo___
         - Using the modified `wifi_enterprise` script revealed that if no certificate is provided, actually the supplicant do not apply a TOFU policy,
-            thus it does not trust ony the firt certificate recieved, but also all the successive ones.
+            thus it does not trust only the first certificate recieved, but also all the successive ones.
             The user needs to write all the functions to achieve this goal.
-
     - [x] Test WPA3-Enterprise: ___OK___
         - The example provided by Espressif seems to be bugged: it sets PMF as required just if WPA3-Enterprise 192bit is selected.
             The tests reveals that if this program is used with a WPA3-Enterprise profile, it is possible to make it join a WPA2-Enterprise network
-            (at the countrary of what the standard states).
+            (at the contrary of what the standard states).
             The fixed program instead works properly.
-
     - [x] Test WPA3-Enterprise UOSC: ___oo___
         - There is no user interaction for the default program. However, The `wifi_enterprise` example is quite coherent to the WPA3 Standard.
             Indeed, if WPA2 is selected, the user is free to skip the server certificate validation by means of a checkbox; if WPA3 is selected, this option is not available anymore.
             Another interesting feature is that it is not allowed to select weak EAP methods for the external authentication (just TLS, TTLS and PEAP).
-            However, the inner protocol cannot be choosen.
-
+            However, the inner protocol cannot be chosen.
     - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___.
         - Using the modified `wifi_enterprise` program revealed that, if no certificate is provided from the beginning,
-            then also a TOD TOFU Policy certificate recieved from the server do not prevents the supplicant from joining successive roue networks.
+            then also a TOD TOFU Policy certificate received from the server do not prevents the supplicant from joining successive roue networks.
 
 ### Raspberry Pi 4 wpa_supplicant and NM GUI
 
@@ -217,53 +207,38 @@
     - [x] Test WPA3-Personal: ___oo___
         - There is an option in the network configuration window to select WPA3 Personal.
             However, even if selecting it, the Raspberry does not connect.
-
     - [x] Test WPA3-Personal SAE-PK: ___oo___
-
     - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___oo___
-
     - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___oo___
 
 - Enterprise
 
     - [x] Test WPA2-Enterprise: ___OK___
-
-    - [x] Test WPA2-Enterprise TOFU: ___OK___
-
-    - [x] Test WPA3-Enterprise: ___OK___
-        - Set WPA2 enetrprise in the Network profile.
-
+    - [x] Test WPA2-Enterprise TOFU: ___oo___
+    - [x] Test WPA3-Enterprise: ___~~___
+        - Set WPA2 enterprise in the Network profile.
     - [x] Test WPA3-Enterprise UOSC: ___oo___
-        - Set WPA2 enetrprise in the Network profile.
-
+        - Set WPA2 enterprise in the Network profile.
     - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
-        - Set WPA2 enetrprise in the Network profile.
+        - Set WPA2 enterprise in the Network profile.
 
 ### Raspberry Pi 4 wpa_supplicant and NM CLI
 
 - Personal
 
     - [x] Test WPA3-Personal: ___oo___
-        - There is an option in the network configuration window to select WPA3 Personal.
-            However, even if selecting it, the Raspberry does not connect.
-
     - [x] Test WPA3-Personal SAE-PK: ___oo___
-
     - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___oo___
-
     - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___oo___
 
 - Enterprise
 
     - [x] Test WPA2-Enterprise: ___OK___
-
-    - [x] Test WPA2-Enterprise TOFU: ___OK___
-
-    - [x] Test WPA3-Enterprise: ___oo___
+    - [x] Test WPA2-Enterprise TOFU: ___oo___
+    - [x] Test WPA3-Enterprise: ___~~___
         - Cannot force PMF as required
-
+        - Cannot set EAP-SHA256, only general WPA-EAP.
     - [x] Test WPA3-Enterprise UOSC: ___oo___
-
     - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
 
 #### Steps to use nmcli
@@ -274,7 +249,7 @@
 
 3. Open the CLI interactive tool:
     ```
-    nmcli connection edit type name_of_the_network_profile
+    nmcli connection edit name_of_the_network_profile
     ```
 
 3. Get a list of all the possible parameters:
@@ -284,7 +259,7 @@
 
 4. Disable autoconnection feature:
     ```
-    set wifi.autoconnect no
+    set connection.autoconnect no
     ```
 
 5. Set the remaining ones, like PMF:
@@ -304,9 +279,7 @@
 - Personal
 
     - [x] Test WPA3-Personal: ___OK___
-
     - [x] Test WPA3-Personal SAE-PK: ___oo___
-
     - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___!!___
         - If iwd is used as a backend for NetworkManager, then the Transition disable support is inexistent:
             - If the network profile is set as WPA/WPA2/WPA3, then transition disable does not work and the supplicant automatically joins the downgraded network.
@@ -318,91 +291,46 @@
 
 - Enterprise
 
-    - [x] Test WPA2-Enterprise: ___!!___
+    - [x] Test WPA2-Enterprise: ___oo___
         - Error from NM that says it is not possible to configure the 802.1X profile for iwd.
-
     - [x] Test WPA2-Enterprise TOFU: ___oo___
-
     - [x] Test WPA3-Enterprise: ___oo___
-
     - [x] Test WPA3-Enterprise UOSC: ___oo___
-
     - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
 
 ### Raspberry Pi 4 iwd and NM CLI
 
 - Personal
 
-    - [x] Test WPA3-Personal: ___Ok___
-
+    - [x] Test WPA3-Personal: ___OK___
     - [x] Test WPA3-Personal SAE-PK: ___oo___
-
     - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___oo___
-
     - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___oo___
 
 - Enterprise
 
     - [x] Test WPA2-Enterprise: ___oo___
-
     - [x] Test WPA2-Enterprise TOFU: ___oo___
-
     - [x] Test WPA3-Enterprise: ___oo___
-        - Set WPA2 enetrprise in the Network profile.
-
+        - Set WPA2 enterprise in the Network profile.
     - [x] Test WPA3-Enterprise UOSC: ___oo___
-        - Set WPA2 enetrprise in the Network profile.
-
+        - Set WPA2 enterprise in the Network profile.
     - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
-        - Set WPA2 enetrprise in the Network profile.
-
-### Raspberry Pi 4 sta_ui
-
-- Personal
-
-    - [x] Test WPA3-Personal: ___oo___
-
-    - [x] Test WPA3-Personal SAE-PK: ___oo___
-
-    - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___oo___
-
-    - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___oo___
-
-- Enterprise
-
-    - [x] Test WPA2-Enterprise: ___OK___
-
-    - [x] Test WPA2-Enterprise TOFU: ___oo___
-        - Not supported by wpa_cli.
-
-    - [x] Test WPA3-Enterprise: ___OK___
-
-    - [x] Test WPA3-Enterprise UOSC: ___oo___
-        - Not supported by wpa_cli.
-
-    - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
-        - Not supported by wpa_cli.
+        - Set WPA2 enterprise in the Network profile.
 
 ### Raspberry Pi Pico W
 
 - Personal
 
     - [x] Test WPA3-Personal: ___oo___
-
     - [x] Test WPA3-Personal SAE-PK: ___oo___
-
     - [x] Test WPA2/3-Personal and Transition Disable WPA3 -> WPA2: ___oo___
-
     - [x] Test WPA3-Personal SAE-PK and Transition Disable SAE-PK -> SAE: ___oo___
 
 - Enterprise
 
     - [x] Test WPA2-Enterprise: ___oo___
-
     - [x] Test WPA2-Enterprise TOFU: ___oo___
-
     - [x] Test WPA3-Enterprise: ___oo___
-
     - [x] Test WPA3-Enterprise UOSC: ___oo___
-
     - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___

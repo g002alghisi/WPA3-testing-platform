@@ -1,0 +1,80 @@
+[21:55:08.109] Initiating the saving session of stdout and stderr inside /home/alghisi-pi/Desktop...
+␛[0;32mSuccess.␛[0m
+
+[21:55:08.116] Fetching configuration file associated to e_wpa3...
+␛[0;32mSuccess.␛[0m
+
+[21:55:08.301] Checking Wi-Fi interface... 
+␛[0;32mSuccess.␛[0m
+[21:55:08.313] Forcing Wi-Fi interface up... 
+␛[0;32mSuccess.␛[0m
+[21:55:08.363] Stopping NetworkManager... 
+␛[0;32mSuccess.␛[0m
+[21:55:09.167] Looking for Wpa_supplicant/Conf/Enterprise/e_wpa3.conf...
+␛[0;32mSuccess.␛[0m
+
+␛[0;36mRunning Wpa-supplicant. Press Ctrl-C to stop.␛[0m
+
+STA settings:
+
+update_config=0
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=sudo
+eapol_version=2
+ap_scan=1
+country=IT
+network={
+  ssid="Hostapd-AP-E"
+  key_mgmt=WPA-EAP-SHA256
+  eap=PEAP
+  ieee80211w=2
+  identity="bob@example.org"
+  anonymous_identity="anonymous"
+  password="argoargoargo"
+  ca_cert="Freeradius/Conf/E_wpa3/certs/ca.pem"
+  subject_match="/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org"
+  phase2="auth=MSCHAPV2"
+  wps_disabled=1
+}
+
+
+[21:55:09.245] Successfully initialized wpa_supplicant
+[21:55:11.908] wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+[21:55:14.565] wlan0: Associated with 3c:a0:67:80:99:a3
+[21:55:14.565] wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+[21:55:14.565] wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[21:55:14.570] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[21:55:14.575] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[21:55:14.582] wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[21:55:14.627] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=9fb53c3e5d7f2eb388732d28651605ca3013b92637f9741092ce57143039ae93
+[21:55:14.627] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=cfa814066388ed3d3f9f8698d5d218079a5bfd4290602b7cccdc482548699199
+[21:55:14.653] EAP-MSCHAPV2: Authentication succeeded
+[21:55:14.657] EAP-TLV: TLV Result - Success - EAP-TLV/Phase2 Completed
+[21:55:14.661] wlan0: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+[21:55:14.662] wlan0: CTRL-EVENT-CONNECTED - Connection to 3c:a0:67:80:99:a3 completed [id=0 id_str=]
+[21:55:23.335] wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=3
+[21:55:23.337] wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[21:55:23.338] wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[21:55:25.940] wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+[21:55:28.590] wlan0: Associated with 3c:a0:67:80:99:a3
+[21:55:28.590] wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+[21:55:28.590] wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+[21:55:31.599] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=4 -> NAK
+[21:55:31.603] wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+[21:55:31.603] wlan0: CTRL-EVENT-EAP-METHOD EAP vendor 0 method 25 (PEAP) selected
+[21:55:31.651] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' hash=d9eeda5d53948a9455f0f0272c772c5c9106c389ff2cc26bd11f1fe2383e24bd
+[21:55:31.652] wlan0: CTRL-EVENT-EAP-PEER-CERT depth=0 subject='/C=FR/ST=Radius/O=Example Inc./CN=Example Server Certificate/emailAddress=admin@example.org' hash=ad984eb890faa4445d5af032c265296f90627e5b04d2abe1f0eca8b1e644f236
+[21:55:31.653] TLS: Certificate verification failed, error 19 (self-signed certificate in certificate chain) depth 1 for '/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority'
+[21:55:31.653] wlan0: CTRL-EVENT-EAP-TLS-CERT-ERROR reason=1 depth=1 subject='/C=FR/ST=Radius/L=Somewhere/O=Example Inc./emailAddress=admin@example.org/CN=Example Certificate Authority' err='self-signed certificate in certificate chain'
+[21:55:31.653] SSL: SSL3 alert: write (local SSL3 detected an error):fatal:unknown CA
+[21:55:31.653] OpenSSL: openssl_handshake - SSL_connect error:0A000086:SSL routines::certificate verify failed
+[21:55:32.665] wlan0: CTRL-EVENT-EAP-FAILURE EAP authentication failed
+[21:55:32.676] wlan0: CTRL-EVENT-DISCONNECTED bssid=3c:a0:67:80:99:a3 reason=23
+[21:55:32.676] wlan0: CTRL-EVENT-SSID-TEMP-DISABLED id=0 ssid="Hostapd-AP-E" auth_failures=1 duration=10 reason=AUTH_FAILED
+[21:55:32.680] wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+[21:55:32.683] wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=IT
+[21:55:44.782] wlan0: CTRL-EVENT-SSID-REENABLED id=0 ssid="Hostapd-AP-E"
+[21:55:44.784] wlan0: Trying to associate with SSID 'Hostapd-AP-E'
+[21:55:47.437] wlan0: Associated with 3c:a0:67:80:99:a3
+[21:55:47.438] wlan0: CTRL-EVENT-EAP-STARTED EAP authentication started
+
