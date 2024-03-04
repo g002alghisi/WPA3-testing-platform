@@ -16,7 +16,7 @@ WPA Supplicant is widely used in diverse networking scenarios, ensuring secure W
 The basic idea is to use `wpa_supplicant` to turn the PC into a Supplicant Station.
 The PC shall be equipped with a wireless card.
 
-Similarly to `hostapd`, using `hostapd` is not straight-forward. Indeed, it is important to check the state of the physical interface and to stop all the services that can interfere with the process (like `NetworkManager`).
+Similarly to `hostapd`, using `wpa_supplicant` is not straight-forward. Indeed, it is important to check the state of the physical interface and to stop all the services that can interfere with the process (like `NetworkManager`).
 moreover, the process needs to be reversed once finished, as to reset the original state of the system.
 To carry out all these operations, two bash scripts have been created:
 
