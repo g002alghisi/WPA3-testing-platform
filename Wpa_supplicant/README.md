@@ -11,16 +11,6 @@ Wpa Supplicant is an open-source software implementation for Wi-Fi clients, prov
 
 WPA Supplicant is widely used in diverse networking scenarios, ensuring secure Wi-Fi connections, compatibility with WPA3 security standards, and support for enterprise-level authentication. It is a versatile tool that enhances the security of wireless communication by implementing robust authentication mechanisms.
 
-To get started with WPA Supplicant, consider exploring the following documentation:
-
-- [WPA Supplicant Linux Page](https://w1.fi/wpa_supplicant/) offers comprehensive information about WPA Supplicant, its features, and configuration options.
-- [WPA Supplicant Configuration Guide](https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf) details the configuration parameters for WPA Supplicant.
-
-For a deeper understanding and technical insights, explore:
-
-- [IEEE 802.11 standards](https://www.ieee802.org/11/) cover the technical specifications for wireless LAN (Local Area Network) communication.
-- [The official Hostapd and WPA Supplicant homepage](https://w1.fi/) provides valuable resources, updates, and community discussions related to WPA Supplicant and Hostapd.
-
 ## Basic idea
 
 The basic idea is to use `wpa_supplicant` to turn the PC into a Supplicant Station.
