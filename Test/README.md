@@ -156,14 +156,12 @@
 - Enterprise
 
     - [x] Test WPA2-Enterprise: ___OK___
-    - [x] Test WPA2-Enterprise TOFU: ___??___
+    - [x] Test WPA2-Enterprise TOFU: ___oo___
         - Cannot remove certificate. Even though `test.console` should allow not to use it.
     - [x] Test WPA3-Enterprise: ___~~___
         - Cannot select WPA3 from `test.console`. This is because WPA3 is not supported by WDD. However, by selecting WPA2-Enterprise, the board connects with MFP set as required and EAP-SHA256.
-    - [x] Test WPA3-Enterprise UOSC: ___??___
-        - Cannot remove certificate. Even though `test.console` should allow not to use it.
-    - [x] Test WPA3-Enterprise TOD Mechanism: ___??___
-        - Cannot remove certificate. Even though `test.console` should allow not to use it.
+    - [x] Test WPA3-Enterprise UOSC: ___oo___
+    - [x] Test WPA3-Enterprise TOD Mechanism: ___oo___
 
 ### Keystudio ESP32 Core Board
 
