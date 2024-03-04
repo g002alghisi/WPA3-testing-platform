@@ -1,0 +1,3 @@
+# It is required to gitignore the following files to avoid license related problems
+hostapd
+sae_pk_gen

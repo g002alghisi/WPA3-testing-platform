@@ -1,0 +1,2 @@
+# It is required to gitignore the following files to avoid license related problems
+wpa_supplicant
