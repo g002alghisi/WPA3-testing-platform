@@ -270,7 +270,7 @@
     activate wlan0
     ```
 
-# Raspberry Pi 4 iwd and NM GUI
+### Raspberry Pi 4 iwd and NM GUI
 
 - Personal
 
