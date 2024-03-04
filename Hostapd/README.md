@@ -74,7 +74,7 @@ However, the default behavior of Ubuntu is to change the interface name assigned
 
 This solution is derived from [this forum](https://unix.stackexchange.com/questions/388300/udev-does-not-rename-usb-ethernet-device)
 
-Remember that the name `ID_NET_NAME` depends on the USB assigned to the phone. For this reason, if suddenly the static name of the interface, es `enp0s20f0u1`, changes to the random one, es `enxd626b3450fb5`, maybe it is because another USB device is used (maybe the ESP32 or the Cypress board)enxd626b3450fb5.
+Remember that the name `ID_NET_NAME` depends on the USB assigned to the phone. For this reason, if suddenly the static name of the interface, es `enp0s20f0u1`, changes to the random one, es `enxd626b3450fb5`, maybe it is because another USB device is used (maybe the ESP32 or the Cypress board).
 Please unplug both of them, reconnect the phone and check via `ifconfig` that everything is okay again. Then connect the other device.
 
 ## Workflow
