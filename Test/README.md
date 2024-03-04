@@ -8,10 +8,8 @@
 
 - Cypress Board CYW954907AEVAL1F, Wi-Fi module based on CYW54907 device.
 - Keystudio ESP32 Core Board, with ESP32-WROOM-32 and Espressif IDF v5.1.2.
-- Raspberry Pi 4, [add information about version].
-- Raspberry Pi Pico W [add information about version].
-- iPad Air 2022, iPadOS 17.1.2.
-- POCO F3, Android 13 TKQ1.220829.002, MIUI Global 14.0.9.
+- Raspberry Pi 4.
+- Raspberry Pi Pico W.
 - Ubuntu Desktop 23.10.1, running on a Virtual Machine (VirtualBOX) and set up USB passthrough for the TP-Link Archer T2U v3 Wi-Fi dongle.
 - Windows 11, running on a Virtual Machine (VirtualBOX) and set up USB passthrough for the TP-Link Archer T2U v3 Wi-Fi dongle.
 - TP-Link Archer T2U v3 Wi-Fi dongle, chipset RTL8811AU, driver: [morrownr 8821au](https://github.com/morrownr/8821au-20210708) for Linux, [official](https://www.tp-link.com/it/support/download/archer-t2u/) for Windows.
