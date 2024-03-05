@@ -2,10 +2,11 @@
 
 1. [Introduction](#introduction)
 2. [Basic idea](#basic-idea)
-3. [Workflow](#workflow)
-4. [Few words about the Hostapd version](#few-words-about-the-hostapd-version)
-5. [WPA3-Personal with SAE-PK](#wpa3-personal-with-sae-pk)
-6. [Enterprise configurations](#enterprise-configurations)
+3. [Overcome Ethernet interface lack](#overcome-ethernet-interface-lack)
+4. [Workflow](#workflow)
+5. [Few words about the Hostapd version](#few-words-about-the-hostapd-version)
+6. [WPA3-Personal with SAE-PK](#wpa3-personal-with-sae-pk)
+7. [Enterprise configurations](#enterprise-configurations)
 
 ## Introduction
 
@@ -30,7 +31,7 @@ To carry out all these operations, two bash scripts have been created:
 - `ap.sh` is a wrapper around Hostapd, and it is used to create the Access Point with bridge;
 - `ap_ui.sh` acts as a front-end and offers to the user an easier way to setup the AP.
 
-### Overcome Ethernet interface lack
+## Overcome Ethernet interface lack
 
 In case the PC lacks the Ethernet interface card, it should be possible to install a DHCP server on the computer directly, but this option has not been analyzed.
 
