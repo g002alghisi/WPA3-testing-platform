@@ -10,7 +10,7 @@ CODE_ERROR=2
 
 ### *** Go Home *** ###
 
-HOME_DIR="Hostapd-test"  # Without final "/"
+HOME_DIR="WPA3-testing-platform"  # Without final "/"
 
 go_home() {
     cd "$(dirname "$HOME_DIR")"

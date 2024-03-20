@@ -2,7 +2,7 @@
 #set -x  # debug mode
 
 # Home../test_ui.sh -s p_wpa2 -d wpa_supplicant DO NOT TERMINATE WITH "/"
-HOME_DIR="Hostapd-test"
+HOME_DIR="WPA3-testing-platform"
 
 go_home() {
     current_dir="$(basename $(pwd))"

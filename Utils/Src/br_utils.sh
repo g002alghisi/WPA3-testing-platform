@@ -1,4 +1,5 @@
 #!/bin/bash
+#set -x
 
 BR_UTILS_IS_LOADED=True
 
@@ -71,7 +72,8 @@ br_setup() {
     _br_handle_param -p 1 -b $@ || return "$?"
     br_setdown "$_br_if" &> /dev/null
 
-    sudo brctl addbr "$_br_if" &> /dev/null 
+    # sudo brctl addbr "$_br_if" &> /dev/null 
+    sudo ip link add name "$_br_if" type bridge &> /dev/null
     if [ "$?" -ne 0 ]; then
         echo "$FUNCNAME(): Cannot create the bridge $_br_if."
         return "$CODE_KO"
@@ -88,7 +90,8 @@ br_add_if() {
     _br_handle_param -p 2 $@ || return "$?"
     br_exists "$_br_if" || return "$?"
 
-    sudo brctl addif "$_br_if" "$_net_if" &> /dev/null
+    # sudo brctl addif "$_br_if" "$_net_if" &> /dev/null
+    sudo ip link set "$_net_if" master "$_br_if" &> /dev/null
     if [ "$?" -ne 0 ]; then
         echo "$FUNCNAME(): Cannot add $_net_if to the bridge $_br_if."
         return "$CODE_KO"
@@ -105,7 +108,8 @@ br_setdown() {
         return "$CODE_KO"
     fi
 
-    sudo brctl delbr "$_br_if" &> /dev/null
+    # sudo brctl delbr "$_br_if" &> /dev/null
+    sudo ip link delete "$_br_if" type bridge &> /dev/null
     if [ "$?" -ne 0 ]; then
         echo "$FUNCNAME(): Cannot delete the bridge $_br_if."
         return "$CODE_KO"

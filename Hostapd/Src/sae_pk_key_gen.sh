@@ -3,7 +3,7 @@
 
 
 # Home. DO NOT TERMINATE WITH "/"
-HOME_DIR="Hostapd-test"
+HOME_DIR="WPA3-testing-platform"
 
 go_home() {
     cd "$(dirname "$HOME_DIR")"

@@ -2,7 +2,7 @@
 #set -x  # debug mode
 
 # Home. DO NOT TERMINATE WITH "/"
-HOME_DIR="Hostapd-test"  # Without final "/"
+HOME_DIR="WPA3-testing-platform"  # Without final "/"
 
 go_home() {
     current_dir="$(basename $(pwd))"
